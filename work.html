@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Work | Shreyas Korad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Page-specific styles */
+        .work-hero {
+            padding: 8rem 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .work-hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .work-hero .lead {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        /* Philosophy section */
+        .philosophy-section {
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+        }
+
+        .philosophy-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .philosophy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .philosophy-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .philosophy-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .philosophy-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .philosophy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 2rem;
+            right: 2rem;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 0 0 3px 3px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .philosophy-card:hover::before {
+            opacity: 1;
+        }
+
+        .philosophy-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .philosophy-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Approach section */
+        .approach-section {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .approach-header {
+            margin-bottom: 3rem;
+        }
+
+        .approach-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .approach-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .approach-steps {
+            display: grid;
+            gap: 0;
+        }
+
+        .approach-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+        }
+
+        .approach-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .step-content h3 {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 600px) {
+            .approach-step {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .step-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Project types section */
+        .projects-section {
+            padding: 5rem 2rem;
+            background: var(--bg-secondary);
+        }
+
+        .projects-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .projects-header {
+            margin-bottom: 3rem;
+        }
+
+        .projects-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .projects-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .project-types {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .project-types {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .project-types {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-type {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-type:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-type-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .project-type-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent);
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        .project-type h3 {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-type p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Differentiator section */
+        .differentiator-section {
+            padding: 5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .differentiator-content {
+            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .differentiator-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .differentiator-content h2 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .differentiator-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .differentiator-text p {
+            margin-bottom: 1rem;
+        }
+
+        .differentiator-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .three-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .three-pillars {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .differentiator-content {
+                padding: 2rem;
+            }
+        }
+
+        .pillar {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+        }
+
+        .pillar-label {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .pillar-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            .connector {
+                display: none;
+            }
+        }
+
+        /* CTA Section */
+        .work-cta-section {
+            padding: 5rem 2rem;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .work-cta-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .work-cta-container h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .work-cta-container p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Shreyas Korad</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="work-hero fade-up">
+            <h1>Learning experiences that actually work</h1>
+            <p class="lead">
+                I design learning solutions that engage people and deliver measurable outcomes. 
+                Not just content that gets completed—experiences that change behavior and build capability.
+            </p>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy-section">
+            <div class="philosophy-container">
+                <div class="philosophy-header fade-up">
+                    <h2>How I Think About Learning</h2>
+                    <p>
+                        Every project starts with these principles. They shape every decision, 
+                        from strategy to the smallest interaction detail.
+                    </p>
+                </div>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card fade-up">
+                        <h3>Outcomes First, Always</h3>
+                        <p>
+                            Before we discuss formats or tools, we get clear on what success looks like. 
+                            What will learners be able to do differently? How will we know it worked? 
+                            Everything flows from there.
+                        </p>
+                    </div>
+                    <div class="philosophy-card fade-up">
+                        <h3>Transfer is the Goal</h3>
+                        <p>
+                            Completion rates are easy to measure but often meaningless. I focus on 
+                            designing for transfer—ensuring learning actually applies in the real world, 
+                            not just during the course.
+                        </p>
+                    </div>
+                    <div class="philosophy-card fade-up">
+                        <h3>Science-Backed Creativity</h3>
+                        <p>
+                            Creative solutions grounded in cognitive science. Spaced practice, retrieval, 
+                            worked examples, cognitive load management—woven into experiences that 
+                            feel fresh and engaging.
+                        </p>
+                    </div>
+                    <div class="philosophy-card fade-up">
+                        <h3>Strategic Gamification</h3>
+                        <p>
+                            Gamification isn't points and badges—it's understanding motivation and 
+                            designing for intrinsic engagement. When done right, it transforms how 
+                            people approach learning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Section -->
+        <section class="approach-section">
+            <div class="approach-header fade-up">
+                <h2>The Process</h2>
+                <p>
+                    Every engagement is different, but here's how I typically approach a project. 
+                    Flexible when needed, structured where it matters.
+                </p>
+            </div>
+            <div class="approach-steps">
+                <div class="approach-step fade-up">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Understand the Real Problem</h3>
+                        <p>
+                            Most learning challenges aren't what they first appear to be. I dig into 
+                            the actual performance gap, the context, the constraints, and what's been 
+                            tried before. This shapes everything that follows.
+                        </p>
+                    </div>
+                </div>
+                <div class="approach-step fade-up">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Define Success Clearly</h3>
+                        <p>
+                            What does success look like—concretely? We establish observable outcomes, 
+                            how we'll measure them, and what "good enough" means. This prevents 
+                            scope creep and keeps the solution focused.
+                        </p>
+                    </div>
+                </div>
+                <div class="approach-step fade-up">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Design the Experience</h3>
+                        <p>
+                            This is where creativity meets science. I develop the learning architecture, 
+                            engagement mechanics, and key interactions—prototyping and testing concepts 
+                            before full development.
+                        </p>
+                    </div>
+                </div>
+                <div class="approach-step fade-up">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Build with Precision</h3>
+                        <p>
+                            Detailed design that brings the concept to life. Every interaction, every 
+                            piece of feedback, every visual decision is intentional—driving toward 
+                            the defined outcomes.
+                        </p>
+                    </div>
+                </div>
+                <div class="approach-step fade-up">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Measure and Iterate</h3>
+                        <p>
+                            Data-informed refinement. What's working? What's not? Learning analytics 
+                            reveal the story, and we optimize based on evidence, not assumptions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Types Section -->
+        <section class="projects-section">
+            <div class="projects-container">
+                <div class="projects-header fade-up">
+                    <h2>Types of Projects</h2>
+                    <p>
+                        The problems I solve most often. Each requires a different blend of 
+                        creativity, technical skill, and strategic thinking.
+                    </p>
+                </div>
+                <div class="project-types">
+                    <div class="project-type fade-up">
+                        <div class="project-type-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Complex Learning Programs</h3>
+                        <p>
+                            Multi-touchpoint learning journeys for skill building, behavior change, 
+                            or organizational capability development.
+                        </p>
+                    </div>
+                    <div class="project-type fade-up">
+                        <div class="project-type-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polygon points="10,8 16,12 10,16"/>
+                            </svg>
+                        </div>
+                        <h3>Gamification Strategy</h3>
+                        <p>
+                            Designing motivation systems that drive engagement without cheap tricks. 
+                            From concept through implementation.
+                        </p>
+                    </div>
+                    <div class="project-type fade-up">
+                        <div class="project-type-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M3 9h18M9 21V9"/>
+                            </svg>
+                        </div>
+                        <h3>Learning Analytics</h3>
+                        <p>
+                            Making sense of learning data. Dashboards, visualizations, and insights 
+                            that drive better decisions.
+                        </p>
+                    </div>
+                    <div class="project-type fade-up">
+                        <div class="project-type-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            </svg>
+                        </div>
+                        <h3>Compliance & Technical Training</h3>
+                        <p>
+                            Turning "boring" topics into engaging experiences. Because even 
+                            mandatory training can be designed to work.
+                        </p>
+                    </div>
+                    <div class="project-type fade-up">
+                        <div class="project-type-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Gen Z & Future of Learning</h3>
+                        <p>
+                            Designing for how people actually learn today. Mobile-first, 
+                            attention-aware, and built for the modern learner.
+                        </p>
+                    </div>
+                    <div class="project-type fade-up">
+                        <div class="project-type-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="7.5,4.21 12,6.81 16.5,4.21"/>
+                                <polyline points="7.5,19.79 7.5,14.6 3,12"/>
+                                <polyline points="21,12 16.5,14.6 16.5,19.79"/>
+                                <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                        <h3>Learning Experience Design</h3>
+                        <p>
+                            End-to-end experience design that considers every touchpoint, 
+                            from first exposure through long-term retention.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differentiator Section -->
+        <section class="differentiator-section">
+            <div class="differentiator-content fade-up">
+                <h2>The Rare Combination</h2>
+                <div class="differentiator-text">
+                    <p>
+                        Most learning designers fall into one of two camps. Either they're creative 
+                        but light on learning science—producing experiences that look great but don't 
+                        drive results. Or they're rigorous but dull—technically sound but nobody 
+                        wants to engage with what they build.
+                    </p>
+                    <p>
+                        I bring both. A background in advertising taught me how to capture attention 
+                        and create emotional connection. Years in learning science taught me how to 
+                        make that engagement translate into actual capability building. The result 
+                        is work that people want to experience—and that delivers measurable outcomes.
+                    </p>
+                </div>
+                <div class="three-pillars">
+                    <div class="pillar">
+                        <div class="pillar-label">Pillar One</div>
+                        <div class="pillar-title">Creative & Engaging</div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-label">Pillar Two</div>
+                        <div class="pillar-title">Science-Backed</div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-label">Pillar Three</div>
+                        <div class="pillar-title">Results-Driven</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="work-cta-section">
+            <div class="work-cta-container fade-up">
+                <h2>Have a learning challenge?</h2>
+                <p>
+                    I'm always interested in discussing complex learning problems. 
+                    Whether you have a specific project in mind or just want to explore 
+                    possibilities, let's start a conversation.
+                </p>
+                <a href="contact.html" class="cta-button">
+                    Get in Touch
+                    <svg viewBox="0 0 24 24">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Shreyas Korad. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
