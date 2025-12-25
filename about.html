@@ -4,168 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Shreyas Korad</title>
-    <meta name="description" content="The story of how I went from advertising to gamification to learning strategy, and why that journey matters.">
+    <meta name="description" content="Learning strategist combining creative design, gamification, and learning science.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
     <style>
-        /* About Page Specific Styles */
-        .about-hero {
-            padding: calc(80px + var(--space-3xl)) var(--space-lg) var(--space-2xl);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-hero h1 {
-            font-family: var(--font-serif);
-            font-weight: 500;
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            margin-bottom: var(--space-md);
-            line-height: 1.2;
-        }
-
-        .about-hero .lead {
-            font-size: 1.25rem;
-            line-height: 1.7;
-            color: var(--color-text-secondary);
-        }
-
-        .about-narrative {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 0 var(--space-lg) var(--space-3xl);
-        }
-
-        .about-narrative p {
-            font-size: 1.1rem;
-            line-height: 1.85;
-            margin-bottom: var(--space-md);
-            color: var(--color-text-secondary);
-        }
-
-        .about-narrative p:first-of-type::first-letter {
-            font-family: var(--font-serif);
-            font-size: 3.5rem;
-            float: left;
-            line-height: 1;
-            padding-right: 0.75rem;
-            color: var(--color-text);
-            font-weight: 500;
-        }
-
-        .narrative-section {
-            margin-top: var(--space-2xl);
-            padding-top: var(--space-2xl);
-            border-top: 1px solid var(--color-border-light);
-        }
-
-        .narrative-section h2 {
-            font-family: var(--font-serif);
-            font-weight: 500;
-            font-size: 1.5rem;
-            margin-bottom: var(--space-md);
-            color: var(--color-text);
-        }
-
-        .highlight-block {
-            background: var(--color-bg-alt);
-            border-left: 3px solid var(--color-accent);
-            padding: var(--space-lg);
-            margin: var(--space-lg) 0;
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-        }
-
-        .highlight-block p {
-            font-size: 1.05rem;
-            margin-bottom: 0;
-            color: var(--color-text);
-            font-weight: 500;
-            line-height: 1.7;
-        }
-
-        .philosophy-grid {
-            display: grid;
-            gap: var(--space-md);
-            margin: var(--space-lg) 0;
-        }
-
-        .philosophy-item {
-            padding: var(--space-md);
-            background: var(--color-bg-alt);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-        }
-
-        .philosophy-item h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: var(--space-xs);
-            color: var(--color-text);
-        }
-
-        .philosophy-item p {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-            line-height: 1.6;
-        }
-
-        .about-cta {
-            margin-top: var(--space-2xl);
-            padding-top: var(--space-xl);
-            border-top: 1px solid var(--color-border-light);
-            text-align: center;
-        }
-
-        .about-cta p {
-            font-size: 1.15rem;
-            margin-bottom: var(--space-md);
-            color: var(--color-text);
-        }
-
-        .journey-visual {
+        .construction-page {
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 0;
-            margin: var(--space-xl) 0;
-            flex-wrap: wrap;
-        }
-
-        .journey-step {
+            padding: 2rem;
             text-align: center;
-            padding: var(--space-sm) var(--space-md);
         }
 
-        .journey-step-label {
-            font-size: 0.95rem;
-            font-weight: 600;
+        .construction-icon {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .construction-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--color-accent);
+            stroke-width: 1;
+            fill: none;
+        }
+
+        .construction-icon::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .construction-content h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 500;
             color: var(--color-text);
-            display: block;
-            margin-bottom: 4px;
+            margin-bottom: 1rem;
         }
 
-        .journey-step-sub {
-            font-size: 0.8rem;
-            color: var(--color-text-muted);
+        .construction-content p {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            max-width: 480px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
         }
 
-        .journey-arrow {
+        .construction-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             color: var(--color-accent);
-            font-size: 1.25rem;
-            padding: 0 var(--space-xs);
+            font-weight: 500;
+            text-decoration: none;
+            transition: gap 0.2s ease;
         }
 
-        @media (max-width: 600px) {
-            .journey-visual {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+        .construction-cta:hover {
+            gap: 0.75rem;
+        }
 
-            .journey-arrow {
-                transform: rotate(90deg);
-                padding: var(--space-xs) 0;
-            }
+        .construction-cta svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .dots {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--color-border);
+            border-radius: 50%;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
     </style>
 </head>
@@ -186,229 +123,34 @@
         </div>
     </nav>
 
-    <main>
-        <header class="about-hero">
-            <h1>I took the long way into learning design. It made all the difference.</h1>
-            <p class="lead">
-                Most instructional designers came up through education or HR. 
-                I came through advertising, gamification, and a obsession with 
-                why some experiences captivate us while others fade from memory.
-            </p>
-        </header>
-
-        <article class="about-narrative">
-            <p>
-                I started my career running a marketing and advertising company. 
-                The work was all about one thing: capturing attention. In a world 
-                of infinite distractions, how do you make someone stop, notice, 
-                and actually care about what you're saying?
-            </p>
-
-            <p>
-                That question led me to gamification. Not the shallow "slap some 
-                badges on it" variety, but the deep mechanics that make experiences 
-                genuinely compelling. I became fascinated by motivation: why we 
-                engage with some things obsessively and abandon others instantly. 
-                What makes a game feel impossible to put down? What makes learning 
-                feel like a chore?
-            </p>
-
-            <p>
-                The more I explored, the more I realized these weren't separate 
-                questions. The principles that make games engaging are the same 
-                principles that make learning stick. Challenge. Feedback. Progress. 
-                Meaning. The difference is in how, and whether, we apply them.
-            </p>
-
-            <div class="highlight-block">
-                <p>
-                    That realization became my bridge into learning and development, 
-                    where I've spent the last 7+ years applying everything I learned 
-                    about attention, engagement, and behavior change to the challenge 
-                    of helping people actually learn.
-                </p>
-            </div>
-
-            <div class="journey-visual">
-                <div class="journey-step">
-                    <span class="journey-step-label">Media & Advertising</span>
-                    <span class="journey-step-sub">Capturing attention</span>
-                </div>
-                <span class="journey-arrow">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </span>
-                <div class="journey-step">
-                    <span class="journey-step-label">Gamification</span>
-                    <span class="journey-step-sub">Sustaining motivation</span>
-                </div>
-                <span class="journey-arrow">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </span>
-                <div class="journey-step">
-                    <span class="journey-step-label">Learning Strategy</span>
-                    <span class="journey-step-sub">Driving outcomes</span>
-                </div>
-            </div>
-
-            <section class="narrative-section">
-                <h2>What I actually believe about learning</h2>
-
-                <p>
-                    Here's the uncomfortable truth about most corporate training: 
-                    it's designed for the organization, not the learner. It measures 
-                    completion, not competence. It prioritizes coverage over 
-                    understanding. And then everyone wonders why nothing changes.
-                </p>
-
-                <p>
-                    I believe in a different approach.
-                </p>
-
-                <div class="philosophy-grid">
-                    <div class="philosophy-item">
-                        <h3>Learning should feel good</h3>
-                        <p>
-                            Not in a "fun and games" way, but in the way that mastering 
-                            something difficult feels good. People learn what they engage 
-                            with. If your training feels like a chore, that's a design 
-                            problem, not a learner problem.
-                        </p>
-                    </div>
-                    <div class="philosophy-item">
-                        <h3>Engagement without outcomes is entertainment</h3>
-                        <p>
-                            Interactivity, gamification, storytelling: these are powerful 
-                            tools. But they're tools, not goals. If learners are engaged 
-                            but can't do anything new afterward, you've built a game, 
-                            not a learning experience.
-                        </p>
-                    </div>
-                    <div class="philosophy-item">
-                        <h3>The science matters</h3>
-                        <p>
-                            Spaced practice. Retrieval. Scenario-based learning. Cognitive 
-                            load management. We know more than ever about how people 
-                            actually learn. Most training ignores it entirely.
-                        </p>
-                    </div>
-                    <div class="philosophy-item">
-                        <h3>Design is problem-solving</h3>
-                        <p>
-                            Before asking "what should the course look like," I want to 
-                            know: What do people need to be able to do? What's stopping 
-                            them? Sometimes the answer isn't training at all.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="narrative-section">
-                <h2>What makes my perspective different</h2>
-
-                <p>
-                    Most learning designers fall into one of two camps. There are 
-                    the creative types, strong on storytelling, visuals, and 
-                    engagement, but less rigorous about learning science and 
-                    measurement. And there are the analytical types, meticulous 
-                    about objectives and assessments, but the experiences they 
-                    create feel clinical and forgettable.
-                </p>
-
-                <p>
-                    My unconventional path means I don't fit neatly into either camp.
-                </p>
-
-                <p>
-                    From advertising, I learned to think like a creative director: 
-                    How do you make something that cuts through the noise? That 
-                    people actually want to spend time with? That evokes emotion 
-                    and sticks in memory?
-                </p>
-
-                <p>
-                    From gamification, I learned to think like a game designer: 
-                    How do you create sustained motivation? How do you make 
-                    challenge feel rewarding instead of frustrating? How do you 
-                    design systems that people choose to engage with?
-                </p>
-
-                <p>
-                    From L&D, I learned to think like a strategist: How do you 
-                    connect learning to business outcomes? How do you measure what 
-                    matters? How do you design for behavior change, not just 
-                    knowledge transfer?
-                </p>
-
-                <div class="highlight-block">
-                    <p>
-                        I bring a creative director's eye for engagement, a game 
-                        designer's understanding of motivation, and an instructional 
-                        designer's commitment to outcomes. That combination is rare, and 
-                        it shapes everything I create.
-                    </p>
-                </div>
-            </section>
-
-            <section class="narrative-section">
-                <h2>What I'm most interested in</h2>
-
-                <p>
-                    I'm particularly drawn to problems everyone else finds boring. 
-                    Compliance training. Mandatory courses. The content that 
-                    employees click through as fast as possible just to check a box.
-                </p>
-
-                <p>
-                    There's something deeply satisfying about taking material that 
-                    everyone dreads and finding a way to make it genuinely useful, maybe 
-                    even engaging. If you can make ethics training feel relevant, 
-                    you can make anything work.
-                </p>
-
-                <p>
-                    I'm also fascinated by the gap between what we know and what we 
-                    do. Learning science has made enormous strides in understanding 
-                    how people actually learn, yet most training programs ignore 
-                    the research entirely. That gap is where I spend a lot of my 
-                    thinking.
-                </p>
-            </section>
-
-            <section class="narrative-section">
-                <h2>Beyond the work</h2>
-
-                <p>
-                    When I'm not designing learning experiences, I'm usually 
-                    exploring how other fields solve similar problems. Game design. 
-                    UX research. Behavioral economics. Narrative theory. The best 
-                    ideas often come from unexpected places, and the boundaries 
-                    between disciplines are more porous than we pretend.
-                </p>
-
-                <p>
-                    I also believe in learning by doing, which means I'm usually 
-                    tinkering with something. Testing a new approach. Breaking 
-                    things. Figuring out what works by trying it.
-                </p>
-            </section>
-
-            <div class="about-cta">
-                <p>Want to talk about learning design or just connect?</p>
-                <a href="contact.html" class="btn btn-primary">Say hello</a>
-            </div>
-        </article>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-inner">
-            <p class="footer-name">Shreyas Korad</p>
-            <a href="https://linkedin.com/in/shreyaskorad" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+    <main class="construction-page">
+        <div class="construction-icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+            </svg>
         </div>
-    </footer>
+        <div class="construction-content">
+            <h1>Building something good</h1>
+            <p>
+                This page is currently being crafted with care. 
+                Check back soon for the full story.
+            </p>
+            <a href="index.html" class="construction-cta">
+                Back to home
+                <svg viewBox="0 0 24 24">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                </svg>
+            </a>
+        </div>
+        <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
