@@ -7,7 +7,7 @@ These rules are mandatory for all blog posts on this site.
 - Write in a conversational, direct tone as if speaking to the reader.
 - Keep posts between 300 and 500 words.
 - Never use em dashes.
-- Do not use subheaders. Use short paragraphs instead.
+- Use short section headers (h2) only when needed. Keep them concise.
 - No blockquotes or callout boxes with a side line.
 
 **Humanizer guidance (must follow)**
