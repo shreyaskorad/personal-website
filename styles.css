@@ -957,9 +957,34 @@ section {
     margin: var(--space-xs) 0 var(--space-md);
 }
 
-.post-content blockquote {
-    margin: var(--space-md) 0;
-    padding: var(--space-sm) var(--space-md);
-    border-left: 3px solid var(--color-accent);
-    background: var(--color-bg-alt);
+
+
+/* Post page spacing */
+.post-header {
+    margin-bottom: var(--space-2xl);
+}
+
+.post-hero {
+    margin-bottom: var(--space-2xl);
+}
+
+.post-content p {
+    margin-bottom: var(--space-md);
+}
+
+.post-content ul {
+    margin-bottom: var(--space-lg);
+}
+
+
+.nav-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.nav-back:hover {
+    color: var(--color-text);
 }
