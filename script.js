@@ -27,6 +27,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Writing page interactions
+document.addEventListener('DOMContentLoaded', () => {
+    const writingPage = document.querySelector('.writing-page');
+    if (!writingPage) {
+        return;
+    }
+
+    const articles = Array.from(document.querySelectorAll('.article-item'));
+    const searchInput = document.querySelector('#article-search');
+    const filterButtons = Array.from(document.querySelectorAll('.filter-chip'));
+    const loadMoreButton = document.querySelector('#load-more');
+    const emptyState = document.querySelector('#no-results');
+    const increment = 4;
+    let visibleCount = increment;
+    let activeTag = 'all';
+
+    const getArticleText = (article, attr, selector) => {
+        const fromData = article.dataset[attr];
+        if (fromData) {
+            return fromData.toLowerCase();
+        }
+        const el = article.querySelector(selector);
+        return el ? el.textContent.toLowerCase() : '';
+    };
+
+    const getTags = (article) => {
+        const raw = article.dataset.tags || '';
+        return raw.split(',').map(tag => tag.trim().toLowerCase()).filter(Boolean);
+    };
+
+    const applyFilters = () => {
+        const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        const filtered = articles.filter(article => {
+            const tags = getTags(article);
+            const matchesTag = activeTag === 'all' || tags.includes(activeTag);
+            const title = getArticleText(article, 'title', 'h3');
+            const excerpt = getArticleText(article, 'excerpt', '.article-excerpt');
+            const matchesQuery = !query || title.includes(query) || excerpt.includes(query);
+            return matchesTag && matchesQuery;
+        });
+
+        articles.forEach(article => {
+            article.hidden = true;
+        });
+
+        filtered.forEach((article, index) => {
+            article.hidden = index >= visibleCount;
+        });
+
+        if (emptyState) {
+            emptyState.hidden = filtered.length > 0;
+        }
+
+        if (loadMoreButton) {
+            loadMoreButton.style.display = filtered.length > visibleCount ? 'inline-flex' : 'none';
+        }
+    };
+
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            visibleCount = increment;
+            applyFilters();
+        });
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            activeTag = button.dataset.tag || 'all';
+            visibleCount = increment;
+            applyFilters();
+        });
+    });
+
+    if (loadMoreButton) {
+        loadMoreButton.addEventListener('click', () => {
+            visibleCount += increment;
+            applyFilters();
+        });
+    }
+
+    applyFilters();
+});
+
 // Subtle scroll animations
 const observerOptions = {
     threshold: 0.1,
