@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 from datetime import datetime
 from html import escape
 from pathlib import Path
@@ -37,7 +38,53 @@ def word_count(text: str) -> int:
 
 def core_keywords(text: str) -> set[str]:
     tokens = re.findall(r"\b[a-zA-Z]{4,}\b", text.lower())
-    stop = {"that", "this", "with", "from", "your", "just", "into", "when", "what", "have", "will", "about", "than", "then", "they", "their", "them", "over", "under", "back", "make", "keep", "only", "also", "more", "most", "very", "some", "same", "still", "even", "been", "were", "does", "dont", "cant", "need", "want", "like", "good", "best", "work", "time", "post", "blog"}
+    stop = {
+        "that",
+        "this",
+        "with",
+        "from",
+        "your",
+        "just",
+        "into",
+        "when",
+        "what",
+        "have",
+        "will",
+        "about",
+        "than",
+        "then",
+        "they",
+        "their",
+        "them",
+        "over",
+        "under",
+        "back",
+        "make",
+        "keep",
+        "only",
+        "also",
+        "more",
+        "most",
+        "very",
+        "some",
+        "same",
+        "still",
+        "even",
+        "been",
+        "were",
+        "does",
+        "dont",
+        "cant",
+        "need",
+        "want",
+        "like",
+        "good",
+        "best",
+        "work",
+        "time",
+        "post",
+        "blog",
+    }
     return {t for t in tokens if t not in stop}
 
 
@@ -106,10 +153,31 @@ def validate_text(text: str) -> None:
         raise ValueError("Blockquote tag found in content")
 
 
+def run_git_command(args: list[str]) -> None:
+    result = subprocess.run(args, cwd=ROOT, capture_output=True, text=True)
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or result.stdout.strip())
+
+
+def commit_and_push(files: list[Path], message: str) -> None:
+    if not (ROOT / ".git").exists():
+        raise RuntimeError("Git repository not found at site root")
+
+    run_git_command(["git", "add", *[str(f) for f in files]])
+
+    diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT)
+    if diff.returncode == 0:
+        return
+
+    run_git_command(["git", "commit", "-m", message])
+    run_git_command(["git", "push"])
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True, help="Path to JSON payload")
     parser.add_argument("--force", action="store_true", help="Overwrite existing post")
+    parser.add_argument("--no-git", action="store_true", help="Skip git commit/push")
     args = parser.parse_args()
 
     payload = json.loads(Path(args.input).read_text())
@@ -203,6 +271,13 @@ def main() -> None:
 
     writing_html = WRITING_INDEX.read_text()
     WRITING_INDEX.write_text(insert_writing_entry(writing_html, entry))
+
+    if not args.no_git:
+        image_path = ASSETS_DIR / image_filename
+        files_to_commit = [post_path, WRITING_INDEX]
+        if image_path.exists():
+            files_to_commit.append(image_path)
+        commit_and_push(files_to_commit, f"Add blog post: {title}")
 
     print(f"Published {post_path}")
 
