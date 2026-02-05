@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    const articleList = document.querySelector('#article-list');
     const articles = Array.from(document.querySelectorAll('.article-card'));
     const searchInput = document.querySelector('#article-search');
     const filterButtons = Array.from(document.querySelectorAll('.filter-link'));
@@ -73,6 +74,15 @@ document.addEventListener('DOMContentLoaded', () => {
             emptyState.hidden = visibleCount > 0;
         }
     };
+
+    if (articleList) {
+        const sorted = [...articles].sort((a, b) => {
+            const aDate = a.dataset.date ? new Date(a.dataset.date).getTime() : 0;
+            const bDate = b.dataset.date ? new Date(b.dataset.date).getTime() : 0;
+            return bDate - aDate;
+        });
+        sorted.forEach(article => articleList.appendChild(article));
+    }
 
     if (searchInput) {
         searchInput.addEventListener('input', applyFilters);
