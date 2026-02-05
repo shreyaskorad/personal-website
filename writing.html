@@ -37,127 +37,62 @@
             </p>
         </header>
 
-        <section class="article-list">
-            <div class="article-controls">
+        <section class="article-section">
+            <div class="article-toolbar">
+                <nav class="article-filters" aria-label="Filter articles">
+                    <button class="filter-link active" data-tag="all" type="button">All</button>
+                    <button class="filter-link" data-tag="strategy" type="button">Strategy</button>
+                    <button class="filter-link" data-tag="ai" type="button">AI</button>
+                    <button class="filter-link" data-tag="leadership" type="button">Leadership</button>
+                </nav>
                 <div class="article-search">
-                    <label for="article-search" class="sr-only">Search articles</label>
-                    <input id="article-search" type="search" placeholder="Search articles" autocomplete="off">
-                </div>
-                <div class="article-filters" role="group" aria-label="Filter by topic">
-                    <button class="filter-chip active" data-tag="all" type="button">All</button>
-                    <button class="filter-chip" data-tag="strategy" type="button">Strategy</button>
-                    <button class="filter-chip" data-tag="ai" type="button">AI</button>
-                    <button class="filter-chip" data-tag="systems" type="button">Systems</button>
-                    <button class="filter-chip" data-tag="leadership" type="button">Leadership</button>
-                    <button class="filter-chip" data-tag="publishing" type="button">Publishing</button>
+                    <label for="article-search" class="sr-only">Search</label>
+                    <input id="article-search" type="search" placeholder="Search…" autocomplete="off">
                 </div>
             </div>
 
-            <div class="article-grid" id="article-grid">
-                <article class="article-item featured" data-tags="strategy,systems" data-title="Publishing Without the WordPress Headache" data-excerpt="A reflection on publishing without WordPress, automating the boring parts, and choosing what to do with the time we save.">
-                    <p class="article-label">Featured</p>
+            <div class="article-list" id="article-list">
+                <article class="article-card" data-tags="strategy,systems" data-title="Publishing Without the WordPress Headache" data-excerpt="A reflection on publishing without WordPress, automating the boring parts, and choosing what to do with the time we save.">
+                    <span class="article-date">February 2026</span>
                     <h3><a href="posts/publishing-without-wordpress.html">Publishing Without the WordPress Headache</a></h3>
-                    <p class="article-meta">Shreyas Korad · February 2026 · 6 min read</p>
-                    <p class="article-excerpt">
-                        A reflection on publishing without WordPress, automating the boring parts, and choosing what to do with the time we save.
-                    </p>
-                    <div class="article-tags">
-                        <span class="tag">Strategy</span>
-                        <span class="tag">Systems</span>
-                    </div>
+                    <p>A reflection on publishing without WordPress, automating the boring parts, and choosing what to do with the time we save.</p>
+                    <span class="article-read-time">6 min read</span>
                 </article>
 
-                <article class="article-item" data-tags="ai,leadership" data-title="The Human Edge" data-excerpt="Why human context windows still matter, even as AI gets faster and cheaper with smaller prompts.">
+                <article class="article-card" data-tags="ai,leadership" data-title="The Human Edge" data-excerpt="Why human context windows still matter, even as AI gets faster and cheaper with smaller prompts.">
+                    <span class="article-date">February 2026</span>
                     <h3><a href="posts/the-human-edge.html">The Human Edge</a></h3>
-                    <p class="article-meta">Shreyas Korad · February 2026 · 5 min read</p>
-                    <p class="article-excerpt">
-                        Why human context windows still matter, even as AI gets faster and cheaper with smaller prompts.
-                    </p>
-                    <div class="article-tags">
-                        <span class="tag">AI</span>
-                        <span class="tag">Leadership</span>
-                    </div>
+                    <p>Why human context windows still matter, even as AI gets faster and cheaper with smaller prompts.</p>
+                    <span class="article-read-time">5 min read</span>
                 </article>
 
-                <article class="article-item" data-tags="strategy,ai" data-title="Skills in L&D" data-excerpt="We're attracted to skills systems without understanding maintenance. The focus should be embedding skills in AI systems first.">
+                <article class="article-card" data-tags="strategy,ai" data-title="Skills in L&D" data-excerpt="We're attracted to skills systems without understanding maintenance. The focus should be embedding skills in AI systems first.">
+                    <span class="article-date">February 2026</span>
                     <h3><a href="posts/skills-in-ld.html">Skills in L&amp;D</a></h3>
-                    <p class="article-meta">Shreyas Korad · February 2026 · 4 min read</p>
-                    <p class="article-excerpt">
-                        We're attracted to skills systems without understanding maintenance. The focus should be embedding skills in AI systems first.
-                    </p>
-                    <div class="article-tags">
-                        <span class="tag">Strategy</span>
-                        <span class="tag">AI</span>
-                    </div>
+                    <p>We're attracted to skills systems without understanding maintenance. The focus should be embedding skills in AI systems first.</p>
+                    <span class="article-read-time">4 min read</span>
                 </article>
 
-                <article class="article-item" data-tags="leadership,systems" data-title="The Crazy Ride" data-excerpt="L&D needs to prove relevance to a transforming business. This requires change on three levels, not just one.">
+                <article class="article-card" data-tags="leadership,strategy" data-title="The Crazy Ride" data-excerpt="L&D needs to prove relevance to a transforming business. This requires change on three levels, not just one.">
+                    <span class="article-date">February 2026</span>
                     <h3><a href="posts/the-crazy-ride.html">The Crazy Ride</a></h3>
-                    <p class="article-meta">Shreyas Korad · February 2026 · 4 min read</p>
-                    <p class="article-excerpt">
-                        L&amp;D needs to prove relevance to a transforming business. This requires change on three levels, not just one.
-                    </p>
-                    <div class="article-tags">
-                        <span class="tag">Leadership</span>
-                        <span class="tag">Systems</span>
-                    </div>
+                    <p>L&amp;D needs to prove relevance to a transforming business. This requires change on three levels, not just one.</p>
+                    <span class="article-read-time">4 min read</span>
                 </article>
             </div>
 
-            <p class="empty-state" id="no-results" hidden>No articles match your search. Try a different keyword or filter.</p>
-
-            <div class="article-actions">
-                <button class="btn btn-ghost" id="load-more" type="button">Load more</button>
-            </div>
-
-            <!--
-            ================================
-            ON-SITE POST TEMPLATE
-            Use for posts in /posts/*.html
-
-            <article class="article-item">
-                <h3><a href="posts/your-post-slug.html">Post Title Here</a></h3>
-                <p class="article-meta">Shreyas Korad  |  Month Year</p>
-                <p class="article-excerpt">
-                    A brief 1-2 sentence description of what this article covers.
-                </p>
-            </article>
-            ================================
-            -->
-
-
-            <!--
-            =============================================
-            HOW TO ADD ARTICLES:
-
-            Copy and paste this template for each article:
-
-            <article class="article-item">
-                <h3><a href="URL_TO_ARTICLE" target="_blank" rel="noopener">Article Title Here</a></h3>
-                <p class="article-meta">Publication Name  |  Month Year</p>
-                <p class="article-excerpt">
-                    A brief 1-2 sentence description of what this article covers.
-                </p>
-            </article>
-            =============================================
-            -->
-
-
+            <p class="no-results" id="no-results" hidden>No articles found.</p>
         </section>
 
-        <section class="subscribe">
-            <div class="subscribe-card">
-                <div>
-                    <p class="section-label">Stay in the loop</p>
-                    <h2>Get the latest writing in your inbox</h2>
-                    <p class="subscribe-text">A short note whenever I publish something new. No spam, just the useful stuff.</p>
-                </div>
-                <form class="subscribe-form" action="#" method="post">
-                    <label for="subscribe-email" class="sr-only">Email address</label>
-                    <input id="subscribe-email" type="email" name="email" placeholder="you@example.com" required>
-                    <button class="btn btn-primary" type="submit">Subscribe</button>
-                </form>
-            </div>
+        <section class="subscribe-section">
+            <p class="section-label">Newsletter</p>
+            <h2>Get new posts in your inbox</h2>
+            <p class="subscribe-desc">Occasional updates when I publish something new. No spam.</p>
+            <form class="subscribe-form" action="#" method="post">
+                <label for="subscribe-email" class="sr-only">Email address</label>
+                <input id="subscribe-email" type="email" name="email" placeholder="you@example.com" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+            </form>
         </section>
     </main>
 

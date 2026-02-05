@@ -34,13 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const articles = Array.from(document.querySelectorAll('.article-item'));
+    const articles = Array.from(document.querySelectorAll('.article-card'));
     const searchInput = document.querySelector('#article-search');
-    const filterButtons = Array.from(document.querySelectorAll('.filter-chip'));
-    const loadMoreButton = document.querySelector('#load-more');
+    const filterButtons = Array.from(document.querySelectorAll('.filter-link'));
     const emptyState = document.querySelector('#no-results');
-    const increment = 4;
-    let visibleCount = increment;
     let activeTag = 'all';
 
     const getArticleText = (article, attr, selector) => {
@@ -59,37 +56,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const applyFilters = () => {
         const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
-        const filtered = articles.filter(article => {
+        let visibleCount = 0;
+        
+        articles.forEach(article => {
             const tags = getTags(article);
             const matchesTag = activeTag === 'all' || tags.includes(activeTag);
             const title = getArticleText(article, 'title', 'h3');
-            const excerpt = getArticleText(article, 'excerpt', '.article-excerpt');
+            const excerpt = getArticleText(article, 'excerpt', 'p');
             const matchesQuery = !query || title.includes(query) || excerpt.includes(query);
-            return matchesTag && matchesQuery;
-        });
-
-        articles.forEach(article => {
-            article.hidden = true;
-        });
-
-        filtered.forEach((article, index) => {
-            article.hidden = index >= visibleCount;
+            const show = matchesTag && matchesQuery;
+            article.hidden = !show;
+            if (show) visibleCount++;
         });
 
         if (emptyState) {
-            emptyState.hidden = filtered.length > 0;
-        }
-
-        if (loadMoreButton) {
-            loadMoreButton.style.display = filtered.length > visibleCount ? 'inline-flex' : 'none';
+            emptyState.hidden = visibleCount > 0;
         }
     };
 
     if (searchInput) {
-        searchInput.addEventListener('input', () => {
-            visibleCount = increment;
-            applyFilters();
-        });
+        searchInput.addEventListener('input', applyFilters);
     }
 
     filterButtons.forEach(button => {
@@ -97,17 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             activeTag = button.dataset.tag || 'all';
-            visibleCount = increment;
             applyFilters();
         });
     });
-
-    if (loadMoreButton) {
-        loadMoreButton.addEventListener('click', () => {
-            visibleCount += increment;
-            applyFilters();
-        });
-    }
 
     applyFilters();
 });
@@ -130,7 +108,7 @@ const observer = new IntersectionObserver((entries) => {
 // Apply to animatable elements after DOM loads
 document.addEventListener('DOMContentLoaded', () => {
     const animatables = document.querySelectorAll(
-        '.value-card, .service-item, .diagram-item, .case-study, .article-item, .fade-up, .philosophy-card, .approach-step, .project-type'
+        '.value-card, .service-item, .diagram-item, .case-study, .article-card, .fade-up, .philosophy-card, .approach-step, .project-type'
     );
     
     animatables.forEach((el, index) => {
