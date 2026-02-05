@@ -157,16 +157,24 @@ def run_git_command(args: list[str]) -> None:
         raise RuntimeError(result.stderr.strip() or result.stdout.strip())
 
 
-def git_status_dirty() -> bool:
-    result = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, capture_output=True, text=True)
-    return result.returncode == 0 and bool(result.stdout.strip())
+def has_unstaged_changes() -> bool:
+    result = subprocess.run(["git", "diff", "--quiet"], cwd=ROOT)
+    if result.returncode != 0:
+        return True
+    untracked = subprocess.run(
+        ["git", "ls-files", "--others", "--exclude-standard"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    return bool(untracked.stdout.strip())
 
 
-def stash_changes() -> bool:
-    if not git_status_dirty():
+def stash_changes_keep_index() -> bool:
+    if not has_unstaged_changes():
         return False
     result = subprocess.run(
-        ["git", "stash", "push", "-u", "-m", "openclaw-auto-stash"],
+        ["git", "stash", "push", "-u", "-k", "-m", "openclaw-auto-stash"],
         cwd=ROOT,
         capture_output=True,
         text=True,
@@ -182,11 +190,11 @@ def commit_and_push(files: list[Path], message: str) -> None:
     if not (ROOT / ".git").exists():
         raise RuntimeError("Git repository not found at site root")
 
-    did_stash = stash_changes()
+    run_git_command(["git", "add", *[str(f) for f in files]])
+
+    did_stash = stash_changes_keep_index()
 
     try:
-        run_git_command(["git", "add", *[str(f) for f in files]])
-
         diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT)
         if diff.returncode == 0:
             return
