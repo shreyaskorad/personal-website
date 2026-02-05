@@ -96,6 +96,13 @@ def month_year(date_str: str) -> str:
         return date_str
 
 
+def iso_date(date_str: str) -> str:
+    try:
+        return datetime.strptime(date_str, "%B %d, %Y").strftime("%Y-%m-%d")
+    except ValueError:
+        return ""
+
+
 def ensure_default_image() -> None:
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
     if DEFAULT_IMAGE.exists():
@@ -151,10 +158,10 @@ def replace_article_section(template: str, article_html: str) -> str:
 
 
 def insert_writing_entry(html: str, entry: str) -> str:
-    marker = "<section class=\"article-list\">"
+    marker = "<div class=\"article-list\" id=\"article-list\">"
     if marker not in html:
         raise ValueError("writing.html missing article list section")
-    return html.replace(marker, marker + "\n\n" + entry, 1)
+    return html.replace(marker, marker + "\n" + entry, 1)
 
 
 def validate_text(text: str) -> None:
@@ -320,14 +327,14 @@ def main() -> None:
         raise FileExistsError(f"Post already exists: {post_path}")
     post_path.write_text(html)
 
+    tag_list = ",".join([t.lower() for t in tags]) if tags else "writing"
     entry = (
-        "            <article class=\"article-item\">\n"
-        f"                <h3><a href=\"posts/{slug}.html\">{escape(title)}</a></h3>\n"
-        f"                <p class=\"article-meta\">Shreyas Korad  |  {month_year(date_str)}</p>\n"
-        "                <p class=\"article-excerpt\">\n"
-        f"                    {escape(excerpt)}\n"
-        "                </p>\n"
-        "            </article>\n"
+        f"                <article class=\"article-card\" data-tags=\"{escape(tag_list)}\" data-date=\"{iso_date(date_str)}\" data-title=\"{escape(title)}\" data-excerpt=\"{escape(excerpt)}\">\n"
+        f"                    <span class=\"article-date\">{month_year(date_str)}</span>\n"
+        f"                    <h3><a href=\"posts/{slug}.html\">{escape(title)}</a></h3>\n"
+        f"                    <p>{escape(excerpt)}</p>\n"
+        f"                    <span class=\"article-read-time\">{read_time} min read</span>\n"
+        "                </article>\n"
     )
 
     writing_html = WRITING_INDEX.read_text()
