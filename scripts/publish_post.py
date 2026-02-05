@@ -18,6 +18,7 @@ TEMPLATE_PATH = POSTS_DIR / "_template.html"
 WRITING_INDEX = ROOT / "writing.html"
 DEFAULT_IMAGE = ASSETS_DIR / "default.jpg"
 FALLBACK_IMAGE = ASSETS_DIR / "publishing-without-wordpress.jpg"
+MIN_IMAGE_BYTES = 10_000
 
 
 def slugify(text: str) -> str:
@@ -108,6 +109,18 @@ def download_image(url: str, filename: str) -> Path:
     target = ASSETS_DIR / filename
     urlretrieve(url, target)
     return target
+
+
+def build_unsplash_url(title: str, lead: str, tags: list[str]) -> str:
+    keywords = list(core_keywords(lead or title))
+    if tags:
+        keywords.extend([t.lower() for t in tags])
+    cleaned = []
+    for word in keywords:
+        if word not in cleaned:
+            cleaned.append(word)
+    query = ",".join(cleaned[:4]) or "learning,work"
+    return f"https://images.unsplash.com/featured/?{query}"
 
 
 def build_article_html(sections: list[dict], bullets: list[str], closing: str) -> str:
@@ -264,10 +277,20 @@ def main() -> None:
             ext = Path(urlparse(image_url).path).suffix or ".jpg"
             image_filename = f"{slug}{ext}"
         else:
-            image_filename = "default.jpg"
+            image_filename = f"{slug}.jpg"
+
+    if not image_url:
+        image_url = build_unsplash_url(title, lead, tags)
+        image_credit = image_credit or "Photo by Unsplash."
+        image_alt = image_alt or title
 
     if image_url:
-        download_image(image_url, image_filename)
+        downloaded = download_image(image_url, image_filename)
+        if downloaded.stat().st_size < MIN_IMAGE_BYTES:
+            downloaded.unlink(missing_ok=True)
+            ensure_default_image()
+            image_filename = "default.jpg"
+            image_credit = image_credit or ""
     else:
         ensure_default_image()
 
