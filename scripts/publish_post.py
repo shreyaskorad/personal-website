@@ -113,8 +113,6 @@ def download_image(url: str, filename: str) -> Path:
 def build_article_html(sections: list[dict], bullets: list[str], closing: str) -> str:
     lines = ["        <article class=\"post-content\">"]
     for section in sections:
-        heading = escape(section["heading"])
-        lines.append(f"            <h2>{heading}</h2>")
         for paragraph in section.get("paragraphs", []):
             lines.append(f"            <p>{escape(paragraph)}</p>")
     if bullets:
