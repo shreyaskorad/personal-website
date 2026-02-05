@@ -891,7 +891,7 @@ section {
 .post {
     max-width: var(--container-narrow);
     margin: 0 auto;
-    padding: 0 var(--space-lg) var(--space-3xl);
+    padding: calc(var(--space-3xl) + 48px) var(--space-lg) var(--space-3xl);
 }
 
 .post-header {
