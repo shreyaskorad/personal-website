@@ -4,110 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Shreyas Korad</title>
-    <meta name="description" content="Learning strategist combining creative design, gamification, and learning science.">
+    <meta name="description" content="Learning strategist based in Pune, India. I design digital learning experiences that are engaging, memorable, and impactful for learners and for business.">
+    <meta property="og:title" content="About | Shreyas Korad">
+    <meta property="og:description" content="Learning strategist who combines gamification, learning science, and AI to shape new-age corporate learning.">
+    <meta property="og:image" content="https://shreyaskorad.in/images/shreyas.jpg">
+    <meta property="og:url" content="https://shreyaskorad.in/about.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-    <style>
-        .construction-page {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .construction-icon {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .construction-icon svg {
-            width: 100%;
-            height: 100%;
-            stroke: var(--color-accent);
-            stroke-width: 1;
-            fill: none;
-        }
-
-        .construction-icon::before {
-            content: '';
-            position: absolute;
-            inset: -20px;
-            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
-            border-radius: 50%;
-            z-index: -1;
-            opacity: 0.5;
-        }
-
-        .construction-content h1 {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 500;
-            color: var(--color-text);
-            margin-bottom: 1rem;
-        }
-
-        .construction-content p {
-            font-size: 1.1rem;
-            color: var(--color-text-secondary);
-            max-width: 480px;
-            margin: 0 auto 2rem;
-            line-height: 1.7;
-        }
-
-        .construction-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--color-accent);
-            font-weight: 500;
-            text-decoration: none;
-            transition: gap 0.2s ease;
-        }
-
-        .construction-cta:hover {
-            gap: 0.75rem;
-        }
-
-        .construction-cta svg {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .dots {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 3rem;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            background: var(--color-border);
-            border-radius: 50%;
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-
-        .dot:nth-child(2) { animation-delay: 0.2s; }
-        .dot:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EN3EGM23DD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EN3EGM23DD');
+    </script>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">Shreyas Korad</a>
@@ -124,34 +41,122 @@
         </div>
     </nav>
 
-    <main class="construction-page">
-        <div class="construction-icon">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5"/>
-                <path d="M2 12l10 5 10-5"/>
-            </svg>
-        </div>
-        <div class="construction-content">
-            <h1>Building something good</h1>
-            <p>
-                This page is currently being crafted with care. 
-                Check back soon for the full story.
-            </p>
-            <a href="index.html" class="construction-cta">
-                Back to home
-                <svg viewBox="0 0 24 24">
-                    <line x1="5" y1="12" x2="19" y2="12"/>
-                    <polyline points="12 5 19 12 12 19"/>
-                </svg>
-            </a>
-        </div>
-        <div class="dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
+    <main>
+        <!-- Hero -->
+        <section class="about-hero">
+            <div class="about-hero-inner">
+                <div class="about-hero-photo">
+                    <img src="images/shreyas.jpg" alt="Shreyas Korad" width="497" height="600" loading="eager">
+                </div>
+                <div class="about-hero-text">
+                    <p class="section-label">About</p>
+                    <h1>Advertising to gamification to <br><span class="hero-title-accent">learning design</span>.</h1>
+                    <p class="about-lead">
+                        Started in advertising, got pulled into gamification, and found my way to designing learning that actually sticks. Now I help organisations figure out the right approach before a single slide gets designed.
+                    </p>
+                    <div class="about-meta">
+                        <span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Pune, India
+                        </span>
+                        <span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                            Upside Learning
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey -->
+        <section class="about-section">
+            <div class="about-section-inner">
+                <p class="section-label">The journey</p>
+                <div class="about-timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-marker"></span>
+                        <div>
+                            <h3>Media & Advertising</h3>
+                            <p>Graduated in media, specialised in advertising.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-marker"></span>
+                        <div>
+                            <h3>Gamification</h3>
+                            <p>Got fascinated by how game mechanics shape behaviour. That became the bridge to learning design.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-marker"></span>
+                        <div>
+                            <h3>Upside Learning <span class="timeline-year">2019 - present</span></h3>
+                            <p>Consultant to solutions to pre-sales. Now across consulting and innovation.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-marker"></span>
+                        <div>
+                            <h3>Today</h3>
+                            <p>Concept, prototype, wireframe. Plus experiments in AI, data, and new tech for L&D.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beliefs -->
+        <section class="about-section about-section-alt">
+            <div class="about-section-inner">
+                <p class="section-label">What I believe</p>
+                <h2>Learning is not about the curriculum.</h2>
+                <div class="belief-cards">
+                    <div class="belief-card">
+                        <h3>Solve for the task, not the syllabus</h3>
+                        <p>What do people need to do better at work? Start there.</p>
+                    </div>
+                    <div class="belief-card">
+                        <h3>Design for behaviour change</h3>
+                        <p>If people don't change what they do, the training didn't work.</p>
+                    </div>
+                    <div class="belief-card">
+                        <h3>Let data tell the story</h3>
+                        <p>Completion rates aren't impact. Tie learning back to the business problem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outside work -->
+        <section class="about-section">
+            <div class="about-section-inner">
+                <p class="section-label">Off the clock</p>
+                <p class="about-offclock">Books (fiction + non-fiction), sci-fi series, video games every week to keep the creative instincts sharp, and all the AI tools I can get my hands on.</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="about-cta-section">
+            <div class="about-section-inner">
+                <h2>Say hi.</h2>
+                <p>
+                    If something here sparked a thought, just reach out. No agenda needed.
+                </p>
+                <div class="about-cta-links">
+                    <a href="contact.html" class="btn btn-primary">Get in touch</a>
+                    <a href="writing.html" class="btn btn-ghost">Read my writing</a>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-name">Shreyas Korad</p>
+            <a href="https://www.linkedin.com/in/shreyas-korad-65a3353b/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
