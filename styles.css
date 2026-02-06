@@ -1129,6 +1129,16 @@ section {
     max-width: 540px;
 }
 
+.about-lead a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.about-lead a:hover {
+    color: var(--color-accent-hover);
+}
+
 .about-meta {
     display: flex;
     flex-wrap: wrap;
@@ -1194,6 +1204,72 @@ section {
 
 .about-prose a:hover {
     color: var(--color-accent-hover);
+}
+
+/* Timeline */
+.about-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.about-timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--color-border);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    padding: var(--space-sm) 0;
+    position: relative;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: calc(-2rem + 1px);
+    top: calc(var(--space-sm) + 6px);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 2px solid var(--color-accent);
+    flex-shrink: 0;
+}
+
+.timeline-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.2rem;
+}
+
+.timeline-year {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+
+.timeline-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+/* Off the clock */
+.about-offclock {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    max-width: var(--container-narrow);
 }
 
 /* Belief cards */
