@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing | Shreyas Korad</title>
     <meta name="description" content="Articles and insights on learning design, gamification, and L&D strategy.">
+    <meta property="og:title" content="Writing | Shreyas Korad">
+    <meta property="og:description" content="Articles and insights on learning design, gamification, and L&D strategy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shreyaskorad.in/writing.html">
+    <meta property="og:image" content="https://shreyaskorad.in/assets/images/blog/default.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,8 +46,9 @@
             <div class="article-toolbar">
                 <nav class="article-filters" aria-label="Filter articles">
                     <button class="filter-link active" data-tag="all" type="button">All</button>
-                    <button class="filter-link" data-tag="strategy" type="button">Strategy</button>
                     <button class="filter-link" data-tag="ai" type="button">AI</button>
+                    <button class="filter-link" data-tag="strategy" type="button">Strategy</button>
+                    <button class="filter-link" data-tag="systems" type="button">Systems</button>
                     <button class="filter-link" data-tag="leadership" type="button">Leadership</button>
                 </nav>
                 <div class="article-search">
@@ -52,55 +58,60 @@
             </div>
 
             <div class="article-list" id="article-list">
-                <article class="article-card" data-tags="ai,technology,adoption" data-date="2026-02-06" data-title="AI Hype vs Adoption" data-excerpt="Everything around AI is overhyped for retention. But how much is actually getting adopted into daily workflows?">
-                    <span class="article-date">February 2026</span>
-                    <h3><a href="posts/ai-hype-vs-adoption.html">AI Hype vs Adoption</a></h3>
-                    <p>Everything around AI is overhyped for retention. But how much is actually getting adopted into daily workflows?</p>
-                    <span class="article-read-time">4 min read</span>
-                </article>
+                <a href="posts/ai-hype-vs-adoption.html" class="article-card" data-tags="ai,technology,adoption" data-date="2026-02-06" data-title="AI Hype vs Adoption" data-excerpt="Everything around AI is overhyped for retention. But how much is actually getting adopted into daily workflows?">
+                    <img class="article-thumb" src="assets/images/blog/ai-hype.jpg" alt="" loading="lazy">
+                    <div class="article-body">
+                        <span class="article-date">6 Feb 2026</span>
+                        <h3>AI Hype vs Adoption</h3>
+                        <p>Everything around AI is overhyped for retention. But how much is actually getting adopted into daily workflows?</p>
+                        <span class="article-read-time">4 min read</span>
+                    </div>
+                </a>
 
-                <article class="article-card" data-tags="ai,systems,thinking" data-date="2026-02-06" data-title="The Art vs Craft of Building with Code" data-excerpt="Tools make implementation easier, but they don't solve the harder problem of designing systems that actually work.">
-                    <span class="article-date">February 2026</span>
-                    <h3><a href="posts/art-craft.html">The Art vs Craft of Building with Code</a></h3>
-                    <p>Tools make implementation easier, but they don't solve the harder problem of designing systems that actually work.</p>
-                    <span class="article-read-time">3 min read</span>
-                </article>
+                <a href="posts/art-craft.html" class="article-card" data-tags="ai,systems,thinking" data-date="2026-02-06" data-title="The Art vs Craft of Building with Code" data-excerpt="Tools make implementation easier, but they don't solve the harder problem of designing systems that actually work.">
+                    <img class="article-thumb" src="assets/images/blog/art-craft.jpg" alt="" loading="lazy">
+                    <div class="article-body">
+                        <span class="article-date">6 Feb 2026</span>
+                        <h3>The Art vs Craft of Building with Code</h3>
+                        <p>Tools make implementation easier, but they don't solve the harder problem of designing systems that actually work.</p>
+                        <span class="article-read-time">3 min read</span>
+                    </div>
+                </a>
 
-                <article class="article-card" data-tags="strategy,systems" data-date="2026-02-05" data-title="Publishing Without the WordPress Headache" data-excerpt="I keep coming back to a simple question: can I get my ideas onto my website without the WordPress circus? Plugins, logins, image hunts, and endless formatting?">
-                    <span class="article-date">February 2026</span>
-                    <h3><a href="posts/publishing-without-wordpress.html">Publishing Without the WordPress Headache</a></h3>
-                    <p>I keep coming back to a simple question: can I get my ideas onto my website without the WordPress circus? Plugins, logins, image hunts, and endless formatting?</p>
-                    <span class="article-read-time">2 min read</span>
-                </article>
+                <a href="posts/publishing-without-wordpress.html" class="article-card" data-tags="strategy,systems" data-date="2026-02-05" data-title="Publishing Without the WordPress Headache" data-excerpt="I keep coming back to a simple question: can I get my ideas onto my website without the WordPress circus?">
+                    <img class="article-thumb" src="assets/images/blog/publishing-without-wordpress.jpg" alt="" loading="lazy">
+                    <div class="article-body">
+                        <span class="article-date">5 Feb 2026</span>
+                        <h3>Publishing Without the WordPress Headache</h3>
+                        <p>I keep coming back to a simple question: can I get my ideas onto my website without the WordPress circus?</p>
+                        <span class="article-read-time">2 min read</span>
+                    </div>
+                </a>
 
-                <article class="article-card" data-tags="ai,leadership" data-date="2026-02-05" data-title="The Human Edge" data-excerpt="Why human context windows still matter, even as AI gets faster and cheaper with smaller prompts.">
-                    <span class="article-date">February 2026</span>
-                    <h3><a href="posts/the-human-edge.html">The Human Edge</a></h3>
-                    <p>Why human context windows still matter, even as AI gets faster and cheaper with smaller prompts.</p>
-                    <span class="article-read-time">5 min read</span>
-                </article>
+                <a href="posts/the-human-edge.html" class="article-card" data-tags="ai,leadership" data-date="2026-02-05" data-title="The Human Edge" data-excerpt="Why human context windows still matter, even as AI gets faster and cheaper with smaller prompts.">
+                    <img class="article-thumb" src="assets/images/blog/human-edge.jpg" alt="" loading="lazy">
+                    <div class="article-body">
+                        <span class="article-date">5 Feb 2026</span>
+                        <h3>The Human Edge</h3>
+                        <p>Why human context windows still matter, even as AI gets faster and cheaper with smaller prompts.</p>
+                        <span class="article-read-time">5 min read</span>
+                    </div>
+                </a>
 
-                <article class="article-card" data-tags="strategy,ai" data-date="2026-02-05" data-title="Skills in L&D" data-excerpt="We're attracted to skills systems without understanding maintenance. The focus should be embedding skills in AI systems first.">
-                    <span class="article-date">February 2026</span>
-                    <h3><a href="posts/skills-in-ld.html">Skills in L&amp;D</a></h3>
-                    <p>We're attracted to skills systems without understanding maintenance. The focus should be embedding skills in AI systems first.</p>
-                    <span class="article-read-time">4 min read</span>
-                </article>
+                <a href="posts/skills-in-ld.html" class="article-card" data-tags="strategy,ai" data-date="2026-02-05" data-title="Skills in L&D" data-excerpt="We're attracted to skills systems without understanding maintenance. The focus should be embedding skills in AI systems first.">
+                    <img class="article-thumb" src="assets/images/blog/skills-ld.jpg" alt="" loading="lazy">
+                    <div class="article-body">
+                        <span class="article-date">5 Feb 2026</span>
+                        <h3>Skills in L&amp;D</h3>
+                        <p>We're attracted to skills systems without understanding maintenance. The focus should be embedding skills in AI systems first.</p>
+                        <span class="article-read-time">4 min read</span>
+                    </div>
+                </a>
             </div>
 
             <p class="no-results" id="no-results" hidden>No articles found.</p>
         </section>
 
-        <section class="subscribe-section">
-            <p class="section-label">Newsletter</p>
-            <h2>Get new posts in your inbox</h2>
-            <p class="subscribe-desc">Occasional updates when I publish something new. No spam.</p>
-            <form class="subscribe-form" action="#" method="post">
-                <label for="subscribe-email" class="sr-only">Email address</label>
-                <input id="subscribe-email" type="email" name="email" placeholder="you@example.com" required>
-                <button class="btn btn-primary" type="submit">Subscribe</button>
-            </form>
-        </section>
     </main>
 
     <footer class="footer">
