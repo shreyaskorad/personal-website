@@ -1081,6 +1081,222 @@ section {
 }
 
 /* Contact page */
+
+/* ==========================================
+   ABOUT PAGE
+   ========================================== */
+
+.about-hero {
+    padding: calc(80px + var(--space-xl)) 0 var(--space-xl);
+}
+
+.about-hero-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.about-hero-photo {
+    position: relative;
+}
+
+.about-hero-photo img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.about-hero-photo::after {
+    content: '';
+    position: absolute;
+    inset: 12px -12px -12px 12px;
+    border: 2px solid var(--color-accent-light);
+    border-radius: var(--radius-lg);
+    z-index: -1;
+}
+
+.about-hero-text h1 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.25;
+    margin-bottom: var(--space-md);
+}
+
+.about-lead {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.about-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.about-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.about-meta svg {
+    flex-shrink: 0;
+}
+
+/* About sections */
+.about-section {
+    padding: var(--space-2xl) 0;
+}
+
+.about-section-alt {
+    background: var(--color-bg-alt);
+    border-top: 1px solid var(--color-border-light);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.about-section-inner {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.about-section-inner h2 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    margin-bottom: var(--space-md);
+}
+
+.about-prose p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.about-prose p:last-child {
+    margin-bottom: 0;
+}
+
+.about-prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--transition-fast);
+}
+
+.about-prose a:hover {
+    color: var(--color-accent-hover);
+}
+
+/* Belief cards */
+.belief-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+}
+
+.belief-card {
+    padding: var(--space-md);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-base);
+}
+
+.belief-card:hover {
+    border-color: var(--color-text-muted);
+}
+
+.belief-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+}
+
+.belief-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+/* About CTA */
+.about-cta-section {
+    padding: var(--space-2xl) 0 var(--space-3xl);
+    text-align: center;
+}
+
+.about-cta-section h2 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: var(--space-sm);
+}
+
+.about-cta-section p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    max-width: 520px;
+    margin: 0 auto var(--space-lg);
+    line-height: 1.7;
+}
+
+.about-cta-links {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* About page responsive */
+@media (max-width: 1024px) {
+    .about-hero-inner {
+        grid-template-columns: 260px 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-hero-photo {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .about-meta {
+        justify-content: center;
+    }
+
+    .belief-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cta-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-cta-links .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* Contact page */
 .contact-hero {
     padding: 8rem 2rem 3rem;
     max-width: 680px;
