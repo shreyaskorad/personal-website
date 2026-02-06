@@ -194,3 +194,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Analytics events + consent banner
+document.addEventListener('DOMContentLoaded', () => {
+    const trackEvent = (name, params = {}) => {
+        if (typeof window.gtag !== 'function') {
+            return;
+        }
+        window.gtag('event', name, params);
+    };
+
+    const trackLinkClick = (selector, eventName, getParams) => {
+        document.querySelectorAll(selector).forEach((link) => {
+            link.addEventListener('click', () => {
+                const params = typeof getParams === 'function' ? getParams(link) : {};
+                trackEvent(eventName, params);
+            });
+        });
+    };
+
+    trackLinkClick('.btn', 'cta_click', (link) => ({
+        label: (link.textContent || '').trim(),
+        href: link.getAttribute('href') || ''
+    }));
+
+    trackLinkClick('.article-card', 'article_click', (link) => ({
+        title: link.dataset.title || (link.querySelector('h3')?.textContent || '').trim(),
+        href: link.getAttribute('href') || ''
+    }));
+
+    trackLinkClick('a[href^="mailto:"]', 'contact_mailto', (link) => ({
+        label: (link.textContent || '').trim(),
+        href: link.getAttribute('href') || ''
+    }));
+
+    trackLinkClick('a[href*="linkedin.com"]', 'outbound_link', (link) => ({
+        label: (link.textContent || '').trim(),
+        href: link.getAttribute('href') || ''
+    }));
+
+    const contactForm = document.querySelector('#contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', () => {
+            trackEvent('generate_lead', { source: 'contact_form' });
+        });
+    }
+
+    const consentKey = 'sk_consent_accepted';
+    if (!localStorage.getItem(consentKey)) {
+        const banner = document.createElement('div');
+        banner.className = 'consent-banner';
+        banner.innerHTML = `
+            <div class="consent-content">
+                <p>We use analytics to understand site usage. No cookies are stored.</p>
+                <button class="consent-accept" type="button">Okay</button>
+            </div>
+        `;
+        document.body.appendChild(banner);
+
+        const acceptButton = banner.querySelector('.consent-accept');
+        if (acceptButton) {
+            acceptButton.addEventListener('click', () => {
+                localStorage.setItem(consentKey, 'true');
+                banner.remove();
+            });
+        }
+    }
+});
