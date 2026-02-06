@@ -8,7 +8,7 @@ import subprocess
 from datetime import datetime
 from html import escape
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import quote_plus, urlparse
 from urllib.request import urlretrieve
 
 ROOT = Path("/Users/shreyas-clawd/Downloads/personal-website")
@@ -118,16 +118,31 @@ def download_image(url: str, filename: str) -> Path:
     return target
 
 
-def build_unsplash_url(title: str, lead: str, tags: list[str]) -> str:
-    keywords = list(core_keywords(lead or title))
-    if tags:
-        keywords.extend([t.lower() for t in tags])
-    cleaned = []
-    for word in keywords:
-        if word not in cleaned:
-            cleaned.append(word)
-    query = ",".join(cleaned[:4]) or "learning,work"
-    return f"https://images.unsplash.com/featured/?{query}"
+def build_unsplash_url(title: str, lead: str, tags: list[str], query_override: str | None = None) -> str:
+    tag_map = {
+        "ai": ["ai", "technology", "human"],
+        "strategy": ["strategy", "planning", "roadmap"],
+        "leadership": ["leadership", "team", "direction"],
+        "systems": ["systems", "workflow", "process"],
+        "writing": ["notebook", "writing", "desk"],
+        "productivity": ["productivity", "workspace", "focus"],
+        "learning": ["learning", "training", "notes"],
+        "ld": ["learning", "training", "workshop"],
+    }
+
+    if query_override:
+        query = query_override.strip()
+    else:
+        keywords = list(core_keywords(lead or title))
+        for tag in tags:
+            keywords.extend(tag_map.get(tag.lower(), [tag.lower()]))
+        cleaned: list[str] = []
+        for word in keywords:
+            if word not in cleaned and len(cleaned) < 5:
+                cleaned.append(word)
+        query = ",".join(cleaned) or "learning,workspace"
+
+    return f"https://images.unsplash.com/featured/?{quote_plus(query)}"
 
 
 def build_article_html(sections: list[dict], bullets: list[str], closing: str) -> str:
@@ -278,6 +293,7 @@ def main() -> None:
     image_filename = image.get("filename")
     image_alt = image.get("alt", "")
     image_credit = image.get("credit", "")
+    image_query = image.get("query", "")
 
     if not image_filename:
         if image_url:
@@ -287,7 +303,7 @@ def main() -> None:
             image_filename = f"{slug}.jpg"
 
     if not image_url:
-        image_url = build_unsplash_url(title, lead, tags)
+        image_url = build_unsplash_url(title, lead, tags, image_query)
         image_credit = image_credit or "Photo by Unsplash."
         image_alt = image_alt or title
 
