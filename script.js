@@ -55,6 +55,45 @@ document.addEventListener('DOMContentLoaded', () => {
         return raw.split(',').map(tag => tag.trim().toLowerCase()).filter(Boolean);
     };
 
+    const formatTag = (tag) => {
+        if (tag.toLowerCase() === 'ai') {
+            return 'AI';
+        }
+        return tag
+            .replace(/-/g, ' ')
+            .replace(/\b\w/g, (char) => char.toUpperCase());
+    };
+
+    const renderTags = () => {
+        articles.forEach((article) => {
+            const tags = getTags(article);
+            if (!tags.length) {
+                return;
+            }
+
+            const body = article.querySelector('.article-body') || article;
+            if (body.querySelector('.article-tags')) {
+                return;
+            }
+
+            const tagContainer = document.createElement('div');
+            tagContainer.className = 'article-tags';
+            tags.forEach((tag) => {
+                const chip = document.createElement('span');
+                chip.className = 'tag';
+                chip.textContent = formatTag(tag);
+                tagContainer.appendChild(chip);
+            });
+
+            const title = body.querySelector('h3');
+            if (title) {
+                title.insertAdjacentElement('afterend', tagContainer);
+            } else {
+                body.appendChild(tagContainer);
+            }
+        });
+    };
+
     const applyFilters = () => {
         const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
         let visibleCount = 0;
@@ -64,7 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const matchesTag = activeTag === 'all' || tags.includes(activeTag);
             const title = getArticleText(article, 'title', 'h3');
             const excerpt = getArticleText(article, 'excerpt', 'p');
-            const matchesQuery = !query || title.includes(query) || excerpt.includes(query);
+            const tagText = tags.join(' ');
+            const matchesQuery = !query || title.includes(query) || excerpt.includes(query) || tagText.includes(query);
             const show = matchesTag && matchesQuery;
             article.hidden = !show;
             if (show) visibleCount++;
@@ -83,6 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         sorted.forEach(article => articleList.appendChild(article));
     }
+
+    renderTags();
 
     if (searchInput) {
         searchInput.addEventListener('input', applyFilters);
