@@ -10,5 +10,5 @@ test('writing page lists all articles', async ({ page }) => {
   await page.waitForSelector('.article-card');
 
   const visibleArticles = await page.locator('.article-card:not([hidden])');
-  await expect(visibleArticles).toHaveCount(5);
+  await expect(visibleArticles).toHaveCount(6);
 });
