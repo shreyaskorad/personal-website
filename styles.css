@@ -1708,3 +1708,264 @@ section {
 .nav-back:hover {
     color: var(--color-text);
 }
+
+/* ========================
+   Work Page
+   ======================== */
+
+.work-hero {
+    padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.work-hero-inner {
+    max-width: 680px;
+}
+
+.work-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    font-weight: 500;
+    color: var(--color-text);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+}
+
+.work-hero-lead {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    max-width: 560px;
+}
+
+/* Testimonial */
+.work-testimonial-section {
+    padding: var(--space-xl) var(--space-lg);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.work-section-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.work-testimonial {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 12px;
+    padding: 2.5rem 2.5rem 2rem;
+    position: relative;
+}
+
+.work-testimonial p {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.work-testimonial footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.work-testimonial cite {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.work-testimonial cite strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.work-testimonial cite span {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+/* Showcase Section */
+.work-showcase-section {
+    padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.work-showcase-section h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.work-showcase-note {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.work-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.work-card {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem 1.75rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.work-card-coming {
+    opacity: 0.7;
+}
+
+.work-card-coming:hover {
+    opacity: 1;
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.work-card-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    color: var(--color-accent);
+}
+
+.work-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.work-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.work-card-status {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    background: #FEF3C7;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+}
+
+/* Writing bridge section */
+.work-writing-section {
+    padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.work-writing-section h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.work-writing-lead {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Published work */
+.work-published-section {
+    padding: var(--space-xl) var(--space-lg);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.work-published-section h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 1.25rem;
+}
+
+.work-published-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+}
+
+.work-published-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.35rem;
+}
+
+.work-published-meta {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* Work page responsive */
+@media (max-width: 768px) {
+    .work-showcase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-testimonial {
+        padding: 1.75rem 1.5rem 1.5rem;
+    }
+
+    .work-testimonial p {
+        font-size: 1.05rem;
+    }
+
+    .work-hero {
+        padding: var(--space-2xl) var(--space-md) var(--space-lg);
+    }
+
+    .work-testimonial-section,
+    .work-showcase-section,
+    .work-published-section,
+    .work-writing-section {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+}
