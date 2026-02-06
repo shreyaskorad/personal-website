@@ -83,19 +83,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="subject">What's this about?</label>
-                    <select id="subject" name="subject" required>
-                        <option value="" disabled selected>Pick a topic</option>
-                        <option value="Collaboration">Collaboration</option>
-                        <option value="Speaking">Speaking</option>
-                        <option value="Consulting">Consulting</option>
-                        <option value="Just saying hi">Just saying hi</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <span class="form-error" id="subject-error"></span>
-                </div>
-
-                <div class="form-group">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" placeholder="What's on your mind?" rows="6" required></textarea>
                     <span class="form-error" id="message-error"></span>
@@ -115,9 +102,6 @@
                 <p>Thanks for reaching out. I'll get back to you soon.</p>
             </div>
 
-            <div class="response-note">
-                <p>I typically reply within <strong>48 hours</strong>. For time-sensitive requests, email works best.</p>
-            </div>
         </section>
     </main>
 
@@ -138,7 +122,6 @@
             const rules = {
                 name:    { msg: 'Please enter your name.' },
                 email:   { msg: 'Please enter a valid email.', pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
-                subject: { msg: 'Please pick a topic.' },
                 message: { msg: 'Please write a message.' }
             };
 
@@ -189,10 +172,9 @@
                 // Build mailto link
                 var name    = form.querySelector('#name').value.trim();
                 var email   = form.querySelector('#email').value.trim();
-                var subject = form.querySelector('#subject').value;
                 var message = form.querySelector('#message').value.trim();
                 var body    = 'From: ' + name + ' (' + email + ')\n\n' + message;
-                var mailto  = 'mailto:shreyaskorad@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+                var mailto  = 'mailto:shreyaskorad@gmail.com?subject=' + encodeURIComponent('Message from ' + name) + '&body=' + encodeURIComponent(body);
 
                 window.location.href = mailto;
 
