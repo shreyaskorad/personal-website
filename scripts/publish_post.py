@@ -96,6 +96,14 @@ def month_year(date_str: str) -> str:
         return date_str
 
 
+def short_date(date_str: str) -> str:
+    try:
+        parsed = datetime.strptime(date_str, "%B %d, %Y")
+        return parsed.strftime("%d %b %Y").lstrip("0")
+    except ValueError:
+        return date_str
+
+
 def iso_date(date_str: str) -> str:
     try:
         return datetime.strptime(date_str, "%B %d, %Y").strftime("%Y-%m-%d")
@@ -225,6 +233,8 @@ def commit_and_push(files: list[Path], message: str) -> None:
     if not (ROOT / ".git").exists():
         raise RuntimeError("Git repository not found at site root")
 
+    run_git_command(["git", "pull", "--ff-only"])
+
     run_git_command(["git", "add", *[str(f) for f in files]])
 
     did_stash = stash_changes_keep_index()
@@ -345,12 +355,15 @@ def main() -> None:
 
     tag_list = ",".join([t.lower() for t in tags]) if tags else "writing"
     entry = (
-        f"                <article class=\"article-card\" data-tags=\"{escape(tag_list)}\" data-date=\"{iso_date(date_str)}\" data-title=\"{escape(title)}\" data-excerpt=\"{escape(excerpt)}\">\n"
-        f"                    <span class=\"article-date\">{month_year(date_str)}</span>\n"
-        f"                    <h3><a href=\"posts/{slug}.html\">{escape(title)}</a></h3>\n"
-        f"                    <p>{escape(excerpt)}</p>\n"
-        f"                    <span class=\"article-read-time\">{read_time} min read</span>\n"
-        "                </article>\n"
+        f"                <a href=\"posts/{slug}.html\" class=\"article-card\" data-tags=\"{escape(tag_list)}\" data-date=\"{iso_date(date_str)}\" data-title=\"{escape(title)}\" data-excerpt=\"{escape(excerpt)}\">\n"
+        f"                    <img class=\"article-thumb\" src=\"assets/images/blog/{escape(image_filename)}\" alt=\"\" loading=\"lazy\">\n"
+        "                    <div class=\"article-body\">\n"
+        f"                        <span class=\"article-date\">{short_date(date_str)}</span>\n"
+        f"                        <h3>{escape(title)}</h3>\n"
+        f"                        <p>{escape(excerpt)}</p>\n"
+        f"                        <span class=\"article-read-time\">{read_time} min read</span>\n"
+        "                    </div>\n"
+        "                </a>\n"
     )
 
     writing_html = WRITING_INDEX.read_text()
