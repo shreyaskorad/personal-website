@@ -4,260 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Shreyas Korad</title>
-    <meta name="description" content="Get in touch with Shreyas Korad to discuss your learning project.">
+    <meta name="description" content="Get in touch with Shreyas Korad to discuss learning design, collaboration, or just say hello.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-    <style>
-        /* Contact page styles */
-        .contact-hero {
-            padding: 8rem 2rem 4rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-hero h1 {
-            font-family: var(--font-serif);
-            font-size: clamp(2.25rem, 5vw, 3rem);
-            font-weight: 500;
-            color: var(--color-text);
-            margin-bottom: 1.25rem;
-            line-height: 1.2;
-        }
-
-        .contact-hero .lead {
-            font-size: 1.15rem;
-            color: var(--color-text-secondary);
-            line-height: 1.7;
-            max-width: 540px;
-        }
-
-        /* Contact section layout */
-        .contact-section {
-            padding: 0 2rem 5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-        }
-
-        /* Contact form */
-        .contact-form-wrapper h2 {
-            font-family: var(--font-sans);
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--color-text);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-group label {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--color-text);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            padding: 0.875rem 1rem;
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            background: var(--color-bg-alt);
-            color: var(--color-text);
-            transition: all 0.2s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--color-accent);
-            box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.1);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--color-text-muted);
-        }
-
-        .form-group textarea {
-            min-height: 160px;
-            resize: vertical;
-        }
-
-        .form-submit {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: var(--color-text);
-            color: var(--color-bg);
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
-            font-weight: 500;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            margin-top: 0.5rem;
-        }
-
-        .form-submit:hover {
-            background: var(--color-accent);
-            transform: translateY(-2px);
-        }
-
-        .form-submit svg {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
-        }
-
-        /* Direct contact options */
-        .contact-direct h2 {
-            font-family: var(--font-sans);
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--color-text);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.25rem;
-            background: var(--color-bg-alt);
-            border: 1px solid var(--color-border-light);
-            border-radius: 12px;
-            transition: all 0.25s ease;
-            text-decoration: none;
-        }
-
-        .contact-method:hover {
-            border-color: var(--color-accent);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-        }
-
-        .contact-method-icon {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-method-icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--color-accent);
-            stroke-width: 1.5;
-            fill: none;
-        }
-
-        .contact-method-content h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--color-text);
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-method-content p {
-            font-size: 0.9rem;
-            color: var(--color-text-secondary);
-            line-height: 1.5;
-        }
-
-        .contact-method-content span {
-            font-size: 0.85rem;
-            color: var(--color-accent);
-            font-weight: 500;
-        }
-
-        /* Response time note */
-        .response-note {
-            margin-top: 2rem;
-            padding: 1.25rem;
-            background: var(--color-bg-accent);
-            border-radius: 10px;
-            border-left: 3px solid var(--color-accent);
-        }
-
-        .response-note p {
-            font-size: 0.9rem;
-            color: var(--color-text-secondary);
-            line-height: 1.6;
-        }
-
-        .response-note strong {
-            color: var(--color-text);
-        }
-
-        /* Form success message */
-        .form-success {
-            display: none;
-            padding: 1.5rem;
-            background: #ECFDF5;
-            border: 1px solid #A7F3D0;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .form-success.visible {
-            display: block;
-        }
-
-        .form-success h3 {
-            font-size: 1.1rem;
-            color: #065F46;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-success p {
-            font-size: 0.9rem;
-            color: #047857;
-        }
-    </style>
 </head>
-<body>
+<body class="contact-page">
     <nav class="nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">Shreyas Korad</a>
@@ -275,82 +29,94 @@
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="contact-hero">
+        <header class="contact-hero">
             <h1>Let's connect</h1>
             <p class="lead">
-                I enjoy connecting with others in the L&D space. Whether you want to 
-                discuss ideas, share perspectives, or just say hello, I'd love to hear from you.
+                Whether you want to discuss ideas, explore a collaboration,
+                or just say hello, I'd love to hear from you.
             </p>
+        </header>
+
+        <section class="contact-methods-section">
+            <a href="mailto:shreyaskorad@gmail.com" class="contact-method-card">
+                <div class="contact-method-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <div class="contact-method-text">
+                    <h3>Email</h3>
+                    <p>shreyaskorad@gmail.com</p>
+                </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/shreyas-korad-65a3353b/" target="_blank" rel="noopener" class="contact-method-card">
+                <div class="contact-method-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                        <rect x="2" y="9" width="4" height="12"/>
+                        <circle cx="4" cy="4" r="2"/>
+                    </svg>
+                </div>
+                <div class="contact-method-text">
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me professionally</p>
+                </div>
+            </a>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form-wrapper">
-                    <h2>Send a message</h2>
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
-                        </div>
-                        <button type="submit" class="form-submit">
-                            Send Message
-                            <svg viewBox="0 0 24 24">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12 5 19 12 12 19"/>
-                            </svg>
-                        </button>
-                    </form>
-                    <div class="form-success" id="formSuccess">
-                        <h3>Message sent!</h3>
-                        <p>Thank you for reaching out. I'll get back to you soon.</p>
-                    </div>
+        <section class="contact-form-section">
+            <h2>Send a message</h2>
+
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                    <span class="form-error" id="name-error"></span>
                 </div>
 
-                <!-- Direct Contact -->
-                <div class="contact-direct">
-                    <h2>Or reach out directly</h2>
-                    <div class="contact-methods">
-                        <a href="mailto:shreyaskorad@gmail.com" class="contact-method">
-                            <div class="contact-method-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </div>
-                            <div class="contact-method-content">
-                                <h3>Email</h3>
-                                <p>shreyaskorad@gmail.com</p>
-                                <span>Drop me a note anytime</span>
-                            </div>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/shreyas-korad-65a3353b/" target="_blank" rel="noopener" class="contact-method">
-                            <div class="contact-method-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                                    <rect x="2" y="9" width="4" height="12"/>
-                                    <circle cx="4" cy="4" r="2"/>
-                                </svg>
-                            </div>
-                            <div class="contact-method-content">
-                                <h3>LinkedIn</h3>
-                                <p>Connect with me professionally</p>
-                                <span>For networking & updates</span>
-                            </div>
-                        </a>
-                    </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    <span class="form-error" id="email-error"></span>
                 </div>
+
+                <div class="form-group">
+                    <label for="subject">What's this about?</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Pick a topic</option>
+                        <option value="Collaboration">Collaboration</option>
+                        <option value="Speaking">Speaking</option>
+                        <option value="Consulting">Consulting</option>
+                        <option value="Just saying hi">Just saying hi</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span class="form-error" id="subject-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="What's on your mind?" rows="6" required></textarea>
+                    <span class="form-error" id="message-error"></span>
+                </div>
+
+                <button type="submit" class="form-submit">
+                    Send message
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </button>
+            </form>
+
+            <div class="form-success" id="formSuccess" hidden>
+                <h3>Message sent</h3>
+                <p>Thanks for reaching out. I'll get back to you soon.</p>
+            </div>
+
+            <div class="response-note">
+                <p>I typically reply within <strong>48 hours</strong>. For time-sensitive requests, email works best.</p>
             </div>
         </section>
     </main>
@@ -364,42 +130,77 @@
 
     <script src="script.js"></script>
     <script>
-        // Form handling (works with Formspree or similar services)
-        const form = document.getElementById('contactForm');
-        const formSuccess = document.getElementById('formSuccess');
+        (() => {
+            const form = document.getElementById('contactForm');
+            const success = document.getElementById('formSuccess');
+            if (!form) return;
 
-        form.addEventListener('submit', async (e) => {
-            // For demo purposes - show success message
-            // In production, you'd configure a real form service like Formspree
-            
-            // If using Formspree, remove this preventDefault and let the form submit normally
-            // Or handle with fetch for AJAX submission:
-            
-            /*
-            e.preventDefault();
-            
-            const formData = new FormData(form);
-            
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
+            const rules = {
+                name:    { msg: 'Please enter your name.' },
+                email:   { msg: 'Please enter a valid email.', pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
+                subject: { msg: 'Please pick a topic.' },
+                message: { msg: 'Please write a message.' }
+            };
+
+            function showError(id, msg) {
+                const input = form.querySelector('#' + id);
+                const span  = form.querySelector('#' + id + '-error');
+                if (input) input.classList.add('invalid');
+                if (span)  span.textContent = msg;
+            }
+
+            function clearError(id) {
+                const input = form.querySelector('#' + id);
+                const span  = form.querySelector('#' + id + '-error');
+                if (input) input.classList.remove('invalid');
+                if (span)  span.textContent = '';
+            }
+
+            // Clear errors on input
+            Object.keys(rules).forEach(function(id) {
+                var el = form.querySelector('#' + id);
+                if (el) {
+                    el.addEventListener('input', function() { clearError(id); });
+                    el.addEventListener('change', function() { clearError(id); });
+                }
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var valid = true;
+
+                Object.keys(rules).forEach(function(id) {
+                    var rule = rules[id];
+                    var el = form.querySelector('#' + id);
+                    var val = el ? el.value.trim() : '';
+                    clearError(id);
+
+                    if (!val) {
+                        showError(id, rule.msg);
+                        valid = false;
+                    } else if (rule.pattern && !rule.pattern.test(val)) {
+                        showError(id, rule.msg);
+                        valid = false;
                     }
                 });
-                
-                if (response.ok) {
-                    form.style.display = 'none';
-                    formSuccess.classList.add('visible');
-                } else {
-                    alert('Oops! There was a problem. Please try again.');
-                }
-            } catch (error) {
-                alert('Oops! There was a problem. Please try again.');
-            }
-            */
-        });
+
+                if (!valid) return;
+
+                // Build mailto link
+                var name    = form.querySelector('#name').value.trim();
+                var email   = form.querySelector('#email').value.trim();
+                var subject = form.querySelector('#subject').value;
+                var message = form.querySelector('#message').value.trim();
+                var body    = 'From: ' + name + ' (' + email + ')\n\n' + message;
+                var mailto  = 'mailto:shreyaskorad@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+                window.location.href = mailto;
+
+                // Show success state
+                form.hidden = true;
+                success.hidden = false;
+            });
+        })();
     </script>
 </body>
 </html>
