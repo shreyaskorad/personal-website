@@ -31,6 +31,60 @@
         var(--bg);
     }
 
+    [hidden] {
+      display: none !important;
+    }
+
+    .auth-gate {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .auth-card {
+      width: min(460px, 94vw);
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .auth-title {
+      margin: 0 0 6px;
+      font-size: 22px;
+      color: #0b335f;
+    }
+
+    .auth-subtitle {
+      margin: 0 0 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .auth-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .auth-input {
+      flex: 1;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 11px;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    .auth-error {
+      margin-top: 8px;
+      color: #b91c1c;
+      font-size: 12px;
+      min-height: 16px;
+    }
+
     .shell {
       width: min(1280px, 96vw);
       margin: 24px auto 48px;
@@ -264,7 +318,19 @@
   </style>
 </head>
 <body>
-  <div class="shell">
+  <div id="auth-gate" class="auth-gate">
+    <div class="auth-card">
+      <h1 class="auth-title">Ops Dashboard Locked</h1>
+      <p class="auth-subtitle">Enter password to open task queue and execution controls.</p>
+      <div class="auth-row">
+        <input id="auth-password" class="auth-input" type="password" autocomplete="current-password" placeholder="Password" />
+        <button id="auth-submit" class="btn btn-brand" type="button">Unlock</button>
+      </div>
+      <div id="auth-error" class="auth-error"></div>
+    </div>
+  </div>
+
+  <div class="shell" id="app-shell" hidden>
     <section class="hero">
       <h1>OpenClaw Control Dashboard</h1>
       <div class="meta" id="meta">Loading...</div>
@@ -311,10 +377,96 @@
   </div>
 
   <script>
+    const OPS_AUTH_SESSION_KEY = "ops_auth_ok_v1";
+    const OPS_PASSWORD_HASH = "7cb86c412f4806e50f4bafffe0445773b48575809c08a8494c1fcf3032c82e27";
     const COMMANDS_KEY = "ops_pending_control_commands_v1";
     const DEFAULT_WHATSAPP = "918766662719";
+    let dashboardBooted = false;
     let pendingCommands = [];
     let latestControls = {};
+
+    function authEls() {
+      return {
+        gate: document.getElementById("auth-gate"),
+        shell: document.getElementById("app-shell"),
+        input: document.getElementById("auth-password"),
+        submit: document.getElementById("auth-submit"),
+        error: document.getElementById("auth-error")
+      };
+    }
+
+    function setAuthError(message) {
+      const { error } = authEls();
+      if (error) error.textContent = message || "";
+    }
+
+    function showGate() {
+      const { gate, shell, input } = authEls();
+      if (gate) gate.hidden = false;
+      if (shell) shell.hidden = true;
+      if (input) {
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    function hideGate() {
+      const { gate, shell } = authEls();
+      if (gate) gate.hidden = true;
+      if (shell) shell.hidden = false;
+    }
+
+    async function sha256Hex(text) {
+      const bytes = new TextEncoder().encode(text);
+      const digest = await crypto.subtle.digest("SHA-256", bytes);
+      const arr = Array.from(new Uint8Array(digest));
+      return arr.map((b) => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    async function unlockWithPassword(rawPassword) {
+      const password = String(rawPassword || "").trim();
+      if (!password) {
+        setAuthError("Password required.");
+        return false;
+      }
+
+      const hash = await sha256Hex(password);
+      if (hash !== OPS_PASSWORD_HASH) {
+        setAuthError("Incorrect password.");
+        return false;
+      }
+
+      sessionStorage.setItem(OPS_AUTH_SESSION_KEY, OPS_PASSWORD_HASH);
+      setAuthError("");
+      hideGate();
+      initDashboard();
+      return true;
+    }
+
+    async function bootstrapAuth() {
+      const cached = sessionStorage.getItem(OPS_AUTH_SESSION_KEY);
+      if (cached === OPS_PASSWORD_HASH) {
+        hideGate();
+        initDashboard();
+        return;
+      }
+
+      showGate();
+      const { input, submit } = authEls();
+      if (submit) {
+        submit.addEventListener("click", async () => {
+          await unlockWithPassword(input ? input.value : "");
+        });
+      }
+      if (input) {
+        input.addEventListener("keydown", async (event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            await unlockWithPassword(input.value);
+          }
+        });
+      }
+    }
 
     const fmt = (iso) => {
       if (!iso) return "n/a";
@@ -512,61 +664,68 @@
     window.copyPendingBatch = copyPendingBatch;
     window.clearPendingCommands = clearPendingCommands;
 
-    loadPendingCommands();
-    renderControlPanel();
+    function initDashboard() {
+      if (dashboardBooted) return;
+      dashboardBooted = true;
 
-    fetch("./data.json", { cache: "no-store" })
-      .then((r) => r.json())
-      .then((data) => {
-        document.getElementById("meta").textContent =
-          `Updated: ${fmt(data.meta.updatedAt)} | fingerprint: ${data.meta.fingerprint} | source: ${data.meta.source}`;
+      loadPendingCommands();
+      renderControlPanel();
 
-        const s = data.summary || {};
-        document.getElementById("summary").innerHTML = [
-          ["total", s.totalTasks || 0],
-          ["active", s.active || 0],
-          ["queued", s.queued || 0],
-          ["completed", s.completed || 0],
-          ["blocked", s.blocked || 0],
-          ["status map", Object.keys(s.byStatus || {}).length]
-        ].map(([k, v]) => `<div class="metric"><div class="k">${k}</div><div class="v">${v}</div></div>`).join("");
+      fetch("./data.json", { cache: "no-store" })
+        .then((r) => r.json())
+        .then((data) => {
+          document.getElementById("meta").textContent =
+            `Updated: ${fmt(data.meta.updatedAt)} | fingerprint: ${data.meta.fingerprint} | source: ${data.meta.source}`;
 
-        document.getElementById("execution").innerHTML =
-          (data.execution || []).length
-            ? data.execution.map((t) => taskRow(t)).join("")
-            : empty("No active execution tasks right now.");
+          const s = data.summary || {};
+          document.getElementById("summary").innerHTML = [
+            ["total", s.totalTasks || 0],
+            ["active", s.active || 0],
+            ["queued", s.queued || 0],
+            ["completed", s.completed || 0],
+            ["blocked", s.blocked || 0],
+            ["status map", Object.keys(s.byStatus || {}).length]
+          ].map(([k, v]) => `<div class="metric"><div class="k">${k}</div><div class="v">${v}</div></div>`).join("");
 
-        document.getElementById("queue").innerHTML =
-          (data.queueTop || []).length
-            ? data.queueTop.map((t) => queueTaskRow(t)).join("")
-            : empty("Queue is empty.");
+          document.getElementById("execution").innerHTML =
+            (data.execution || []).length
+              ? data.execution.map((t) => taskRow(t)).join("")
+              : empty("No active execution tasks right now.");
 
-        document.getElementById("completed").innerHTML =
-          (data.completedRecent || []).length
-            ? data.completedRecent.map((t) => taskRow(t, true)).join("")
-            : empty("No completed tasks yet.");
+          document.getElementById("queue").innerHTML =
+            (data.queueTop || []).length
+              ? data.queueTop.map((t) => queueTaskRow(t)).join("")
+              : empty("Queue is empty.");
 
-        document.getElementById("observations").innerHTML =
-          (data.observations || []).length
-            ? data.observations.map(obsRow).join("")
-            : empty("No notable observations.");
+          document.getElementById("completed").innerHTML =
+            (data.completedRecent || []).length
+              ? data.completedRecent.map((t) => taskRow(t, true)).join("")
+              : empty("No completed tasks yet.");
 
-        document.getElementById("errors").innerHTML =
-          (data.errors || []).length
-            ? data.errors.map(errRow).join("")
-            : empty("No recent error signals.");
+          document.getElementById("observations").innerHTML =
+            (data.observations || []).length
+              ? data.observations.map(obsRow).join("")
+              : empty("No notable observations.");
 
-        document.getElementById("events").innerHTML =
-          (data.recentActivity || []).length
-            ? data.recentActivity.map(eventRow).join("")
-            : empty("No recent events.");
+          document.getElementById("errors").innerHTML =
+            (data.errors || []).length
+              ? data.errors.map(errRow).join("")
+              : empty("No recent error signals.");
 
-        latestControls = data.controls || {};
-        renderControlPanel();
-      })
-      .catch((err) => {
-        document.getElementById("meta").textContent = `Failed to load dashboard data: ${err.message}`;
-      });
+          document.getElementById("events").innerHTML =
+            (data.recentActivity || []).length
+              ? data.recentActivity.map(eventRow).join("")
+              : empty("No recent events.");
+
+          latestControls = data.controls || {};
+          renderControlPanel();
+        })
+        .catch((err) => {
+          document.getElementById("meta").textContent = `Failed to load dashboard data: ${err.message}`;
+        });
+    }
+
+    bootstrapAuth();
   </script>
 </body>
 </html>
