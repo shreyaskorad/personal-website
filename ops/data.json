@@ -1,39 +1,41 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T12:42:49.043Z",
-    "fingerprint": "e93a3361e287b92d",
+    "updatedAt": "2026-02-08T12:48:20.314Z",
+    "fingerprint": "1891b07ea2a51ec9",
     "source": "PersonalOS task + activity + OpenClaw error logs"
   },
   "summary": {
     "totalTasks": 7,
-    "queued": 3,
-    "active": 0,
+    "queued": 2,
+    "active": 1,
     "completed": 4,
     "blocked": 0,
     "byStatus": {
-      "queued": 3,
+      "in_progress": 1,
+      "queued": 2,
       "completed": 4
     }
   },
-  "execution": [],
-  "queueTop": [
+  "execution": [
     {
       "id": "task-20260201-001",
       "title": "Build comprehensive blog content strategy for shreyaskorad.in",
       "source": "legacy",
       "priority": "high",
-      "status": "queued",
+      "status": "in_progress",
       "sequence": 1,
       "createdAt": "2026-02-01T22:43:00.000Z",
-      "updatedAt": "2026-02-08T11:16:20.888Z",
+      "updatedAt": "2026-02-08T12:48:19.883Z",
       "completedAt": null,
-      "ageHours": 158.01,
+      "ageHours": 158.09,
       "deliverySummary": "",
       "notes": [
         "Migrated from legacy tasks.json format"
       ]
-    },
+    }
+  ],
+  "queueTop": [
     {
       "id": "task-1770539089672",
       "title": "DICTATION #61 Summary: I need to figure way out I lineup tasks",
@@ -44,7 +46,7 @@
       "createdAt": "2026-02-08T08:24:49.672Z",
       "updatedAt": "2026-02-08T11:16:20.888Z",
       "completedAt": null,
-      "ageHours": 4.32,
+      "ageHours": 4.4,
       "deliverySummary": "",
       "notes": []
     },
@@ -58,7 +60,7 @@
       "createdAt": "2026-02-08T08:24:49.674Z",
       "updatedAt": "2026-02-08T12:22:36.794Z",
       "completedAt": null,
-      "ageHours": 4.32,
+      "ageHours": 4.4,
       "deliverySummary": "",
       "notes": []
     }
@@ -74,7 +76,7 @@
       "createdAt": "2026-02-08T08:19:30.337Z",
       "updatedAt": "2026-02-08T11:00:43.284Z",
       "completedAt": "2026-02-08T11:00:43.284Z",
-      "ageHours": 4.4,
+      "ageHours": 4.48,
       "deliverySummary": "Published as /posts/the-object-without-attachment.html and indexed on writing.html",
       "notes": [
         "Delivery summary: Published as /posts/the-object-without-attachment.html and indexed on writing.html"
@@ -90,7 +92,7 @@
       "createdAt": "2026-02-08T08:19:30.336Z",
       "updatedAt": "2026-02-08T11:00:42.977Z",
       "completedAt": "2026-02-08T11:00:42.977Z",
-      "ageHours": 4.4,
+      "ageHours": 4.48,
       "deliverySummary": "Published as /posts/where-we-go-from-here.html and indexed on writing.html",
       "notes": [
         "Delivery summary: Published as /posts/where-we-go-from-here.html and indexed on writing.html"
@@ -106,7 +108,7 @@
       "createdAt": "2026-02-08T08:13:30.396Z",
       "updatedAt": "2026-02-08T08:33:51.381Z",
       "completedAt": "2026-02-08T08:19:30.833Z",
-      "ageHours": 4.5,
+      "ageHours": 4.58,
       "deliverySummary": "Implemented limit-aware sequencing policy, capture-source map, and intake-cycle script for continuous no-loss capture and serialized execution.",
       "notes": [
         "Delivery summary: Implemented limit-aware sequencing policy, capture-source map, and intake-cycle script for continuous no-loss capture and serialized execution."
@@ -122,7 +124,7 @@
       "createdAt": "2026-02-08T08:13:30.304Z",
       "updatedAt": "2026-02-08T08:33:51.380Z",
       "completedAt": "2026-02-08T08:18:53.686Z",
-      "ageHours": 4.5,
+      "ageHours": 4.58,
       "deliverySummary": "Checkpoints A/B/C completed: queue integrity, WIP=1 + review gate, approval + metrics + capture-source map implemented.",
       "notes": [
         "Plan file: .tasks/plans/task-1770538410304.md",
@@ -131,18 +133,6 @@
     }
   ],
   "observations": [
-    {
-      "level": "info",
-      "message": "No task is currently in execution; queue can be advanced by starting the next priority item."
-    },
-    {
-      "level": "warn",
-      "message": "1 queued tasks are older than 24h and may need re-prioritization."
-    },
-    {
-      "level": "warn",
-      "message": "3 high/critical tasks are waiting; sequencing pressure is increasing."
-    },
     {
       "level": "warn",
       "message": "Recent runtime errors detected (36 captured signals in logs)."
@@ -331,6 +321,18 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-08T12:48:19.885Z",
+      "type": "started",
+      "taskId": "task-20260201-001",
+      "message": "Task moved to in_progress"
+    },
+    {
+      "timestamp": "2026-02-08T12:48:19.885Z",
+      "type": "auto_advanced",
+      "taskId": "task-20260201-001",
+      "message": "Auto-started from queue head: task-20260201-001"
+    },
     {
       "timestamp": "2026-02-08T12:22:36.796Z",
       "type": "priority_changed",
