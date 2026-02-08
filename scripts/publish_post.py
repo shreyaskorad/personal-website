@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import subprocess
@@ -9,7 +10,7 @@ import sys
 from datetime import datetime
 from html import escape
 from pathlib import Path
-from urllib.parse import quote_plus, urlparse
+from urllib.parse import urlparse
 from urllib.request import urlretrieve
 
 ROOT = Path("/Users/shreyas-clawd/Downloads/personal-website")
@@ -19,8 +20,94 @@ TEMPLATE_PATH = POSTS_DIR / "_template.html"
 WRITING_INDEX = ROOT / "writing.html"
 DEFAULT_IMAGE = ASSETS_DIR / "default.jpg"
 FALLBACK_IMAGE = ASSETS_DIR / "publishing-without-wordpress.jpg"
-MIN_IMAGE_BYTES = 10_000
+MIN_IMAGE_BYTES = 80_000
 DATE_INPUT_FORMATS = ("%B %d, %Y", "%Y-%m-%d", "%d %b %Y")
+UNSPLASH_THEME_IDS = {
+    "base": [
+        "1461749280684-dccba630e2f6",
+        "1472214103451-9374bd1c798e",
+        "1504384308090-c894fdcc538d",
+        "1522075469751-3a6694fb2f61",
+        "1517248135467-4c7edcad34c4",
+    ],
+    "tech": [
+        "1498050108023-c5249f4df085",
+        "1484417894907-623942c8ee29",
+        "1497366811353-6870744d04b2",
+        "1518779578993-ec3579fee39f",
+        "1460925895917-afdab827c52f",
+    ],
+    "productivity": [
+        "1517248135467-4c7edcad34c4",
+        "1451187580459-43490279c0fa",
+        "1492724441997-5dc865305da7",
+        "1497366754035-f200968a6e72",
+        "1465101046530-73398c7f28ca",
+    ],
+    "leadership": [
+        "1465101046530-73398c7f28ca",
+        "1443890923422-7819ed4101c0",
+        "1519389950473-47ba0277781c",
+        "1501854140801-50d01698950b",
+        "1469474968028-56623f02e42e",
+    ],
+    "learning": [
+        "1494173853739-c21f58b16055",
+        "1487014679447-9f8336841d58",
+        "1517048676732-d65bc937f952",
+        "1496307042754-b4aa456c4a2d",
+        "1438761681033-6461ffad8d80",
+    ],
+    "business": [
+        "1496307042754-b4aa456c4a2d",
+        "1469474968028-56623f02e42e",
+        "1438761681033-6461ffad8d80",
+        "1443890923422-7819ed4101c0",
+        "1501854140801-50d01698950b",
+    ],
+    "abstract": [
+        "1460925895917-afdab827c52f",
+        "1501854140801-50d01698950b",
+        "1485217988980-11786ced9454",
+        "1499951360447-b19be8fe80f5",
+        "1517694712202-14dd9538aa97",
+    ],
+}
+UNSPLASH_KEYWORD_THEME = {
+    "ai": "tech",
+    "code": "tech",
+    "coding": "tech",
+    "developer": "tech",
+    "software": "tech",
+    "automation": "tech",
+    "tech": "tech",
+    "technology": "tech",
+    "workflow": "productivity",
+    "productivity": "productivity",
+    "writing": "productivity",
+    "publish": "productivity",
+    "wordpress": "productivity",
+    "content": "productivity",
+    "leadership": "leadership",
+    "team": "leadership",
+    "human": "leadership",
+    "collaboration": "leadership",
+    "learning": "learning",
+    "training": "learning",
+    "skills": "learning",
+    "education": "learning",
+    "ld": "learning",
+    "strategy": "business",
+    "business": "business",
+    "economy": "business",
+    "infrastructure": "business",
+    "startup": "business",
+    "future": "abstract",
+    "edge": "abstract",
+    "systems": "abstract",
+    "concept": "abstract",
+    "object": "abstract",
+}
 
 
 def parse_date(value: str | None) -> datetime | None:
@@ -106,6 +193,45 @@ def core_keywords(text: str) -> set[str]:
     return {t for t in tokens if t not in stop}
 
 
+def ordered_unique(values: list[str]) -> list[str]:
+    out: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        if value in seen:
+            continue
+        seen.add(value)
+        out.append(value)
+    return out
+
+
+def stable_index(seed: str, size: int) -> int:
+    if size <= 0:
+        return 0
+    digest = hashlib.sha256(seed.encode("utf-8")).hexdigest()
+    return int(digest, 16) % size
+
+
+def extract_unsplash_photo_id(url: str) -> str:
+    match = re.search(r"photo-([A-Za-z0-9_-]+)", url)
+    return match.group(1) if match else ""
+
+
+def unsplash_photo_url(photo_id: str) -> str:
+    return f"https://images.unsplash.com/photo-{photo_id}?auto=format&fit=crop&w=1400&h=900&fm=jpg&q=78"
+
+
+def infer_unsplash_themes(title: str, lead: str, tags: list[str], query_override: str | None) -> list[str]:
+    values = [tag.lower() for tag in tags if tag]
+    source = " ".join([query_override or "", title, lead]).lower()
+    values.extend(re.findall(r"\b[a-z0-9]+\b", source))
+    themes: list[str] = []
+    for value in values:
+        theme = UNSPLASH_KEYWORD_THEME.get(value)
+        if theme:
+            themes.append(theme)
+    return ordered_unique(themes)
+
+
 def month_year(date_str: str) -> str:
     parsed = parse_date(date_str)
     if parsed:
@@ -143,30 +269,16 @@ def download_image(url: str, filename: str) -> Path:
 
 
 def build_unsplash_url(title: str, lead: str, tags: list[str], query_override: str | None = None) -> str:
-    tag_map = {
-        "ai": ["ai", "technology", "human"],
-        "strategy": ["strategy", "planning", "roadmap"],
-        "leadership": ["leadership", "team", "direction"],
-        "systems": ["systems", "workflow", "process"],
-        "writing": ["notebook", "writing", "desk"],
-        "productivity": ["productivity", "workspace", "focus"],
-        "learning": ["learning", "training", "notes"],
-        "ld": ["learning", "training", "workshop"],
-    }
+    themes = infer_unsplash_themes(title, lead, tags, query_override)
+    candidate_ids: list[str] = []
+    for theme in themes:
+        candidate_ids.extend(UNSPLASH_THEME_IDS.get(theme, []))
+    candidate_ids.extend(UNSPLASH_THEME_IDS["base"])
+    candidate_ids = ordered_unique(candidate_ids)
 
-    if query_override:
-        query = query_override.strip()
-    else:
-        keywords = list(core_keywords(lead or title))
-        for tag in tags:
-            keywords.extend(tag_map.get(tag.lower(), [tag.lower()]))
-        cleaned: list[str] = []
-        for word in keywords:
-            if word not in cleaned and len(cleaned) < 5:
-                cleaned.append(word)
-        query = ",".join(cleaned) or "learning,workspace"
-
-    return f"https://images.unsplash.com/featured/?{quote_plus(query)}"
+    seed = "|".join([title.strip().lower(), lead.strip().lower(), ",".join(sorted([t.lower() for t in tags])), (query_override or "").strip().lower()])
+    selected_id = candidate_ids[stable_index(seed, len(candidate_ids))]
+    return unsplash_photo_url(selected_id)
 
 
 def build_article_html(sections: list[dict], bullets: list[str], closing: str) -> str:
@@ -348,18 +460,23 @@ def main() -> None:
     image_alt = image.get("alt", "")
     image_credit = image.get("credit", "")
     image_query = image.get("query", "")
+    lock_image_url = bool(image.get("lock_image_url", False))
+
+    # Default behavior favors fresh, non-repetitive Unsplash picks unless explicitly locked.
+    if (not lock_image_url) or (not image_url):
+        image_url = build_unsplash_url(title, lead, tags, image_query)
+        image_credit = image_credit or "Photo by Unsplash."
+        image_alt = image_alt or title
 
     if not image_filename:
-        if image_url:
+        unsplash_id = extract_unsplash_photo_id(image_url or "")
+        if unsplash_id:
+            image_filename = f"{slug}-{unsplash_id[:10]}.jpg"
+        elif image_url:
             ext = Path(urlparse(image_url).path).suffix or ".jpg"
             image_filename = f"{slug}{ext}"
         else:
             image_filename = f"{slug}.jpg"
-
-    if not image_url:
-        image_url = build_unsplash_url(title, lead, tags, image_query)
-        image_credit = image_credit or "Photo by Unsplash."
-        image_alt = image_alt or title
 
     if image_url:
         try:
