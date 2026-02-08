@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T17:46:13Z",
+    "updatedAt": "2026-02-08T17:46:37Z",
     "source": "Dictation Router + OpenClaw supervisor",
-    "fingerprint": "5b8c3d7d6f187d90"
+    "fingerprint": "67bdb4283ab144c9"
   },
   "summary": {
     "totalTasks": 31,
@@ -29,7 +29,7 @@
       "createdAt": "2026-02-08T17:28:16Z",
       "updatedAt": "2026-02-08T17:28:16Z",
       "completedAt": null,
-      "ageHours": 0.3,
+      "ageHours": 0.31,
       "deliverySummary": "User must approve/reject automation smoke check task; Once approved, start automation ping task; Ping all automated systems and report status",
       "deliverableUrl": null,
       "notes": [
@@ -46,7 +46,7 @@
       "createdAt": "2026-02-07T17:18:21Z",
       "updatedAt": "2026-02-07T17:18:21Z",
       "completedAt": null,
-      "ageHours": 24.46,
+      "ageHours": 24.47,
       "deliverySummary": "['SSH into macmini to verify authorized_keys contains matching public key', 'Check SSH daemon config (/etc/ssh/sshd_config) on macmini for PermitRootLogin, PubkeyAuthentication settings', 'Compare local public key (~/.ssh/id_ed25519.pub) with key in remote authorized_keys', 'Test with passphrase-less key if using Passphrase phrase', 'Verify SSH retry script (/Users/shreyas-clawd/Documents/PersonalOS/memory/tools/ssh-retry.sh) works once authentication is fixed']",
       "deliverableUrl": null,
       "notes": [
@@ -63,7 +63,7 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-08T17:30:55Z",
-      "updatedAt": "2026-02-08T17:46:13Z",
+      "updatedAt": "2026-02-08T17:46:37Z",
       "completedAt": null,
       "ageHours": 0.26,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
@@ -76,13 +76,13 @@
     },
     {
       "id": "inbox-108",
-      "title": "todo full automation smoke check create task and",
+      "title": "todo full automation smoke check create task and sync ops",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 2,
       "createdAt": "2026-02-08T17:29:07Z",
-      "updatedAt": "2026-02-08T17:46:13Z",
+      "updatedAt": "2026-02-08T17:46:37Z",
       "completedAt": null,
       "ageHours": 0.29,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
@@ -101,7 +101,7 @@
       "status": "queued",
       "sequence": 3,
       "createdAt": "2026-02-07T16:37:27Z",
-      "updatedAt": "2026-02-08T17:46:13Z",
+      "updatedAt": "2026-02-08T17:46:37Z",
       "completedAt": null,
       "ageHours": 25.15,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
@@ -124,7 +124,7 @@
       "createdAt": "2026-02-08T17:28:16Z",
       "updatedAt": "2026-02-08T17:28:16Z",
       "completedAt": null,
-      "ageHours": 0.3,
+      "ageHours": 0.31,
       "deliverySummary": "User must approve/reject automation smoke check task; Once approved, start automation ping task; Ping all automated systems and report status",
       "deliverableUrl": null,
       "notes": [
@@ -141,7 +141,7 @@
       "createdAt": "2026-02-07T17:18:21Z",
       "updatedAt": "2026-02-07T17:18:21Z",
       "completedAt": null,
-      "ageHours": 24.46,
+      "ageHours": 24.47,
       "deliverySummary": "['SSH into macmini to verify authorized_keys contains matching public key', 'Check SSH daemon config (/etc/ssh/sshd_config) on macmini for PermitRootLogin, PubkeyAuthentication settings', 'Compare local public key (~/.ssh/id_ed25519.pub) with key in remote authorized_keys', 'Test with passphrase-less key if using Passphrase phrase', 'Verify SSH retry script (/Users/shreyas-clawd/Documents/PersonalOS/memory/tools/ssh-retry.sh) works once authentication is fixed']",
       "deliverableUrl": null,
       "notes": [
@@ -150,15 +150,15 @@
     },
     {
       "id": "inbox-needs-input-87",
-      "title": "Provide recipient: Build trusting going from there. I'm not doing...",
+      "title": "Provide recipient: Build trusting going from there. I'm not doing anything on, I'm in the next m...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "needs_input",
       "sequence": 0,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:46:13Z",
+      "updatedAt": "2026-02-08T17:46:37Z",
       "completedAt": null,
-      "ageHours": 0.84,
+      "ageHours": 0.85,
       "deliverySummary": "Email task is queued but has no recipient. Provide email address or close task.",
       "deliverableUrl": null,
       "notes": [
@@ -175,9 +175,9 @@
       "status": "needs_input",
       "sequence": 0,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:46:13Z",
+      "updatedAt": "2026-02-08T17:46:37Z",
       "completedAt": null,
-      "ageHours": 0.84,
+      "ageHours": 0.85,
       "deliverySummary": "Email task is queued but has no recipient. Provide email address or close task.",
       "deliverableUrl": null,
       "notes": [
@@ -217,7 +217,7 @@
       "createdAt": "2026-02-08T17:31:49Z",
       "updatedAt": "2026-02-08T17:31:49Z",
       "completedAt": "2026-02-08T17:31:49Z",
-      "ageHours": 0.24,
+      "ageHours": 0.25,
       "deliverySummary": "Design AI-powered weekly planning workflow based on findings; Identify specific tools/APIs needed for calendar and task integration; Create automation pipeline with cron triggers for weekly execution; Implement tracking and logging for weekly plan metrics",
       "deliverableUrl": null,
       "notes": []
@@ -232,7 +232,7 @@
       "createdAt": "2026-02-08T17:31:49Z",
       "updatedAt": "2026-02-08T17:31:49Z",
       "completedAt": "2026-02-08T17:31:49Z",
-      "ageHours": 0.24,
+      "ageHours": 0.25,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=bc6ae4ab-3005-4b25-bbbc-2af7b55629c8): Research complete: current weekly review ritual uses 3-step process. AI automation strategies include AI-powered scheduling, calendar syncing, auto-summaries, task prioritization, and integration with task management systems. Recommended approach: integrate AI assistant with calendar API for weekly planning automation.",
       "deliverableUrl": null,
       "notes": [
@@ -251,7 +251,7 @@
       "createdAt": "2026-02-08T17:30:42Z",
       "updatedAt": "2026-02-08T17:30:42Z",
       "completedAt": "2026-02-08T17:30:42Z",
-      "ageHours": 0.26,
+      "ageHours": 0.27,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -270,7 +270,7 @@
       "createdAt": "2026-02-08T17:28:16Z",
       "updatedAt": "2026-02-08T17:28:16Z",
       "completedAt": "2026-02-08T17:28:16Z",
-      "ageHours": 0.3,
+      "ageHours": 0.31,
       "deliverySummary": "Delegated via OpenClaw SSH (status=in_progress, task_id=16eeeb62-96c5-4414-9962-4d4d6d0ff403): Automation ping task captured (task-1770571672063-ffx8) but blocked by review gate on task-1770571474871-yf4c",
       "deliverableUrl": null,
       "notes": [
@@ -342,7 +342,7 @@
       "createdAt": "2026-02-08T17:27:21Z",
       "updatedAt": "2026-02-08T17:27:21Z",
       "completedAt": "2026-02-08T17:27:21Z",
-      "ageHours": 0.31,
+      "ageHours": 0.32,
       "deliverySummary": "Execute task-1770571474871-yf4c for automation smoke check verification; Execute task-1770571477922-xuio for task system sync; Await user approval to start next task from queue",
       "deliverableUrl": null,
       "notes": []
@@ -357,7 +357,7 @@
       "createdAt": "2026-02-08T17:27:21Z",
       "updatedAt": "2026-02-08T17:27:21Z",
       "completedAt": "2026-02-08T17:27:21Z",
-      "ageHours": 0.31,
+      "ageHours": 0.32,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=8e72c766-0835-4eee-ab2c-5e11a6dba43b): Created and synced two tasks: task-1770571474871-yf4c for automation smoke check and task-1770571477922-xuio for sync ops. Integrity check passed, both tasks queued and verified.",
       "deliverableUrl": null,
       "notes": [
@@ -376,7 +376,7 @@
       "createdAt": "2026-02-08T17:26:58Z",
       "updatedAt": "2026-02-08T17:26:58Z",
       "completedAt": "2026-02-08T17:26:58Z",
-      "ageHours": 0.32,
+      "ageHours": 0.33,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -414,7 +414,7 @@
       "createdAt": "2026-02-08T17:25:07Z",
       "updatedAt": "2026-02-08T17:25:07Z",
       "completedAt": "2026-02-08T17:25:07Z",
-      "ageHours": 0.35,
+      "ageHours": 0.36,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -452,7 +452,7 @@
       "createdAt": "2026-02-08T17:23:16Z",
       "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": "2026-02-08T17:23:16Z",
-      "ageHours": 0.38,
+      "ageHours": 0.39,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -471,7 +471,7 @@
       "createdAt": "2026-02-07T17:54:07Z",
       "updatedAt": "2026-02-07T17:54:07Z",
       "completedAt": "2026-02-07T17:54:07Z",
-      "ageHours": 23.87,
+      "ageHours": 23.88,
       "deliverySummary": "Fix macmini SSH key: ssh into macmini and verify authorized_keys contains correct public key; Attach Chrome tab for browser automation or run browser in openclaw profile; Configure macmini SSH for passwordless key authentication; Test SSH retry script once authentication resolved; Verify WhatsApp gateway reconnection if disconnected",
       "deliverableUrl": null,
       "notes": [
@@ -488,7 +488,7 @@
       "createdAt": "2026-02-07T17:54:07Z",
       "updatedAt": "2026-02-07T17:54:07Z",
       "completedAt": "2026-02-07T17:54:07Z",
-      "ageHours": 23.87,
+      "ageHours": 23.88,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=01b74114-cdbd-425b-b986-7ebfde2a2bfe): OpenClaw connectivity verified: gateway Ollama memory cron WhatsApp browser nodes SSH script all operational except SSH to macmini pending authentication fix",
       "deliverableUrl": null,
       "notes": [
@@ -507,7 +507,7 @@
       "createdAt": "2026-02-07T17:18:21Z",
       "updatedAt": "2026-02-07T17:18:21Z",
       "completedAt": "2026-02-07T17:18:21Z",
-      "ageHours": 24.46,
+      "ageHours": 24.47,
       "deliverySummary": "Delegated via OpenClaw SSH (status=blocked, task_id=5520d68b-c7e2-45bb-9591-acd91d2c5a54): SSH pipeline configuration verified but authentication failed. Issue identified: local authorized_keys file contained incorrect keys (macbook/macair access keys) for macmini remote access. SSH authentication returns 'Permission denied (publickey,password,keyboard-interactive)' after removing conflicting file.",
       "deliverableUrl": null,
       "notes": [
@@ -526,7 +526,7 @@
       "createdAt": "2026-02-07T17:04:09Z",
       "updatedAt": "2026-02-07T17:04:09Z",
       "completedAt": "2026-02-07T17:04:09Z",
-      "ageHours": 24.7,
+      "ageHours": 24.71,
       "deliverySummary": "Delegated to OpenClaw mock (task_id=mock-dc0f6a6829).",
       "deliverableUrl": null,
       "notes": [
@@ -545,7 +545,7 @@
       "createdAt": "2026-02-07T09:04:51Z",
       "updatedAt": "2026-02-07T09:04:51Z",
       "completedAt": "2026-02-07T09:04:51Z",
-      "ageHours": 32.69,
+      "ageHours": 32.7,
       "deliverySummary": "Stored in Codex inbox",
       "deliverableUrl": null,
       "notes": [
@@ -564,7 +564,7 @@
       "createdAt": "2026-02-07T08:49:16Z",
       "updatedAt": "2026-02-07T08:49:16Z",
       "completedAt": "2026-02-07T08:49:16Z",
-      "ageHours": 32.95,
+      "ageHours": 32.96,
       "deliverySummary": "Stored in Codex inbox",
       "deliverableUrl": null,
       "notes": [
@@ -583,7 +583,7 @@
       "createdAt": "2026-02-07T08:48:20Z",
       "updatedAt": "2026-02-07T08:48:20Z",
       "completedAt": "2026-02-07T08:48:20Z",
-      "ageHours": 32.96,
+      "ageHours": 32.97,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -621,7 +621,7 @@
       "createdAt": "2026-02-07T08:39:21Z",
       "updatedAt": "2026-02-07T08:39:21Z",
       "completedAt": "2026-02-07T08:39:21Z",
-      "ageHours": 33.11,
+      "ageHours": 33.12,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -640,7 +640,7 @@
       "createdAt": "2026-02-07T08:38:58Z",
       "updatedAt": "2026-02-07T08:38:58Z",
       "completedAt": "2026-02-07T08:38:58Z",
-      "ageHours": 33.12,
+      "ageHours": 33.13,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -659,7 +659,7 @@
       "createdAt": "2026-02-07T08:33:41Z",
       "updatedAt": "2026-02-07T08:33:41Z",
       "completedAt": "2026-02-07T08:33:41Z",
-      "ageHours": 33.21,
+      "ageHours": 33.22,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -692,7 +692,7 @@
     },
     {
       "level": "warn",
-      "message": "4 OpenClaw item(s) need attention (blocked/failed or flagged)."
+      "message": "4 item(s) need attention in 'Tasks due from you'."
     }
   ],
   "errors": [
@@ -901,7 +901,7 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-08T17:46:13Z",
+    "updatedAt": "2026-02-08T17:46:37Z",
     "metrics": {
       "reviewRequested": 3,
       "proceedCount": 0,
