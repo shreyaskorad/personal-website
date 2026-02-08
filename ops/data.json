@@ -1,38 +1,22 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T19:40:41Z",
+    "updatedAt": "2026-02-08T19:40:48Z",
     "source": "Dictation Router + OpenClaw supervisor",
-    "fingerprint": "6c3083c9815fb004"
+    "fingerprint": "f3d1d184100c40e4"
   },
   "summary": {
     "totalTasks": 15,
     "queued": 14,
-    "active": 1,
-    "completed": 0,
+    "active": 0,
+    "completed": 1,
     "blocked": 0,
     "byStatus": {
-      "in_progress": 1,
-      "queued": 14
+      "queued": 14,
+      "completed": 1
     }
   },
-  "execution": [
-    {
-      "id": "openclaw-21",
-      "title": "todo draft blog on game applications",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "in_progress",
-      "sequence": 0,
-      "createdAt": "2026-02-08T19:24:53Z",
-      "updatedAt": "2026-02-08T19:24:53Z",
-      "completedAt": null,
-      "ageHours": 0.26,
-      "deliverySummary": "Wait for pipeline completion, verify publish",
-      "deliverableUrl": "/ops/deliverables/openclaw-21.md",
-      "notes": []
-    }
-  ],
+  "execution": [],
   "queueTop": [
     {
       "id": "inbox-130",
@@ -42,7 +26,7 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 2.75,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -61,7 +45,7 @@
       "status": "queued",
       "sequence": 2,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 2.75,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -80,7 +64,7 @@
       "status": "queued",
       "sequence": 3,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 2.75,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -99,7 +83,7 @@
       "status": "queued",
       "sequence": 4,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 2.75,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -118,7 +102,7 @@
       "status": "queued",
       "sequence": 5,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 2.75,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -137,7 +121,7 @@
       "status": "queued",
       "sequence": 6,
       "createdAt": "2026-02-08T12:39:44Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 7.02,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -156,7 +140,7 @@
       "status": "queued",
       "sequence": 7,
       "createdAt": "2026-02-08T12:39:44Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 7.02,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -175,9 +159,9 @@
       "status": "queued",
       "sequence": 8,
       "createdAt": "2026-02-08T12:38:01Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
-      "ageHours": 7.04,
+      "ageHours": 7.05,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
       "deliverableUrl": null,
       "notes": [
@@ -194,9 +178,9 @@
       "status": "queued",
       "sequence": 9,
       "createdAt": "2026-02-08T12:38:01Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
-      "ageHours": 7.04,
+      "ageHours": 7.05,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
       "deliverableUrl": null,
       "notes": [
@@ -213,7 +197,7 @@
       "status": "queued",
       "sequence": 10,
       "createdAt": "2026-02-08T08:06:58Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 11.56,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -232,7 +216,7 @@
       "status": "queued",
       "sequence": 11,
       "createdAt": "2026-02-08T08:06:58Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 11.56,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -251,7 +235,7 @@
       "status": "queued",
       "sequence": 12,
       "createdAt": "2026-02-08T08:01:59Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 11.65,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -270,7 +254,7 @@
       "status": "queued",
       "sequence": 13,
       "createdAt": "2026-02-08T08:01:59Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 11.65,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
@@ -289,7 +273,7 @@
       "status": "queued",
       "sequence": 14,
       "createdAt": "2026-02-07T18:07:23Z",
-      "updatedAt": "2026-02-08T19:40:41Z",
+      "updatedAt": "2026-02-08T19:40:48Z",
       "completedAt": null,
       "ageHours": 25.56,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (openclaw_busy:1)",
@@ -301,20 +285,55 @@
       "action": "create_task"
     }
   ],
-  "userActionsDue": [],
-  "completedRecent": [],
+  "userActionsDue": [
+    {
+      "id": "openclaw-review-21",
+      "title": "todo draft blog on game applications",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "review_required",
+      "sequence": 0,
+      "createdAt": "2026-02-08 19:40:47",
+      "updatedAt": "2026-02-08 19:40:47",
+      "completedAt": "2026-02-08 19:40:47",
+      "ageHours": 5.5,
+      "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Published via pipeline; ready for review",
+      "deliverableUrl": "/ops/deliverables/openclaw-21.md",
+      "notes": []
+    }
+  ],
+  "completedRecent": [
+    {
+      "id": "openclaw-21",
+      "title": "todo draft blog on game applications",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-08 19:40:47",
+      "updatedAt": "2026-02-08 19:40:47",
+      "completedAt": "2026-02-08 19:40:47",
+      "ageHours": 5.5,
+      "deliverySummary": "Published via pipeline; ready for review",
+      "deliverableUrl": "/ops/deliverables/openclaw-21.md",
+      "notes": []
+    }
+  ],
   "observations": [
     {
       "level": "info",
       "message": "DICTATION_SYNC: 14 queued item(s) auto-synced from pending review lane."
+    },
+    {
+      "level": "warn",
+      "message": "1 item(s) need attention in 'Tasks due from you'."
+    },
+    {
+      "level": "info",
+      "message": "Execution lane is paused until the pending decisions in 'Tasks due from you' are resolved."
     }
   ],
   "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-08T19:24:53Z",
-      "message": "Pipeline in progress"
-    },
     {
       "source": "openclaw",
       "timestamp": "2026-02-08 19:25:38",
@@ -336,7 +355,7 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-08T19:40:41Z",
+    "updatedAt": "2026-02-08T19:40:48Z",
     "metrics": {
       "reviewRequested": 14,
       "proceedCount": 0,
