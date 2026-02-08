@@ -31,8 +31,5 @@ Start by defining one clear objective for game applications. Then map the smalle
 ## Closing
 Game Applications becomes valuable when it is treated like an operating system, not a one-off activity. Design for repeatability, then improve each cycle based on what actually shipped.
 
-## Blockers / Notes
-Pipeline in progress
-
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
