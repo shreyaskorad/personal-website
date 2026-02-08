@@ -1,21 +1,21 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T17:51:07Z",
+    "updatedAt": "2026-02-08T17:51:10Z",
     "source": "Dictation Router + OpenClaw supervisor",
-    "fingerprint": "b0d2da676b45d8e8"
+    "fingerprint": "acaf6929d05f4d7c"
   },
   "summary": {
-    "totalTasks": 31,
+    "totalTasks": 32,
     "queued": 3,
     "active": 2,
-    "completed": 26,
+    "completed": 27,
     "blocked": 1,
     "byStatus": {
       "in_progress": 1,
       "blocked": 1,
       "queued": 3,
-      "completed": 26
+      "completed": 27
     }
   },
   "execution": [
@@ -63,7 +63,7 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-08T17:30:55Z",
-      "updatedAt": "2026-02-08T17:51:07Z",
+      "updatedAt": "2026-02-08T17:51:10Z",
       "completedAt": null,
       "ageHours": 0.34,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
@@ -82,7 +82,7 @@
       "status": "queued",
       "sequence": 2,
       "createdAt": "2026-02-08T17:29:07Z",
-      "updatedAt": "2026-02-08T17:51:07Z",
+      "updatedAt": "2026-02-08T17:51:10Z",
       "completedAt": null,
       "ageHours": 0.37,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
@@ -101,7 +101,7 @@
       "status": "queued",
       "sequence": 3,
       "createdAt": "2026-02-07T16:37:27Z",
-      "updatedAt": "2026-02-08T17:51:07Z",
+      "updatedAt": "2026-02-08T17:51:10Z",
       "completedAt": null,
       "ageHours": 25.23,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
@@ -156,9 +156,9 @@
       "status": "needs_input",
       "sequence": 0,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:51:07Z",
+      "updatedAt": "2026-02-08T17:51:10Z",
       "completedAt": null,
-      "ageHours": 0.92,
+      "ageHours": 0.93,
       "deliverySummary": "Email task is queued but has no recipient. Provide email address or close task. Context: Build trusting going from there. I'm not doing anything on, I'm in the next mail. This is regarding funds c...",
       "deliverableUrl": null,
       "notes": [
@@ -175,9 +175,9 @@
       "status": "needs_input",
       "sequence": 0,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:51:07Z",
+      "updatedAt": "2026-02-08T17:51:10Z",
       "completedAt": null,
-      "ageHours": 0.92,
+      "ageHours": 0.93,
       "deliverySummary": "Email task is queued but has no recipient. Provide email address or close task. Context: Clearing the CA mail. There's something spam,",
       "deliverableUrl": null,
       "notes": [
@@ -188,6 +188,25 @@
     }
   ],
   "completedRecent": [
+    {
+      "id": "action-32",
+      "title": "todo buy groceries tomorrow",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-08T17:51:07Z",
+      "updatedAt": "2026-02-08T17:51:07Z",
+      "completedAt": "2026-02-08T17:51:07Z",
+      "ageHours": 0.0,
+      "deliverySummary": "Task created in local database",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=5",
+        "route=direct",
+        "action=create_task"
+      ]
+    },
     {
       "id": "action-31",
       "title": "This is just a note to verify auto...",
@@ -452,7 +471,7 @@
       "createdAt": "2026-02-08T17:23:16Z",
       "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": "2026-02-08T17:23:16Z",
-      "ageHours": 0.46,
+      "ageHours": 0.47,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -676,10 +695,6 @@
     },
     {
       "level": "info",
-      "message": "DICTATION_SYNC: filtered out 61 non-actionable note fragment(s)."
-    },
-    {
-      "level": "info",
       "message": "DICTATION_SYNC: filtered out 13 low-signal dictation fragments from queued tasks."
     },
     {
@@ -713,6 +728,12 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-08T17:51:07Z",
+      "type": "executed",
+      "taskId": "capture-5",
+      "message": "todo buy groceries tomorrow: Task created in local database"
+    },
     {
       "timestamp": "2026-02-08T17:34:31Z",
       "type": "executed",
@@ -901,7 +922,7 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-08T17:51:07Z",
+    "updatedAt": "2026-02-08T17:51:10Z",
     "metrics": {
       "reviewRequested": 3,
       "proceedCount": 0,
