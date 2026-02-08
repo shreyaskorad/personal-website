@@ -12,15 +12,14 @@
       --ink: #0f172a;
       --muted: #475569;
       --line: #d8e1e8;
-      --ok: #0f766e;
+      --brand: #0b5fff;
       --warn: #b45309;
       --err: #b91c1c;
-      --brand: #0b5fff;
-      --brand-2: #00a3a3;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
 
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
@@ -80,9 +79,25 @@
 
     .auth-error {
       margin-top: 8px;
-      color: #b91c1c;
+      color: var(--err);
       font-size: 12px;
       min-height: 16px;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      color: var(--ink);
+      border-radius: 8px;
+      padding: 8px 11px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .btn-brand {
+      background: #ecf3ff;
+      border-color: #b8d4ff;
+      color: #1149aa;
     }
 
     .shell {
@@ -130,40 +145,10 @@
       letter-spacing: 0.2px;
     }
 
-    .summary {
-      grid-column: span 12;
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(6, minmax(120px, 1fr));
-    }
-
-    .metric {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 10px;
-      background: #fbfdff;
-    }
-
-    .metric .k {
-      font-size: 11px;
-      text-transform: uppercase;
-      color: var(--muted);
-      letter-spacing: 0.6px;
-    }
-
-    .metric .v {
-      margin-top: 6px;
-      font-size: 24px;
-      font-weight: 700;
-    }
-
     .lane { grid-column: span 6; }
-    .queue { grid-column: span 7; }
-    .done { grid-column: span 5; }
-    .obs { grid-column: span 7; }
-    .err { grid-column: span 5; }
-    .events { grid-column: span 8; }
-    .ctl { grid-column: span 4; }
+    .queue { grid-column: span 6; }
+    .done { grid-column: span 6; }
+    .obs { grid-column: span 6; }
 
     .list {
       display: grid;
@@ -198,32 +183,9 @@
       font-size: 12px;
     }
 
-    .pill {
-      display: inline-block;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 2px 8px;
-      font-size: 11px;
-      margin-right: 6px;
-      margin-top: 5px;
-      background: #f8fafc;
-    }
-
     .obs-info { border-left: 4px solid var(--brand); }
     .obs-warn { border-left: 4px solid var(--warn); }
     .obs-err { border-left: 4px solid var(--err); }
-
-    code {
-      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
-      font-size: 12px;
-      background: #f1f5f9;
-      border: 1px solid #dbe5ee;
-      border-radius: 8px;
-      padding: 6px 8px;
-      display: block;
-      margin-bottom: 8px;
-      word-break: break-all;
-    }
 
     .empty {
       color: var(--muted);
@@ -234,86 +196,8 @@
       background: #fcfdff;
     }
 
-    .queue-actions {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      margin-top: 8px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      border: 1px solid var(--line);
-      background: #f8fafc;
-      color: var(--ink);
-      border-radius: 8px;
-      padding: 5px 9px;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      border-color: #9db6d2;
-      background: #eef5ff;
-    }
-
-    .btn-brand {
-      background: #ecf3ff;
-      border-color: #b8d4ff;
-      color: #1149aa;
-    }
-
-    .seq-input {
-      width: 68px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 5px 6px;
-      font-size: 12px;
-      background: #fff;
-    }
-
-    .control-box {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 10px;
-      background: #fbfdff;
-      margin-bottom: 10px;
-    }
-
-    .control-list {
-      max-height: 190px;
-      overflow: auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 8px;
-      background: #fff;
-      margin-bottom: 8px;
-    }
-
-    .control-item {
-      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
-      font-size: 12px;
-      padding: 2px 0;
-      border-bottom: 1px dashed #e7eef5;
-    }
-
-    .control-item:last-child {
-      border-bottom: 0;
-    }
-
-    .field {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 6px 8px;
-      font-size: 12px;
-      margin-bottom: 8px;
-      background: #fff;
-    }
-
     @media (max-width: 980px) {
-      .summary { grid-template-columns: repeat(3, minmax(120px, 1fr)); }
-      .lane, .queue, .done, .obs, .err, .events, .ctl { grid-column: span 12; }
+      .lane, .queue, .done, .obs { grid-column: span 12; }
     }
   </style>
 </head>
@@ -321,7 +205,7 @@
   <div id="auth-gate" class="auth-gate">
     <div class="auth-card">
       <h1 class="auth-title">Ops Dashboard Locked</h1>
-      <p class="auth-subtitle">Enter password to open task queue and execution controls.</p>
+      <p class="auth-subtitle">Enter password to open dashboard.</p>
       <div class="auth-row">
         <input id="auth-password" class="auth-input" type="password" autocomplete="current-password" placeholder="Password" />
         <button id="auth-submit" class="btn btn-brand" type="button">Unlock</button>
@@ -337,8 +221,6 @@
     </section>
 
     <section class="grid">
-      <div class="card summary" id="summary"></div>
-
       <div class="card lane">
         <h2>Execution lane</h2>
         <div id="execution" class="list"></div>
@@ -358,21 +240,6 @@
         <h2>Observations</h2>
         <div id="observations" class="list"></div>
       </div>
-
-      <div class="card err">
-        <h2>Error signals</h2>
-        <div id="errors" class="list"></div>
-      </div>
-
-      <div class="card events">
-        <h2>Recent execution events</h2>
-        <div id="events" class="list"></div>
-      </div>
-
-      <div class="card ctl">
-        <h2>Control commands</h2>
-        <div id="controls"></div>
-      </div>
     </section>
   </div>
 
@@ -380,11 +247,8 @@
     const OPS_AUTH_SESSION_KEY = "ops_auth_ok_v1";
     const OPS_PASSWORD_HASH = "7cb86c412f4806e50f4bafffe0445773b48575809c08a8494c1fcf3032c82e27";
     const OPS_PASSWORD_FALLBACK = "9822435581";
-    const COMMANDS_KEY = "ops_pending_control_commands_v1";
-    const DEFAULT_WHATSAPP = "918766662719";
+
     let dashboardBooted = false;
-    let pendingCommands = [];
-    let latestControls = {};
 
     function authEls() {
       return {
@@ -401,19 +265,11 @@
       if (error) error.textContent = message || "";
     }
 
-    function setControlFeedback(message) {
-      const el = document.getElementById("control-feedback");
-      if (el) el.textContent = message || "";
-    }
-
     function showGate() {
       const { gate, shell, input } = authEls();
       if (gate) gate.hidden = false;
       if (shell) shell.hidden = true;
-      if (input) {
-        input.value = "";
-        input.focus();
-      }
+      if (input) input.focus();
     }
 
     function hideGate() {
@@ -450,6 +306,22 @@
       return arr.map((b) => b.toString(16).padStart(2, "0")).join("");
     }
 
+    function safeSessionGet(key) {
+      try {
+        return sessionStorage.getItem(key);
+      } catch (_err) {
+        return null;
+      }
+    }
+
+    function safeSessionSet(key, value) {
+      try {
+        sessionStorage.setItem(key, value);
+      } catch (_err) {
+        // ignore storage failures
+      }
+    }
+
     async function unlockWithPassword(rawPassword) {
       const password = String(rawPassword || "").trim();
       if (!password) {
@@ -462,7 +334,6 @@
         const hash = await sha256Hex(password);
         valid = hash === OPS_PASSWORD_HASH;
       } catch (_err) {
-        // Fallback for restricted runtimes without WebCrypto (still client-side protection).
         valid = password === OPS_PASSWORD_FALLBACK;
       }
 
@@ -520,74 +391,6 @@
         .replace(/\"/g, "&quot;")
         .replace(/'/g, "&#39;");
 
-    function safeLocalGet(key) {
-      try {
-        return localStorage.getItem(key);
-      } catch (_err) {
-        return null;
-      }
-    }
-
-    function safeLocalSet(key, value) {
-      try {
-        localStorage.setItem(key, value);
-      } catch (_err) {
-        // Storage can be blocked in strict/privacy contexts.
-      }
-    }
-
-    function safeSessionGet(key) {
-      try {
-        return sessionStorage.getItem(key);
-      } catch (_err) {
-        return null;
-      }
-    }
-
-    function safeSessionSet(key, value) {
-      try {
-        sessionStorage.setItem(key, value);
-      } catch (_err) {
-        // Storage can be blocked in strict/privacy contexts.
-      }
-    }
-
-    function loadPendingCommands() {
-      try {
-        const raw = safeLocalGet(COMMANDS_KEY);
-        const parsed = raw ? JSON.parse(raw) : [];
-        pendingCommands = Array.isArray(parsed) ? parsed : [];
-      } catch (_err) {
-        pendingCommands = [];
-      }
-    }
-
-    function savePendingCommands() {
-      safeLocalSet(COMMANDS_KEY, JSON.stringify(pendingCommands));
-    }
-
-    function commandKey(command) {
-      const m = command.match(/^TASKFLOW\s+(SEQUENCE|START|PRIORITY)\s+([^\s]+)/i);
-      if (!m) return command;
-      return `${m[1].toUpperCase()}|${m[2]}`;
-    }
-
-    function upsertPendingCommand(command) {
-      const key = commandKey(command);
-      pendingCommands = pendingCommands.filter((cmd) => commandKey(cmd) !== key);
-      pendingCommands.push(command);
-      savePendingCommands();
-      setControlFeedback(`Added: ${command}`);
-      renderControlPanel();
-    }
-
-    function clearPendingCommands() {
-      pendingCommands = [];
-      savePendingCommands();
-      setControlFeedback("Cleared pending commands.");
-      renderControlPanel();
-    }
-
     function taskRow(t, includeCompleteTime = false) {
       const done = includeCompleteTime ? `<div class="muted">completed: ${fmt(t.completedAt || t.updatedAt)}</div>` : "";
       const extra = t.deliverySummary ? `<div class="muted">${escapeHtml(t.deliverySummary)}</div>` : "";
@@ -597,28 +400,9 @@
             <div class="title">${escapeHtml(t.title)}</div>
             <div class="muted">${escapeHtml(t.id)}</div>
           </div>
-          <div class="muted">priority: ${escapeHtml(t.priority)} | status: ${escapeHtml(t.status)} | age: ${t.ageHours ?? "n/a"}h | seq: ${t.sequence ?? "n/a"}</div>
+          <div class="muted">priority: ${escapeHtml(t.priority)} | status: ${escapeHtml(t.status)} | age: ${t.ageHours ?? "n/a"}h</div>
           ${done}
           ${extra}
-        </div>
-      `;
-    }
-
-    function queueTaskRow(t) {
-      const seqInputId = `seq-${t.id}`;
-      return `
-        <div class="row">
-          <div class="topline">
-            <div class="title">${escapeHtml(t.title)}</div>
-            <div class="muted">${escapeHtml(t.id)}</div>
-          </div>
-          <div class="muted">priority: ${escapeHtml(t.priority)} | status: ${escapeHtml(t.status)} | age: ${t.ageHours ?? "n/a"}h | seq: ${t.sequence ?? "n/a"}</div>
-          <div class="queue-actions">
-            <input id="${seqInputId}" class="seq-input" type="number" min="1" value="${t.sequence || 1}" />
-            <button class="btn" onclick="queueSequence('${t.id}', '${seqInputId}')">Set Seq</button>
-            <button class="btn btn-brand" onclick="queueStart('${t.id}')">Start</button>
-            <button class="btn" onclick="queuePriority('${t.id}', 'critical')">Critical</button>
-          </div>
         </div>
       `;
     }
@@ -628,154 +412,15 @@
       return `<div class="row ${cls}"><div class="title">${escapeHtml(o.message)}</div></div>`;
     }
 
-    function errRow(e) {
-      return `
-        <div class="row">
-          <div class="topline">
-            <div class="title">${escapeHtml(e.source)}</div>
-            <div class="muted">${e.timestamp ? fmt(e.timestamp) : "n/a"}</div>
-          </div>
-          <div class="muted">${escapeHtml(e.message)}</div>
-        </div>
-      `;
-    }
-
-    function eventRow(e) {
-      return `
-        <div class="row">
-          <div class="topline">
-            <div class="title">${escapeHtml(e.type)}</div>
-            <div class="muted">${fmt(e.timestamp)}</div>
-          </div>
-          <div class="muted">task: ${escapeHtml(e.taskId || "-")}</div>
-          <div class="muted">${escapeHtml(e.message || "")}</div>
-        </div>
-      `;
-    }
-
-    function buildBatchText() {
-      const lines = [
-        "Apply task controls:",
-        ...pendingCommands
-      ];
-      return lines.join("\n");
-    }
-
-    async function copyPendingBatch() {
-      if (pendingCommands.length === 0) return;
-      try {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(buildBatchText());
-        } else {
-          const ta = document.createElement("textarea");
-          ta.value = buildBatchText();
-          ta.style.position = "fixed";
-          ta.style.opacity = "0";
-          document.body.appendChild(ta);
-          ta.focus();
-          ta.select();
-          document.execCommand("copy");
-          document.body.removeChild(ta);
-        }
-        setControlFeedback("Copied control batch.");
-      } catch (_err) {
-        setControlFeedback("Copy failed. Use manual select/copy.");
-      }
-    }
-
-    function openWhatsAppBatch() {
-      if (pendingCommands.length === 0) return;
-      const raw = (document.getElementById("wa-number")?.value || "").replace(/[^\d]/g, "");
-      const number = raw || DEFAULT_WHATSAPP;
-      const text = buildBatchText();
-      const opened = window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
-      if (!opened) {
-        setControlFeedback("Popup blocked. Use Copy Batch and paste manually into WhatsApp.");
-        return;
-      }
-      setControlFeedback("WhatsApp draft opened. Send the message to apply controls.");
-    }
-
-    function queueSequence(taskId, inputId) {
-      const value = document.getElementById(inputId)?.value;
-      const seq = Number(value);
-      if (!Number.isFinite(seq) || seq < 1) return;
-      upsertPendingCommand(`TASKFLOW SEQUENCE ${taskId} ${Math.floor(seq)}`);
-    }
-
-    function queueStart(taskId) {
-      upsertPendingCommand(`TASKFLOW START ${taskId}`);
-    }
-
-    function queuePriority(taskId, priority) {
-      upsertPendingCommand(`TASKFLOW PRIORITY ${taskId} ${priority}`);
-    }
-
-    function renderControlPanel() {
-      const controls = latestControls || {};
-      const pendingRows = pendingCommands.length
-        ? pendingCommands.map((cmd) => `<div class="control-item">${escapeHtml(cmd)}</div>`).join("")
-        : `<div class="muted">No pending control commands.</div>`;
-
-      const baseCmds = Object.entries(controls)
-        .map(
-          ([k, v]) =>
-            `<div class="muted" style="margin:0 0 4px;text-transform:uppercase;letter-spacing:.5px;font-size:11px;">${escapeHtml(k)}</div><code>${escapeHtml(v)}</code>`
-        )
-        .join("");
-
-      document.getElementById("controls").innerHTML = `
-        <div class="control-box">
-          <div class="title" style="margin-bottom:6px;">Queue control batch</div>
-          <div class="muted" style="margin-bottom:8px;">
-            Build commands from queue cards, then send them via WhatsApp.
-            Intake applies them in about 5 minutes.
-          </div>
-          <input id="wa-number" class="field" value="${DEFAULT_WHATSAPP}" />
-          <div class="control-list">${pendingRows}</div>
-          <div class="queue-actions">
-            <button class="btn btn-brand" onclick="openWhatsAppBatch()">Send via WhatsApp</button>
-            <button class="btn" onclick="copyPendingBatch()">Copy Batch</button>
-            <button class="btn" onclick="clearPendingCommands()">Clear</button>
-          </div>
-          <div id="control-feedback" class="muted" style="margin-top:6px;"></div>
-        </div>
-        <div class="control-box">
-          <div class="title" style="margin-bottom:6px;">CLI reference</div>
-          ${baseCmds || `<div class="muted">No CLI controls found in feed.</div>`}
-        </div>
-      `;
-    }
-
-    window.queueSequence = queueSequence;
-    window.queueStart = queueStart;
-    window.queuePriority = queuePriority;
-    window.openWhatsAppBatch = openWhatsAppBatch;
-    window.copyPendingBatch = copyPendingBatch;
-    window.clearPendingCommands = clearPendingCommands;
-
     function initDashboard() {
       if (dashboardBooted) return;
       dashboardBooted = true;
-
-      loadPendingCommands();
-      renderControlPanel();
 
       fetch("./data.json", { cache: "no-store" })
         .then((r) => r.json())
         .then((data) => {
           document.getElementById("meta").textContent =
-            `Updated: ${fmt(data.meta.updatedAt)} | fingerprint: ${data.meta.fingerprint} | source: ${data.meta.source}`;
-
-          const s = data.summary || {};
-          document.getElementById("summary").innerHTML = [
-            ["total", s.totalTasks || 0],
-            ["active", s.active || 0],
-            ["queued", s.queued || 0],
-            ["completed", s.completed || 0],
-            ["blocked", s.blocked || 0],
-            ["status map", Object.keys(s.byStatus || {}).length]
-          ].map(([k, v]) => `<div class="metric"><div class="k">${k}</div><div class="v">${v}</div></div>`).join("");
+            `Updated: ${fmt(data.meta.updatedAt)} | fingerprint: ${data.meta.fingerprint}`;
 
           document.getElementById("execution").innerHTML =
             (data.execution || []).length
@@ -784,7 +429,7 @@
 
           document.getElementById("queue").innerHTML =
             (data.queueTop || []).length
-              ? data.queueTop.map((t) => queueTaskRow(t)).join("")
+              ? data.queueTop.map((t) => taskRow(t)).join("")
               : empty("Queue is empty.");
 
           document.getElementById("completed").innerHTML =
@@ -796,19 +441,6 @@
             (data.observations || []).length
               ? data.observations.map(obsRow).join("")
               : empty("No notable observations.");
-
-          document.getElementById("errors").innerHTML =
-            (data.errors || []).length
-              ? data.errors.map(errRow).join("")
-              : empty("No recent error signals.");
-
-          document.getElementById("events").innerHTML =
-            (data.recentActivity || []).length
-              ? data.recentActivity.map(eventRow).join("")
-              : empty("No recent events.");
-
-          latestControls = data.controls || {};
-          renderControlPanel();
         })
         .catch((err) => {
           document.getElementById("meta").textContent = `Failed to load dashboard data: ${err.message}`;
