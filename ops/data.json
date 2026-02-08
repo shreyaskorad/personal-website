@@ -1,34 +1,53 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T17:14:23Z",
-    "fingerprint": "a80971524c4eb3af",
-    "source": "PersonalOS task + activity + OpenClaw error logs + Dictation Router sync"
+    "updatedAt": "2026-02-08T17:23:16Z",
+    "source": "Dictation Router + OpenClaw supervisor",
+    "fingerprint": "157ee8e7fe77b6ff"
   },
   "summary": {
-    "totalTasks": 32,
-    "queued": 25,
-    "active": 0,
-    "completed": 7,
-    "blocked": 0,
+    "totalTasks": 63,
+    "queued": 50,
+    "active": 1,
+    "completed": 12,
+    "blocked": 1,
     "byStatus": {
-      "completed": 7,
-      "queued": 25
+      "blocked": 1,
+      "queued": 50,
+      "completed": 12
     }
   },
-  "execution": [],
+  "execution": [
+    {
+      "id": "openclaw-3",
+      "title": "todo verify openclaw ssh execution pipeline for dictation...",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "blocked",
+      "sequence": 0,
+      "createdAt": "2026-02-07T17:18:21Z",
+      "updatedAt": "2026-02-07T17:18:21Z",
+      "completedAt": null,
+      "ageHours": 24.08,
+      "deliverySummary": "['SSH into macmini to verify authorized_keys contains matching public key', 'Check SSH daemon config (/etc/ssh/sshd_config) on macmini for PermitRootLogin, PubkeyAuthentication settings', 'Compare local public key (~/.ssh/id_ed25519.pub) with key in remote authorized_keys', 'Test with passphrase-less key if using Passphrase phrase', 'Verify SSH retry script (/Users/shreyas-clawd/Documents/PersonalOS/memory/tools/ssh-retry.sh) works once authentication is fixed']",
+      "deliverableUrl": null,
+      "notes": [
+        "['Remote server (macmini) not accepting SSH key authentication despite key being loaded in ssh-agent', \"Cannot verify remote server's authorized_keys file content - only local machine has access\", 'Possibly incorrect public key on remote server or SSH daemon misconfiguration', 'Key fingerprint: SHA256:HQpVra6n60Y4pFg1W/ZTHvGQaJS7M5oQEy7FM8Do8G8 (ED25519)']"
+      ]
+    }
+  ],
   "queueTop": [
     {
-      "id": "cap-66-item-104",
+      "id": "inbox-104",
       "title": "CAPTURE #66: Okay, that's it for like this message, I...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -37,16 +56,16 @@
       ]
     },
     {
-      "id": "cap-66-item-103",
+      "id": "inbox-103",
       "title": "CAPTURE #66: something in my head that I'm forgetting i",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 2,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -55,16 +74,16 @@
       ]
     },
     {
-      "id": "cap-66-item-102",
+      "id": "inbox-102",
       "title": "CAPTURE #66: There's also also",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 3,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -73,16 +92,16 @@
       ]
     },
     {
-      "id": "cap-66-item-101",
+      "id": "inbox-101",
       "title": "CAPTURE #66: What we need to do is come up...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 4,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -91,16 +110,16 @@
       ]
     },
     {
-      "id": "cap-66-item-100",
+      "id": "inbox-100",
       "title": "CAPTURE #66: okay, so I've cleared my inbox now that...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 5,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -109,16 +128,16 @@
       ]
     },
     {
-      "id": "cap-66-item-99",
+      "id": "inbox-99",
       "title": "CAPTURE #66: Okay,",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 6,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -127,16 +146,16 @@
       ]
     },
     {
-      "id": "cap-66-item-98",
+      "id": "inbox-98",
       "title": "CAPTURE #66: go to fireflies. Flies goes to fireflies. Digital...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 7,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -145,16 +164,16 @@
       ]
     },
     {
-      "id": "cap-66-item-97",
+      "id": "inbox-97",
       "title": "CAPTURE #66: This is done pm profiles that will",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 8,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -163,16 +182,16 @@
       ]
     },
     {
-      "id": "cap-66-item-96",
+      "id": "inbox-96",
       "title": "CAPTURE #66: I and then I think fireflies is something...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 9,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -181,16 +200,16 @@
       ]
     },
     {
-      "id": "cap-66-item-95",
+      "id": "inbox-95",
       "title": "CAPTURE #66: there are",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 10,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -199,16 +218,16 @@
       ]
     },
     {
-      "id": "cap-66-item-94",
+      "id": "inbox-94",
       "title": "CAPTURE #66: There's a lot of data that is available...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 11,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -217,16 +236,16 @@
       ]
     },
     {
-      "id": "cap-66-item-93",
+      "id": "inbox-93",
       "title": "CAPTURE #66: to be shown in this thing, in the...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 12,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -235,16 +254,16 @@
       ]
     },
     {
-      "id": "cap-66-item-92",
+      "id": "inbox-92",
       "title": "CAPTURE #66: we created a dashboard for the World Bank...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 13,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -253,16 +272,16 @@
       ]
     },
     {
-      "id": "cap-66-item-91",
+      "id": "inbox-91",
       "title": "CAPTURE #66: okay. WPG, okay. Now, in terms of,",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 14,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -271,16 +290,16 @@
       ]
     },
     {
-      "id": "cap-66-item-90",
+      "id": "inbox-90",
       "title": "CAPTURE #66: daily delete, not delete,",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 15,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -289,16 +308,16 @@
       ]
     },
     {
-      "id": "cap-66-item-89",
+      "id": "inbox-89",
       "title": "CAPTURE #66: No",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 16,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -307,16 +326,16 @@
       ]
     },
     {
-      "id": "cap-66-item-88",
+      "id": "inbox-88",
       "title": "CAPTURE #66: Then there is SAP, which is for CAA....",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 17,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -325,16 +344,16 @@
       ]
     },
     {
-      "id": "cap-66-item-87",
+      "id": "inbox-87",
       "title": "CAPTURE #66: Build trusting going from there. I'm not doing...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 18,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: send_email | Route: email | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -343,16 +362,16 @@
       ]
     },
     {
-      "id": "cap-66-item-86",
+      "id": "inbox-86",
       "title": "CAPTURE #66: Someone else is taking care of it, so...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 19,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -361,16 +380,16 @@
       ]
     },
     {
-      "id": "cap-66-item-85",
+      "id": "inbox-85",
       "title": "CAPTURE #66: I was doing a project with Riyadh air...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 20,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -379,16 +398,16 @@
       ]
     },
     {
-      "id": "cap-66-item-84",
+      "id": "inbox-84",
       "title": "CAPTURE #66: basic release, which is spam.",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 21,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -397,16 +416,16 @@
       ]
     },
     {
-      "id": "cap-66-item-83",
+      "id": "inbox-83",
       "title": "CAPTURE #66: Clearing the CA mail. There's something spam,",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 22,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: send_email | Route: email | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -415,16 +434,16 @@
       ]
     },
     {
-      "id": "cap-66-item-82",
+      "id": "inbox-82",
       "title": "CAPTURE #66: a lack of content in the learning system....",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 23,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -433,16 +452,16 @@
       ]
     },
     {
-      "id": "cap-66-item-81",
+      "id": "inbox-81",
       "title": "CAPTURE #66: I'm too. Ai centered, but like the world...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 24,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -451,628 +470,892 @@
       ]
     },
     {
-      "id": "cap-66-item-80",
+      "id": "inbox-80",
       "title": "CAPTURE #66: And we also need to, like, score more...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 25,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": null,
-      "ageHours": null,
+      "ageHours": 0.46,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
         "capture_id=66",
         "inbox_item_id=80"
       ]
+    },
+    {
+      "id": "inbox-79",
+      "title": "CAPTURE #66: Okay, this dashboard is good. I don't need...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 26,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 0.46,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=79"
+      ]
+    },
+    {
+      "id": "inbox-78",
+      "title": "CAPTURE #66: it.",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 27,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 0.46,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=78"
+      ]
+    },
+    {
+      "id": "inbox-77",
+      "title": "CAPTURE #66: school",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 28,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 0.46,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=77"
+      ]
+    },
+    {
+      "id": "inbox-76",
+      "title": "CAPTURE #66: Now I",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 29,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 0.46,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=76"
+      ]
+    },
+    {
+      "id": "inbox-75",
+      "title": "CAPTURE #66: Artists Agency.",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 30,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 0.46,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=75"
+      ]
+    },
+    {
+      "id": "inbox-74",
+      "title": "CAPTURE #66: There's a lot, there's a lot of work...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 31,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 0.46,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=74"
+      ]
+    },
+    {
+      "id": "inbox-73",
+      "title": "CAPTURE #66: I think that would be, you know, how...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 32,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 0.46,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=73"
+      ]
+    },
+    {
+      "id": "inbox-72",
+      "title": "CAPTURE #66: Also, like, wanted to understand if there's any,...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 33,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 0.46,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=72"
+      ]
+    },
+    {
+      "id": "inbox-71",
+      "title": "CAPTURE #66: Is there a way in which I can...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 34,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 0.46,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=71"
+      ]
+    },
+    {
+      "id": "inbox-70",
+      "title": "CAPTURE #66: Okay, so now I am clearing out my...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 35,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 0.46,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=70"
+      ]
+    },
+    {
+      "id": "inbox-69",
+      "title": "CAPTURE #65: I\u2019m just not able to sort of get...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 36,
+      "createdAt": "2026-02-08T12:39:44Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 4.73,
+      "deliverySummary": "Action: send_email | Route: email | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=65",
+        "inbox_item_id=69"
+      ]
+    },
+    {
+      "id": "inbox-68",
+      "title": "CAPTURE #64: I have to get a lot of stuff...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 37,
+      "createdAt": "2026-02-08T12:38:01Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 4.75,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=64",
+        "inbox_item_id=68"
+      ]
+    },
+    {
+      "id": "inbox-67",
+      "title": "CAPTURE #63: I have to get a lot of stuff...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 38,
+      "createdAt": "2026-02-08T12:37:59Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 4.75,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=63",
+        "inbox_item_id=67"
+      ]
+    },
+    {
+      "id": "inbox-66",
+      "title": "CAPTURE #62: So the core Idea is not that LLM...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 39,
+      "createdAt": "2026-02-08T08:06:58Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 9.27,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=62",
+        "inbox_item_id=66"
+      ]
+    },
+    {
+      "id": "inbox-65",
+      "title": "CAPTURE #61: I need to figure way out I lineup...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 40,
+      "createdAt": "2026-02-08T08:01:59Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 9.35,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=61",
+        "inbox_item_id=65"
+      ]
+    },
+    {
+      "id": "inbox-64",
+      "title": "CAPTURE #60: I have to write a couple of blogs...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 41,
+      "createdAt": "2026-02-07T18:07:23Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 23.26,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=60",
+        "inbox_item_id=64"
+      ]
+    },
+    {
+      "id": "inbox-58",
+      "title": "CAPTURE #54: todo implement deployment checker and update CI docs",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 42,
+      "createdAt": "2026-02-07T16:37:27Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 24.76,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=54",
+        "inbox_item_id=58"
+      ]
+    },
+    {
+      "id": "inbox-57",
+      "title": "CAPTURE #53: todo implement deployment checker and update CI docs",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 43,
+      "createdAt": "2026-02-07T16:36:21Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 24.78,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=53",
+        "inbox_item_id=57"
+      ]
+    },
+    {
+      "id": "inbox-56",
+      "title": "CAPTURE #52: Yo-yo, yo, this will be my first entry,...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 44,
+      "createdAt": "2026-02-07T14:49:52Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 26.56,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=52",
+        "inbox_item_id=56"
+      ]
+    },
+    {
+      "id": "inbox-55",
+      "title": "CAPTURE #51: testing this",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 45,
+      "createdAt": "2026-02-07T11:02:20Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 30.35,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=51",
+        "inbox_item_id=55"
+      ]
+    },
+    {
+      "id": "inbox-54",
+      "title": "CAPTURE #50: Always new thread mode check. This should not...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 46,
+      "createdAt": "2026-02-07T10:55:46Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 30.46,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=50",
+        "inbox_item_id=54"
+      ]
+    },
+    {
+      "id": "inbox-53",
+      "title": "CAPTURE #49: I'm gonna do a test. Can you are...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 47,
+      "createdAt": "2026-02-07T10:50:23Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 30.55,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=49",
+        "inbox_item_id=53"
+      ]
+    },
+    {
+      "id": "inbox-51",
+      "title": "CAPTURE #47: quick smoke cleanup check",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 48,
+      "createdAt": "2026-02-07T10:36:33Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 30.78,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=47",
+        "inbox_item_id=51"
+      ]
+    },
+    {
+      "id": "inbox-50",
+      "title": "CAPTURE #46: I am testing live refresh. I need a...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 49,
+      "createdAt": "2026-02-07T10:36:10Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 30.79,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=46",
+        "inbox_item_id=50"
+      ]
+    },
+    {
+      "id": "inbox-48",
+      "title": "CAPTURE #44: live route churn test 44",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 50,
+      "createdAt": "2026-02-07T10:15:20Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": null,
+      "ageHours": 31.13,
+      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=44",
+        "inbox_item_id=48"
+      ]
     }
   ],
   "userActionsDue": [
     {
-      "id": "cap-66-item-95",
-      "title": "CAPTURE #66: there are",
-      "source": "dictation-router",
+      "id": "openclaw-5",
+      "title": "todo run final openclaw connectivity verification and report...",
+      "source": "openclaw",
       "priority": "medium",
-      "status": "queued",
-      "sequence": 10,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
-      "completedAt": null,
-      "ageHours": null,
-      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=95"
-      ]
-    },
-    {
-      "id": "cap-66-item-96",
-      "title": "CAPTURE #66: I and then I think fireflies is something...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 9,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
-      "completedAt": null,
-      "ageHours": null,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=96"
-      ]
-    },
-    {
-      "id": "cap-66-item-97",
-      "title": "CAPTURE #66: This is done pm profiles that will",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 8,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
-      "completedAt": null,
-      "ageHours": null,
-      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=97"
-      ]
-    },
-    {
-      "id": "cap-66-item-98",
-      "title": "CAPTURE #66: go to fireflies. Flies goes to fireflies. Digital...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 7,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
-      "completedAt": null,
-      "ageHours": null,
-      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=98"
-      ]
-    },
-    {
-      "id": "cap-66-item-99",
-      "title": "CAPTURE #66: Okay,",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 6,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
-      "completedAt": null,
-      "ageHours": null,
-      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=99"
-      ]
-    },
-    {
-      "id": "cap-66-item-100",
-      "title": "CAPTURE #66: okay, so I've cleared my inbox now that...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 5,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
-      "completedAt": null,
-      "ageHours": null,
-      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=100"
-      ]
-    },
-    {
-      "id": "cap-66-item-101",
-      "title": "CAPTURE #66: What we need to do is come up...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 4,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
-      "completedAt": null,
-      "ageHours": null,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=101"
-      ]
-    },
-    {
-      "id": "cap-66-item-102",
-      "title": "CAPTURE #66: There's also also",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 3,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
-      "completedAt": null,
-      "ageHours": null,
-      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=102"
-      ]
-    },
-    {
-      "id": "cap-66-item-103",
-      "title": "CAPTURE #66: something in my head that I'm forgetting i",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 2,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
-      "completedAt": null,
-      "ageHours": null,
-      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=103"
-      ]
-    },
-    {
-      "id": "cap-66-item-104",
-      "title": "CAPTURE #66: Okay, that's it for like this message, I...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 1,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:12:19Z",
-      "completedAt": null,
-      "ageHours": null,
-      "deliverySummary": "Action: store | Route: direct | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=104"
-      ]
-    },
-    {
-      "id": "task-20260201-001",
-      "title": "Build comprehensive blog content strategy for shreyaskorad.in",
-      "source": "legacy",
-      "priority": "high",
       "status": "completed",
-      "sequence": 1,
-      "createdAt": "2026-02-01T22:43:00.000Z",
-      "updatedAt": "2026-02-08T12:59:59.102Z",
-      "completedAt": "2026-02-08T12:59:59.102Z",
-      "ageHours": 162.28,
-      "deliverySummary": "Generated strategy deliverable: /ops/deliverables/task-20260201-001-blog-strategy.md",
-      "deliverableUrl": "/ops/deliverables/task-20260201-001-blog-strategy.md",
+      "sequence": 0,
+      "createdAt": "2026-02-07T17:54:07Z",
+      "updatedAt": "2026-02-07T17:54:07Z",
+      "completedAt": "2026-02-07T17:54:07Z",
+      "ageHours": 23.49,
+      "deliverySummary": "Fix macmini SSH key: ssh into macmini and verify authorized_keys contains correct public key; Attach Chrome tab for browser automation or run browser in openclaw profile; Configure macmini SSH for passwordless key authentication; Test SSH retry script once authentication resolved; Verify WhatsApp gateway reconnection if disconnected",
+      "deliverableUrl": null,
       "notes": [
-        "Migrated from legacy tasks.json format",
-        "Delivery summary: Generated strategy deliverable: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-20260201-001-blog-strategy.md"
+        "SSH to macmini authentication failed (Permission denied publickey password keyboard-interactive); SSH retry script exists but cannot authenticate until macmini authorized_keys fixed; Browser automation enabled but no Chrome tab attached"
+      ]
+    },
+    {
+      "id": "openclaw-3",
+      "title": "todo verify openclaw ssh execution pipeline for dictation...",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "blocked",
+      "sequence": 0,
+      "createdAt": "2026-02-07T17:18:21Z",
+      "updatedAt": "2026-02-07T17:18:21Z",
+      "completedAt": null,
+      "ageHours": 24.08,
+      "deliverySummary": "['SSH into macmini to verify authorized_keys contains matching public key', 'Check SSH daemon config (/etc/ssh/sshd_config) on macmini for PermitRootLogin, PubkeyAuthentication settings', 'Compare local public key (~/.ssh/id_ed25519.pub) with key in remote authorized_keys', 'Test with passphrase-less key if using Passphrase phrase', 'Verify SSH retry script (/Users/shreyas-clawd/Documents/PersonalOS/memory/tools/ssh-retry.sh) works once authentication is fixed']",
+      "deliverableUrl": null,
+      "notes": [
+        "['Remote server (macmini) not accepting SSH key authentication despite key being loaded in ssh-agent', \"Cannot verify remote server's authorized_keys file content - only local machine has access\", 'Possibly incorrect public key on remote server or SSH daemon misconfiguration', 'Key fingerprint: SHA256:HQpVra6n60Y4pFg1W/ZTHvGQaJS7M5oQEy7FM8Do8G8 (ED25519)']"
       ]
     }
   ],
   "completedRecent": [
     {
-      "id": "task-1770539089674",
-      "title": "DICTATION #62 Summary: Core idea is sequence tasks by limits and do",
-      "source": "dictation-web",
-      "priority": "high",
-      "status": "completed",
-      "sequence": 3,
-      "createdAt": "2026-02-08T08:24:49.674Z",
-      "updatedAt": "2026-02-08T17:14:23Z",
-      "completedAt": "2026-02-08T13:00:54.928Z",
-      "ageHours": 8.58,
-      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770539089674-workflow-system.md",
-      "deliverableUrl": "/ops/deliverables/task-1770539089674-workflow-system.md",
-      "notes": [
-        "Auto-closed by assistant after deliverable validation (dictation #61/#62).",
-        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770539089674-workflow-system.md"
-      ]
-    },
-    {
-      "id": "task-1770539089672",
-      "title": "DICTATION #61 Summary: I need to figure way out I lineup tasks",
-      "source": "dictation-web",
-      "priority": "high",
-      "status": "completed",
-      "sequence": 2,
-      "createdAt": "2026-02-08T08:24:49.672Z",
-      "updatedAt": "2026-02-08T17:14:23Z",
-      "completedAt": "2026-02-08T13:00:54.718Z",
-      "ageHours": 8.58,
-      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770539089672-workflow-system.md",
-      "deliverableUrl": "/ops/deliverables/task-1770539089672-workflow-system.md",
-      "notes": [
-        "Auto-closed by assistant after deliverable validation (dictation #61/#62).",
-        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770539089672-workflow-system.md"
-      ]
-    },
-    {
-      "id": "task-20260201-001",
-      "title": "Build comprehensive blog content strategy for shreyaskorad.in",
-      "source": "legacy",
-      "priority": "high",
-      "status": "completed",
-      "sequence": 1,
-      "createdAt": "2026-02-01T22:43:00.000Z",
-      "updatedAt": "2026-02-08T12:59:59.102Z",
-      "completedAt": "2026-02-08T12:59:59.102Z",
-      "ageHours": 162.28,
-      "deliverySummary": "Generated strategy deliverable: /ops/deliverables/task-20260201-001-blog-strategy.md",
-      "deliverableUrl": "/ops/deliverables/task-20260201-001-blog-strategy.md",
-      "notes": [
-        "Migrated from legacy tasks.json format",
-        "Delivery summary: Generated strategy deliverable: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-20260201-001-blog-strategy.md"
-      ]
-    },
-    {
-      "id": "task-1770538770337",
-      "title": "[WhatsApp +918766662719 +29s 2026-02-08 12:35 GMT+5:30] Publish: Humans are wired to bond",
-      "source": "handoff",
+      "id": "action-19",
+      "title": "todo: renew passport next week",
+      "source": "dictation-router",
       "priority": "medium",
       "status": "completed",
-      "sequence": 5,
-      "createdAt": "2026-02-08T08:19:30.337Z",
-      "updatedAt": "2026-02-08T11:00:43.284Z",
-      "completedAt": "2026-02-08T11:00:43.284Z",
-      "ageHours": 8.67,
-      "deliverySummary": "Published as /posts/the-object-without-attachment.html and indexed on writing.html",
+      "sequence": 0,
+      "createdAt": "2026-02-08T17:23:16Z",
+      "updatedAt": "2026-02-08T17:23:16Z",
+      "completedAt": "2026-02-08T17:23:16Z",
+      "ageHours": 0.0,
+      "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
-        "Delivery summary: Published as /posts/the-object-without-attachment.html and indexed on writing.html"
+        "capture_id=2",
+        "route=direct",
+        "action=create_task"
       ]
     },
     {
-      "id": "task-1770538770336",
-      "title": "[WhatsApp +918766662719 +3h 2026-02-08 12:31 GMT+5:30] Publish: I haven\u2019t used PowerPoint in",
-      "source": "handoff",
+      "id": "openclaw-5",
+      "title": "todo run final openclaw connectivity verification and report...",
+      "source": "openclaw",
       "priority": "medium",
       "status": "completed",
-      "sequence": 4,
-      "createdAt": "2026-02-08T08:19:30.336Z",
-      "updatedAt": "2026-02-08T11:00:42.977Z",
-      "completedAt": "2026-02-08T11:00:42.977Z",
-      "ageHours": 8.67,
-      "deliverySummary": "Published as /posts/where-we-go-from-here.html and indexed on writing.html",
+      "sequence": 0,
+      "createdAt": "2026-02-07T17:54:07Z",
+      "updatedAt": "2026-02-07T17:54:07Z",
+      "completedAt": "2026-02-07T17:54:07Z",
+      "ageHours": 23.49,
+      "deliverySummary": "Fix macmini SSH key: ssh into macmini and verify authorized_keys contains correct public key; Attach Chrome tab for browser automation or run browser in openclaw profile; Configure macmini SSH for passwordless key authentication; Test SSH retry script once authentication resolved; Verify WhatsApp gateway reconnection if disconnected",
       "deliverableUrl": null,
       "notes": [
-        "Delivery summary: Published as /posts/where-we-go-from-here.html and indexed on writing.html"
+        "SSH to macmini authentication failed (Permission denied publickey password keyboard-interactive); SSH retry script exists but cannot authenticate until macmini authorized_keys fixed; Browser automation enabled but no Chrome tab attached"
       ]
     },
     {
-      "id": "task-1770538410396",
-      "title": "Run tasks in strict sequence based on AI and user limits; execute",
-      "source": "web",
-      "priority": "high",
+      "id": "action-18",
+      "title": "todo run final openclaw connectivity verification and report...",
+      "source": "dictation-router",
+      "priority": "medium",
       "status": "completed",
-      "sequence": 7,
-      "createdAt": "2026-02-08T08:13:30.396Z",
-      "updatedAt": "2026-02-08T08:33:51.381Z",
-      "completedAt": "2026-02-08T08:19:30.833Z",
-      "ageHours": 8.77,
-      "deliverySummary": "Implemented limit-aware sequencing policy, capture-source map, and intake-cycle script for continuous no-loss capture and serialized execution.",
+      "sequence": 0,
+      "createdAt": "2026-02-07T17:54:07Z",
+      "updatedAt": "2026-02-07T17:54:07Z",
+      "completedAt": "2026-02-07T17:54:07Z",
+      "ageHours": 23.49,
+      "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=01b74114-cdbd-425b-b986-7ebfde2a2bfe): OpenClaw connectivity verified: gateway Ollama memory cron WhatsApp browser nodes SSH script all operational except SSH to macmini pending authentication fix",
       "deliverableUrl": null,
       "notes": [
-        "Delivery summary: Implemented limit-aware sequencing policy, capture-source map, and intake-cycle script for continuous no-loss capture and serialized execution."
+        "capture_id=59",
+        "route=openclaw",
+        "action=delegate_openclaw"
       ]
     },
     {
-      "id": "task-1770538410304",
-      "title": "Build a no-loss task operating system where every ask is captured, sequenced,",
-      "source": "web",
-      "priority": "critical",
+      "id": "action-16",
+      "title": "todo verify openclaw ssh execution pipeline for dictation...",
+      "source": "dictation-router",
+      "priority": "medium",
       "status": "completed",
-      "sequence": 6,
-      "createdAt": "2026-02-08T08:13:30.304Z",
-      "updatedAt": "2026-02-08T08:33:51.380Z",
-      "completedAt": "2026-02-08T08:18:53.686Z",
-      "ageHours": 8.77,
-      "deliverySummary": "Checkpoints A/B/C completed: queue integrity, WIP=1 + review gate, approval + metrics + capture-source map implemented.",
+      "sequence": 0,
+      "createdAt": "2026-02-07T17:18:21Z",
+      "updatedAt": "2026-02-07T17:18:21Z",
+      "completedAt": "2026-02-07T17:18:21Z",
+      "ageHours": 24.08,
+      "deliverySummary": "Delegated via OpenClaw SSH (status=blocked, task_id=5520d68b-c7e2-45bb-9591-acd91d2c5a54): SSH pipeline configuration verified but authentication failed. Issue identified: local authorized_keys file contained incorrect keys (macbook/macair access keys) for macmini remote access. SSH authentication returns 'Permission denied (publickey,password,keyboard-interactive)' after removing conflicting file.",
       "deliverableUrl": null,
       "notes": [
-        "Plan file: .tasks/plans/task-1770538410304.md",
-        "Delivery summary: Checkpoints A/B/C completed: queue integrity, WIP=1 + review gate, approval + metrics + capture-source map implemented."
+        "capture_id=57",
+        "route=openclaw",
+        "action=delegate_openclaw"
+      ]
+    },
+    {
+      "id": "action-15",
+      "title": "todo implement integration smoke test and deploy notes...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-07T17:04:09Z",
+      "updatedAt": "2026-02-07T17:04:09Z",
+      "completedAt": "2026-02-07T17:04:09Z",
+      "ageHours": 24.32,
+      "deliverySummary": "Delegated to OpenClaw mock (task_id=mock-dc0f6a6829).",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=56",
+        "route=openclaw",
+        "action=delegate_openclaw"
+      ]
+    },
+    {
+      "id": "action-12",
+      "title": "Hello, what\u2019s happening? I just want to test...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-07T09:04:51Z",
+      "updatedAt": "2026-02-07T09:04:51Z",
+      "completedAt": "2026-02-07T09:04:51Z",
+      "ageHours": 32.31,
+      "deliverySummary": "Stored in Codex inbox",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=15",
+        "route=direct",
+        "action=store"
+      ]
+    },
+    {
+      "id": "action-11",
+      "title": "Testing",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-07T08:49:16Z",
+      "updatedAt": "2026-02-07T08:49:16Z",
+      "completedAt": "2026-02-07T08:49:16Z",
+      "ageHours": 32.57,
+      "deliverySummary": "Stored in Codex inbox",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=8",
+        "route=direct",
+        "action=store"
+      ]
+    },
+    {
+      "id": "action-9",
+      "title": "todo: call dentist next week",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-07T08:48:20Z",
+      "updatedAt": "2026-02-07T08:48:20Z",
+      "completedAt": "2026-02-07T08:48:20Z",
+      "ageHours": 32.58,
+      "deliverySummary": "Task created in local database",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=7",
+        "route=direct",
+        "action=create_task"
+      ]
+    },
+    {
+      "id": "action-8",
+      "title": "High testing, testing, testing, what\u2019s happening? hello, this...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-07T08:43:22Z",
+      "updatedAt": "2026-02-07T08:43:22Z",
+      "completedAt": "2026-02-07T08:43:22Z",
+      "ageHours": 32.67,
+      "deliverySummary": "Stored in Codex inbox",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=4",
+        "route=direct",
+        "action=store"
+      ]
+    },
+    {
+      "id": "action-5",
+      "title": "todo: renew passport next week",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-07T08:39:21Z",
+      "updatedAt": "2026-02-07T08:39:21Z",
+      "completedAt": "2026-02-07T08:39:21Z",
+      "ageHours": 32.73,
+      "deliverySummary": "Task created in local database",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=3",
+        "route=direct",
+        "action=create_task"
+      ]
+    },
+    {
+      "id": "action-4",
+      "title": "todo: renew passport next week",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-07T08:38:58Z",
+      "updatedAt": "2026-02-07T08:38:58Z",
+      "completedAt": "2026-02-07T08:38:58Z",
+      "ageHours": 32.74,
+      "deliverySummary": "Task created in local database",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=2",
+        "route=direct",
+        "action=create_task"
+      ]
+    },
+    {
+      "id": "action-1",
+      "title": "todo: renew passport next week",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-07T08:33:41Z",
+      "updatedAt": "2026-02-07T08:33:41Z",
+      "completedAt": "2026-02-07T08:33:41Z",
+      "ageHours": 32.83,
+      "deliverySummary": "Task created in local database",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=1",
+        "route=direct",
+        "action=create_task"
       ]
     }
   ],
   "observations": [
     {
       "level": "info",
-      "message": "DICTATION_CLOSE: #61 and #62 were validated against deliverables and auto-closed by assistant control."
+      "message": "DICTATION_SYNC: 50 queued item(s) auto-synced from pending review lane."
     },
     {
-      "level": "info",
-      "message": "DICTATION_SYNC: synced 25 pending inbox items from dictation router at 2026-02-08T17:12:19Z"
-    },
-    {
-      "level": "info",
-      "message": "DICTATION_SYNC: capture #66 is present with 25 queued item(s)."
-    },
-    {
-      "level": "info",
-      "message": "3 task(s) need your decision: proceed with direction or close."
+      "level": "warn",
+      "message": "2 OpenClaw item(s) need attention (blocked/failed or flagged)."
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-07T17:54:07Z",
+      "message": "SSH to macmini authentication failed (Permission denied publickey password keyboard-interactive); SSH retry script exists but cannot authenticate until macmini authorized_keys fixed; Browser automation enabled but no Chrome tab attached"
+    },
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-07T17:18:21Z",
+      "message": "['Remote server (macmini) not accepting SSH key authentication despite key being loaded in ssh-agent', \"Cannot verify remote server's authorized_keys file content - only local machine has access\", 'Possibly incorrect public key on remote server or SSH daemon misconfiguration', 'Key fingerprint: SHA256:HQpVra6n60Y4pFg1W/ZTHvGQaJS7M5oQEy7FM8Do8G8 (ED25519)']"
+    }
+  ],
   "recentActivity": [
     {
-      "timestamp": "2026-02-08T13:00:54.928Z",
-      "type": "approved",
-      "taskId": "task-1770539089674",
-      "message": "Auto-completed via handler: workflow_design"
+      "timestamp": "2026-02-08T17:23:16Z",
+      "type": "executed",
+      "taskId": "capture-2",
+      "message": "todo: renew passport next week: Task created in local database"
     },
     {
-      "timestamp": "2026-02-08T13:00:54.928Z",
-      "type": "auto_completed",
-      "taskId": "task-1770539089674",
-      "message": "Auto-completed by handler workflow_design"
+      "timestamp": "2026-02-07T17:54:07Z",
+      "type": "executed",
+      "taskId": "capture-59",
+      "message": "todo run final openclaw connectivity verification and report...: Delegated via OpenClaw SSH (status=completed, task_id=01b74114-cdbd-425b-b986-7ebfde2a2bfe): OpenClaw connectivity verified: gateway Ollama memory cron WhatsApp browser nodes SSH script all operational except SSH to macmini pending authentication fix"
     },
     {
-      "timestamp": "2026-02-08T13:00:54.927Z",
-      "type": "review",
-      "taskId": "task-1770539089674",
-      "message": "Task moved to review"
+      "timestamp": "2026-02-07T17:22:51Z",
+      "type": "skipped",
+      "taskId": "capture-58",
+      "message": "todo confirm openclaw communication live and mark completed...: OpenClaw SSH execution failed: OpenClaw SSH command failed: shreyas-clawd@192.168.1.13: Permission denied (publickey,password,keyboard-interactive)."
     },
     {
-      "timestamp": "2026-02-08T13:00:54.823Z",
-      "type": "auto_advanced",
-      "taskId": "task-1770539089674",
-      "message": "Auto-started from queue head: task-1770539089674"
+      "timestamp": "2026-02-07T17:18:21Z",
+      "type": "executed",
+      "taskId": "capture-57",
+      "message": "todo verify openclaw ssh execution pipeline for dictation...: Delegated via OpenClaw SSH (status=blocked, task_id=5520d68b-c7e2-45bb-9591-acd91d2c5a54): SSH pipeline configuration verified but authentication failed. Issue identified: local authorized_keys file contained incorrect keys (macbook/macair access keys) for macmini remote access. SSH authentication returns 'Permission denied (publickey,password,keyboard-interactive)' after removing conflicting file."
     },
     {
-      "timestamp": "2026-02-08T13:00:54.822Z",
-      "type": "started",
-      "taskId": "task-1770539089674",
-      "message": "Task moved to in_progress"
+      "timestamp": "2026-02-07T17:04:09Z",
+      "type": "executed",
+      "taskId": "capture-56",
+      "message": "todo implement integration smoke test and deploy notes...: Delegated to OpenClaw mock (task_id=mock-dc0f6a6829)."
     },
     {
-      "timestamp": "2026-02-08T13:00:54.719Z",
-      "type": "approved",
-      "taskId": "task-1770539089672",
-      "message": "Auto-completed via handler: workflow_design"
+      "timestamp": "2026-02-07T16:43:29Z",
+      "type": "skipped",
+      "taskId": "capture-55",
+      "message": "todo implement deployment checker and update CI docs: OpenClaw candidate queued, but no execute URL configured."
     },
     {
-      "timestamp": "2026-02-08T13:00:54.719Z",
-      "type": "auto_completed",
-      "taskId": "task-1770539089672",
-      "message": "Auto-completed by handler workflow_design"
+      "timestamp": "2026-02-07T10:35:53Z",
+      "type": "skipped",
+      "taskId": "capture-45",
+      "message": "todo buy milk and email test@example.com about roadmap: Skipped: SMTP credentials are not configured"
     },
     {
-      "timestamp": "2026-02-08T13:00:54.718Z",
-      "type": "review",
-      "taskId": "task-1770539089672",
-      "message": "Task moved to review"
+      "timestamp": "2026-02-07T09:04:51Z",
+      "type": "executed",
+      "taskId": "capture-15",
+      "message": "Hello, what\u2019s happening? I just want to test...: Stored in Codex inbox"
     },
     {
-      "timestamp": "2026-02-08T12:59:59.221Z",
-      "type": "auto_advanced",
-      "taskId": "task-1770539089672",
-      "message": "Auto-started from queue head: task-1770539089672"
+      "timestamp": "2026-02-07T08:49:16Z",
+      "type": "executed",
+      "taskId": "capture-8",
+      "message": "Testing: Stored in Codex inbox"
     },
     {
-      "timestamp": "2026-02-08T12:59:59.220Z",
-      "type": "started",
-      "taskId": "task-1770539089672",
-      "message": "Task moved to in_progress"
+      "timestamp": "2026-02-07T08:48:20Z",
+      "type": "skipped",
+      "taskId": "capture-7",
+      "message": "email me@x.com summary: Skipped: SMTP credentials are not configured"
     },
     {
-      "timestamp": "2026-02-08T12:59:59.103Z",
-      "type": "auto_completed",
-      "taskId": "task-20260201-001",
-      "message": "Auto-completed by handler blog_strategy"
+      "timestamp": "2026-02-07T08:48:20Z",
+      "type": "executed",
+      "taskId": "capture-7",
+      "message": "todo: call dentist next week: Task created in local database"
     },
     {
-      "timestamp": "2026-02-08T12:59:59.102Z",
-      "type": "approved",
-      "taskId": "task-20260201-001",
-      "message": "Auto-completed via handler: blog_strategy"
+      "timestamp": "2026-02-07T08:43:22Z",
+      "type": "executed",
+      "taskId": "capture-4",
+      "message": "High testing, testing, testing, what\u2019s happening? hello, this...: Stored in Codex inbox"
     },
     {
-      "timestamp": "2026-02-08T12:59:59.101Z",
-      "type": "review",
-      "taskId": "task-20260201-001",
-      "message": "Task moved to review"
+      "timestamp": "2026-02-07T08:39:21Z",
+      "type": "skipped",
+      "taskId": "capture-3",
+      "message": "research how to automate weekly planning with AI: Skipped: OPENAI_API_KEY not configured"
     },
     {
-      "timestamp": "2026-02-08T12:48:19.885Z",
-      "type": "started",
-      "taskId": "task-20260201-001",
-      "message": "Task moved to in_progress"
+      "timestamp": "2026-02-07T08:39:21Z",
+      "type": "skipped",
+      "taskId": "capture-3",
+      "message": "email john@example.com about budget review: Skipped: SMTP credentials are not configured"
     },
     {
-      "timestamp": "2026-02-08T12:48:19.885Z",
-      "type": "auto_advanced",
-      "taskId": "task-20260201-001",
-      "message": "Auto-started from queue head: task-20260201-001"
+      "timestamp": "2026-02-07T08:39:21Z",
+      "type": "executed",
+      "taskId": "capture-3",
+      "message": "todo: renew passport next week: Task created in local database"
     },
     {
-      "timestamp": "2026-02-08T12:22:36.796Z",
-      "type": "priority_changed",
-      "taskId": "task-1770539089674",
-      "message": "Priority critical -> high"
+      "timestamp": "2026-02-07T08:38:58Z",
+      "type": "executed",
+      "taskId": "capture-2",
+      "message": "todo: renew passport next week: Task created in local database"
     },
     {
-      "timestamp": "2026-02-08T12:22:20.526Z",
-      "type": "priority_changed",
-      "taskId": "task-1770539089674",
-      "message": "Priority high -> critical"
+      "timestamp": "2026-02-07T08:33:41Z",
+      "type": "skipped",
+      "taskId": "capture-1",
+      "message": "research how to automate weekly planning with AI: Skipped: OPENAI_API_KEY not configured"
     },
     {
-      "timestamp": "2026-02-08T12:22:20.526Z",
-      "type": "control_applied",
-      "taskId": "task-1770539089674",
-      "message": "Applied control: [WhatsApp +918766662719 +0s 2026-02-08 17:45 GMT+5:30] TASKFLOW PRIORITY task-1770539089674 critical [message_id: CTRLQA1770553340]"
+      "timestamp": "2026-02-07T08:33:41Z",
+      "type": "skipped",
+      "taskId": "capture-1",
+      "message": "email john@example.com about budget review: Skipped: SMTP credentials are not configured"
     },
     {
-      "timestamp": "2026-02-08T11:16:20.889Z",
-      "type": "control_applied",
-      "taskId": "task-20260201-001",
-      "message": "Applied control: [WhatsApp +918766662719 +0s 2026-02-08 16:46 GMT+5:30] TASKFLOW SEQUENCE task-20260201-001 1 [message_id: CONTROLTEST1770549380]"
-    },
-    {
-      "timestamp": "2026-02-08T11:16:20.888Z",
-      "type": "sequence_changed",
-      "taskId": "task-20260201-001",
-      "message": "Moved to active sequence 1"
-    },
-    {
-      "timestamp": "2026-02-08T11:00:43.285Z",
-      "type": "approved",
-      "taskId": "task-1770538770337",
-      "message": "Verified on site index and sitemap"
-    },
-    {
-      "timestamp": "2026-02-08T11:00:43.182Z",
-      "type": "review",
-      "taskId": "task-1770538770337",
-      "message": "Task moved to review"
-    },
-    {
-      "timestamp": "2026-02-08T11:00:43.080Z",
-      "type": "started",
-      "taskId": "task-1770538770337",
-      "message": "Task moved to in_progress"
-    },
-    {
-      "timestamp": "2026-02-08T11:00:42.978Z",
-      "type": "approved",
-      "taskId": "task-1770538770336",
-      "message": "Verified on site index and sitemap"
-    },
-    {
-      "timestamp": "2026-02-08T11:00:42.875Z",
-      "type": "review",
-      "taskId": "task-1770538770336",
-      "message": "Task moved to review"
-    },
-    {
-      "timestamp": "2026-02-08T11:00:42.774Z",
-      "type": "started",
-      "taskId": "task-1770538770336",
-      "message": "Task moved to in_progress"
-    },
-    {
-      "timestamp": "2026-02-08T08:35:02.584Z",
-      "type": "sequence_normalized",
-      "taskId": null,
-      "message": "Normalized sequence ordering across active tasks"
-    },
-    {
-      "timestamp": "2026-02-08T08:33:51.382Z",
-      "type": "sequence_normalized",
-      "taskId": null,
-      "message": "Normalized sequence ordering across tasks"
-    },
-    {
-      "timestamp": "2026-02-08T08:32:34.471Z",
-      "type": "sequence_changed",
-      "taskId": "task-1770539089672",
-      "message": "Moved to sequence 6"
-    },
-    {
-      "timestamp": "2026-02-08T08:32:34.374Z",
-      "type": "priority_changed",
-      "taskId": "task-1770539089672",
-      "message": "Priority high -> high"
-    },
-    {
-      "timestamp": "2026-02-08T08:27:46.259Z",
-      "type": "captured",
-      "taskId": "task-1770539266257",
-      "message": "Captured task from dictation-web"
-    },
-    {
-      "timestamp": "2026-02-08T08:27:13.602Z",
-      "type": "captured",
-      "taskId": "task-1770539233600",
-      "message": "Captured task from dictation-web"
-    },
-    {
-      "timestamp": "2026-02-08T08:24:49.674Z",
-      "type": "captured",
-      "taskId": "task-1770539089672",
-      "message": "Captured task from dictation-web"
-    },
-    {
-      "timestamp": "2026-02-08T08:24:49.674Z",
-      "type": "captured",
-      "taskId": "task-1770539089674",
-      "message": "Captured task from dictation-web"
-    },
-    {
-      "timestamp": "2026-02-08T08:19:30.834Z",
-      "type": "approved",
-      "taskId": "task-1770538410396",
-      "message": "User instructed to do all next steps."
-    },
-    {
-      "timestamp": "2026-02-08T08:19:30.733Z",
-      "type": "review",
-      "taskId": "task-1770538410396",
-      "message": "Task moved to review"
-    },
-    {
-      "timestamp": "2026-02-08T08:19:30.338Z",
-      "type": "captured",
-      "taskId": "task-1770538770337",
-      "message": "Captured task from handoff"
-    },
-    {
-      "timestamp": "2026-02-08T08:19:30.337Z",
-      "type": "captured",
-      "taskId": "task-1770538770336",
-      "message": "Captured task from handoff"
-    },
-    {
-      "timestamp": "2026-02-08T08:19:29.529Z",
-      "type": "started",
-      "taskId": "task-1770538410396",
-      "message": "Task moved to in_progress"
-    },
-    {
-      "timestamp": "2026-02-08T08:18:53.687Z",
-      "type": "approved",
-      "taskId": "task-1770538410304",
-      "message": "User instructed to execute all next steps end-to-end."
+      "timestamp": "2026-02-07T08:33:41Z",
+      "type": "executed",
+      "taskId": "capture-1",
+      "message": "todo: renew passport next week: Task created in local database"
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-08T13:29:07.040Z",
+    "updatedAt": "2026-02-08T17:23:16Z",
     "metrics": {
-      "reviewRequested": 0,
+      "reviewRequested": 50,
       "proceedCount": 0,
       "closeCount": 0
     },
     "topKeywords": [],
-    "insights": []
+    "insights": [
+      "FULL_AUTO_PIPELINE is active: captures auto-run through processing, execution, and ops sync."
+    ]
   },
   "controls": {
-    "board": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js board",
-    "brief": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js brief",
-    "priority": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js priority <task-id> <critical|high|medium|low>",
-    "sequence": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js sequence <task-id> <number>",
-    "start": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js start <task-id>",
-    "done": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js done <task-id> \"<delivery-summary>\"",
-    "proceed": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js proceed <task-id> \"<direction>\"",
-    "close": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js close <task-id> \"<note>\""
+    "refresh": "/api/ops/sync",
+    "status_overview": "/api/status/overview",
+    "captures": "/api/captures",
+    "openclaw_tasks": "/api/openclaw/tasks"
   }
 }
