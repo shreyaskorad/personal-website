@@ -1,19 +1,20 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T18:17:26Z",
+    "updatedAt": "2026-02-08T18:18:10Z",
     "source": "Dictation Router + OpenClaw supervisor",
-    "fingerprint": "f80c3b33eb124879"
+    "fingerprint": "0d2df16d3aa6c44f"
   },
   "summary": {
     "totalTasks": 44,
-    "queued": 0,
+    "queued": 7,
     "active": 2,
-    "completed": 42,
+    "completed": 35,
     "blocked": 0,
     "byStatus": {
       "in_progress": 2,
-      "completed": 42
+      "queued": 7,
+      "completed": 35
     }
   },
   "execution": [
@@ -27,7 +28,7 @@
       "createdAt": "2026-02-08T18:09:42Z",
       "updatedAt": "2026-02-08T18:09:42Z",
       "completedAt": null,
-      "ageHours": 0.13,
+      "ageHours": 0.14,
       "deliverySummary": "Build 78kg target roadmap and local LLM infrastructure setup",
       "deliverableUrl": null,
       "notes": []
@@ -42,13 +43,147 @@
       "createdAt": "2026-02-08T17:55:15Z",
       "updatedAt": "2026-02-08T17:55:15Z",
       "completedAt": null,
-      "ageHours": 0.37,
+      "ageHours": 0.38,
       "deliverySummary": "Create .github/workflows/deploy.yml. Create deployment_checker.py. Document deployment process.",
       "deliverableUrl": null,
       "notes": []
     }
   ],
-  "queueTop": [],
+  "queueTop": [
+    {
+      "id": "inbox-115",
+      "title": "todo design scalable Pan Am SAAB training solution concept",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 1,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T18:18:10Z",
+      "completedAt": null,
+      "ageHours": 1.38,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=115"
+      ],
+      "action": "create_task"
+    },
+    {
+      "id": "inbox-114",
+      "title": "todo synthesize Mac mini project data into integrated insights",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 2,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T18:18:10Z",
+      "completedAt": null,
+      "ageHours": 1.38,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=114"
+      ],
+      "action": "create_task"
+    },
+    {
+      "id": "inbox-113",
+      "title": "todo connect Fireflies pipeline and validate profile sync",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 3,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T18:18:10Z",
+      "completedAt": null,
+      "ageHours": 1.38,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=113"
+      ],
+      "action": "create_task"
+    },
+    {
+      "id": "inbox-112",
+      "title": "todo build CAA account growth and weekly dashboard plan",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 4,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T18:18:10Z",
+      "completedAt": null,
+      "ageHours": 1.38,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=112"
+      ],
+      "action": "create_task"
+    },
+    {
+      "id": "inbox-111",
+      "title": "todo research Josh Bersin AI/L&D strategy and business model",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 5,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T18:18:10Z",
+      "completedAt": null,
+      "ageHours": 1.38,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (openclaw_busy:4)",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=111"
+      ],
+      "action": "create_task"
+    },
+    {
+      "id": "inbox-109",
+      "title": "todo automation fast response check",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 6,
+      "createdAt": "2026-02-08T17:30:55Z",
+      "updatedAt": "2026-02-08T18:18:10Z",
+      "completedAt": null,
+      "ageHours": 0.79,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=71",
+        "inbox_item_id=109"
+      ],
+      "action": "create_task"
+    },
+    {
+      "id": "inbox-108",
+      "title": "todo full automation smoke check create task and sync ops",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 7,
+      "createdAt": "2026-02-08T17:29:07Z",
+      "updatedAt": "2026-02-08T18:18:10Z",
+      "completedAt": null,
+      "ageHours": 0.82,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=70",
+        "inbox_item_id=108"
+      ],
+      "action": "create_task"
+    }
+  ],
   "userActionsDue": [
     {
       "id": "openclaw-8",
@@ -60,7 +195,7 @@
       "createdAt": "2026-02-08T17:28:16Z",
       "updatedAt": "2026-02-08T17:28:16Z",
       "completedAt": null,
-      "ageHours": 0.82,
+      "ageHours": 0.83,
       "deliverySummary": "User must approve/reject automation smoke check task; Once approved, start automation ping task; Ping all automated systems and report status",
       "deliverableUrl": null,
       "notes": [
@@ -77,7 +212,7 @@
       "createdAt": "2026-02-07T17:18:21Z",
       "updatedAt": "2026-02-07T17:18:21Z",
       "completedAt": null,
-      "ageHours": 24.98,
+      "ageHours": 25.0,
       "deliverySummary": "['SSH into macmini to verify authorized_keys contains matching public key', 'Check SSH daemon config (/etc/ssh/sshd_config) on macmini for PermitRootLogin, PubkeyAuthentication settings', 'Compare local public key (~/.ssh/id_ed25519.pub) with key in remote authorized_keys', 'Test with passphrase-less key if using Passphrase phrase', 'Verify SSH retry script (/Users/shreyas-clawd/Documents/PersonalOS/memory/tools/ssh-retry.sh) works once authentication is fixed']",
       "deliverableUrl": null,
       "notes": [
@@ -86,139 +221,6 @@
     }
   ],
   "completedRecent": [
-    {
-      "id": "action-55",
-      "title": "todo automation fast response check",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:16:25Z",
-      "updatedAt": "2026-02-08T18:16:25Z",
-      "completedAt": "2026-02-08T18:16:25Z",
-      "ageHours": 0.02,
-      "deliverySummary": "Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=71",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-54",
-      "title": "todo full automation smoke check create task and...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:16:25Z",
-      "updatedAt": "2026-02-08T18:16:25Z",
-      "completedAt": "2026-02-08T18:16:25Z",
-      "ageHours": 0.02,
-      "deliverySummary": "Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=70",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-53",
-      "title": "todo design scalable Pan Am SAAB training solution concept",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:16:25Z",
-      "updatedAt": "2026-02-08T18:16:25Z",
-      "completedAt": "2026-02-08T18:16:25Z",
-      "ageHours": 0.02,
-      "deliverySummary": "Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-52",
-      "title": "todo synthesize Mac mini project data into integrated insights",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:16:25Z",
-      "updatedAt": "2026-02-08T18:16:25Z",
-      "completedAt": "2026-02-08T18:16:25Z",
-      "ageHours": 0.02,
-      "deliverySummary": "Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-51",
-      "title": "todo connect Fireflies pipeline and validate profile sync",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:16:25Z",
-      "updatedAt": "2026-02-08T18:16:25Z",
-      "completedAt": "2026-02-08T18:16:25Z",
-      "ageHours": 0.02,
-      "deliverySummary": "Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-50",
-      "title": "todo build CAA account growth and weekly dashboard plan",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:16:25Z",
-      "updatedAt": "2026-02-08T18:16:25Z",
-      "completedAt": "2026-02-08T18:16:25Z",
-      "ageHours": 0.02,
-      "deliverySummary": "Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-49",
-      "title": "todo research Josh Bersin AI/L&D strategy and business model",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:16:25Z",
-      "updatedAt": "2026-02-08T18:16:25Z",
-      "completedAt": "2026-02-08T18:16:25Z",
-      "ageHours": 0.02,
-      "deliverySummary": "Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
     {
       "id": "action-39",
       "title": "I have to get a lot of stuff...",
@@ -229,7 +231,7 @@
       "createdAt": "2026-02-08T18:09:42Z",
       "updatedAt": "2026-02-08T18:09:42Z",
       "completedAt": "2026-02-08T18:09:42Z",
-      "ageHours": 0.13,
+      "ageHours": 0.14,
       "deliverySummary": "Delegated via OpenClaw SSH (status=in_progress, task_id=df2b27cf-193b-402c-9e85-61567b8d323c): Creating weight loss plan and LLM hosting guide",
       "deliverableUrl": null,
       "notes": [
@@ -248,7 +250,7 @@
       "createdAt": "2026-02-08T18:09:32Z",
       "updatedAt": "2026-02-08T18:09:32Z",
       "completedAt": "2026-02-08T18:09:32Z",
-      "ageHours": 0.13,
+      "ageHours": 0.14,
       "deliverySummary": "Delegated via OpenClaw SSH (status=in_progress, task_id=1d6e2832-d10a-4bc3-820c-ef619734afc3): Created weekly schedule and AI transformation docs. Now building weight plan and LLM infrastructure guide.",
       "deliverableUrl": null,
       "notes": [
@@ -267,7 +269,7 @@
       "createdAt": "2026-02-08T18:06:20Z",
       "updatedAt": "2026-02-08T18:06:20Z",
       "completedAt": "2026-02-08T18:06:20Z",
-      "ageHours": 0.19,
+      "ageHours": 0.2,
       "deliverySummary": "Review workflow documentation and approve or provide feedback",
       "deliverableUrl": null,
       "notes": []
@@ -282,7 +284,7 @@
       "createdAt": "2026-02-08T18:06:20Z",
       "updatedAt": "2026-02-08T18:06:20Z",
       "completedAt": "2026-02-08T18:06:20Z",
-      "ageHours": 0.19,
+      "ageHours": 0.2,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=7884e36a-dbf9-4ca8-a54c-256ed26bb2be): Created TIME-BASED-SEQUENCING.md and IMPLEMENTATION-GUIDE.md. Awaiting your approval.",
       "deliverableUrl": null,
       "notes": [
@@ -301,7 +303,7 @@
       "createdAt": "2026-02-08T18:06:01Z",
       "updatedAt": "2026-02-08T18:06:01Z",
       "completedAt": "2026-02-08T18:06:01Z",
-      "ageHours": 0.19,
+      "ageHours": 0.2,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=70d96c58-80f6-4bda-ae35-56fa5e9e7f72): Created TIME-BASED-SEQUENCING.md and IMPLEMENTATION-GUIDE.md for time-window workflow",
       "deliverableUrl": null,
       "notes": [
@@ -320,7 +322,7 @@
       "createdAt": "2026-02-08T18:02:13Z",
       "updatedAt": "2026-02-08T18:02:13Z",
       "completedAt": "2026-02-08T18:02:13Z",
-      "ageHours": 0.25,
+      "ageHours": 0.27,
       "deliverySummary": "",
       "deliverableUrl": null,
       "notes": []
@@ -335,7 +337,7 @@
       "createdAt": "2026-02-08T18:02:13Z",
       "updatedAt": "2026-02-08T18:02:13Z",
       "completedAt": "2026-02-08T18:02:13Z",
-      "ageHours": 0.25,
+      "ageHours": 0.27,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=83727fe6-b1f1-423a-b220-2c1812485e87): The task was marked completed but it should be in review first per the operating protocol. Let me check the current state and move it properly.",
       "deliverableUrl": null,
       "notes": [
@@ -354,7 +356,7 @@
       "createdAt": "2026-02-08T17:57:24Z",
       "updatedAt": "2026-02-08T17:57:24Z",
       "completedAt": "2026-02-08T17:57:24Z",
-      "ageHours": 0.33,
+      "ageHours": 0.35,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=401bf54c-2f17-43b5-bad6-37a22e0c70a6): Created GitHub Actions workflow, deployment checker, updated CI docs",
       "deliverableUrl": null,
       "notes": [
@@ -373,7 +375,7 @@
       "createdAt": "2026-02-08T17:55:15Z",
       "updatedAt": "2026-02-08T17:55:15Z",
       "completedAt": "2026-02-08T17:55:15Z",
-      "ageHours": 0.37,
+      "ageHours": 0.38,
       "deliverySummary": "Delegated via OpenClaw SSH (status=in_progress, task_id=fc85a6b3-7fb7-4f07-8d48-f7134f926b87): Investigated current setup, identified gaps. Need to create GitHub Actions workflow and deployment checker.",
       "deliverableUrl": null,
       "notes": [
@@ -392,7 +394,7 @@
       "createdAt": "2026-02-08T17:51:07Z",
       "updatedAt": "2026-02-08T17:51:07Z",
       "completedAt": "2026-02-08T17:51:07Z",
-      "ageHours": 0.44,
+      "ageHours": 0.45,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -411,7 +413,7 @@
       "createdAt": "2026-02-08T17:34:31Z",
       "updatedAt": "2026-02-08T17:34:31Z",
       "completedAt": "2026-02-08T17:34:31Z",
-      "ageHours": 0.72,
+      "ageHours": 0.73,
       "deliverySummary": "Stored in Codex inbox",
       "deliverableUrl": null,
       "notes": [
@@ -430,7 +432,7 @@
       "createdAt": "2026-02-08T17:31:49Z",
       "updatedAt": "2026-02-08T17:31:49Z",
       "completedAt": "2026-02-08T17:31:49Z",
-      "ageHours": 0.76,
+      "ageHours": 0.77,
       "deliverySummary": "Design AI-powered weekly planning workflow based on findings; Identify specific tools/APIs needed for calendar and task integration; Create automation pipeline with cron triggers for weekly execution; Implement tracking and logging for weekly plan metrics",
       "deliverableUrl": null,
       "notes": []
@@ -445,7 +447,7 @@
       "createdAt": "2026-02-08T17:31:49Z",
       "updatedAt": "2026-02-08T17:31:49Z",
       "completedAt": "2026-02-08T17:31:49Z",
-      "ageHours": 0.76,
+      "ageHours": 0.77,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=bc6ae4ab-3005-4b25-bbbc-2af7b55629c8): Research complete: current weekly review ritual uses 3-step process. AI automation strategies include AI-powered scheduling, calendar syncing, auto-summaries, task prioritization, and integration with task management systems. Recommended approach: integrate AI assistant with calendar API for weekly planning automation.",
       "deliverableUrl": null,
       "notes": [
@@ -464,7 +466,7 @@
       "createdAt": "2026-02-08T17:30:42Z",
       "updatedAt": "2026-02-08T17:30:42Z",
       "completedAt": "2026-02-08T17:30:42Z",
-      "ageHours": 0.78,
+      "ageHours": 0.79,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -483,7 +485,7 @@
       "createdAt": "2026-02-08T17:28:16Z",
       "updatedAt": "2026-02-08T17:28:16Z",
       "completedAt": "2026-02-08T17:28:16Z",
-      "ageHours": 0.82,
+      "ageHours": 0.83,
       "deliverySummary": "Delegated via OpenClaw SSH (status=in_progress, task_id=16eeeb62-96c5-4414-9962-4d4d6d0ff403): Automation ping task captured (task-1770571672063-ffx8) but blocked by review gate on task-1770571474871-yf4c",
       "deliverableUrl": null,
       "notes": [
@@ -502,7 +504,7 @@
       "createdAt": "2026-02-08T17:27:54Z",
       "updatedAt": "2026-02-08T17:27:54Z",
       "completedAt": "2026-02-08T17:27:54Z",
-      "ageHours": 0.83,
+      "ageHours": 0.84,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -521,7 +523,7 @@
       "createdAt": "2026-02-08T17:27:48Z",
       "updatedAt": "2026-02-08T17:27:48Z",
       "completedAt": "2026-02-08T17:27:48Z",
-      "ageHours": 0.83,
+      "ageHours": 0.84,
       "deliverySummary": "",
       "deliverableUrl": null,
       "notes": []
@@ -536,7 +538,7 @@
       "createdAt": "2026-02-08T17:27:48Z",
       "updatedAt": "2026-02-08T17:27:48Z",
       "completedAt": "2026-02-08T17:27:48Z",
-      "ageHours": 0.83,
+      "ageHours": 0.84,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=b64ebde0-6d98-40e3-86a6-4e6baee37409): Now executing automation smoke check for all systems:\n\n**Gateway Status**: Running on port 18789, node process active, control panel accessible\n\n**Ollama Status**: Running at localhost:11434, 6 models available (qwen2.5:14b, qwen2.5:7b, llama3.2:3b, mistral, etc.)\n\n**Session**: Active with zai/glm-4.7-flash, context 0/200k\n\n**Memory**: Working, integrity check passed\n\n**Cron**: 5 jobs configured, 2 enabled (praj-industries-news-monitor, daily-memory-summary, weekly-review)\n\n**WhatsApp Gateway**: Configured, allowlist enabled for +918766662719\n\n**Browser**: Enabled but Chrome tab not attached\n\n**SSH to Macmini**: Authentication failing (Permission denied)\n\n**Task System**: Integrity passed, 2 new tasks queued\n\nAll major automated systems operational. SSH to macmini requires authentication fix before remote automation can complete.\n\nTask execution summary: All automated components verified functioning except macmini SSH authentication.",
       "deliverableUrl": null,
       "notes": [
@@ -555,7 +557,7 @@
       "createdAt": "2026-02-08T17:27:21Z",
       "updatedAt": "2026-02-08T17:27:21Z",
       "completedAt": "2026-02-08T17:27:21Z",
-      "ageHours": 0.83,
+      "ageHours": 0.85,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=8e72c766-0835-4eee-ab2c-5e11a6dba43b): Created and synced two tasks: task-1770571474871-yf4c for automation smoke check and task-1770571477922-xuio for sync ops. Integrity check passed, both tasks queued and verified.",
       "deliverableUrl": null,
       "notes": [
@@ -574,7 +576,7 @@
       "createdAt": "2026-02-08T17:26:58Z",
       "updatedAt": "2026-02-08T17:26:58Z",
       "completedAt": "2026-02-08T17:26:58Z",
-      "ageHours": 0.84,
+      "ageHours": 0.85,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -593,7 +595,7 @@
       "createdAt": "2026-02-08T17:26:02Z",
       "updatedAt": "2026-02-08T17:26:02Z",
       "completedAt": "2026-02-08T17:26:02Z",
-      "ageHours": 0.86,
+      "ageHours": 0.87,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -612,7 +614,7 @@
       "createdAt": "2026-02-08T17:25:07Z",
       "updatedAt": "2026-02-08T17:25:07Z",
       "completedAt": "2026-02-08T17:25:07Z",
-      "ageHours": 0.87,
+      "ageHours": 0.88,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -631,7 +633,7 @@
       "createdAt": "2026-02-08T17:24:11Z",
       "updatedAt": "2026-02-08T17:24:11Z",
       "completedAt": "2026-02-08T17:24:11Z",
-      "ageHours": 0.89,
+      "ageHours": 0.9,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -650,7 +652,7 @@
       "createdAt": "2026-02-08T17:23:16Z",
       "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": "2026-02-08T17:23:16Z",
-      "ageHours": 0.9,
+      "ageHours": 0.92,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -669,7 +671,7 @@
       "createdAt": "2026-02-07T17:54:07Z",
       "updatedAt": "2026-02-07T17:54:07Z",
       "completedAt": "2026-02-07T17:54:07Z",
-      "ageHours": 24.39,
+      "ageHours": 24.4,
       "deliverySummary": "Fix macmini SSH key: ssh into macmini and verify authorized_keys contains correct public key; Attach Chrome tab for browser automation or run browser in openclaw profile; Configure macmini SSH for passwordless key authentication; Test SSH retry script once authentication resolved; Verify WhatsApp gateway reconnection if disconnected",
       "deliverableUrl": null,
       "notes": [
@@ -686,7 +688,7 @@
       "createdAt": "2026-02-07T17:54:07Z",
       "updatedAt": "2026-02-07T17:54:07Z",
       "completedAt": "2026-02-07T17:54:07Z",
-      "ageHours": 24.39,
+      "ageHours": 24.4,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=01b74114-cdbd-425b-b986-7ebfde2a2bfe): OpenClaw connectivity verified: gateway Ollama memory cron WhatsApp browser nodes SSH script all operational except SSH to macmini pending authentication fix",
       "deliverableUrl": null,
       "notes": [
@@ -705,7 +707,7 @@
       "createdAt": "2026-02-07T17:18:21Z",
       "updatedAt": "2026-02-07T17:18:21Z",
       "completedAt": "2026-02-07T17:18:21Z",
-      "ageHours": 24.98,
+      "ageHours": 25.0,
       "deliverySummary": "Delegated via OpenClaw SSH (status=blocked, task_id=5520d68b-c7e2-45bb-9591-acd91d2c5a54): SSH pipeline configuration verified but authentication failed. Issue identified: local authorized_keys file contained incorrect keys (macbook/macair access keys) for macmini remote access. SSH authentication returns 'Permission denied (publickey,password,keyboard-interactive)' after removing conflicting file.",
       "deliverableUrl": null,
       "notes": [
@@ -724,7 +726,7 @@
       "createdAt": "2026-02-07T17:04:09Z",
       "updatedAt": "2026-02-07T17:04:09Z",
       "completedAt": "2026-02-07T17:04:09Z",
-      "ageHours": 25.22,
+      "ageHours": 25.23,
       "deliverySummary": "Delegated to OpenClaw mock (task_id=mock-dc0f6a6829).",
       "deliverableUrl": null,
       "notes": [
@@ -743,7 +745,7 @@
       "createdAt": "2026-02-07T09:04:51Z",
       "updatedAt": "2026-02-07T09:04:51Z",
       "completedAt": "2026-02-07T09:04:51Z",
-      "ageHours": 33.21,
+      "ageHours": 33.22,
       "deliverySummary": "Stored in Codex inbox",
       "deliverableUrl": null,
       "notes": [
@@ -762,7 +764,7 @@
       "createdAt": "2026-02-07T08:49:16Z",
       "updatedAt": "2026-02-07T08:49:16Z",
       "completedAt": "2026-02-07T08:49:16Z",
-      "ageHours": 33.47,
+      "ageHours": 33.48,
       "deliverySummary": "Stored in Codex inbox",
       "deliverableUrl": null,
       "notes": [
@@ -781,7 +783,7 @@
       "createdAt": "2026-02-07T08:48:20Z",
       "updatedAt": "2026-02-07T08:48:20Z",
       "completedAt": "2026-02-07T08:48:20Z",
-      "ageHours": 33.49,
+      "ageHours": 33.5,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -800,7 +802,7 @@
       "createdAt": "2026-02-07T08:43:22Z",
       "updatedAt": "2026-02-07T08:43:22Z",
       "completedAt": "2026-02-07T08:43:22Z",
-      "ageHours": 33.57,
+      "ageHours": 33.58,
       "deliverySummary": "Stored in Codex inbox",
       "deliverableUrl": null,
       "notes": [
@@ -819,7 +821,7 @@
       "createdAt": "2026-02-07T08:39:21Z",
       "updatedAt": "2026-02-07T08:39:21Z",
       "completedAt": "2026-02-07T08:39:21Z",
-      "ageHours": 33.63,
+      "ageHours": 33.65,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -838,7 +840,7 @@
       "createdAt": "2026-02-07T08:38:58Z",
       "updatedAt": "2026-02-07T08:38:58Z",
       "completedAt": "2026-02-07T08:38:58Z",
-      "ageHours": 33.64,
+      "ageHours": 33.65,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -857,7 +859,7 @@
       "createdAt": "2026-02-07T08:33:41Z",
       "updatedAt": "2026-02-07T08:33:41Z",
       "completedAt": "2026-02-07T08:33:41Z",
-      "ageHours": 33.73,
+      "ageHours": 33.74,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -868,6 +870,10 @@
     }
   ],
   "observations": [
+    {
+      "level": "info",
+      "message": "DICTATION_SYNC: 7 queued item(s) auto-synced from pending review lane."
+    },
     {
       "level": "warn",
       "message": "2 item(s) need attention in 'Tasks due from you'."
@@ -896,48 +902,6 @@
     }
   ],
   "recentActivity": [
-    {
-      "timestamp": "2026-02-08T18:16:25Z",
-      "type": "executed",
-      "taskId": "capture-71",
-      "message": "todo automation fast response check: Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally."
-    },
-    {
-      "timestamp": "2026-02-08T18:16:25Z",
-      "type": "executed",
-      "taskId": "capture-70",
-      "message": "todo full automation smoke check create task and...: Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally."
-    },
-    {
-      "timestamp": "2026-02-08T18:16:25Z",
-      "type": "executed",
-      "taskId": "capture-66",
-      "message": "todo design scalable Pan Am SAAB training solution concept: Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally."
-    },
-    {
-      "timestamp": "2026-02-08T18:16:25Z",
-      "type": "executed",
-      "taskId": "capture-66",
-      "message": "todo synthesize Mac mini project data into integrated insights: Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally."
-    },
-    {
-      "timestamp": "2026-02-08T18:16:25Z",
-      "type": "executed",
-      "taskId": "capture-66",
-      "message": "todo connect Fireflies pipeline and validate profile sync: Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally."
-    },
-    {
-      "timestamp": "2026-02-08T18:16:25Z",
-      "type": "executed",
-      "taskId": "capture-66",
-      "message": "todo build CAA account growth and weekly dashboard plan: Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally."
-    },
-    {
-      "timestamp": "2026-02-08T18:16:25Z",
-      "type": "executed",
-      "taskId": "capture-66",
-      "message": "todo research Josh Bersin AI/L&D strategy and business model: Task created in local database. OpenClaw deferred (openclaw_busy:4); executed locally."
-    },
     {
       "timestamp": "2026-02-08T18:09:57Z",
       "type": "skipped",
@@ -1186,9 +1150,9 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-08T18:17:26Z",
+    "updatedAt": "2026-02-08T18:18:10Z",
     "metrics": {
-      "reviewRequested": 0,
+      "reviewRequested": 7,
       "proceedCount": 0,
       "closeCount": 0
     },
