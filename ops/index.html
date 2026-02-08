@@ -180,6 +180,83 @@
       background: #fcfdff;
     }
 
+    .queue-actions {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      color: var(--ink);
+      border-radius: 8px;
+      padding: 5px 9px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      border-color: #9db6d2;
+      background: #eef5ff;
+    }
+
+    .btn-brand {
+      background: #ecf3ff;
+      border-color: #b8d4ff;
+      color: #1149aa;
+    }
+
+    .seq-input {
+      width: 68px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 5px 6px;
+      font-size: 12px;
+      background: #fff;
+    }
+
+    .control-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      background: #fbfdff;
+      margin-bottom: 10px;
+    }
+
+    .control-list {
+      max-height: 190px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 8px;
+      background: #fff;
+      margin-bottom: 8px;
+    }
+
+    .control-item {
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 12px;
+      padding: 2px 0;
+      border-bottom: 1px dashed #e7eef5;
+    }
+
+    .control-item:last-child {
+      border-bottom: 0;
+    }
+
+    .field {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 6px 8px;
+      font-size: 12px;
+      margin-bottom: 8px;
+      background: #fff;
+    }
+
     @media (max-width: 980px) {
       .summary { grid-template-columns: repeat(3, minmax(120px, 1fr)); }
       .lane, .queue, .done, .obs, .err, .events, .ctl { grid-column: span 12; }
@@ -234,6 +311,11 @@
   </div>
 
   <script>
+    const COMMANDS_KEY = "ops_pending_control_commands_v1";
+    const DEFAULT_WHATSAPP = "918766662719";
+    let pendingCommands = [];
+    let latestControls = {};
+
     const fmt = (iso) => {
       if (!iso) return "n/a";
       const d = new Date(iso);
@@ -242,6 +324,40 @@
     };
 
     const empty = (msg) => `<div class="empty">${msg}</div>`;
+
+    function loadPendingCommands() {
+      try {
+        const raw = localStorage.getItem(COMMANDS_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        pendingCommands = Array.isArray(parsed) ? parsed : [];
+      } catch (_err) {
+        pendingCommands = [];
+      }
+    }
+
+    function savePendingCommands() {
+      localStorage.setItem(COMMANDS_KEY, JSON.stringify(pendingCommands));
+    }
+
+    function commandKey(command) {
+      const m = command.match(/^TASKFLOW\s+(SEQUENCE|START|PRIORITY)\s+([^\s]+)/i);
+      if (!m) return command;
+      return `${m[1].toUpperCase()}|${m[2]}`;
+    }
+
+    function upsertPendingCommand(command) {
+      const key = commandKey(command);
+      pendingCommands = pendingCommands.filter((cmd) => commandKey(cmd) !== key);
+      pendingCommands.push(command);
+      savePendingCommands();
+      renderControlPanel();
+    }
+
+    function clearPendingCommands() {
+      pendingCommands = [];
+      savePendingCommands();
+      renderControlPanel();
+    }
 
     function taskRow(t, includeCompleteTime = false) {
       const done = includeCompleteTime ? `<div class="muted">completed: ${fmt(t.completedAt || t.updatedAt)}</div>` : "";
@@ -252,9 +368,28 @@
             <div class="title">${t.title}</div>
             <div class="muted">${t.id}</div>
           </div>
-          <div class="muted">priority: ${t.priority} | status: ${t.status} | age: ${t.ageHours ?? "n/a"}h</div>
+          <div class="muted">priority: ${t.priority} | status: ${t.status} | age: ${t.ageHours ?? "n/a"}h | seq: ${t.sequence ?? "n/a"}</div>
           ${done}
           ${extra}
+        </div>
+      `;
+    }
+
+    function queueTaskRow(t) {
+      const seqInputId = `seq-${t.id}`;
+      return `
+        <div class="row">
+          <div class="topline">
+            <div class="title">${t.title}</div>
+            <div class="muted">${t.id}</div>
+          </div>
+          <div class="muted">priority: ${t.priority} | status: ${t.status} | age: ${t.ageHours ?? "n/a"}h | seq: ${t.sequence ?? "n/a"}</div>
+          <div class="queue-actions">
+            <input id="${seqInputId}" class="seq-input" type="number" min="1" value="${t.sequence || 1}" />
+            <button class="btn" onclick="queueSequence('${t.id}', '${seqInputId}')">Set Seq</button>
+            <button class="btn btn-brand" onclick="queueStart('${t.id}')">Start</button>
+            <button class="btn" onclick="queuePriority('${t.id}', 'critical')">Critical</button>
+          </div>
         </div>
       `;
     }
@@ -289,6 +424,97 @@
       `;
     }
 
+    function buildBatchText() {
+      const lines = [
+        "Apply task controls:",
+        ...pendingCommands
+      ];
+      return lines.join("\n");
+    }
+
+    async function copyPendingBatch() {
+      if (pendingCommands.length === 0) return;
+      try {
+        await navigator.clipboard.writeText(buildBatchText());
+        const el = document.getElementById("control-feedback");
+        if (el) el.textContent = "Copied control batch.";
+      } catch (_err) {
+        const el = document.getElementById("control-feedback");
+        if (el) el.textContent = "Copy failed. Use manual select/copy.";
+      }
+    }
+
+    function openWhatsAppBatch() {
+      if (pendingCommands.length === 0) return;
+      const raw = (document.getElementById("wa-number")?.value || "").replace(/[^\d]/g, "");
+      const number = raw || DEFAULT_WHATSAPP;
+      const text = buildBatchText();
+      window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+      const el = document.getElementById("control-feedback");
+      if (el) el.textContent = "WhatsApp draft opened. Send the message to apply controls.";
+    }
+
+    function queueSequence(taskId, inputId) {
+      const value = document.getElementById(inputId)?.value;
+      const seq = Number(value);
+      if (!Number.isFinite(seq) || seq < 1) return;
+      upsertPendingCommand(`TASKFLOW SEQUENCE ${taskId} ${Math.floor(seq)}`);
+    }
+
+    function queueStart(taskId) {
+      upsertPendingCommand(`TASKFLOW START ${taskId}`);
+    }
+
+    function queuePriority(taskId, priority) {
+      upsertPendingCommand(`TASKFLOW PRIORITY ${taskId} ${priority}`);
+    }
+
+    function renderControlPanel() {
+      const controls = latestControls || {};
+      const pendingRows = pendingCommands.length
+        ? pendingCommands.map((cmd) => `<div class="control-item">${cmd}</div>`).join("")
+        : `<div class="muted">No pending control commands.</div>`;
+
+      const baseCmds = Object.entries(controls)
+        .map(
+          ([k, v]) =>
+            `<div class="muted" style="margin:0 0 4px;text-transform:uppercase;letter-spacing:.5px;font-size:11px;">${k}</div><code>${v}</code>`
+        )
+        .join("");
+
+      document.getElementById("controls").innerHTML = `
+        <div class="control-box">
+          <div class="title" style="margin-bottom:6px;">Queue control batch</div>
+          <div class="muted" style="margin-bottom:8px;">
+            Build commands from queue cards, then send them via WhatsApp.
+            Intake applies them in about 5 minutes.
+          </div>
+          <input id="wa-number" class="field" value="${DEFAULT_WHATSAPP}" />
+          <div class="control-list">${pendingRows}</div>
+          <div class="queue-actions">
+            <button class="btn btn-brand" onclick="openWhatsAppBatch()">Send via WhatsApp</button>
+            <button class="btn" onclick="copyPendingBatch()">Copy Batch</button>
+            <button class="btn" onclick="clearPendingCommands()">Clear</button>
+          </div>
+          <div id="control-feedback" class="muted" style="margin-top:6px;"></div>
+        </div>
+        <div class="control-box">
+          <div class="title" style="margin-bottom:6px;">CLI reference</div>
+          ${baseCmds || `<div class="muted">No CLI controls found in feed.</div>`}
+        </div>
+      `;
+    }
+
+    window.queueSequence = queueSequence;
+    window.queueStart = queueStart;
+    window.queuePriority = queuePriority;
+    window.openWhatsAppBatch = openWhatsAppBatch;
+    window.copyPendingBatch = copyPendingBatch;
+    window.clearPendingCommands = clearPendingCommands;
+
+    loadPendingCommands();
+    renderControlPanel();
+
     fetch("./data.json", { cache: "no-store" })
       .then((r) => r.json())
       .then((data) => {
@@ -312,7 +538,7 @@
 
         document.getElementById("queue").innerHTML =
           (data.queueTop || []).length
-            ? data.queueTop.map((t) => taskRow(t)).join("")
+            ? data.queueTop.map((t) => queueTaskRow(t)).join("")
             : empty("Queue is empty.");
 
         document.getElementById("completed").innerHTML =
@@ -335,10 +561,8 @@
             ? data.recentActivity.map(eventRow).join("")
             : empty("No recent events.");
 
-        const controls = data.controls || {};
-        document.getElementById("controls").innerHTML = Object.entries(controls)
-          .map(([k, v]) => `<div class="muted" style="margin:0 0 4px;text-transform:uppercase;letter-spacing:.5px;font-size:11px;">${k}</div><code>${v}</code>`)
-          .join("");
+        latestControls = data.controls || {};
+        renderControlPanel();
       })
       .catch((err) => {
         document.getElementById("meta").textContent = `Failed to load dashboard data: ${err.message}`;

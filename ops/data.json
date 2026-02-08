@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T11:12:30.563Z",
-    "fingerprint": "0222202df13017dc",
+    "updatedAt": "2026-02-08T11:16:20.889Z",
+    "fingerprint": "894db369997ae70f",
     "source": "PersonalOS task + activity + OpenClaw error logs"
   },
   "summary": {
@@ -26,9 +26,9 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-01T22:43:00.000Z",
-      "updatedAt": "2026-02-08T08:35:02.583Z",
+      "updatedAt": "2026-02-08T11:16:20.888Z",
       "completedAt": null,
-      "ageHours": 156.51,
+      "ageHours": 156.56,
       "deliverySummary": "",
       "notes": [
         "Migrated from legacy tasks.json format"
@@ -42,9 +42,9 @@
       "status": "queued",
       "sequence": 2,
       "createdAt": "2026-02-08T08:24:49.672Z",
-      "updatedAt": "2026-02-08T08:35:02.583Z",
+      "updatedAt": "2026-02-08T11:16:20.888Z",
       "completedAt": null,
-      "ageHours": 2.81,
+      "ageHours": 2.86,
       "deliverySummary": "",
       "notes": []
     },
@@ -56,9 +56,9 @@
       "status": "queued",
       "sequence": 3,
       "createdAt": "2026-02-08T08:24:49.674Z",
-      "updatedAt": "2026-02-08T08:35:02.583Z",
+      "updatedAt": "2026-02-08T11:16:20.888Z",
       "completedAt": null,
-      "ageHours": 2.81,
+      "ageHours": 2.86,
       "deliverySummary": "",
       "notes": []
     }
@@ -74,7 +74,7 @@
       "createdAt": "2026-02-08T08:19:30.337Z",
       "updatedAt": "2026-02-08T11:00:43.284Z",
       "completedAt": "2026-02-08T11:00:43.284Z",
-      "ageHours": 2.9,
+      "ageHours": 2.95,
       "deliverySummary": "Published as /posts/the-object-without-attachment.html and indexed on writing.html",
       "notes": [
         "Delivery summary: Published as /posts/the-object-without-attachment.html and indexed on writing.html"
@@ -90,7 +90,7 @@
       "createdAt": "2026-02-08T08:19:30.336Z",
       "updatedAt": "2026-02-08T11:00:42.977Z",
       "completedAt": "2026-02-08T11:00:42.977Z",
-      "ageHours": 2.9,
+      "ageHours": 2.95,
       "deliverySummary": "Published as /posts/where-we-go-from-here.html and indexed on writing.html",
       "notes": [
         "Delivery summary: Published as /posts/where-we-go-from-here.html and indexed on writing.html"
@@ -106,7 +106,7 @@
       "createdAt": "2026-02-08T08:13:30.396Z",
       "updatedAt": "2026-02-08T08:33:51.381Z",
       "completedAt": "2026-02-08T08:19:30.833Z",
-      "ageHours": 3,
+      "ageHours": 3.05,
       "deliverySummary": "Implemented limit-aware sequencing policy, capture-source map, and intake-cycle script for continuous no-loss capture and serialized execution.",
       "notes": [
         "Delivery summary: Implemented limit-aware sequencing policy, capture-source map, and intake-cycle script for continuous no-loss capture and serialized execution."
@@ -122,7 +122,7 @@
       "createdAt": "2026-02-08T08:13:30.304Z",
       "updatedAt": "2026-02-08T08:33:51.380Z",
       "completedAt": "2026-02-08T08:18:53.686Z",
-      "ageHours": 3,
+      "ageHours": 3.05,
       "deliverySummary": "Checkpoints A/B/C completed: queue integrity, WIP=1 + review gate, approval + metrics + capture-source map implemented.",
       "notes": [
         "Plan file: .tasks/plans/task-1770538410304.md",
@@ -331,6 +331,18 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-08T11:16:20.889Z",
+      "type": "control_applied",
+      "taskId": "task-20260201-001",
+      "message": "Applied control: [WhatsApp +918766662719 +0s 2026-02-08 16:46 GMT+5:30] TASKFLOW SEQUENCE task-20260201-001 1 [message_id: CONTROLTEST1770549380]"
+    },
+    {
+      "timestamp": "2026-02-08T11:16:20.888Z",
+      "type": "sequence_changed",
+      "taskId": "task-20260201-001",
+      "message": "Moved to active sequence 1"
+    },
     {
       "timestamp": "2026-02-08T11:00:43.285Z",
       "type": "approved",
