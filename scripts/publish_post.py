@@ -497,6 +497,8 @@ def main() -> None:
         ensure_default_image()
 
     tags_text = ", ".join(tags) if tags else "Writing"
+    image_cache_key = iso_date(date_str).replace("-", "") or datetime.now().strftime("%Y%m%d")
+    image_src = f"{image_filename}?v={image_cache_key}"
 
     template = TEMPLATE_PATH.read_text()
     article_html = build_article_html(sections, bullets, closing)
@@ -509,7 +511,7 @@ def main() -> None:
         "READ_TIME": str(read_time),
         "TAGS": tags_text,
         "INTRO_LEAD": lead,
-        "IMAGE_FILE": image_filename,
+        "IMAGE_FILE": image_src,
         "IMAGE_ALT": image_alt,
         "IMAGE_CREDIT": image_credit,
     }
@@ -525,7 +527,7 @@ def main() -> None:
     tag_list = ",".join([t.lower() for t in tags]) if tags else "writing"
     entry = (
         f"                <a href=\"posts/{slug}.html\" class=\"article-card\" data-tags=\"{escape(tag_list)}\" data-date=\"{iso_date(date_str)}\" data-title=\"{escape(title)}\" data-excerpt=\"{escape(excerpt)}\">\n"
-        f"                    <img class=\"article-thumb\" src=\"assets/images/blog/{escape(image_filename)}\" alt=\"\" loading=\"lazy\">\n"
+        f"                    <img class=\"article-thumb\" src=\"assets/images/blog/{escape(image_src)}\" alt=\"\" loading=\"lazy\">\n"
         "                    <div class=\"article-body\">\n"
         f"                        <span class=\"article-date\">{short_date(date_str)}</span>\n"
         f"                        <h3>{escape(title)}</h3>\n"
