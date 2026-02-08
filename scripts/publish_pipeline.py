@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any
 from urllib.request import Request, urlopen
 
-ROOT = Path('/Users/shreyas-clawd/Downloads/personal-website')
+ROOT = Path(__file__).resolve().parents[1]
 PUBLISH_SCRIPT = ROOT / 'scripts' / 'publish_post.py'
 FEED_SCRIPT = ROOT / 'scripts' / 'generate-feeds.js'
 LOCK_FILE = ROOT / '.publish.lock'
