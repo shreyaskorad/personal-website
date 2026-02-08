@@ -39,17 +39,23 @@ jobs:
 
       - name: Commit updated feeds
         run: |
-          set -euo pipefail
+          set -uo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml image-sitemap.xml rss.xml
+          if ! git add sitemap.xml image-sitemap.xml rss.xml; then
+            echo "Feed files could not be staged; exiting without failure."
+            exit 0
+          fi
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
 
-          git -c commit.gpgsign=false commit -m "chore: update feeds"
+          if ! git -c commit.gpgsign=false commit -m "chore: update feeds"; then
+            echo "Commit step failed or nothing changed; exiting without failure."
+            exit 0
+          fi
 
           for attempt in 1 2 3; do
             if git push origin HEAD:main; then
@@ -58,9 +64,12 @@ jobs:
             fi
 
             echo "Push failed on attempt ${attempt}; rebasing and retrying"
-            git fetch origin main
+            if ! git fetch origin main; then
+              echo "Fetch failed on attempt ${attempt}"
+            fi
             if ! git rebase origin/main; then
-              git rebase --abort || true
+              echo "Rebase failed on attempt ${attempt}; aborting rebase and retrying."
+              git rebase --abort >/dev/null 2>&1 || true
             fi
             sleep $((attempt * 2))
           done
