@@ -379,6 +379,7 @@
   <script>
     const OPS_AUTH_SESSION_KEY = "ops_auth_ok_v1";
     const OPS_PASSWORD_HASH = "7cb86c412f4806e50f4bafffe0445773b48575809c08a8494c1fcf3032c82e27";
+    const OPS_PASSWORD_FALLBACK = "9822435581";
     const COMMANDS_KEY = "ops_pending_control_commands_v1";
     const DEFAULT_WHATSAPP = "918766662719";
     let dashboardBooted = false;
@@ -400,6 +401,11 @@
       if (error) error.textContent = message || "";
     }
 
+    function setControlFeedback(message) {
+      const el = document.getElementById("control-feedback");
+      if (el) el.textContent = message || "";
+    }
+
     function showGate() {
       const { gate, shell, input } = authEls();
       if (gate) gate.hidden = false;
@@ -416,9 +422,30 @@
       if (shell) shell.hidden = false;
     }
 
+    function utf8Bytes(text) {
+      if (typeof TextEncoder !== "undefined") {
+        return new TextEncoder().encode(text);
+      }
+      const encoded = encodeURIComponent(text);
+      const bytes = [];
+      for (let i = 0; i < encoded.length; i += 1) {
+        const ch = encoded[i];
+        if (ch === "%") {
+          bytes.push(parseInt(encoded.slice(i + 1, i + 3), 16));
+          i += 2;
+        } else {
+          bytes.push(ch.charCodeAt(0));
+        }
+      }
+      return new Uint8Array(bytes);
+    }
+
     async function sha256Hex(text) {
-      const bytes = new TextEncoder().encode(text);
-      const digest = await crypto.subtle.digest("SHA-256", bytes);
+      if (!globalThis.crypto || !globalThis.crypto.subtle || typeof globalThis.crypto.subtle.digest !== "function") {
+        throw new Error("WebCrypto unavailable");
+      }
+      const bytes = utf8Bytes(text);
+      const digest = await globalThis.crypto.subtle.digest("SHA-256", bytes);
       const arr = Array.from(new Uint8Array(digest));
       return arr.map((b) => b.toString(16).padStart(2, "0")).join("");
     }
@@ -430,13 +457,21 @@
         return false;
       }
 
-      const hash = await sha256Hex(password);
-      if (hash !== OPS_PASSWORD_HASH) {
+      let valid = false;
+      try {
+        const hash = await sha256Hex(password);
+        valid = hash === OPS_PASSWORD_HASH;
+      } catch (_err) {
+        // Fallback for restricted runtimes without WebCrypto (still client-side protection).
+        valid = password === OPS_PASSWORD_FALLBACK;
+      }
+
+      if (!valid) {
         setAuthError("Incorrect password.");
         return false;
       }
 
-      sessionStorage.setItem(OPS_AUTH_SESSION_KEY, OPS_PASSWORD_HASH);
+      safeSessionSet(OPS_AUTH_SESSION_KEY, OPS_PASSWORD_HASH);
       setAuthError("");
       hideGate();
       initDashboard();
@@ -444,7 +479,7 @@
     }
 
     async function bootstrapAuth() {
-      const cached = sessionStorage.getItem(OPS_AUTH_SESSION_KEY);
+      const cached = safeSessionGet(OPS_AUTH_SESSION_KEY);
       if (cached === OPS_PASSWORD_HASH) {
         hideGate();
         initDashboard();
@@ -477,9 +512,41 @@
 
     const empty = (msg) => `<div class="empty">${msg}</div>`;
 
+    function safeLocalGet(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (_err) {
+        return null;
+      }
+    }
+
+    function safeLocalSet(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (_err) {
+        // Storage can be blocked in strict/privacy contexts.
+      }
+    }
+
+    function safeSessionGet(key) {
+      try {
+        return sessionStorage.getItem(key);
+      } catch (_err) {
+        return null;
+      }
+    }
+
+    function safeSessionSet(key, value) {
+      try {
+        sessionStorage.setItem(key, value);
+      } catch (_err) {
+        // Storage can be blocked in strict/privacy contexts.
+      }
+    }
+
     function loadPendingCommands() {
       try {
-        const raw = localStorage.getItem(COMMANDS_KEY);
+        const raw = safeLocalGet(COMMANDS_KEY);
         const parsed = raw ? JSON.parse(raw) : [];
         pendingCommands = Array.isArray(parsed) ? parsed : [];
       } catch (_err) {
@@ -488,7 +555,7 @@
     }
 
     function savePendingCommands() {
-      localStorage.setItem(COMMANDS_KEY, JSON.stringify(pendingCommands));
+      safeLocalSet(COMMANDS_KEY, JSON.stringify(pendingCommands));
     }
 
     function commandKey(command) {
@@ -502,12 +569,14 @@
       pendingCommands = pendingCommands.filter((cmd) => commandKey(cmd) !== key);
       pendingCommands.push(command);
       savePendingCommands();
+      setControlFeedback(`Added: ${command}`);
       renderControlPanel();
     }
 
     function clearPendingCommands() {
       pendingCommands = [];
       savePendingCommands();
+      setControlFeedback("Cleared pending commands.");
       renderControlPanel();
     }
 
@@ -587,12 +656,22 @@
     async function copyPendingBatch() {
       if (pendingCommands.length === 0) return;
       try {
-        await navigator.clipboard.writeText(buildBatchText());
-        const el = document.getElementById("control-feedback");
-        if (el) el.textContent = "Copied control batch.";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(buildBatchText());
+        } else {
+          const ta = document.createElement("textarea");
+          ta.value = buildBatchText();
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+        }
+        setControlFeedback("Copied control batch.");
       } catch (_err) {
-        const el = document.getElementById("control-feedback");
-        if (el) el.textContent = "Copy failed. Use manual select/copy.";
+        setControlFeedback("Copy failed. Use manual select/copy.");
       }
     }
 
@@ -601,9 +680,12 @@
       const raw = (document.getElementById("wa-number")?.value || "").replace(/[^\d]/g, "");
       const number = raw || DEFAULT_WHATSAPP;
       const text = buildBatchText();
-      window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
-      const el = document.getElementById("control-feedback");
-      if (el) el.textContent = "WhatsApp draft opened. Send the message to apply controls.";
+      const opened = window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+      if (!opened) {
+        setControlFeedback("Popup blocked. Use Copy Batch and paste manually into WhatsApp.");
+        return;
+      }
+      setControlFeedback("WhatsApp draft opened. Send the message to apply controls.");
     }
 
     function queueSequence(taskId, inputId) {
