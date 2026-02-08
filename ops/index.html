@@ -449,7 +449,7 @@
       if (dashboardBooted) return;
       dashboardBooted = true;
 
-      fetch("./data.json", { cache: "no-store" })
+      fetch(`./data.json?cb=${Date.now()}`, { cache: "no-store" })
         .then((r) => r.json())
         .then((data) => {
           document.getElementById("meta").textContent =
