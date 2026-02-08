@@ -1,1158 +1,322 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T18:27:10Z",
+    "updatedAt": "2026-02-08T18:28:01Z",
     "source": "Dictation Router + OpenClaw supervisor",
-    "fingerprint": "c79d2340e2a32bbe"
+    "fingerprint": "cac73880ac1254fb"
   },
   "summary": {
-    "totalTasks": 44,
-    "queued": 7,
-    "active": 2,
-    "completed": 35,
+    "totalTasks": 15,
+    "queued": 15,
+    "active": 0,
+    "completed": 0,
     "blocked": 0,
     "byStatus": {
-      "in_progress": 2,
-      "queued": 7,
-      "completed": 35
+      "queued": 15
     }
   },
-  "execution": [
-    {
-      "id": "openclaw-16",
-      "title": "I have to get a lot of stuff...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "in_progress",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:09:42Z",
-      "updatedAt": "2026-02-08T18:09:42Z",
-      "completedAt": null,
-      "ageHours": 0.29,
-      "deliverySummary": "Build 78kg target roadmap and local LLM infrastructure setup",
-      "deliverableUrl": null,
-      "notes": []
-    },
-    {
-      "id": "openclaw-10",
-      "title": "todo implement deployment checker and update CI docs",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "in_progress",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:55:15Z",
-      "updatedAt": "2026-02-08T17:55:15Z",
-      "completedAt": null,
-      "ageHours": 0.53,
-      "deliverySummary": "Create .github/workflows/deploy.yml. Create deployment_checker.py. Document deployment process.",
-      "deliverableUrl": null,
-      "notes": []
-    }
-  ],
+  "execution": [],
   "queueTop": [
     {
-      "id": "inbox-115",
+      "id": "inbox-130",
       "title": "todo design scalable Pan Am SAAB training solution concept",
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T18:27:10Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
       "completedAt": null,
-      "ageHours": 1.53,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "ageHours": 1.54,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
         "capture_id=66",
-        "inbox_item_id=115"
+        "inbox_item_id=130"
       ],
       "action": "create_task"
     },
     {
-      "id": "inbox-114",
+      "id": "inbox-129",
       "title": "todo synthesize Mac mini project data into integrated insights",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 2,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T18:27:10Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
       "completedAt": null,
-      "ageHours": 1.53,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "ageHours": 1.54,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
         "capture_id=66",
-        "inbox_item_id=114"
+        "inbox_item_id=129"
       ],
       "action": "create_task"
     },
     {
-      "id": "inbox-113",
+      "id": "inbox-128",
       "title": "todo connect Fireflies pipeline and validate profile sync",
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
       "sequence": 3,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T18:27:10Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
       "completedAt": null,
-      "ageHours": 1.53,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "ageHours": 1.54,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
         "capture_id=66",
-        "inbox_item_id=113"
+        "inbox_item_id=128"
       ],
       "action": "create_task"
     },
     {
-      "id": "inbox-112",
+      "id": "inbox-127",
       "title": "todo build CAA account growth and weekly dashboard plan",
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
       "sequence": 4,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T18:27:10Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
       "completedAt": null,
-      "ageHours": 1.53,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "ageHours": 1.54,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
         "capture_id=66",
-        "inbox_item_id=112"
+        "inbox_item_id=127"
       ],
       "action": "create_task"
     },
     {
-      "id": "inbox-111",
+      "id": "inbox-126",
       "title": "todo research Josh Bersin AI/L&D strategy and business model",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 5,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T18:27:10Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
       "completedAt": null,
-      "ageHours": 1.53,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (openclaw_busy:4)",
+      "ageHours": 1.54,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
         "capture_id=66",
-        "inbox_item_id=111"
+        "inbox_item_id=126"
       ],
       "action": "create_task"
     },
     {
-      "id": "inbox-109",
-      "title": "todo automation fast response check",
+      "id": "inbox-125",
+      "title": "todo set journaling and presence routine",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
       "sequence": 6,
-      "createdAt": "2026-02-08T17:30:55Z",
-      "updatedAt": "2026-02-08T18:27:10Z",
+      "createdAt": "2026-02-08T12:39:44Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
       "completedAt": null,
-      "ageHours": 0.94,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "ageHours": 5.8,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
-        "capture_id=71",
-        "inbox_item_id=109"
+        "capture_id=65",
+        "inbox_item_id=125"
       ],
       "action": "create_task"
     },
     {
-      "id": "inbox-108",
-      "title": "todo full automation smoke check create task and sync ops",
+      "id": "inbox-124",
+      "title": "todo run personal time audit and identify time leaks",
       "source": "dictation-router",
-      "priority": "medium",
+      "priority": "high",
       "status": "queued",
       "sequence": 7,
-      "createdAt": "2026-02-08T17:29:07Z",
-      "updatedAt": "2026-02-08T18:27:10Z",
+      "createdAt": "2026-02-08T12:39:44Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
       "completedAt": null,
-      "ageHours": 0.97,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (rate-limited sequencing)",
+      "ageHours": 5.8,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
-        "capture_id=70",
-        "inbox_item_id=108"
+        "capture_id=65",
+        "inbox_item_id=124"
       ],
       "action": "create_task"
-    }
-  ],
-  "userActionsDue": [
-    {
-      "id": "openclaw-8",
-      "title": "todo automation ping",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "in_progress",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:28:16Z",
-      "updatedAt": "2026-02-08T17:28:16Z",
-      "completedAt": null,
-      "ageHours": 0.98,
-      "deliverySummary": "User must approve/reject automation smoke check task; Once approved, start automation ping task; Ping all automated systems and report status",
-      "deliverableUrl": null,
-      "notes": [
-        "Review task task-1770571474871-yf4c requires approval before starting next task (WIP limit 1)"
-      ]
     },
     {
-      "id": "openclaw-3",
-      "title": "todo verify openclaw ssh execution pipeline for dictation...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "blocked",
-      "sequence": 0,
-      "createdAt": "2026-02-07T17:18:21Z",
-      "updatedAt": "2026-02-07T17:18:21Z",
-      "completedAt": null,
-      "ageHours": 25.15,
-      "deliverySummary": "['SSH into macmini to verify authorized_keys contains matching public key', 'Check SSH daemon config (/etc/ssh/sshd_config) on macmini for PermitRootLogin, PubkeyAuthentication settings', 'Compare local public key (~/.ssh/id_ed25519.pub) with key in remote authorized_keys', 'Test with passphrase-less key if using Passphrase phrase', 'Verify SSH retry script (/Users/shreyas-clawd/Documents/PersonalOS/memory/tools/ssh-retry.sh) works once authentication is fixed']",
-      "deliverableUrl": null,
-      "notes": [
-        "['Remote server (macmini) not accepting SSH key authentication despite key being loaded in ssh-agent', \"Cannot verify remote server's authorized_keys file content - only local machine has access\", 'Possibly incorrect public key on remote server or SSH daemon misconfiguration', 'Key fingerprint: SHA256:HQpVra6n60Y4pFg1W/ZTHvGQaJS7M5oQEy7FM8Do8G8 (ED25519)']"
-      ]
-    }
-  ],
-  "completedRecent": [
-    {
-      "id": "action-39",
-      "title": "I have to get a lot of stuff...",
+      "id": "inbox-123",
+      "title": "todo analyze AI impact on e-learning vendor model",
       "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:09:42Z",
-      "updatedAt": "2026-02-08T18:09:42Z",
-      "completedAt": "2026-02-08T18:09:42Z",
-      "ageHours": 0.29,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=in_progress, task_id=df2b27cf-193b-402c-9e85-61567b8d323c): Creating weight loss plan and LLM hosting guide",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 8,
+      "createdAt": "2026-02-08T12:38:01Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
+      "completedAt": null,
+      "ageHours": 5.83,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
         "capture_id=64",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
+        "inbox_item_id=123"
+      ],
+      "action": "create_task"
     },
     {
-      "id": "action-38",
-      "title": "I have to get a lot of stuff...",
+      "id": "inbox-122",
+      "title": "todo create weekly schedule and execution template",
       "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:09:32Z",
-      "updatedAt": "2026-02-08T18:09:32Z",
-      "completedAt": "2026-02-08T18:09:32Z",
-      "ageHours": 0.29,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=in_progress, task_id=1d6e2832-d10a-4bc3-820c-ef619734afc3): Created weekly schedule and AI transformation docs. Now building weight plan and LLM infrastructure guide.",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 9,
+      "createdAt": "2026-02-08T12:38:01Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
+      "completedAt": null,
+      "ageHours": 5.83,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
-        "capture_id=63",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
+        "capture_id=64",
+        "inbox_item_id=122"
+      ],
+      "action": "create_task"
     },
     {
-      "id": "openclaw-14",
-      "title": "So the core Idea is not that LLM...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:06:20Z",
-      "updatedAt": "2026-02-08T18:06:20Z",
-      "completedAt": "2026-02-08T18:06:20Z",
-      "ageHours": 0.35,
-      "deliverySummary": "Review workflow documentation and approve or provide feedback",
-      "deliverableUrl": null,
-      "notes": []
-    },
-    {
-      "id": "action-37",
-      "title": "So the core Idea is not that LLM...",
+      "id": "inbox-121",
+      "title": "todo define proceed-close handoff protocol",
       "source": "dictation-router",
       "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:06:20Z",
-      "updatedAt": "2026-02-08T18:06:20Z",
-      "completedAt": "2026-02-08T18:06:20Z",
-      "ageHours": 0.35,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=7884e36a-dbf9-4ca8-a54c-256ed26bb2be): Created TIME-BASED-SEQUENCING.md and IMPLEMENTATION-GUIDE.md. Awaiting your approval.",
+      "status": "queued",
+      "sequence": 10,
+      "createdAt": "2026-02-08T08:06:58Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
+      "completedAt": null,
+      "ageHours": 10.35,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
         "capture_id=62",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
+        "inbox_item_id=121"
+      ],
+      "action": "create_task"
     },
     {
-      "id": "action-36",
-      "title": "So the core Idea is not that LLM...",
+      "id": "inbox-120",
+      "title": "todo implement rate-limited sequencer for task execution",
       "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:06:01Z",
-      "updatedAt": "2026-02-08T18:06:01Z",
-      "completedAt": "2026-02-08T18:06:01Z",
-      "ageHours": 0.35,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=70d96c58-80f6-4bda-ae35-56fa5e9e7f72): Created TIME-BASED-SEQUENCING.md and IMPLEMENTATION-GUIDE.md for time-window workflow",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 11,
+      "createdAt": "2026-02-08T08:06:58Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
+      "completedAt": null,
+      "ageHours": 10.35,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
         "capture_id=62",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
+        "inbox_item_id=120"
+      ],
+      "action": "create_task"
     },
     {
-      "id": "openclaw-12",
-      "title": "I need to figure way out I lineup...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:02:13Z",
-      "updatedAt": "2026-02-08T18:02:13Z",
-      "completedAt": "2026-02-08T18:02:13Z",
-      "ageHours": 0.42,
-      "deliverySummary": "",
-      "deliverableUrl": null,
-      "notes": []
-    },
-    {
-      "id": "action-35",
-      "title": "I need to figure way out I lineup...",
+      "id": "inbox-119",
+      "title": "todo implement quality-speed feedback loop for execution",
       "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T18:02:13Z",
-      "updatedAt": "2026-02-08T18:02:13Z",
-      "completedAt": "2026-02-08T18:02:13Z",
-      "ageHours": 0.42,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=83727fe6-b1f1-423a-b220-2c1812485e87): The task was marked completed but it should be in review first per the operating protocol. Let me check the current state and move it properly.",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 12,
+      "createdAt": "2026-02-08T08:01:59Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
+      "completedAt": null,
+      "ageHours": 10.43,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
         "capture_id=61",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
+        "inbox_item_id=119"
+      ],
+      "action": "create_task"
     },
     {
-      "id": "action-34",
-      "title": "todo implement deployment checker and update CI docs",
+      "id": "inbox-118",
+      "title": "todo design no-loss task capture pipeline for all inputs",
       "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:57:24Z",
-      "updatedAt": "2026-02-08T17:57:24Z",
-      "completedAt": "2026-02-08T17:57:24Z",
-      "ageHours": 0.5,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=401bf54c-2f17-43b5-bad6-37a22e0c70a6): Created GitHub Actions workflow, deployment checker, updated CI docs",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 13,
+      "createdAt": "2026-02-08T08:01:59Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
+      "completedAt": null,
+      "ageHours": 10.43,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
-        "capture_id=54",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
+        "capture_id=61",
+        "inbox_item_id=118"
+      ],
+      "action": "create_task"
     },
     {
-      "id": "action-33",
-      "title": "todo implement deployment checker and update CI docs",
+      "id": "inbox-117",
+      "title": "todo draft blog on learning and development",
       "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:55:15Z",
-      "updatedAt": "2026-02-08T17:55:15Z",
-      "completedAt": "2026-02-08T17:55:15Z",
-      "ageHours": 0.53,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=in_progress, task_id=fc85a6b3-7fb7-4f07-8d48-f7134f926b87): Investigated current setup, identified gaps. Need to create GitHub Actions workflow and deployment checker.",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 14,
+      "createdAt": "2026-02-07T18:07:23Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
+      "completedAt": null,
+      "ageHours": 24.34,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
-        "capture_id=53",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
+        "capture_id=60",
+        "inbox_item_id=117"
+      ],
+      "action": "create_task"
     },
     {
-      "id": "action-32",
-      "title": "todo buy groceries tomorrow",
+      "id": "inbox-116",
+      "title": "todo draft blog on game applications",
       "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:51:07Z",
-      "updatedAt": "2026-02-08T17:51:07Z",
-      "completedAt": "2026-02-08T17:51:07Z",
-      "ageHours": 0.6,
-      "deliverySummary": "Task created in local database",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 15,
+      "createdAt": "2026-02-07T18:07:23Z",
+      "updatedAt": "2026-02-08T18:28:01Z",
+      "completedAt": null,
+      "ageHours": 24.34,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw sequencing",
       "deliverableUrl": null,
       "notes": [
-        "capture_id=5",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-31",
-      "title": "This is just a note to verify auto...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:34:31Z",
-      "updatedAt": "2026-02-08T17:34:31Z",
-      "completedAt": "2026-02-08T17:34:31Z",
-      "ageHours": 0.88,
-      "deliverySummary": "Stored in Codex inbox",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=72",
-        "route=direct",
-        "action=store"
-      ]
-    },
-    {
-      "id": "openclaw-9",
-      "title": "research how to automate weekly planning with AI",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:31:49Z",
-      "updatedAt": "2026-02-08T17:31:49Z",
-      "completedAt": "2026-02-08T17:31:49Z",
-      "ageHours": 0.92,
-      "deliverySummary": "Design AI-powered weekly planning workflow based on findings; Identify specific tools/APIs needed for calendar and task integration; Create automation pipeline with cron triggers for weekly execution; Implement tracking and logging for weekly plan metrics",
-      "deliverableUrl": null,
-      "notes": []
-    },
-    {
-      "id": "action-30",
-      "title": "research how to automate weekly planning with AI",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:31:49Z",
-      "updatedAt": "2026-02-08T17:31:49Z",
-      "completedAt": "2026-02-08T17:31:49Z",
-      "ageHours": 0.92,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=bc6ae4ab-3005-4b25-bbbc-2af7b55629c8): Research complete: current weekly review ritual uses 3-step process. AI automation strategies include AI-powered scheduling, calendar syncing, auto-summaries, task prioritization, and integration with task management systems. Recommended approach: integrate AI assistant with calendar API for weekly planning automation.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=2",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
-    },
-    {
-      "id": "action-28",
-      "title": "todo: renew passport next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:30:42Z",
-      "updatedAt": "2026-02-08T17:30:42Z",
-      "completedAt": "2026-02-08T17:30:42Z",
-      "ageHours": 0.94,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=2",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-27",
-      "title": "todo automation ping",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:28:16Z",
-      "updatedAt": "2026-02-08T17:28:16Z",
-      "completedAt": "2026-02-08T17:28:16Z",
-      "ageHours": 0.98,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=in_progress, task_id=16eeeb62-96c5-4414-9962-4d4d6d0ff403): Automation ping task captured (task-1770571672063-ffx8) but blocked by review gate on task-1770571474871-yf4c",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=69",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
-    },
-    {
-      "id": "action-26",
-      "title": "todo: renew passport next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:27:54Z",
-      "updatedAt": "2026-02-08T17:27:54Z",
-      "completedAt": "2026-02-08T17:27:54Z",
-      "ageHours": 0.99,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=2",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "openclaw-7",
-      "title": "todo full automation smoke check create task and...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:27:48Z",
-      "updatedAt": "2026-02-08T17:27:48Z",
-      "completedAt": "2026-02-08T17:27:48Z",
-      "ageHours": 0.99,
-      "deliverySummary": "",
-      "deliverableUrl": null,
-      "notes": []
-    },
-    {
-      "id": "action-25",
-      "title": "todo full automation smoke check create task and...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:27:48Z",
-      "updatedAt": "2026-02-08T17:27:48Z",
-      "completedAt": "2026-02-08T17:27:48Z",
-      "ageHours": 0.99,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=b64ebde0-6d98-40e3-86a6-4e6baee37409): Now executing automation smoke check for all systems:\n\n**Gateway Status**: Running on port 18789, node process active, control panel accessible\n\n**Ollama Status**: Running at localhost:11434, 6 models available (qwen2.5:14b, qwen2.5:7b, llama3.2:3b, mistral, etc.)\n\n**Session**: Active with zai/glm-4.7-flash, context 0/200k\n\n**Memory**: Working, integrity check passed\n\n**Cron**: 5 jobs configured, 2 enabled (praj-industries-news-monitor, daily-memory-summary, weekly-review)\n\n**WhatsApp Gateway**: Configured, allowlist enabled for +918766662719\n\n**Browser**: Enabled but Chrome tab not attached\n\n**SSH to Macmini**: Authentication failing (Permission denied)\n\n**Task System**: Integrity passed, 2 new tasks queued\n\nAll major automated systems operational. SSH to macmini requires authentication fix before remote automation can complete.\n\nTask execution summary: All automated components verified functioning except macmini SSH authentication.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=68",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
-    },
-    {
-      "id": "action-24",
-      "title": "todo full automation smoke check create task and...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:27:21Z",
-      "updatedAt": "2026-02-08T17:27:21Z",
-      "completedAt": "2026-02-08T17:27:21Z",
-      "ageHours": 1.0,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=8e72c766-0835-4eee-ab2c-5e11a6dba43b): Created and synced two tasks: task-1770571474871-yf4c for automation smoke check and task-1770571477922-xuio for sync ops. Integrity check passed, both tasks queued and verified.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=67",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
-    },
-    {
-      "id": "action-23",
-      "title": "todo: renew passport next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:26:58Z",
-      "updatedAt": "2026-02-08T17:26:58Z",
-      "completedAt": "2026-02-08T17:26:58Z",
-      "ageHours": 1.0,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=2",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-22",
-      "title": "todo: renew passport next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:26:02Z",
-      "updatedAt": "2026-02-08T17:26:02Z",
-      "completedAt": "2026-02-08T17:26:02Z",
-      "ageHours": 1.02,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=2",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-21",
-      "title": "todo: renew passport next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:25:07Z",
-      "updatedAt": "2026-02-08T17:25:07Z",
-      "completedAt": "2026-02-08T17:25:07Z",
-      "ageHours": 1.03,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=2",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-20",
-      "title": "todo: renew passport next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:24:11Z",
-      "updatedAt": "2026-02-08T17:24:11Z",
-      "completedAt": "2026-02-08T17:24:11Z",
-      "ageHours": 1.05,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=2",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-19",
-      "title": "todo: renew passport next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-08T17:23:16Z",
-      "updatedAt": "2026-02-08T17:23:16Z",
-      "completedAt": "2026-02-08T17:23:16Z",
-      "ageHours": 1.07,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=2",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "openclaw-5",
-      "title": "todo run final openclaw connectivity verification and report...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T17:54:07Z",
-      "updatedAt": "2026-02-07T17:54:07Z",
-      "completedAt": "2026-02-07T17:54:07Z",
-      "ageHours": 24.55,
-      "deliverySummary": "Fix macmini SSH key: ssh into macmini and verify authorized_keys contains correct public key; Attach Chrome tab for browser automation or run browser in openclaw profile; Configure macmini SSH for passwordless key authentication; Test SSH retry script once authentication resolved; Verify WhatsApp gateway reconnection if disconnected",
-      "deliverableUrl": null,
-      "notes": [
-        "SSH to macmini authentication failed (Permission denied publickey password keyboard-interactive); SSH retry script exists but cannot authenticate until macmini authorized_keys fixed; Browser automation enabled but no Chrome tab attached"
-      ]
-    },
-    {
-      "id": "action-18",
-      "title": "todo run final openclaw connectivity verification and report...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T17:54:07Z",
-      "updatedAt": "2026-02-07T17:54:07Z",
-      "completedAt": "2026-02-07T17:54:07Z",
-      "ageHours": 24.55,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=01b74114-cdbd-425b-b986-7ebfde2a2bfe): OpenClaw connectivity verified: gateway Ollama memory cron WhatsApp browser nodes SSH script all operational except SSH to macmini pending authentication fix",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=59",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
-    },
-    {
-      "id": "action-16",
-      "title": "todo verify openclaw ssh execution pipeline for dictation...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T17:18:21Z",
-      "updatedAt": "2026-02-07T17:18:21Z",
-      "completedAt": "2026-02-07T17:18:21Z",
-      "ageHours": 25.15,
-      "deliverySummary": "Delegated via OpenClaw SSH (status=blocked, task_id=5520d68b-c7e2-45bb-9591-acd91d2c5a54): SSH pipeline configuration verified but authentication failed. Issue identified: local authorized_keys file contained incorrect keys (macbook/macair access keys) for macmini remote access. SSH authentication returns 'Permission denied (publickey,password,keyboard-interactive)' after removing conflicting file.",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=57",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
-    },
-    {
-      "id": "action-15",
-      "title": "todo implement integration smoke test and deploy notes...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T17:04:09Z",
-      "updatedAt": "2026-02-07T17:04:09Z",
-      "completedAt": "2026-02-07T17:04:09Z",
-      "ageHours": 25.38,
-      "deliverySummary": "Delegated to OpenClaw mock (task_id=mock-dc0f6a6829).",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=56",
-        "route=openclaw",
-        "action=delegate_openclaw"
-      ]
-    },
-    {
-      "id": "action-12",
-      "title": "Hello, what\u2019s happening? I just want to test...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T09:04:51Z",
-      "updatedAt": "2026-02-07T09:04:51Z",
-      "completedAt": "2026-02-07T09:04:51Z",
-      "ageHours": 33.37,
-      "deliverySummary": "Stored in Codex inbox",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=15",
-        "route=direct",
-        "action=store"
-      ]
-    },
-    {
-      "id": "action-11",
-      "title": "Testing",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T08:49:16Z",
-      "updatedAt": "2026-02-07T08:49:16Z",
-      "completedAt": "2026-02-07T08:49:16Z",
-      "ageHours": 33.63,
-      "deliverySummary": "Stored in Codex inbox",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=8",
-        "route=direct",
-        "action=store"
-      ]
-    },
-    {
-      "id": "action-9",
-      "title": "todo: call dentist next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T08:48:20Z",
-      "updatedAt": "2026-02-07T08:48:20Z",
-      "completedAt": "2026-02-07T08:48:20Z",
-      "ageHours": 33.65,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=7",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-8",
-      "title": "High testing, testing, testing, what\u2019s happening? hello, this...",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T08:43:22Z",
-      "updatedAt": "2026-02-07T08:43:22Z",
-      "completedAt": "2026-02-07T08:43:22Z",
-      "ageHours": 33.73,
-      "deliverySummary": "Stored in Codex inbox",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=4",
-        "route=direct",
-        "action=store"
-      ]
-    },
-    {
-      "id": "action-5",
-      "title": "todo: renew passport next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T08:39:21Z",
-      "updatedAt": "2026-02-07T08:39:21Z",
-      "completedAt": "2026-02-07T08:39:21Z",
-      "ageHours": 33.8,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=3",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-4",
-      "title": "todo: renew passport next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T08:38:58Z",
-      "updatedAt": "2026-02-07T08:38:58Z",
-      "completedAt": "2026-02-07T08:38:58Z",
-      "ageHours": 33.8,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=2",
-        "route=direct",
-        "action=create_task"
-      ]
-    },
-    {
-      "id": "action-1",
-      "title": "todo: renew passport next week",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-07T08:33:41Z",
-      "updatedAt": "2026-02-07T08:33:41Z",
-      "completedAt": "2026-02-07T08:33:41Z",
-      "ageHours": 33.89,
-      "deliverySummary": "Task created in local database",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=1",
-        "route=direct",
-        "action=create_task"
-      ]
+        "capture_id=60",
+        "inbox_item_id=116"
+      ],
+      "action": "create_task"
     }
   ],
+  "userActionsDue": [],
+  "completedRecent": [],
   "observations": [
     {
       "level": "info",
-      "message": "DICTATION_SYNC: 7 queued item(s) auto-synced from pending review lane."
-    },
-    {
-      "level": "warn",
-      "message": "2 item(s) need attention in 'Tasks due from you'."
+      "message": "DICTATION_SYNC: 15 queued item(s) auto-synced from pending review lane."
     }
   ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-08T17:57:24Z",
-      "message": "none"
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-08T17:28:16Z",
-      "message": "Review task task-1770571474871-yf4c requires approval before starting next task (WIP limit 1)"
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-07T17:54:07Z",
-      "message": "SSH to macmini authentication failed (Permission denied publickey password keyboard-interactive); SSH retry script exists but cannot authenticate until macmini authorized_keys fixed; Browser automation enabled but no Chrome tab attached"
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-07T17:18:21Z",
-      "message": "['Remote server (macmini) not accepting SSH key authentication despite key being loaded in ssh-agent', \"Cannot verify remote server's authorized_keys file content - only local machine has access\", 'Possibly incorrect public key on remote server or SSH daemon misconfiguration', 'Key fingerprint: SHA256:HQpVra6n60Y4pFg1W/ZTHvGQaJS7M5oQEy7FM8Do8G8 (ED25519)']"
-    }
-  ],
-  "recentActivity": [
-    {
-      "timestamp": "2026-02-08T18:09:57Z",
-      "type": "skipped",
-      "taskId": "capture-65",
-      "message": "I\u2019m just not able to sort of get...: Skipped: SMTP credentials are not configured"
-    },
-    {
-      "timestamp": "2026-02-08T18:09:57Z",
-      "type": "skipped",
-      "taskId": "capture-65",
-      "message": "I\u2019m just not able to sort of get...: Skipped: SMTP credentials are not configured"
-    },
-    {
-      "timestamp": "2026-02-08T18:09:42Z",
-      "type": "executed",
-      "taskId": "capture-64",
-      "message": "I have to get a lot of stuff...: Delegated via OpenClaw SSH (status=in_progress, task_id=df2b27cf-193b-402c-9e85-61567b8d323c): Creating weight loss plan and LLM hosting guide"
-    },
-    {
-      "timestamp": "2026-02-08T18:09:32Z",
-      "type": "executed",
-      "taskId": "capture-63",
-      "message": "I have to get a lot of stuff...: Delegated via OpenClaw SSH (status=in_progress, task_id=1d6e2832-d10a-4bc3-820c-ef619734afc3): Created weekly schedule and AI transformation docs. Now building weight plan and LLM infrastructure guide."
-    },
-    {
-      "timestamp": "2026-02-08T18:06:20Z",
-      "type": "executed",
-      "taskId": "capture-62",
-      "message": "So the core Idea is not that LLM...: Delegated via OpenClaw SSH (status=completed, task_id=7884e36a-dbf9-4ca8-a54c-256ed26bb2be): Created TIME-BASED-SEQUENCING.md and IMPLEMENTATION-GUIDE.md. Awaiting your approval."
-    },
-    {
-      "timestamp": "2026-02-08T18:06:01Z",
-      "type": "executed",
-      "taskId": "capture-62",
-      "message": "So the core Idea is not that LLM...: Delegated via OpenClaw SSH (status=completed, task_id=70d96c58-80f6-4bda-ae35-56fa5e9e7f72): Created TIME-BASED-SEQUENCING.md and IMPLEMENTATION-GUIDE.md for time-window workflow"
-    },
-    {
-      "timestamp": "2026-02-08T18:02:13Z",
-      "type": "executed",
-      "taskId": "capture-61",
-      "message": "I need to figure way out I lineup...: Delegated via OpenClaw SSH (status=completed, task_id=83727fe6-b1f1-423a-b220-2c1812485e87): The task was marked completed but it should be in review first per the operating protocol. Let me check the current state and move it properly."
-    },
-    {
-      "timestamp": "2026-02-08T17:57:24Z",
-      "type": "executed",
-      "taskId": "capture-54",
-      "message": "todo implement deployment checker and update CI docs: Delegated via OpenClaw SSH (status=completed, task_id=401bf54c-2f17-43b5-bad6-37a22e0c70a6): Created GitHub Actions workflow, deployment checker, updated CI docs"
-    },
-    {
-      "timestamp": "2026-02-08T17:55:15Z",
-      "type": "executed",
-      "taskId": "capture-53",
-      "message": "todo implement deployment checker and update CI docs: Delegated via OpenClaw SSH (status=in_progress, task_id=fc85a6b3-7fb7-4f07-8d48-f7134f926b87): Investigated current setup, identified gaps. Need to create GitHub Actions workflow and deployment checker."
-    },
-    {
-      "timestamp": "2026-02-08T17:51:07Z",
-      "type": "executed",
-      "taskId": "capture-5",
-      "message": "todo buy groceries tomorrow: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-08T17:34:31Z",
-      "type": "executed",
-      "taskId": "capture-72",
-      "message": "This is just a note to verify auto...: Stored in Codex inbox"
-    },
-    {
-      "timestamp": "2026-02-08T17:31:49Z",
-      "type": "executed",
-      "taskId": "capture-2",
-      "message": "research how to automate weekly planning with AI: Delegated via OpenClaw SSH (status=completed, task_id=bc6ae4ab-3005-4b25-bbbc-2af7b55629c8): Research complete: current weekly review ritual uses 3-step process. AI automation strategies include AI-powered scheduling, calendar syncing, auto-summaries, task prioritization, and integration with task management systems. Recommended approach: integrate AI assistant with calendar API for weekly planning automation."
-    },
-    {
-      "timestamp": "2026-02-08T17:30:42Z",
-      "type": "skipped",
-      "taskId": "capture-2",
-      "message": "email john@example.com about budget review: Skipped: SMTP credentials are not configured"
-    },
-    {
-      "timestamp": "2026-02-08T17:30:42Z",
-      "type": "executed",
-      "taskId": "capture-2",
-      "message": "todo: renew passport next week: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-08T17:28:16Z",
-      "type": "executed",
-      "taskId": "capture-69",
-      "message": "todo automation ping: Delegated via OpenClaw SSH (status=in_progress, task_id=16eeeb62-96c5-4414-9962-4d4d6d0ff403): Automation ping task captured (task-1770571672063-ffx8) but blocked by review gate on task-1770571474871-yf4c"
-    },
-    {
-      "timestamp": "2026-02-08T17:27:54Z",
-      "type": "executed",
-      "taskId": "capture-2",
-      "message": "todo: renew passport next week: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-08T17:27:48Z",
-      "type": "executed",
-      "taskId": "capture-68",
-      "message": "todo full automation smoke check create task and...: Delegated via OpenClaw SSH (status=completed, task_id=b64ebde0-6d98-40e3-86a6-4e6baee37409): Now executing automation smoke check for all systems:\n\n**Gateway Status**: Running on port 18789, node process active, control panel accessible\n\n**Ollama Status**: Running at localhost:11434, 6 models available (qwen2.5:14b, qwen2.5:7b, llama3.2:3b, mistral, etc.)\n\n**Session**: Active with zai/glm-4.7-flash, context 0/200k\n\n**Memory**: Working, integrity check passed\n\n**Cron**: 5 jobs configured, 2 enabled (praj-industries-news-monitor, daily-memory-summary, weekly-review)\n\n**WhatsApp Gateway**: Configured, allowlist enabled for +918766662719\n\n**Browser**: Enabled but Chrome tab not attached\n\n**SSH to Macmini**: Authentication failing (Permission denied)\n\n**Task System**: Integrity passed, 2 new tasks queued\n\nAll major automated systems operational. SSH to macmini requires authentication fix before remote automation can complete.\n\nTask execution summary: All automated components verified functioning except macmini SSH authentication."
-    },
-    {
-      "timestamp": "2026-02-08T17:27:21Z",
-      "type": "executed",
-      "taskId": "capture-67",
-      "message": "todo full automation smoke check create task and...: Delegated via OpenClaw SSH (status=completed, task_id=8e72c766-0835-4eee-ab2c-5e11a6dba43b): Created and synced two tasks: task-1770571474871-yf4c for automation smoke check and task-1770571477922-xuio for sync ops. Integrity check passed, both tasks queued and verified."
-    },
-    {
-      "timestamp": "2026-02-08T17:26:58Z",
-      "type": "executed",
-      "taskId": "capture-2",
-      "message": "todo: renew passport next week: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-08T17:26:02Z",
-      "type": "executed",
-      "taskId": "capture-2",
-      "message": "todo: renew passport next week: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-08T17:25:07Z",
-      "type": "executed",
-      "taskId": "capture-2",
-      "message": "todo: renew passport next week: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-08T17:24:11Z",
-      "type": "executed",
-      "taskId": "capture-2",
-      "message": "todo: renew passport next week: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-08T17:23:16Z",
-      "type": "executed",
-      "taskId": "capture-2",
-      "message": "todo: renew passport next week: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-07T17:54:07Z",
-      "type": "executed",
-      "taskId": "capture-59",
-      "message": "todo run final openclaw connectivity verification and report...: Delegated via OpenClaw SSH (status=completed, task_id=01b74114-cdbd-425b-b986-7ebfde2a2bfe): OpenClaw connectivity verified: gateway Ollama memory cron WhatsApp browser nodes SSH script all operational except SSH to macmini pending authentication fix"
-    },
-    {
-      "timestamp": "2026-02-07T17:22:51Z",
-      "type": "skipped",
-      "taskId": "capture-58",
-      "message": "todo confirm openclaw communication live and mark completed...: OpenClaw SSH execution failed: OpenClaw SSH command failed: shreyas-clawd@192.168.1.13: Permission denied (publickey,password,keyboard-interactive)."
-    },
-    {
-      "timestamp": "2026-02-07T17:18:21Z",
-      "type": "executed",
-      "taskId": "capture-57",
-      "message": "todo verify openclaw ssh execution pipeline for dictation...: Delegated via OpenClaw SSH (status=blocked, task_id=5520d68b-c7e2-45bb-9591-acd91d2c5a54): SSH pipeline configuration verified but authentication failed. Issue identified: local authorized_keys file contained incorrect keys (macbook/macair access keys) for macmini remote access. SSH authentication returns 'Permission denied (publickey,password,keyboard-interactive)' after removing conflicting file."
-    },
-    {
-      "timestamp": "2026-02-07T17:04:09Z",
-      "type": "executed",
-      "taskId": "capture-56",
-      "message": "todo implement integration smoke test and deploy notes...: Delegated to OpenClaw mock (task_id=mock-dc0f6a6829)."
-    },
-    {
-      "timestamp": "2026-02-07T16:43:29Z",
-      "type": "skipped",
-      "taskId": "capture-55",
-      "message": "todo implement deployment checker and update CI docs: OpenClaw candidate queued, but no execute URL configured."
-    },
-    {
-      "timestamp": "2026-02-07T10:35:53Z",
-      "type": "skipped",
-      "taskId": "capture-45",
-      "message": "todo buy milk and email test@example.com about roadmap: Skipped: SMTP credentials are not configured"
-    },
-    {
-      "timestamp": "2026-02-07T09:04:51Z",
-      "type": "executed",
-      "taskId": "capture-15",
-      "message": "Hello, what\u2019s happening? I just want to test...: Stored in Codex inbox"
-    },
-    {
-      "timestamp": "2026-02-07T08:49:16Z",
-      "type": "executed",
-      "taskId": "capture-8",
-      "message": "Testing: Stored in Codex inbox"
-    },
-    {
-      "timestamp": "2026-02-07T08:48:20Z",
-      "type": "skipped",
-      "taskId": "capture-7",
-      "message": "email me@x.com summary: Skipped: SMTP credentials are not configured"
-    },
-    {
-      "timestamp": "2026-02-07T08:48:20Z",
-      "type": "executed",
-      "taskId": "capture-7",
-      "message": "todo: call dentist next week: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-07T08:43:22Z",
-      "type": "executed",
-      "taskId": "capture-4",
-      "message": "High testing, testing, testing, what\u2019s happening? hello, this...: Stored in Codex inbox"
-    },
-    {
-      "timestamp": "2026-02-07T08:39:21Z",
-      "type": "skipped",
-      "taskId": "capture-3",
-      "message": "research how to automate weekly planning with AI: Skipped: OPENAI_API_KEY not configured"
-    },
-    {
-      "timestamp": "2026-02-07T08:39:21Z",
-      "type": "skipped",
-      "taskId": "capture-3",
-      "message": "email john@example.com about budget review: Skipped: SMTP credentials are not configured"
-    },
-    {
-      "timestamp": "2026-02-07T08:39:21Z",
-      "type": "executed",
-      "taskId": "capture-3",
-      "message": "todo: renew passport next week: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-07T08:38:58Z",
-      "type": "executed",
-      "taskId": "capture-2",
-      "message": "todo: renew passport next week: Task created in local database"
-    },
-    {
-      "timestamp": "2026-02-07T08:33:41Z",
-      "type": "skipped",
-      "taskId": "capture-1",
-      "message": "research how to automate weekly planning with AI: Skipped: OPENAI_API_KEY not configured"
-    },
-    {
-      "timestamp": "2026-02-07T08:33:41Z",
-      "type": "skipped",
-      "taskId": "capture-1",
-      "message": "email john@example.com about budget review: Skipped: SMTP credentials are not configured"
-    },
-    {
-      "timestamp": "2026-02-07T08:33:41Z",
-      "type": "executed",
-      "taskId": "capture-1",
-      "message": "todo: renew passport next week: Task created in local database"
-    }
-  ],
+  "errors": [],
+  "recentActivity": [],
   "personalization": {
-    "updatedAt": "2026-02-08T18:27:10Z",
+    "updatedAt": "2026-02-08T18:28:01Z",
     "metrics": {
-      "reviewRequested": 7,
+      "reviewRequested": 15,
       "proceedCount": 0,
       "closeCount": 0
     },
