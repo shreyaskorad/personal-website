@@ -394,6 +394,9 @@
     function taskRow(t, includeCompleteTime = false) {
       const done = includeCompleteTime ? `<div class="muted">completed: ${fmt(t.completedAt || t.updatedAt)}</div>` : "";
       const extra = t.deliverySummary ? `<div class="muted">${escapeHtml(t.deliverySummary)}</div>` : "";
+      const download = t.deliverableUrl
+        ? `<div class="muted"><a href="${escapeHtml(t.deliverableUrl)}" download>Download deliverable</a></div>`
+        : "";
       return `
         <div class="row">
           <div class="topline">
@@ -403,6 +406,7 @@
           <div class="muted">priority: ${escapeHtml(t.priority)} | status: ${escapeHtml(t.status)} | age: ${t.ageHours ?? "n/a"}h</div>
           ${done}
           ${extra}
+          ${download}
         </div>
       `;
     }
