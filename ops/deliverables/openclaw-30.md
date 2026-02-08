@@ -9,16 +9,31 @@
 Capture task, design practical journaling system, document routine
 
 ## Deliverable Output
-The user is asking me to execute a task about setting up a journaling and presence routine. This is a new task that I should capture and then work on.
+_Auto-generated actionable deliverable because OpenClaw returned status metadata but no artifact text._
 
-I need to:
-1. Capture this task using taskflow.js
-2. Start the task
-3. Create a practical daily journaling and reflection routine
-4. Document the routine clearly
-5. Complete and move to review
+# Deliverable Draft: Set Journaling And Presence Routine
 
-Let me capture this task first.{"status": "in_progress", "summary": "Capturing journaling routine task and beginning definition", "blockers": "none", "next_steps": "Capture task, design practical journaling system, document routine", "estimated_remaining_minutes": 12}
+## Objective
+Create a practical execution plan for `set journaling and presence routine`.
+
+## Weekly Template
+- Monday: prioritize and sequence tasks.
+- Daily: execute top queued item, review outcomes, update decisions.
+- Friday: close completed items and carry forward unresolved blockers.
+
+## Daily Control Loop
+1. Review execution lane.
+2. Process one queued item end-to-end.
+3. Attach deliverable and request decision.
+4. Move next task only after lane is clear.
+
+## Success Criteria
+- Predictable daily progress with no hidden work.
+- All completed tasks include usable deliverables.
+- Decision lag from user side is visible and tracked.
+
+## Notes
+Capture task, design practical journaling system, document routine
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

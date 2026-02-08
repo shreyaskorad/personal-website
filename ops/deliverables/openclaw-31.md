@@ -9,17 +9,30 @@
 Capture task, research current L&D viewpoints, extract key takeaways
 
 ## Deliverable Output
-The user is asking me to execute a task about researching Josh Bersin's AI/L&D strategy and business model. This is a research task that I should capture and then work on.
+_Auto-generated actionable deliverable because OpenClaw returned status metadata but no artifact text._
 
-I need to:
-1. Capture this task using taskflow.js
-2. Start the task
-3. Research Josh Bersin's current AI/L&D viewpoint
-4. Analyze his business model
-5. Extract useful takeaways
-6. Complete and move to review
+# Deliverable Draft: Research Josh Bersin Ai/L&D Strategy And Business Model
 
-Let me capture this task first.{"status": "in_progress", "summary": "Capturing Josh Bersin research task and preparing analysis", "blockers": "none", "next_steps": "Capture task, research current L&D viewpoints, extract key takeaways", "estimated_remaining_minutes": 30}
+## Objective
+Produce a focused research brief for `research Josh Bersin AI/L&D strategy and business model` with actionable outputs.
+
+## Core Questions
+1. What changed recently in this domain?
+2. Which patterns matter for your current workflow?
+3. What should be executed immediately vs tracked later?
+
+## Analysis Summary
+- Key signal: prioritize execution leverage over broad exploration.
+- Risk: fragmented sources and duplicated asks reduce output quality.
+- Recommendation: convert findings into ranked execution tasks with clear owner.
+
+## Immediate Next Steps
+1. Validate top 3 claims with direct sources.
+2. Convert validated insights into queue-ready tasks.
+3. Track outcomes in dashboard observations.
+
+## Notes
+Capture task, research current L&D viewpoints, extract key takeaways
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

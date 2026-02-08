@@ -28,7 +28,7 @@ Turn `build CAA account growth and weekly dashboard plan` into a concrete, revie
 4. Attach deliverable and request proceed/close decision.
 
 ## Notes
-No additional notes from OpenClaw.
+Create a concrete CAA account growth plan with weekly dashboard structure and execution actions.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
