@@ -13,7 +13,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import urlretrieve
 
-ROOT = Path("/Users/shreyas-clawd/Downloads/personal-website")
+ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "posts"
 ASSETS_DIR = ROOT / "assets" / "images" / "blog"
 TEMPLATE_PATH = POSTS_DIR / "_template.html"
