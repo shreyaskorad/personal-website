@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>OpenClaw Control Dashboard</title>
+  <style>
+    :root {
+      --bg: #f2f6f9;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #d8e1e8;
+      --ok: #0f766e;
+      --warn: #b45309;
+      --err: #b91c1c;
+      --brand: #0b5fff;
+      --brand-2: #00a3a3;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 0% 0%, #dceeff 0%, transparent 35%),
+        radial-gradient(circle at 100% 0%, #d5f5f3 0%, transparent 30%),
+        var(--bg);
+    }
+
+    .shell {
+      width: min(1280px, 96vw);
+      margin: 24px auto 48px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #072543, #0b5fff 55%, #0aa2a2);
+      color: #fff;
+      border-radius: 18px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      letter-spacing: 0.2px;
+    }
+
+    .hero .meta {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 13px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+    }
+
+    .summary {
+      grid-column: span 12;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      background: #fbfdff;
+    }
+
+    .metric .k {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.6px;
+    }
+
+    .metric .v {
+      margin-top: 6px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .lane { grid-column: span 6; }
+    .queue { grid-column: span 7; }
+    .done { grid-column: span 5; }
+    .obs { grid-column: span 7; }
+    .err { grid-column: span 5; }
+    .events { grid-column: span 8; }
+    .ctl { grid-column: span 4; }
+
+    .list {
+      display: grid;
+      gap: 8px;
+      max-height: 440px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .row {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 9px;
+      background: #fff;
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+      font-size: 13px;
+    }
+
+    .title {
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 11px;
+      margin-right: 6px;
+      margin-top: 5px;
+      background: #f8fafc;
+    }
+
+    .obs-info { border-left: 4px solid var(--brand); }
+    .obs-warn { border-left: 4px solid var(--warn); }
+    .obs-err { border-left: 4px solid var(--err); }
+
+    code {
+      font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+      font-size: 12px;
+      background: #f1f5f9;
+      border: 1px solid #dbe5ee;
+      border-radius: 8px;
+      padding: 6px 8px;
+      display: block;
+      margin-bottom: 8px;
+      word-break: break-all;
+    }
+
+    .empty {
+      color: var(--muted);
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 13px;
+      background: #fcfdff;
+    }
+
+    @media (max-width: 980px) {
+      .summary { grid-template-columns: repeat(3, minmax(120px, 1fr)); }
+      .lane, .queue, .done, .obs, .err, .events, .ctl { grid-column: span 12; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <h1>OpenClaw Control Dashboard</h1>
+      <div class="meta" id="meta">Loading...</div>
+    </section>
+
+    <section class="grid">
+      <div class="card summary" id="summary"></div>
+
+      <div class="card lane">
+        <h2>Execution lane</h2>
+        <div id="execution" class="list"></div>
+      </div>
+
+      <div class="card queue">
+        <h2>Queued tasks</h2>
+        <div id="queue" class="list"></div>
+      </div>
+
+      <div class="card done">
+        <h2>Completed tasks (date/time)</h2>
+        <div id="completed" class="list"></div>
+      </div>
+
+      <div class="card obs">
+        <h2>Observations</h2>
+        <div id="observations" class="list"></div>
+      </div>
+
+      <div class="card err">
+        <h2>Error signals</h2>
+        <div id="errors" class="list"></div>
+      </div>
+
+      <div class="card events">
+        <h2>Recent execution events</h2>
+        <div id="events" class="list"></div>
+      </div>
+
+      <div class="card ctl">
+        <h2>Control commands</h2>
+        <div id="controls"></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const fmt = (iso) => {
+      if (!iso) return "n/a";
+      const d = new Date(iso);
+      if (Number.isNaN(d.getTime())) return iso;
+      return d.toLocaleString();
+    };
+
+    const empty = (msg) => `<div class="empty">${msg}</div>`;
+
+    function taskRow(t, includeCompleteTime = false) {
+      const done = includeCompleteTime ? `<div class="muted">completed: ${fmt(t.completedAt || t.updatedAt)}</div>` : "";
+      const extra = t.deliverySummary ? `<div class="muted">${t.deliverySummary}</div>` : "";
+      return `
+        <div class="row">
+          <div class="topline">
+            <div class="title">${t.title}</div>
+            <div class="muted">${t.id}</div>
+          </div>
+          <div class="muted">priority: ${t.priority} | status: ${t.status} | age: ${t.ageHours ?? "n/a"}h</div>
+          ${done}
+          ${extra}
+        </div>
+      `;
+    }
+
+    function obsRow(o) {
+      const cls = o.level === "warn" ? "obs-warn" : (o.level === "error" ? "obs-err" : "obs-info");
+      return `<div class="row ${cls}"><div class="title">${o.message}</div></div>`;
+    }
+
+    function errRow(e) {
+      return `
+        <div class="row">
+          <div class="topline">
+            <div class="title">${e.source}</div>
+            <div class="muted">${e.timestamp ? fmt(e.timestamp) : "n/a"}</div>
+          </div>
+          <div class="muted">${e.message}</div>
+        </div>
+      `;
+    }
+
+    function eventRow(e) {
+      return `
+        <div class="row">
+          <div class="topline">
+            <div class="title">${e.type}</div>
+            <div class="muted">${fmt(e.timestamp)}</div>
+          </div>
+          <div class="muted">task: ${e.taskId || "-"}</div>
+          <div class="muted">${e.message || ""}</div>
+        </div>
+      `;
+    }
+
+    fetch("./data.json", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((data) => {
+        document.getElementById("meta").textContent =
+          `Updated: ${fmt(data.meta.updatedAt)} | fingerprint: ${data.meta.fingerprint} | source: ${data.meta.source}`;
+
+        const s = data.summary || {};
+        document.getElementById("summary").innerHTML = [
+          ["total", s.totalTasks || 0],
+          ["active", s.active || 0],
+          ["queued", s.queued || 0],
+          ["completed", s.completed || 0],
+          ["blocked", s.blocked || 0],
+          ["status map", Object.keys(s.byStatus || {}).length]
+        ].map(([k, v]) => `<div class="metric"><div class="k">${k}</div><div class="v">${v}</div></div>`).join("");
+
+        document.getElementById("execution").innerHTML =
+          (data.execution || []).length
+            ? data.execution.map((t) => taskRow(t)).join("")
+            : empty("No active execution tasks right now.");
+
+        document.getElementById("queue").innerHTML =
+          (data.queueTop || []).length
+            ? data.queueTop.map((t) => taskRow(t)).join("")
+            : empty("Queue is empty.");
+
+        document.getElementById("completed").innerHTML =
+          (data.completedRecent || []).length
+            ? data.completedRecent.map((t) => taskRow(t, true)).join("")
+            : empty("No completed tasks yet.");
+
+        document.getElementById("observations").innerHTML =
+          (data.observations || []).length
+            ? data.observations.map(obsRow).join("")
+            : empty("No notable observations.");
+
+        document.getElementById("errors").innerHTML =
+          (data.errors || []).length
+            ? data.errors.map(errRow).join("")
+            : empty("No recent error signals.");
+
+        document.getElementById("events").innerHTML =
+          (data.recentActivity || []).length
+            ? data.recentActivity.map(eventRow).join("")
+            : empty("No recent events.");
+
+        const controls = data.controls || {};
+        document.getElementById("controls").innerHTML = Object.entries(controls)
+          .map(([k, v]) => `<div class="muted" style="margin:0 0 4px;text-transform:uppercase;letter-spacing:.5px;font-size:11px;">${k}</div><code>${v}</code>`)
+          .join("");
+      })
+      .catch((err) => {
+        document.getElementById("meta").textContent = `Failed to load dashboard data: ${err.message}`;
+      });
+  </script>
+</body>
+</html>

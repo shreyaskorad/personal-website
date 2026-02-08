@@ -1,0 +1,447 @@
+{
+  "meta": {
+    "title": "OpenClaw Control Dashboard",
+    "updatedAt": "2026-02-08T10:47:25.433Z",
+    "fingerprint": "2e25748b3b9c8510",
+    "source": "PersonalOS task + activity + OpenClaw error logs"
+  },
+  "summary": {
+    "totalTasks": 7,
+    "queued": 5,
+    "active": 0,
+    "completed": 2,
+    "blocked": 0,
+    "byStatus": {
+      "queued": 5,
+      "completed": 2
+    }
+  },
+  "execution": [],
+  "queueTop": [
+    {
+      "id": "task-20260201-001",
+      "title": "Build comprehensive blog content strategy for shreyaskorad.in",
+      "source": "legacy",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 1,
+      "createdAt": "2026-02-01T22:43:00.000Z",
+      "updatedAt": "2026-02-08T08:35:02.583Z",
+      "completedAt": null,
+      "ageHours": 156.14,
+      "deliverySummary": "",
+      "notes": [
+        "Migrated from legacy tasks.json format"
+      ]
+    },
+    {
+      "id": "task-1770539089672",
+      "title": "DICTATION #61 Summary: I need to figure way out I lineup tasks",
+      "source": "dictation-web",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 2,
+      "createdAt": "2026-02-08T08:24:49.672Z",
+      "updatedAt": "2026-02-08T08:35:02.583Z",
+      "completedAt": null,
+      "ageHours": 2.44,
+      "deliverySummary": "",
+      "notes": []
+    },
+    {
+      "id": "task-1770539089674",
+      "title": "DICTATION #62 Summary: Core idea is sequence tasks by limits and do",
+      "source": "dictation-web",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 3,
+      "createdAt": "2026-02-08T08:24:49.674Z",
+      "updatedAt": "2026-02-08T08:35:02.583Z",
+      "completedAt": null,
+      "ageHours": 2.44,
+      "deliverySummary": "",
+      "notes": []
+    },
+    {
+      "id": "task-1770538770336",
+      "title": "[WhatsApp +918766662719 +3h 2026-02-08 12:31 GMT+5:30] Publish: I haven’t used PowerPoint in",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 4,
+      "createdAt": "2026-02-08T08:19:30.336Z",
+      "updatedAt": "2026-02-08T08:35:02.583Z",
+      "completedAt": null,
+      "ageHours": 2.53,
+      "deliverySummary": "",
+      "notes": []
+    },
+    {
+      "id": "task-1770538770337",
+      "title": "[WhatsApp +918766662719 +29s 2026-02-08 12:35 GMT+5:30] Publish: Humans are wired to bond",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 5,
+      "createdAt": "2026-02-08T08:19:30.337Z",
+      "updatedAt": "2026-02-08T08:35:02.583Z",
+      "completedAt": null,
+      "ageHours": 2.53,
+      "deliverySummary": "",
+      "notes": []
+    }
+  ],
+  "completedRecent": [
+    {
+      "id": "task-1770538410396",
+      "title": "Run tasks in strict sequence based on AI and user limits; execute",
+      "source": "web",
+      "priority": "high",
+      "status": "completed",
+      "sequence": 7,
+      "createdAt": "2026-02-08T08:13:30.396Z",
+      "updatedAt": "2026-02-08T08:33:51.381Z",
+      "completedAt": "2026-02-08T08:19:30.833Z",
+      "ageHours": 2.63,
+      "deliverySummary": "Implemented limit-aware sequencing policy, capture-source map, and intake-cycle script for continuous no-loss capture and serialized execution.",
+      "notes": [
+        "Delivery summary: Implemented limit-aware sequencing policy, capture-source map, and intake-cycle script for continuous no-loss capture and serialized execution."
+      ]
+    },
+    {
+      "id": "task-1770538410304",
+      "title": "Build a no-loss task operating system where every ask is captured, sequenced,",
+      "source": "web",
+      "priority": "critical",
+      "status": "completed",
+      "sequence": 6,
+      "createdAt": "2026-02-08T08:13:30.304Z",
+      "updatedAt": "2026-02-08T08:33:51.380Z",
+      "completedAt": "2026-02-08T08:18:53.686Z",
+      "ageHours": 2.63,
+      "deliverySummary": "Checkpoints A/B/C completed: queue integrity, WIP=1 + review gate, approval + metrics + capture-source map implemented.",
+      "notes": [
+        "Plan file: .tasks/plans/task-1770538410304.md",
+        "Delivery summary: Checkpoints A/B/C completed: queue integrity, WIP=1 + review gate, approval + metrics + capture-source map implemented."
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "level": "info",
+      "message": "No task is currently in execution; queue can be advanced by starting the next priority item."
+    },
+    {
+      "level": "warn",
+      "message": "1 queued tasks are older than 24h and may need re-prioritization."
+    },
+    {
+      "level": "warn",
+      "message": "3 high/critical tasks are waiting; sequencing pressure is increasing."
+    },
+    {
+      "level": "warn",
+      "message": "Recent runtime errors detected (36 captured signals in logs)."
+    }
+  ],
+  "errors": [
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:06:34.450Z",
+      "message": "2026-02-08T07:06:34.450Z [tools] exec failed: Traceback (most recent call last):"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:06:34.450Z",
+      "message": "ValueError: Word count 201 is outside 150-200 range"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:06:27.355Z",
+      "message": "2026-02-08T07:06:27.355Z [tools] exec failed: Traceback (most recent call last):"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:04:47.386Z",
+      "message": "2026-02-08T07:04:47.386Z [tools] exec failed: Traceback (most recent call last):"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:04:37.728Z",
+      "message": "2026-02-08T07:04:37.728Z [tools] exec failed: Traceback (most recent call last):"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:04:37.728Z",
+      "message": "ValueError: Word count 209 is outside 150-200 range"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:04:24.705Z",
+      "message": "2026-02-08T07:04:24.705Z [diagnostic] lane task error: lane=session:agent:main:whatsapp:default:dm:+918766662719 durationMs=180126 error=\"FailoverError: LLM request timed out.\""
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:04:24.703Z",
+      "message": "2026-02-08T07:04:24.703Z [diagnostic] lane task error: lane=main durationMs=180121 error=\"FailoverError: LLM request timed out.\""
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:04:24.686Z",
+      "message": "2026-02-08T07:04:24.686Z [agent/embedded] embedded run timeout: runId=38566ad2-f192-4af3-a08c-5dd5df4d79c3 sessionId=1e9d13bf-e15b-421f-a357-d9d19c86a0fb timeoutMs=180000"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:03:21.552Z",
+      "message": "2026-02-08T07:03:21.552Z [tools] exec failed: Traceback (most recent call last):"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:03:21.552Z",
+      "message": "ValueError: Word count 205 is outside 150-200 range"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:03:07.418Z",
+      "message": "2026-02-08T07:03:07.418Z [tools] exec failed: Traceback (most recent call last):"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:03:07.418Z",
+      "message": "ValueError: Word count 220 is outside 150-200 range"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:02:54.954Z",
+      "message": "2026-02-08T07:02:54.954Z [tools] exec failed: Traceback (most recent call last):"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:02:54.954Z",
+      "message": "raise ValueError(f\"Word count {count} is outside 150-200 range\")"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:02:54.954Z",
+      "message": "ValueError: Word count 229 is outside 150-200 range"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:02:30.763Z",
+      "message": "2026-02-08T07:02:30.763Z [tools] exec failed: Traceback (most recent call last):"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:02:30.763Z",
+      "message": "raise ValueError(\"Closing paragraph must echo the core concept from the lead.\")"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T07:02:30.763Z",
+      "message": "ValueError: Closing paragraph must echo the core concept from the lead."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-08T00:15:52.467Z",
+      "message": "2026-02-08T00:15:52.467Z [whatsapp] Web connection closed (status 503). Retry 1/12 in 2.06s… (status=503 Service Unavailable Stream Errored (unknown))"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-07T17:52:33.638Z",
+      "message": "2026-02-07T17:52:33.638Z [tools] exec failed: zsh:1: command not found: openclaw"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-07T17:17:57.381Z",
+      "message": "2026-02-07T17:17:57.381Z [diagnostic] lane task error: lane=session:agent:main:main durationMs=180085 error=\"FailoverError: LLM request timed out.\""
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-07T17:17:57.379Z",
+      "message": "2026-02-07T17:17:57.379Z [diagnostic] lane task error: lane=main durationMs=180081 error=\"FailoverError: LLM request timed out.\""
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-07T17:17:57.361Z",
+      "message": "2026-02-07T17:17:57.361Z [agent/embedded] embedded run timeout: runId=5520d68b-c7e2-45bb-9591-acd91d2c5a54 sessionId=ef4823d3-d0b3-47b8-9590-f63173176d1a timeoutMs=180000"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-07T17:17:32.043Z",
+      "message": "2026-02-07T17:17:32.043Z [tools] exec failed: shreyas-clawd@192.168.1.13: Permission denied (publickey,password,keyboard-interactive)."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-07T17:17:11.527Z",
+      "message": "2026-02-07T17:17:11.527Z [tools] exec failed: Received disconnect from 192.168.1.13 port 22:2: Too many authentication failures"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-07T17:16:42.491Z",
+      "message": "2026-02-07T17:16:42.491Z [tools] exec failed: shreyas-clawd@192.168.1.13: Permission denied (publickey,password,keyboard-interactive)."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-07T17:16:10.780Z",
+      "message": "2026-02-07T17:16:10.780Z [tools] exec failed: The agent has no identities."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-07T17:16:09.126Z",
+      "message": "2026-02-07T17:16:09.126Z [tools] exec failed: Permission denied, please try again."
+    },
+    {
+      "source": "task-intake",
+      "timestamp": null,
+      "message": "bash: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/run-intake-cycle.sh: Operation not permitted"
+    },
+    {
+      "source": "gateway",
+      "timestamp": null,
+      "message": "return opener.open(url, data, timeout)"
+    },
+    {
+      "source": "gateway",
+      "timestamp": null,
+      "message": "response = self.parent.error("
+    },
+    {
+      "source": "gateway",
+      "timestamp": null,
+      "message": "File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py\", line 561, in error"
+    },
+    {
+      "source": "gateway",
+      "timestamp": null,
+      "message": "File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py\", line 641, in http_error_default"
+    },
+    {
+      "source": "gateway",
+      "timestamp": null,
+      "message": "raise HTTPError(req.full_url, code, msg, hdrs, fp)"
+    },
+    {
+      "source": "gateway",
+      "timestamp": null,
+      "message": "urllib.error.HTTPError: HTTP Error 404: Not Found"
+    }
+  ],
+  "recentActivity": [
+    {
+      "timestamp": "2026-02-08T08:35:02.584Z",
+      "type": "sequence_normalized",
+      "taskId": null,
+      "message": "Normalized sequence ordering across active tasks"
+    },
+    {
+      "timestamp": "2026-02-08T08:33:51.382Z",
+      "type": "sequence_normalized",
+      "taskId": null,
+      "message": "Normalized sequence ordering across tasks"
+    },
+    {
+      "timestamp": "2026-02-08T08:32:34.471Z",
+      "type": "sequence_changed",
+      "taskId": "task-1770539089672",
+      "message": "Moved to sequence 6"
+    },
+    {
+      "timestamp": "2026-02-08T08:32:34.374Z",
+      "type": "priority_changed",
+      "taskId": "task-1770539089672",
+      "message": "Priority high -> high"
+    },
+    {
+      "timestamp": "2026-02-08T08:27:46.259Z",
+      "type": "captured",
+      "taskId": "task-1770539266257",
+      "message": "Captured task from dictation-web"
+    },
+    {
+      "timestamp": "2026-02-08T08:27:13.602Z",
+      "type": "captured",
+      "taskId": "task-1770539233600",
+      "message": "Captured task from dictation-web"
+    },
+    {
+      "timestamp": "2026-02-08T08:24:49.674Z",
+      "type": "captured",
+      "taskId": "task-1770539089672",
+      "message": "Captured task from dictation-web"
+    },
+    {
+      "timestamp": "2026-02-08T08:24:49.674Z",
+      "type": "captured",
+      "taskId": "task-1770539089674",
+      "message": "Captured task from dictation-web"
+    },
+    {
+      "timestamp": "2026-02-08T08:19:30.834Z",
+      "type": "approved",
+      "taskId": "task-1770538410396",
+      "message": "User instructed to do all next steps."
+    },
+    {
+      "timestamp": "2026-02-08T08:19:30.733Z",
+      "type": "review",
+      "taskId": "task-1770538410396",
+      "message": "Task moved to review"
+    },
+    {
+      "timestamp": "2026-02-08T08:19:30.338Z",
+      "type": "captured",
+      "taskId": "task-1770538770337",
+      "message": "Captured task from handoff"
+    },
+    {
+      "timestamp": "2026-02-08T08:19:30.337Z",
+      "type": "captured",
+      "taskId": "task-1770538770336",
+      "message": "Captured task from handoff"
+    },
+    {
+      "timestamp": "2026-02-08T08:19:29.529Z",
+      "type": "started",
+      "taskId": "task-1770538410396",
+      "message": "Task moved to in_progress"
+    },
+    {
+      "timestamp": "2026-02-08T08:18:53.687Z",
+      "type": "approved",
+      "taskId": "task-1770538410304",
+      "message": "User instructed to execute all next steps end-to-end."
+    },
+    {
+      "timestamp": "2026-02-08T08:18:53.588Z",
+      "type": "review",
+      "taskId": "task-1770538410304",
+      "message": "Task moved to review"
+    },
+    {
+      "timestamp": "2026-02-08T08:14:25.405Z",
+      "type": "started",
+      "taskId": "task-1770538410304",
+      "message": "Task moved to in_progress"
+    },
+    {
+      "timestamp": "2026-02-08T08:13:30.397Z",
+      "type": "captured",
+      "taskId": "task-1770538410396",
+      "message": "Captured task from web"
+    },
+    {
+      "timestamp": "2026-02-08T08:13:30.305Z",
+      "type": "captured",
+      "taskId": "task-1770538410304",
+      "message": "Captured task from web"
+    }
+  ],
+  "controls": {
+    "board": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js board",
+    "brief": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js brief",
+    "priority": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js priority <task-id> <critical|high|medium|low>",
+    "sequence": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js sequence <task-id> <number>",
+    "start": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js start <task-id>",
+    "done": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js done <task-id> \"<delivery-summary>\""
+  }
+}
