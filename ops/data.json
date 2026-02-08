@@ -1,20 +1,20 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T17:45:40Z",
+    "updatedAt": "2026-02-08T17:46:04Z",
     "source": "Dictation Router + OpenClaw supervisor",
-    "fingerprint": "225a29b801871c8e"
+    "fingerprint": "840906aad217dd4c"
   },
   "summary": {
-    "totalTasks": 32,
-    "queued": 4,
+    "totalTasks": 31,
+    "queued": 3,
     "active": 2,
     "completed": 26,
     "blocked": 1,
     "byStatus": {
       "in_progress": 1,
       "blocked": 1,
-      "queued": 4,
+      "queued": 3,
       "completed": 26
     }
   },
@@ -29,7 +29,7 @@
       "createdAt": "2026-02-08T17:28:16Z",
       "updatedAt": "2026-02-08T17:28:16Z",
       "completedAt": null,
-      "ageHours": 0.29,
+      "ageHours": 0.3,
       "deliverySummary": "User must approve/reject automation smoke check task; Once approved, start automation ping task; Ping all automated systems and report status",
       "deliverableUrl": null,
       "notes": [
@@ -63,7 +63,7 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-08T17:30:55Z",
-      "updatedAt": "2026-02-08T17:45:40Z",
+      "updatedAt": "2026-02-08T17:46:04Z",
       "completedAt": null,
       "ageHours": 0.25,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
@@ -82,7 +82,7 @@
       "status": "queued",
       "sequence": 2,
       "createdAt": "2026-02-08T17:29:07Z",
-      "updatedAt": "2026-02-08T17:45:40Z",
+      "updatedAt": "2026-02-08T17:46:04Z",
       "completedAt": null,
       "ageHours": 0.28,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
@@ -94,33 +94,14 @@
       "action": "create_task"
     },
     {
-      "id": "inbox-83",
-      "title": "Clearing the CA mail. There's something spam,",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 3,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T17:45:40Z",
-      "completedAt": null,
-      "ageHours": 0.83,
-      "deliverySummary": "Action: send_email | Route: email | Detail: Waiting for Codex review",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=83"
-      ],
-      "action": "send_email"
-    },
-    {
       "id": "inbox-58",
       "title": "todo implement deployment checker and update CI docs",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
-      "sequence": 4,
+      "sequence": 3,
       "createdAt": "2026-02-07T16:37:27Z",
-      "updatedAt": "2026-02-08T17:45:40Z",
+      "updatedAt": "2026-02-08T17:46:04Z",
       "completedAt": null,
       "ageHours": 25.14,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
@@ -143,7 +124,7 @@
       "createdAt": "2026-02-08T17:28:16Z",
       "updatedAt": "2026-02-08T17:28:16Z",
       "completedAt": null,
-      "ageHours": 0.29,
+      "ageHours": 0.3,
       "deliverySummary": "User must approve/reject automation smoke check task; Once approved, start automation ping task; Ping all automated systems and report status",
       "deliverableUrl": null,
       "notes": [
@@ -165,6 +146,44 @@
       "deliverableUrl": null,
       "notes": [
         "['Remote server (macmini) not accepting SSH key authentication despite key being loaded in ssh-agent', \"Cannot verify remote server's authorized_keys file content - only local machine has access\", 'Possibly incorrect public key on remote server or SSH daemon misconfiguration', 'Key fingerprint: SHA256:HQpVra6n60Y4pFg1W/ZTHvGQaJS7M5oQEy7FM8Do8G8 (ED25519)']"
+      ]
+    },
+    {
+      "id": "inbox-needs-input-87",
+      "title": "Provide recipient: Build trusting going from there. I'm not doing...",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "needs_input",
+      "sequence": 0,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:46:04Z",
+      "completedAt": null,
+      "ageHours": 0.84,
+      "deliverySummary": "Email task is queued but has no recipient. Provide email address or close task.",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=87",
+        "reason=email_missing_recipient"
+      ]
+    },
+    {
+      "id": "inbox-needs-input-83",
+      "title": "Provide recipient: Clearing the CA mail. There's something spam,",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "needs_input",
+      "sequence": 0,
+      "createdAt": "2026-02-08T16:55:39Z",
+      "updatedAt": "2026-02-08T17:46:04Z",
+      "completedAt": null,
+      "ageHours": 0.84,
+      "deliverySummary": "Email task is queued but has no recipient. Provide email address or close task.",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=66",
+        "inbox_item_id=83",
+        "reason=email_missing_recipient"
       ]
     }
   ],
@@ -198,7 +217,7 @@
       "createdAt": "2026-02-08T17:31:49Z",
       "updatedAt": "2026-02-08T17:31:49Z",
       "completedAt": "2026-02-08T17:31:49Z",
-      "ageHours": 0.23,
+      "ageHours": 0.24,
       "deliverySummary": "Design AI-powered weekly planning workflow based on findings; Identify specific tools/APIs needed for calendar and task integration; Create automation pipeline with cron triggers for weekly execution; Implement tracking and logging for weekly plan metrics",
       "deliverableUrl": null,
       "notes": []
@@ -213,7 +232,7 @@
       "createdAt": "2026-02-08T17:31:49Z",
       "updatedAt": "2026-02-08T17:31:49Z",
       "completedAt": "2026-02-08T17:31:49Z",
-      "ageHours": 0.23,
+      "ageHours": 0.24,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=bc6ae4ab-3005-4b25-bbbc-2af7b55629c8): Research complete: current weekly review ritual uses 3-step process. AI automation strategies include AI-powered scheduling, calendar syncing, auto-summaries, task prioritization, and integration with task management systems. Recommended approach: integrate AI assistant with calendar API for weekly planning automation.",
       "deliverableUrl": null,
       "notes": [
@@ -232,7 +251,7 @@
       "createdAt": "2026-02-08T17:30:42Z",
       "updatedAt": "2026-02-08T17:30:42Z",
       "completedAt": "2026-02-08T17:30:42Z",
-      "ageHours": 0.25,
+      "ageHours": 0.26,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -251,7 +270,7 @@
       "createdAt": "2026-02-08T17:28:16Z",
       "updatedAt": "2026-02-08T17:28:16Z",
       "completedAt": "2026-02-08T17:28:16Z",
-      "ageHours": 0.29,
+      "ageHours": 0.3,
       "deliverySummary": "Delegated via OpenClaw SSH (status=in_progress, task_id=16eeeb62-96c5-4414-9962-4d4d6d0ff403): Automation ping task captured (task-1770571672063-ffx8) but blocked by review gate on task-1770571474871-yf4c",
       "deliverableUrl": null,
       "notes": [
@@ -357,7 +376,7 @@
       "createdAt": "2026-02-08T17:26:58Z",
       "updatedAt": "2026-02-08T17:26:58Z",
       "completedAt": "2026-02-08T17:26:58Z",
-      "ageHours": 0.31,
+      "ageHours": 0.32,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -395,7 +414,7 @@
       "createdAt": "2026-02-08T17:25:07Z",
       "updatedAt": "2026-02-08T17:25:07Z",
       "completedAt": "2026-02-08T17:25:07Z",
-      "ageHours": 0.34,
+      "ageHours": 0.35,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -433,7 +452,7 @@
       "createdAt": "2026-02-08T17:23:16Z",
       "updatedAt": "2026-02-08T17:23:16Z",
       "completedAt": "2026-02-08T17:23:16Z",
-      "ageHours": 0.37,
+      "ageHours": 0.38,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -452,7 +471,7 @@
       "createdAt": "2026-02-07T17:54:07Z",
       "updatedAt": "2026-02-07T17:54:07Z",
       "completedAt": "2026-02-07T17:54:07Z",
-      "ageHours": 23.86,
+      "ageHours": 23.87,
       "deliverySummary": "Fix macmini SSH key: ssh into macmini and verify authorized_keys contains correct public key; Attach Chrome tab for browser automation or run browser in openclaw profile; Configure macmini SSH for passwordless key authentication; Test SSH retry script once authentication resolved; Verify WhatsApp gateway reconnection if disconnected",
       "deliverableUrl": null,
       "notes": [
@@ -469,7 +488,7 @@
       "createdAt": "2026-02-07T17:54:07Z",
       "updatedAt": "2026-02-07T17:54:07Z",
       "completedAt": "2026-02-07T17:54:07Z",
-      "ageHours": 23.86,
+      "ageHours": 23.87,
       "deliverySummary": "Delegated via OpenClaw SSH (status=completed, task_id=01b74114-cdbd-425b-b986-7ebfde2a2bfe): OpenClaw connectivity verified: gateway Ollama memory cron WhatsApp browser nodes SSH script all operational except SSH to macmini pending authentication fix",
       "deliverableUrl": null,
       "notes": [
@@ -507,7 +526,7 @@
       "createdAt": "2026-02-07T17:04:09Z",
       "updatedAt": "2026-02-07T17:04:09Z",
       "completedAt": "2026-02-07T17:04:09Z",
-      "ageHours": 24.69,
+      "ageHours": 24.7,
       "deliverySummary": "Delegated to OpenClaw mock (task_id=mock-dc0f6a6829).",
       "deliverableUrl": null,
       "notes": [
@@ -526,7 +545,7 @@
       "createdAt": "2026-02-07T09:04:51Z",
       "updatedAt": "2026-02-07T09:04:51Z",
       "completedAt": "2026-02-07T09:04:51Z",
-      "ageHours": 32.68,
+      "ageHours": 32.69,
       "deliverySummary": "Stored in Codex inbox",
       "deliverableUrl": null,
       "notes": [
@@ -545,7 +564,7 @@
       "createdAt": "2026-02-07T08:49:16Z",
       "updatedAt": "2026-02-07T08:49:16Z",
       "completedAt": "2026-02-07T08:49:16Z",
-      "ageHours": 32.94,
+      "ageHours": 32.95,
       "deliverySummary": "Stored in Codex inbox",
       "deliverableUrl": null,
       "notes": [
@@ -583,7 +602,7 @@
       "createdAt": "2026-02-07T08:43:22Z",
       "updatedAt": "2026-02-07T08:43:22Z",
       "completedAt": "2026-02-07T08:43:22Z",
-      "ageHours": 33.04,
+      "ageHours": 33.05,
       "deliverySummary": "Stored in Codex inbox",
       "deliverableUrl": null,
       "notes": [
@@ -621,7 +640,7 @@
       "createdAt": "2026-02-07T08:38:58Z",
       "updatedAt": "2026-02-07T08:38:58Z",
       "completedAt": "2026-02-07T08:38:58Z",
-      "ageHours": 33.11,
+      "ageHours": 33.12,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -640,7 +659,7 @@
       "createdAt": "2026-02-07T08:33:41Z",
       "updatedAt": "2026-02-07T08:33:41Z",
       "completedAt": "2026-02-07T08:33:41Z",
-      "ageHours": 33.2,
+      "ageHours": 33.21,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -653,7 +672,7 @@
   "observations": [
     {
       "level": "info",
-      "message": "DICTATION_SYNC: 4 queued item(s) auto-synced from pending review lane."
+      "message": "DICTATION_SYNC: 3 queued item(s) auto-synced from pending review lane."
     },
     {
       "level": "info",
@@ -661,7 +680,11 @@
     },
     {
       "level": "info",
-      "message": "DICTATION_SYNC: filtered out 14 low-signal dictation fragments from queued tasks."
+      "message": "DICTATION_SYNC: filtered out 13 low-signal dictation fragments from queued tasks."
+    },
+    {
+      "level": "warn",
+      "message": "DICTATION_SYNC: 2 email task(s) need recipient input and were moved to 'Tasks due from you'."
     },
     {
       "level": "info",
@@ -669,7 +692,7 @@
     },
     {
       "level": "warn",
-      "message": "2 OpenClaw item(s) need attention (blocked/failed or flagged)."
+      "message": "4 OpenClaw item(s) need attention (blocked/failed or flagged)."
     }
   ],
   "errors": [
@@ -878,9 +901,9 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-08T17:45:40Z",
+    "updatedAt": "2026-02-08T17:46:04Z",
     "metrics": {
-      "reviewRequested": 4,
+      "reviewRequested": 3,
       "proceedCount": 0,
       "closeCount": 0
     },
