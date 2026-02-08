@@ -1,19 +1,19 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T19:52:14Z",
+    "updatedAt": "2026-02-08T19:53:43Z",
     "source": "Dictation Router + OpenClaw supervisor",
-    "fingerprint": "df70b572431a004d"
+    "fingerprint": "7332fef505fad7c5"
   },
   "summary": {
     "totalTasks": 15,
-    "queued": 4,
+    "queued": 3,
     "active": 0,
-    "completed": 11,
+    "completed": 12,
     "blocked": 0,
     "byStatus": {
-      "queued": 4,
-      "completed": 11
+      "queued": 3,
+      "completed": 12
     }
   },
   "execution": [],
@@ -26,9 +26,9 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T19:52:14Z",
+      "updatedAt": "2026-02-08T19:53:43Z",
       "completedAt": null,
-      "ageHours": 2.94,
+      "ageHours": 2.97,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
       "deliverableUrl": null,
       "notes": [
@@ -45,9 +45,9 @@
       "status": "queued",
       "sequence": 2,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T19:52:14Z",
+      "updatedAt": "2026-02-08T19:53:43Z",
       "completedAt": null,
-      "ageHours": 2.94,
+      "ageHours": 2.97,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
       "deliverableUrl": null,
       "notes": [
@@ -64,9 +64,9 @@
       "status": "queued",
       "sequence": 3,
       "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T19:52:14Z",
+      "updatedAt": "2026-02-08T19:53:43Z",
       "completedAt": null,
-      "ageHours": 2.94,
+      "ageHours": 2.97,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
       "deliverableUrl": null,
       "notes": [
@@ -74,28 +74,24 @@
         "inbox_item_id=128"
       ],
       "action": "create_task"
-    },
-    {
-      "id": "inbox-127",
-      "title": "todo build CAA account growth and weekly dashboard plan",
-      "source": "dictation-router",
-      "priority": "high",
-      "status": "queued",
-      "sequence": 4,
-      "createdAt": "2026-02-08T16:55:39Z",
-      "updatedAt": "2026-02-08T19:52:14Z",
-      "completedAt": null,
-      "ageHours": 2.94,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Restarted from SQLite source-of-truth queue",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=66",
-        "inbox_item_id=127"
-      ],
-      "action": "create_task"
     }
   ],
   "userActionsDue": [
+    {
+      "id": "openclaw-review-32",
+      "title": "todo build CAA account growth and weekly dashboard plan",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "review_required",
+      "sequence": 0,
+      "createdAt": "2026-02-08T19:53:43Z",
+      "updatedAt": "2026-02-08T19:53:43Z",
+      "completedAt": "2026-02-08T19:53:43Z",
+      "ageHours": 0.0,
+      "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize).",
+      "deliverableUrl": "/ops/deliverables/openclaw-32.md",
+      "notes": []
+    },
     {
       "id": "openclaw-review-31",
       "title": "todo research Josh Bersin AI/L&D strategy and business model",
@@ -106,7 +102,7 @@
       "createdAt": "2026-02-08T19:52:14Z",
       "updatedAt": "2026-02-08T19:52:14Z",
       "completedAt": "2026-02-08T19:52:14Z",
-      "ageHours": 0.0,
+      "ageHours": 0.02,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, research current L&D viewpoints, extract key takeaways",
       "deliverableUrl": "/ops/deliverables/openclaw-31.md",
       "notes": []
@@ -121,7 +117,7 @@
       "createdAt": "2026-02-08T19:50:40Z",
       "updatedAt": "2026-02-08T19:50:40Z",
       "completedAt": "2026-02-08T19:50:40Z",
-      "ageHours": 0.03,
+      "ageHours": 0.05,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, design practical journaling system, document routine",
       "deliverableUrl": "/ops/deliverables/openclaw-30.md",
       "notes": []
@@ -136,7 +132,7 @@
       "createdAt": "2026-02-08T19:48:46Z",
       "updatedAt": "2026-02-08T19:48:46Z",
       "completedAt": "2026-02-08T19:48:46Z",
-      "ageHours": 0.06,
+      "ageHours": 0.08,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, analyze time data, identify top leaks",
       "deliverableUrl": "/ops/deliverables/openclaw-29.md",
       "notes": []
@@ -151,7 +147,7 @@
       "createdAt": "2026-02-08T19:47:48Z",
       "updatedAt": "2026-02-08T19:47:48Z",
       "completedAt": "2026-02-08T19:47:48Z",
-      "ageHours": 0.07,
+      "ageHours": 0.1,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, analyze vendor transformation, create survival strategy",
       "deliverableUrl": "/ops/deliverables/openclaw-28.md",
       "notes": []
@@ -166,7 +162,7 @@
       "createdAt": "2026-02-08T19:46:50Z",
       "updatedAt": "2026-02-08T19:46:50Z",
       "completedAt": "2026-02-08T19:46:50Z",
-      "ageHours": 0.09,
+      "ageHours": 0.11,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, create template with execution slots and priority order",
       "deliverableUrl": "/ops/deliverables/openclaw-27.md",
       "notes": []
@@ -181,7 +177,7 @@
       "createdAt": "2026-02-08T19:45:46Z",
       "updatedAt": "2026-02-08T19:45:46Z",
       "completedAt": "2026-02-08T19:45:46Z",
-      "ageHours": 0.11,
+      "ageHours": 0.13,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, define proceed/close handoffs, document routing logic",
       "deliverableUrl": "/ops/deliverables/openclaw-26.md",
       "notes": []
@@ -196,7 +192,7 @@
       "createdAt": "2026-02-08T19:44:48Z",
       "updatedAt": "2026-02-08T19:44:48Z",
       "completedAt": "2026-02-08T19:44:48Z",
-      "ageHours": 0.12,
+      "ageHours": 0.15,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, design sequencing system, build rate limit tracking",
       "deliverableUrl": "/ops/deliverables/openclaw-25.md",
       "notes": []
@@ -211,7 +207,7 @@
       "createdAt": "2026-02-08T19:43:46Z",
       "updatedAt": "2026-02-08T19:43:46Z",
       "completedAt": "2026-02-08T19:43:46Z",
-      "ageHours": 0.14,
+      "ageHours": 0.17,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, design measurable checkpoints, build tracking system",
       "deliverableUrl": "/ops/deliverables/openclaw-24.md",
       "notes": []
@@ -226,7 +222,7 @@
       "createdAt": "2026-02-08T19:42:47Z",
       "updatedAt": "2026-02-08T19:42:47Z",
       "completedAt": "2026-02-08T19:42:47Z",
-      "ageHours": 0.16,
+      "ageHours": 0.18,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, review current capture system, design enhanced workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-23.md",
       "notes": []
@@ -241,7 +237,7 @@
       "createdAt": "2026-02-08 19:42:29",
       "updatedAt": "2026-02-08 19:42:29",
       "completedAt": "2026-02-08 19:42:29",
-      "ageHours": 5.66,
+      "ageHours": 5.69,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Created content draft; ready for review",
       "deliverableUrl": "/ops/deliverables/openclaw-22.md",
       "notes": []
@@ -256,13 +252,28 @@
       "createdAt": "2026-02-08 19:40:47",
       "updatedAt": "2026-02-08 19:40:47",
       "completedAt": "2026-02-08 19:40:47",
-      "ageHours": 5.69,
+      "ageHours": 5.72,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Published via pipeline; ready for review",
       "deliverableUrl": "/ops/deliverables/openclaw-21.md",
       "notes": []
     }
   ],
   "completedRecent": [
+    {
+      "id": "openclaw-32",
+      "title": "todo build CAA account growth and weekly dashboard plan",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-08T19:53:43Z",
+      "updatedAt": "2026-02-08T19:53:43Z",
+      "completedAt": "2026-02-08T19:53:43Z",
+      "ageHours": 0.0,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-32.md",
+      "notes": []
+    },
     {
       "id": "openclaw-31",
       "title": "todo research Josh Bersin AI/L&D strategy and business model",
@@ -273,7 +284,7 @@
       "createdAt": "2026-02-08T19:52:14Z",
       "updatedAt": "2026-02-08T19:52:14Z",
       "completedAt": "2026-02-08T19:52:14Z",
-      "ageHours": 0.0,
+      "ageHours": 0.02,
       "deliverySummary": "Capture task, research current L&D viewpoints, extract key takeaways",
       "deliverableUrl": "/ops/deliverables/openclaw-31.md",
       "notes": []
@@ -288,7 +299,7 @@
       "createdAt": "2026-02-08T19:50:40Z",
       "updatedAt": "2026-02-08T19:50:40Z",
       "completedAt": "2026-02-08T19:50:40Z",
-      "ageHours": 0.03,
+      "ageHours": 0.05,
       "deliverySummary": "Capture task, design practical journaling system, document routine",
       "deliverableUrl": "/ops/deliverables/openclaw-30.md",
       "notes": []
@@ -303,7 +314,7 @@
       "createdAt": "2026-02-08T19:48:46Z",
       "updatedAt": "2026-02-08T19:48:46Z",
       "completedAt": "2026-02-08T19:48:46Z",
-      "ageHours": 0.06,
+      "ageHours": 0.08,
       "deliverySummary": "Capture task, analyze time data, identify top leaks",
       "deliverableUrl": "/ops/deliverables/openclaw-29.md",
       "notes": []
@@ -318,7 +329,7 @@
       "createdAt": "2026-02-08T19:47:48Z",
       "updatedAt": "2026-02-08T19:47:48Z",
       "completedAt": "2026-02-08T19:47:48Z",
-      "ageHours": 0.07,
+      "ageHours": 0.1,
       "deliverySummary": "Capture task, analyze vendor transformation, create survival strategy",
       "deliverableUrl": "/ops/deliverables/openclaw-28.md",
       "notes": []
@@ -333,7 +344,7 @@
       "createdAt": "2026-02-08T19:46:50Z",
       "updatedAt": "2026-02-08T19:46:50Z",
       "completedAt": "2026-02-08T19:46:50Z",
-      "ageHours": 0.09,
+      "ageHours": 0.11,
       "deliverySummary": "Capture task, create template with execution slots and priority order",
       "deliverableUrl": "/ops/deliverables/openclaw-27.md",
       "notes": []
@@ -348,7 +359,7 @@
       "createdAt": "2026-02-08T19:45:46Z",
       "updatedAt": "2026-02-08T19:45:46Z",
       "completedAt": "2026-02-08T19:45:46Z",
-      "ageHours": 0.11,
+      "ageHours": 0.13,
       "deliverySummary": "Capture task, define proceed/close handoffs, document routing logic",
       "deliverableUrl": "/ops/deliverables/openclaw-26.md",
       "notes": []
@@ -363,7 +374,7 @@
       "createdAt": "2026-02-08T19:44:48Z",
       "updatedAt": "2026-02-08T19:44:48Z",
       "completedAt": "2026-02-08T19:44:48Z",
-      "ageHours": 0.12,
+      "ageHours": 0.15,
       "deliverySummary": "Capture task, design sequencing system, build rate limit tracking",
       "deliverableUrl": "/ops/deliverables/openclaw-25.md",
       "notes": []
@@ -378,7 +389,7 @@
       "createdAt": "2026-02-08T19:43:46Z",
       "updatedAt": "2026-02-08T19:43:46Z",
       "completedAt": "2026-02-08T19:43:46Z",
-      "ageHours": 0.14,
+      "ageHours": 0.17,
       "deliverySummary": "Capture task, design measurable checkpoints, build tracking system",
       "deliverableUrl": "/ops/deliverables/openclaw-24.md",
       "notes": []
@@ -393,7 +404,7 @@
       "createdAt": "2026-02-08T19:42:47Z",
       "updatedAt": "2026-02-08T19:42:47Z",
       "completedAt": "2026-02-08T19:42:47Z",
-      "ageHours": 0.16,
+      "ageHours": 0.18,
       "deliverySummary": "Capture task, review current capture system, design enhanced workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-23.md",
       "notes": []
@@ -408,7 +419,7 @@
       "createdAt": "2026-02-08 19:42:29",
       "updatedAt": "2026-02-08 19:42:29",
       "completedAt": "2026-02-08 19:42:29",
-      "ageHours": 5.66,
+      "ageHours": 5.69,
       "deliverySummary": "Created content draft; ready for review",
       "deliverableUrl": "/ops/deliverables/openclaw-22.md",
       "notes": []
@@ -423,7 +434,7 @@
       "createdAt": "2026-02-08 19:40:47",
       "updatedAt": "2026-02-08 19:40:47",
       "completedAt": "2026-02-08 19:40:47",
-      "ageHours": 5.69,
+      "ageHours": 5.72,
       "deliverySummary": "Published via pipeline; ready for review",
       "deliverableUrl": "/ops/deliverables/openclaw-21.md",
       "notes": []
@@ -432,11 +443,11 @@
   "observations": [
     {
       "level": "info",
-      "message": "DICTATION_SYNC: 4 queued item(s) auto-synced from pending review lane."
+      "message": "DICTATION_SYNC: 3 queued item(s) auto-synced from pending review lane."
     },
     {
       "level": "warn",
-      "message": "11 item(s) need attention in 'Tasks due from you'."
+      "message": "12 item(s) need attention in 'Tasks due from you'."
     },
     {
       "level": "info",
@@ -451,6 +462,12 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-08T19:53:43Z",
+      "type": "executed",
+      "taskId": "capture-66",
+      "message": "todo build CAA account growth and weekly dashboard plan: Delegated via OpenClaw SSH (status=completed, task_id=b459081d-e3fb-4b6e-85e3-ec1f93e3ec67): "
+    },
     {
       "timestamp": "2026-02-08T19:52:14Z",
       "type": "executed",
@@ -525,9 +542,9 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-08T19:52:14Z",
+    "updatedAt": "2026-02-08T19:53:43Z",
     "metrics": {
-      "reviewRequested": 4,
+      "reviewRequested": 3,
       "proceedCount": 0,
       "closeCount": 0
     },
