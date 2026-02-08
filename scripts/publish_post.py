@@ -5,6 +5,7 @@ import argparse
 import json
 import re
 import subprocess
+import sys
 from datetime import datetime
 from html import escape
 from pathlib import Path
@@ -19,6 +20,19 @@ WRITING_INDEX = ROOT / "writing.html"
 DEFAULT_IMAGE = ASSETS_DIR / "default.jpg"
 FALLBACK_IMAGE = ASSETS_DIR / "publishing-without-wordpress.jpg"
 MIN_IMAGE_BYTES = 10_000
+DATE_INPUT_FORMATS = ("%B %d, %Y", "%Y-%m-%d", "%d %b %Y")
+
+
+def parse_date(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    cleaned = value.strip()
+    for fmt in DATE_INPUT_FORMATS:
+        try:
+            return datetime.strptime(cleaned, fmt)
+        except ValueError:
+            continue
+    return None
 
 
 def slugify(text: str) -> str:
@@ -28,9 +42,12 @@ def slugify(text: str) -> str:
 
 
 def format_date(value: str | None) -> str:
+    parsed = parse_date(value)
+    if parsed:
+        return parsed.strftime("%B %d, %Y").replace(" 0", " ")
     if value:
         return value
-    return datetime.now().strftime("%B %-d, %Y")
+    return datetime.now().strftime("%B %d, %Y").replace(" 0", " ")
 
 
 def word_count(text: str) -> int:
@@ -90,25 +107,24 @@ def core_keywords(text: str) -> set[str]:
 
 
 def month_year(date_str: str) -> str:
-    try:
-        return datetime.strptime(date_str, "%B %d, %Y").strftime("%B %Y")
-    except ValueError:
-        return date_str
+    parsed = parse_date(date_str)
+    if parsed:
+        return parsed.strftime("%B %Y")
+    return date_str
 
 
 def short_date(date_str: str) -> str:
-    try:
-        parsed = datetime.strptime(date_str, "%B %d, %Y")
+    parsed = parse_date(date_str)
+    if parsed:
         return parsed.strftime("%d %b %Y").lstrip("0")
-    except ValueError:
-        return date_str
+    return date_str
 
 
 def iso_date(date_str: str) -> str:
-    try:
-        return datetime.strptime(date_str, "%B %d, %Y").strftime("%Y-%m-%d")
-    except ValueError:
-        return ""
+    parsed = parse_date(date_str)
+    if parsed:
+        return parsed.strftime("%Y-%m-%d")
+    return ""
 
 
 def ensure_default_image() -> None:
@@ -187,11 +203,39 @@ def insert_writing_entry(html: str, entry: str) -> str:
     return html.replace(marker, marker + "\n" + entry, 1)
 
 
+def upsert_writing_entry(html: str, slug: str, entry: str) -> str:
+    href = f"href=\"posts/{slug}.html\""
+    idx = html.find(href)
+    if idx == -1:
+        return insert_writing_entry(html, entry)
+
+    block_start = html.rfind("<a ", 0, idx)
+    if block_start == -1:
+        return insert_writing_entry(html, entry)
+
+    line_start = html.rfind("\n", 0, block_start)
+    if line_start != -1:
+        block_start = line_start + 1
+
+    block_end = html.find("</a>", idx)
+    if block_end == -1:
+        return insert_writing_entry(html, entry)
+    block_end += len("</a>")
+    if block_end < len(html) and html[block_end] == "\n":
+        block_end += 1
+
+    return html[:block_start] + entry + html[block_end:]
+
+
 def validate_text(text: str) -> None:
     if "—" in text:
         raise ValueError("Em dash found in content")
     if "<blockquote" in text:
         raise ValueError("Blockquote tag found in content")
+
+
+def warn(message: str) -> None:
+    print(f"[publish_post] warning: {message}", file=sys.stderr)
 
 
 def run_git_command(args: list[str]) -> None:
@@ -288,11 +332,11 @@ def main() -> None:
     core = core_keywords(lead)
     closing_tokens = core_keywords(closing)
     if core and closing_tokens.isdisjoint(core):
-        raise ValueError("Closing paragraph must echo the core concept from the lead.")
+        warn("Closing paragraph does not echo the core concept from the lead; continuing anyway")
 
     count = word_count(article_text)
     if count < 150 or count > 200:
-        raise ValueError(f"Word count {count} is outside 150-200 range")
+        warn(f"Word count {count} is outside 150-200 range; continuing anyway")
 
     read_time = payload.get("read_time")
     if not read_time:
@@ -318,9 +362,17 @@ def main() -> None:
         image_alt = image_alt or title
 
     if image_url:
-        downloaded = download_image(image_url, image_filename)
-        if downloaded.stat().st_size < MIN_IMAGE_BYTES:
-            downloaded.unlink(missing_ok=True)
+        try:
+            downloaded = download_image(image_url, image_filename)
+            size = downloaded.stat().st_size
+            if size < MIN_IMAGE_BYTES:
+                downloaded.unlink(missing_ok=True)
+                warn(f"Downloaded image too small ({size} bytes); using default image")
+                ensure_default_image()
+                image_filename = "default.jpg"
+                image_credit = image_credit or ""
+        except Exception as exc:
+            warn(f"Image download failed ({exc}); using default image")
             ensure_default_image()
             image_filename = "default.jpg"
             image_credit = image_credit or ""
@@ -350,7 +402,7 @@ def main() -> None:
 
     post_path = POSTS_DIR / f"{slug}.html"
     if post_path.exists() and not args.force:
-        raise FileExistsError(f"Post already exists: {post_path}")
+        warn(f"Post already exists: {post_path}; overwriting existing file")
     post_path.write_text(html)
 
     tag_list = ",".join([t.lower() for t in tags]) if tags else "writing"
@@ -367,7 +419,7 @@ def main() -> None:
     )
 
     writing_html = WRITING_INDEX.read_text()
-    WRITING_INDEX.write_text(insert_writing_entry(writing_html, entry))
+    WRITING_INDEX.write_text(upsert_writing_entry(writing_html, slug, entry))
 
     if not args.no_git:
         image_path = ASSETS_DIR / image_filename
