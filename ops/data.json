@@ -1,19 +1,19 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-08T10:57:27.492Z",
-    "fingerprint": "496a57873d339ab0",
+    "updatedAt": "2026-02-08T11:00:43.386Z",
+    "fingerprint": "b9f80c12bdc258e1",
     "source": "PersonalOS task + activity + OpenClaw error logs"
   },
   "summary": {
     "totalTasks": 7,
-    "queued": 5,
+    "queued": 3,
     "active": 0,
-    "completed": 2,
+    "completed": 4,
     "blocked": 0,
     "byStatus": {
-      "queued": 5,
-      "completed": 2
+      "queued": 3,
+      "completed": 4
     }
   },
   "execution": [],
@@ -28,7 +28,7 @@
       "createdAt": "2026-02-01T22:43:00.000Z",
       "updatedAt": "2026-02-08T08:35:02.583Z",
       "completedAt": null,
-      "ageHours": 156.26,
+      "ageHours": 156.3,
       "deliverySummary": "",
       "notes": [
         "Migrated from legacy tasks.json format"
@@ -44,7 +44,7 @@
       "createdAt": "2026-02-08T08:24:49.672Z",
       "updatedAt": "2026-02-08T08:35:02.583Z",
       "completedAt": null,
-      "ageHours": 2.56,
+      "ageHours": 2.6,
       "deliverySummary": "",
       "notes": []
     },
@@ -58,40 +58,44 @@
       "createdAt": "2026-02-08T08:24:49.674Z",
       "updatedAt": "2026-02-08T08:35:02.583Z",
       "completedAt": null,
-      "ageHours": 2.56,
+      "ageHours": 2.6,
       "deliverySummary": "",
       "notes": []
+    }
+  ],
+  "completedRecent": [
+    {
+      "id": "task-1770538770337",
+      "title": "[WhatsApp +918766662719 +29s 2026-02-08 12:35 GMT+5:30] Publish: Humans are wired to bond",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 5,
+      "createdAt": "2026-02-08T08:19:30.337Z",
+      "updatedAt": "2026-02-08T11:00:43.284Z",
+      "completedAt": "2026-02-08T11:00:43.284Z",
+      "ageHours": 2.69,
+      "deliverySummary": "Published as /posts/the-object-without-attachment.html and indexed on writing.html",
+      "notes": [
+        "Delivery summary: Published as /posts/the-object-without-attachment.html and indexed on writing.html"
+      ]
     },
     {
       "id": "task-1770538770336",
       "title": "[WhatsApp +918766662719 +3h 2026-02-08 12:31 GMT+5:30] Publish: I haven’t used PowerPoint in",
       "source": "handoff",
       "priority": "medium",
-      "status": "queued",
+      "status": "completed",
       "sequence": 4,
       "createdAt": "2026-02-08T08:19:30.336Z",
-      "updatedAt": "2026-02-08T08:35:02.583Z",
-      "completedAt": null,
-      "ageHours": 2.65,
-      "deliverySummary": "",
-      "notes": []
+      "updatedAt": "2026-02-08T11:00:42.977Z",
+      "completedAt": "2026-02-08T11:00:42.977Z",
+      "ageHours": 2.69,
+      "deliverySummary": "Published as /posts/where-we-go-from-here.html and indexed on writing.html",
+      "notes": [
+        "Delivery summary: Published as /posts/where-we-go-from-here.html and indexed on writing.html"
+      ]
     },
-    {
-      "id": "task-1770538770337",
-      "title": "[WhatsApp +918766662719 +29s 2026-02-08 12:35 GMT+5:30] Publish: Humans are wired to bond",
-      "source": "handoff",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 5,
-      "createdAt": "2026-02-08T08:19:30.337Z",
-      "updatedAt": "2026-02-08T08:35:02.583Z",
-      "completedAt": null,
-      "ageHours": 2.65,
-      "deliverySummary": "",
-      "notes": []
-    }
-  ],
-  "completedRecent": [
     {
       "id": "task-1770538410396",
       "title": "Run tasks in strict sequence based on AI and user limits; execute",
@@ -102,7 +106,7 @@
       "createdAt": "2026-02-08T08:13:30.396Z",
       "updatedAt": "2026-02-08T08:33:51.381Z",
       "completedAt": "2026-02-08T08:19:30.833Z",
-      "ageHours": 2.75,
+      "ageHours": 2.79,
       "deliverySummary": "Implemented limit-aware sequencing policy, capture-source map, and intake-cycle script for continuous no-loss capture and serialized execution.",
       "notes": [
         "Delivery summary: Implemented limit-aware sequencing policy, capture-source map, and intake-cycle script for continuous no-loss capture and serialized execution."
@@ -118,7 +122,7 @@
       "createdAt": "2026-02-08T08:13:30.304Z",
       "updatedAt": "2026-02-08T08:33:51.380Z",
       "completedAt": "2026-02-08T08:18:53.686Z",
-      "ageHours": 2.75,
+      "ageHours": 2.79,
       "deliverySummary": "Checkpoints A/B/C completed: queue integrity, WIP=1 + review gate, approval + metrics + capture-source map implemented.",
       "notes": [
         "Plan file: .tasks/plans/task-1770538410304.md",
@@ -327,6 +331,42 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-08T11:00:43.285Z",
+      "type": "approved",
+      "taskId": "task-1770538770337",
+      "message": "Verified on site index and sitemap"
+    },
+    {
+      "timestamp": "2026-02-08T11:00:43.182Z",
+      "type": "review",
+      "taskId": "task-1770538770337",
+      "message": "Task moved to review"
+    },
+    {
+      "timestamp": "2026-02-08T11:00:43.080Z",
+      "type": "started",
+      "taskId": "task-1770538770337",
+      "message": "Task moved to in_progress"
+    },
+    {
+      "timestamp": "2026-02-08T11:00:42.978Z",
+      "type": "approved",
+      "taskId": "task-1770538770336",
+      "message": "Verified on site index and sitemap"
+    },
+    {
+      "timestamp": "2026-02-08T11:00:42.875Z",
+      "type": "review",
+      "taskId": "task-1770538770336",
+      "message": "Task moved to review"
+    },
+    {
+      "timestamp": "2026-02-08T11:00:42.774Z",
+      "type": "started",
+      "taskId": "task-1770538770336",
+      "message": "Task moved to in_progress"
+    },
     {
       "timestamp": "2026-02-08T08:35:02.584Z",
       "type": "sequence_normalized",
