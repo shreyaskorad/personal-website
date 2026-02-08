@@ -183,6 +183,14 @@
       font-size: 12px;
     }
 
+    .subhead {
+      margin: 6px 0 8px;
+      font-size: 12px;
+      color: #0f3c66;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
     .obs-info { border-left: 4px solid var(--brand); }
     .obs-warn { border-left: 4px solid var(--warn); }
     .obs-err { border-left: 4px solid var(--err); }
@@ -238,6 +246,9 @@
 
       <div class="card obs">
         <h2>Observations</h2>
+        <div class="subhead">Tasks due from you</div>
+        <div id="user-actions" class="list"></div>
+        <div class="subhead">System observations</div>
         <div id="observations" class="list"></div>
       </div>
     </section>
@@ -411,6 +422,24 @@
       `;
     }
 
+    function userActionRow(t) {
+      const summary = t.deliverySummary ? `<div class="muted">${escapeHtml(t.deliverySummary)}</div>` : "";
+      const download = t.deliverableUrl
+        ? `<div class="muted"><a href="${escapeHtml(t.deliverableUrl)}" download>Download deliverable</a></div>`
+        : "";
+      return `
+        <div class="row">
+          <div class="topline">
+            <div class="title">${escapeHtml(t.title)}</div>
+            <div class="muted">${escapeHtml(t.id)}</div>
+          </div>
+          <div class="muted">decision needed: proceed (give direction) or close (finalize)</div>
+          ${summary}
+          ${download}
+        </div>
+      `;
+    }
+
     function obsRow(o) {
       const cls = o.level === "warn" ? "obs-warn" : (o.level === "error" ? "obs-err" : "obs-info");
       return `<div class="row ${cls}"><div class="title">${escapeHtml(o.message)}</div></div>`;
@@ -440,6 +469,11 @@
             (data.completedRecent || []).length
               ? data.completedRecent.map((t) => taskRow(t, true)).join("")
               : empty("No completed tasks yet.");
+
+          document.getElementById("user-actions").innerHTML =
+            (data.userActionsDue || []).length
+              ? data.userActionsDue.map((t) => userActionRow(t)).join("")
+              : empty("No pending decisions from your side.");
 
           document.getElementById("observations").innerHTML =
             (data.observations || []).length
