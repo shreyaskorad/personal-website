@@ -512,6 +512,14 @@
 
     const empty = (msg) => `<div class="empty">${msg}</div>`;
 
+    const escapeHtml = (value) =>
+      String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+
     function safeLocalGet(key) {
       try {
         return localStorage.getItem(key);
@@ -582,14 +590,14 @@
 
     function taskRow(t, includeCompleteTime = false) {
       const done = includeCompleteTime ? `<div class="muted">completed: ${fmt(t.completedAt || t.updatedAt)}</div>` : "";
-      const extra = t.deliverySummary ? `<div class="muted">${t.deliverySummary}</div>` : "";
+      const extra = t.deliverySummary ? `<div class="muted">${escapeHtml(t.deliverySummary)}</div>` : "";
       return `
         <div class="row">
           <div class="topline">
-            <div class="title">${t.title}</div>
-            <div class="muted">${t.id}</div>
+            <div class="title">${escapeHtml(t.title)}</div>
+            <div class="muted">${escapeHtml(t.id)}</div>
           </div>
-          <div class="muted">priority: ${t.priority} | status: ${t.status} | age: ${t.ageHours ?? "n/a"}h | seq: ${t.sequence ?? "n/a"}</div>
+          <div class="muted">priority: ${escapeHtml(t.priority)} | status: ${escapeHtml(t.status)} | age: ${t.ageHours ?? "n/a"}h | seq: ${t.sequence ?? "n/a"}</div>
           ${done}
           ${extra}
         </div>
@@ -601,10 +609,10 @@
       return `
         <div class="row">
           <div class="topline">
-            <div class="title">${t.title}</div>
-            <div class="muted">${t.id}</div>
+            <div class="title">${escapeHtml(t.title)}</div>
+            <div class="muted">${escapeHtml(t.id)}</div>
           </div>
-          <div class="muted">priority: ${t.priority} | status: ${t.status} | age: ${t.ageHours ?? "n/a"}h | seq: ${t.sequence ?? "n/a"}</div>
+          <div class="muted">priority: ${escapeHtml(t.priority)} | status: ${escapeHtml(t.status)} | age: ${t.ageHours ?? "n/a"}h | seq: ${t.sequence ?? "n/a"}</div>
           <div class="queue-actions">
             <input id="${seqInputId}" class="seq-input" type="number" min="1" value="${t.sequence || 1}" />
             <button class="btn" onclick="queueSequence('${t.id}', '${seqInputId}')">Set Seq</button>
@@ -617,17 +625,17 @@
 
     function obsRow(o) {
       const cls = o.level === "warn" ? "obs-warn" : (o.level === "error" ? "obs-err" : "obs-info");
-      return `<div class="row ${cls}"><div class="title">${o.message}</div></div>`;
+      return `<div class="row ${cls}"><div class="title">${escapeHtml(o.message)}</div></div>`;
     }
 
     function errRow(e) {
       return `
         <div class="row">
           <div class="topline">
-            <div class="title">${e.source}</div>
+            <div class="title">${escapeHtml(e.source)}</div>
             <div class="muted">${e.timestamp ? fmt(e.timestamp) : "n/a"}</div>
           </div>
-          <div class="muted">${e.message}</div>
+          <div class="muted">${escapeHtml(e.message)}</div>
         </div>
       `;
     }
@@ -636,11 +644,11 @@
       return `
         <div class="row">
           <div class="topline">
-            <div class="title">${e.type}</div>
+            <div class="title">${escapeHtml(e.type)}</div>
             <div class="muted">${fmt(e.timestamp)}</div>
           </div>
-          <div class="muted">task: ${e.taskId || "-"}</div>
-          <div class="muted">${e.message || ""}</div>
+          <div class="muted">task: ${escapeHtml(e.taskId || "-")}</div>
+          <div class="muted">${escapeHtml(e.message || "")}</div>
         </div>
       `;
     }
@@ -706,13 +714,13 @@
     function renderControlPanel() {
       const controls = latestControls || {};
       const pendingRows = pendingCommands.length
-        ? pendingCommands.map((cmd) => `<div class="control-item">${cmd}</div>`).join("")
+        ? pendingCommands.map((cmd) => `<div class="control-item">${escapeHtml(cmd)}</div>`).join("")
         : `<div class="muted">No pending control commands.</div>`;
 
       const baseCmds = Object.entries(controls)
         .map(
           ([k, v]) =>
-            `<div class="muted" style="margin:0 0 4px;text-transform:uppercase;letter-spacing:.5px;font-size:11px;">${k}</div><code>${v}</code>`
+            `<div class="muted" style="margin:0 0 4px;text-transform:uppercase;letter-spacing:.5px;font-size:11px;">${escapeHtml(k)}</div><code>${escapeHtml(v)}</code>`
         )
         .join("");
 
