@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>OpenClaw Control Dashboard</title>
+  <title>Task Dashboard</title>
   <style>
     :root {
       --bg: #f2f6f9;
@@ -15,6 +15,7 @@
       --brand: #0b5fff;
       --warn: #b45309;
       --err: #b91c1c;
+      --ok: #047857;
       --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
 
@@ -30,9 +31,7 @@
         var(--bg);
     }
 
-    [hidden] {
-      display: none !important;
-    }
+    [hidden] { display: none !important; }
 
     .auth-gate {
       min-height: 100vh;
@@ -101,7 +100,7 @@
     }
 
     .shell {
-      width: min(1280px, 96vw);
+      width: min(1320px, 96vw);
       margin: 24px auto 48px;
     }
 
@@ -111,7 +110,7 @@
       border-radius: 18px;
       padding: 22px 24px;
       box-shadow: var(--shadow);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .hero h1 {
@@ -123,6 +122,33 @@
     .hero .meta {
       color: rgba(255, 255, 255, 0.9);
       font-size: 13px;
+    }
+
+    .stats {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin: 0 0 14px;
+    }
+
+    .stat {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .stat-value {
+      margin-top: 3px;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
     }
 
     .grid {
@@ -139,21 +165,67 @@
       padding: 14px;
     }
 
-    .card h2 {
-      margin: 0 0 10px;
-      font-size: 16px;
-      letter-spacing: 0.2px;
-    }
-
     .lane { grid-column: span 6; }
     .queue { grid-column: span 6; }
+    .due { grid-column: span 6; }
     .done { grid-column: span 6; }
-    .obs { grid-column: span 6; }
+    .obs { grid-column: span 12; }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .count-chip {
+      background: #edf3ff;
+      color: #1149aa;
+      border: 1px solid #cfe0ff;
+      border-radius: 999px;
+      font-size: 11px;
+      padding: 2px 8px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 8px;
+    }
+
+    .filter-row label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    select.filter {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 6px 8px;
+      font-size: 12px;
+      background: #fff;
+      color: var(--ink);
+      min-width: 180px;
+    }
 
     .list {
       display: grid;
       gap: 8px;
-      max-height: 440px;
+      max-height: 430px;
       overflow: auto;
       padding-right: 4px;
     }
@@ -183,13 +255,23 @@
       font-size: 12px;
     }
 
-    .subhead {
-      margin: 6px 0 8px;
-      font-size: 12px;
-      color: #0f3c66;
-      font-weight: 600;
-      letter-spacing: 0.2px;
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 5px;
     }
+
+    .tag {
+      font-size: 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 1px 7px;
+      color: #1f3552;
+      background: #f8fbff;
+    }
+
+    .obs-list { max-height: 260px; }
 
     .obs-info { border-left: 4px solid var(--brand); }
     .obs-warn { border-left: 4px solid var(--warn); }
@@ -204,8 +286,9 @@
       background: #fcfdff;
     }
 
-    @media (max-width: 980px) {
-      .lane, .queue, .done, .obs { grid-column: span 12; }
+    @media (max-width: 1060px) {
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .lane, .queue, .due, .done, .obs { grid-column: span 12; }
     }
   </style>
 </head>
@@ -224,32 +307,92 @@
 
   <div class="shell" id="app-shell" hidden>
     <section class="hero">
-      <h1>OpenClaw Control Dashboard</h1>
+      <h1>Task Dashboard</h1>
       <div class="meta" id="meta">Loading...</div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <div class="stat-label">Executed Tasks</div>
+        <div class="stat-value" id="stat-executed">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Queued Tasks</div>
+        <div class="stat-value" id="stat-queued">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Completed Tasks</div>
+        <div class="stat-value" id="stat-completed">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Tasks Due From You</div>
+        <div class="stat-value" id="stat-due">0</div>
+      </div>
     </section>
 
     <section class="grid">
       <div class="card lane">
-        <h2>Execution lane</h2>
+        <div class="card-head">
+          <h2>Execution lane <span class="count-chip" id="count-execution">0</span></h2>
+        </div>
         <div id="execution" class="list"></div>
       </div>
 
       <div class="card queue">
-        <h2>Queued tasks</h2>
+        <div class="card-head">
+          <h2>Queued tasks <span class="count-chip" id="count-queue">0</span></h2>
+        </div>
+        <div class="filter-row">
+          <label for="filter-queue">Filter</label>
+          <select id="filter-queue" class="filter">
+            <option value="all">All</option>
+            <option value="professional">Professional</option>
+            <option value="personal">Personal</option>
+            <option value="deliverable">Has deliverable</option>
+          </select>
+        </div>
         <div id="queue" class="list"></div>
       </div>
 
+      <div class="card due">
+        <div class="card-head">
+          <h2>Tasks due from you <span class="count-chip" id="count-due">0</span></h2>
+        </div>
+        <div class="filter-row">
+          <label for="filter-due">Filter</label>
+          <select id="filter-due" class="filter">
+            <option value="all">All</option>
+            <option value="review">Needs review</option>
+            <option value="deliverable">Has deliverable</option>
+            <option value="professional">Professional</option>
+            <option value="personal">Personal</option>
+            <option value="failed_blocked">Failed / Blocked</option>
+          </select>
+        </div>
+        <div id="user-actions" class="list"></div>
+      </div>
+
       <div class="card done">
-        <h2>Completed tasks (date/time)</h2>
+        <div class="card-head">
+          <h2>Completed tasks (date/time) <span class="count-chip" id="count-completed">0</span></h2>
+        </div>
+        <div class="filter-row">
+          <label for="filter-completed">Filter</label>
+          <select id="filter-completed" class="filter">
+            <option value="all">All</option>
+            <option value="deliverable">Has deliverable</option>
+            <option value="professional">Professional</option>
+            <option value="personal">Personal</option>
+          </select>
+        </div>
         <div id="completed" class="list"></div>
       </div>
 
       <div class="card obs">
-        <h2>Observations</h2>
-        <div class="subhead">Tasks due from you</div>
-        <div id="user-actions" class="list"></div>
-        <div class="subhead">System observations</div>
-        <div id="observations" class="list"></div>
+        <div class="card-head">
+          <h2>Observations <span class="count-chip" id="count-observations">0</span></h2>
+        </div>
+        <div id="observations" class="list obs-list"></div>
       </div>
     </section>
   </div>
@@ -260,6 +403,7 @@
     const OPS_PASSWORD_FALLBACK = "9822435581";
 
     let dashboardBooted = false;
+    let currentPayload = null;
 
     function authEls() {
       return {
@@ -402,12 +546,51 @@
         .replace(/\"/g, "&quot;")
         .replace(/'/g, "&#39;");
 
+    function inferScope(task) {
+      if (task.scope === "personal" || task.scope === "professional") {
+        return task.scope;
+      }
+      const corpus = `${task.title || ""} ${task.deliverySummary || ""}`.toLowerCase();
+      const personalHints = ["family", "daughter", "wedding", "trip", "outing", "house", "home", "garden", "dentist", "bath", "health", "fasting", "lights", "tree"];
+      const professionalHints = ["blog", "research", "ai", "dashboard", "workflow", "deploy", "strategy", "business", "prototype", "project", "openclaw"];
+      const personal = personalHints.filter((k) => corpus.includes(k)).length;
+      const professional = professionalHints.filter((k) => corpus.includes(k)).length;
+      return personal > professional ? "personal" : "professional";
+    }
+
+    function hasDeliverable(task) {
+      return Boolean(task.hasDeliverable || task.deliverableUrl);
+    }
+
+    function needsReview(task) {
+      const st = String(task.status || "").toLowerCase();
+      return Boolean(task.needsReview) || st === "review_required" || st === "needs_input";
+    }
+
+    function matchesFilter(task, filter) {
+      if (!filter || filter === "all") return true;
+      if (filter === "personal") return inferScope(task) === "personal";
+      if (filter === "professional") return inferScope(task) === "professional";
+      if (filter === "deliverable") return hasDeliverable(task);
+      if (filter === "review") return needsReview(task);
+      if (filter === "failed_blocked") {
+        const st = String(task.status || "").toLowerCase();
+        return st === "failed" || st === "blocked";
+      }
+      return true;
+    }
+
     function taskRow(t, includeCompleteTime = false) {
       const done = includeCompleteTime ? `<div class="muted">completed: ${fmt(t.completedAt || t.updatedAt)}</div>` : "";
       const extra = t.deliverySummary ? `<div class="muted">${escapeHtml(t.deliverySummary)}</div>` : "";
       const download = t.deliverableUrl
         ? `<div class="muted"><a href="${escapeHtml(t.deliverableUrl)}" download>Download deliverable</a></div>`
         : "";
+      const tags = [
+        inferScope(t),
+        hasDeliverable(t) ? "has-deliverable" : null,
+        needsReview(t) ? "needs-review" : null
+      ].filter(Boolean);
       return `
         <div class="row">
           <div class="topline">
@@ -418,6 +601,7 @@
           ${done}
           ${extra}
           ${download}
+          <div class="tags">${tags.map((x) => `<span class="tag">${escapeHtml(x)}</span>`).join("")}</div>
         </div>
       `;
     }
@@ -427,6 +611,11 @@
       const download = t.deliverableUrl
         ? `<div class="muted"><a href="${escapeHtml(t.deliverableUrl)}" download>Download deliverable</a></div>`
         : "";
+      const tags = [
+        inferScope(t),
+        hasDeliverable(t) ? "has-deliverable" : null,
+        needsReview(t) ? "needs-review" : null
+      ].filter(Boolean);
       return `
         <div class="row">
           <div class="topline">
@@ -436,6 +625,7 @@
           <div class="muted">decision needed: proceed (give direction) or close (finalize)</div>
           ${summary}
           ${download}
+          <div class="tags">${tags.map((x) => `<span class="tag">${escapeHtml(x)}</span>`).join("")}</div>
         </div>
       `;
     }
@@ -445,41 +635,98 @@
       return `<div class="row ${cls}"><div class="title">${escapeHtml(o.message)}</div></div>`;
     }
 
+    function setStat(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = String(value ?? 0);
+    }
+
+    function renderList({ items, filterId, listId, countId, emptyText, rowFn }) {
+      const filterValue = document.getElementById(filterId)?.value || "all";
+      const filtered = items.filter((t) => matchesFilter(t, filterValue));
+      const listEl = document.getElementById(listId);
+      if (listEl) {
+        listEl.innerHTML = filtered.length ? filtered.map(rowFn).join("") : empty(emptyText);
+      }
+      const countEl = document.getElementById(countId);
+      if (countEl) {
+        countEl.textContent = filterValue === "all" ? `${items.length}` : `${filtered.length}/${items.length}`;
+      }
+    }
+
+    function renderDashboard(data) {
+      currentPayload = data;
+
+      document.getElementById("meta").textContent = `Updated: ${fmt(data.meta?.updatedAt)}`;
+
+      const execution = data.execution || [];
+      const queue = data.queueTop || [];
+      const completed = data.completedRecent || [];
+      const due = data.userActionsDue || [];
+      const observations = data.observations || [];
+
+      const lane = data.laneMetrics || {};
+      const summary = data.summary || {};
+
+      setStat("stat-executed", lane.execution?.executedTotal ?? summary.executedTotal ?? completed.length);
+      setStat("stat-queued", lane.queue?.totalQueued ?? queue.length);
+      setStat("stat-completed", lane.completed?.totalClosed ?? completed.length);
+      setStat("stat-due", lane.due?.visible ?? due.length);
+
+      document.getElementById("execution").innerHTML =
+        execution.length ? execution.map((t) => taskRow(t)).join("") : empty("No active execution tasks right now.");
+      document.getElementById("count-execution").textContent = `${execution.length}`;
+
+      renderList({
+        items: queue,
+        filterId: "filter-queue",
+        listId: "queue",
+        countId: "count-queue",
+        emptyText: "Queue is empty.",
+        rowFn: (t) => taskRow(t)
+      });
+
+      renderList({
+        items: due,
+        filterId: "filter-due",
+        listId: "user-actions",
+        countId: "count-due",
+        emptyText: "No pending decisions from your side.",
+        rowFn: (t) => userActionRow(t)
+      });
+
+      renderList({
+        items: completed,
+        filterId: "filter-completed",
+        listId: "completed",
+        countId: "count-completed",
+        emptyText: "No fully closed tasks yet.",
+        rowFn: (t) => taskRow(t, true)
+      });
+
+      document.getElementById("observations").innerHTML =
+        observations.length ? observations.map(obsRow).join("") : empty("No notable observations.");
+      document.getElementById("count-observations").textContent = `${observations.length}`;
+    }
+
+    function bindFilters() {
+      ["filter-queue", "filter-due", "filter-completed"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener("change", () => {
+          if (!currentPayload) return;
+          renderDashboard(currentPayload);
+        });
+      });
+    }
+
     function initDashboard() {
       if (dashboardBooted) return;
       dashboardBooted = true;
+      bindFilters();
 
       fetch(`./data.json?cb=${Date.now()}`, { cache: "no-store" })
         .then((r) => r.json())
-        .then((data) => {
-          document.getElementById("meta").textContent =
-            `Updated: ${fmt(data.meta.updatedAt)} | fingerprint: ${data.meta.fingerprint}`;
-
-          document.getElementById("execution").innerHTML =
-            (data.execution || []).length
-              ? data.execution.map((t) => taskRow(t)).join("")
-              : empty("No active execution tasks right now.");
-
-          document.getElementById("queue").innerHTML =
-            (data.queueTop || []).length
-              ? data.queueTop.map((t) => taskRow(t)).join("")
-              : empty("Queue is empty.");
-
-          document.getElementById("completed").innerHTML =
-            (data.completedRecent || []).length
-              ? data.completedRecent.map((t) => taskRow(t, true)).join("")
-              : empty("No completed tasks yet.");
-
-          document.getElementById("user-actions").innerHTML =
-            (data.userActionsDue || []).length
-              ? data.userActionsDue.map((t) => userActionRow(t)).join("")
-              : empty("No pending decisions from your side.");
-
-          document.getElementById("observations").innerHTML =
-            (data.observations || []).length
-              ? data.observations.map(obsRow).join("")
-              : empty("No notable observations.");
-        })
+        .then((data) => renderDashboard(data))
         .catch((err) => {
           document.getElementById("meta").textContent = `Failed to load dashboard data: ${err.message}`;
         });
