@@ -1,12 +1,12 @@
 # Deliverable: Get a lot of stuff done today
 
 - Task ID: openclaw-94
-- Status: blocked
-- Created: 2026-02-09T08:11:33Z
-- Updated: 2026-02-09T08:11:33Z
+- Status: cancelled
+- Created: 2026-02-09T08:33:45Z
+- Updated: 2026-02-09T08:33:45Z
 
 ## Summary
-Request user to specify what needs to be done today, including deadlines and priorities
+Closed by user due to low deliverable quality.
 
 ## Deliverable Output
 # Deliverable Draft: Get A Lot Of Stuff Done Today
@@ -26,10 +26,7 @@ Turn `Get a lot of stuff done today` into a concrete, reviewable output.
 4. Attach deliverable and request proceed/close decision.
 
 ## Notes
-Request user to specify what needs to be done today, including deadlines and priorities
-
-## Blockers / Notes
-Task is too vague - need specific tasks, deliverables, and priorities
+Closed by user due to low deliverable quality.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
