@@ -1,4 +1,4 @@
-# Deliverable: What are the specific verticals are in industries skills where
+# Deliverable: Task: task: what are the specific verticals are in industries skills where
 
 - Task ID: openclaw-78
 - Status: failed

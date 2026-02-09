@@ -1,4 +1,4 @@
-# Deliverable: timeout test 2: i need to write one blog, do
+# Deliverable: Write one blog, do
 
 - Task ID: openclaw-76
 - Status: completed

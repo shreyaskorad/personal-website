@@ -1,4 +1,4 @@
-# Deliverable: so we need to support that as well
+# Deliverable: Task: task: support that as well
 
 - Task ID: openclaw-46
 - Status: completed
