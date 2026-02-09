@@ -1,4 +1,4 @@
-# Deliverable: Task: task: task: in terms of cleaning up the house, we need to
+# Deliverable: Task: in terms of cleaning up the house, we need to
 
 - Task ID: openclaw-58
 - Status: completed
