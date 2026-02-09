@@ -1,4 +1,4 @@
-# Deliverable: Task: how to bring popular notebooks back into the cycle of
+# Deliverable: Task: identify specific popular notebooks to use
 
 - Task ID: openclaw-60
 - Status: completed
