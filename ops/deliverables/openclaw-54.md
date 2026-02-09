@@ -1,4 +1,4 @@
-# Deliverable: Task: we don’t really head out of the house and we would want to do that now
+# Deliverable: Select nearby activity
 
 - Task ID: openclaw-54
 - Status: completed

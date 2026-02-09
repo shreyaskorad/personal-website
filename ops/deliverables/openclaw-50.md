@@ -1,4 +1,4 @@
-# Deliverable: Task: get the pen prototype proper in a good shape so
+# Deliverable: Review pen prototype current state
 
 - Task ID: openclaw-50
 - Status: completed
