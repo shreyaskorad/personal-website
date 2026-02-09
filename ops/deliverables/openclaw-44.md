@@ -1,4 +1,4 @@
-# Deliverable: Task: doing something moving is something that I will have to
+# Deliverable: Task: set hourly movement break reminder
 
 - Task ID: openclaw-44
 - Status: completed

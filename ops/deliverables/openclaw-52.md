@@ -1,4 +1,4 @@
-# Deliverable: Task: if we are able to do
+# Deliverable: Clarify scope of work
 
 - Task ID: openclaw-52
 - Status: completed
