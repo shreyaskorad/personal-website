@@ -28,8 +28,5 @@ Turn `Task: auto-closed as low-signal legacy item to keep dashboard clean` into 
 ## Notes
 Auto-closed as low-signal legacy item to keep dashboard clean. Recreate if still needed with a specific task statement.
 
-## Blockers / Notes
-AUTO_CLOSED_LEGACY[unclear_blocker_low_signal] | previous_status=blocked | The provided task is a conversational statement with no clear action or goal specified.
-
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

@@ -32,8 +32,5 @@ Produce a focused research brief for `Research needed on that as well` with acti
 ## Notes
 Auto-closed as low-signal legacy item to keep dashboard clean. Recreate if still needed with a specific task statement.
 
-## Blockers / Notes
-AUTO_CLOSED_LEGACY[unclear_blocker_low_signal] | previous_status=blocked | Task doesn't specify what topic requires research
-
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
