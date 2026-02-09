@@ -1,4 +1,4 @@
-# Deliverable: Task: set up fasting windows for Mon-Sun
+# Deliverable: Task: support that as well
 
 - Task ID: openclaw-46
 - Status: completed

@@ -1,4 +1,4 @@
-# Deliverable: Review operations dashboard every alternate day
+# Deliverable: This is an activity that I should do every alternate
 
 - Task ID: openclaw-84
 - Status: completed
