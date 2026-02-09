@@ -331,7 +331,7 @@
     </section>
 
     <section class="grid">
-      <div class="card lane">
+      <div class="card lane" id="lane-execution">
         <div class="card-head">
           <h2>Execution lane <span class="count-chip" id="count-execution">0</span></h2>
         </div>
@@ -659,6 +659,10 @@
       document.getElementById("meta").textContent = `Updated: ${fmt(data.meta?.updatedAt)}`;
 
       const execution = data.execution || [];
+      const executionLane = document.getElementById("lane-execution");
+      if (executionLane) {
+        executionLane.style.display = execution.length ? "" : "none";
+      }
       const queue = data.queueTop || [];
       const completed = data.completedRecent || [];
       const due = data.userActionsDue || [];
