@@ -1,19 +1,19 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-09T04:50:17Z",
+    "updatedAt": "2026-02-09T04:52:41Z",
     "source": "Dictation Router + OpenClaw supervisor",
-    "fingerprint": "e208625c2003e2b2"
+    "fingerprint": "e32c98463546f9bf"
   },
   "summary": {
-    "totalTasks": 17,
+    "totalTasks": 20,
     "queued": 1,
     "active": 0,
-    "completed": 16,
+    "completed": 19,
     "blocked": 0,
     "byStatus": {
       "queued": 1,
-      "completed": 16
+      "completed": 19
     }
   },
   "execution": [],
@@ -26,9 +26,9 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-09T04:23:50Z",
-      "updatedAt": "2026-02-09T04:50:17Z",
+      "updatedAt": "2026-02-09T04:52:41Z",
       "completedAt": null,
-      "ageHours": 0.44,
+      "ageHours": 0.48,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for Codex review",
       "deliverableUrl": null,
       "notes": [
@@ -40,6 +40,21 @@
   ],
   "userActionsDue": [
     {
+      "id": "openclaw-review-46",
+      "title": "so we need to support that as well",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "review_required",
+      "sequence": 0,
+      "createdAt": "2026-02-09T04:51:36Z",
+      "updatedAt": "2026-02-09T04:51:36Z",
+      "completedAt": "2026-02-09T04:51:36Z",
+      "ageHours": 0.02,
+      "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Set up fasting windows for Mon-Sun; Plan meal timing and composition; Track progress and adjust as needed",
+      "deliverableUrl": "/ops/deliverables/openclaw-46.md",
+      "notes": []
+    },
+    {
       "id": "openclaw-review-45",
       "title": "bath today, and I need to make sure that I",
       "source": "openclaw",
@@ -49,7 +64,7 @@
       "createdAt": "2026-02-09T04:48:22Z",
       "updatedAt": "2026-02-09T04:48:22Z",
       "completedAt": "2026-02-09T04:48:22Z",
-      "ageHours": 0.03,
+      "ageHours": 0.07,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Schedule dentist appointment for wisdom tooth assessment; Add bath time to daily routine; Research dental extraction options and providers",
       "deliverableUrl": "/ops/deliverables/openclaw-45.md",
       "notes": []
@@ -64,7 +79,7 @@
       "createdAt": "2026-02-09T04:39:14Z",
       "updatedAt": "2026-02-09T04:39:14Z",
       "completedAt": "2026-02-09T04:39:14Z",
-      "ageHours": 0.18,
+      "ageHours": 0.22,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
       "deliverableUrl": "/ops/deliverables/openclaw-41.md",
       "notes": [
@@ -81,7 +96,7 @@
       "createdAt": "2026-02-09T04:32:30Z",
       "updatedAt": "2026-02-09T04:32:30Z",
       "completedAt": "2026-02-09T04:32:30Z",
-      "ageHours": 0.3,
+      "ageHours": 0.34,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
       "deliverableUrl": "/ops/deliverables/openclaw-38.md",
       "notes": [
@@ -98,7 +113,7 @@
       "createdAt": "2026-02-09T04:28:06Z",
       "updatedAt": "2026-02-09T04:28:06Z",
       "completedAt": "2026-02-09T04:28:06Z",
-      "ageHours": 0.37,
+      "ageHours": 0.41,
       "deliverySummary": "1. Identify automated handler for stuck blog task\n2. Check taskflow.js handler configuration\n3. Review gateway error logs\n4. Design per-task AI routing systems",
       "deliverableUrl": "/ops/deliverables/openclaw-36.md",
       "notes": [
@@ -115,7 +130,7 @@
       "createdAt": "2026-02-08T20:01:19Z",
       "updatedAt": "2026-02-08T20:01:19Z",
       "completedAt": "2026-02-08T20:01:19Z",
-      "ageHours": 8.82,
+      "ageHours": 8.86,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, design scalable training concept, document adaptability",
       "deliverableUrl": "/ops/deliverables/openclaw-35.md",
       "notes": []
@@ -130,7 +145,7 @@
       "createdAt": "2026-02-08T20:00:03Z",
       "updatedAt": "2026-02-08T20:00:03Z",
       "completedAt": "2026-02-08T20:00:03Z",
-      "ageHours": 8.84,
+      "ageHours": 8.88,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Analyze available data, integrate insights, generate recommendations",
       "deliverableUrl": "/ops/deliverables/openclaw-34.md",
       "notes": []
@@ -145,7 +160,7 @@
       "createdAt": "2026-02-08T19:55:09Z",
       "updatedAt": "2026-02-08T19:55:09Z",
       "completedAt": "2026-02-08T19:55:09Z",
-      "ageHours": 8.92,
+      "ageHours": 8.96,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize).",
       "deliverableUrl": "/ops/deliverables/openclaw-33.md",
       "notes": []
@@ -160,7 +175,7 @@
       "createdAt": "2026-02-08T19:53:43Z",
       "updatedAt": "2026-02-08T19:53:43Z",
       "completedAt": "2026-02-08T19:53:43Z",
-      "ageHours": 8.94,
+      "ageHours": 8.98,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize).",
       "deliverableUrl": "/ops/deliverables/openclaw-32.md",
       "notes": []
@@ -175,7 +190,7 @@
       "createdAt": "2026-02-08T19:52:14Z",
       "updatedAt": "2026-02-08T19:52:14Z",
       "completedAt": "2026-02-08T19:52:14Z",
-      "ageHours": 8.97,
+      "ageHours": 9.01,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, research current L&D viewpoints, extract key takeaways",
       "deliverableUrl": "/ops/deliverables/openclaw-31.md",
       "notes": []
@@ -190,7 +205,7 @@
       "createdAt": "2026-02-08T19:50:40Z",
       "updatedAt": "2026-02-08T19:50:40Z",
       "completedAt": "2026-02-08T19:50:40Z",
-      "ageHours": 8.99,
+      "ageHours": 9.03,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, design practical journaling system, document routine",
       "deliverableUrl": "/ops/deliverables/openclaw-30.md",
       "notes": []
@@ -205,7 +220,7 @@
       "createdAt": "2026-02-08T19:48:46Z",
       "updatedAt": "2026-02-08T19:48:46Z",
       "completedAt": "2026-02-08T19:48:46Z",
-      "ageHours": 9.03,
+      "ageHours": 9.07,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, analyze time data, identify top leaks",
       "deliverableUrl": "/ops/deliverables/openclaw-29.md",
       "notes": []
@@ -220,7 +235,7 @@
       "createdAt": "2026-02-08T19:47:48Z",
       "updatedAt": "2026-02-08T19:47:48Z",
       "completedAt": "2026-02-08T19:47:48Z",
-      "ageHours": 9.04,
+      "ageHours": 9.08,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, analyze vendor transformation, create survival strategy",
       "deliverableUrl": "/ops/deliverables/openclaw-28.md",
       "notes": []
@@ -235,7 +250,7 @@
       "createdAt": "2026-02-08T19:46:50Z",
       "updatedAt": "2026-02-08T19:46:50Z",
       "completedAt": "2026-02-08T19:46:50Z",
-      "ageHours": 9.06,
+      "ageHours": 9.1,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, create template with execution slots and priority order",
       "deliverableUrl": "/ops/deliverables/openclaw-27.md",
       "notes": []
@@ -250,7 +265,7 @@
       "createdAt": "2026-02-08T19:45:46Z",
       "updatedAt": "2026-02-08T19:45:46Z",
       "completedAt": "2026-02-08T19:45:46Z",
-      "ageHours": 9.08,
+      "ageHours": 9.12,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, define proceed/close handoffs, document routing logic",
       "deliverableUrl": "/ops/deliverables/openclaw-26.md",
       "notes": []
@@ -265,7 +280,7 @@
       "createdAt": "2026-02-08T19:44:48Z",
       "updatedAt": "2026-02-08T19:44:48Z",
       "completedAt": "2026-02-08T19:44:48Z",
-      "ageHours": 9.09,
+      "ageHours": 9.13,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, design sequencing system, build rate limit tracking",
       "deliverableUrl": "/ops/deliverables/openclaw-25.md",
       "notes": []
@@ -280,7 +295,7 @@
       "createdAt": "2026-02-08T19:43:46Z",
       "updatedAt": "2026-02-08T19:43:46Z",
       "completedAt": "2026-02-08T19:43:46Z",
-      "ageHours": 9.11,
+      "ageHours": 9.15,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, design measurable checkpoints, build tracking system",
       "deliverableUrl": "/ops/deliverables/openclaw-24.md",
       "notes": []
@@ -295,7 +310,7 @@
       "createdAt": "2026-02-08T19:42:47Z",
       "updatedAt": "2026-02-08T19:42:47Z",
       "completedAt": "2026-02-08T19:42:47Z",
-      "ageHours": 9.13,
+      "ageHours": 9.17,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Capture task, review current capture system, design enhanced workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-23.md",
       "notes": []
@@ -310,7 +325,7 @@
       "createdAt": "2026-02-08 19:42:29",
       "updatedAt": "2026-02-08 19:42:29",
       "completedAt": "2026-02-08 19:42:29",
-      "ageHours": 14.63,
+      "ageHours": 14.67,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Created content draft; ready for review",
       "deliverableUrl": "/ops/deliverables/openclaw-22.md",
       "notes": []
@@ -325,13 +340,66 @@
       "createdAt": "2026-02-08 19:40:47",
       "updatedAt": "2026-02-08 19:40:47",
       "completedAt": "2026-02-08 19:40:47",
-      "ageHours": 14.66,
+      "ageHours": 14.7,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Published via pipeline; ready for review",
       "deliverableUrl": "/ops/deliverables/openclaw-21.md",
       "notes": []
     }
   ],
   "completedRecent": [
+    {
+      "id": "openclaw-46",
+      "title": "so we need to support that as well",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-09T04:51:36Z",
+      "updatedAt": "2026-02-09T04:51:36Z",
+      "completedAt": "2026-02-09T04:51:36Z",
+      "ageHours": 0.02,
+      "deliverySummary": "Set up fasting windows for Mon-Sun; Plan meal timing and composition; Track progress and adjust as needed",
+      "deliverableUrl": "/ops/deliverables/openclaw-46.md",
+      "notes": []
+    },
+    {
+      "id": "action-86",
+      "title": "it\u2019s a start of the week and following intermittent this",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-09T04:51:04Z",
+      "updatedAt": "2026-02-09T04:51:04Z",
+      "completedAt": "2026-02-09T04:51:04Z",
+      "ageHours": 0.03,
+      "deliverySummary": "Task created in local database",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=73",
+        "route=direct",
+        "action=create_task"
+      ]
+    },
+    {
+      "id": "action-85",
+      "title": "which is getting that well also beyond the agenda to",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-09T04:51:04Z",
+      "updatedAt": "2026-02-09T04:51:04Z",
+      "completedAt": "2026-02-09T04:51:04Z",
+      "ageHours": 0.03,
+      "deliverySummary": "Task created in local database",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=73",
+        "route=direct",
+        "action=create_task"
+      ]
+    },
     {
       "id": "openclaw-45",
       "title": "bath today, and I need to make sure that I",
@@ -342,7 +410,7 @@
       "createdAt": "2026-02-09T04:48:22Z",
       "updatedAt": "2026-02-09T04:48:22Z",
       "completedAt": "2026-02-09T04:48:22Z",
-      "ageHours": 0.03,
+      "ageHours": 0.07,
       "deliverySummary": "Schedule dentist appointment for wisdom tooth assessment; Add bath time to daily routine; Research dental extraction options and providers",
       "deliverableUrl": "/ops/deliverables/openclaw-45.md",
       "notes": []
@@ -357,7 +425,7 @@
       "createdAt": "2026-02-08T20:01:19Z",
       "updatedAt": "2026-02-08T20:01:19Z",
       "completedAt": "2026-02-08T20:01:19Z",
-      "ageHours": 8.82,
+      "ageHours": 8.86,
       "deliverySummary": "Capture task, design scalable training concept, document adaptability",
       "deliverableUrl": "/ops/deliverables/openclaw-35.md",
       "notes": []
@@ -372,7 +440,7 @@
       "createdAt": "2026-02-08T20:00:03Z",
       "updatedAt": "2026-02-08T20:00:03Z",
       "completedAt": "2026-02-08T20:00:03Z",
-      "ageHours": 8.84,
+      "ageHours": 8.88,
       "deliverySummary": "Analyze available data, integrate insights, generate recommendations",
       "deliverableUrl": "/ops/deliverables/openclaw-34.md",
       "notes": []
@@ -387,7 +455,7 @@
       "createdAt": "2026-02-08T19:55:09Z",
       "updatedAt": "2026-02-08T19:55:09Z",
       "completedAt": "2026-02-08T19:55:09Z",
-      "ageHours": 8.92,
+      "ageHours": 8.96,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-33.md",
       "notes": []
@@ -402,7 +470,7 @@
       "createdAt": "2026-02-08T19:53:43Z",
       "updatedAt": "2026-02-08T19:53:43Z",
       "completedAt": "2026-02-08T19:53:43Z",
-      "ageHours": 8.94,
+      "ageHours": 8.98,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-32.md",
       "notes": []
@@ -417,7 +485,7 @@
       "createdAt": "2026-02-08T19:52:14Z",
       "updatedAt": "2026-02-08T19:52:14Z",
       "completedAt": "2026-02-08T19:52:14Z",
-      "ageHours": 8.97,
+      "ageHours": 9.01,
       "deliverySummary": "Capture task, research current L&D viewpoints, extract key takeaways",
       "deliverableUrl": "/ops/deliverables/openclaw-31.md",
       "notes": []
@@ -432,7 +500,7 @@
       "createdAt": "2026-02-08T19:50:40Z",
       "updatedAt": "2026-02-08T19:50:40Z",
       "completedAt": "2026-02-08T19:50:40Z",
-      "ageHours": 8.99,
+      "ageHours": 9.03,
       "deliverySummary": "Capture task, design practical journaling system, document routine",
       "deliverableUrl": "/ops/deliverables/openclaw-30.md",
       "notes": []
@@ -447,7 +515,7 @@
       "createdAt": "2026-02-08T19:48:46Z",
       "updatedAt": "2026-02-08T19:48:46Z",
       "completedAt": "2026-02-08T19:48:46Z",
-      "ageHours": 9.03,
+      "ageHours": 9.07,
       "deliverySummary": "Capture task, analyze time data, identify top leaks",
       "deliverableUrl": "/ops/deliverables/openclaw-29.md",
       "notes": []
@@ -462,7 +530,7 @@
       "createdAt": "2026-02-08T19:47:48Z",
       "updatedAt": "2026-02-08T19:47:48Z",
       "completedAt": "2026-02-08T19:47:48Z",
-      "ageHours": 9.04,
+      "ageHours": 9.08,
       "deliverySummary": "Capture task, analyze vendor transformation, create survival strategy",
       "deliverableUrl": "/ops/deliverables/openclaw-28.md",
       "notes": []
@@ -477,7 +545,7 @@
       "createdAt": "2026-02-08T19:46:50Z",
       "updatedAt": "2026-02-08T19:46:50Z",
       "completedAt": "2026-02-08T19:46:50Z",
-      "ageHours": 9.06,
+      "ageHours": 9.1,
       "deliverySummary": "Capture task, create template with execution slots and priority order",
       "deliverableUrl": "/ops/deliverables/openclaw-27.md",
       "notes": []
@@ -492,7 +560,7 @@
       "createdAt": "2026-02-08T19:45:46Z",
       "updatedAt": "2026-02-08T19:45:46Z",
       "completedAt": "2026-02-08T19:45:46Z",
-      "ageHours": 9.08,
+      "ageHours": 9.12,
       "deliverySummary": "Capture task, define proceed/close handoffs, document routing logic",
       "deliverableUrl": "/ops/deliverables/openclaw-26.md",
       "notes": []
@@ -507,7 +575,7 @@
       "createdAt": "2026-02-08T19:44:48Z",
       "updatedAt": "2026-02-08T19:44:48Z",
       "completedAt": "2026-02-08T19:44:48Z",
-      "ageHours": 9.09,
+      "ageHours": 9.13,
       "deliverySummary": "Capture task, design sequencing system, build rate limit tracking",
       "deliverableUrl": "/ops/deliverables/openclaw-25.md",
       "notes": []
@@ -522,7 +590,7 @@
       "createdAt": "2026-02-08T19:43:46Z",
       "updatedAt": "2026-02-08T19:43:46Z",
       "completedAt": "2026-02-08T19:43:46Z",
-      "ageHours": 9.11,
+      "ageHours": 9.15,
       "deliverySummary": "Capture task, design measurable checkpoints, build tracking system",
       "deliverableUrl": "/ops/deliverables/openclaw-24.md",
       "notes": []
@@ -537,7 +605,7 @@
       "createdAt": "2026-02-08T19:42:47Z",
       "updatedAt": "2026-02-08T19:42:47Z",
       "completedAt": "2026-02-08T19:42:47Z",
-      "ageHours": 9.13,
+      "ageHours": 9.17,
       "deliverySummary": "Capture task, review current capture system, design enhanced workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-23.md",
       "notes": []
@@ -552,7 +620,7 @@
       "createdAt": "2026-02-08 19:42:29",
       "updatedAt": "2026-02-08 19:42:29",
       "completedAt": "2026-02-08 19:42:29",
-      "ageHours": 14.63,
+      "ageHours": 14.67,
       "deliverySummary": "Created content draft; ready for review",
       "deliverableUrl": "/ops/deliverables/openclaw-22.md",
       "notes": []
@@ -567,7 +635,7 @@
       "createdAt": "2026-02-08 19:40:47",
       "updatedAt": "2026-02-08 19:40:47",
       "completedAt": "2026-02-08 19:40:47",
-      "ageHours": 14.66,
+      "ageHours": 14.7,
       "deliverySummary": "Published via pipeline; ready for review",
       "deliverableUrl": "/ops/deliverables/openclaw-21.md",
       "notes": []
@@ -580,11 +648,11 @@
     },
     {
       "level": "info",
-      "message": "DICTATION_SYNC: filtered out 17 low-signal dictation fragments from queued tasks."
+      "message": "DICTATION_SYNC: filtered out 14 low-signal dictation fragments from queued tasks."
     },
     {
       "level": "warn",
-      "message": "19 item(s) need attention in 'Tasks due from you'."
+      "message": "20 item(s) need attention in 'Tasks due from you'."
     },
     {
       "level": "info",
@@ -624,6 +692,24 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-09T04:51:36Z",
+      "type": "executed",
+      "taskId": "capture-73",
+      "message": "so we need to support that as well: Delegated via OpenClaw SSH (status=completed, task_id=da3eb435-5500-458a-9ddc-3d035a315174): Created weekly intermittent fasting plan with schedule and support"
+    },
+    {
+      "timestamp": "2026-02-09T04:51:04Z",
+      "type": "executed",
+      "taskId": "capture-73",
+      "message": "it\u2019s a start of the week and following intermittent this: Task created in local database"
+    },
+    {
+      "timestamp": "2026-02-09T04:51:04Z",
+      "type": "executed",
+      "taskId": "capture-73",
+      "message": "which is getting that well also beyond the agenda to: Task created in local database"
+    },
     {
       "timestamp": "2026-02-09T04:48:22Z",
       "type": "executed",
@@ -740,7 +826,7 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-09T04:50:17Z",
+    "updatedAt": "2026-02-09T04:52:41Z",
     "metrics": {
       "reviewRequested": 1,
       "proceedCount": 0,
