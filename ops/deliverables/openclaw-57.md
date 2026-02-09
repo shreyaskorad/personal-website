@@ -1,4 +1,4 @@
-# Deliverable: Clarify what changes needed
+# Deliverable: Task: it’s just that we want to change since while, but we still haven’t gotten the time or t...
 
 - Task ID: openclaw-57
 - Status: completed
