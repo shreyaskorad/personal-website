@@ -1,4 +1,4 @@
-# Deliverable: Request user to specify what needs to be done today, including deadlines and priorities
+# Deliverable: Get a lot of stuff done today
 
 - Task ID: openclaw-94
 - Status: blocked
@@ -9,10 +9,10 @@
 Request user to specify what needs to be done today, including deadlines and priorities
 
 ## Deliverable Output
-# Deliverable Draft: Request User To Specify What Needs To Be Done Today, Including Deadlines And Priorities
+# Deliverable Draft: Get A Lot Of Stuff Done Today
 
 ## Objective
-Turn `Request user to specify what needs to be done today, including deadlines and priorities` into a concrete, reviewable output.
+Turn `Get a lot of stuff done today` into a concrete, reviewable output.
 
 ## Output
 - Scope and goal clarified.
