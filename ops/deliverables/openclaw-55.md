@@ -1,4 +1,4 @@
-# Deliverable: Task: task: we also have to attend a wedding in Trivandrum of
+# Deliverable: Task: task: task: we also have to attend a wedding in Trivandrum of
 
 - Task ID: openclaw-55
 - Status: completed

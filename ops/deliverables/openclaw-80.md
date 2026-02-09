@@ -1,18 +1,18 @@
-# Deliverable: Research that sort of gives something
+# Deliverable: Research needed on that as well
 
-- Task ID: openclaw-77
-- Status: failed
-- Created: 2026-02-09T06:44:28Z
-- Updated: 2026-02-09T06:44:28Z
+- Task ID: openclaw-80
+- Status: blocked
+- Created: 2026-02-09T06:53:42Z
+- Updated: 2026-02-09T06:53:42Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Request clarification on research topic and scope
 
 ## Deliverable Output
-# Deliverable Draft: Research That Sort Of Gives Something
+# Deliverable Draft: Research Needed On That As Well
 
 ## Objective
-Produce a focused research brief for `Research that sort of gives something` with actionable outputs.
+Produce a focused research brief for `Research needed on that as well` with actionable outputs.
 
 ## Core Questions
 1. What changed recently in this domain?
@@ -30,10 +30,10 @@ Produce a focused research brief for `Research that sort of gives something` wit
 3. Track outcomes in dashboard observations.
 
 ## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Request clarification on research topic and scope
 
 ## Blockers / Notes
-OpenClaw SSH execution failed.
+Task doesn't specify what topic requires research
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
