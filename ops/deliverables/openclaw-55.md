@@ -1,4 +1,4 @@
-# Deliverable: Research Trivandrum attractions for 1-year-old
+# Deliverable: Task: we also have to attend a wedding in Trivandrum of
 
 - Task ID: openclaw-55
 - Status: completed
