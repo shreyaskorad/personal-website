@@ -1,44 +1,38 @@
 {
   "meta": {
     "title": "OpenClaw Control Dashboard",
-    "updatedAt": "2026-02-09T06:55:54Z",
+    "updatedAt": "2026-02-09T06:56:32Z",
     "source": "Dictation Router + OpenClaw supervisor",
-    "fingerprint": "80cecfc1607de8f9"
+    "fingerprint": "2dbef4ce1bb6f581"
   },
   "summary": {
-    "totalTasks": 44,
-    "queued": 1,
+    "totalTasks": 45,
+    "queued": 0,
     "active": 0,
-    "completed": 43,
+    "completed": 45,
     "blocked": 0,
     "byStatus": {
-      "queued": 1,
-      "completed": 43
+      "completed": 45
     }
   },
   "execution": [],
-  "queueTop": [
-    {
-      "id": "inbox-288",
-      "title": "Figure that bit out as well like what should be the model that should be taken forward",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 1,
-      "createdAt": "2026-02-09T06:43:52Z",
-      "updatedAt": "2026-02-09T06:55:54Z",
-      "completedAt": null,
-      "ageHours": 0.2,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (openclaw_attention:2)",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=83",
-        "inbox_item_id=288"
-      ],
-      "action": "create_task"
-    }
-  ],
+  "queueTop": [],
   "userActionsDue": [
+    {
+      "id": "openclaw-review-81",
+      "title": "Figure that bit out as well like what should be the model that should be taken forward",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "review_required",
+      "sequence": 0,
+      "createdAt": "2026-02-09T06:55:58Z",
+      "updatedAt": "2026-02-09T06:55:58Z",
+      "completedAt": "2026-02-09T06:55:58Z",
+      "ageHours": 0.01,
+      "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Proceed with developing blog content based on L&D themes research",
+      "deliverableUrl": "/ops/deliverables/openclaw-81.md",
+      "notes": []
+    },
     {
       "id": "openclaw-80",
       "title": "Research needed on that as well",
@@ -49,7 +43,7 @@
       "createdAt": "2026-02-09T06:53:42Z",
       "updatedAt": "2026-02-09T06:53:42Z",
       "completedAt": null,
-      "ageHours": 0.04,
+      "ageHours": 0.05,
       "deliverySummary": "Request clarification on research topic and scope",
       "deliverableUrl": "/ops/deliverables/openclaw-80.md",
       "notes": [
@@ -66,7 +60,7 @@
       "createdAt": "2026-02-09T06:46:05Z",
       "updatedAt": "2026-02-09T06:46:05Z",
       "completedAt": null,
-      "ageHours": 0.16,
+      "ageHours": 0.17,
       "deliverySummary": "Please provide a clear, actionable task description with specific objectives.",
       "deliverableUrl": "/ops/deliverables/openclaw-79.md",
       "notes": [
@@ -83,7 +77,7 @@
       "createdAt": "2026-02-09T06:44:32Z",
       "updatedAt": "2026-02-09T06:44:32Z",
       "completedAt": "2026-02-09T06:44:32Z",
-      "ageHours": 0.19,
+      "ageHours": 0.2,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
       "deliverableUrl": "/ops/deliverables/openclaw-78.md",
       "notes": [
@@ -100,7 +94,7 @@
       "createdAt": "2026-02-09T06:44:28Z",
       "updatedAt": "2026-02-09T06:44:28Z",
       "completedAt": "2026-02-09T06:44:28Z",
-      "ageHours": 0.19,
+      "ageHours": 0.2,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
       "deliverableUrl": "/ops/deliverables/openclaw-77.md",
       "notes": [
@@ -117,7 +111,7 @@
       "createdAt": "2026-02-09T06:42:52Z",
       "updatedAt": "2026-02-09T06:42:52Z",
       "completedAt": "2026-02-09T06:42:52Z",
-      "ageHours": 0.22,
+      "ageHours": 0.23,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Research topics, draft blog content, create weekly plan structure",
       "deliverableUrl": "/ops/deliverables/openclaw-76.md",
       "notes": []
@@ -132,7 +126,7 @@
       "createdAt": "2026-02-09T06:42:34Z",
       "updatedAt": "2026-02-09T06:42:34Z",
       "completedAt": "2026-02-09T06:42:34Z",
-      "ageHours": 0.22,
+      "ageHours": 0.23,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Research latest AI in L&D trends and Josh Bersin's views, then draft blog post",
       "deliverableUrl": "/ops/deliverables/openclaw-75.md",
       "notes": []
@@ -147,7 +141,7 @@
       "createdAt": "2026-02-09T06:37:05Z",
       "updatedAt": "2026-02-09T06:37:05Z",
       "completedAt": "2026-02-09T06:37:05Z",
-      "ageHours": 0.31,
+      "ageHours": 0.32,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). User feedback needed on clarification provided",
       "deliverableUrl": "/ops/deliverables/openclaw-74.md",
       "notes": []
@@ -162,7 +156,7 @@
       "createdAt": "2026-02-09T06:35:55Z",
       "updatedAt": "2026-02-09T06:35:55Z",
       "completedAt": "2026-02-09T06:35:55Z",
-      "ageHours": 0.33,
+      "ageHours": 0.34,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Ready to proceed with other tasks or await user direction",
       "deliverableUrl": "/ops/deliverables/openclaw-73.md",
       "notes": []
@@ -177,7 +171,7 @@
       "createdAt": "2026-02-09T06:35:41Z",
       "updatedAt": "2026-02-09T06:35:41Z",
       "completedAt": "2026-02-09T06:35:41Z",
-      "ageHours": 0.34,
+      "ageHours": 0.35,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Search for current AI trends in learning and development; Identify key themes and topics; Document findings; Structure themes for exploration",
       "deliverableUrl": "/ops/deliverables/openclaw-72.md",
       "notes": []
@@ -192,7 +186,7 @@
       "createdAt": "2026-02-09T06:32:29Z",
       "updatedAt": "2026-02-09T06:32:29Z",
       "completedAt": "2026-02-09T06:32:29Z",
-      "ageHours": 0.39,
+      "ageHours": 0.4,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Review blog content and prepare for publication",
       "deliverableUrl": "/ops/deliverables/openclaw-64.md",
       "notes": []
@@ -207,7 +201,7 @@
       "createdAt": "2026-02-09T05:39:18Z",
       "updatedAt": "2026-02-09T05:39:18Z",
       "completedAt": "2026-02-09T05:39:18Z",
-      "ageHours": 1.28,
+      "ageHours": 1.29,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Identify specific popular notebooks to use; Create capture triggers and reminders; Simplify entry process; Build immediate success streak",
       "deliverableUrl": "/ops/deliverables/openclaw-60.md",
       "notes": []
@@ -222,7 +216,7 @@
       "createdAt": "2026-02-09T05:34:09Z",
       "updatedAt": "2026-02-09T05:34:09Z",
       "completedAt": "2026-02-09T05:34:09Z",
-      "ageHours": 1.36,
+      "ageHours": 1.37,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Clarify current notebook practice; Set up routine and reminders; Create capture system; Build habit reinforcement",
       "deliverableUrl": "/ops/deliverables/openclaw-59.md",
       "notes": []
@@ -237,7 +231,7 @@
       "createdAt": "2026-02-09T05:29:57Z",
       "updatedAt": "2026-02-09T05:29:57Z",
       "completedAt": "2026-02-09T05:29:57Z",
-      "ageHours": 1.43,
+      "ageHours": 1.44,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Create tree storage plan; Plan permanent Diwali lights installation; Assess electrical safety requirements; Gather necessary materials; Schedule execution date",
       "deliverableUrl": "/ops/deliverables/openclaw-58.md",
       "notes": []
@@ -252,7 +246,7 @@
       "createdAt": "2026-02-09T05:25:39Z",
       "updatedAt": "2026-02-09T05:25:39Z",
       "completedAt": "2026-02-09T05:25:39Z",
-      "ageHours": 1.5,
+      "ageHours": 1.51,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Clarify what changes needed; Assess timeline and budget; Prioritize changes; Create phased plan",
       "deliverableUrl": "/ops/deliverables/openclaw-57.md",
       "notes": []
@@ -267,7 +261,7 @@
       "createdAt": "2026-02-09T05:22:26Z",
       "updatedAt": "2026-02-09T05:22:26Z",
       "completedAt": "2026-02-09T05:22:26Z",
-      "ageHours": 1.56,
+      "ageHours": 1.57,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Assess current lighting layout; Plan relocation strategy; Create implementation timeline; Identify resource requirements",
       "deliverableUrl": "/ops/deliverables/openclaw-56.md",
       "notes": []
@@ -282,7 +276,7 @@
       "createdAt": "2026-02-09T05:19:09Z",
       "updatedAt": "2026-02-09T05:19:09Z",
       "completedAt": "2026-02-09T05:19:09Z",
-      "ageHours": 1.61,
+      "ageHours": 1.62,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Research Trivandrum attractions for 1-year-old; Plan accommodation and logistics; Create detailed 3-day itinerary; Book travel and arrangements; Plan meals and activities",
       "deliverableUrl": "/ops/deliverables/openclaw-55.md",
       "notes": []
@@ -297,7 +291,7 @@
       "createdAt": "2026-02-09T05:15:35Z",
       "updatedAt": "2026-02-09T05:15:35Z",
       "completedAt": "2026-02-09T05:15:35Z",
-      "ageHours": 1.67,
+      "ageHours": 1.68,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Select nearby activity; Prepare and leave house; Enjoy outdoor time together",
       "deliverableUrl": "/ops/deliverables/openclaw-54.md",
       "notes": []
@@ -312,7 +306,7 @@
       "createdAt": "2026-02-09T05:12:35Z",
       "updatedAt": "2026-02-09T05:12:35Z",
       "completedAt": "2026-02-09T05:12:35Z",
-      "ageHours": 1.72,
+      "ageHours": 1.73,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Research age-appropriate activities for 1-year-old; Select date options around March 16; Create detailed itinerary; Book reservations; Plan meals and logistics",
       "deliverableUrl": "/ops/deliverables/openclaw-53.md",
       "notes": []
@@ -327,7 +321,7 @@
       "createdAt": "2026-02-09T05:09:16Z",
       "updatedAt": "2026-02-09T05:09:16Z",
       "completedAt": "2026-02-09T05:09:16Z",
-      "ageHours": 1.78,
+      "ageHours": 1.79,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Clarify scope of work; Assess feasibility; Create action plan; Identify resource requirements",
       "deliverableUrl": "/ops/deliverables/openclaw-52.md",
       "notes": []
@@ -342,7 +336,7 @@
       "createdAt": "2026-02-09T05:04:45Z",
       "updatedAt": "2026-02-09T05:04:45Z",
       "completedAt": "2026-02-09T05:04:45Z",
-      "ageHours": 1.85,
+      "ageHours": 1.86,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Audit current garden status; Create catch-up action plan; Schedule regular garden maintenance; Set up garden care reminders",
       "deliverableUrl": "/ops/deliverables/openclaw-51.md",
       "notes": []
@@ -357,7 +351,7 @@
       "createdAt": "2026-02-09T05:01:21Z",
       "updatedAt": "2026-02-09T05:01:21Z",
       "completedAt": "2026-02-09T05:01:21Z",
-      "ageHours": 1.91,
+      "ageHours": 1.92,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Review pen prototype current state; Schedule manager meeting for feedback; Audit current projects; Identify supporters and upcoming work",
       "deliverableUrl": "/ops/deliverables/openclaw-50.md",
       "notes": []
@@ -372,7 +366,7 @@
       "createdAt": "2026-02-09T04:58:40Z",
       "updatedAt": "2026-02-09T04:58:40Z",
       "completedAt": "2026-02-09T04:58:40Z",
-      "ageHours": 1.95,
+      "ageHours": 1.96,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Create financial security action plan; Develop security risk assessment; Prioritize focus areas; Create implementation timeline",
       "deliverableUrl": "/ops/deliverables/openclaw-49.md",
       "notes": []
@@ -387,7 +381,7 @@
       "createdAt": "2026-02-09T04:56:01Z",
       "updatedAt": "2026-02-09T04:56:01Z",
       "completedAt": "2026-02-09T04:56:01Z",
-      "ageHours": 2.0,
+      "ageHours": 2.01,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Analyze current revenue streams; Project revenue for this year; Plan salary funding strategy; Create financial contingency plan",
       "deliverableUrl": "/ops/deliverables/openclaw-48.md",
       "notes": []
@@ -402,7 +396,7 @@
       "createdAt": "2026-02-09T04:53:47Z",
       "updatedAt": "2026-02-09T04:53:47Z",
       "completedAt": "2026-02-09T04:53:47Z",
-      "ageHours": 2.04,
+      "ageHours": 2.05,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Analyze current revenue streams; Identify business model questions; Create strategic roadmap; Prioritize focus areas",
       "deliverableUrl": "/ops/deliverables/openclaw-47.md",
       "notes": []
@@ -417,7 +411,7 @@
       "createdAt": "2026-02-09T04:51:36Z",
       "updatedAt": "2026-02-09T04:51:36Z",
       "completedAt": "2026-02-09T04:51:36Z",
-      "ageHours": 2.07,
+      "ageHours": 2.08,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Set up fasting windows for Mon-Sun; Plan meal timing and composition; Track progress and adjust as needed",
       "deliverableUrl": "/ops/deliverables/openclaw-46.md",
       "notes": []
@@ -432,9 +426,24 @@
       "createdAt": "2026-02-09T04:48:22Z",
       "updatedAt": "2026-02-09T04:48:22Z",
       "completedAt": "2026-02-09T04:48:22Z",
-      "ageHours": 2.13,
+      "ageHours": 2.14,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Schedule dentist appointment for wisdom tooth assessment; Add bath time to daily routine; Research dental extraction options and providers",
       "deliverableUrl": "/ops/deliverables/openclaw-45.md",
+      "notes": []
+    },
+    {
+      "id": "openclaw-review-44",
+      "title": "Task: doing something moving is something that I will have to",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "review_required",
+      "sequence": 0,
+      "createdAt": "2026-02-09T04:45:22Z",
+      "updatedAt": "2026-02-09T04:45:22Z",
+      "completedAt": "2026-02-09T04:45:22Z",
+      "ageHours": 2.19,
+      "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Set hourly movement break reminder; Start 5-min movement break now; Build movement breaks into task completion rituals",
+      "deliverableUrl": "/ops/deliverables/openclaw-44.md",
       "notes": []
     },
     {
@@ -447,30 +456,28 @@
       "createdAt": "2026-02-09T04:44:14Z",
       "updatedAt": "2026-02-09T04:44:14Z",
       "completedAt": "2026-02-09T04:44:14Z",
-      "ageHours": 2.19,
+      "ageHours": 2.21,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Start task 1: sync ops to synchronize task tracking; Start task 2: automation ping to verify system integration; Focus on completing draft blog on game applications",
       "deliverableUrl": "/ops/deliverables/openclaw-43.md",
       "notes": []
-    },
-    {
-      "id": "openclaw-41",
-      "title": "Task: doing something moving is something that I will have to",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "failed",
-      "sequence": 0,
-      "createdAt": "2026-02-09T04:39:14Z",
-      "updatedAt": "2026-02-09T04:39:14Z",
-      "completedAt": "2026-02-09T04:39:14Z",
-      "ageHours": 2.28,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-41.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ]
     }
   ],
   "completedRecent": [
+    {
+      "id": "openclaw-81",
+      "title": "Figure that bit out as well like what should be the model that should be taken forward",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-09T06:55:58Z",
+      "updatedAt": "2026-02-09T06:55:58Z",
+      "completedAt": "2026-02-09T06:55:58Z",
+      "ageHours": 0.01,
+      "deliverySummary": "Proceed with developing blog content based on L&D themes research",
+      "deliverableUrl": "/ops/deliverables/openclaw-81.md",
+      "notes": []
+    },
     {
       "id": "action-147",
       "title": "Are there any things that many other companies are doing",
@@ -481,7 +488,7 @@
       "createdAt": "2026-02-09T06:43:52Z",
       "updatedAt": "2026-02-09T06:43:52Z",
       "completedAt": "2026-02-09T06:43:52Z",
-      "ageHours": 0.2,
+      "ageHours": 0.21,
       "deliverySummary": "Stored in Codex inbox",
       "deliverableUrl": null,
       "notes": [
@@ -500,7 +507,7 @@
       "createdAt": "2026-02-09T06:42:52Z",
       "updatedAt": "2026-02-09T06:42:52Z",
       "completedAt": "2026-02-09T06:42:52Z",
-      "ageHours": 0.22,
+      "ageHours": 0.23,
       "deliverySummary": "Research topics, draft blog content, create weekly plan structure",
       "deliverableUrl": "/ops/deliverables/openclaw-76.md",
       "notes": []
@@ -515,7 +522,7 @@
       "createdAt": "2026-02-09T06:42:34Z",
       "updatedAt": "2026-02-09T06:42:34Z",
       "completedAt": "2026-02-09T06:42:34Z",
-      "ageHours": 0.22,
+      "ageHours": 0.23,
       "deliverySummary": "Research latest AI in L&D trends and Josh Bersin's views, then draft blog post",
       "deliverableUrl": "/ops/deliverables/openclaw-75.md",
       "notes": []
@@ -530,7 +537,7 @@
       "createdAt": "2026-02-09T06:37:05Z",
       "updatedAt": "2026-02-09T06:37:05Z",
       "completedAt": "2026-02-09T06:37:05Z",
-      "ageHours": 0.31,
+      "ageHours": 0.32,
       "deliverySummary": "User feedback needed on clarification provided",
       "deliverableUrl": "/ops/deliverables/openclaw-74.md",
       "notes": []
@@ -545,7 +552,7 @@
       "createdAt": "2026-02-09T06:35:55Z",
       "updatedAt": "2026-02-09T06:35:55Z",
       "completedAt": "2026-02-09T06:35:55Z",
-      "ageHours": 0.33,
+      "ageHours": 0.34,
       "deliverySummary": "Ready to proceed with other tasks or await user direction",
       "deliverableUrl": "/ops/deliverables/openclaw-73.md",
       "notes": []
@@ -560,7 +567,7 @@
       "createdAt": "2026-02-09T06:35:41Z",
       "updatedAt": "2026-02-09T06:35:41Z",
       "completedAt": "2026-02-09T06:35:41Z",
-      "ageHours": 0.34,
+      "ageHours": 0.35,
       "deliverySummary": "Search for current AI trends in learning and development; Identify key themes and topics; Document findings; Structure themes for exploration",
       "deliverableUrl": "/ops/deliverables/openclaw-72.md",
       "notes": []
@@ -575,7 +582,7 @@
       "createdAt": "2026-02-09T06:32:29Z",
       "updatedAt": "2026-02-09T06:32:29Z",
       "completedAt": "2026-02-09T06:32:29Z",
-      "ageHours": 0.39,
+      "ageHours": 0.4,
       "deliverySummary": "Review blog content and prepare for publication",
       "deliverableUrl": "/ops/deliverables/openclaw-64.md",
       "notes": []
@@ -590,7 +597,7 @@
       "createdAt": "2026-02-09T06:28:54Z",
       "updatedAt": "2026-02-09T06:28:54Z",
       "completedAt": "2026-02-09T06:28:54Z",
-      "ageHours": 0.45,
+      "ageHours": 0.46,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -609,7 +616,7 @@
       "createdAt": "2026-02-09T06:28:54Z",
       "updatedAt": "2026-02-09T06:28:54Z",
       "completedAt": "2026-02-09T06:28:54Z",
-      "ageHours": 0.45,
+      "ageHours": 0.46,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -628,7 +635,7 @@
       "createdAt": "2026-02-09T06:28:54Z",
       "updatedAt": "2026-02-09T06:28:54Z",
       "completedAt": "2026-02-09T06:28:54Z",
-      "ageHours": 0.45,
+      "ageHours": 0.46,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -647,7 +654,7 @@
       "createdAt": "2026-02-09T06:28:54Z",
       "updatedAt": "2026-02-09T06:28:54Z",
       "completedAt": "2026-02-09T06:28:54Z",
-      "ageHours": 0.45,
+      "ageHours": 0.46,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -666,7 +673,7 @@
       "createdAt": "2026-02-09T06:28:25Z",
       "updatedAt": "2026-02-09T06:28:25Z",
       "completedAt": "2026-02-09T06:28:25Z",
-      "ageHours": 0.46,
+      "ageHours": 0.47,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -685,7 +692,7 @@
       "createdAt": "2026-02-09T06:28:25Z",
       "updatedAt": "2026-02-09T06:28:25Z",
       "completedAt": "2026-02-09T06:28:25Z",
-      "ageHours": 0.46,
+      "ageHours": 0.47,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -704,7 +711,7 @@
       "createdAt": "2026-02-09T06:28:25Z",
       "updatedAt": "2026-02-09T06:28:25Z",
       "completedAt": "2026-02-09T06:28:25Z",
-      "ageHours": 0.46,
+      "ageHours": 0.47,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -723,7 +730,7 @@
       "createdAt": "2026-02-09T06:28:25Z",
       "updatedAt": "2026-02-09T06:28:25Z",
       "completedAt": "2026-02-09T06:28:25Z",
-      "ageHours": 0.46,
+      "ageHours": 0.47,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -742,7 +749,7 @@
       "createdAt": "2026-02-09T06:27:55Z",
       "updatedAt": "2026-02-09T06:27:55Z",
       "completedAt": "2026-02-09T06:27:55Z",
-      "ageHours": 0.47,
+      "ageHours": 0.48,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -761,7 +768,7 @@
       "createdAt": "2026-02-09T06:27:55Z",
       "updatedAt": "2026-02-09T06:27:55Z",
       "completedAt": "2026-02-09T06:27:55Z",
-      "ageHours": 0.47,
+      "ageHours": 0.48,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -780,7 +787,7 @@
       "createdAt": "2026-02-09T06:27:55Z",
       "updatedAt": "2026-02-09T06:27:55Z",
       "completedAt": "2026-02-09T06:27:55Z",
-      "ageHours": 0.47,
+      "ageHours": 0.48,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -799,7 +806,7 @@
       "createdAt": "2026-02-09T06:27:55Z",
       "updatedAt": "2026-02-09T06:27:55Z",
       "completedAt": "2026-02-09T06:27:55Z",
-      "ageHours": 0.47,
+      "ageHours": 0.48,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -818,7 +825,7 @@
       "createdAt": "2026-02-09T06:27:31Z",
       "updatedAt": "2026-02-09T06:27:31Z",
       "completedAt": "2026-02-09T06:27:31Z",
-      "ageHours": 0.47,
+      "ageHours": 0.48,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -837,7 +844,7 @@
       "createdAt": "2026-02-09T06:27:31Z",
       "updatedAt": "2026-02-09T06:27:31Z",
       "completedAt": "2026-02-09T06:27:31Z",
-      "ageHours": 0.47,
+      "ageHours": 0.48,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -856,7 +863,7 @@
       "createdAt": "2026-02-09T06:27:31Z",
       "updatedAt": "2026-02-09T06:27:31Z",
       "completedAt": "2026-02-09T06:27:31Z",
-      "ageHours": 0.47,
+      "ageHours": 0.48,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -875,7 +882,7 @@
       "createdAt": "2026-02-09T06:27:31Z",
       "updatedAt": "2026-02-09T06:27:31Z",
       "completedAt": "2026-02-09T06:27:31Z",
-      "ageHours": 0.47,
+      "ageHours": 0.48,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -894,7 +901,7 @@
       "createdAt": "2026-02-09T05:39:18Z",
       "updatedAt": "2026-02-09T05:39:18Z",
       "completedAt": "2026-02-09T05:39:18Z",
-      "ageHours": 1.28,
+      "ageHours": 1.29,
       "deliverySummary": "Identify specific popular notebooks to use; Create capture triggers and reminders; Simplify entry process; Build immediate success streak",
       "deliverableUrl": "/ops/deliverables/openclaw-60.md",
       "notes": []
@@ -909,7 +916,7 @@
       "createdAt": "2026-02-09T05:34:09Z",
       "updatedAt": "2026-02-09T05:34:09Z",
       "completedAt": "2026-02-09T05:34:09Z",
-      "ageHours": 1.36,
+      "ageHours": 1.37,
       "deliverySummary": "Clarify current notebook practice; Set up routine and reminders; Create capture system; Build habit reinforcement",
       "deliverableUrl": "/ops/deliverables/openclaw-59.md",
       "notes": []
@@ -924,7 +931,7 @@
       "createdAt": "2026-02-09T05:29:57Z",
       "updatedAt": "2026-02-09T05:29:57Z",
       "completedAt": "2026-02-09T05:29:57Z",
-      "ageHours": 1.43,
+      "ageHours": 1.44,
       "deliverySummary": "Create tree storage plan; Plan permanent Diwali lights installation; Assess electrical safety requirements; Gather necessary materials; Schedule execution date",
       "deliverableUrl": "/ops/deliverables/openclaw-58.md",
       "notes": []
@@ -939,7 +946,7 @@
       "createdAt": "2026-02-09T05:25:39Z",
       "updatedAt": "2026-02-09T05:25:39Z",
       "completedAt": "2026-02-09T05:25:39Z",
-      "ageHours": 1.5,
+      "ageHours": 1.51,
       "deliverySummary": "Clarify what changes needed; Assess timeline and budget; Prioritize changes; Create phased plan",
       "deliverableUrl": "/ops/deliverables/openclaw-57.md",
       "notes": []
@@ -954,7 +961,7 @@
       "createdAt": "2026-02-09T05:22:26Z",
       "updatedAt": "2026-02-09T05:22:26Z",
       "completedAt": "2026-02-09T05:22:26Z",
-      "ageHours": 1.56,
+      "ageHours": 1.57,
       "deliverySummary": "Assess current lighting layout; Plan relocation strategy; Create implementation timeline; Identify resource requirements",
       "deliverableUrl": "/ops/deliverables/openclaw-56.md",
       "notes": []
@@ -969,7 +976,7 @@
       "createdAt": "2026-02-09T05:19:09Z",
       "updatedAt": "2026-02-09T05:19:09Z",
       "completedAt": "2026-02-09T05:19:09Z",
-      "ageHours": 1.61,
+      "ageHours": 1.62,
       "deliverySummary": "Research Trivandrum attractions for 1-year-old; Plan accommodation and logistics; Create detailed 3-day itinerary; Book travel and arrangements; Plan meals and activities",
       "deliverableUrl": "/ops/deliverables/openclaw-55.md",
       "notes": []
@@ -984,7 +991,7 @@
       "createdAt": "2026-02-09T05:15:35Z",
       "updatedAt": "2026-02-09T05:15:35Z",
       "completedAt": "2026-02-09T05:15:35Z",
-      "ageHours": 1.67,
+      "ageHours": 1.68,
       "deliverySummary": "Select nearby activity; Prepare and leave house; Enjoy outdoor time together",
       "deliverableUrl": "/ops/deliverables/openclaw-54.md",
       "notes": []
@@ -999,7 +1006,7 @@
       "createdAt": "2026-02-09T05:12:35Z",
       "updatedAt": "2026-02-09T05:12:35Z",
       "completedAt": "2026-02-09T05:12:35Z",
-      "ageHours": 1.72,
+      "ageHours": 1.73,
       "deliverySummary": "Research age-appropriate activities for 1-year-old; Select date options around March 16; Create detailed itinerary; Book reservations; Plan meals and logistics",
       "deliverableUrl": "/ops/deliverables/openclaw-53.md",
       "notes": []
@@ -1014,7 +1021,7 @@
       "createdAt": "2026-02-09T05:09:16Z",
       "updatedAt": "2026-02-09T05:09:16Z",
       "completedAt": "2026-02-09T05:09:16Z",
-      "ageHours": 1.78,
+      "ageHours": 1.79,
       "deliverySummary": "Clarify scope of work; Assess feasibility; Create action plan; Identify resource requirements",
       "deliverableUrl": "/ops/deliverables/openclaw-52.md",
       "notes": []
@@ -1029,7 +1036,7 @@
       "createdAt": "2026-02-09T05:08:32Z",
       "updatedAt": "2026-02-09T05:08:32Z",
       "completedAt": "2026-02-09T05:08:32Z",
-      "ageHours": 1.79,
+      "ageHours": 1.8,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -1048,7 +1055,7 @@
       "createdAt": "2026-02-09T05:04:45Z",
       "updatedAt": "2026-02-09T05:04:45Z",
       "completedAt": "2026-02-09T05:04:45Z",
-      "ageHours": 1.85,
+      "ageHours": 1.86,
       "deliverySummary": "Audit current garden status; Create catch-up action plan; Schedule regular garden maintenance; Set up garden care reminders",
       "deliverableUrl": "/ops/deliverables/openclaw-51.md",
       "notes": []
@@ -1063,7 +1070,7 @@
       "createdAt": "2026-02-09T05:01:21Z",
       "updatedAt": "2026-02-09T05:01:21Z",
       "completedAt": "2026-02-09T05:01:21Z",
-      "ageHours": 1.91,
+      "ageHours": 1.92,
       "deliverySummary": "Review pen prototype current state; Schedule manager meeting for feedback; Audit current projects; Identify supporters and upcoming work",
       "deliverableUrl": "/ops/deliverables/openclaw-50.md",
       "notes": []
@@ -1078,7 +1085,7 @@
       "createdAt": "2026-02-09T04:58:40Z",
       "updatedAt": "2026-02-09T04:58:40Z",
       "completedAt": "2026-02-09T04:58:40Z",
-      "ageHours": 1.95,
+      "ageHours": 1.96,
       "deliverySummary": "Create financial security action plan; Develop security risk assessment; Prioritize focus areas; Create implementation timeline",
       "deliverableUrl": "/ops/deliverables/openclaw-49.md",
       "notes": []
@@ -1093,7 +1100,7 @@
       "createdAt": "2026-02-09T04:56:01Z",
       "updatedAt": "2026-02-09T04:56:01Z",
       "completedAt": "2026-02-09T04:56:01Z",
-      "ageHours": 2.0,
+      "ageHours": 2.01,
       "deliverySummary": "Analyze current revenue streams; Project revenue for this year; Plan salary funding strategy; Create financial contingency plan",
       "deliverableUrl": "/ops/deliverables/openclaw-48.md",
       "notes": []
@@ -1108,7 +1115,7 @@
       "createdAt": "2026-02-09T04:53:47Z",
       "updatedAt": "2026-02-09T04:53:47Z",
       "completedAt": "2026-02-09T04:53:47Z",
-      "ageHours": 2.04,
+      "ageHours": 2.05,
       "deliverySummary": "Analyze current revenue streams; Identify business model questions; Create strategic roadmap; Prioritize focus areas",
       "deliverableUrl": "/ops/deliverables/openclaw-47.md",
       "notes": []
@@ -1123,7 +1130,7 @@
       "createdAt": "2026-02-09T04:51:36Z",
       "updatedAt": "2026-02-09T04:51:36Z",
       "completedAt": "2026-02-09T04:51:36Z",
-      "ageHours": 2.07,
+      "ageHours": 2.08,
       "deliverySummary": "Set up fasting windows for Mon-Sun; Plan meal timing and composition; Track progress and adjust as needed",
       "deliverableUrl": "/ops/deliverables/openclaw-46.md",
       "notes": []
@@ -1138,7 +1145,7 @@
       "createdAt": "2026-02-09T04:51:04Z",
       "updatedAt": "2026-02-09T04:51:04Z",
       "completedAt": "2026-02-09T04:51:04Z",
-      "ageHours": 2.08,
+      "ageHours": 2.09,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -1157,7 +1164,7 @@
       "createdAt": "2026-02-09T04:51:04Z",
       "updatedAt": "2026-02-09T04:51:04Z",
       "completedAt": "2026-02-09T04:51:04Z",
-      "ageHours": 2.08,
+      "ageHours": 2.09,
       "deliverySummary": "Task created in local database",
       "deliverableUrl": null,
       "notes": [
@@ -1176,9 +1183,24 @@
       "createdAt": "2026-02-09T04:48:22Z",
       "updatedAt": "2026-02-09T04:48:22Z",
       "completedAt": "2026-02-09T04:48:22Z",
-      "ageHours": 2.13,
+      "ageHours": 2.14,
       "deliverySummary": "Schedule dentist appointment for wisdom tooth assessment; Add bath time to daily routine; Research dental extraction options and providers",
       "deliverableUrl": "/ops/deliverables/openclaw-45.md",
+      "notes": []
+    },
+    {
+      "id": "openclaw-44",
+      "title": "Task: doing something moving is something that I will have to",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-09T04:45:22Z",
+      "updatedAt": "2026-02-09T04:45:22Z",
+      "completedAt": "2026-02-09T04:45:22Z",
+      "ageHours": 2.19,
+      "deliverySummary": "Set hourly movement break reminder; Start 5-min movement break now; Build movement breaks into task completion rituals",
+      "deliverableUrl": "/ops/deliverables/openclaw-44.md",
       "notes": []
     },
     {
@@ -1191,7 +1213,7 @@
       "createdAt": "2026-02-09T04:44:14Z",
       "updatedAt": "2026-02-09T04:44:14Z",
       "completedAt": "2026-02-09T04:44:14Z",
-      "ageHours": 2.19,
+      "ageHours": 2.21,
       "deliverySummary": "Start task 1: sync ops to synchronize task tracking; Start task 2: automation ping to verify system integration; Focus on completing draft blog on game applications",
       "deliverableUrl": "/ops/deliverables/openclaw-43.md",
       "notes": []
@@ -1200,15 +1222,15 @@
   "observations": [
     {
       "level": "info",
-      "message": "DICTATION_SYNC: 1 queued item(s) auto-synced from pending review lane."
+      "message": "Automation pipeline is idle. No queued or active items right now."
     },
     {
       "level": "warn",
-      "message": "28 item(s) need attention in 'Tasks due from you'."
+      "message": "29 item(s) need attention in 'Tasks due from you'."
     },
     {
       "level": "info",
-      "message": "Execution lane is paused until the pending decisions in 'Tasks due from you' are resolved."
+      "message": "Execution lane is currently empty; queued tasks will continue dispatching sequentially when OpenClaw is idle."
     }
   ],
   "errors": [
@@ -1264,6 +1286,12 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-09T06:55:58Z",
+      "type": "executed",
+      "taskId": "capture-83",
+      "message": "Figure that bit out as well like what should be the model that should be taken forward: Delegated via OpenClaw SSH (status=completed, task_id=7c02842d-011c-4df0-8156-ce5afd2f3451): Recommended learning and development themes model"
+    },
     {
       "timestamp": "2026-02-09T06:53:42Z",
       "type": "executed",
@@ -1617,18 +1645,12 @@
       "type": "executed",
       "taskId": "capture-66",
       "message": "todo design scalable Pan Am SAAB training solution concept: Delegated via OpenClaw SSH (status=completed, task_id=aacd071d-bd48-48fc-a42f-5efca604608c): Capturing Pan Am SAAB training design task and beginning concept work"
-    },
-    {
-      "timestamp": "2026-02-08T20:00:03Z",
-      "type": "executed",
-      "taskId": "capture-66",
-      "message": "todo synthesize Mac mini project data into integrated insights: Delegated via OpenClaw SSH (status=completed, task_id=7ca9ad74-586a-4076-ac8f-7eeafc052e6e): Synthesizing Mac mini project data into strategic insights"
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-09T06:55:54Z",
+    "updatedAt": "2026-02-09T06:56:32Z",
     "metrics": {
-      "reviewRequested": 1,
+      "reviewRequested": 0,
       "proceedCount": 0,
       "closeCount": 0
     },
