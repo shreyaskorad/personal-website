@@ -1,28 +1,28 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-09T09:21:56Z",
+    "updatedAt": "2026-02-09T09:25:16Z",
     "source": "Dictation Router + OpenClaw supervisor"
   },
   "summary": {
-    "totalTasks": 5,
-    "queued": 5,
+    "totalTasks": 4,
+    "queued": 4,
     "active": 0,
     "completed": 0,
     "blocked": 7,
-    "executedTotal": 21,
+    "executedTotal": 22,
     "byStatus": {
-      "queued": 5
+      "queued": 4
     }
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 21
+      "executedTotal": 22
     },
     "queue": {
-      "visible": 5,
-      "totalQueued": 5
+      "visible": 4,
+      "totalQueued": 4
     },
     "completed": {
       "visible": 0,
@@ -46,9 +46,9 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-09T07:36:15Z",
-      "updatedAt": "2026-02-09T09:21:56Z",
+      "updatedAt": "2026-02-09T09:25:16Z",
       "completedAt": null,
-      "ageHours": 1.76,
+      "ageHours": 1.82,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -68,9 +68,9 @@
       "status": "queued",
       "sequence": 2,
       "createdAt": "2026-02-09T07:36:15Z",
-      "updatedAt": "2026-02-09T09:21:56Z",
+      "updatedAt": "2026-02-09T09:25:16Z",
       "completedAt": null,
-      "ageHours": 1.76,
+      "ageHours": 1.82,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -90,9 +90,9 @@
       "status": "queued",
       "sequence": 3,
       "createdAt": "2026-02-09T06:43:52Z",
-      "updatedAt": "2026-02-09T09:21:56Z",
+      "updatedAt": "2026-02-09T09:25:16Z",
       "completedAt": null,
-      "ageHours": 2.63,
+      "ageHours": 2.69,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -112,9 +112,9 @@
       "status": "queued",
       "sequence": 4,
       "createdAt": "2026-02-09T06:43:52Z",
-      "updatedAt": "2026-02-09T09:21:56Z",
+      "updatedAt": "2026-02-09T09:25:16Z",
       "completedAt": null,
-      "ageHours": 2.63,
+      "ageHours": 2.69,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -125,31 +125,27 @@
       "scope": "professional",
       "hasDeliverable": false,
       "needsReview": false
-    },
-    {
-      "id": "inbox-415",
-      "title": "Research and summarize findings",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 5,
-      "createdAt": "2026-02-09T06:43:52Z",
-      "updatedAt": "2026-02-09T09:21:56Z",
-      "completedAt": null,
-      "ageHours": 2.63,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=83",
-        "inbox_item_id=415"
-      ],
-      "action": "create_task",
-      "scope": "professional",
-      "hasDeliverable": false,
-      "needsReview": false
     }
   ],
   "userActionsDue": [
+    {
+      "id": "openclaw-review-117",
+      "title": "Review deliverable: Research and summarize findings",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "review_required",
+      "sequence": 0,
+      "createdAt": "2026-02-09T09:23:26Z",
+      "updatedAt": "2026-02-09T09:23:26Z",
+      "completedAt": "2026-02-09T09:23:26Z",
+      "ageHours": 0.03,
+      "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Search for current pricing pressure trends; Research sustainable pricing strategies; Identify attractive pricing models; Summarize findings and recommendations",
+      "deliverableUrl": "/ops/deliverables/openclaw-117.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": true
+    },
     {
       "id": "openclaw-115",
       "title": "Analyze AI impact on e-learning vendor model",
@@ -160,7 +156,7 @@
       "createdAt": "2026-02-09T09:18:57Z",
       "updatedAt": "2026-02-09T09:18:57Z",
       "completedAt": null,
-      "ageHours": 0.05,
+      "ageHours": 0.11,
       "deliverySummary": "Await user's detailed information about e-learning vendor model",
       "deliverableUrl": "/ops/deliverables/openclaw-115.md",
       "notes": [
@@ -180,7 +176,7 @@
       "createdAt": "2026-02-09T09:16:09Z",
       "updatedAt": "2026-02-09T09:16:09Z",
       "completedAt": "2026-02-09T09:16:09Z",
-      "ageHours": 0.1,
+      "ageHours": 0.15,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Select 3-5 themes for immediate exploration and development",
       "deliverableUrl": "/ops/deliverables/openclaw-114.md",
       "notes": [],
@@ -198,7 +194,7 @@
       "createdAt": "2026-02-09T09:12:39Z",
       "updatedAt": "2026-02-09T09:12:39Z",
       "completedAt": "2026-02-09T09:12:39Z",
-      "ageHours": 0.15,
+      "ageHours": 0.21,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Review and refine blog content for publication",
       "deliverableUrl": "/ops/deliverables/openclaw-113.md",
       "notes": [],
@@ -216,7 +212,7 @@
       "createdAt": "2026-02-09T09:10:01Z",
       "updatedAt": "2026-02-09T09:10:01Z",
       "completedAt": "2026-02-09T09:10:01Z",
-      "ageHours": 0.2,
+      "ageHours": 0.25,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Implement new notebook capture system with small wins and tracking",
       "deliverableUrl": "/ops/deliverables/openclaw-112.md",
       "notes": [],
@@ -234,7 +230,7 @@
       "createdAt": "2026-02-09T09:06:48Z",
       "updatedAt": "2026-02-09T09:06:48Z",
       "completedAt": "2026-02-09T09:06:48Z",
-      "ageHours": 0.25,
+      "ageHours": 0.31,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Review current notebook usage; Establish maintenance routine; Identify retention strategies; Set up feedback system",
       "deliverableUrl": "/ops/deliverables/openclaw-111.md",
       "notes": [],
@@ -252,7 +248,7 @@
       "createdAt": "2026-02-09T09:04:15Z",
       "updatedAt": "2026-02-09T09:04:15Z",
       "completedAt": null,
-      "ageHours": 0.29,
+      "ageHours": 0.35,
       "deliverySummary": "Assess current lighting layout; Plan relocation strategy; Create timeline and budget; Schedule professional help if needed; Execute relocation",
       "deliverableUrl": "/ops/deliverables/openclaw-110.md",
       "notes": [
@@ -272,7 +268,7 @@
       "createdAt": "2026-02-09T09:01:40Z",
       "updatedAt": "2026-02-09T09:01:40Z",
       "completedAt": "2026-02-09T09:01:40Z",
-      "ageHours": 0.34,
+      "ageHours": 0.39,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Research wedding logistics; Plan travel arrangements; Create budget estimates; Develop RSVP and communication plan",
       "deliverableUrl": "/ops/deliverables/openclaw-109.md",
       "notes": [],
@@ -290,7 +286,7 @@
       "createdAt": "2026-02-09T08:58:27Z",
       "updatedAt": "2026-02-09T08:58:27Z",
       "completedAt": "2026-02-09T08:58:27Z",
-      "ageHours": 0.39,
+      "ageHours": 0.45,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Create weekly outing template; Set outing frequency and triggers; Develop planning checklist; Establish review mechanism",
       "deliverableUrl": "/ops/deliverables/openclaw-108.md",
       "notes": [],
@@ -308,7 +304,7 @@
       "createdAt": "2026-02-09T08:55:44Z",
       "updatedAt": "2026-02-09T08:55:44Z",
       "completedAt": "2026-02-09T08:55:44Z",
-      "ageHours": 0.44,
+      "ageHours": 0.49,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Identify outing type and location; Research options; Create detailed itinerary; Plan logistics and budget",
       "deliverableUrl": "/ops/deliverables/openclaw-107.md",
       "notes": [],
@@ -326,7 +322,7 @@
       "createdAt": "2026-02-09T08:53:26Z",
       "updatedAt": "2026-02-09T08:53:26Z",
       "completedAt": "2026-02-09T08:53:26Z",
-      "ageHours": 0.48,
+      "ageHours": 0.53,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Identify current financial security gaps; Determine priority focus areas; Create action plan for implementation; Establish monitoring mechanisms",
       "deliverableUrl": "/ops/deliverables/openclaw-106.md",
       "notes": [],
@@ -344,7 +340,7 @@
       "createdAt": "2026-02-09T08:50:02Z",
       "updatedAt": "2026-02-09T08:50:02Z",
       "completedAt": "2026-02-09T08:50:02Z",
-      "ageHours": 0.53,
+      "ageHours": 0.59,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Analyze current revenue streams; Identify revenue risks and gaps; Develop mitigation strategies; Create salary continuity framework",
       "deliverableUrl": "/ops/deliverables/openclaw-105.md",
       "notes": [],
@@ -362,7 +358,7 @@
       "createdAt": "2026-02-09T08:45:32Z",
       "updatedAt": "2026-02-09T08:45:32Z",
       "completedAt": "2026-02-09T08:45:32Z",
-      "ageHours": 0.61,
+      "ageHours": 0.66,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
       "deliverableUrl": "/ops/deliverables/openclaw-104.md",
       "notes": [
@@ -382,7 +378,7 @@
       "createdAt": "2026-02-09T08:36:44Z",
       "updatedAt": "2026-02-09T08:36:44Z",
       "completedAt": "2026-02-09T08:36:44Z",
-      "ageHours": 0.75,
+      "ageHours": 0.81,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Create comprehensive learning data visualization showcase with decision-making capabilities",
       "deliverableUrl": "/ops/deliverables/openclaw-103.md",
       "notes": [],
@@ -400,7 +396,7 @@
       "createdAt": "2026-02-09T08:31:34Z",
       "updatedAt": "2026-02-09T08:31:34Z",
       "completedAt": "2026-02-09T08:31:34Z",
-      "ageHours": 0.84,
+      "ageHours": 0.9,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). User needs to provide Fireflies API credentials; I'll implement integration for capturing and analyzing client conversations",
       "deliverableUrl": "/ops/deliverables/openclaw-102.md",
       "notes": [],
@@ -418,7 +414,7 @@
       "createdAt": "2026-02-09T08:29:14Z",
       "updatedAt": "2026-02-09T08:29:14Z",
       "completedAt": "2026-02-09T08:29:14Z",
-      "ageHours": 0.88,
+      "ageHours": 0.93,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Search for Pan Am Sabre aircraft specifications and existing flight manual training approaches to develop innovative solution",
       "deliverableUrl": "/ops/deliverables/openclaw-101.md",
       "notes": [],
@@ -436,7 +432,7 @@
       "createdAt": "2026-02-09T08:27:24Z",
       "updatedAt": "2026-02-09T08:27:24Z",
       "completedAt": null,
-      "ageHours": 0.91,
+      "ageHours": 0.96,
       "deliverySummary": "User needs to schedule CA stakeholder discovery meetings; I'll prepare meeting prep materials and follow-up deliverables",
       "deliverableUrl": "/ops/deliverables/openclaw-100.md",
       "notes": [
@@ -456,7 +452,7 @@
       "createdAt": "2026-02-09T08:23:18Z",
       "updatedAt": "2026-02-09T08:23:18Z",
       "completedAt": null,
-      "ageHours": 0.98,
+      "ageHours": 1.03,
       "deliverySummary": "Search for World Bank Qi reference guide files and review pages for proper treatment and functionality",
       "deliverableUrl": "/ops/deliverables/openclaw-99.md",
       "notes": [
@@ -476,7 +472,7 @@
       "createdAt": "2026-02-09T08:20:20Z",
       "updatedAt": "2026-02-09T08:20:20Z",
       "completedAt": null,
-      "ageHours": 1.03,
+      "ageHours": 1.08,
       "deliverySummary": "Try alternative search approaches to find Josh Bersin's current AI/L&D content",
       "deliverableUrl": "/ops/deliverables/openclaw-98.md",
       "notes": [
@@ -496,7 +492,7 @@
       "createdAt": "2026-02-09T08:17:14Z",
       "updatedAt": "2026-02-09T08:17:14Z",
       "completedAt": "2026-02-09T08:17:14Z",
-      "ageHours": 1.08,
+      "ageHours": 1.13,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
       "deliverableUrl": "/ops/deliverables/openclaw-97.md",
       "notes": [
@@ -516,7 +512,7 @@
       "createdAt": "2026-02-09T08:12:52Z",
       "updatedAt": "2026-02-09T08:12:52Z",
       "completedAt": "2026-02-09T08:12:52Z",
-      "ageHours": 1.15,
+      "ageHours": 1.21,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). User to begin daily journaling sessions using established framework",
       "deliverableUrl": "/ops/deliverables/openclaw-96.md",
       "notes": [],
@@ -534,7 +530,7 @@
       "createdAt": "2026-02-09T08:11:46Z",
       "updatedAt": "2026-02-09T08:11:46Z",
       "completedAt": "2026-02-09T08:11:46Z",
-      "ageHours": 1.17,
+      "ageHours": 1.23,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Develop structured weight loss plan with monthly targets, calorie goals, and tracking system",
       "deliverableUrl": "/ops/deliverables/openclaw-95.md",
       "notes": [],
@@ -552,27 +548,9 @@
       "createdAt": "2026-02-09T08:06:04Z",
       "updatedAt": "2026-02-09T08:06:04Z",
       "completedAt": "2026-02-09T08:06:04Z",
-      "ageHours": 1.26,
+      "ageHours": 1.32,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Implement the Tight Shipping Workflow System with dictation capture, sequencing, quality gates, and continuous improvement",
       "deliverableUrl": "/ops/deliverables/openclaw-93.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": true
-    },
-    {
-      "id": "openclaw-review-90",
-      "title": "Review deliverable: Write blog about games in learning and development",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "review_required",
-      "sequence": 0,
-      "createdAt": "2026-02-09T08:00:25Z",
-      "updatedAt": "2026-02-09T08:00:25Z",
-      "completedAt": "2026-02-09T08:00:25Z",
-      "ageHours": 1.36,
-      "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Research game-based learning concepts and write comprehensive blog post",
-      "deliverableUrl": "/ops/deliverables/openclaw-90.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -583,7 +561,7 @@
   "observations": [
     {
       "level": "info",
-      "message": "Queue has 5 task(s). OpenClaw will continue dispatching sequentially while idle."
+      "message": "Queue has 4 task(s). OpenClaw will continue dispatching sequentially while idle."
     },
     {
       "level": "warn",
@@ -628,6 +606,12 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-09T09:23:26Z",
+      "type": "executed",
+      "taskId": "capture-83",
+      "message": "Run focused research and summarize findings: Delegated via OpenClaw SSH (status=completed, task_id=26d101da-9dc8-43f9-85f1-db4b345be128): Researching pricing pressure and sustainable pricing strategies"
+    },
     {
       "timestamp": "2026-02-09T09:20:28Z",
       "type": "executed",
@@ -792,9 +776,9 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-09T09:21:56Z",
+    "updatedAt": "2026-02-09T09:25:16Z",
     "metrics": {
-      "reviewRequested": 5,
+      "reviewRequested": 4,
       "proceedCount": 0,
       "closeCount": 0
     },
