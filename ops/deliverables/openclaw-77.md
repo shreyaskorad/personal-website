@@ -1,18 +1,18 @@
 # Deliverable: Research that sort of gives something
 
 - Task ID: openclaw-77
-- Status: failed
-- Created: 2026-02-09T06:44:28Z
-- Updated: 2026-02-09T06:44:28Z
+- Status: cancelled
+- Created: 2026-02-09T07:06:01Z
+- Updated: 2026-02-09T07:06:01Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Auto-closed as low-signal legacy item to keep dashboard clean. Recreate if still needed with a specific task statement.
 
 ## Deliverable Output
 _Deliverable generation is queued via OpenClaw. Refresh shortly._
 
 ## Blockers / Notes
-OpenClaw SSH execution failed.
+AUTO_CLOSED_LEGACY[ssh_failed_low_signal] | previous_status=failed | OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

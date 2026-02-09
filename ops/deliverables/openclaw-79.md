@@ -1,18 +1,18 @@
 # Deliverable: Task: i don’t think for I need to say something
 
 - Task ID: openclaw-79
-- Status: blocked
-- Created: 2026-02-09T06:46:05Z
-- Updated: 2026-02-09T06:46:05Z
+- Status: cancelled
+- Created: 2026-02-09T07:06:01Z
+- Updated: 2026-02-09T07:06:01Z
 
 ## Summary
-Please provide a clear, actionable task description with specific objectives.
+Auto-closed as low-signal legacy item to keep dashboard clean. Recreate if still needed with a specific task statement.
 
 ## Deliverable Output
 _Deliverable generation is queued via OpenClaw. Refresh shortly._
 
 ## Blockers / Notes
-The provided task is a conversational statement with no clear action or goal specified.
+AUTO_CLOSED_LEGACY[unclear_blocker_low_signal] | previous_status=blocked | The provided task is a conversational statement with no clear action or goal specified.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
