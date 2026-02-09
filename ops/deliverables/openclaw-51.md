@@ -1,4 +1,4 @@
-# Deliverable: Task: i’m just catching up on everything that I have to do because I haven’t been paying atte...
+# Deliverable: Task: audit current garden status
 
 - Task ID: openclaw-51
 - Status: completed

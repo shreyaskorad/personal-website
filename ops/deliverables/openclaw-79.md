@@ -1,4 +1,4 @@
-# Deliverable: Task: i don’t think for I need to say something
+# Deliverable: Clarify task intent for OpenClaw
 
 - Task ID: openclaw-79
 - Status: blocked
@@ -9,7 +9,24 @@
 Please provide a clear, actionable task description with specific objectives.
 
 ## Deliverable Output
-_Deliverable generation is queued via OpenClaw. Refresh shortly._
+# Deliverable Draft: Clarify Task Intent For Openclaw
+
+## Objective
+Turn `Clarify task intent for OpenClaw` into a concrete, reviewable output.
+
+## Output
+- Scope and goal clarified.
+- Execution steps listed in order.
+- Acceptance criteria defined for closure.
+
+## Execution Steps
+1. Confirm expected output format.
+2. Produce first complete draft.
+3. Validate against acceptance criteria.
+4. Attach deliverable and request proceed/close decision.
+
+## Notes
+Please provide a clear, actionable task description with specific objectives.
 
 ## Blockers / Notes
 The provided task is a conversational statement with no clear action or goal specified.
