@@ -1,18 +1,18 @@
-# Deliverable: Task: request user to specify what needs to be done today, including deadlines and priorities
+# Deliverable: Request user to specify what needs to be done today, including deadlines and priorities
 
 - Task ID: openclaw-94
-- Status: in_progress
-- Created: 2026-02-09T08:08:12Z
-- Updated: 2026-02-09T08:08:12Z
+- Status: blocked
+- Created: 2026-02-09T08:11:33Z
+- Updated: 2026-02-09T08:11:33Z
 
 ## Summary
 Request user to specify what needs to be done today, including deadlines and priorities
 
 ## Deliverable Output
-# Deliverable Draft: Task: Request User To Specify What Needs To Be Done Today, Including Deadlines And Priorities
+# Deliverable Draft: Request User To Specify What Needs To Be Done Today, Including Deadlines And Priorities
 
 ## Objective
-Turn `Task: request user to specify what needs to be done today, including deadlines and priorities` into a concrete, reviewable output.
+Turn `Request user to specify what needs to be done today, including deadlines and priorities` into a concrete, reviewable output.
 
 ## Output
 - Scope and goal clarified.
