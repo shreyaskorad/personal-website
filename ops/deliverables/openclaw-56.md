@@ -1,4 +1,4 @@
-# Deliverable: Task: assess current lighting layout
+# Deliverable: Task: in mind at this particular point, we also need to relocate all the lighting that exist...
 
 - Task ID: openclaw-56
 - Status: completed

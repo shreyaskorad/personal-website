@@ -1,4 +1,4 @@
-# Deliverable: Create tree storage plan
+# Deliverable: Task: in terms of cleaning up the house, we need to
 
 - Task ID: openclaw-58
 - Status: completed
