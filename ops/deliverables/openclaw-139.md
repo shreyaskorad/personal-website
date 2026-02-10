@@ -1,12 +1,12 @@
 # Deliverable: Define research scope and required outputs
 
-- Task ID: openclaw-118
-- Status: cancelled
-- Created: 2026-02-10T10:49:25Z
-- Updated: 2026-02-10T10:49:25Z
+- Task ID: openclaw-139
+- Status: blocked
+- Created: 2026-02-10T10:52:24Z
+- Updated: 2026-02-10T10:52:24Z
 
 ## Summary
-Re-run requested under updated search-alternative policy.
+Ask user to specify what research topic or area they want scope and outputs defined for
 
 ## Deliverable Output
 # Deliverable Draft: Define Research Scope And Required Outputs
@@ -30,7 +30,10 @@ Produce a focused research brief for `Define research scope and required outputs
 3. Track outcomes in dashboard observations.
 
 ## Notes
-Re-run requested under updated search-alternative policy.
+Ask user to specify what research topic or area they want scope and outputs defined for
+
+## Blockers / Notes
+User hasn't specified what research topic they want scope for; No context about what research is needed; Ambiguous reference to 'that as well'
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
