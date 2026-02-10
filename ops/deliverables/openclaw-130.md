@@ -1,12 +1,12 @@
-# Deliverable: That’s it for the wedding moving onto the next task, which is Ananya‘s first birthday celebra...
+# Deliverable: Merged into consolidated occasion plans: openclaw-124 (Ananya birthday) and openclaw-125 (Tri...
 
 - Task ID: openclaw-130
-- Status: completed
-- Created: 2026-02-10T10:38:49Z
-- Updated: 2026-02-10T10:38:49Z
+- Status: cancelled
+- Created: 2026-02-10T10:47:28Z
+- Updated: 2026-02-10T10:47:28Z
 
 ## Summary
-No summary provided.
+Merged into consolidated occasion plans: openclaw-124 (Ananya birthday) and openclaw-125 (Trivandrum wedding).
 
 ## Deliverable Output
 _Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-10T10:39:49Z)
@@ -16,10 +16,10 @@ OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Err
 Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openro
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: That’S It For The Wedding Moving Onto The Next Task, Which Is Ananya‘S First Birthday Celebra
+# Deliverable Draft: Merged Into Consolidated Occasion Plans: Openclaw-124 (Ananya Birthday) And Openclaw-125 (Tri
 
 ## Objective
-Turn `That’s it for the wedding moving onto the next task, which is Ananya‘s first birthday celebra` into a concrete, reviewable output.
+Turn `Merged into consolidated occasion plans: openclaw-124 (Ananya birthday) and openclaw-125 (Tri` into a concrete, reviewable output.
 
 ## Output
 - Scope and goal clarified.
@@ -33,7 +33,7 @@ Turn `That’s it for the wedding moving onto the next task, which is Ananya‘s
 4. Attach deliverable and request proceed/close decision.
 
 ## Notes
-That’s it for the wedding moving onto the next task, which is Ananya‘s first birthday celebration.
+Merged into consolidated occasion plans: openclaw-124 (Ananya birthday) and openclaw-125 (Trivandrum wedding).
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

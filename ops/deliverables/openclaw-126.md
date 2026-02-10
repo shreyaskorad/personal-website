@@ -1,12 +1,12 @@
 # Deliverable: Give me more details on what restaurants what
 
 - Task ID: openclaw-126
-- Status: completed
-- Created: 2026-02-10T10:34:24Z
-- Updated: 2026-02-10T10:34:24Z
+- Status: cancelled
+- Created: 2026-02-10T10:47:28Z
+- Updated: 2026-02-10T10:47:28Z
 
 ## Summary
-No summary provided.
+Merged into consolidated occasion plans: openclaw-124 (Ananya birthday) and openclaw-125 (Trivandrum wedding).
 
 ## Deliverable Output
 # Trivandrum Travel Planning - Colleague Wedding

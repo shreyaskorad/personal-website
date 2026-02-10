@@ -1,35 +1,33 @@
 # Deliverable: What should the client doing
 
 - Task ID: openclaw-135
-- Status: blocked
-- Created: 2026-02-10T10:45:32Z
-- Updated: 2026-02-10T10:45:32Z
+- Status: cancelled
+- Created: 2026-02-10T10:47:28Z
+- Updated: 2026-02-10T10:47:28Z
 
 ## Summary
-Ask user to specify which client and what actions they want recommendations for
+Merged into Fireflies client-call workflow implementation task.
 
 ## Deliverable Output
 # Deliverable Draft: What Should The Client Doing
 
 ## Objective
-Turn `What should the client doing` into a concrete, reviewable output.
+Stabilize `What should the client doing` through a repeatable integration checklist.
 
-## Output
-- Scope and goal clarified.
-- Execution steps listed in order.
-- Acceptance criteria defined for closure.
+## Checklist
+1. Verify credentials and endpoint reachability.
+2. Validate input mapping and schema contract.
+3. Run test event and inspect normalized output.
+4. Confirm retry behavior and failure alerts.
+5. Record runbook notes and ownership.
 
-## Execution Steps
-1. Confirm expected output format.
-2. Produce first complete draft.
-3. Validate against acceptance criteria.
-4. Attach deliverable and request proceed/close decision.
+## Validation Output
+- Connection status: to be verified during execution.
+- Data integrity checks: required before marking complete.
+- Escalation path: define explicit fallback owner and action.
 
 ## Notes
-Ask user to specify which client and what actions they want recommendations for
-
-## Blockers / Notes
-No specific client identified; No context on what activities/actions to recommend; Missing information about client relationship
+Merged into Fireflies client-call workflow implementation task.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

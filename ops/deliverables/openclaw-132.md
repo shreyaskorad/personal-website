@@ -1,12 +1,12 @@
 # Deliverable: What are the expenses of different places will go to
 
 - Task ID: openclaw-132
-- Status: blocked
-- Created: 2026-02-10T10:41:04Z
-- Updated: 2026-02-10T10:41:04Z
+- Status: cancelled
+- Created: 2026-02-10T10:47:28Z
+- Updated: 2026-02-10T10:47:28Z
 
 ## Summary
-Ask user to specify which places they want expense analysis for
+Merged into consolidated occasion plans: openclaw-124 (Ananya birthday) and openclaw-125 (Trivandrum wedding).
 
 ## Deliverable Output
 # Deliverable Draft: What Are The Expenses Of Different Places Will Go To
@@ -26,10 +26,7 @@ Turn `What are the expenses of different places will go to` into a concrete, rev
 4. Attach deliverable and request proceed/close decision.
 
 ## Notes
-Ask user to specify which places they want expense analysis for
-
-## Blockers / Notes
-User hasn't specified which places to analyze; No context on what type of expenses; Ambiguous request requiring more detail
+Merged into consolidated occasion plans: openclaw-124 (Ananya birthday) and openclaw-125 (Trivandrum wedding).
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

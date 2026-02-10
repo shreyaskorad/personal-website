@@ -1,12 +1,12 @@
 # Deliverable: Take the flights for sure because of the baby
 
 - Task ID: openclaw-129
-- Status: blocked
-- Created: 2026-02-10T10:37:18Z
-- Updated: 2026-02-10T10:37:18Z
+- Status: cancelled
+- Created: 2026-02-10T10:47:28Z
+- Updated: 2026-02-10T10:47:28Z
 
 ## Summary
-Configure Brave API key or proceed with manual flight research and booking for Pune to Trivandrum on May 1, 2026.
+Merged into consolidated occasion plans: openclaw-124 (Ananya birthday) and openclaw-125 (Trivandrum wedding).
 
 ## Deliverable Output
 The task is blocked because I cannot research or provide specific flight information (schedules, pricing, booking options) from Pune to Trivandrum without the Brave Search API key. I also don't have access to flight booking systems.
@@ -20,9 +20,6 @@ Blockers: Missing Brave Search API key prevents flight research. No direct fligh
   "estimated_remaining_minutes": null
 }
 ```
-
-## Blockers / Notes
-Missing Brave Search API key to research Pune to Trivandrum flight schedules and pricing. No direct flight booking systems available.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

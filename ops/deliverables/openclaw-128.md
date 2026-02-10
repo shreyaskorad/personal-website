@@ -1,12 +1,12 @@
-# Deliverable: It shouldn’t hurt us also like if you can help us with a cab offering for the five days where...
+# Deliverable: Merged into consolidated occasion plans: openclaw-124 (Ananya birthday) and openclaw-125 (Tri...
 
 - Task ID: openclaw-128
-- Status: completed
-- Created: 2026-02-10T10:36:07Z
-- Updated: 2026-02-10T10:36:07Z
+- Status: cancelled
+- Created: 2026-02-10T10:47:28Z
+- Updated: 2026-02-10T10:47:28Z
 
 ## Summary
-No summary provided.
+Merged into consolidated occasion plans: openclaw-124 (Ananya birthday) and openclaw-125 (Trivandrum wedding).
 
 ## Deliverable Output
 # Trivandrum 5-Day Local Transportation Plan
