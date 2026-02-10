@@ -1,12 +1,12 @@
 # Deliverable: Re-establish notebook capture routine
 
 - Task ID: openclaw-112
-- Status: completed
-- Created: 2026-02-09T09:10:01Z
-- Updated: 2026-02-09T09:10:01Z
+- Status: cancelled
+- Created: 2026-02-10T14:40:53Z
+- Updated: 2026-02-10T14:40:53Z
 
 ## Summary
-Implement new notebook capture system with small wins and tracking
+Merged into openclaw-111 consolidated notebook routine.
 
 ## Deliverable Output
 # Notebook Capture Re-Engagement Protocol

@@ -1,12 +1,12 @@
 # Deliverable: Define target operating model to take forward
 
 - Task ID: openclaw-119
-- Status: blocked
-- Created: 2026-02-09T09:28:35Z
-- Updated: 2026-02-09T09:28:35Z
+- Status: cancelled
+- Created: 2026-02-10T14:40:53Z
+- Updated: 2026-02-10T14:40:53Z
 
 ## Summary
-Request clarification on business context, objectives, and current state
+Merged into openclaw-115 AI impact + target operating model task.
 
 ## Deliverable Output
 # Deliverable Draft: Define Target Operating Model To Take Forward
@@ -30,10 +30,7 @@ Produce a focused research brief for `Define target operating model to take forw
 3. Track outcomes in dashboard observations.
 
 ## Notes
-Request clarification on business context, objectives, and current state
-
-## Blockers / Notes
-Unclear domain/context; No specific objectives stated; Missing current state information
+Merged into openclaw-115 AI impact + target operating model task.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
