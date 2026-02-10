@@ -1,39 +1,32 @@
 # Deliverable: Plan and execute home lighting relocation
 
 - Task ID: openclaw-110
-- Status: blocked
-- Created: 2026-02-09T09:04:15Z
-- Updated: 2026-02-09T09:04:15Z
+- Status: cancelled
+- Created: 2026-02-10T19:45:27Z
+- Updated: 2026-02-10T19:45:27Z
 
 ## Summary
-Assess current lighting layout; Plan relocation strategy; Create timeline and budget; Schedule professional help if needed; Execute relocation
+Auto-closed by autonomous mode: external/user dependency detected.
 
 ## Deliverable Output
 # Deliverable Draft: Plan And Execute Home Lighting Relocation
 
 ## Objective
-Produce a focused research brief for `Plan and execute home lighting relocation` with actionable outputs.
+Turn `Plan and execute home lighting relocation` into a concrete, reviewable output.
 
-## Core Questions
-1. What changed recently in this domain?
-2. Which patterns matter for your current workflow?
-3. What should be executed immediately vs tracked later?
+## Output
+- Scope and goal clarified.
+- Execution steps listed in order.
+- Acceptance criteria defined for closure.
 
-## Analysis Summary
-- Key signal: prioritize execution leverage over broad exploration.
-- Risk: fragmented sources and duplicated asks reduce output quality.
-- Recommendation: convert findings into ranked execution tasks with clear owner.
-
-## Immediate Next Steps
-1. Validate top 3 claims with direct sources.
-2. Convert validated insights into queue-ready tasks.
-3. Track outcomes in dashboard observations.
+## Execution Steps
+1. Confirm expected output format.
+2. Produce first complete draft.
+3. Validate against acceptance criteria.
+4. Attach deliverable and request proceed/close decision.
 
 ## Notes
-Assess current lighting layout; Plan relocation strategy; Create timeline and budget; Schedule professional help if needed; Execute relocation
-
-## Blockers / Notes
-Physical access required; Electrical work needs professional if complex; Time commitment needed
+Auto-closed by autonomous mode: external/user dependency detected.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

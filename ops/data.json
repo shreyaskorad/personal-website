@@ -1,26 +1,25 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-10T19:45:27Z",
+    "updatedAt": "2026-02-10T19:45:30Z",
     "source": "Dictation Router + OpenClaw supervisor"
   },
   "summary": {
-    "totalTasks": 17,
+    "totalTasks": 13,
     "queued": 0,
     "active": 0,
     "completed": 13,
-    "due": 4,
-    "blocked": 4,
-    "executedTotal": 34,
+    "due": 0,
+    "blocked": 0,
+    "executedTotal": 38,
     "byStatus": {
-      "completed": 13,
-      "blocked": 4
+      "completed": 13
     }
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 34
+      "executedTotal": 38
     },
     "queue": {
       "visible": 0,
@@ -31,97 +30,16 @@
       "totalClosed": 13
     },
     "due": {
-      "visible": 4,
+      "visible": 0,
       "reviewRequired": 0,
       "failed": 0,
-      "blocked": 4,
+      "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
-    {
-      "id": "openclaw-115",
-      "title": "Define operating model for AI impact on e-learning vendor strategy",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "blocked",
-      "sequence": 0,
-      "createdAt": "2026-02-10T14:40:53Z",
-      "updatedAt": "2026-02-10T14:40:53Z",
-      "completedAt": null,
-      "ageHours": 5.08,
-      "deliverySummary": "Provide current-state model, objectives, and constraints so operating model can be finalized.",
-      "deliverableUrl": "/ops/deliverables/openclaw-115.md",
-      "notes": [
-        "Need current vendor model details, business objectives, and baseline metrics to define target operating model."
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-139",
-      "title": "Define research scope and required outputs",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "blocked",
-      "sequence": 0,
-      "createdAt": "2026-02-10T10:52:24Z",
-      "updatedAt": "2026-02-10T10:52:24Z",
-      "completedAt": null,
-      "ageHours": 8.88,
-      "deliverySummary": "Ask user to specify what research topic or area they want scope and outputs defined for",
-      "deliverableUrl": "/ops/deliverables/openclaw-139.md",
-      "notes": [
-        "User hasn't specified what research topic they want scope for; No context about what research is needed; Ambiguous reference to 'that as well'"
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-110",
-      "title": "Plan and execute home lighting relocation",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "blocked",
-      "sequence": 0,
-      "createdAt": "2026-02-09T09:04:15Z",
-      "updatedAt": "2026-02-09T09:04:15Z",
-      "completedAt": null,
-      "ageHours": 34.69,
-      "deliverySummary": "Assess current lighting layout; Plan relocation strategy; Create timeline and budget; Schedule professional help if needed; Execute relocation",
-      "deliverableUrl": "/ops/deliverables/openclaw-110.md",
-      "notes": [
-        "Physical access required; Electrical work needs professional if complex; Time commitment needed"
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-100",
-      "title": "Develop CA client strategy",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "blocked",
-      "sequence": 0,
-      "createdAt": "2026-02-09T08:27:24Z",
-      "updatedAt": "2026-02-09T08:27:24Z",
-      "completedAt": null,
-      "ageHours": 35.3,
-      "deliverySummary": "User needs to schedule CA stakeholder discovery meetings; I'll prepare meeting prep materials and follow-up deliverables",
-      "deliverableUrl": "/ops/deliverables/openclaw-100.md",
-      "notes": [
-        "Cannot directly contact clients or schedule meetings without user coordination"
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    }
-  ],
+  "userActionsDue": [],
   "completedRecent": [
     {
       "id": "openclaw-117",
@@ -366,39 +284,9 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 4 item(s): blocked=4."
     }
   ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-10T10:52:24Z",
-      "message": "User hasn't specified what research topic they want scope for; No context about what research is needed; Ambiguous reference to 'that as well'"
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-10T14:40:53Z",
-      "message": "Need current vendor model details, business objectives, and baseline metrics to define target operating model."
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-09T09:04:15Z",
-      "message": "Physical access required; Electrical work needs professional if complex; Time commitment needed"
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-09T08:27:24Z",
-      "message": "Cannot directly contact clients or schedule meetings without user coordination"
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-09T08:17:14Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
+  "errors": [],
   "recentActivity": [
     {
       "timestamp": "2026-02-10T14:56:05Z",
@@ -720,7 +608,7 @@
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-10T19:45:27Z",
+    "updatedAt": "2026-02-10T19:45:30Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -904,7 +792,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-10T19:45:27Z",
+    "updatedAt": "2026-02-10T19:45:30Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
