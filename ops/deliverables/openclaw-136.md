@@ -1,18 +1,18 @@
-# Deliverable: Clarify what specific task or activity they're questioning
+# Deliverable: Auto-closed as low-signal/ambiguous dictation fragment during dashboard cleanup
 
 - Task ID: openclaw-136
-- Status: blocked
-- Created: 2026-02-10T10:46:46Z
-- Updated: 2026-02-10T10:46:46Z
+- Status: cancelled
+- Created: 2026-02-10T14:48:35Z
+- Updated: 2026-02-10T14:48:35Z
 
 ## Summary
-Ask user to clarify what specific task or activity they're questioning
+Auto-closed as low-signal/ambiguous dictation fragment during dashboard cleanup.
 
 ## Deliverable Output
-# Deliverable Draft: Clarify What Specific Task Or Activity They'Re Questioning
+# Deliverable Draft: Auto-Closed As Low-Signal/Ambiguous Dictation Fragment During Dashboard Cleanup
 
 ## Objective
-Turn `Clarify what specific task or activity they're questioning` into a concrete, reviewable output.
+Turn `Auto-closed as low-signal/ambiguous dictation fragment during dashboard cleanup` into a concrete, reviewable output.
 
 ## Output
 - Scope and goal clarified.
@@ -26,10 +26,7 @@ Turn `Clarify what specific task or activity they're questioning` into a concret
 4. Attach deliverable and request proceed/close decision.
 
 ## Notes
-Ask user to clarify what specific task or activity they're questioning
-
-## Blockers / Notes
-User doesn't understand what task/activity is being requested; No context provided about what they're questioning; Ambiguous intent requiring clarification
+Auto-closed as low-signal/ambiguous dictation fragment during dashboard cleanup.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
