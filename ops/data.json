@@ -1,67 +1,62 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-10T10:45:25Z",
+    "updatedAt": "2026-02-10T10:45:32Z",
     "source": "Dictation Router + OpenClaw supervisor"
   },
   "summary": {
-    "totalTasks": 1,
-    "queued": 1,
+    "totalTasks": 0,
+    "queued": 0,
     "active": 0,
     "completed": 0,
-    "blocked": 13,
-    "executedTotal": 27,
-    "byStatus": {
-      "queued": 1
-    }
+    "blocked": 14,
+    "executedTotal": 26,
+    "byStatus": {}
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 27
+      "executedTotal": 26
     },
     "queue": {
-      "visible": 1,
-      "totalQueued": 1
+      "visible": 0,
+      "totalQueued": 0
     },
     "completed": {
       "visible": 0,
       "totalClosed": 0
     },
     "due": {
-      "visible": 29,
+      "visible": 30,
       "reviewRequired": 16,
       "failed": 3,
-      "blocked": 10,
+      "blocked": 11,
       "needsInput": 0
     }
   },
   "execution": [],
-  "queueTop": [
-    {
-      "id": "inbox-450",
-      "title": "What should the client doing",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 1,
-      "createdAt": "2026-02-10T10:37:06Z",
-      "updatedAt": "2026-02-10T10:45:25Z",
-      "completedAt": null,
-      "ageHours": 0.14,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=88",
-        "inbox_item_id=450"
-      ],
-      "action": "create_task",
-      "scope": "professional",
-      "hasDeliverable": false,
-      "needsReview": false
-    }
-  ],
+  "queueTop": [],
   "userActionsDue": [
+    {
+      "id": "openclaw-135",
+      "title": "What should the client doing",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "blocked",
+      "sequence": 0,
+      "createdAt": "2026-02-10T10:45:32Z",
+      "updatedAt": "2026-02-10T10:45:32Z",
+      "completedAt": null,
+      "ageHours": 0.0,
+      "deliverySummary": "Ask user to specify which client and what actions they want recommendations for",
+      "deliverableUrl": "/ops/deliverables/openclaw-135.md",
+      "notes": [
+        "No specific client identified; No context on what activities/actions to recommend; Missing information about client relationship"
+      ],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
     {
       "id": "openclaw-134",
       "title": "Essentially is it has all the calls that I do",
@@ -130,7 +125,7 @@
       "createdAt": "2026-02-10T10:39:49Z",
       "updatedAt": "2026-02-10T10:39:49Z",
       "completedAt": "2026-02-10T10:39:49Z",
-      "ageHours": 0.09,
+      "ageHours": 0.1,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
       "deliverableUrl": "/ops/deliverables/openclaw-131.md",
       "notes": [
@@ -226,7 +221,7 @@
       "createdAt": "2026-02-10T10:34:24Z",
       "updatedAt": "2026-02-10T10:34:24Z",
       "completedAt": "2026-02-10T10:34:24Z",
-      "ageHours": 0.18,
+      "ageHours": 0.19,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize).",
       "deliverableUrl": "/ops/deliverables/openclaw-126.md",
       "notes": [],
@@ -486,7 +481,7 @@
       "createdAt": "2026-02-09T09:06:48Z",
       "updatedAt": "2026-02-09T09:06:48Z",
       "completedAt": "2026-02-09T09:06:48Z",
-      "ageHours": 25.64,
+      "ageHours": 25.65,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Review current notebook usage; Establish maintenance routine; Identify retention strategies; Set up feedback system",
       "deliverableUrl": "/ops/deliverables/openclaw-111.md",
       "notes": [],
@@ -615,14 +610,19 @@
   "observations": [
     {
       "level": "info",
-      "message": "Queue has 1 task(s). OpenClaw will continue dispatching sequentially while idle."
+      "message": "No queued or active execution tasks right now."
     },
     {
       "level": "warn",
-      "message": "'Tasks due from you' has 29 item(s): review_required=16, failed=3, blocked=10."
+      "message": "'Tasks due from you' has 30 item(s): review_required=16, failed=3, blocked=11."
     }
   ],
   "errors": [
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-10T10:45:32Z",
+      "message": "No specific client identified; No context on what activities/actions to recommend; Missing information about client relationship"
+    },
     {
       "source": "openclaw",
       "timestamp": "2026-02-10T10:44:17Z",
@@ -695,6 +695,12 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-10T10:45:32Z",
+      "type": "executed",
+      "taskId": "capture-88",
+      "message": "What should the client doing: Delegated via OpenClaw SSH (status=blocked, task_id=e84ebbc8-a5b4-4c77-970c-33bb0e228b1a): Need context on which client and what actions are being asked about"
+    },
     {
       "timestamp": "2026-02-10T10:44:17Z",
       "type": "executed",
@@ -979,9 +985,9 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-10T10:45:25Z",
+    "updatedAt": "2026-02-10T10:45:32Z",
     "metrics": {
-      "reviewRequested": 1,
+      "reviewRequested": 0,
       "proceedCount": 0,
       "closeCount": 0
     },
