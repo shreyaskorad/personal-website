@@ -1,12 +1,12 @@
 # Deliverable: Define research scope and required outputs
 
 - Task ID: openclaw-118
-- Status: blocked
-- Created: 2026-02-09T09:26:46Z
-- Updated: 2026-02-09T09:26:46Z
+- Status: cancelled
+- Created: 2026-02-10T10:49:25Z
+- Updated: 2026-02-10T10:49:25Z
 
 ## Summary
-Await user specification of research topic and required outputs
+Re-run requested under updated search-alternative policy.
 
 ## Deliverable Output
 # Deliverable Draft: Define Research Scope And Required Outputs
@@ -30,10 +30,7 @@ Produce a focused research brief for `Define research scope and required outputs
 3. Track outcomes in dashboard observations.
 
 ## Notes
-Await user specification of research topic and required outputs
-
-## Blockers / Notes
-User hasn't specified what topic requires research; Unclear what outputs are needed
+Re-run requested under updated search-alternative policy.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
