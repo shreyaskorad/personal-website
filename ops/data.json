@@ -1,18 +1,18 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-10T10:36:51Z",
+    "updatedAt": "2026-02-10T10:37:08Z",
     "source": "Dictation Router + OpenClaw supervisor"
   },
   "summary": {
-    "totalTasks": 1,
-    "queued": 1,
+    "totalTasks": 3,
+    "queued": 3,
     "active": 0,
     "completed": 0,
     "blocked": 11,
     "executedTotal": 29,
     "byStatus": {
-      "queued": 1
+      "queued": 3
     }
   },
   "laneMetrics": {
@@ -21,8 +21,8 @@
       "executedTotal": 29
     },
     "queue": {
-      "visible": 1,
-      "totalQueued": 1
+      "visible": 3,
+      "totalQueued": 3
     },
     "completed": {
       "visible": 0,
@@ -39,14 +39,58 @@
   "execution": [],
   "queueTop": [
     {
+      "id": "inbox-450",
+      "title": "What should the client doing",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 1,
+      "createdAt": "2026-02-10T10:37:06Z",
+      "updatedAt": "2026-02-10T10:37:08Z",
+      "completedAt": null,
+      "ageHours": 0.0,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=88",
+        "inbox_item_id=450"
+      ],
+      "action": "create_task",
+      "scope": "professional",
+      "hasDeliverable": false,
+      "needsReview": false
+    },
+    {
+      "id": "inbox-449",
+      "title": "Essentially is it has all the calls that I do",
+      "source": "dictation-router",
+      "priority": "medium",
+      "status": "queued",
+      "sequence": 2,
+      "createdAt": "2026-02-10T10:37:06Z",
+      "updatedAt": "2026-02-10T10:37:08Z",
+      "completedAt": null,
+      "ageHours": 0.0,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=88",
+        "inbox_item_id=449"
+      ],
+      "action": "create_task",
+      "scope": "professional",
+      "hasDeliverable": false,
+      "needsReview": false
+    },
+    {
       "id": "inbox-447",
       "title": "Improve the dashboard yesterday itself, so I think I\u2019m happy with where we are now, there is...",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
-      "sequence": 1,
+      "sequence": 3,
       "createdAt": "2026-02-10T10:33:57Z",
-      "updatedAt": "2026-02-10T10:36:51Z",
+      "updatedAt": "2026-02-10T10:37:08Z",
       "completedAt": null,
       "ageHours": 0.05,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
@@ -72,7 +116,7 @@
       "createdAt": "2026-02-10T10:36:07Z",
       "updatedAt": "2026-02-10T10:36:07Z",
       "completedAt": "2026-02-10T10:36:07Z",
-      "ageHours": 0.01,
+      "ageHours": 0.02,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize).",
       "deliverableUrl": "/ops/deliverables/openclaw-128.md",
       "notes": [],
@@ -110,7 +154,7 @@
       "createdAt": "2026-02-10T10:34:24Z",
       "updatedAt": "2026-02-10T10:34:24Z",
       "completedAt": "2026-02-10T10:34:24Z",
-      "ageHours": 0.04,
+      "ageHours": 0.05,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize).",
       "deliverableUrl": "/ops/deliverables/openclaw-126.md",
       "notes": [],
@@ -166,7 +210,7 @@
       "createdAt": "2026-02-09T09:37:53Z",
       "updatedAt": "2026-02-09T09:37:53Z",
       "completedAt": "2026-02-09T09:37:53Z",
-      "ageHours": 24.98,
+      "ageHours": 24.99,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Develop task extraction logic; Design communication style handling; Create misinterpretation prevention system; Build implementation template",
       "deliverableUrl": "/ops/deliverables/openclaw-122.md",
       "notes": [],
@@ -202,7 +246,7 @@
       "createdAt": "2026-02-09T09:30:04Z",
       "updatedAt": "2026-02-09T09:30:04Z",
       "completedAt": "2026-02-09T09:30:04Z",
-      "ageHours": 25.11,
+      "ageHours": 25.12,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Awaiting user feedback on dashboard changes",
       "deliverableUrl": "/ops/deliverables/openclaw-120.md",
       "notes": [],
@@ -260,7 +304,7 @@
       "createdAt": "2026-02-09T09:23:26Z",
       "updatedAt": "2026-02-09T09:23:26Z",
       "completedAt": "2026-02-09T09:23:26Z",
-      "ageHours": 25.22,
+      "ageHours": 25.23,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Search for current pricing pressure trends; Research sustainable pricing strategies; Identify attractive pricing models; Summarize findings and recommendations",
       "deliverableUrl": "/ops/deliverables/openclaw-117.md",
       "notes": [],
@@ -316,7 +360,7 @@
       "createdAt": "2026-02-09T09:12:39Z",
       "updatedAt": "2026-02-09T09:12:39Z",
       "completedAt": "2026-02-09T09:12:39Z",
-      "ageHours": 25.4,
+      "ageHours": 25.41,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Review and refine blog content for publication",
       "deliverableUrl": "/ops/deliverables/openclaw-113.md",
       "notes": [],
@@ -352,7 +396,7 @@
       "createdAt": "2026-02-09T09:06:48Z",
       "updatedAt": "2026-02-09T09:06:48Z",
       "completedAt": "2026-02-09T09:06:48Z",
-      "ageHours": 25.5,
+      "ageHours": 25.51,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Review current notebook usage; Establish maintenance routine; Identify retention strategies; Set up feedback system",
       "deliverableUrl": "/ops/deliverables/openclaw-111.md",
       "notes": [],
@@ -370,7 +414,7 @@
       "createdAt": "2026-02-09T09:04:15Z",
       "updatedAt": "2026-02-09T09:04:15Z",
       "completedAt": null,
-      "ageHours": 25.54,
+      "ageHours": 25.55,
       "deliverySummary": "Assess current lighting layout; Plan relocation strategy; Create timeline and budget; Schedule professional help if needed; Execute relocation",
       "deliverableUrl": "/ops/deliverables/openclaw-110.md",
       "notes": [
@@ -408,7 +452,7 @@
       "createdAt": "2026-02-09T08:53:26Z",
       "updatedAt": "2026-02-09T08:53:26Z",
       "completedAt": "2026-02-09T08:53:26Z",
-      "ageHours": 25.72,
+      "ageHours": 25.73,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Identify current financial security gaps; Determine priority focus areas; Create action plan for implementation; Establish monitoring mechanisms",
       "deliverableUrl": "/ops/deliverables/openclaw-106.md",
       "notes": [],
@@ -426,7 +470,7 @@
       "createdAt": "2026-02-09T08:50:02Z",
       "updatedAt": "2026-02-09T08:50:02Z",
       "completedAt": "2026-02-09T08:50:02Z",
-      "ageHours": 25.78,
+      "ageHours": 25.79,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Analyze current revenue streams; Identify revenue risks and gaps; Develop mitigation strategies; Create salary continuity framework",
       "deliverableUrl": "/ops/deliverables/openclaw-105.md",
       "notes": [],
@@ -464,7 +508,7 @@
       "createdAt": "2026-02-09T08:36:44Z",
       "updatedAt": "2026-02-09T08:36:44Z",
       "completedAt": "2026-02-09T08:36:44Z",
-      "ageHours": 26.0,
+      "ageHours": 26.01,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Create comprehensive learning data visualization showcase with decision-making capabilities",
       "deliverableUrl": "/ops/deliverables/openclaw-103.md",
       "notes": [],
@@ -575,7 +619,7 @@
   "observations": [
     {
       "level": "info",
-      "message": "Queue has 1 task(s). OpenClaw will continue dispatching sequentially while idle."
+      "message": "Queue has 3 task(s). OpenClaw will continue dispatching sequentially while idle."
     },
     {
       "level": "warn",
@@ -882,9 +926,9 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-10T10:36:51Z",
+    "updatedAt": "2026-02-10T10:37:08Z",
     "metrics": {
-      "reviewRequested": 1,
+      "reviewRequested": 3,
       "proceedCount": 0,
       "closeCount": 0
     },
