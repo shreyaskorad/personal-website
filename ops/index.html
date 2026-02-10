@@ -170,6 +170,25 @@
     .due { grid-column: span 6; }
     .done { grid-column: span 6; }
     .obs { grid-column: span 12; }
+    .blog { grid-column: span 12; }
+    .blog-grid {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .blog-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      background: #fcfdff;
+    }
+    .blog-box h3 {
+      margin: 0 0 6px;
+      font-size: 13px;
+      color: #0f2550;
+    }
+    .blog-list-tight .row { padding: 8px; }
+
 
     .card-head {
       display: flex;
@@ -289,6 +308,25 @@
     @media (max-width: 1060px) {
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .lane, .queue, .due, .done, .obs { grid-column: span 12; }
+    .blog { grid-column: span 12; }
+    .blog-grid {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .blog-box {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      background: #fcfdff;
+    }
+    .blog-box h3 {
+      margin: 0 0 6px;
+      font-size: 13px;
+      color: #0f2550;
+    }
+    .blog-list-tight .row { padding: 8px; }
+
     }
   </style>
 </head>
@@ -386,6 +424,13 @@
           </select>
         </div>
         <div id="completed" class="list"></div>
+      </div>
+
+      <div class="card blog">
+        <div class="card-head">
+          <h2>Blog dashboard <span class="count-chip" id="count-blog-notes">0</span></h2>
+        </div>
+        <div id="blog-dashboard" class="list"></div>
       </div>
 
       <div class="card obs">
@@ -635,6 +680,94 @@
       return `<div class="row ${cls}"><div class="title">${escapeHtml(o.message)}</div></div>`;
     }
 
+    function blogTaskRow(t) {
+      const blocker = t.blockers ? `<div class="muted">blocker: ${escapeHtml(t.blockers)}</div>` : "";
+      const next = t.next_steps ? `<div class="muted">next: ${escapeHtml(t.next_steps)}</div>` : "";
+      return `
+        <div class="row">
+          <div class="topline"><div class="title">${escapeHtml(t.title || t.id || 'Task')}</div><div class="muted">${escapeHtml(t.id || '')}</div></div>
+          <div class="muted">status: ${escapeHtml(t.status || 'unknown')} | updated: ${fmt(t.updated_at)}</div>
+          ${next}
+          ${blocker}
+        </div>
+      `;
+    }
+
+    function blogNoteRow(n) {
+      const action = n.action_hint ? `<div class="muted">action: ${escapeHtml(n.action_hint)}</div>` : "";
+      const handoff = n.handoff_to ? `<div class="muted">handoff: ${escapeHtml(n.handoff_to)}</div>` : "";
+      return `
+        <div class="row">
+          <div class="topline"><div class="title">${escapeHtml(n.agent_role || n.agent_id || 'Agent')}</div><div class="muted">${fmt(n.created_at)}</div></div>
+          <div class="muted">${escapeHtml(n.note || '')}</div>
+          ${action}
+          ${handoff}
+        </div>
+      `;
+    }
+
+    function renderBlogDashboard(blog) {
+      const mount = document.getElementById("blog-dashboard");
+      const countEl = document.getElementById("count-blog-notes");
+      if (!mount) return;
+      if (!blog || typeof blog !== "object") {
+        mount.innerHTML = empty("No blog dashboard data yet.");
+        if (countEl) countEl.textContent = "0";
+        return;
+      }
+      const site = blog.site || {};
+      const exec = blog.execution || {};
+      const stats = blog.taskStats || {};
+      const repo = blog.repoState || {};
+      const checks = repo.checks || {};
+      const agents = Array.isArray(blog.agents) ? blog.agents : [];
+      const tasks = Array.isArray(blog.recentTasks) ? blog.recentTasks : [];
+      const notes = (blog.teamMemory && Array.isArray(blog.teamMemory.recent)) ? blog.teamMemory.recent : [];
+      const checkRows = Object.keys(checks).length
+        ? Object.entries(checks).map(([k,v]) => `<div class="muted">${escapeHtml(k)}: ${v ? 'ok' : 'missing'}</div>`).join("")
+        : `<div class="muted">No repo checks yet.</div>`;
+      const recentTasksHtml = tasks.length
+        ? tasks.slice(0, 8).map(blogTaskRow).join("")
+        : empty("No SEO/blog tasks tracked yet.");
+      const notesHtml = notes.length
+        ? notes.slice(0, 8).map(blogNoteRow).join("")
+        : empty("No team learning notes yet.");
+      if (countEl) countEl.textContent = `${notes.length}`;
+      mount.innerHTML = `
+        <div class="blog-grid">
+          <div class="blog-box">
+            <h3>Program</h3>
+            <div class="muted">site: ${escapeHtml(site.name || '')}</div>
+            <div class="muted">url: <a href="${escapeHtml(site.url || '#')}" target="_blank" rel="noopener">${escapeHtml(site.url || '')}</a></div>
+            <div class="muted">topics: ${escapeHtml((site.primary_topics || []).join(', '))}</div>
+            <div class="muted">agents: ${agents.length} | publish owner: ${escapeHtml(blog.publishOwner || '')}</div>
+          </div>
+          <div class="blog-box">
+            <h3>Execution</h3>
+            <div class="muted">strategy: ${escapeHtml(exec.subagent_strategy || 'serialized')}</div>
+            <div class="muted">parallelism: ${escapeHtml(exec.effective_parallelism ?? 1)}</div>
+            <div class="muted">tasks tracked: ${escapeHtml(stats.total ?? 0)}</div>
+            <div class="muted">completed: ${escapeHtml(stats.completed ?? 0)} | queued: ${escapeHtml(stats.queued ?? 0)} | blocked: ${escapeHtml(stats.blocked ?? 0)}</div>
+          </div>
+          <div class="blog-box">
+            <h3>Repo checks</h3>
+            <div class="muted">repo: ${escapeHtml(repo.repo_hint || '')}</div>
+            ${checkRows}
+          </div>
+        </div>
+        <div class="blog-grid" style="margin-top: 8px; grid-template-columns: repeat(2, minmax(0,1fr));">
+          <div class="blog-box blog-list-tight">
+            <h3>Recent SEO tasks</h3>
+            ${recentTasksHtml}
+          </div>
+          <div class="blog-box blog-list-tight">
+            <h3>Team memory notes</h3>
+            ${notesHtml}
+          </div>
+        </div>
+      `;
+    }
+
     function setStat(id, value) {
       const el = document.getElementById(id);
       if (el) el.textContent = String(value ?? 0);
@@ -667,6 +800,7 @@
       const completed = data.completedRecent || [];
       const due = data.userActionsDue || [];
       const observations = data.observations || [];
+      const blogDashboard = data.blogDashboard || {};
 
       const lane = data.laneMetrics || {};
       const summary = data.summary || {};
@@ -706,6 +840,8 @@
         emptyText: "No fully closed tasks yet.",
         rowFn: (t) => taskRow(t, true)
       });
+
+      renderBlogDashboard(blogDashboard);
 
       document.getElementById("observations").innerHTML =
         observations.length ? observations.map(obsRow).join("") : empty("No notable observations.");
