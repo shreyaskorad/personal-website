@@ -1,20 +1,20 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-10T19:57:37Z",
+    "updatedAt": "2026-02-10T20:03:58Z",
     "source": "Dictation Router + OpenClaw supervisor"
   },
   "summary": {
     "totalTasks": 14,
-    "queued": 1,
+    "queued": 0,
     "active": 0,
     "completed": 13,
-    "due": 0,
-    "blocked": 0,
+    "due": 1,
+    "blocked": 1,
     "executedTotal": 38,
     "byStatus": {
-      "queued": 1,
-      "completed": 13
+      "completed": 13,
+      "failed": 1
     }
   },
   "laneMetrics": {
@@ -23,47 +23,45 @@
       "executedTotal": 38
     },
     "queue": {
-      "visible": 1,
-      "totalQueued": 1
+      "visible": 0,
+      "totalQueued": 0
     },
     "completed": {
       "visible": 13,
       "totalClosed": 13
     },
     "due": {
-      "visible": 0,
+      "visible": 1,
       "reviewRequired": 0,
-      "failed": 0,
+      "failed": 1,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
-  "queueTop": [
+  "queueTop": [],
+  "userActionsDue": [
     {
-      "id": "inbox-458",
+      "id": "openclaw-140",
       "title": "Autonomous SEO blog sprint: AI playbook with step-by-step implementation and measurable outcomes",
-      "source": "dictation-router",
-      "priority": "high",
-      "status": "queued",
-      "sequence": 1,
-      "createdAt": "2026-02-10T19:52:25Z",
-      "updatedAt": "2026-02-10T19:57:37Z",
-      "completedAt": null,
-      "ageHours": 0.09,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
-      "deliverableUrl": null,
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "failed",
+      "sequence": 0,
+      "createdAt": "2026-02-10T20:03:58Z",
+      "updatedAt": "2026-02-10T20:03:58Z",
+      "completedAt": "2026-02-10T20:03:58Z",
+      "ageHours": 0.0,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-140.md",
       "notes": [
-        "capture_id=96",
-        "inbox_item_id=458"
+        "OpenClaw SSH execution failed."
       ],
-      "action": "create_task",
       "scope": "professional",
-      "hasDeliverable": false,
+      "hasDeliverable": true,
       "needsReview": false
     }
   ],
-  "userActionsDue": [],
   "completedRecent": [
     {
       "id": "openclaw-117",
@@ -75,7 +73,7 @@
       "createdAt": "2026-02-10T14:40:53Z",
       "updatedAt": "2026-02-10T14:40:53Z",
       "completedAt": "2026-02-10T14:40:53Z",
-      "ageHours": 5.28,
+      "ageHours": 5.38,
       "deliverySummary": "Select top 3 themes and attach one pricing strategy brief with concrete recommendations.",
       "deliverableUrl": "/ops/deliverables/openclaw-117.md",
       "notes": [],
@@ -93,7 +91,7 @@
       "createdAt": "2026-02-10T14:40:53Z",
       "updatedAt": "2026-02-10T14:40:53Z",
       "completedAt": "2026-02-10T14:40:53Z",
-      "ageHours": 5.28,
+      "ageHours": 5.38,
       "deliverySummary": "Use one weekly notebook capture + journaling routine with small wins, maintenance checklist, and progress tracking.",
       "deliverableUrl": "/ops/deliverables/openclaw-111.md",
       "notes": [],
@@ -111,7 +109,7 @@
       "createdAt": "2026-02-10T10:51:02Z",
       "updatedAt": "2026-02-10T10:51:02Z",
       "completedAt": "2026-02-10T10:51:02Z",
-      "ageHours": 9.11,
+      "ageHours": 9.22,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-138.md",
       "notes": [],
@@ -129,7 +127,7 @@
       "createdAt": "2026-02-10T10:49:33Z",
       "updatedAt": "2026-02-10T10:49:33Z",
       "completedAt": "2026-02-10T10:49:33Z",
-      "ageHours": 9.13,
+      "ageHours": 9.24,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-137.md",
       "notes": [],
@@ -147,7 +145,7 @@
       "createdAt": "2026-02-09T14:57:26Z",
       "updatedAt": "2026-02-09T14:57:26Z",
       "completedAt": "2026-02-09T14:57:26Z",
-      "ageHours": 29.0,
+      "ageHours": 29.11,
       "deliverySummary": "Research travel options to Trivandrum; Plan accommodations; Create event schedule; Plan gift and budget",
       "deliverableUrl": "/ops/deliverables/openclaw-125.md",
       "notes": [],
@@ -165,7 +163,7 @@
       "createdAt": "2026-02-09T14:54:23Z",
       "updatedAt": "2026-02-09T14:54:23Z",
       "completedAt": "2026-02-09T14:54:23Z",
-      "ageHours": 29.05,
+      "ageHours": 29.16,
       "deliverySummary": "Review plan and make adjustments as needed",
       "deliverableUrl": "/ops/deliverables/openclaw-124.md",
       "notes": [],
@@ -183,7 +181,7 @@
       "createdAt": "2026-02-09T09:32:44Z",
       "updatedAt": "2026-02-09T09:32:44Z",
       "completedAt": "2026-02-09T09:32:44Z",
-      "ageHours": 34.41,
+      "ageHours": 34.52,
       "deliverySummary": "Task will be added to recurring review schedule",
       "deliverableUrl": "/ops/deliverables/openclaw-121.md",
       "notes": [],
@@ -201,7 +199,7 @@
       "createdAt": "2026-02-09T09:20:28Z",
       "updatedAt": "2026-02-09T09:20:28Z",
       "completedAt": "2026-02-09T09:20:28Z",
-      "ageHours": 34.62,
+      "ageHours": 34.73,
       "deliverySummary": "Write AI in L&D blog; Research Josh Bersin latest views; Complete weekly template planning",
       "deliverableUrl": "/ops/deliverables/openclaw-116.md",
       "notes": [],
@@ -219,7 +217,7 @@
       "createdAt": "2026-02-09T09:12:39Z",
       "updatedAt": "2026-02-09T09:12:39Z",
       "completedAt": "2026-02-09T09:12:39Z",
-      "ageHours": 34.75,
+      "ageHours": 34.86,
       "deliverySummary": "Review and refine blog content for publication",
       "deliverableUrl": "/ops/deliverables/openclaw-113.md",
       "notes": [],
@@ -237,7 +235,7 @@
       "createdAt": "2026-02-09T08:53:26Z",
       "updatedAt": "2026-02-09T08:53:26Z",
       "completedAt": "2026-02-09T08:53:26Z",
-      "ageHours": 35.07,
+      "ageHours": 35.18,
       "deliverySummary": "Identify current financial security gaps; Determine priority focus areas; Create action plan for implementation; Establish monitoring mechanisms",
       "deliverableUrl": "/ops/deliverables/openclaw-106.md",
       "notes": [],
@@ -255,7 +253,7 @@
       "createdAt": "2026-02-09T08:50:02Z",
       "updatedAt": "2026-02-09T08:50:02Z",
       "completedAt": "2026-02-09T08:50:02Z",
-      "ageHours": 35.13,
+      "ageHours": 35.23,
       "deliverySummary": "Analyze current revenue streams; Identify revenue risks and gaps; Develop mitigation strategies; Create salary continuity framework",
       "deliverableUrl": "/ops/deliverables/openclaw-105.md",
       "notes": [],
@@ -273,7 +271,7 @@
       "createdAt": "2026-02-09T08:36:44Z",
       "updatedAt": "2026-02-09T08:36:44Z",
       "completedAt": "2026-02-09T08:36:44Z",
-      "ageHours": 35.35,
+      "ageHours": 35.45,
       "deliverySummary": "Create comprehensive learning data visualization showcase with decision-making capabilities",
       "deliverableUrl": "/ops/deliverables/openclaw-103.md",
       "notes": [],
@@ -291,7 +289,7 @@
       "createdAt": "2026-02-09T08:29:14Z",
       "updatedAt": "2026-02-09T08:29:14Z",
       "completedAt": "2026-02-09T08:29:14Z",
-      "ageHours": 35.47,
+      "ageHours": 35.58,
       "deliverySummary": "Search for Pan Am Sabre aircraft specifications and existing flight manual training approaches to develop innovative solution",
       "deliverableUrl": "/ops/deliverables/openclaw-101.md",
       "notes": [],
@@ -311,11 +309,27 @@
     },
     {
       "level": "info",
-      "message": "Queue has 1 task(s). OpenClaw will continue dispatching sequentially while idle."
+      "message": "No queued or active execution tasks right now."
+    },
+    {
+      "level": "warn",
+      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-10T20:03:58Z",
+      "message": "OpenClaw SSH execution failed."
+    }
+  ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-10T20:03:58Z",
+      "type": "skipped",
+      "taskId": "capture-96",
+      "message": "Autonomous SEO blog sprint: AI playbook with step-by-step implementation and measurable outcomes: OpenClaw SSH execution failed: OpenClaw SSH command failed: Timeout, server 192.168.1.13 not responding."
+    },
     {
       "timestamp": "2026-02-10T19:52:25Z",
       "type": "executed",
@@ -669,16 +683,10 @@
       "type": "executed",
       "taskId": "capture-62",
       "message": "Design human-AI collaborative workflow: Delegated via OpenClaw SSH (status=completed, task_id=c7018109-0bb8-41bb-8b00-45224691a8a2): Human-AI collaborative workflow system designed"
-    },
-    {
-      "timestamp": "2026-02-09T08:04:07Z",
-      "type": "executed",
-      "taskId": "capture-61",
-      "message": "Create a system that is like supremely like tight and speed of shipping: Delegated via OpenClaw SSH (status=completed, task_id=a4902541-af8d-46bb-8a21-50c3b0c1813e): Design tight, fast shipping system"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-10T19:57:37Z",
+    "updatedAt": "2026-02-10T20:03:58Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -758,16 +766,25 @@
     ],
     "publishOwner": "Publishing QA",
     "taskStats": {
-      "total": 4,
+      "total": 5,
       "completed": 3,
       "queued": 0,
-      "blocked": 0,
+      "blocked": 1,
       "byStatus": {
+        "failed": 1,
         "completed": 3,
         "cancelled": 1
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-140",
+        "title": "Autonomous SEO blog sprint: AI playbook with step-by-step implementation and measurable outcomes",
+        "status": "failed",
+        "updated_at": "2026-02-10T20:03:58Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
       {
         "id": "openclaw-116",
         "title": "Research Josh Bersin's latest AI/L&D work",
@@ -862,9 +879,9 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-10T19:57:37Z",
+    "updatedAt": "2026-02-10T20:03:58Z",
     "metrics": {
-      "reviewRequested": 1,
+      "reviewRequested": 0,
       "proceedCount": 0,
       "closeCount": 0
     },
