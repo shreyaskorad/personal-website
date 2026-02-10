@@ -1,28 +1,28 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-10T10:39:49Z",
+    "updatedAt": "2026-02-10T10:39:53Z",
     "source": "Dictation Router + OpenClaw supervisor"
   },
   "summary": {
-    "totalTasks": 4,
-    "queued": 4,
+    "totalTasks": 3,
+    "queued": 3,
     "active": 0,
     "completed": 0,
     "blocked": 12,
-    "executedTotal": 29,
+    "executedTotal": 28,
     "byStatus": {
-      "queued": 4
+      "queued": 3
     }
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 29
+      "executedTotal": 28
     },
     "queue": {
-      "visible": 4,
-      "totalQueued": 4
+      "visible": 3,
+      "totalQueued": 3
     },
     "completed": {
       "visible": 0,
@@ -39,36 +39,14 @@
   "execution": [],
   "queueTop": [
     {
-      "id": "inbox-451",
-      "title": "Create time tracking system",
-      "source": "dictation-router",
-      "priority": "medium",
-      "status": "queued",
-      "sequence": 1,
-      "createdAt": "2026-02-10T10:38:42Z",
-      "updatedAt": "2026-02-10T10:39:49Z",
-      "completedAt": null,
-      "ageHours": 0.02,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=89",
-        "inbox_item_id=451"
-      ],
-      "action": "create_task",
-      "scope": "professional",
-      "hasDeliverable": false,
-      "needsReview": false
-    },
-    {
       "id": "inbox-450",
       "title": "What should the client doing",
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
-      "sequence": 2,
+      "sequence": 1,
       "createdAt": "2026-02-10T10:37:06Z",
-      "updatedAt": "2026-02-10T10:39:49Z",
+      "updatedAt": "2026-02-10T10:39:53Z",
       "completedAt": null,
       "ageHours": 0.05,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
@@ -88,9 +66,9 @@
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
-      "sequence": 3,
+      "sequence": 2,
       "createdAt": "2026-02-10T10:37:06Z",
-      "updatedAt": "2026-02-10T10:39:49Z",
+      "updatedAt": "2026-02-10T10:39:53Z",
       "completedAt": null,
       "ageHours": 0.05,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
@@ -110,9 +88,9 @@
       "source": "dictation-router",
       "priority": "medium",
       "status": "queued",
-      "sequence": 4,
+      "sequence": 3,
       "createdAt": "2026-02-10T10:33:57Z",
-      "updatedAt": "2026-02-10T10:39:49Z",
+      "updatedAt": "2026-02-10T10:39:53Z",
       "completedAt": null,
       "ageHours": 0.1,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
@@ -128,6 +106,26 @@
     }
   ],
   "userActionsDue": [
+    {
+      "id": "openclaw-131",
+      "title": "Create time tracking system",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "failed",
+      "sequence": 0,
+      "createdAt": "2026-02-10T10:39:49Z",
+      "updatedAt": "2026-02-10T10:39:49Z",
+      "completedAt": "2026-02-10T10:39:49Z",
+      "ageHours": 0.0,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-131.md",
+      "notes": [
+        "OpenClaw SSH execution failed."
+      ],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
     {
       "id": "openclaw-review-130",
       "title": "Review deliverable: That\u2019s it for the wedding moving onto the next task, which is Ananya\u2018s first birthday celebra...",
@@ -402,7 +400,7 @@
       "createdAt": "2026-02-09T09:16:09Z",
       "updatedAt": "2026-02-09T09:16:09Z",
       "completedAt": "2026-02-09T09:16:09Z",
-      "ageHours": 25.39,
+      "ageHours": 25.4,
       "deliverySummary": "Review this completed deliverable and choose: proceed (give direction) or close (finalize). Select 3-5 themes for immediate exploration and development",
       "deliverableUrl": "/ops/deliverables/openclaw-114.md",
       "notes": [],
@@ -548,7 +546,7 @@
       "createdAt": "2026-02-09T08:45:32Z",
       "updatedAt": "2026-02-09T08:45:32Z",
       "completedAt": "2026-02-09T08:45:32Z",
-      "ageHours": 25.9,
+      "ageHours": 25.91,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
       "deliverableUrl": "/ops/deliverables/openclaw-104.md",
       "notes": [
@@ -626,31 +624,11 @@
       "createdAt": "2026-02-09T08:20:20Z",
       "updatedAt": "2026-02-09T08:20:20Z",
       "completedAt": null,
-      "ageHours": 26.32,
+      "ageHours": 26.33,
       "deliverySummary": "Try alternative search approaches to find Josh Bersin's current AI/L&D content",
       "deliverableUrl": "/ops/deliverables/openclaw-98.md",
       "notes": [
         "Web search not returning results"
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-97",
-      "title": "Create time tracking system",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "failed",
-      "sequence": 0,
-      "createdAt": "2026-02-09T08:17:14Z",
-      "updatedAt": "2026-02-09T08:17:14Z",
-      "completedAt": "2026-02-09T08:17:14Z",
-      "ageHours": 26.38,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-97.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
       ],
       "scope": "professional",
       "hasDeliverable": true,
@@ -661,7 +639,7 @@
   "observations": [
     {
       "level": "info",
-      "message": "Queue has 4 task(s). OpenClaw will continue dispatching sequentially while idle."
+      "message": "Queue has 3 task(s). OpenClaw will continue dispatching sequentially while idle."
     },
     {
       "level": "warn",
@@ -669,6 +647,11 @@
     }
   ],
   "errors": [
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-10T10:39:49Z",
+      "message": "OpenClaw SSH execution failed."
+    },
     {
       "source": "openclaw",
       "timestamp": "2026-02-10T10:37:18Z",
@@ -997,9 +980,9 @@
     }
   ],
   "personalization": {
-    "updatedAt": "2026-02-10T10:39:49Z",
+    "updatedAt": "2026-02-10T10:39:53Z",
     "metrics": {
-      "reviewRequested": 4,
+      "reviewRequested": 3,
       "proceedCount": 0,
       "closeCount": 0
     },
