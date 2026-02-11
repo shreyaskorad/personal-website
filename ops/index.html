@@ -4,61 +4,83 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow" />
-  <title>Task Dashboard</title>
+  <title>Ops Command Deck</title>
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap");
+
     :root {
-      --bg: #f2f6f9;
-      --card: #ffffff;
-      --ink: #0f172a;
-      --muted: #475569;
-      --line: #d8e1e8;
-      --brand: #0b5fff;
-      --warn: #b45309;
-      --err: #b91c1c;
-      --ok: #047857;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --bg-0: #041220;
+      --bg-1: #081f34;
+      --bg-2: #0f2f4a;
+      --panel: rgba(7, 22, 36, 0.82);
+      --panel-solid: #0a1f33;
+      --line: rgba(147, 199, 255, 0.25);
+      --line-strong: rgba(147, 199, 255, 0.45);
+      --text: #eaf4ff;
+      --muted: #9ec0df;
+      --brand: #4fb3ff;
+      --ok: #2fd39b;
+      --warn: #ffbf69;
+      --err: #ff7f7f;
+      --chip: rgba(79, 179, 255, 0.16);
+      --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 10px;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
-      color: var(--ink);
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(circle at 0% 0%, #dceeff 0%, transparent 35%),
-        radial-gradient(circle at 100% 0%, #d5f5f3 0%, transparent 30%),
-        var(--bg);
+        radial-gradient(circle at 6% 10%, rgba(45, 192, 255, 0.22) 0, rgba(45, 192, 255, 0) 36%),
+        radial-gradient(circle at 95% 5%, rgba(38, 255, 172, 0.18) 0, rgba(38, 255, 172, 0) 35%),
+        radial-gradient(circle at 50% 120%, rgba(255, 191, 105, 0.13) 0, rgba(255, 191, 105, 0) 48%),
+        linear-gradient(165deg, var(--bg-0), var(--bg-1) 45%, var(--bg-2));
+      min-height: 100vh;
+      line-height: 1.35;
     }
 
     [hidden] { display: none !important; }
+
+    a { color: #9fd6ff; }
+
+    .mono {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      letter-spacing: 0.2px;
+    }
 
     .auth-gate {
       min-height: 100vh;
       display: grid;
       place-items: center;
-      padding: 20px;
+      padding: 24px;
     }
 
     .auth-card {
-      width: min(460px, 94vw);
-      background: #ffffff;
+      width: min(460px, 95vw);
       border: 1px solid var(--line);
-      border-radius: 16px;
+      border-radius: var(--radius-lg);
+      background: var(--panel);
       box-shadow: var(--shadow);
-      padding: 22px;
+      backdrop-filter: blur(8px);
+      padding: 24px;
     }
 
     .auth-title {
       margin: 0 0 6px;
-      font-size: 22px;
-      color: #0b335f;
+      font-size: 24px;
+      letter-spacing: 0.3px;
     }
 
     .auth-subtitle {
       margin: 0 0 14px;
-      font-size: 13px;
       color: var(--muted);
+      font-size: 13px;
     }
 
     .auth-row {
@@ -71,202 +93,301 @@
       flex: 1;
       border: 1px solid var(--line);
       border-radius: 10px;
-      padding: 10px 11px;
-      font-size: 14px;
-      background: #fff;
+      padding: 10px 12px;
+      font: inherit;
+      color: var(--text);
+      background: rgba(5, 16, 27, 0.65);
+      outline: none;
+    }
+
+    .auth-input:focus {
+      border-color: var(--line-strong);
+      box-shadow: 0 0 0 3px rgba(79, 179, 255, 0.16);
     }
 
     .auth-error {
-      margin-top: 8px;
+      margin-top: 10px;
       color: var(--err);
+      min-height: 18px;
       font-size: 12px;
-      min-height: 16px;
     }
 
     .btn {
       border: 1px solid var(--line);
-      background: #f8fafc;
-      color: var(--ink);
-      border-radius: 8px;
-      padding: 8px 11px;
+      background: rgba(79, 179, 255, 0.12);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 9px 12px;
       font-size: 13px;
       cursor: pointer;
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
     }
 
-    .btn-brand {
-      background: #ecf3ff;
-      border-color: #b8d4ff;
-      color: #1149aa;
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--line-strong);
+      background: rgba(79, 179, 255, 0.2);
     }
 
     .shell {
-      width: min(1320px, 96vw);
-      margin: 24px auto 48px;
+      width: min(1460px, 96vw);
+      margin: 18px auto 38px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(7px);
     }
 
     .hero {
-      background: linear-gradient(135deg, #072543, #0b5fff 55%, #0aa2a2);
-      color: #fff;
-      border-radius: 18px;
-      padding: 22px 24px;
-      box-shadow: var(--shadow);
-      margin-bottom: 14px;
+      padding: 20px 20px 14px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero h1 {
-      margin: 0 0 8px;
-      font-size: 26px;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -40px auto auto -60px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(79, 179, 255, 0.3), rgba(79, 179, 255, 0));
+      pointer-events: none;
+    }
+
+    .hero-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .title-wrap h1 {
+      margin: 0;
+      font-size: clamp(24px, 2.8vw, 34px);
       letter-spacing: 0.2px;
+      line-height: 1.05;
     }
 
-    .hero .meta {
-      color: rgba(255, 255, 255, 0.9);
+    .title-wrap p {
+      margin: 8px 0 0;
+      color: var(--muted);
       font-size: 13px;
     }
 
-    .stats {
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pulse {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--ok);
+      box-shadow: 0 0 0 0 rgba(47, 211, 155, 0.45);
+      animation: pulse 1.9s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(47, 211, 155, 0.45); }
+      70% { box-shadow: 0 0 0 10px rgba(47, 211, 155, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(47, 211, 155, 0); }
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      background: var(--chip);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .chip.warn { border-color: rgba(255, 191, 105, 0.5); color: #ffdbaa; }
+    .chip.err { border-color: rgba(255, 127, 127, 0.5); color: #ffc0c0; }
+    .chip.ok { border-color: rgba(47, 211, 155, 0.5); color: #b7f6dd; }
+
+    .hero-bottom {
+      margin-top: 14px;
+      position: relative;
+      z-index: 1;
       display: grid;
       gap: 10px;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      margin: 0 0 14px;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 
-    .stat {
-      background: #fff;
+    .metric {
       border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 10px 12px;
-      box-shadow: var(--shadow);
+      border-radius: var(--radius-md);
+      background: rgba(6, 19, 32, 0.58);
+      padding: 12px;
+      min-height: 86px;
+      animation: fadeUp 240ms ease both;
     }
 
-    .stat-label {
-      font-size: 12px;
+    .metric-label {
       color: var(--muted);
-    }
-
-    .stat-value {
-      margin-top: 3px;
-      font-size: 22px;
-      font-weight: 700;
+      font-size: 12px;
       letter-spacing: 0.2px;
     }
 
-    .grid {
+    .metric-value {
+      margin-top: 6px;
+      font-size: clamp(20px, 2vw, 30px);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .metric-bar {
+      margin-top: 9px;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(158, 192, 223, 0.18);
+      overflow: hidden;
+    }
+
+    .metric-fill {
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #38c8ff, #2fd39b);
+      transition: width 240ms ease;
+    }
+
+    .layout {
       display: grid;
       gap: 14px;
-      grid-template-columns: repeat(12, 1fr);
+      grid-template-columns: repeat(12, minmax(0, 1fr));
     }
 
     .card {
-      background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: var(--radius-lg);
+      background: var(--panel);
       box-shadow: var(--shadow);
-      padding: 14px;
+      padding: 12px;
+      min-height: 140px;
+      animation: fadeUp 240ms ease both;
     }
 
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .blog { grid-column: span 12; }
     .lane { grid-column: span 6; }
     .queue { grid-column: span 6; }
     .due { grid-column: span 6; }
     .done { grid-column: span 6; }
     .obs { grid-column: span 12; }
-    .blog { grid-column: span 12; }
-    .blog-grid {
-      display: grid;
-      gap: 8px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    .blog-box {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 10px;
-      background: #fcfdff;
-    }
-    .blog-box h3 {
-      margin: 0 0 6px;
-      font-size: 13px;
-      color: #0f2550;
-    }
-    .blog-list-tight .row { padding: 8px; }
-
 
     .card-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
+      gap: 10px;
       margin-bottom: 8px;
+      flex-wrap: wrap;
     }
 
-    .card h2 {
+    .card-head h2 {
       margin: 0;
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: 0.2px;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
     }
 
     .count-chip {
-      background: #edf3ff;
-      color: #1149aa;
-      border: 1px solid #cfe0ff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      padding: 2px 7px;
       border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(79, 179, 255, 0.14);
       font-size: 11px;
-      padding: 2px 8px;
-      font-weight: 600;
-      line-height: 1.4;
+      font-family: "JetBrains Mono", monospace;
     }
 
     .filter-row {
       display: flex;
-      align-items: center;
       gap: 8px;
-      margin: 0 0 8px;
+      align-items: center;
+      margin-bottom: 8px;
     }
 
     .filter-row label {
       font-size: 12px;
       color: var(--muted);
-      font-weight: 600;
     }
 
-    select.filter {
+    .filter {
       border: 1px solid var(--line);
-      border-radius: 8px;
+      border-radius: 9px;
       padding: 6px 8px;
       font-size: 12px;
-      background: #fff;
-      color: var(--ink);
-      min-width: 180px;
+      color: var(--text);
+      background: rgba(8, 25, 40, 0.8);
+      min-width: 170px;
+      outline: none;
     }
 
     .list {
       display: grid;
       gap: 8px;
-      max-height: 430px;
+      max-height: 460px;
       overflow: auto;
       padding-right: 4px;
     }
 
+    .list::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    .list::-webkit-scrollbar-thumb {
+      background: rgba(147, 199, 255, 0.25);
+      border-radius: 999px;
+    }
+
     .row {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 9px;
-      background: #fff;
+      border: 1px solid rgba(147, 199, 255, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      background: rgba(6, 20, 33, 0.74);
     }
 
     .topline {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 8px;
-      align-items: baseline;
-      font-size: 13px;
+      margin-bottom: 5px;
     }
 
     .title {
+      font-size: 13px;
       font-weight: 600;
-      line-height: 1.35;
+      line-height: 1.3;
     }
 
     .muted {
@@ -278,55 +399,203 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 5px;
+      margin-top: 7px;
     }
 
     .tag {
-      font-size: 11px;
-      border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 1px 7px;
-      color: #1f3552;
-      background: #f8fbff;
+      border: 1px solid var(--line);
+      font-size: 11px;
+      padding: 2px 7px;
+      color: var(--text);
+      background: rgba(79, 179, 255, 0.12);
+      white-space: nowrap;
     }
 
-    .obs-list { max-height: 260px; }
+    .status-pill {
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 2px 8px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.35px;
+      font-family: "JetBrains Mono", monospace;
+      white-space: nowrap;
+    }
+
+    .tone-ok {
+      color: #b7f6dd;
+      border-color: rgba(47, 211, 155, 0.5);
+      background: rgba(47, 211, 155, 0.1);
+    }
+
+    .tone-active {
+      color: #bce8ff;
+      border-color: rgba(79, 179, 255, 0.5);
+      background: rgba(79, 179, 255, 0.12);
+    }
+
+    .tone-warn {
+      color: #ffd8a3;
+      border-color: rgba(255, 191, 105, 0.55);
+      background: rgba(255, 191, 105, 0.12);
+    }
+
+    .tone-err {
+      color: #ffc0c0;
+      border-color: rgba(255, 127, 127, 0.55);
+      background: rgba(255, 127, 127, 0.12);
+    }
+
+    .empty {
+      border: 1px dashed var(--line);
+      border-radius: var(--radius-sm);
+      padding: 11px;
+      color: var(--muted);
+      font-size: 13px;
+      background: rgba(8, 25, 40, 0.45);
+    }
 
     .obs-info { border-left: 4px solid var(--brand); }
     .obs-warn { border-left: 4px solid var(--warn); }
     .obs-err { border-left: 4px solid var(--err); }
 
-    .empty {
-      color: var(--muted);
-      border: 1px dashed var(--line);
-      border-radius: 10px;
-      padding: 10px;
-      font-size: 13px;
-      background: #fcfdff;
+    .blog-frame {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1.15fr 1fr;
     }
 
-    @media (max-width: 1060px) {
-      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .lane, .queue, .due, .done, .obs { grid-column: span 12; }
-    .blog { grid-column: span 12; }
-    .blog-grid {
+    .blog-main {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(6, 20, 33, 0.74);
+      padding: 10px;
+      display: grid;
+      gap: 9px;
+    }
+
+    .blog-counters {
       display: grid;
       gap: 8px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
-    .blog-box {
+
+    .blog-counter {
       border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 10px;
-      background: #fcfdff;
+      border-radius: var(--radius-sm);
+      padding: 8px;
+      background: rgba(79, 179, 255, 0.08);
     }
-    .blog-box h3 {
+
+    .blog-counter .k {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .blog-counter .v {
+      margin-top: 3px;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .blog-progress-wrap {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 8px;
+      background: rgba(6, 20, 33, 0.45);
+    }
+
+    .bar {
+      margin-top: 6px;
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(158, 192, 223, 0.2);
+      overflow: hidden;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #38c8ff, #2fd39b);
+      transition: width 260ms ease;
+    }
+
+    .blog-side {
+      display: grid;
+      gap: 8px;
+      align-content: start;
+    }
+
+    .blog-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(6, 20, 33, 0.74);
+      padding: 10px;
+    }
+
+    .blog-grid-2 {
+      margin-top: 10px;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .subhead {
       margin: 0 0 6px;
       font-size: 13px;
-      color: #0f2550;
+      color: #cbe7ff;
+      letter-spacing: 0.2px;
     }
-    .blog-list-tight .row { padding: 8px; }
 
+    .refresh-note {
+      color: var(--muted);
+      font-size: 11px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    @media (max-width: 1200px) {
+      .hero-bottom {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .blog-frame {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .shell { width: min(96vw, 96vw); }
+      .hero-bottom {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .lane, .queue, .due, .done, .obs, .blog { grid-column: span 12; }
+      .blog-counters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .blog-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-bottom {
+        grid-template-columns: 1fr;
+      }
+      .blog-counters {
+        grid-template-columns: 1fr;
+      }
+      .filter {
+        min-width: 0;
+        width: 100%;
+      }
+      .filter-row {
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
@@ -334,51 +603,75 @@
   <div id="auth-gate" class="auth-gate">
     <div class="auth-card">
       <h1 class="auth-title">Ops Dashboard Locked</h1>
-      <p class="auth-subtitle">Enter password to open dashboard.</p>
+      <p class="auth-subtitle">Enter password to open command deck.</p>
       <div class="auth-row">
         <input id="auth-password" class="auth-input" type="password" autocomplete="current-password" placeholder="Password" />
-        <button id="auth-submit" class="btn btn-brand" type="button">Unlock</button>
+        <button id="auth-submit" class="btn" type="button">Unlock</button>
       </div>
       <div id="auth-error" class="auth-error"></div>
     </div>
   </div>
 
-  <div class="shell" id="app-shell" hidden>
-    <section class="hero">
-      <h1>Task Dashboard</h1>
-      <div class="meta" id="meta">Loading...</div>
+  <main class="shell" id="app-shell" hidden>
+    <section class="panel hero">
+      <div class="hero-top">
+        <div class="title-wrap">
+          <h1>Ops Command Deck</h1>
+          <p id="meta">Loading data stream...</p>
+        </div>
+        <div class="hero-actions">
+          <span id="pipeline-chip" class="chip"><span class="pulse"></span><span id="pipeline-chip-text">pipeline: checking</span></span>
+          <span class="chip mono" id="next-tick-chip">next tick: n/a</span>
+          <button id="refresh-btn" class="btn" type="button">Refresh now</button>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <div class="metric">
+          <div class="metric-label">Executed Tasks</div>
+          <div class="metric-value" id="stat-executed">0</div>
+          <div class="metric-bar"><div id="fill-executed" class="metric-fill"></div></div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Queued Tasks</div>
+          <div class="metric-value" id="stat-queued">0</div>
+          <div class="metric-bar"><div id="fill-queued" class="metric-fill"></div></div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Completed Tasks</div>
+          <div class="metric-value" id="stat-completed">0</div>
+          <div class="metric-bar"><div id="fill-completed" class="metric-fill"></div></div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Tasks Due From You</div>
+          <div class="metric-value" id="stat-due">0</div>
+          <div class="metric-bar"><div id="fill-due" class="metric-fill"></div></div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Auto Refresh</div>
+          <div class="metric-value mono" id="refresh-status">every 30s</div>
+          <div class="refresh-note" id="last-refresh-note">last refresh: n/a</div>
+        </div>
+      </div>
     </section>
 
-    <section class="stats">
-      <div class="stat">
-        <div class="stat-label">Executed Tasks</div>
-        <div class="stat-value" id="stat-executed">0</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Queued Tasks</div>
-        <div class="stat-value" id="stat-queued">0</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Completed Tasks</div>
-        <div class="stat-value" id="stat-completed">0</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Tasks Due From You</div>
-        <div class="stat-value" id="stat-due">0</div>
-      </div>
-    </section>
-
-    <section class="grid">
-      <div class="card lane" id="lane-execution">
+    <section class="layout">
+      <article class="card blog">
         <div class="card-head">
-          <h2>Execution lane <span class="count-chip" id="count-execution">0</span></h2>
+          <h2>Blog Team Live Progress <span class="count-chip" id="count-blog-notes">0</span></h2>
+        </div>
+        <div id="blog-dashboard"></div>
+      </article>
+
+      <article class="card lane" id="lane-execution">
+        <div class="card-head">
+          <h2>Execution Lane <span class="count-chip" id="count-execution">0</span></h2>
         </div>
         <div id="execution" class="list"></div>
-      </div>
+      </article>
 
-      <div class="card queue">
+      <article class="card queue">
         <div class="card-head">
-          <h2>Queued tasks <span class="count-chip" id="count-queue">0</span></h2>
+          <h2>Queued Tasks <span class="count-chip" id="count-queue">0</span></h2>
         </div>
         <div class="filter-row">
           <label for="filter-queue">Filter</label>
@@ -390,11 +683,11 @@
           </select>
         </div>
         <div id="queue" class="list"></div>
-      </div>
+      </article>
 
-      <div class="card due">
+      <article class="card due">
         <div class="card-head">
-          <h2>Tasks due from you <span class="count-chip" id="count-due">0</span></h2>
+          <h2>Tasks Due From You <span class="count-chip" id="count-due">0</span></h2>
         </div>
         <div class="filter-row">
           <label for="filter-due">Filter</label>
@@ -408,11 +701,11 @@
           </select>
         </div>
         <div id="user-actions" class="list"></div>
-      </div>
+      </article>
 
-      <div class="card done">
+      <article class="card done">
         <div class="card-head">
-          <h2>Completed tasks (date/time) <span class="count-chip" id="count-completed">0</span></h2>
+          <h2>Completed Tasks <span class="count-chip" id="count-completed">0</span></h2>
         </div>
         <div class="filter-row">
           <label for="filter-completed">Filter</label>
@@ -424,31 +717,26 @@
           </select>
         </div>
         <div id="completed" class="list"></div>
-      </div>
+      </article>
 
-      <div class="card blog">
-        <div class="card-head">
-          <h2>Blog dashboard <span class="count-chip" id="count-blog-notes">0</span></h2>
-        </div>
-        <div id="blog-dashboard" class="list"></div>
-      </div>
-
-      <div class="card obs">
+      <article class="card obs">
         <div class="card-head">
           <h2>Observations <span class="count-chip" id="count-observations">0</span></h2>
         </div>
-        <div id="observations" class="list obs-list"></div>
-      </div>
+        <div id="observations" class="list"></div>
+      </article>
     </section>
-  </div>
+  </main>
 
   <script>
     const OPS_AUTH_SESSION_KEY = "ops_auth_ok_v1";
     const OPS_PASSWORD_HASH = "7cb86c412f4806e50f4bafffe0445773b48575809c08a8494c1fcf3032c82e27";
     const OPS_PASSWORD_FALLBACK = "9822435581";
+    const AUTO_REFRESH_MS = 30000;
 
     let dashboardBooted = false;
     let currentPayload = null;
+    let refreshTimer = null;
 
     function authEls() {
       return {
@@ -518,7 +806,6 @@
       try {
         sessionStorage.setItem(key, value);
       } catch (_err) {
-        // ignore storage failures
       }
     }
 
@@ -625,6 +912,19 @@
       return true;
     }
 
+    function toneFromStatus(raw) {
+      const status = String(raw || "").toLowerCase();
+      if (["completed", "closed", "done"].includes(status)) return "tone-ok";
+      if (["blocked", "failed", "error", "cancelled"].includes(status)) return "tone-err";
+      if (["in_progress", "running", "queued", "submitted", "review_required", "needs_input"].includes(status)) return "tone-active";
+      return "tone-warn";
+    }
+
+    function statusPill(status) {
+      const tone = toneFromStatus(status);
+      return `<span class="status-pill ${tone}">${escapeHtml(status || "unknown")}</span>`;
+    }
+
     function taskRow(t, includeCompleteTime = false) {
       const done = includeCompleteTime ? `<div class="muted">completed: ${fmt(t.completedAt || t.updatedAt || t.createdAt)}</div>` : "";
       const extra = t.deliverySummary ? `<div class="muted">${escapeHtml(t.deliverySummary)}</div>` : "";
@@ -640,9 +940,10 @@
         <div class="row">
           <div class="topline">
             <div class="title">${escapeHtml(t.title)}</div>
-            <div class="muted">${escapeHtml(t.id)}</div>
+            ${statusPill(t.status)}
           </div>
-          <div class="muted">priority: ${escapeHtml(t.priority)} | status: ${escapeHtml(t.status)} | age: ${t.ageHours ?? "n/a"}h</div>
+          <div class="muted mono">${escapeHtml(t.id || "")}</div>
+          <div class="muted">priority: ${escapeHtml(t.priority)} | age: ${t.ageHours ?? "n/a"}h</div>
           ${done}
           ${extra}
           ${download}
@@ -665,8 +966,9 @@
         <div class="row">
           <div class="topline">
             <div class="title">${escapeHtml(t.title)}</div>
-            <div class="muted">${escapeHtml(t.id)}</div>
+            ${statusPill(t.status)}
           </div>
+          <div class="muted mono">${escapeHtml(t.id || "")}</div>
           <div class="muted">decision needed: proceed (give direction) or close (finalize)</div>
           ${summary}
           ${download}
@@ -685,8 +987,12 @@
       const next = t.next_steps ? `<div class="muted">next: ${escapeHtml(t.next_steps)}</div>` : "";
       return `
         <div class="row">
-          <div class="topline"><div class="title">${escapeHtml(t.title || t.id || 'Task')}</div><div class="muted">${escapeHtml(t.id || '')}</div></div>
-          <div class="muted">status: ${escapeHtml(t.status || 'unknown')} | updated: ${fmt(t.updated_at)}</div>
+          <div class="topline">
+            <div class="title">${escapeHtml(t.title || t.id || "Task")}</div>
+            ${statusPill(t.status)}
+          </div>
+          <div class="muted mono">${escapeHtml(t.id || "")}</div>
+          <div class="muted">updated: ${fmt(t.updated_at)}</div>
           ${next}
           ${blocker}
         </div>
@@ -698,12 +1004,32 @@
       const handoff = n.handoff_to ? `<div class="muted">handoff: ${escapeHtml(n.handoff_to)}</div>` : "";
       return `
         <div class="row">
-          <div class="topline"><div class="title">${escapeHtml(n.agent_role || n.agent_id || 'Agent')}</div><div class="muted">${fmt(n.created_at)}</div></div>
-          <div class="muted">${escapeHtml(n.note || '')}</div>
+          <div class="topline">
+            <div class="title">${escapeHtml(n.agent_role || n.agent_id || "Agent")}</div>
+            <div class="muted mono">${fmt(n.created_at)}</div>
+          </div>
+          <div class="muted">${escapeHtml(n.note || "")}</div>
           ${action}
           ${handoff}
         </div>
       `;
+    }
+
+    function setBarWidth(id, numerator, denominator) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const den = Number(denominator || 0);
+      const num = Number(numerator || 0);
+      const pct = den > 0 ? Math.max(0, Math.min(100, Math.round((num / den) * 100))) : 0;
+      el.style.width = `${pct}%`;
+    }
+
+    function setMetricBars({ executed, queued, completed, due }) {
+      const total = Math.max(1, Number(executed || 0) + Number(queued || 0) + Number(completed || 0) + Number(due || 0));
+      setBarWidth("fill-executed", executed, total);
+      setBarWidth("fill-queued", queued, total);
+      setBarWidth("fill-completed", completed, total);
+      setBarWidth("fill-due", due, total);
     }
 
     function renderBlogDashboard(blog) {
@@ -715,8 +1041,8 @@
         if (countEl) countEl.textContent = "0";
         return;
       }
+
       const site = blog.site || {};
-      const exec = blog.execution || {};
       const stats = blog.taskStats || {};
       const progress = blog.progress || {};
       const summary = progress.summary || {};
@@ -731,63 +1057,90 @@
       const agents = Array.isArray(blog.agents) ? blog.agents : [];
       const tasks = Array.isArray(blog.recentTasks) ? blog.recentTasks : [];
       const notes = (blog.teamMemory && Array.isArray(blog.teamMemory.recent)) ? blog.teamMemory.recent : [];
-      const checkRows = Object.keys(checks).length
-        ? Object.entries(checks).map(([k, v]) => `<div class="muted">${escapeHtml(k)}: ${v ? "ok" : "missing"}</div>`).join("")
-        : `<div class="muted">No repo checks yet.</div>`;
-      const recentTasksHtml = tasks.length
-        ? tasks.slice(0, 8).map(blogTaskRow).join("")
-        : empty("No SEO/blog tasks tracked yet.");
-      const notesHtml = notes.length
-        ? notes.slice(0, 8).map(blogNoteRow).join("")
-        : empty("No team learning notes yet.");
       const focusRow = activeTask || lastCompleted;
-      const focusHtml = focusRow ? blogTaskRow(focusRow) : empty("No active or completed run yet.");
+      const done = Number(summary.completed ?? 0);
+      const total = Number(summary.total ?? stats.total ?? 0);
+      const stageDone = Number(stages.done ?? 0);
+      const stageTotal = Number(stages.total ?? 0);
       const schedulerState = pipeline.tickInProgress ? "running" : "idle";
-      if (countEl) countEl.textContent = `${summary.completed ?? stats.completed ?? 0}`;
+      const schedulerClass = pipeline.tickInProgress ? "ok" : "warn";
+      const checkRows = Object.keys(checks).length
+        ? Object.entries(checks).map(([k, v]) => `<span class="tag ${v ? "tone-ok" : "tone-err"}">${escapeHtml(k)}: ${v ? "ok" : "missing"}</span>`).join("")
+        : `<span class="tag">no checks yet</span>`;
+
+      if (countEl) countEl.textContent = `${done}`;
+
       mount.innerHTML = `
-        <div class="blog-grid">
-          <div class="blog-box">
-            <h3>Program</h3>
-            <div class="muted">site: ${escapeHtml(site.name || "")}</div>
-            <div class="muted">url: <a href="${escapeHtml(site.url || "#")}" target="_blank" rel="noopener">${escapeHtml(site.url || "")}</a></div>
-            <div class="muted">topics: ${escapeHtml((site.primary_topics || []).join(", "))}</div>
-            <div class="muted">agents: ${agents.length} | publish owner: ${escapeHtml(blog.publishOwner || "")}</div>
+        <div class="blog-frame">
+          <div class="blog-main">
+            <div class="blog-counters">
+              <div class="blog-counter"><div class="k">Completed</div><div class="v">${escapeHtml(done)}</div></div>
+              <div class="blog-counter"><div class="k">In flight</div><div class="v">${escapeHtml(summary.active ?? 0)}</div></div>
+              <div class="blog-counter"><div class="k">Queued</div><div class="v">${escapeHtml(summary.queued ?? 0)}</div></div>
+              <div class="blog-counter"><div class="k">Blocked</div><div class="v">${escapeHtml(summary.blocked ?? 0)}</div></div>
+            </div>
+            <div class="blog-progress-wrap">
+              <div class="muted">Output progress: ${escapeHtml(done)} / ${escapeHtml(total)}</div>
+              <div class="bar"><span id="blog-progress-fill"></span></div>
+            </div>
+            <div class="blog-progress-wrap">
+              <div class="muted">Stage coverage: ${escapeHtml(stageDone)} / ${escapeHtml(stageTotal)} for ${escapeHtml(stages.focusTaskId || "n/a")}</div>
+              <div class="bar"><span id="stage-progress-fill"></span></div>
+            </div>
+            <div class="row">
+              <div class="topline">
+                <div class="title">Current Focus</div>
+                <span class="status-pill ${pipeline.tickInProgress ? "tone-active" : "tone-warn"}">${escapeHtml(schedulerState)}</span>
+              </div>
+              ${
+                focusRow
+                  ? blogTaskRow(focusRow)
+                  : `<div class="muted">No active or completed run yet.</div>`
+              }
+            </div>
           </div>
-          <div class="blog-box">
-            <h3>Live progress</h3>
-            <div class="muted">done: ${escapeHtml(summary.completed ?? 0)} / ${escapeHtml(summary.total ?? stats.total ?? 0)}</div>
-            <div class="muted">active: ${escapeHtml(summary.active ?? 0)} | queued: ${escapeHtml(summary.queued ?? 0)} | blocked: ${escapeHtml(summary.blocked ?? 0)}</div>
-            <div class="muted">today done: ${escapeHtml(today.completed ?? 0)} | published: ${escapeHtml(today.published ?? 0)}</div>
-            <div class="muted">stages: ${escapeHtml(stages.done ?? 0)} / ${escapeHtml(stages.total ?? 0)} for ${escapeHtml(stages.focusTaskId || "n/a")}</div>
-            <div class="muted">pending queue: ${escapeHtml(pendingQueue.count ?? 0)}</div>
-          </div>
-          <div class="blog-box">
-            <h3>Scheduler</h3>
-            <div class="muted">state: ${escapeHtml(schedulerState)}</div>
-            <div class="muted">last status: ${escapeHtml(pipeline.lastStatus || "unknown")} (${escapeHtml(pipeline.lastReason || "n/a")})</div>
-            <div class="muted">started: ${fmt(pipeline.lastStartedAt)}</div>
-            <div class="muted">finished: ${fmt(pipeline.lastFinishedAt)}</div>
-            <div class="muted">runtime: inbox ${escapeHtml((pipeline.runtime && pipeline.runtime.pending_inbox) ?? 0)} | active ${escapeHtml((pipeline.runtime && pipeline.runtime.active_openclaw) ?? 0)}</div>
-          </div>
-          <div class="blog-box">
-            <h3>Repo checks</h3>
-            <div class="muted">repo: ${escapeHtml(repo.repo_hint || "")}</div>
-            ${checkRows}
+          <div class="blog-side">
+            <div class="blog-panel">
+              <h3 class="subhead">Program</h3>
+              <div class="muted">site: ${escapeHtml(site.name || "")}</div>
+              <div class="muted">url: <a href="${escapeHtml(site.url || "#")}" target="_blank" rel="noopener">${escapeHtml(site.url || "")}</a></div>
+              <div class="muted">topics: ${escapeHtml((site.primary_topics || []).join(", "))}</div>
+              <div class="muted">agents: ${agents.length} | owner: ${escapeHtml(blog.publishOwner || "")}</div>
+            </div>
+            <div class="blog-panel">
+              <h3 class="subhead">Scheduler</h3>
+              <div class="chip ${schedulerClass}">${escapeHtml(schedulerState)} | ${escapeHtml(pipeline.lastStatus || "unknown")}</div>
+              <div class="muted">reason: ${escapeHtml(pipeline.lastReason || "n/a")}</div>
+              <div class="muted">started: ${fmt(pipeline.lastStartedAt)}</div>
+              <div class="muted">finished: ${fmt(pipeline.lastFinishedAt)}</div>
+              <div class="muted">runtime: inbox ${escapeHtml((pipeline.runtime && pipeline.runtime.pending_inbox) ?? 0)} | active ${escapeHtml((pipeline.runtime && pipeline.runtime.active_openclaw) ?? 0)}</div>
+            </div>
+            <div class="blog-panel">
+              <h3 class="subhead">Today</h3>
+              <div class="tags">
+                <span class="tag">done: ${escapeHtml(today.completed ?? 0)}</span>
+                <span class="tag">published: ${escapeHtml(today.published ?? 0)}</span>
+                <span class="tag">pending queue: ${escapeHtml(pendingQueue.count ?? 0)}</span>
+              </div>
+              <div class="muted" style="margin-top:8px;">Repo checks</div>
+              <div class="tags">${checkRows}</div>
+            </div>
           </div>
         </div>
-        <div class="blog-grid" style="margin-top: 8px; grid-template-columns: repeat(2, minmax(0,1fr));">
-          <div class="blog-box blog-list-tight">
-            <h3>Current focus</h3>
-            ${focusHtml}
-            <h3 style="margin-top: 10px;">Recent SEO tasks</h3>
-            ${recentTasksHtml}
+        <div class="blog-grid-2">
+          <div class="blog-panel">
+            <h3 class="subhead">Recent SEO Tasks</h3>
+            <div class="list">${tasks.length ? tasks.slice(0, 8).map(blogTaskRow).join("") : empty("No SEO/blog tasks tracked yet.")}</div>
           </div>
-          <div class="blog-box blog-list-tight">
-            <h3>Team memory notes</h3>
-            ${notesHtml}
+          <div class="blog-panel">
+            <h3 class="subhead">Team Memory Notes</h3>
+            <div class="list">${notes.length ? notes.slice(0, 8).map(blogNoteRow).join("") : empty("No team learning notes yet.")}</div>
           </div>
         </div>
       `;
+
+      setBarWidth("blog-progress-fill", done, Math.max(total, 1));
+      setBarWidth("stage-progress-fill", stageDone, Math.max(stageTotal, 1));
     }
 
     function setStat(id, value) {
@@ -808,29 +1161,59 @@
       }
     }
 
+    function updatePipelineHeader(data, blogDashboard) {
+      const chip = document.getElementById("pipeline-chip");
+      const chipText = document.getElementById("pipeline-chip-text");
+      const nextTick = document.getElementById("next-tick-chip");
+      const pipeline = (((blogDashboard || {}).progress || {}).pipeline || {});
+      const inProgress = Boolean(pipeline.tickInProgress);
+      const status = String(pipeline.lastStatus || "unknown");
+      const reason = String(pipeline.lastReason || "n/a");
+      if (chip) {
+        chip.classList.remove("ok", "warn", "err");
+        if (inProgress) chip.classList.add("ok");
+        else if (status === "ok") chip.classList.add("warn");
+        else chip.classList.add("err");
+      }
+      if (chipText) {
+        chipText.textContent = inProgress ? "pipeline: running" : `pipeline: ${status}`;
+      }
+      if (nextTick) {
+        const eta = data.nextExpectedTickAt ? fmt(data.nextExpectedTickAt) : "n/a";
+        nextTick.textContent = `next tick: ${eta}`;
+      }
+    }
+
     function renderDashboard(data) {
       currentPayload = data;
-
-      document.getElementById("meta").textContent = `Updated: ${fmt(data.meta?.updatedAt)}`;
-
+      const meta = document.getElementById("meta");
+      if (meta) meta.textContent = `Last update: ${fmt(data.meta?.updatedAt)}`;
       const execution = data.execution || [];
-      const executionLane = document.getElementById("lane-execution");
-      if (executionLane) {
-        executionLane.style.display = execution.length ? "" : "none";
-      }
       const queue = data.queueTop || [];
       const completed = data.completedRecent || [];
       const due = data.userActionsDue || [];
       const observations = data.observations || [];
       const blogDashboard = data.blogDashboard || {};
-
       const lane = data.laneMetrics || {};
       const summary = data.summary || {};
 
-      setStat("stat-executed", lane.execution?.executedTotal ?? summary.executedTotal ?? completed.length);
-      setStat("stat-queued", lane.queue?.totalQueued ?? queue.length);
-      setStat("stat-completed", lane.completed?.totalClosed ?? completed.length);
-      setStat("stat-due", lane.due?.visible ?? due.length);
+      const statExecuted = lane.execution?.executedTotal ?? summary.executedTotal ?? completed.length;
+      const statQueued = lane.queue?.totalQueued ?? queue.length;
+      const statCompleted = lane.completed?.totalClosed ?? completed.length;
+      const statDue = lane.due?.visible ?? due.length;
+      setStat("stat-executed", statExecuted);
+      setStat("stat-queued", statQueued);
+      setStat("stat-completed", statCompleted);
+      setStat("stat-due", statDue);
+      setMetricBars({
+        executed: statExecuted,
+        queued: statQueued,
+        completed: statCompleted,
+        due: statDue
+      });
+
+      const executionLane = document.getElementById("lane-execution");
+      if (executionLane) executionLane.style.display = execution.length ? "" : "none";
 
       document.getElementById("execution").innerHTML =
         execution.length ? execution.map((t) => taskRow(t)).join("") : empty("No active execution tasks right now.");
@@ -864,6 +1247,7 @@
       });
 
       renderBlogDashboard(blogDashboard);
+      updatePipelineHeader(data, blogDashboard);
 
       document.getElementById("observations").innerHTML =
         observations.length ? observations.map(obsRow).join("") : empty("No notable observations.");
@@ -881,17 +1265,46 @@
       });
     }
 
+    function markRefreshStamp() {
+      const note = document.getElementById("last-refresh-note");
+      if (note) note.textContent = `last refresh: ${new Date().toLocaleTimeString()}`;
+    }
+
+    function fetchDashboard() {
+      return fetch(`./data.json?cb=${Date.now()}`, { cache: "no-store" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          renderDashboard(data);
+          markRefreshStamp();
+        })
+        .catch((err) => {
+          const meta = document.getElementById("meta");
+          if (meta) meta.textContent = `Failed to load dashboard data: ${err.message}`;
+        });
+    }
+
+    function setupAutoRefresh() {
+      if (refreshTimer) return;
+      refreshTimer = setInterval(() => {
+        fetchDashboard();
+      }, AUTO_REFRESH_MS);
+    }
+
     function initDashboard() {
       if (dashboardBooted) return;
       dashboardBooted = true;
       bindFilters();
-
-      fetch(`./data.json?cb=${Date.now()}`, { cache: "no-store" })
-        .then((r) => r.json())
-        .then((data) => renderDashboard(data))
-        .catch((err) => {
-          document.getElementById("meta").textContent = `Failed to load dashboard data: ${err.message}`;
+      const refreshBtn = document.getElementById("refresh-btn");
+      if (refreshBtn) {
+        refreshBtn.addEventListener("click", () => {
+          fetchDashboard();
         });
+      }
+      fetchDashboard();
+      setupAutoRefresh();
     }
 
     bootstrapAuth();
