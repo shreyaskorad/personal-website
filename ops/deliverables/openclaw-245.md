@@ -1,15 +1,15 @@
 # Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-237
+- Task ID: openclaw-245
 - Status: completed
-- Created: 2026-02-11T17:17:49Z
-- Updated: 2026-02-11T17:17:49Z
+- Created: 2026-02-11T17:40:19Z
+- Updated: 2026-02-11T17:40:19Z
 
 ## Summary
-Verify article status and create if not published
+Ask user if they want a new topic, content modifications, or different action
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T17:18:31Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T17:41:01Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Verify article status and create if not published
+Ask user if they want a new topic, content modifications, or different action
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
