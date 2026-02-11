@@ -1052,12 +1052,15 @@
       const activeTask = progress.activeTask || null;
       const lastCompleted = progress.lastCompletedTask || null;
       const pendingQueue = progress.pendingQueue || {};
+      const focusNote = progress.focusNote || {};
+      const bottleneck = progress.bottleneck || {};
+      const recentIdeas = Array.isArray(progress.recentIdeas) ? progress.recentIdeas : [];
+      const recentOutputs = Array.isArray(progress.recentOutputs) ? progress.recentOutputs : [];
       const repo = blog.repoState || {};
       const checks = repo.checks || {};
       const agents = Array.isArray(blog.agents) ? blog.agents : [];
       const tasks = Array.isArray(blog.recentTasks) ? blog.recentTasks : [];
       const notes = (blog.teamMemory && Array.isArray(blog.teamMemory.recent)) ? blog.teamMemory.recent : [];
-      const focusRow = activeTask || lastCompleted;
       const done = Number(summary.completed ?? 0);
       const total = Number(summary.total ?? stats.total ?? 0);
       const stageDone = Number(stages.done ?? 0);
@@ -1067,6 +1070,48 @@
       const checkRows = Object.keys(checks).length
         ? Object.entries(checks).map(([k, v]) => `<span class="tag ${v ? "tone-ok" : "tone-err"}">${escapeHtml(k)}: ${v ? "ok" : "missing"}</span>`).join("")
         : `<span class="tag">no checks yet</span>`;
+      const activeSummary = activeTask
+        ? blogTaskRow(activeTask)
+        : (lastCompleted ? blogTaskRow(lastCompleted) : `<div class="muted">No active writing run right now.</div>`);
+      const focusNoteRow = focusNote.note
+        ? `
+          <div class="muted" style="margin-top:8px;">latest handoff: ${escapeHtml(focusNote.agent_id || "agent")} at ${fmt(focusNote.created_at)}</div>
+          <div class="muted">${escapeHtml(focusNote.note || "")}</div>
+          ${focusNote.action_hint ? `<div class="muted">next action: ${escapeHtml(focusNote.action_hint)}</div>` : ""}
+          ${focusNote.handoff_to ? `<div class="muted">handoff to: ${escapeHtml(focusNote.handoff_to)}</div>` : ""}
+        `
+        : `<div class="muted" style="margin-top:8px;">No stage note captured yet for the focus task.</div>`;
+      const bottleneckTone = bottleneck.state === "blocked"
+        ? "tone-err"
+        : (bottleneck.state === "watch" || bottleneck.state === "idle" ? "tone-warn" : "tone-ok");
+      const bottleneckText = bottleneck.reason || "No bottlenecks detected.";
+      const bottleneckAt = bottleneck.at ? `<div class="muted">at: ${fmt(bottleneck.at)}</div>` : "";
+      const ideaRows = recentIdeas.length
+        ? recentIdeas.slice(0, 8).map((t) => `
+          <div class="row">
+            <div class="topline">
+              <div class="title">${escapeHtml(t.title || t.id || "Task")}</div>
+              ${statusPill(t.status)}
+            </div>
+            <div class="muted mono">${escapeHtml(t.id || "")}</div>
+            <div class="muted">updated: ${fmt(t.updated_at)}</div>
+          </div>
+        `).join("")
+        : empty("No recent writing ideas captured.");
+      const outputRows = recentOutputs.length
+        ? recentOutputs.slice(0, 8).map((o) => `
+          <div class="row">
+            <div class="topline">
+              <div class="title">${escapeHtml(o.title || o.id || "Publication output")}</div>
+              ${statusPill(o.status)}
+            </div>
+            <div class="muted mono">${escapeHtml(o.id || "")}</div>
+            <div class="muted">updated: ${fmt(o.updated_at)}</div>
+            ${o.url ? `<div class="muted"><a href="${escapeHtml(o.url)}" target="_blank" rel="noopener">open published post</a></div>` : ""}
+            ${o.error ? `<div class="muted">detail: ${escapeHtml(o.error)}</div>` : ""}
+          </div>
+        `).join("")
+        : empty("No recent output attempts.");
 
       if (countEl) countEl.textContent = `${done}`;
 
@@ -1089,14 +1134,19 @@
             </div>
             <div class="row">
               <div class="topline">
-                <div class="title">Current Focus</div>
+                <div class="title">Now Working On</div>
                 <span class="status-pill ${pipeline.tickInProgress ? "tone-active" : "tone-warn"}">${escapeHtml(schedulerState)}</span>
               </div>
-              ${
-                focusRow
-                  ? blogTaskRow(focusRow)
-                  : `<div class="muted">No active or completed run yet.</div>`
-              }
+              ${activeSummary}
+              ${focusNoteRow}
+            </div>
+            <div class="row">
+              <div class="topline">
+                <div class="title">Stuck / Risk</div>
+                <span class="status-pill ${bottleneckTone}">${escapeHtml(bottleneck.state || "clear")}</span>
+              </div>
+              <div class="muted">${escapeHtml(bottleneckText)}</div>
+              ${bottleneckAt}
             </div>
           </div>
           <div class="blog-side">
@@ -1129,8 +1179,18 @@
         </div>
         <div class="blog-grid-2">
           <div class="blog-panel">
-            <h3 class="subhead">Recent SEO Tasks</h3>
-            <div class="list">${tasks.length ? tasks.slice(0, 8).map(blogTaskRow).join("") : empty("No SEO/blog tasks tracked yet.")}</div>
+            <h3 class="subhead">Recent Ideas</h3>
+            <div class="list">${ideaRows}</div>
+          </div>
+          <div class="blog-panel">
+            <h3 class="subhead">Latest Outputs</h3>
+            <div class="list">${outputRows}</div>
+          </div>
+        </div>
+        <div class="blog-grid-2">
+          <div class="blog-panel">
+            <h3 class="subhead">Recent Writing Tasks</h3>
+            <div class="list">${tasks.length ? tasks.slice(0, 8).map(blogTaskRow).join("") : empty("No writing tasks tracked yet.")}</div>
           </div>
           <div class="blog-panel">
             <h3 class="subhead">Team Memory Notes</h3>
