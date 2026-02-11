@@ -1,21 +1,21 @@
-# Deliverable: Design learning for decision quality, not completion rates
+# Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-315
+- Task ID: openclaw-303
 - Status: completed
-- Created: 2026-02-11T22:28:13Z
-- Updated: 2026-02-11T22:28:13Z
+- Created: 2026-02-11T21:29:58Z
+- Updated: 2026-02-11T21:29:58Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T22:30:21Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T21:31:28Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Design Learning For Decision Quality, Not Completion Rates SEO blog operating system
+# Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
