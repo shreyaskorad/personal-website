@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T23:47:03Z",
+    "updatedAt": "2026-02-11T23:47:59Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -42,18 +42,18 @@
   "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-345",
+      "id": "openclaw-346",
       "title": "Design learning for decision quality, not completion rates",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-11T23:47:03Z",
-      "updatedAt": "2026-02-11T23:47:03Z",
-      "completedAt": "2026-02-11T23:47:03Z",
+      "createdAt": "2026-02-11T23:47:58Z",
+      "updatedAt": "2026-02-11T23:47:58Z",
+      "completedAt": "2026-02-11T23:47:58Z",
       "ageHours": 0.0,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-345.md",
+      "deliverableUrl": "/ops/deliverables/openclaw-346.md",
       "notes": [
         "OpenClaw SSH execution failed."
       ],
@@ -88,11 +88,23 @@
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-11T23:47:03Z",
+      "timestamp": "2026-02-11T23:47:58Z",
       "message": "OpenClaw SSH execution failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-11T23:47:58Z",
+      "type": "skipped",
+      "taskId": "capture-291",
+      "message": "Design learning for decision quality, not completion rates: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-11T23:47:54Z",
+      "type": "executed",
+      "taskId": "capture-291",
+      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-11T23:47:03Z",
       "type": "skipped",
@@ -440,22 +452,10 @@
       "type": "executed",
       "taskId": "capture-262",
       "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-11T22:41:43Z",
-      "type": "skipped",
-      "taskId": "capture-261",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 630s"
-    },
-    {
-      "timestamp": "2026-02-11T22:31:13Z",
-      "type": "executed",
-      "taskId": "capture-261",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T23:47:03Z",
+    "updatedAt": "2026-02-11T23:47:59Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -639,23 +639,31 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 31,
+      "completed": 30,
       "queued": 0,
       "blocked": 1,
       "byStatus": {
         "failed": 1,
-        "cancelled": 48,
-        "completed": 31
+        "cancelled": 49,
+        "completed": 30
       }
     },
     "recentTasks": [
       {
-        "id": "openclaw-345",
+        "id": "openclaw-346",
         "title": "Design learning for decision quality, not completion rates",
         "status": "failed",
-        "updated_at": "2026-02-11T23:47:03Z",
+        "updated_at": "2026-02-11T23:47:58Z",
         "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
         "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-345",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-11T23:47:51Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-344",
@@ -798,14 +806,6 @@
         "title": "Design without losing human judgment",
         "status": "cancelled",
         "updated_at": "2026-02-11T23:10:35Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-326",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-11T23:09:40Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
       }
@@ -1205,14 +1205,14 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 67,
+        "completed": 66,
         "active": 0,
         "queued": 0,
         "blocked": 1,
-        "cancelled": 52
+        "cancelled": 53
       },
       "today": {
-        "completed": 67,
+        "completed": 66,
         "active": 0,
         "queued": 0,
         "blocked": 1,
@@ -1238,14 +1238,20 @@
       "bottleneck": {
         "state": "blocked",
         "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-11T23:47:03Z"
+        "at": "2026-02-11T23:47:58Z"
       },
       "recentIdeas": [
         {
-          "id": "openclaw-345",
+          "id": "openclaw-346",
           "title": "Design learning for decision quality, not completion rates",
           "status": "failed",
-          "updated_at": "2026-02-11T23:47:03Z"
+          "updated_at": "2026-02-11T23:47:58Z"
+        },
+        {
+          "id": "openclaw-345",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "cancelled",
+          "updated_at": "2026-02-11T23:47:51Z"
         },
         {
           "id": "openclaw-344",
@@ -1294,12 +1300,6 @@
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
           "updated_at": "2026-02-11T23:29:53Z"
-        },
-        {
-          "id": "openclaw-336",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "cancelled",
-          "updated_at": "2026-02-11T23:28:57Z"
         }
       ],
       "recentOutputs": [
@@ -1428,8 +1428,8 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-11T23:46:55Z",
-        "lastFinishedAt": "2026-02-11T23:46:10Z",
+        "lastStartedAt": "2026-02-11T23:47:51Z",
+        "lastFinishedAt": "2026-02-11T23:47:06Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1498,7 +1498,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T23:47:03Z",
+    "updatedAt": "2026-02-11T23:47:59Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
