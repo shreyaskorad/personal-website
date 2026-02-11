@@ -1,19 +1,20 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T01:35:04Z",
+    "updatedAt": "2026-02-11T03:06:23Z",
     "source": "Dictation Router + OpenClaw supervisor"
   },
   "summary": {
-    "totalTasks": 11,
+    "totalTasks": 12,
     "queued": 0,
     "active": 0,
     "completed": 11,
-    "due": 0,
-    "blocked": 0,
+    "due": 1,
+    "blocked": 1,
     "executedTotal": 38,
     "byStatus": {
-      "completed": 11
+      "completed": 11,
+      "failed": 1
     }
   },
   "laneMetrics": {
@@ -30,16 +31,37 @@
       "totalClosed": 11
     },
     "due": {
-      "visible": 0,
+      "visible": 1,
       "reviewRequired": 0,
-      "failed": 0,
+      "failed": 1,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [],
+  "userActionsDue": [
+    {
+      "id": "openclaw-144",
+      "title": "Autonomous SEO blog sprint: LXD real-world case analysis with mistakes, fixes, and ROI framing",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "failed",
+      "sequence": 0,
+      "createdAt": "2026-02-11T03:06:23Z",
+      "updatedAt": "2026-02-11T03:06:23Z",
+      "completedAt": "2026-02-11T03:06:23Z",
+      "ageHours": 0.0,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-144.md",
+      "notes": [
+        "OpenClaw SSH execution failed."
+      ],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
   "completedRecent": [
     {
       "id": "openclaw-117",
@@ -51,7 +73,7 @@
       "createdAt": "2026-02-10T14:40:53Z",
       "updatedAt": "2026-02-10T14:40:53Z",
       "completedAt": "2026-02-10T14:40:53Z",
-      "ageHours": 10.9,
+      "ageHours": 12.43,
       "deliverySummary": "Select top 3 themes and attach one pricing strategy brief with concrete recommendations.",
       "deliverableUrl": "/ops/deliverables/openclaw-117.md",
       "notes": [],
@@ -69,7 +91,7 @@
       "createdAt": "2026-02-10T14:40:53Z",
       "updatedAt": "2026-02-10T14:40:53Z",
       "completedAt": "2026-02-10T14:40:53Z",
-      "ageHours": 10.9,
+      "ageHours": 12.43,
       "deliverySummary": "Use one weekly notebook capture + journaling routine with small wins, maintenance checklist, and progress tracking.",
       "deliverableUrl": "/ops/deliverables/openclaw-111.md",
       "notes": [],
@@ -87,7 +109,7 @@
       "createdAt": "2026-02-10T10:51:02Z",
       "updatedAt": "2026-02-10T10:51:02Z",
       "completedAt": "2026-02-10T10:51:02Z",
-      "ageHours": 14.73,
+      "ageHours": 16.26,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-138.md",
       "notes": [],
@@ -105,7 +127,7 @@
       "createdAt": "2026-02-10T10:49:33Z",
       "updatedAt": "2026-02-10T10:49:33Z",
       "completedAt": "2026-02-10T10:49:33Z",
-      "ageHours": 14.76,
+      "ageHours": 16.28,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-137.md",
       "notes": [],
@@ -123,7 +145,7 @@
       "createdAt": "2026-02-09T14:57:26Z",
       "updatedAt": "2026-02-09T14:57:26Z",
       "completedAt": "2026-02-09T14:57:26Z",
-      "ageHours": 34.63,
+      "ageHours": 36.15,
       "deliverySummary": "Research travel options to Trivandrum; Plan accommodations; Create event schedule; Plan gift and budget",
       "deliverableUrl": "/ops/deliverables/openclaw-125.md",
       "notes": [],
@@ -141,7 +163,7 @@
       "createdAt": "2026-02-09T14:54:23Z",
       "updatedAt": "2026-02-09T14:54:23Z",
       "completedAt": "2026-02-09T14:54:23Z",
-      "ageHours": 34.68,
+      "ageHours": 36.2,
       "deliverySummary": "Review plan and make adjustments as needed",
       "deliverableUrl": "/ops/deliverables/openclaw-124.md",
       "notes": [],
@@ -159,7 +181,7 @@
       "createdAt": "2026-02-09T09:32:44Z",
       "updatedAt": "2026-02-09T09:32:44Z",
       "completedAt": "2026-02-09T09:32:44Z",
-      "ageHours": 40.04,
+      "ageHours": 41.56,
       "deliverySummary": "Task will be added to recurring review schedule",
       "deliverableUrl": "/ops/deliverables/openclaw-121.md",
       "notes": [],
@@ -177,7 +199,7 @@
       "createdAt": "2026-02-09T09:20:28Z",
       "updatedAt": "2026-02-09T09:20:28Z",
       "completedAt": "2026-02-09T09:20:28Z",
-      "ageHours": 40.24,
+      "ageHours": 41.77,
       "deliverySummary": "Write AI in L&D blog; Research Josh Bersin latest views; Complete weekly template planning",
       "deliverableUrl": "/ops/deliverables/openclaw-116.md",
       "notes": [],
@@ -195,7 +217,7 @@
       "createdAt": "2026-02-09T09:12:39Z",
       "updatedAt": "2026-02-09T09:12:39Z",
       "completedAt": "2026-02-09T09:12:39Z",
-      "ageHours": 40.37,
+      "ageHours": 41.9,
       "deliverySummary": "Review and refine blog content for publication",
       "deliverableUrl": "/ops/deliverables/openclaw-113.md",
       "notes": [],
@@ -213,7 +235,7 @@
       "createdAt": "2026-02-09T08:53:26Z",
       "updatedAt": "2026-02-09T08:53:26Z",
       "completedAt": "2026-02-09T08:53:26Z",
-      "ageHours": 40.69,
+      "ageHours": 42.22,
       "deliverySummary": "Identify current financial security gaps; Determine priority focus areas; Create action plan for implementation; Establish monitoring mechanisms",
       "deliverableUrl": "/ops/deliverables/openclaw-106.md",
       "notes": [],
@@ -231,7 +253,7 @@
       "createdAt": "2026-02-09T08:50:02Z",
       "updatedAt": "2026-02-09T08:50:02Z",
       "completedAt": "2026-02-09T08:50:02Z",
-      "ageHours": 40.75,
+      "ageHours": 42.27,
       "deliverySummary": "Analyze current revenue streams; Identify revenue risks and gaps; Develop mitigation strategies; Create salary continuity framework",
       "deliverableUrl": "/ops/deliverables/openclaw-105.md",
       "notes": [],
@@ -252,10 +274,32 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    },
+    {
+      "level": "warn",
+      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-11T03:06:23Z",
+      "message": "OpenClaw SSH execution failed."
+    }
+  ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-11T03:06:23Z",
+      "type": "skipped",
+      "taskId": "capture-100",
+      "message": "Autonomous SEO blog sprint: LXD real-world case analysis with mistakes, fixes, and ROI framing: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
+    },
+    {
+      "timestamp": "2026-02-11T02:35:54Z",
+      "type": "executed",
+      "taskId": "capture-100",
+      "message": "Autonomous SEO blog sprint: LXD real-world case analysis with mistakes, fixes, and ROI framing: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-11T01:06:27Z",
       "type": "skipped",
@@ -603,22 +647,10 @@
       "type": "executed",
       "taskId": "capture-66",
       "message": "Design innovative flight-manual training solution: Delegated via OpenClaw SSH (status=completed, task_id=82ccfa7c-7868-48fd-af4f-a156032758ae): Researching Pan Am Sabre flight manual training challenges"
-    },
-    {
-      "timestamp": "2026-02-09T08:27:24Z",
-      "type": "executed",
-      "taskId": "capture-66",
-      "message": "Develop CA client strategy: Delegated via OpenClaw SSH (status=blocked, task_id=68714bd0-e63e-4e16-b78a-0702a1eb057c): Strategy created, now implementing action items"
-    },
-    {
-      "timestamp": "2026-02-09T08:23:18Z",
-      "type": "executed",
-      "taskId": "capture-66",
-      "message": "Review World Bank Qi reference guide: Delegated via OpenClaw SSH (status=blocked, task_id=110f8a25-bc2a-4308-8edd-46926a9a908f): Reviewing World Bank Qi reference guide pages"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T01:35:04Z",
+    "updatedAt": "2026-02-11T03:06:23Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -698,16 +730,25 @@
     ],
     "publishOwner": "Publishing QA",
     "taskStats": {
-      "total": 8,
+      "total": 9,
       "completed": 3,
       "queued": 0,
-      "blocked": 0,
+      "blocked": 1,
       "byStatus": {
+        "failed": 1,
         "cancelled": 5,
         "completed": 3
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-144",
+        "title": "Autonomous SEO blog sprint: LXD real-world case analysis with mistakes, fixes, and ROI framing",
+        "status": "failed",
+        "updated_at": "2026-02-11T03:06:23Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
       {
         "id": "openclaw-143",
         "title": "Autonomous SEO blog sprint: data real-world case analysis with mistakes, fixes, and ROI framing",
@@ -834,7 +875,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T01:35:04Z",
+    "updatedAt": "2026-02-11T03:06:23Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
