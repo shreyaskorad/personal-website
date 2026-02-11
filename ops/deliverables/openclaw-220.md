@@ -1,15 +1,21 @@
-# Deliverable: Autonomous writing sprint: Turn training requests into measurable capability outcomes
+# Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-180
+- Task ID: openclaw-220
 - Status: completed
-- Created: 2026-02-11T10:45:52Z
-- Updated: 2026-02-11T10:45:52Z
+- Created: 2026-02-11T12:57:43Z
+- Updated: 2026-02-11T12:57:43Z
 
 ## Summary
-Topic Scout: identify 3 candidate topics for turning training requests into measurable capability outcomes
+Monitor audience engagement and decision quality metrics over next 30 days
 
 ## Deliverable Output
-# Deliverable Draft: Autonomous Writing Sprint: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T12:59:15Z)
+
+## Last Error
+OpenClaw returned no usable markdown deliverable.
+
+## Draft Deliverable (Fallback)
+# Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Topic Scout: identify 3 candidate topics for turning training requests into measurable capability outcomes
+Monitor audience engagement and decision quality metrics over next 30 days
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
