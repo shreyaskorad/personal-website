@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T03:17:56Z",
+    "updatedAt": "2026-02-11T03:33:57Z",
     "source": "Dictation Router + OpenClaw supervisor"
   },
   "summary": {
@@ -51,7 +51,7 @@
       "createdAt": "2026-02-10T14:40:53Z",
       "updatedAt": "2026-02-10T14:40:53Z",
       "completedAt": "2026-02-10T14:40:53Z",
-      "ageHours": 12.62,
+      "ageHours": 12.88,
       "deliverySummary": "Select top 3 themes and attach one pricing strategy brief with concrete recommendations.",
       "deliverableUrl": "/ops/deliverables/openclaw-117.md",
       "notes": [],
@@ -69,7 +69,7 @@
       "createdAt": "2026-02-10T14:40:53Z",
       "updatedAt": "2026-02-10T14:40:53Z",
       "completedAt": "2026-02-10T14:40:53Z",
-      "ageHours": 12.62,
+      "ageHours": 12.88,
       "deliverySummary": "Use one weekly notebook capture + journaling routine with small wins, maintenance checklist, and progress tracking.",
       "deliverableUrl": "/ops/deliverables/openclaw-111.md",
       "notes": [],
@@ -87,7 +87,7 @@
       "createdAt": "2026-02-10T10:51:02Z",
       "updatedAt": "2026-02-10T10:51:02Z",
       "completedAt": "2026-02-10T10:51:02Z",
-      "ageHours": 16.45,
+      "ageHours": 16.72,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-138.md",
       "notes": [],
@@ -105,7 +105,7 @@
       "createdAt": "2026-02-10T10:49:33Z",
       "updatedAt": "2026-02-10T10:49:33Z",
       "completedAt": "2026-02-10T10:49:33Z",
-      "ageHours": 16.47,
+      "ageHours": 16.74,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-137.md",
       "notes": [],
@@ -123,7 +123,7 @@
       "createdAt": "2026-02-09T14:57:26Z",
       "updatedAt": "2026-02-09T14:57:26Z",
       "completedAt": "2026-02-09T14:57:26Z",
-      "ageHours": 36.34,
+      "ageHours": 36.61,
       "deliverySummary": "Research travel options to Trivandrum; Plan accommodations; Create event schedule; Plan gift and budget",
       "deliverableUrl": "/ops/deliverables/openclaw-125.md",
       "notes": [],
@@ -141,7 +141,7 @@
       "createdAt": "2026-02-09T14:54:23Z",
       "updatedAt": "2026-02-09T14:54:23Z",
       "completedAt": "2026-02-09T14:54:23Z",
-      "ageHours": 36.39,
+      "ageHours": 36.66,
       "deliverySummary": "Review plan and make adjustments as needed",
       "deliverableUrl": "/ops/deliverables/openclaw-124.md",
       "notes": [],
@@ -159,7 +159,7 @@
       "createdAt": "2026-02-09T09:32:44Z",
       "updatedAt": "2026-02-09T09:32:44Z",
       "completedAt": "2026-02-09T09:32:44Z",
-      "ageHours": 41.75,
+      "ageHours": 42.02,
       "deliverySummary": "Task will be added to recurring review schedule",
       "deliverableUrl": "/ops/deliverables/openclaw-121.md",
       "notes": [],
@@ -177,7 +177,7 @@
       "createdAt": "2026-02-09T09:20:28Z",
       "updatedAt": "2026-02-09T09:20:28Z",
       "completedAt": "2026-02-09T09:20:28Z",
-      "ageHours": 41.96,
+      "ageHours": 42.22,
       "deliverySummary": "Write AI in L&D blog; Research Josh Bersin latest views; Complete weekly template planning",
       "deliverableUrl": "/ops/deliverables/openclaw-116.md",
       "notes": [],
@@ -195,7 +195,7 @@
       "createdAt": "2026-02-09T09:12:39Z",
       "updatedAt": "2026-02-09T09:12:39Z",
       "completedAt": "2026-02-09T09:12:39Z",
-      "ageHours": 42.09,
+      "ageHours": 42.36,
       "deliverySummary": "Review and refine blog content for publication",
       "deliverableUrl": "/ops/deliverables/openclaw-113.md",
       "notes": [],
@@ -213,7 +213,7 @@
       "createdAt": "2026-02-09T08:53:26Z",
       "updatedAt": "2026-02-09T08:53:26Z",
       "completedAt": "2026-02-09T08:53:26Z",
-      "ageHours": 42.41,
+      "ageHours": 42.68,
       "deliverySummary": "Identify current financial security gaps; Determine priority focus areas; Create action plan for implementation; Establish monitoring mechanisms",
       "deliverableUrl": "/ops/deliverables/openclaw-106.md",
       "notes": [],
@@ -231,7 +231,7 @@
       "createdAt": "2026-02-09T08:50:02Z",
       "updatedAt": "2026-02-09T08:50:02Z",
       "completedAt": "2026-02-09T08:50:02Z",
-      "ageHours": 42.47,
+      "ageHours": 42.73,
       "deliverySummary": "Analyze current revenue streams; Identify revenue risks and gaps; Develop mitigation strategies; Create salary continuity framework",
       "deliverableUrl": "/ops/deliverables/openclaw-105.md",
       "notes": [],
@@ -248,6 +248,10 @@
     {
       "level": "info",
       "message": "Blog autopilot is active: non-autonomous tasks are prioritized first; one new blog run is auto-seeded whenever idle with ~5 min break (unlimited/day)."
+    },
+    {
+      "level": "info",
+      "message": "Blog publish automation is active: completed blog deliverables are converted to post payloads and pushed via publish_pipeline."
     },
     {
       "level": "info",
@@ -618,7 +622,7 @@
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T03:17:56Z",
+    "updatedAt": "2026-02-11T03:33:57Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -785,6 +789,14 @@
       "count": 0,
       "recent": []
     },
+    "publishStats": {
+      "total": 0,
+      "published": 0,
+      "failed": 0,
+      "ignored": 0,
+      "byStatus": {},
+      "recent": []
+    },
     "repoState": {
       "repo_hint": "/Users/shreyas/Documents/New project/.tmp/personal-website-ops",
       "exists": true,
@@ -842,7 +854,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T03:17:56Z",
+    "updatedAt": "2026-02-11T03:33:57Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
@@ -857,6 +869,7 @@
     "refresh": "/api/ops/sync",
     "status_overview": "/api/status/overview",
     "captures": "/api/captures",
-    "openclaw_tasks": "/api/openclaw/tasks"
+    "openclaw_tasks": "/api/openclaw/tasks",
+    "blog_publish_backlog": "/api/blog/publish-backlog"
   }
 }
