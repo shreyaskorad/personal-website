@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T23:24:28Z",
+    "updatedAt": "2026-02-11T23:25:24Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -43,18 +43,18 @@
   "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-332",
+      "id": "openclaw-333",
       "title": "Build a practical LXD workflow for small teams shipping weekly",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-11T23:24:28Z",
-      "updatedAt": "2026-02-11T23:24:28Z",
-      "completedAt": "2026-02-11T23:24:28Z",
+      "createdAt": "2026-02-11T23:25:24Z",
+      "updatedAt": "2026-02-11T23:25:24Z",
+      "completedAt": "2026-02-11T23:25:24Z",
       "ageHours": 0.0,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-332.md",
+      "deliverableUrl": "/ops/deliverables/openclaw-333.md",
       "notes": [
         "OpenClaw SSH execution failed."
       ],
@@ -74,7 +74,7 @@
       "createdAt": "2026-02-11T22:28:13Z",
       "updatedAt": "2026-02-11T22:28:13Z",
       "completedAt": "2026-02-11T22:28:13Z",
-      "ageHours": 0.94,
+      "ageHours": 0.95,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-315.md",
       "notes": [],
@@ -92,7 +92,7 @@
       "createdAt": "2026-02-11T21:29:58Z",
       "updatedAt": "2026-02-11T21:29:58Z",
       "completedAt": "2026-02-11T21:29:58Z",
-      "ageHours": 1.91,
+      "ageHours": 1.92,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-303.md",
       "notes": [],
@@ -126,11 +126,23 @@
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-11T23:24:28Z",
+      "timestamp": "2026-02-11T23:25:24Z",
       "message": "OpenClaw SSH execution failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-11T23:25:24Z",
+      "type": "skipped",
+      "taskId": "capture-278",
+      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-11T23:25:20Z",
+      "type": "executed",
+      "taskId": "capture-278",
+      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-11T23:24:28Z",
       "type": "skipped",
@@ -478,22 +490,10 @@
       "type": "executed",
       "taskId": "capture-249",
       "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-11T21:29:58Z",
-      "type": "executed",
-      "taskId": "capture-248",
-      "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=completed, task_id=090dd720-0428-4e1f-8fb3-14e0806868ed): "
-    },
-    {
-      "timestamp": "2026-02-11T21:28:58Z",
-      "type": "executed",
-      "taskId": "capture-248",
-      "message": "Autonomous writing sprint: Use AI in learning design without losing human judgment: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T23:24:28Z",
+    "updatedAt": "2026-02-11T23:25:24Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -677,23 +677,31 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 44,
+      "completed": 43,
       "queued": 0,
       "blocked": 1,
       "byStatus": {
         "failed": 1,
-        "cancelled": 35,
-        "completed": 44
+        "cancelled": 36,
+        "completed": 43
       }
     },
     "recentTasks": [
       {
-        "id": "openclaw-332",
+        "id": "openclaw-333",
         "title": "Build a practical LXD workflow for small teams shipping weekly",
         "status": "failed",
-        "updated_at": "2026-02-11T23:24:28Z",
+        "updated_at": "2026-02-11T23:25:24Z",
         "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
         "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-332",
+        "title": "Build a practical LXD workflow for small teams shipping weekly",
+        "status": "cancelled",
+        "updated_at": "2026-02-11T23:25:16Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-331",
@@ -836,14 +844,6 @@
         "title": "Design learning for decision quality, not completion rates",
         "status": "cancelled",
         "updated_at": "2026-02-11T22:27:20Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-313",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-11T22:26:24Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
       }
@@ -1243,14 +1243,14 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 79,
+        "completed": 78,
         "active": 0,
         "queued": 0,
         "blocked": 1,
-        "cancelled": 40
+        "cancelled": 41
       },
       "today": {
-        "completed": 79,
+        "completed": 78,
         "active": 0,
         "queued": 0,
         "blocked": 1,
@@ -1276,14 +1276,20 @@
       "bottleneck": {
         "state": "blocked",
         "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-11T23:24:28Z"
+        "at": "2026-02-11T23:25:24Z"
       },
       "recentIdeas": [
         {
-          "id": "openclaw-332",
+          "id": "openclaw-333",
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "failed",
-          "updated_at": "2026-02-11T23:24:28Z"
+          "updated_at": "2026-02-11T23:25:24Z"
+        },
+        {
+          "id": "openclaw-332",
+          "title": "Build a practical LXD workflow for small teams shipping weekly",
+          "status": "cancelled",
+          "updated_at": "2026-02-11T23:25:16Z"
         },
         {
           "id": "openclaw-331",
@@ -1332,12 +1338,6 @@
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "cancelled",
           "updated_at": "2026-02-11T23:07:49Z"
-        },
-        {
-          "id": "openclaw-323",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "cancelled",
-          "updated_at": "2026-02-11T23:06:11Z"
         }
       ],
       "recentOutputs": [
@@ -1466,8 +1466,8 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-11T23:24:20Z",
-        "lastFinishedAt": "2026-02-11T23:23:35Z",
+        "lastStartedAt": "2026-02-11T23:25:16Z",
+        "lastFinishedAt": "2026-02-11T23:24:31Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1536,7 +1536,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T23:24:28Z",
+    "updatedAt": "2026-02-11T23:25:24Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
