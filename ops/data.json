@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T07:16:58Z",
+    "updatedAt": "2026-02-11T07:17:00Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "757e59c3f199070f"
   },
@@ -70,7 +70,7 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-11T07:09:39Z",
-      "updatedAt": "2026-02-11T07:16:58Z",
+      "updatedAt": "2026-02-11T07:17:00Z",
       "completedAt": null,
       "ageHours": 0.12,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
@@ -154,7 +154,7 @@
       "createdAt": "2026-02-11T05:25:42Z",
       "updatedAt": "2026-02-11T05:25:42Z",
       "completedAt": "2026-02-11T05:25:42Z",
-      "ageHours": 1.85,
+      "ageHours": 1.86,
       "deliverySummary": "Monitor 30-day SEO metrics: organic traffic, keyword rankings, CTR, engagement patterns",
       "deliverableUrl": "/ops/deliverables/openclaw-153.md",
       "notes": [],
@@ -226,7 +226,7 @@
       "createdAt": "2026-02-11T03:57:30Z",
       "updatedAt": "2026-02-11T03:57:30Z",
       "completedAt": "2026-02-11T03:57:30Z",
-      "ageHours": 3.32,
+      "ageHours": 3.33,
       "deliverySummary": "Run publish pipeline with payload. Verify URL, sitemap, RSS after publication.",
       "deliverableUrl": "/ops/deliverables/openclaw-145.md",
       "notes": [],
@@ -717,7 +717,7 @@
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T07:16:58Z",
+    "updatedAt": "2026-02-11T07:17:00Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -1187,8 +1187,8 @@
           "url": "",
           "slug": "",
           "commit": "",
-          "error": "Style rules violation: contains bullet list; word_count=753 outside 150-200; closing does not echo lead core concept",
-          "updated_at": "2026-02-11T07:08:48Z"
+          "error": "Traceback (most recent call last):\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1313, in mkdir\n    self._accessor.mkdir(self, mode)\nFileNotFoundError: [Errno 2] No such file or directory: '/Users/shreyas-clawd/.openclaw/state'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versio",
+          "updated_at": "2026-02-11T07:17:00Z"
         },
         {
           "openclaw_row_id": 138,
@@ -1445,8 +1445,12 @@
         "sitemap": true,
         "rss": true
       },
-      "post_count": 11,
+      "post_count": 12,
       "recent_posts": [
+        {
+          "name": "gamification-seo-blog-sprint-operating-playbook-openclaw-147.html",
+          "updated_at": "2026-02-11T07:16:59Z"
+        },
         {
           "name": "ai-and-the-future-of-learning-finding-meaning-in-an-age-of-instant-feedback-openclaw-113.html",
           "updated_at": "2026-02-11T04:01:01Z"
@@ -1482,16 +1486,12 @@
         {
           "name": "the-human-edge.html",
           "updated_at": "2026-02-09T07:34:21Z"
-        },
-        {
-          "name": "the-object-without-attachment.html",
-          "updated_at": "2026-02-09T07:34:21Z"
         }
       ]
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T07:16:58Z",
+    "updatedAt": "2026-02-11T07:17:00Z",
     "metrics": {
       "reviewRequested": 1,
       "proceedCount": 0,
