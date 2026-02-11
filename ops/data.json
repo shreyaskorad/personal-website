@@ -1,34 +1,36 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T11:04:34Z",
+    "updatedAt": "2026-02-11T11:04:52Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "9463d3fb5fefddef"
   },
   "summary": {
     "totalTasks": 26,
-    "queued": 0,
-    "active": 0,
-    "completed": 26,
+    "queued": 1,
+    "active": 1,
+    "completed": 24,
     "due": 0,
     "blocked": 0,
-    "executedTotal": 28,
+    "executedTotal": 26,
     "byStatus": {
-      "completed": 26
+      "running": 1,
+      "queued": 1,
+      "completed": 24
     }
   },
   "laneMetrics": {
     "execution": {
-      "visible": 0,
-      "executedTotal": 28
+      "visible": 1,
+      "executedTotal": 26
     },
     "queue": {
-      "visible": 0,
-      "totalQueued": 0
+      "visible": 1,
+      "totalQueued": 1
     },
     "completed": {
-      "visible": 26,
-      "totalClosed": 26
+      "visible": 24,
+      "totalClosed": 24
     },
     "due": {
       "visible": 0,
@@ -38,28 +40,52 @@
       "needsInput": 0
     }
   },
-  "execution": [],
-  "queueTop": [],
-  "userActionsDue": [],
-  "completedRecent": [
+  "execution": [
     {
-      "id": "openclaw-188",
+      "id": "openclaw-189",
       "title": "Design learning for decision quality, not completion rates",
       "source": "openclaw",
       "priority": "medium",
-      "status": "completed",
+      "status": "running",
       "sequence": 0,
-      "createdAt": "2026-02-11T11:02:45Z",
-      "updatedAt": "2026-02-11T11:02:45Z",
-      "completedAt": "2026-02-11T11:02:45Z",
-      "ageHours": 0.03,
-      "deliverySummary": "Topic Scout: identify 3 candidate topics for design learning for decision quality not completion rates",
-      "deliverableUrl": "/ops/deliverables/openclaw-188.md",
+      "createdAt": "2026-02-11T11:04:38Z",
+      "updatedAt": "2026-02-11T11:04:38Z",
+      "completedAt": null,
+      "ageHours": 0.0,
+      "deliverySummary": "OpenClaw SSH execution in progress.",
+      "deliverableUrl": "/ops/deliverables/openclaw-189.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    },
+    }
+  ],
+  "queueTop": [
+    {
+      "id": "inbox-502",
+      "title": "Design learning for decision quality, not completion rates",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 1,
+      "createdAt": "2026-02-11T11:04:38Z",
+      "updatedAt": "2026-02-11T11:04:52Z",
+      "completedAt": null,
+      "ageHours": 0.0,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=140",
+        "inbox_item_id=502"
+      ],
+      "action": "create_task",
+      "scope": "professional",
+      "hasDeliverable": false,
+      "needsReview": false
+    }
+  ],
+  "userActionsDue": [],
+  "completedRecent": [
     {
       "id": "openclaw-187",
       "title": "Autonomous writing sprint: Target practical intent in workplace learning content",
@@ -88,7 +114,7 @@
       "createdAt": "2026-02-11T10:59:06Z",
       "updatedAt": "2026-02-11T10:59:06Z",
       "completedAt": "2026-02-11T10:59:06Z",
-      "ageHours": 0.09,
+      "ageHours": 0.1,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-186.md",
       "notes": [],
@@ -106,7 +132,7 @@
       "createdAt": "2026-02-11T10:55:56Z",
       "updatedAt": "2026-02-11T10:55:56Z",
       "completedAt": "2026-02-11T10:55:56Z",
-      "ageHours": 0.14,
+      "ageHours": 0.15,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for design without losing human judgment",
       "deliverableUrl": "/ops/deliverables/openclaw-185.md",
       "notes": [],
@@ -124,7 +150,7 @@
       "createdAt": "2026-02-11T10:53:01Z",
       "updatedAt": "2026-02-11T10:53:01Z",
       "completedAt": "2026-02-11T10:53:01Z",
-      "ageHours": 0.19,
+      "ageHours": 0.2,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for building practical LxD workflow for small teams shipping weekly",
       "deliverableUrl": "/ops/deliverables/openclaw-184.md",
       "notes": [],
@@ -142,7 +168,7 @@
       "createdAt": "2026-02-11T10:51:17Z",
       "updatedAt": "2026-02-11T10:51:17Z",
       "completedAt": "2026-02-11T10:51:17Z",
-      "ageHours": 0.22,
+      "ageHours": 0.23,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-183.md",
       "notes": [],
@@ -160,7 +186,7 @@
       "createdAt": "2026-02-11T10:49:30Z",
       "updatedAt": "2026-02-11T10:49:30Z",
       "completedAt": "2026-02-11T10:49:30Z",
-      "ageHours": 0.25,
+      "ageHours": 0.26,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-182.md",
       "notes": [],
@@ -178,7 +204,7 @@
       "createdAt": "2026-02-11T10:45:52Z",
       "updatedAt": "2026-02-11T10:45:52Z",
       "completedAt": "2026-02-11T10:45:52Z",
-      "ageHours": 0.31,
+      "ageHours": 0.32,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for turning training requests into measurable capability outcomes",
       "deliverableUrl": "/ops/deliverables/openclaw-180.md",
       "notes": [],
@@ -214,7 +240,7 @@
       "createdAt": "2026-02-11T10:12:41Z",
       "updatedAt": "2026-02-11T10:12:41Z",
       "completedAt": "2026-02-11T10:12:41Z",
-      "ageHours": 0.86,
+      "ageHours": 0.87,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for AI measurement and analytics deep dive with dashboard-ready metrics",
       "deliverableUrl": "/ops/deliverables/openclaw-175.md",
       "notes": [],
@@ -304,7 +330,7 @@
       "createdAt": "2026-02-11T09:28:56Z",
       "updatedAt": "2026-02-11T09:28:56Z",
       "completedAt": "2026-02-11T09:28:56Z",
-      "ageHours": 1.59,
+      "ageHours": 1.6,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for data myths vs reality breakdown with actionable recommendations",
       "deliverableUrl": "/ops/deliverables/openclaw-168.md",
       "notes": [],
@@ -322,7 +348,7 @@
       "createdAt": "2026-02-11T09:17:09Z",
       "updatedAt": "2026-02-11T09:17:09Z",
       "completedAt": "2026-02-11T09:17:09Z",
-      "ageHours": 1.79,
+      "ageHours": 1.8,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for L&D myths vs reality breakdown with actionable recommendations",
       "deliverableUrl": "/ops/deliverables/openclaw-166.md",
       "notes": [],
@@ -358,7 +384,7 @@
       "createdAt": "2026-02-11T08:51:09Z",
       "updatedAt": "2026-02-11T08:51:09Z",
       "completedAt": "2026-02-11T08:51:09Z",
-      "ageHours": 2.22,
+      "ageHours": 2.23,
       "deliverySummary": "Start with Topic Scout: identify 3 candidate topics and select best",
       "deliverableUrl": "/ops/deliverables/openclaw-163.md",
       "notes": [],
@@ -394,7 +420,7 @@
       "createdAt": "2026-02-11T08:08:40Z",
       "updatedAt": "2026-02-11T08:08:40Z",
       "completedAt": "2026-02-11T08:08:40Z",
-      "ageHours": 2.93,
+      "ageHours": 2.94,
       "deliverySummary": "Provide publish QA evidence and measurement handoff",
       "deliverableUrl": "/ops/deliverables/openclaw-161.md",
       "notes": [],
@@ -412,7 +438,7 @@
       "createdAt": "2026-02-11T07:47:45Z",
       "updatedAt": "2026-02-11T07:47:45Z",
       "completedAt": "2026-02-11T07:47:45Z",
-      "ageHours": 3.28,
+      "ageHours": 3.29,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-160.md",
       "notes": [],
@@ -430,7 +456,7 @@
       "createdAt": "2026-02-11T07:27:17Z",
       "updatedAt": "2026-02-11T07:27:17Z",
       "completedAt": "2026-02-11T07:27:17Z",
-      "ageHours": 3.62,
+      "ageHours": 3.63,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-159.md",
       "notes": [],
@@ -491,24 +517,6 @@
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    },
-    {
-      "id": "openclaw-149",
-      "title": "Autonomous SEO blog sprint: LXD beginner-to-advanced guide with practical checkpoints",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-11T04:47:41Z",
-      "updatedAt": "2026-02-11T04:47:41Z",
-      "completedAt": "2026-02-11T04:47:41Z",
-      "ageHours": 6.28,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-149.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
     }
   ],
   "observations": [
@@ -526,11 +534,17 @@
     },
     {
       "level": "info",
-      "message": "No queued or active execution tasks right now."
+      "message": "OpenClaw is actively executing 1 task(s) in sequence (WIP=1)."
     }
   ],
   "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-11T11:04:38Z",
+      "type": "executed",
+      "taskId": "capture-140",
+      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-11T11:02:45Z",
       "type": "executed",
@@ -884,16 +898,10 @@
       "type": "executed",
       "taskId": "capture-111",
       "message": "Autonomous SEO blog sprint: AI framework comparison with decision matrix for leaders: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-11T06:49:04Z",
-      "type": "executed",
-      "taskId": "capture-110",
-      "message": "Autonomous SEO blog sprint: LXD framework comparison with decision matrix for leaders: Delegated via OpenClaw SSH (status=completed, task_id=9ef647e8-2edd-4073-bf30-ce7513e225f3): LxD Framework Comparison post published with decision matrix guide"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T11:04:34Z",
+    "updatedAt": "2026-02-11T11:04:52Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -973,16 +981,25 @@
     ],
     "publishOwner": "Publishing QA",
     "taskStats": {
-      "total": 53,
+      "total": 54,
       "completed": 41,
-      "queued": 0,
+      "queued": 1,
       "blocked": 0,
       "byStatus": {
+        "running": 1,
         "completed": 41,
         "cancelled": 12
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-189",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "running",
+        "updated_at": "2026-02-11T11:04:38Z",
+        "next_steps": "OpenClaw SSH execution in progress.",
+        "blockers": ""
+      },
       {
         "id": "openclaw-188",
         "title": "Design learning for decision quality, not completion rates",
@@ -1133,14 +1150,6 @@
         "status": "completed",
         "updated_at": "2026-02-11T09:40:35Z",
         "next_steps": "Identify 3 candidate topics for AI myths vs reality breakdown with actionable recommendations",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-169",
-        "title": "Autonomous SEO blog sprint: LXD myths vs reality breakdown with actionable recommendations",
-        "status": "completed",
-        "updated_at": "2026-02-11T09:34:51Z",
-        "next_steps": "Identify 3 candidate topics for LxD myths vs reality breakdown with actionable recommendations",
         "blockers": ""
       }
     ],
@@ -1565,8 +1574,18 @@
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes."
       },
       "pendingQueue": {
-        "count": 0,
-        "recent": []
+        "count": 1,
+        "recent": [
+          {
+            "id": "inbox-502",
+            "capture_id": 140,
+            "title": "Design learning for decision quality, not completion rates",
+            "status": "pending",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-11T11:04:38Z",
+            "executed_at": ""
+          }
+        ]
       },
       "focusNote": {
         "agent_id": "supervisor",
@@ -1771,8 +1790,8 @@
         "lastStartedAt": "2026-02-11T11:04:34Z",
         "lastFinishedAt": "2026-02-11T11:01:04Z",
         "runtime": {
-          "pending_inbox": 0,
-          "active_openclaw": 0,
+          "pending_inbox": 1,
+          "active_openclaw": 1,
           "blocked_or_failed_openclaw": 0
         }
       }
@@ -1838,9 +1857,9 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T11:04:34Z",
+    "updatedAt": "2026-02-11T11:04:52Z",
     "metrics": {
-      "reviewRequested": 0,
+      "reviewRequested": 1,
       "proceedCount": 0,
       "closeCount": 0
     },
