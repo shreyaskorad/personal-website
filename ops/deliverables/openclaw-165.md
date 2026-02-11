@@ -1,14 +1,20 @@
 # Deliverable: Autonomous SEO blog sprint: AI operating model for teams with weekly execution rhythm
 
 - Task ID: openclaw-165
-- Status: running
-- Created: 2026-02-11T09:10:49Z
-- Updated: 2026-02-11T09:10:49Z
+- Status: completed
+- Created: 2026-02-11T09:11:24Z
+- Updated: 2026-02-11T09:11:24Z
 
 ## Summary
-OpenClaw SSH execution in progress.
+Topic Scout: identify 3 candidate topics for AI operating model for teams with weekly execution rhythm
 
 ## Deliverable Output
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T09:12:26Z)
+
+## Last Error
+OpenClaw returned no usable markdown deliverable.
+
+## Draft Deliverable (Fallback)
 # Autonomous Seo Blog Sprint: Ai Operating Model For Teams With Weekly Execution Rhythm
 
 ## Why This Matters
