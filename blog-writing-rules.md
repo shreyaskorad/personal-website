@@ -7,6 +7,7 @@ These rules are mandatory for all blog posts on this site.
 - Write in a conversational, direct tone as if speaking to the reader.
 - Keep posts between 150 and 200 words.
 - Never use em dashes.
+- Do not use bullet lists.
 
 - Keep the core concept as the opening and the ending. Stay anchored to it throughout.
 - Use short section headers (h2) only when needed. Keep them concise.
@@ -17,4 +18,3 @@ These rules are mandatory for all blog posts on this site.
 **Humanizer pattern mapping**
 - No em dashes → Pattern 13: Em dash overuse.
 - Use sentence case in headings → Pattern 16: Title Case in Headings.
-
