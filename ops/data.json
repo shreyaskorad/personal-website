@@ -1,34 +1,36 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T12:03:34Z",
+    "updatedAt": "2026-02-11T12:03:39Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
   "summary": {
     "totalTasks": 20,
-    "queued": 0,
-    "active": 0,
-    "completed": 20,
+    "queued": 1,
+    "active": 1,
+    "completed": 18,
     "due": 0,
     "blocked": 0,
-    "executedTotal": 20,
+    "executedTotal": 18,
     "byStatus": {
-      "completed": 20
+      "running": 1,
+      "queued": 1,
+      "completed": 18
     }
   },
   "laneMetrics": {
     "execution": {
-      "visible": 0,
-      "executedTotal": 20
+      "visible": 1,
+      "executedTotal": 18
     },
     "queue": {
-      "visible": 0,
-      "totalQueued": 0
+      "visible": 1,
+      "totalQueued": 1
     },
     "completed": {
-      "visible": 20,
-      "totalClosed": 20
+      "visible": 18,
+      "totalClosed": 18
     },
     "due": {
       "visible": 0,
@@ -38,8 +40,50 @@
       "needsInput": 0
     }
   },
-  "execution": [],
-  "queueTop": [],
+  "execution": [
+    {
+      "id": "openclaw-201",
+      "title": "Build a practical LXD workflow for small teams shipping weekly",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "running",
+      "sequence": 0,
+      "createdAt": "2026-02-11T12:03:38Z",
+      "updatedAt": "2026-02-11T12:03:38Z",
+      "completedAt": null,
+      "ageHours": 0.0,
+      "deliverySummary": "OpenClaw SSH execution in progress.",
+      "deliverableUrl": "/ops/deliverables/openclaw-201.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
+  "queueTop": [
+    {
+      "id": "inbox-511",
+      "title": "Build a practical LXD workflow for small teams shipping weekly",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 1,
+      "createdAt": "2026-02-11T12:03:38Z",
+      "updatedAt": "2026-02-11T12:03:39Z",
+      "completedAt": null,
+      "ageHours": 0.0,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=149",
+        "inbox_item_id=511"
+      ],
+      "action": "create_task",
+      "scope": "professional",
+      "hasDeliverable": false,
+      "needsReview": false
+    }
+  ],
   "userActionsDue": [],
   "completedRecent": [
     {
@@ -70,27 +114,9 @@
       "createdAt": "2026-02-11T11:47:09Z",
       "updatedAt": "2026-02-11T11:47:09Z",
       "completedAt": "2026-02-11T11:47:09Z",
-      "ageHours": 0.27,
+      "ageHours": 0.28,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-196.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-192",
-      "title": "Build a practical LXD workflow for small teams shipping weekly",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-11T11:23:59Z",
-      "updatedAt": "2026-02-11T11:23:59Z",
-      "completedAt": "2026-02-11T11:23:59Z",
-      "ageHours": 0.66,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-192.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -124,7 +150,7 @@
       "createdAt": "2026-02-11T10:59:06Z",
       "updatedAt": "2026-02-11T10:59:06Z",
       "completedAt": "2026-02-11T10:59:06Z",
-      "ageHours": 1.07,
+      "ageHours": 1.08,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-186.md",
       "notes": [],
@@ -142,7 +168,7 @@
       "createdAt": "2026-02-11T10:51:17Z",
       "updatedAt": "2026-02-11T10:51:17Z",
       "completedAt": "2026-02-11T10:51:17Z",
-      "ageHours": 1.2,
+      "ageHours": 1.21,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-183.md",
       "notes": [],
@@ -160,7 +186,7 @@
       "createdAt": "2026-02-11T10:49:30Z",
       "updatedAt": "2026-02-11T10:49:30Z",
       "completedAt": "2026-02-11T10:49:30Z",
-      "ageHours": 1.23,
+      "ageHours": 1.24,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-182.md",
       "notes": [],
@@ -322,7 +348,7 @@
       "createdAt": "2026-02-11T09:17:09Z",
       "updatedAt": "2026-02-11T09:17:09Z",
       "completedAt": "2026-02-11T09:17:09Z",
-      "ageHours": 2.77,
+      "ageHours": 2.78,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for L&D myths vs reality breakdown with actionable recommendations",
       "deliverableUrl": "/ops/deliverables/openclaw-166.md",
       "notes": [],
@@ -383,24 +409,6 @@
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    },
-    {
-      "id": "openclaw-161",
-      "title": "Autonomous SEO blog sprint: gamification operating model for teams with weekly execution rhythm",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-11T08:08:40Z",
-      "updatedAt": "2026-02-11T08:08:40Z",
-      "completedAt": "2026-02-11T08:08:40Z",
-      "ageHours": 3.92,
-      "deliverySummary": "Provide publish QA evidence and measurement handoff",
-      "deliverableUrl": "/ops/deliverables/openclaw-161.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
     }
   ],
   "observations": [
@@ -418,11 +426,17 @@
     },
     {
       "level": "info",
-      "message": "No queued or active execution tasks right now."
+      "message": "OpenClaw is actively executing 1 task(s) in sequence (WIP=1)."
     }
   ],
   "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-11T12:03:38Z",
+      "type": "executed",
+      "taskId": "capture-149",
+      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-11T12:01:51Z",
       "type": "executed",
@@ -776,16 +790,10 @@
       "type": "executed",
       "taskId": "capture-119",
       "message": "Autonomous SEO blog sprint: data myths vs reality breakdown with actionable recommendations: Delegated via OpenClaw SSH (status=completed, task_id=0ab6ed8f-a53f-4557-bab0-9b8a4acd3310): Executing SEO blog sprint for data myths vs reality topic - Topic Scout phase"
-    },
-    {
-      "timestamp": "2026-02-11T09:28:13Z",
-      "type": "executed",
-      "taskId": "capture-119",
-      "message": "Autonomous SEO blog sprint: data myths vs reality breakdown with actionable recommendations: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T12:03:34Z",
+    "updatedAt": "2026-02-11T12:03:39Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -968,16 +976,25 @@
       }
     },
     "taskStats": {
-      "total": 65,
+      "total": 66,
       "completed": 49,
-      "queued": 0,
+      "queued": 1,
       "blocked": 0,
       "byStatus": {
+        "running": 1,
         "completed": 49,
         "cancelled": 16
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-201",
+        "title": "Build a practical LXD workflow for small teams shipping weekly",
+        "status": "running",
+        "updated_at": "2026-02-11T12:03:38Z",
+        "next_steps": "OpenClaw SSH execution in progress.",
+        "blockers": ""
+      },
       {
         "id": "openclaw-200",
         "title": "Design learning for decision quality, not completion rates",
@@ -1128,14 +1145,6 @@
         "status": "completed",
         "updated_at": "2026-02-11T10:49:30Z",
         "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-181",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "completed",
-        "updated_at": "2026-02-11T10:47:17Z",
-        "next_steps": "Topic Scout: identify 3 candidate topics for design learning for decision quality not completion rates",
         "blockers": ""
       }
     ],
@@ -1533,21 +1542,31 @@
     },
     "progress": {
       "summary": {
-        "total": 61,
+        "total": 62,
         "completed": 46,
-        "active": 0,
+        "active": 1,
         "queued": 0,
         "blocked": 0,
         "cancelled": 15
       },
       "today": {
         "completed": 46,
-        "active": 0,
+        "active": 1,
         "queued": 0,
         "blocked": 0,
         "published": 3
       },
-      "activeTask": null,
+      "activeTask": {
+        "id": "openclaw-201",
+        "row_id": 201,
+        "capture_id": 149,
+        "title": "Build a practical LXD workflow for small teams shipping weekly",
+        "status": "running",
+        "updated_at": "2026-02-11T12:03:38Z",
+        "next_steps": "OpenClaw SSH execution in progress.",
+        "blockers": "",
+        "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
+      },
       "lastCompletedTask": {
         "id": "openclaw-200",
         "row_id": 200,
@@ -1560,22 +1579,32 @@
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes."
       },
       "pendingQueue": {
-        "count": 0,
-        "recent": []
+        "count": 1,
+        "recent": [
+          {
+            "id": "inbox-511",
+            "capture_id": 149,
+            "title": "Build a practical LXD workflow for small teams shipping weekly",
+            "status": "pending",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-11T12:03:38Z",
+            "executed_at": ""
+          }
+        ]
       },
-      "focusNote": {
-        "agent_id": "supervisor",
-        "created_at": "2026-02-11T12:01:51Z",
-        "note": "Full 9-agent writing sprint completed. Article published to https://shreyaskorad.in/posts/design-learning-for-decision-quality-not-completion-rates.html (200 status code). Sitemap and RSS verified. Measurement handoff provided.",
-        "action_hint": "Monitor post engagement and decision quality metrics",
-        "handoff_to": "supervisor"
-      },
+      "focusNote": {},
       "bottleneck": {
-        "state": "idle",
-        "reason": "No active writing run at this moment.",
-        "at": "2026-02-11T12:03:03Z"
+        "state": "watch",
+        "reason": "Progress appears stuck at topic-scout; downstream stages have not started.",
+        "at": "2026-02-11T12:03:38Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-201",
+          "title": "Build a practical LXD workflow for small teams shipping weekly",
+          "status": "running",
+          "updated_at": "2026-02-11T12:03:38Z"
+        },
         {
           "id": "openclaw-200",
           "title": "Design learning for decision quality, not completion rates",
@@ -1629,12 +1658,6 @@
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "completed",
           "updated_at": "2026-02-11T11:23:59Z"
-        },
-        {
-          "id": "openclaw-191",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-11T11:21:30Z"
         }
       ],
       "recentOutputs": [
@@ -1740,7 +1763,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-200",
+        "focusTaskId": "openclaw-201",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1756,7 +1779,7 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-11T12:01:51Z"
+        "lastStageAt": ""
       },
       "pipeline": {
         "workerStarted": true,
@@ -1766,8 +1789,8 @@
         "lastStartedAt": "2026-02-11T12:03:34Z",
         "lastFinishedAt": "2026-02-11T12:03:03Z",
         "runtime": {
-          "pending_inbox": 0,
-          "active_openclaw": 0,
+          "pending_inbox": 1,
+          "active_openclaw": 1,
           "blocked_or_failed_openclaw": 0
         }
       }
@@ -1833,9 +1856,9 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T12:03:34Z",
+    "updatedAt": "2026-02-11T12:03:39Z",
     "metrics": {
-      "reviewRequested": 0,
+      "reviewRequested": 1,
       "proceedCount": 0,
       "closeCount": 0
     },
