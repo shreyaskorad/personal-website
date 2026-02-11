@@ -1,20 +1,14 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-294
-- Status: completed
-- Created: 2026-02-11T20:15:34Z
-- Updated: 2026-02-11T20:15:34Z
+- Task ID: openclaw-300
+- Status: failed
+- Created: 2026-02-11T21:18:27Z
+- Updated: 2026-02-11T21:18:27Z
 
 ## Summary
-Ask user if they want a new topic, content modifications, or different action
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T20:17:40Z)
-
-## Last Error
-OpenClaw returned no usable markdown deliverable.
-
-## Draft Deliverable (Fallback)
 # Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
 
 ## Objective and success metrics
@@ -61,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Ask user if they want a new topic, content modifications, or different action
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
