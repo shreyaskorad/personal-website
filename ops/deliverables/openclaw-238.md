@@ -1,18 +1,18 @@
 # Deliverable: Design learning for decision quality, not completion rates
 
-- Task ID: openclaw-232
+- Task ID: openclaw-238
 - Status: completed
-- Created: 2026-02-11T14:41:34Z
-- Updated: 2026-02-11T14:41:34Z
+- Created: 2026-02-11T17:20:44Z
+- Updated: 2026-02-11T17:20:44Z
 
 ## Summary
-Monitor audience engagement and decision quality metrics over next 30 days
+Verify article status and create if not published
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T16:24:09Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T17:21:47Z)
 
 ## Last Error
-OpenClaw SSH command failed: ssh: connect to host 192.168.1.29 port 22: Host is down
+OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
 # Deliverable Draft: Design Learning For Decision Quality, Not Completion Rates SEO blog operating system
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Monitor audience engagement and decision quality metrics over next 30 days
+Verify article status and create if not published
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
