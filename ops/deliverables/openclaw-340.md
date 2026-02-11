@@ -1,15 +1,15 @@
-# Deliverable: Design learning for decision quality, not completion rates
+# Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-339
+- Task ID: openclaw-340
 - Status: failed
-- Created: 2026-02-11T23:30:56Z
-- Updated: 2026-02-11T23:30:56Z
+- Created: 2026-02-11T23:31:51Z
+- Updated: 2026-02-11T23:31:51Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-# Deliverable Draft: Design Learning For Decision Quality, Not Completion Rates SEO blog operating system
+# Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
