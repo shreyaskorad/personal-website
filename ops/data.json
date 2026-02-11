@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T18:08:57Z",
+    "updatedAt": "2026-02-11T18:10:48Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -43,6 +43,24 @@
   "userActionsDue": [],
   "completedRecent": [
     {
+      "id": "openclaw-254",
+      "title": "Design learning for decision quality, not completion rates",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-11T18:10:18Z",
+      "updatedAt": "2026-02-11T18:10:18Z",
+      "completedAt": "2026-02-11T18:10:18Z",
+      "ageHours": 0.01,
+      "deliverySummary": "Ask user if they want a new topic, content modifications, or different action",
+      "deliverableUrl": "/ops/deliverables/openclaw-254.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
       "id": "openclaw-253",
       "title": "Design without losing human judgment",
       "source": "openclaw",
@@ -52,7 +70,7 @@
       "createdAt": "2026-02-11T18:07:43Z",
       "updatedAt": "2026-02-11T18:07:43Z",
       "completedAt": "2026-02-11T18:07:43Z",
-      "ageHours": 0.02,
+      "ageHours": 0.05,
       "deliverySummary": "Ask user if they want a new topic, content modifications, or different action",
       "deliverableUrl": "/ops/deliverables/openclaw-253.md",
       "notes": [],
@@ -70,27 +88,9 @@
       "createdAt": "2026-02-11T18:05:14Z",
       "updatedAt": "2026-02-11T18:05:14Z",
       "completedAt": "2026-02-11T18:05:14Z",
-      "ageHours": 0.06,
+      "ageHours": 0.09,
       "deliverySummary": "Ask user if they want a new topic, content modifications, or different action",
       "deliverableUrl": "/ops/deliverables/openclaw-252.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-249",
-      "title": "Design learning for decision quality, not completion rates",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-11T17:51:51Z",
-      "updatedAt": "2026-02-11T17:51:51Z",
-      "completedAt": "2026-02-11T17:51:51Z",
-      "ageHours": 0.29,
-      "deliverySummary": "Ask user if they want a new topic, content modifications, or different action",
-      "deliverableUrl": "/ops/deliverables/openclaw-249.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -117,6 +117,18 @@
   ],
   "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-11T18:10:18Z",
+      "type": "executed",
+      "taskId": "capture-201",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=d6c93922-143f-465f-b6c4-846fd7f14aec): Article already published to shreyaskorad.in/posts/design-learning-for-decision-quality-not-completion-rates.html"
+    },
+    {
+      "timestamp": "2026-02-11T18:09:48Z",
+      "type": "executed",
+      "taskId": "capture-201",
+      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-11T18:07:43Z",
       "type": "executed",
@@ -464,22 +476,10 @@
       "type": "executed",
       "taskId": "capture-172",
       "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-11T13:13:52Z",
-      "type": "executed",
-      "taskId": "capture-171",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=b3c78375-1433-4fcd-b843-21b949379815): Publish QA complete post live verified sitemap and RSS accessible"
-    },
-    {
-      "timestamp": "2026-02-11T13:12:14Z",
-      "type": "executed",
-      "taskId": "capture-171",
-      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T18:08:57Z",
+    "updatedAt": "2026-02-11T18:10:48Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -673,6 +673,14 @@
     },
     "recentTasks": [
       {
+        "id": "openclaw-254",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "completed",
+        "updated_at": "2026-02-11T18:10:18Z",
+        "next_steps": "Ask user if they want a new topic, content modifications, or different action",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-253",
         "title": "Design without losing human judgment",
         "status": "completed",
@@ -823,19 +831,24 @@
         "updated_at": "2026-02-11T15:23:42Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-234",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-11T15:12:20Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 122,
+          "created_at": "2026-02-11T18:10:18Z",
+          "capture_id": 201,
+          "openclaw_row_id": 254,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Article 'Design learning for decision quality, not completion rates' already published and verified live at https://shreyaskorad.in/posts/design-learning-for-decision-quality-not-completion-rates.html. 200 status code confirmed. Content present and accessible.",
+          "action_hint": "No new publishing needed for this topic. Requesting user clarification on desired next action.",
+          "handoff_to": "supervisor"
+        },
         {
           "id": 121,
           "created_at": "2026-02-11T18:07:43Z",
@@ -1010,19 +1023,6 @@
           "created_at": "2026-02-11T17:25:08Z",
           "capture_id": 187,
           "openclaw_row_id": 240,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article 'Design learning for decision quality, not completion rates' already published and verified live at https://shreyaskorad.in/posts/design-learning-for-decision-quality-not-completion-rates.html. 200 status code confirmed. Content present and accessible.",
-          "action_hint": "Monitor post engagement and decision quality metrics",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 107,
-          "created_at": "2026-02-11T17:23:02Z",
-          "capture_id": 186,
-          "openclaw_row_id": 239,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "supervisor",
@@ -1227,15 +1227,15 @@
     },
     "progress": {
       "summary": {
-        "total": 114,
-        "completed": 94,
+        "total": 115,
+        "completed": 95,
         "active": 0,
         "queued": 0,
         "blocked": 0,
         "cancelled": 20
       },
       "today": {
-        "completed": 94,
+        "completed": 95,
         "active": 0,
         "queued": 0,
         "blocked": 0,
@@ -1243,12 +1243,12 @@
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-253",
-        "row_id": 253,
-        "capture_id": 200,
-        "title": "Design without losing human judgment",
+        "id": "openclaw-254",
+        "row_id": 254,
+        "capture_id": 201,
+        "title": "Design learning for decision quality, not completion rates",
         "status": "completed",
-        "updated_at": "2026-02-11T18:07:43Z",
+        "updated_at": "2026-02-11T18:10:18Z",
         "next_steps": "Ask user if they want a new topic, content modifications, or different action",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
@@ -1259,17 +1259,23 @@
       },
       "focusNote": {
         "agent_id": "supervisor",
-        "created_at": "2026-02-11T18:07:43Z",
-        "note": "Article 'Design without losing human judgment' already published and verified live at https://shreyaskorad.in/posts/design-without-losing-human-judgment.html. 200 status code confirmed. Content present and accessible.",
+        "created_at": "2026-02-11T18:10:18Z",
+        "note": "Article 'Design learning for decision quality, not completion rates' already published and verified live at https://shreyaskorad.in/posts/design-learning-for-decision-quality-not-completion-rates.html. 200 status code confirmed. Content present and accessible.",
         "action_hint": "No new publishing needed for this topic. Requesting user clarification on desired next action.",
         "handoff_to": "supervisor"
       },
       "bottleneck": {
         "state": "idle",
         "reason": "No active writing run at this moment.",
-        "at": "2026-02-11T18:06:08Z"
+        "at": "2026-02-11T18:08:59Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-254",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "completed",
+          "updated_at": "2026-02-11T18:10:18Z"
+        },
         {
           "id": "openclaw-253",
           "title": "Design without losing human judgment",
@@ -1323,12 +1329,6 @@
           "title": "Design without losing human judgment",
           "status": "completed",
           "updated_at": "2026-02-11T17:40:19Z"
-        },
-        {
-          "id": "openclaw-244",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-11T17:36:45Z"
         }
       ],
       "recentOutputs": [
@@ -1434,7 +1434,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-253",
+        "focusTaskId": "openclaw-254",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1450,15 +1450,15 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-11T18:07:43Z"
+        "lastStageAt": "2026-02-11T18:10:18Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-11T18:06:53Z",
-        "lastFinishedAt": "2026-02-11T18:06:08Z",
+        "lastStartedAt": "2026-02-11T18:09:44Z",
+        "lastFinishedAt": "2026-02-11T18:08:59Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1527,7 +1527,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T18:08:57Z",
+    "updatedAt": "2026-02-11T18:10:48Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
