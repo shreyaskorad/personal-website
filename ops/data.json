@@ -1,34 +1,36 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T05:16:36Z",
+    "updatedAt": "2026-02-11T05:17:47Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "757e59c3f199070f"
   },
   "summary": {
-    "totalTasks": 13,
-    "queued": 0,
-    "active": 0,
-    "completed": 13,
+    "totalTasks": 14,
+    "queued": 1,
+    "active": 1,
+    "completed": 12,
     "due": 0,
     "blocked": 0,
-    "executedTotal": 38,
+    "executedTotal": 37,
     "byStatus": {
-      "completed": 13
+      "running": 1,
+      "queued": 1,
+      "completed": 12
     }
   },
   "laneMetrics": {
     "execution": {
-      "visible": 0,
-      "executedTotal": 38
+      "visible": 1,
+      "executedTotal": 37
     },
     "queue": {
-      "visible": 0,
-      "totalQueued": 0
+      "visible": 1,
+      "totalQueued": 1
     },
     "completed": {
-      "visible": 13,
-      "totalClosed": 13
+      "visible": 12,
+      "totalClosed": 12
     },
     "due": {
       "visible": 0,
@@ -38,8 +40,50 @@
       "needsInput": 0
     }
   },
-  "execution": [],
-  "queueTop": [],
+  "execution": [
+    {
+      "id": "openclaw-151",
+      "title": "Autonomous SEO blog sprint: L&D framework comparison with decision matrix for leaders",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "running",
+      "sequence": 0,
+      "createdAt": "2026-02-11T05:16:40Z",
+      "updatedAt": "2026-02-11T05:16:40Z",
+      "completedAt": null,
+      "ageHours": 0.02,
+      "deliverySummary": "OpenClaw SSH execution in progress.",
+      "deliverableUrl": "/ops/deliverables/openclaw-151.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
+  "queueTop": [
+    {
+      "id": "inbox-469",
+      "title": "Autonomous SEO blog sprint: L&D framework comparison with decision matrix for leaders",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 1,
+      "createdAt": "2026-02-11T05:16:40Z",
+      "updatedAt": "2026-02-11T05:17:47Z",
+      "completedAt": null,
+      "ageHours": 0.02,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=107",
+        "inbox_item_id=469"
+      ],
+      "action": "create_task",
+      "scope": "professional",
+      "hasDeliverable": false,
+      "needsReview": false
+    }
+  ],
   "userActionsDue": [],
   "completedRecent": [
     {
@@ -52,7 +96,7 @@
       "createdAt": "2026-02-11T04:47:41Z",
       "updatedAt": "2026-02-11T04:47:41Z",
       "completedAt": "2026-02-11T04:47:41Z",
-      "ageHours": 0.48,
+      "ageHours": 0.5,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-149.md",
       "notes": [],
@@ -70,7 +114,7 @@
       "createdAt": "2026-02-11T04:41:47Z",
       "updatedAt": "2026-02-11T04:41:47Z",
       "completedAt": "2026-02-11T04:41:47Z",
-      "ageHours": 0.58,
+      "ageHours": 0.6,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-148.md",
       "notes": [],
@@ -88,7 +132,7 @@
       "createdAt": "2026-02-11T04:20:50Z",
       "updatedAt": "2026-02-11T04:20:50Z",
       "completedAt": "2026-02-11T04:20:50Z",
-      "ageHours": 0.93,
+      "ageHours": 0.95,
       "deliverySummary": "Execute Topic Scout agent to identify 3 gamification topics with ranking opportunity",
       "deliverableUrl": "/ops/deliverables/openclaw-147.md",
       "notes": [],
@@ -106,7 +150,7 @@
       "createdAt": "2026-02-11T03:57:30Z",
       "updatedAt": "2026-02-11T03:57:30Z",
       "completedAt": "2026-02-11T03:57:30Z",
-      "ageHours": 1.32,
+      "ageHours": 1.34,
       "deliverySummary": "Run publish pipeline with payload. Verify URL, sitemap, RSS after publication.",
       "deliverableUrl": "/ops/deliverables/openclaw-145.md",
       "notes": [],
@@ -124,27 +168,9 @@
       "createdAt": "2026-02-10T14:40:53Z",
       "updatedAt": "2026-02-10T14:40:53Z",
       "completedAt": "2026-02-10T14:40:53Z",
-      "ageHours": 14.6,
+      "ageHours": 14.62,
       "deliverySummary": "Select top 3 themes and attach one pricing strategy brief with concrete recommendations.",
       "deliverableUrl": "/ops/deliverables/openclaw-117.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-111",
-      "title": "Consolidate notebook capture and journaling routine",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-10T14:40:53Z",
-      "updatedAt": "2026-02-10T14:40:53Z",
-      "completedAt": "2026-02-10T14:40:53Z",
-      "ageHours": 14.6,
-      "deliverySummary": "Use one weekly notebook capture + journaling routine with small wins, maintenance checklist, and progress tracking.",
-      "deliverableUrl": "/ops/deliverables/openclaw-111.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -160,7 +186,7 @@
       "createdAt": "2026-02-10T10:51:02Z",
       "updatedAt": "2026-02-10T10:51:02Z",
       "completedAt": "2026-02-10T10:51:02Z",
-      "ageHours": 18.43,
+      "ageHours": 18.45,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-138.md",
       "notes": [],
@@ -178,7 +204,7 @@
       "createdAt": "2026-02-10T10:49:33Z",
       "updatedAt": "2026-02-10T10:49:33Z",
       "completedAt": "2026-02-10T10:49:33Z",
-      "ageHours": 18.45,
+      "ageHours": 18.47,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-137.md",
       "notes": [],
@@ -196,7 +222,7 @@
       "createdAt": "2026-02-09T14:57:26Z",
       "updatedAt": "2026-02-09T14:57:26Z",
       "completedAt": "2026-02-09T14:57:26Z",
-      "ageHours": 38.32,
+      "ageHours": 38.34,
       "deliverySummary": "Research travel options to Trivandrum; Plan accommodations; Create event schedule; Plan gift and budget",
       "deliverableUrl": "/ops/deliverables/openclaw-125.md",
       "notes": [],
@@ -214,7 +240,7 @@
       "createdAt": "2026-02-09T14:54:23Z",
       "updatedAt": "2026-02-09T14:54:23Z",
       "completedAt": "2026-02-09T14:54:23Z",
-      "ageHours": 38.37,
+      "ageHours": 38.39,
       "deliverySummary": "Review plan and make adjustments as needed",
       "deliverableUrl": "/ops/deliverables/openclaw-124.md",
       "notes": [],
@@ -232,7 +258,7 @@
       "createdAt": "2026-02-09T09:32:44Z",
       "updatedAt": "2026-02-09T09:32:44Z",
       "completedAt": "2026-02-09T09:32:44Z",
-      "ageHours": 43.73,
+      "ageHours": 43.75,
       "deliverySummary": "Task will be added to recurring review schedule",
       "deliverableUrl": "/ops/deliverables/openclaw-121.md",
       "notes": [],
@@ -250,7 +276,7 @@
       "createdAt": "2026-02-09T09:20:28Z",
       "updatedAt": "2026-02-09T09:20:28Z",
       "completedAt": "2026-02-09T09:20:28Z",
-      "ageHours": 43.94,
+      "ageHours": 43.96,
       "deliverySummary": "Write AI in L&D blog; Research Josh Bersin latest views; Complete weekly template planning",
       "deliverableUrl": "/ops/deliverables/openclaw-116.md",
       "notes": [],
@@ -268,7 +294,7 @@
       "createdAt": "2026-02-09T09:12:39Z",
       "updatedAt": "2026-02-09T09:12:39Z",
       "completedAt": "2026-02-09T09:12:39Z",
-      "ageHours": 44.07,
+      "ageHours": 44.09,
       "deliverySummary": "Review and refine blog content for publication",
       "deliverableUrl": "/ops/deliverables/openclaw-113.md",
       "notes": [],
@@ -292,11 +318,17 @@
     },
     {
       "level": "info",
-      "message": "No queued or active execution tasks right now."
+      "message": "OpenClaw is actively executing 1 task(s) in sequence (WIP=1)."
     }
   ],
   "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-11T05:16:40Z",
+      "type": "executed",
+      "taskId": "capture-107",
+      "message": "Autonomous SEO blog sprint: L&D framework comparison with decision matrix for leaders: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-11T05:10:41Z",
       "type": "executed",
@@ -650,16 +682,10 @@
       "type": "executed",
       "taskId": "capture-80",
       "message": "Identify high-potential themes to explore: Delegated via OpenClaw SSH (status=completed, task_id=e591713b-8072-44d6-8cff-93e5a86fd077): High-potential themes identified for exploration"
-    },
-    {
-      "timestamp": "2026-02-09T09:12:39Z",
-      "type": "executed",
-      "taskId": "capture-80",
-      "message": "Draft blog on learning and development: Delegated via OpenClaw SSH (status=completed, task_id=1cfb40ac-9d2c-48e9-9615-93cdef487ad0): Blog on learning and development drafted"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T05:16:36Z",
+    "updatedAt": "2026-02-11T05:17:47Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -739,16 +765,25 @@
     ],
     "publishOwner": "Publishing QA",
     "taskStats": {
-      "total": 15,
+      "total": 16,
       "completed": 7,
-      "queued": 0,
+      "queued": 1,
       "blocked": 0,
       "byStatus": {
+        "running": 1,
         "cancelled": 8,
         "completed": 7
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-151",
+        "title": "Autonomous SEO blog sprint: L&D framework comparison with decision matrix for leaders",
+        "status": "running",
+        "updated_at": "2026-02-11T05:16:40Z",
+        "next_steps": "OpenClaw SSH execution in progress.",
+        "blockers": ""
+      },
       {
         "id": "openclaw-150",
         "title": "Autonomous SEO blog sprint: AI beginner-to-advanced guide with practical checkpoints",
@@ -1221,21 +1256,31 @@
     },
     "progress": {
       "summary": {
-        "total": 10,
+        "total": 11,
         "completed": 4,
-        "active": 0,
+        "active": 1,
         "queued": 0,
         "blocked": 0,
         "cancelled": 6
       },
       "today": {
         "completed": 4,
-        "active": 0,
+        "active": 1,
         "queued": 0,
         "blocked": 0,
         "published": 2
       },
-      "activeTask": null,
+      "activeTask": {
+        "id": "openclaw-151",
+        "row_id": 151,
+        "capture_id": 107,
+        "title": "Autonomous SEO blog sprint: L&D framework comparison with decision matrix for leaders",
+        "status": "running",
+        "updated_at": "2026-02-11T05:16:40Z",
+        "next_steps": "OpenClaw SSH execution in progress.",
+        "blockers": "",
+        "description": "Increase organic traffic by running one full serialized SEO blog cycle in L&D, gamification, data, LXD, and AI. Start with topic discovery (3 candidates, pick best), then complete keyword/SERP analysis, writing, optimization, publishing, and measurement handoff. Produce publish QA evidence including live URL, sitemap, RSS, and status checks. Persist team_notes so future runs learn from this run and avoid repeated mistakes."
+      },
       "lastCompletedTask": {
         "id": "openclaw-149",
         "row_id": 149,
@@ -1248,11 +1293,21 @@
         "description": "Increase organic traffic by running one full serialized SEO blog cycle in L&D, gamification, data, LXD, and AI. Start with topic discovery (3 candidates, pick best), then complete keyword/SERP analysis, writing, optimization, publishing, and measurement handoff. Produce publish QA evidence including live URL, sitemap, RSS, and status checks. Persist team_notes so future runs learn from this run and avoid repeated mistakes."
       },
       "pendingQueue": {
-        "count": 0,
-        "recent": []
+        "count": 1,
+        "recent": [
+          {
+            "id": "inbox-469",
+            "capture_id": 107,
+            "title": "Autonomous SEO blog sprint: L&D framework comparison with decision matrix for leaders",
+            "status": "pending",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-11T05:16:40Z",
+            "executed_at": ""
+          }
+        ]
       },
       "stages": {
-        "focusTaskId": "openclaw-149",
+        "focusTaskId": "openclaw-151",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1268,18 +1323,18 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-11T04:47:41Z"
+        "lastStageAt": ""
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-11T05:16:36Z",
+        "lastStartedAt": "2026-02-11T05:17:47Z",
         "lastFinishedAt": "2026-02-11T05:15:09Z",
         "runtime": {
-          "pending_inbox": 0,
-          "active_openclaw": 0,
+          "pending_inbox": 1,
+          "active_openclaw": 1,
           "blocked_or_failed_openclaw": 0
         }
       }
@@ -1345,9 +1400,9 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T05:16:36Z",
+    "updatedAt": "2026-02-11T05:17:47Z",
     "metrics": {
-      "reviewRequested": 0,
+      "reviewRequested": 1,
       "proceedCount": 0,
       "closeCount": 0
     },
