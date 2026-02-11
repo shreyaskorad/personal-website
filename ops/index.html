@@ -1056,6 +1056,7 @@
       const bottleneck = progress.bottleneck || {};
       const recentIdeas = Array.isArray(progress.recentIdeas) ? progress.recentIdeas : [];
       const recentOutputs = Array.isArray(progress.recentOutputs) ? progress.recentOutputs : [];
+      const analytics = blog.analytics || {};
       const repo = blog.repoState || {};
       const checks = repo.checks || {};
       const agents = Array.isArray(blog.agents) ? blog.agents : [];
@@ -1086,6 +1087,32 @@
         : (bottleneck.state === "watch" || bottleneck.state === "idle" ? "tone-warn" : "tone-ok");
       const bottleneckText = bottleneck.reason || "No bottlenecks detected.";
       const bottleneckAt = bottleneck.at ? `<div class="muted">at: ${fmt(bottleneck.at)}</div>` : "";
+      const analyticsSummary = analytics.summary || {};
+      const analyticsVs = analyticsSummary.vsPrevious || {};
+      const analyticsStatus = String(analytics.status || "not_configured");
+      const analyticsTone = analyticsStatus === "ok"
+        ? "tone-ok"
+        : (analyticsStatus === "stale" ? "tone-warn" : "tone-err");
+      const analyticsInsights = Array.isArray(analytics.insights) ? analytics.insights : [];
+      const analyticsActions = Array.isArray(analytics.nextActions) ? analytics.nextActions : [];
+      const analyticsTopPosts = Array.isArray(analytics.topPosts) ? analytics.topPosts : [];
+      const analyticsInsightsRows = analyticsInsights.length
+        ? analyticsInsights.slice(0, 6).map((line) => `<div class="row"><div class="muted">${escapeHtml(line)}</div></div>`).join("")
+        : empty("No analytics insights yet.");
+      const analyticsActionsRows = analyticsActions.length
+        ? analyticsActions.slice(0, 3).map((line) => `<div class="row"><div class="muted">${escapeHtml(line)}</div></div>`).join("")
+        : empty("No actions suggested yet.");
+      const analyticsTopRows = analyticsTopPosts.length
+        ? analyticsTopPosts.slice(0, 8).map((row) => `
+          <div class="row">
+            <div class="topline">
+              <div class="title">${escapeHtml(row.path || "post")}</div>
+              <span class="tag">${escapeHtml(row.pageviews ?? 0)} views</span>
+            </div>
+            <div class="muted">sessions: ${escapeHtml(row.sessions ?? 0)} | engagement: ${escapeHtml(row.engagementRatePct ?? 0)}%</div>
+          </div>
+        `).join("")
+        : empty("No post analytics rows yet.");
       const ideaRows = recentIdeas.length
         ? recentIdeas.slice(0, 8).map((t) => `
           <div class="row">
@@ -1175,6 +1202,16 @@
               <div class="muted" style="margin-top:8px;">Repo checks</div>
               <div class="tags">${checkRows}</div>
             </div>
+            <div class="blog-panel">
+              <h3 class="subhead">Google Analytics</h3>
+              <div class="chip ${analyticsTone}">${escapeHtml(analyticsStatus)}</div>
+              <div class="muted">window: ${escapeHtml(analytics.lookbackDays ?? 0)} days</div>
+              <div class="muted">users: ${escapeHtml(analyticsSummary.users ?? 0)} | sessions: ${escapeHtml(analyticsSummary.sessions ?? 0)}</div>
+              <div class="muted">engagement: ${escapeHtml(analyticsSummary.engagementRatePct ?? 0)}%</div>
+              <div class="muted">delta users: ${escapeHtml(analyticsVs.usersPct ?? "n/a")} | delta sessions: ${escapeHtml(analyticsVs.sessionsPct ?? "n/a")}</div>
+              <div class="muted">as of: ${fmt(analytics.asOf)}</div>
+              ${analytics.error ? `<div class="muted">detail: ${escapeHtml(analytics.error)}</div>` : ""}
+            </div>
           </div>
         </div>
         <div class="blog-grid-2">
@@ -1195,6 +1232,18 @@
           <div class="blog-panel">
             <h3 class="subhead">Team Memory Notes</h3>
             <div class="list">${notes.length ? notes.slice(0, 8).map(blogNoteRow).join("") : empty("No team learning notes yet.")}</div>
+          </div>
+        </div>
+        <div class="blog-grid-2">
+          <div class="blog-panel">
+            <h3 class="subhead">Analytics Insights</h3>
+            <div class="list">${analyticsInsightsRows}</div>
+            <h3 class="subhead" style="margin-top:12px;">Recommended Actions</h3>
+            <div class="list">${analyticsActionsRows}</div>
+          </div>
+          <div class="blog-panel">
+            <h3 class="subhead">Top Content (GA4)</h3>
+            <div class="list">${analyticsTopRows}</div>
           </div>
         </div>
       `;
