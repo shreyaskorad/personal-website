@@ -9,10 +9,10 @@
 Monitor audience engagement and decision quality metrics over next 30 days
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T15:11:27Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T16:24:09Z)
 
 ## Last Error
-OpenClaw SSH command timed out after 260s
+OpenClaw SSH command failed: ssh: connect to host 192.168.1.29 port 22: Host is down
 
 ## Draft Deliverable (Fallback)
 # Deliverable Draft: Design Learning For Decision Quality, Not Completion Rates SEO blog operating system
