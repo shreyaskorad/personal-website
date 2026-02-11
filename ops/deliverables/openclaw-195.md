@@ -1,20 +1,14 @@
 # Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-185
-- Status: completed
-- Created: 2026-02-11T10:55:56Z
-- Updated: 2026-02-11T10:55:56Z
+- Task ID: openclaw-195
+- Status: running
+- Created: 2026-02-11T11:36:50Z
+- Updated: 2026-02-11T11:36:50Z
 
 ## Summary
-Topic Scout: identify 3 candidate topics for design without losing human judgment
+OpenClaw SSH execution in progress.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T10:57:11Z)
-
-## Last Error
-OpenClaw returned no usable markdown deliverable.
-
-## Draft Deliverable (Fallback)
 # Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
 
 ## Objective and success metrics
@@ -61,7 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Topic Scout: identify 3 candidate topics for design without losing human judgment
+OpenClaw SSH execution in progress.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

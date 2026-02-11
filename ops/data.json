@@ -1,69 +1,109 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T11:35:57Z",
+    "updatedAt": "2026-02-11T11:37:47Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
   "summary": {
     "totalTasks": 24,
-    "queued": 0,
-    "active": 0,
-    "completed": 23,
-    "due": 1,
-    "blocked": 1,
-    "executedTotal": 24,
+    "queued": 1,
+    "active": 1,
+    "completed": 22,
+    "due": 0,
+    "blocked": 0,
+    "executedTotal": 22,
     "byStatus": {
-      "completed": 23,
-      "failed": 1
+      "running": 1,
+      "queued": 1,
+      "completed": 22
     }
   },
   "laneMetrics": {
     "execution": {
-      "visible": 0,
-      "executedTotal": 24
+      "visible": 1,
+      "executedTotal": 22
     },
     "queue": {
-      "visible": 0,
-      "totalQueued": 0
+      "visible": 1,
+      "totalQueued": 1
     },
     "completed": {
-      "visible": 23,
-      "totalClosed": 23
+      "visible": 22,
+      "totalClosed": 22
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
-  "execution": [],
-  "queueTop": [],
-  "userActionsDue": [
+  "execution": [
     {
-      "id": "openclaw-194",
-      "title": "Build a practical LXD workflow for small teams shipping weekly",
+      "id": "openclaw-195",
+      "title": "Design without losing human judgment",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "running",
       "sequence": 0,
-      "createdAt": "2026-02-11T11:35:57Z",
-      "updatedAt": "2026-02-11T11:35:57Z",
-      "completedAt": "2026-02-11T11:35:57Z",
-      "ageHours": 0.0,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-194.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-11T11:36:50Z",
+      "updatedAt": "2026-02-11T11:36:50Z",
+      "completedAt": null,
+      "ageHours": 0.02,
+      "deliverySummary": "OpenClaw SSH execution in progress.",
+      "deliverableUrl": "/ops/deliverables/openclaw-195.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
     }
   ],
+  "queueTop": [
+    {
+      "id": "inbox-506",
+      "title": "Design without losing human judgment",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 1,
+      "createdAt": "2026-02-11T11:36:50Z",
+      "updatedAt": "2026-02-11T11:37:47Z",
+      "completedAt": null,
+      "ageHours": 0.02,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=144",
+        "inbox_item_id=506"
+      ],
+      "action": "create_task",
+      "scope": "professional",
+      "hasDeliverable": false,
+      "needsReview": false
+    }
+  ],
+  "userActionsDue": [],
   "completedRecent": [
+    {
+      "id": "openclaw-192",
+      "title": "Build a practical LXD workflow for small teams shipping weekly",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-11T11:23:59Z",
+      "updatedAt": "2026-02-11T11:23:59Z",
+      "completedAt": "2026-02-11T11:23:59Z",
+      "ageHours": 0.23,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-192.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
     {
       "id": "openclaw-190",
       "title": "Design learning for decision quality, not completion rates",
@@ -74,7 +114,7 @@
       "createdAt": "2026-02-11T11:10:44Z",
       "updatedAt": "2026-02-11T11:10:44Z",
       "completedAt": "2026-02-11T11:10:44Z",
-      "ageHours": 0.42,
+      "ageHours": 0.45,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-190.md",
       "notes": [],
@@ -92,7 +132,7 @@
       "createdAt": "2026-02-11T11:01:01Z",
       "updatedAt": "2026-02-11T11:01:01Z",
       "completedAt": "2026-02-11T11:01:01Z",
-      "ageHours": 0.58,
+      "ageHours": 0.61,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-187.md",
       "notes": [],
@@ -110,27 +150,9 @@
       "createdAt": "2026-02-11T10:59:06Z",
       "updatedAt": "2026-02-11T10:59:06Z",
       "completedAt": "2026-02-11T10:59:06Z",
-      "ageHours": 0.61,
+      "ageHours": 0.65,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-186.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-185",
-      "title": "Design without losing human judgment",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-11T10:55:56Z",
-      "updatedAt": "2026-02-11T10:55:56Z",
-      "completedAt": "2026-02-11T10:55:56Z",
-      "ageHours": 0.67,
-      "deliverySummary": "Topic Scout: identify 3 candidate topics for design without losing human judgment",
-      "deliverableUrl": "/ops/deliverables/openclaw-185.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -146,7 +168,7 @@
       "createdAt": "2026-02-11T10:51:17Z",
       "updatedAt": "2026-02-11T10:51:17Z",
       "completedAt": "2026-02-11T10:51:17Z",
-      "ageHours": 0.74,
+      "ageHours": 0.78,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-183.md",
       "notes": [],
@@ -164,7 +186,7 @@
       "createdAt": "2026-02-11T10:49:30Z",
       "updatedAt": "2026-02-11T10:49:30Z",
       "completedAt": "2026-02-11T10:49:30Z",
-      "ageHours": 0.77,
+      "ageHours": 0.81,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-182.md",
       "notes": [],
@@ -182,7 +204,7 @@
       "createdAt": "2026-02-11T10:45:52Z",
       "updatedAt": "2026-02-11T10:45:52Z",
       "completedAt": "2026-02-11T10:45:52Z",
-      "ageHours": 0.83,
+      "ageHours": 0.87,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for turning training requests into measurable capability outcomes",
       "deliverableUrl": "/ops/deliverables/openclaw-180.md",
       "notes": [],
@@ -200,7 +222,7 @@
       "createdAt": "2026-02-11T10:40:15Z",
       "updatedAt": "2026-02-11T10:40:15Z",
       "completedAt": "2026-02-11T10:40:15Z",
-      "ageHours": 0.93,
+      "ageHours": 0.96,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for LxD automation workflow guide with quality gates and failure reco...",
       "deliverableUrl": "/ops/deliverables/openclaw-179.md",
       "notes": [],
@@ -218,7 +240,7 @@
       "createdAt": "2026-02-11T10:12:41Z",
       "updatedAt": "2026-02-11T10:12:41Z",
       "completedAt": "2026-02-11T10:12:41Z",
-      "ageHours": 1.39,
+      "ageHours": 1.42,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for AI measurement and analytics deep dive with dashboard-ready metrics",
       "deliverableUrl": "/ops/deliverables/openclaw-175.md",
       "notes": [],
@@ -236,7 +258,7 @@
       "createdAt": "2026-02-11T10:06:00Z",
       "updatedAt": "2026-02-11T10:06:00Z",
       "completedAt": "2026-02-11T10:06:00Z",
-      "ageHours": 1.5,
+      "ageHours": 1.53,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for LxD measurement and analytics deep dive with dashboard-ready metrics",
       "deliverableUrl": "/ops/deliverables/openclaw-174.md",
       "notes": [],
@@ -254,7 +276,7 @@
       "createdAt": "2026-02-11T09:47:47Z",
       "updatedAt": "2026-02-11T09:47:47Z",
       "completedAt": "2026-02-11T09:47:47Z",
-      "ageHours": 1.8,
+      "ageHours": 1.83,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for LxD operational model for teams with weekly execution rhythm",
       "deliverableUrl": "/ops/deliverables/openclaw-171.md",
       "notes": [],
@@ -272,7 +294,7 @@
       "createdAt": "2026-02-11T09:40:35Z",
       "updatedAt": "2026-02-11T09:40:35Z",
       "completedAt": "2026-02-11T09:40:35Z",
-      "ageHours": 1.92,
+      "ageHours": 1.95,
       "deliverySummary": "Identify 3 candidate topics for AI myths vs reality breakdown with actionable recommendations",
       "deliverableUrl": "/ops/deliverables/openclaw-170.md",
       "notes": [],
@@ -290,7 +312,7 @@
       "createdAt": "2026-02-11T09:34:51Z",
       "updatedAt": "2026-02-11T09:34:51Z",
       "completedAt": "2026-02-11T09:34:51Z",
-      "ageHours": 2.02,
+      "ageHours": 2.05,
       "deliverySummary": "Identify 3 candidate topics for LxD myths vs reality breakdown with actionable recommendations",
       "deliverableUrl": "/ops/deliverables/openclaw-169.md",
       "notes": [],
@@ -308,7 +330,7 @@
       "createdAt": "2026-02-11T09:28:56Z",
       "updatedAt": "2026-02-11T09:28:56Z",
       "completedAt": "2026-02-11T09:28:56Z",
-      "ageHours": 2.12,
+      "ageHours": 2.15,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for data myths vs reality breakdown with actionable recommendations",
       "deliverableUrl": "/ops/deliverables/openclaw-168.md",
       "notes": [],
@@ -326,7 +348,7 @@
       "createdAt": "2026-02-11T09:17:09Z",
       "updatedAt": "2026-02-11T09:17:09Z",
       "completedAt": "2026-02-11T09:17:09Z",
-      "ageHours": 2.31,
+      "ageHours": 2.34,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for L&D myths vs reality breakdown with actionable recommendations",
       "deliverableUrl": "/ops/deliverables/openclaw-166.md",
       "notes": [],
@@ -344,7 +366,7 @@
       "createdAt": "2026-02-11T09:11:24Z",
       "updatedAt": "2026-02-11T09:11:24Z",
       "completedAt": "2026-02-11T09:11:24Z",
-      "ageHours": 2.41,
+      "ageHours": 2.44,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for AI operating model for teams with weekly execution rhythm",
       "deliverableUrl": "/ops/deliverables/openclaw-165.md",
       "notes": [],
@@ -362,7 +384,7 @@
       "createdAt": "2026-02-11T08:51:09Z",
       "updatedAt": "2026-02-11T08:51:09Z",
       "completedAt": "2026-02-11T08:51:09Z",
-      "ageHours": 2.75,
+      "ageHours": 2.78,
       "deliverySummary": "Start with Topic Scout: identify 3 candidate topics and select best",
       "deliverableUrl": "/ops/deliverables/openclaw-163.md",
       "notes": [],
@@ -380,7 +402,7 @@
       "createdAt": "2026-02-11T08:29:51Z",
       "updatedAt": "2026-02-11T08:29:51Z",
       "completedAt": "2026-02-11T08:29:51Z",
-      "ageHours": 3.1,
+      "ageHours": 3.13,
       "deliverySummary": "Provide publish QA evidence and measurement handoff",
       "deliverableUrl": "/ops/deliverables/openclaw-162.md",
       "notes": [],
@@ -398,7 +420,7 @@
       "createdAt": "2026-02-11T08:08:40Z",
       "updatedAt": "2026-02-11T08:08:40Z",
       "completedAt": "2026-02-11T08:08:40Z",
-      "ageHours": 3.45,
+      "ageHours": 3.49,
       "deliverySummary": "Provide publish QA evidence and measurement handoff",
       "deliverableUrl": "/ops/deliverables/openclaw-161.md",
       "notes": [],
@@ -416,7 +438,7 @@
       "createdAt": "2026-02-11T07:47:45Z",
       "updatedAt": "2026-02-11T07:47:45Z",
       "completedAt": "2026-02-11T07:47:45Z",
-      "ageHours": 3.8,
+      "ageHours": 3.83,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-160.md",
       "notes": [],
@@ -434,7 +456,7 @@
       "createdAt": "2026-02-11T07:27:17Z",
       "updatedAt": "2026-02-11T07:27:17Z",
       "completedAt": "2026-02-11T07:27:17Z",
-      "ageHours": 4.14,
+      "ageHours": 4.18,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-159.md",
       "notes": [],
@@ -452,27 +474,9 @@
       "createdAt": "2026-02-11T06:49:04Z",
       "updatedAt": "2026-02-11T06:49:04Z",
       "completedAt": "2026-02-11T06:49:04Z",
-      "ageHours": 4.78,
+      "ageHours": 4.81,
       "deliverySummary": "Monitor 30-day SEO metrics: organic traffic, keyword rankings, CTR, engagement patterns",
       "deliverableUrl": "/ops/deliverables/openclaw-156.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-155",
-      "title": "Autonomous SEO blog sprint: data framework comparison with decision matrix for leaders",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-11T06:27:02Z",
-      "updatedAt": "2026-02-11T06:27:02Z",
-      "completedAt": "2026-02-11T06:27:02Z",
-      "ageHours": 5.15,
-      "deliverySummary": "Search for data framework comparison topics with high search volume and content gaps",
-      "deliverableUrl": "/ops/deliverables/openclaw-155.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -494,21 +498,17 @@
     },
     {
       "level": "info",
-      "message": "No queued or active execution tasks right now."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
+      "message": "OpenClaw is actively executing 1 task(s) in sequence (WIP=1)."
     }
   ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-11T11:35:57Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
+  "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-11T11:36:50Z",
+      "type": "executed",
+      "taskId": "capture-144",
+      "message": "Autonomous writing sprint: Use AI in learning design without losing human judgment: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-11T11:35:57Z",
       "type": "skipped",
@@ -862,16 +862,10 @@
       "type": "executed",
       "taskId": "capture-115",
       "message": "Autonomous SEO blog sprint: LXD operating model for teams with weekly execution rhythm: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-11T08:29:51Z",
-      "type": "executed",
-      "taskId": "capture-114",
-      "message": "Autonomous SEO blog sprint: data operating model for teams with weekly execution rhythm: Delegated via OpenClaw SSH (status=completed, task_id=7beca2a0-f0dd-49e6-acbe-8a659dafd33d): LxD framework comparison post published - providing final QA evidence and measurement handoff"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T11:35:57Z",
+    "updatedAt": "2026-02-11T11:37:47Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -951,35 +945,43 @@
     ],
     "publishOwner": "Publishing QA",
     "analytics": {
-      "status": "not_configured",
-      "asOf": "2026-02-11T11:35:57Z",
+      "status": "error",
+      "asOf": "2026-02-11T11:37:47Z",
       "lookbackDays": 28,
       "summary": {},
       "channels": [],
       "topPosts": [],
       "insights": [],
       "nextActions": [],
-      "error": "Set GA4_PROPERTY_ID and GA4_SERVICE_ACCOUNT_FILE to enable analytics insights."
+      "error": "GA4 fetch failed: 403 Google Analytics Data API has not been used in project 1032487240856 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/analyticsdata.googleapis.com/overview?project=1032487240856 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. [reason: \"SERVICE_DISABLED\"\ndomain: \"googleapis.com\"\nmetadata {\n  key: \"service\"\n  value: \"analyticsdata.googleapis.com\"\n}\nmetadata {\n  key: \"serviceTitle\"\n  value: \"Google Analytics Data API\"\n}\nmetadata {\n  key: \"containerInfo\"\n  value: \"1032487240856\"\n}\nmetadata {\n  key: \"consumer\"\n  value: \"projects/1032487240856\"\n}\nmetadata {\n  key: \"activationUrl\"\n  value: \"https://console.developers.google.com/apis/api/analyticsdata.googleapis.com/overview?project=1032487240856\"\n}\n, locale: \"en-US\"\nmessage: \"Google Analytics Data API has not been used in project 1032487240856 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/analyticsdata.googleapis.com/overview?project=1032487240856 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.\"\n, links {\n  description: \"Google developers console API activation\"\n  url: \"https://console.developers.google.com/apis/api/analyticsdata.googleapis.com/overview?project=1032487240856\"\n}\n]"
     },
     "taskStats": {
-      "total": 59,
+      "total": 60,
       "completed": 44,
-      "queued": 0,
-      "blocked": 1,
+      "queued": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
-        "cancelled": 14,
+        "running": 1,
+        "cancelled": 15,
         "completed": 44
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-195",
+        "title": "Design without losing human judgment",
+        "status": "running",
+        "updated_at": "2026-02-11T11:36:50Z",
+        "next_steps": "OpenClaw SSH execution in progress.",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-194",
         "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "failed",
-        "updated_at": "2026-02-11T11:35:57Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-11T11:36:46Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-193",
@@ -1123,14 +1125,6 @@
         "status": "completed",
         "updated_at": "2026-02-11T10:20:45Z",
         "next_steps": "Topic Scout: identify 3 candidate topics for L&D automation workflow guide with quality gates and failure reco...",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-175",
-        "title": "Autonomous SEO blog sprint: AI measurement and analytics deep dive with dashboard-ready metrics",
-        "status": "completed",
-        "updated_at": "2026-02-11T10:12:41Z",
-        "next_steps": "Topic Scout: identify 3 candidate topics for AI measurement and analytics deep dive with dashboard-ready metrics",
         "blockers": ""
       }
     ],
@@ -1528,21 +1522,31 @@
     },
     "progress": {
       "summary": {
-        "total": 55,
+        "total": 56,
         "completed": 41,
-        "active": 0,
+        "active": 1,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 13
+        "blocked": 0,
+        "cancelled": 14
       },
       "today": {
         "completed": 41,
-        "active": 0,
+        "active": 1,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 3
       },
-      "activeTask": null,
+      "activeTask": {
+        "id": "openclaw-195",
+        "row_id": 195,
+        "capture_id": 144,
+        "title": "Design without losing human judgment",
+        "status": "running",
+        "updated_at": "2026-02-11T11:36:50Z",
+        "next_steps": "OpenClaw SSH execution in progress.",
+        "blockers": "",
+        "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes."
+      },
       "lastCompletedTask": {
         "id": "openclaw-192",
         "row_id": 192,
@@ -1555,27 +1559,37 @@
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes."
       },
       "pendingQueue": {
-        "count": 0,
-        "recent": []
+        "count": 1,
+        "recent": [
+          {
+            "id": "inbox-506",
+            "capture_id": 144,
+            "title": "Design without losing human judgment",
+            "status": "pending",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-11T11:36:50Z",
+            "executed_at": ""
+          }
+        ]
       },
-      "focusNote": {
-        "agent_id": "supervisor",
-        "created_at": "2026-02-11T11:23:59Z",
-        "note": "I'll complete the remaining phases and publish the blog article. Let me create the JSON payload and execute Publishing QA.",
-        "action_hint": "",
-        "handoff_to": ""
-      },
+      "focusNote": {},
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-11T11:35:57Z"
+        "state": "watch",
+        "reason": "Progress appears stuck at topic-scout; downstream stages have not started.",
+        "at": "2026-02-11T11:36:50Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-195",
+          "title": "Design without losing human judgment",
+          "status": "running",
+          "updated_at": "2026-02-11T11:36:50Z"
+        },
+        {
           "id": "openclaw-194",
           "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "failed",
-          "updated_at": "2026-02-11T11:35:57Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-11T11:36:46Z"
         },
         {
           "id": "openclaw-193",
@@ -1624,12 +1638,6 @@
           "title": "Autonomous writing sprint: Measure skill transfer in 30 days with lightweight evidence loops",
           "status": "completed",
           "updated_at": "2026-02-11T10:59:06Z"
-        },
-        {
-          "id": "openclaw-185",
-          "title": "Design without losing human judgment",
-          "status": "completed",
-          "updated_at": "2026-02-11T10:55:56Z"
         }
       ],
       "recentOutputs": [
@@ -1735,7 +1743,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-192",
+        "focusTaskId": "openclaw-195",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1751,19 +1759,19 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-11T11:23:59Z"
+        "lastStageAt": ""
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-11T11:25:24Z",
-        "lastFinishedAt": "2026-02-11T11:24:03Z",
+        "lastStartedAt": "2026-02-11T11:37:47Z",
+        "lastFinishedAt": "2026-02-11T11:36:01Z",
         "runtime": {
-          "pending_inbox": 0,
-          "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "pending_inbox": 1,
+          "active_openclaw": 1,
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1828,9 +1836,9 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T11:35:57Z",
+    "updatedAt": "2026-02-11T11:37:47Z",
     "metrics": {
-      "reviewRequested": 0,
+      "reviewRequested": 1,
       "proceedCount": 0,
       "closeCount": 0
     },
