@@ -9,6 +9,12 @@
 Monitor audience engagement and decision quality metrics over next 30 days
 
 ## Deliverable Output
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T13:23:44Z)
+
+## Last Error
+OpenClaw returned no usable markdown deliverable.
+
+## Draft Deliverable (Fallback)
 # Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
 
 ## Objective and success metrics
