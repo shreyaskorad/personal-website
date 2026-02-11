@@ -1,12 +1,12 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-324
+- Task ID: openclaw-325
 - Status: failed
-- Created: 2026-02-11T23:07:01Z
-- Updated: 2026-02-11T23:07:01Z
+- Created: 2026-02-11T23:07:56Z
+- Updated: 2026-02-11T23:07:56Z
 
 ## Summary
-Automatic compact retry failed. Wait for next autonomous cycle and smaller memory payload.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
 # Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
@@ -55,10 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Automatic compact retry failed. Wait for next autonomous cycle and smaller memory payload.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Blockers / Notes
-Context overflow retry failed.
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
