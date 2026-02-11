@@ -1,9 +1,9 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-217
+- Task ID: openclaw-218
 - Status: running
-- Created: 2026-02-11T12:50:28Z
-- Updated: 2026-02-11T12:50:28Z
+- Created: 2026-02-11T12:50:34Z
+- Updated: 2026-02-11T12:50:34Z
 
 ## Summary
 OpenClaw SSH execution in progress.
