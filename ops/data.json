@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T09:15:54Z",
+    "updatedAt": "2026-02-11T09:17:32Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "757e59c3f199070f"
   },
@@ -9,13 +9,12 @@
     "totalTasks": 16,
     "queued": 0,
     "active": 0,
-    "completed": 15,
-    "due": 1,
-    "blocked": 1,
+    "completed": 16,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 35,
     "byStatus": {
-      "completed": 15,
-      "failed": 1
+      "completed": 16
     }
   },
   "laneMetrics": {
@@ -28,42 +27,39 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 15,
-      "totalClosed": 15
+      "visible": 16,
+      "totalClosed": 16
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-154",
-      "title": "Autonomous SEO blog sprint: gamification framework comparison with decision matrix for leaders",
+      "id": "openclaw-166",
+      "title": "Autonomous SEO blog sprint: L&D myths vs reality breakdown with actionable recommendations",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-11T05:56:24Z",
-      "updatedAt": "2026-02-11T05:56:24Z",
-      "completedAt": "2026-02-11T05:56:24Z",
-      "ageHours": 3.33,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-154.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-11T09:17:09Z",
+      "updatedAt": "2026-02-11T09:17:09Z",
+      "completedAt": "2026-02-11T09:17:09Z",
+      "ageHours": 0.01,
+      "deliverySummary": "Topic Scout: identify 3 candidate topics for L&D myths vs reality breakdown with actionable recommendations",
+      "deliverableUrl": "/ops/deliverables/openclaw-166.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
     {
       "id": "openclaw-165",
       "title": "Autonomous SEO blog sprint: AI operating model for teams with weekly execution rhythm",
@@ -74,7 +70,7 @@
       "createdAt": "2026-02-11T09:11:24Z",
       "updatedAt": "2026-02-11T09:11:24Z",
       "completedAt": "2026-02-11T09:11:24Z",
-      "ageHours": 0.08,
+      "ageHours": 0.1,
       "deliverySummary": "Topic Scout: identify 3 candidate topics for AI operating model for teams with weekly execution rhythm",
       "deliverableUrl": "/ops/deliverables/openclaw-165.md",
       "notes": [],
@@ -92,7 +88,7 @@
       "createdAt": "2026-02-11T08:51:09Z",
       "updatedAt": "2026-02-11T08:51:09Z",
       "completedAt": "2026-02-11T08:51:09Z",
-      "ageHours": 0.41,
+      "ageHours": 0.44,
       "deliverySummary": "Start with Topic Scout: identify 3 candidate topics and select best",
       "deliverableUrl": "/ops/deliverables/openclaw-163.md",
       "notes": [],
@@ -110,7 +106,7 @@
       "createdAt": "2026-02-11T08:29:51Z",
       "updatedAt": "2026-02-11T08:29:51Z",
       "completedAt": "2026-02-11T08:29:51Z",
-      "ageHours": 0.77,
+      "ageHours": 0.79,
       "deliverySummary": "Provide publish QA evidence and measurement handoff",
       "deliverableUrl": "/ops/deliverables/openclaw-162.md",
       "notes": [],
@@ -128,7 +124,7 @@
       "createdAt": "2026-02-11T08:08:40Z",
       "updatedAt": "2026-02-11T08:08:40Z",
       "completedAt": "2026-02-11T08:08:40Z",
-      "ageHours": 1.12,
+      "ageHours": 1.15,
       "deliverySummary": "Provide publish QA evidence and measurement handoff",
       "deliverableUrl": "/ops/deliverables/openclaw-161.md",
       "notes": [],
@@ -146,7 +142,7 @@
       "createdAt": "2026-02-11T07:47:45Z",
       "updatedAt": "2026-02-11T07:47:45Z",
       "completedAt": "2026-02-11T07:47:45Z",
-      "ageHours": 1.47,
+      "ageHours": 1.5,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-160.md",
       "notes": [],
@@ -164,7 +160,7 @@
       "createdAt": "2026-02-11T07:27:17Z",
       "updatedAt": "2026-02-11T07:27:17Z",
       "completedAt": "2026-02-11T07:27:17Z",
-      "ageHours": 1.81,
+      "ageHours": 1.84,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-159.md",
       "notes": [],
@@ -182,7 +178,7 @@
       "createdAt": "2026-02-11T06:49:04Z",
       "updatedAt": "2026-02-11T06:49:04Z",
       "completedAt": "2026-02-11T06:49:04Z",
-      "ageHours": 2.45,
+      "ageHours": 2.47,
       "deliverySummary": "Monitor 30-day SEO metrics: organic traffic, keyword rankings, CTR, engagement patterns",
       "deliverableUrl": "/ops/deliverables/openclaw-156.md",
       "notes": [],
@@ -200,7 +196,7 @@
       "createdAt": "2026-02-11T06:27:02Z",
       "updatedAt": "2026-02-11T06:27:02Z",
       "completedAt": "2026-02-11T06:27:02Z",
-      "ageHours": 2.81,
+      "ageHours": 2.84,
       "deliverySummary": "Search for data framework comparison topics with high search volume and content gaps",
       "deliverableUrl": "/ops/deliverables/openclaw-155.md",
       "notes": [],
@@ -218,7 +214,7 @@
       "createdAt": "2026-02-11T05:25:42Z",
       "updatedAt": "2026-02-11T05:25:42Z",
       "completedAt": "2026-02-11T05:25:42Z",
-      "ageHours": 3.84,
+      "ageHours": 3.86,
       "deliverySummary": "Monitor 30-day SEO metrics: organic traffic, keyword rankings, CTR, engagement patterns",
       "deliverableUrl": "/ops/deliverables/openclaw-153.md",
       "notes": [],
@@ -236,7 +232,7 @@
       "createdAt": "2026-02-11T04:47:41Z",
       "updatedAt": "2026-02-11T04:47:41Z",
       "completedAt": "2026-02-11T04:47:41Z",
-      "ageHours": 4.47,
+      "ageHours": 4.5,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-149.md",
       "notes": [],
@@ -254,7 +250,7 @@
       "createdAt": "2026-02-11T04:41:47Z",
       "updatedAt": "2026-02-11T04:41:47Z",
       "completedAt": "2026-02-11T04:41:47Z",
-      "ageHours": 4.57,
+      "ageHours": 4.6,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-148.md",
       "notes": [],
@@ -272,7 +268,7 @@
       "createdAt": "2026-02-11T04:20:50Z",
       "updatedAt": "2026-02-11T04:20:50Z",
       "completedAt": "2026-02-11T04:20:50Z",
-      "ageHours": 4.92,
+      "ageHours": 4.95,
       "deliverySummary": "Execute Topic Scout agent to identify 3 gamification topics with ranking opportunity",
       "deliverableUrl": "/ops/deliverables/openclaw-147.md",
       "notes": [],
@@ -290,7 +286,7 @@
       "createdAt": "2026-02-11T03:57:30Z",
       "updatedAt": "2026-02-11T03:57:30Z",
       "completedAt": "2026-02-11T03:57:30Z",
-      "ageHours": 5.31,
+      "ageHours": 5.33,
       "deliverySummary": "Run publish pipeline with payload. Verify URL, sitemap, RSS after publication.",
       "deliverableUrl": "/ops/deliverables/openclaw-145.md",
       "notes": [],
@@ -308,7 +304,7 @@
       "createdAt": "2026-02-10T10:51:02Z",
       "updatedAt": "2026-02-10T10:51:02Z",
       "completedAt": "2026-02-10T10:51:02Z",
-      "ageHours": 22.41,
+      "ageHours": 22.44,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-138.md",
       "notes": [],
@@ -326,7 +322,7 @@
       "createdAt": "2026-02-10T10:49:33Z",
       "updatedAt": "2026-02-10T10:49:33Z",
       "completedAt": "2026-02-10T10:49:33Z",
-      "ageHours": 22.44,
+      "ageHours": 22.47,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-137.md",
       "notes": [],
@@ -351,20 +347,22 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    }
+  ],
+  "errors": [],
+  "recentActivity": [
+    {
+      "timestamp": "2026-02-11T09:17:09Z",
+      "type": "executed",
+      "taskId": "capture-117",
+      "message": "Autonomous SEO blog sprint: L&D myths vs reality breakdown with actionable recommendations: Delegated via OpenClaw SSH (status=completed, task_id=c48c1a9c-11a1-482a-9a15-d7516131df15): Executing SEO blog sprint for L&D myths vs reality topic - Topic Scout phase"
     },
     {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
-    }
-  ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-11T05:56:24Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
-  "recentActivity": [
+      "timestamp": "2026-02-11T09:16:47Z",
+      "type": "executed",
+      "taskId": "capture-117",
+      "message": "Autonomous SEO blog sprint: L&D myths vs reality breakdown with actionable recommendations: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-11T09:11:24Z",
       "type": "executed",
@@ -712,22 +710,10 @@
       "type": "executed",
       "taskId": "capture-88",
       "message": "Essentially is it has all the calls that I do: Delegated via OpenClaw SSH (status=blocked, task_id=22af1760-2f72-4aa5-b54f-eaf7f84fb9c2): Need clarification on which system to analyze for client calls"
-    },
-    {
-      "timestamp": "2026-02-10T10:42:16Z",
-      "type": "executed",
-      "taskId": "capture-87",
-      "message": "Improve the dashboard yesterday itself, so I think I\u2019m happy with where we are now, there is no other improvement tha: Delegated via OpenClaw SSH (status=completed, task_id=cae66bcf-81f4-4a35-b508-87ef731d8007): Dashboard review task #43 completed and changes finalised"
-    },
-    {
-      "timestamp": "2026-02-10T10:41:04Z",
-      "type": "executed",
-      "taskId": "capture-87",
-      "message": "What are the expenses of different places will go to: Delegated via OpenClaw SSH (status=blocked, task_id=c3a5ab37-a650-43db-816c-518fbb10d064): Need clarification on specific places for expense breakdown"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T09:15:54Z",
+    "updatedAt": "2026-02-11T09:17:32Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -807,17 +793,24 @@
     ],
     "publishOwner": "Publishing QA",
     "taskStats": {
-      "total": 30,
-      "completed": 18,
+      "total": 31,
+      "completed": 19,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "completed": 18,
-        "cancelled": 11,
-        "failed": 1
+        "completed": 19,
+        "cancelled": 12
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-166",
+        "title": "Autonomous SEO blog sprint: L&D myths vs reality breakdown with actionable recommendations",
+        "status": "completed",
+        "updated_at": "2026-02-11T09:17:09Z",
+        "next_steps": "Topic Scout: identify 3 candidate topics for L&D myths vs reality breakdown with actionable recommendations",
+        "blockers": ""
+      },
       {
         "id": "openclaw-165",
         "title": "Autonomous SEO blog sprint: AI operating model for teams with weekly execution rhythm",
@@ -909,10 +902,10 @@
       {
         "id": "openclaw-154",
         "title": "Autonomous SEO blog sprint: gamification framework comparison with decision matrix for leaders",
-        "status": "failed",
-        "updated_at": "2026-02-11T05:56:24Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-11T09:17:31Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-153",
@@ -969,19 +962,24 @@
         "updated_at": "2026-02-11T04:20:50Z",
         "next_steps": "Execute Topic Scout agent to identify 3 gamification topics with ranking opportunity",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-146",
-        "title": "Autonomous SEO blog sprint: L&D beginner-to-advanced guide with practical checkpoints",
-        "status": "cancelled",
-        "updated_at": "2026-02-11T03:58:18Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 44,
+          "created_at": "2026-02-11T09:17:09Z",
+          "capture_id": 117,
+          "openclaw_row_id": 166,
+          "source": "openclaw_ssh",
+          "task_title": "Autonomous SEO blog sprint: L&D myths vs reality breakdown with actionable recommendations",
+          "agent_id": "topic-scout",
+          "agent_role": "Topic Scout",
+          "note": "Starting topic discovery for L&D myths vs reality breakdown with actionable recommendations. Need to identify 3 high-upside topics tied to L&D, gamification, data, LxD domains.",
+          "action_hint": "Shortlist 3 candidates with ranking opportunity assessment and thesis development",
+          "handoff_to": "serp-keyword"
+        },
         {
           "id": 43,
           "created_at": "2026-02-11T09:11:24Z",
@@ -1163,19 +1161,6 @@
           "note": "Post drafted: 1850 words, 7 sections, practical decision matrix tool, 5 evidence-backed claims, 7 checkpoints. Includes framework comparisons (ADDIE, SAMR, Gagne, Bloom's Taxonomy, Kirkpatrick), scoring system, implementation framework, selection criteria. CTA with decision matrix template suggestion.",
           "action_hint": "Optimize metadata, validate heading hierarchy, suggest schema, add internal links",
           "handoff_to": "seo-optimizer"
-        },
-        {
-          "id": 29,
-          "created_at": "2026-02-11T06:49:04Z",
-          "capture_id": 110,
-          "openclaw_row_id": 156,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous SEO blog sprint: LXD framework comparison with decision matrix for leaders",
-          "agent_id": "research-analyst",
-          "agent_role": "Research Analyst",
-          "note": "Sources gathered: ADDIE (IDA), SAMR (Zhai), Bloom's Taxonomy (original/revised), Kirkpatrick (levels 1-4), Gagne's Nine Events (revised), modern framework comparison standards. Claims verification table ready with 5 evidence-backed claims including framework comparison data and implementation criteria.",
-          "action_hint": "Draft complete post using sources, include practical checkpoints, follow site voice",
-          "handoff_to": "writer"
         }
       ]
     },
@@ -1373,29 +1358,29 @@
     },
     "progress": {
       "summary": {
-        "total": 25,
-        "completed": 15,
+        "total": 26,
+        "completed": 16,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 9
+        "blocked": 0,
+        "cancelled": 10
       },
       "today": {
-        "completed": 15,
+        "completed": 16,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 5
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-165",
-        "row_id": 165,
-        "capture_id": 116,
-        "title": "Autonomous SEO blog sprint: AI operating model for teams with weekly execution rhythm",
+        "id": "openclaw-166",
+        "row_id": 166,
+        "capture_id": 117,
+        "title": "Autonomous SEO blog sprint: L&D myths vs reality breakdown with actionable recommendations",
         "status": "completed",
-        "updated_at": "2026-02-11T09:11:24Z",
-        "next_steps": "Topic Scout: identify 3 candidate topics for AI operating model for teams with weekly execution rhythm",
+        "updated_at": "2026-02-11T09:17:09Z",
+        "next_steps": "Topic Scout: identify 3 candidate topics for L&D myths vs reality breakdown with actionable recommendations",
         "blockers": "",
         "description": "Increase organic traffic by running one full serialized SEO blog cycle in L&D, gamification, data, LXD, and AI. Start with topic discovery (3 candidates, pick best), then complete keyword/SERP analysis, writing, optimization, publishing, and measurement handoff. Produce publish QA evidence including live URL, sitemap, RSS, and status checks. Persist team_notes so future runs learn from this run and avoid repeated mistakes."
       },
@@ -1404,7 +1389,7 @@
         "recent": []
       },
       "stages": {
-        "focusTaskId": "openclaw-165",
+        "focusTaskId": "openclaw-166",
         "total": 9,
         "done": 1,
         "remaining": 8,
@@ -1421,19 +1406,19 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-11T09:11:24Z"
+        "lastStageAt": "2026-02-11T09:17:09Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-11T09:15:54Z",
-        "lastFinishedAt": "2026-02-11T09:15:47Z",
+        "lastStartedAt": "2026-02-11T09:17:32Z",
+        "lastFinishedAt": "2026-02-11T09:15:58Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1498,7 +1483,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T09:15:54Z",
+    "updatedAt": "2026-02-11T09:17:32Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
