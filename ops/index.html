@@ -718,13 +718,21 @@
       const site = blog.site || {};
       const exec = blog.execution || {};
       const stats = blog.taskStats || {};
+      const progress = blog.progress || {};
+      const summary = progress.summary || {};
+      const today = progress.today || {};
+      const stages = progress.stages || {};
+      const pipeline = progress.pipeline || {};
+      const activeTask = progress.activeTask || null;
+      const lastCompleted = progress.lastCompletedTask || null;
+      const pendingQueue = progress.pendingQueue || {};
       const repo = blog.repoState || {};
       const checks = repo.checks || {};
       const agents = Array.isArray(blog.agents) ? blog.agents : [];
       const tasks = Array.isArray(blog.recentTasks) ? blog.recentTasks : [];
       const notes = (blog.teamMemory && Array.isArray(blog.teamMemory.recent)) ? blog.teamMemory.recent : [];
       const checkRows = Object.keys(checks).length
-        ? Object.entries(checks).map(([k,v]) => `<div class="muted">${escapeHtml(k)}: ${v ? 'ok' : 'missing'}</div>`).join("")
+        ? Object.entries(checks).map(([k, v]) => `<div class="muted">${escapeHtml(k)}: ${v ? "ok" : "missing"}</div>`).join("")
         : `<div class="muted">No repo checks yet.</div>`;
       const recentTasksHtml = tasks.length
         ? tasks.slice(0, 8).map(blogTaskRow).join("")
@@ -732,32 +740,46 @@
       const notesHtml = notes.length
         ? notes.slice(0, 8).map(blogNoteRow).join("")
         : empty("No team learning notes yet.");
-      if (countEl) countEl.textContent = `${notes.length}`;
+      const focusRow = activeTask || lastCompleted;
+      const focusHtml = focusRow ? blogTaskRow(focusRow) : empty("No active or completed run yet.");
+      const schedulerState = pipeline.tickInProgress ? "running" : "idle";
+      if (countEl) countEl.textContent = `${summary.completed ?? stats.completed ?? 0}`;
       mount.innerHTML = `
         <div class="blog-grid">
           <div class="blog-box">
             <h3>Program</h3>
-            <div class="muted">site: ${escapeHtml(site.name || '')}</div>
-            <div class="muted">url: <a href="${escapeHtml(site.url || '#')}" target="_blank" rel="noopener">${escapeHtml(site.url || '')}</a></div>
-            <div class="muted">topics: ${escapeHtml((site.primary_topics || []).join(', '))}</div>
-            <div class="muted">agents: ${agents.length} | publish owner: ${escapeHtml(blog.publishOwner || '')}</div>
+            <div class="muted">site: ${escapeHtml(site.name || "")}</div>
+            <div class="muted">url: <a href="${escapeHtml(site.url || "#")}" target="_blank" rel="noopener">${escapeHtml(site.url || "")}</a></div>
+            <div class="muted">topics: ${escapeHtml((site.primary_topics || []).join(", "))}</div>
+            <div class="muted">agents: ${agents.length} | publish owner: ${escapeHtml(blog.publishOwner || "")}</div>
           </div>
           <div class="blog-box">
-            <h3>Execution</h3>
-            <div class="muted">strategy: ${escapeHtml(exec.subagent_strategy || 'serialized')}</div>
-            <div class="muted">parallelism: ${escapeHtml(exec.effective_parallelism ?? 1)}</div>
-            <div class="muted">tasks tracked: ${escapeHtml(stats.total ?? 0)}</div>
-            <div class="muted">completed: ${escapeHtml(stats.completed ?? 0)} | queued: ${escapeHtml(stats.queued ?? 0)} | blocked: ${escapeHtml(stats.blocked ?? 0)}</div>
+            <h3>Live progress</h3>
+            <div class="muted">done: ${escapeHtml(summary.completed ?? 0)} / ${escapeHtml(summary.total ?? stats.total ?? 0)}</div>
+            <div class="muted">active: ${escapeHtml(summary.active ?? 0)} | queued: ${escapeHtml(summary.queued ?? 0)} | blocked: ${escapeHtml(summary.blocked ?? 0)}</div>
+            <div class="muted">today done: ${escapeHtml(today.completed ?? 0)} | published: ${escapeHtml(today.published ?? 0)}</div>
+            <div class="muted">stages: ${escapeHtml(stages.done ?? 0)} / ${escapeHtml(stages.total ?? 0)} for ${escapeHtml(stages.focusTaskId || "n/a")}</div>
+            <div class="muted">pending queue: ${escapeHtml(pendingQueue.count ?? 0)}</div>
+          </div>
+          <div class="blog-box">
+            <h3>Scheduler</h3>
+            <div class="muted">state: ${escapeHtml(schedulerState)}</div>
+            <div class="muted">last status: ${escapeHtml(pipeline.lastStatus || "unknown")} (${escapeHtml(pipeline.lastReason || "n/a")})</div>
+            <div class="muted">started: ${fmt(pipeline.lastStartedAt)}</div>
+            <div class="muted">finished: ${fmt(pipeline.lastFinishedAt)}</div>
+            <div class="muted">runtime: inbox ${escapeHtml((pipeline.runtime && pipeline.runtime.pending_inbox) ?? 0)} | active ${escapeHtml((pipeline.runtime && pipeline.runtime.active_openclaw) ?? 0)}</div>
           </div>
           <div class="blog-box">
             <h3>Repo checks</h3>
-            <div class="muted">repo: ${escapeHtml(repo.repo_hint || '')}</div>
+            <div class="muted">repo: ${escapeHtml(repo.repo_hint || "")}</div>
             ${checkRows}
           </div>
         </div>
         <div class="blog-grid" style="margin-top: 8px; grid-template-columns: repeat(2, minmax(0,1fr));">
           <div class="blog-box blog-list-tight">
-            <h3>Recent SEO tasks</h3>
+            <h3>Current focus</h3>
+            ${focusHtml}
+            <h3 style="margin-top: 10px;">Recent SEO tasks</h3>
             ${recentTasksHtml}
           </div>
           <div class="blog-box blog-list-tight">
