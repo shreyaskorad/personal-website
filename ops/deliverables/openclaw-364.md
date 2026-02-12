@@ -1,12 +1,12 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-358
-- Status: cancelled
-- Created: 2026-02-12T00:10:01Z
-- Updated: 2026-02-12T00:10:01Z
+- Task ID: openclaw-364
+- Status: failed
+- Created: 2026-02-12T00:14:49Z
+- Updated: 2026-02-12T00:14:49Z
 
 ## Summary
-Auto-closed by autonomous mode to keep execution deterministic.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
 # Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
@@ -55,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-closed by autonomous mode to keep execution deterministic.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
