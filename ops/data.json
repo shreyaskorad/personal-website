@@ -1,28 +1,27 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T03:42:18Z",
+    "updatedAt": "2026-02-12T03:42:28Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
   "summary": {
-    "totalTasks": 6,
+    "totalTasks": 5,
     "queued": 1,
-    "active": 1,
+    "active": 0,
     "completed": 4,
     "due": 0,
     "blocked": 0,
-    "executedTotal": 4,
+    "executedTotal": 5,
     "byStatus": {
-      "running": 1,
       "queued": 1,
       "completed": 4
     }
   },
   "laneMetrics": {
     "execution": {
-      "visible": 1,
-      "executedTotal": 4
+      "visible": 0,
+      "executedTotal": 5
     },
     "queue": {
       "visible": 1,
@@ -40,26 +39,7 @@
       "needsInput": 0
     }
   },
-  "execution": [
-    {
-      "id": "openclaw-433",
-      "title": "Design onboarding that builds role judgment instead of checklist compliance",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "running",
-      "sequence": 0,
-      "createdAt": "2026-02-12T03:41:58Z",
-      "updatedAt": "2026-02-12T03:41:58Z",
-      "completedAt": null,
-      "ageHours": 0.01,
-      "deliverySummary": "OpenClaw SSH execution in progress.",
-      "deliverableUrl": "/ops/deliverables/openclaw-433.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    }
-  ],
+  "execution": [],
   "queueTop": [
     {
       "id": "inbox-740",
@@ -69,10 +49,10 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-12T03:41:58Z",
-      "updatedAt": "2026-02-12T03:42:18Z",
+      "updatedAt": "2026-02-12T03:42:28Z",
       "completedAt": null,
       "ageHours": 0.01,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (openclaw_ssh_busy:1)",
       "deliverableUrl": null,
       "notes": [
         "capture_id=378",
@@ -132,7 +112,7 @@
       "createdAt": "2026-02-12T03:25:52Z",
       "updatedAt": "2026-02-12T03:25:52Z",
       "completedAt": "2026-02-12T03:25:52Z",
-      "ageHours": 0.27,
+      "ageHours": 0.28,
       "deliverySummary": "Monitor engagement metrics and decision quality signals over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-427.md",
       "notes": [],
@@ -174,7 +154,7 @@
     },
     {
       "level": "info",
-      "message": "OpenClaw is actively executing 1 task(s) in sequence (WIP=1)."
+      "message": "Queue has 1 task(s). OpenClaw will continue dispatching sequentially while idle."
     }
   ],
   "errors": [],
@@ -541,7 +521,7 @@
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T03:42:18Z",
+    "updatedAt": "2026-02-12T03:42:28Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -732,21 +712,20 @@
     "taskStats": {
       "total": 80,
       "completed": 22,
-      "queued": 1,
+      "queued": 0,
       "blocked": 0,
       "byStatus": {
-        "running": 1,
-        "completed": 22,
-        "cancelled": 57
+        "cancelled": 58,
+        "completed": 22
       }
     },
     "recentTasks": [
       {
         "id": "openclaw-433",
         "title": "Design onboarding that builds role judgment instead of checklist compliance",
-        "status": "running",
-        "updated_at": "2026-02-12T03:41:58Z",
-        "next_steps": "OpenClaw SSH execution in progress.",
+        "status": "cancelled",
+        "updated_at": "2026-02-12T03:42:18Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
       },
       {
@@ -1298,29 +1277,19 @@
       "summary": {
         "total": 120,
         "completed": 23,
-        "active": 1,
+        "active": 0,
         "queued": 0,
         "blocked": 0,
-        "cancelled": 96
+        "cancelled": 97
       },
       "today": {
         "completed": 22,
-        "active": 1,
+        "active": 0,
         "queued": 0,
         "blocked": 0,
         "published": 0
       },
-      "activeTask": {
-        "id": "openclaw-433",
-        "row_id": 433,
-        "capture_id": 378,
-        "title": "Design onboarding that builds role judgment instead of checklist compliance",
-        "status": "running",
-        "updated_at": "2026-02-12T03:41:58Z",
-        "next_steps": "OpenClaw SSH execution in progress.",
-        "blockers": "",
-        "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
-      },
+      "activeTask": null,
       "lastCompletedTask": {
         "id": "openclaw-432",
         "row_id": 432,
@@ -1340,24 +1309,30 @@
             "capture_id": 378,
             "title": "Design onboarding that builds role judgment instead of checklist compliance",
             "status": "pending",
-            "detail": "Waiting for OpenClaw execution",
+            "detail": "Queued for OpenClaw execution (openclaw_ssh_busy:1)",
             "created_at": "2026-02-12T03:41:58Z",
             "executed_at": ""
           }
         ]
       },
-      "focusNote": {},
+      "focusNote": {
+        "agent_id": "publishing-qa",
+        "created_at": "2026-02-12T03:39:59Z",
+        "note": "Article already published at https://shreyaskorad.in/posts/make-learning-evidence-useful-for-business-reviews-without-heavy-reporting-overhead.html. 200 status code confirmed. Sitemap and RSS verified.",
+        "action_hint": "Monitor engagement and business review alignment over 30 days. Update refresh triggers based on implementation learnings.",
+        "handoff_to": "supervisor"
+      },
       "bottleneck": {
-        "state": "watch",
-        "reason": "Progress appears stuck at topic-scout; downstream stages have not started.",
-        "at": "2026-02-12T03:41:58Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-12T03:41:09Z"
       },
       "recentIdeas": [
         {
           "id": "openclaw-433",
           "title": "Design onboarding that builds role judgment instead of checklist compliance",
-          "status": "running",
-          "updated_at": "2026-02-12T03:41:58Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-12T03:42:18Z"
         },
         {
           "id": "openclaw-432",
@@ -1517,34 +1492,35 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-433",
+        "focusTaskId": "openclaw-432",
         "total": 9,
-        "done": 0,
-        "remaining": 9,
-        "doneIds": [],
-        "remainingIds": [
+        "done": 3,
+        "remaining": 6,
+        "doneIds": [
           "topic-scout",
+          "writer",
+          "publishing-qa"
+        ],
+        "remainingIds": [
           "serp-keyword",
           "brief-architect",
           "research-analyst",
-          "writer",
           "seo-optimizer",
           "editor",
-          "refresh-planner",
-          "publishing-qa"
+          "refresh-planner"
         ],
-        "lastStageAt": ""
+        "lastStageAt": "2026-02-12T03:39:59Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
-        "lastStatus": "recovered",
+        "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T03:41:54Z",
+        "lastStartedAt": "2026-02-12T03:42:18Z",
         "lastFinishedAt": "2026-02-12T03:41:09Z",
         "runtime": {
           "pending_inbox": 1,
-          "active_openclaw": 1,
+          "active_openclaw": 0,
           "blocked_or_failed_openclaw": 0
         }
       }
@@ -1610,7 +1586,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T03:42:18Z",
+    "updatedAt": "2026-02-12T03:42:28Z",
     "metrics": {
       "reviewRequested": 1,
       "proceedCount": 0,
