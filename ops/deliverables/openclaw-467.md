@@ -1,21 +1,21 @@
-# Deliverable: Design learning for decision quality, not completion rates
+# Deliverable: Design manager enablement that links coaching actions to team capability growth
 
-- Task ID: openclaw-427
+- Task ID: openclaw-467
 - Status: completed
-- Created: 2026-02-12T03:25:52Z
-- Updated: 2026-02-12T03:25:52Z
+- Created: 2026-02-12T05:12:49Z
+- Updated: 2026-02-12T05:12:49Z
 
 ## Summary
-Monitor engagement metrics and decision quality signals over next 30 days
+Verify topic uniqueness, execute topic scout → writer → publishing qa
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T03:27:09Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T05:14:11Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Design Learning For Decision Quality, Not Completion Rates SEO blog operating system
+# Deliverable Draft: Design Manager Enablement That Links Coaching Actions To Team Capability Growth SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Monitor engagement metrics and decision quality signals over next 30 days
+Verify topic uniqueness, execute topic scout → writer → publishing qa
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
