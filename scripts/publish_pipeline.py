@@ -494,6 +494,7 @@ def main() -> None:
     except BlockingIOError:
         die('Another publish operation is in progress', 75)
 
+    starting_branch = (run(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], check=False).stdout or '').strip() or 'main'
     publish_branch = prepare_publish_branch()
 
     raw = json.loads(input_path.read_text())
@@ -531,6 +532,9 @@ def main() -> None:
 
     push_status = commit_and_push(commit_msg)
     sha = get_head_sha()
+
+    if starting_branch and starting_branch != publish_branch:
+        subprocess.run(['git', 'checkout', starting_branch], cwd=ROOT, text=True, capture_output=True)
 
     result = {
         'status': 'ok',
