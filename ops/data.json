@@ -1,69 +1,65 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T03:39:03Z",
+    "updatedAt": "2026-02-12T03:41:07Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
   "summary": {
-    "totalTasks": 3,
+    "totalTasks": 4,
     "queued": 0,
     "active": 0,
-    "completed": 2,
-    "due": 1,
-    "blocked": 1,
-    "executedTotal": 3,
+    "completed": 4,
+    "due": 0,
+    "blocked": 0,
+    "executedTotal": 4,
     "byStatus": {
-      "completed": 2,
-      "failed": 1
+      "completed": 4
     }
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 3
+      "executedTotal": 4
     },
     "queue": {
       "visible": 0,
       "totalQueued": 0
     },
     "completed": {
-      "visible": 2,
-      "totalClosed": 2
+      "visible": 4,
+      "totalClosed": 4
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-431",
-      "title": "Design without losing human judgment",
+      "id": "openclaw-432",
+      "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-12T03:39:01Z",
-      "updatedAt": "2026-02-12T03:39:01Z",
-      "completedAt": "2026-02-12T03:39:01Z",
-      "ageHours": 0.0,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-431.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-12T03:39:59Z",
+      "updatedAt": "2026-02-12T03:39:59Z",
+      "completedAt": "2026-02-12T03:39:59Z",
+      "ageHours": 0.02,
+      "deliverySummary": "Monitor engagement metrics and business reviews alignment over next 30 days",
+      "deliverableUrl": "/ops/deliverables/openclaw-432.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
     {
       "id": "openclaw-430",
       "title": "Build a practical LXD workflow for small teams shipping weekly",
@@ -74,7 +70,7 @@
       "createdAt": "2026-02-12T03:35:58Z",
       "updatedAt": "2026-02-12T03:35:58Z",
       "completedAt": "2026-02-12T03:35:58Z",
-      "ageHours": 0.05,
+      "ageHours": 0.09,
       "deliverySummary": "Monitor reader engagement and LxD workflow adoption metrics over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-430.md",
       "notes": [],
@@ -92,9 +88,27 @@
       "createdAt": "2026-02-12T03:25:52Z",
       "updatedAt": "2026-02-12T03:25:52Z",
       "completedAt": "2026-02-12T03:25:52Z",
-      "ageHours": 0.22,
+      "ageHours": 0.25,
       "deliverySummary": "Monitor engagement metrics and decision quality signals over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-427.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
+      "id": "openclaw-423",
+      "title": "Design without losing human judgment",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-12T03:11:57Z",
+      "updatedAt": "2026-02-12T03:11:57Z",
+      "completedAt": "2026-02-12T03:11:57Z",
+      "ageHours": 0.49,
+      "deliverySummary": "Monitor engagement metrics and human judgment adoption over next 30 days",
+      "deliverableUrl": "/ops/deliverables/openclaw-423.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -117,20 +131,22 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    }
+  ],
+  "errors": [],
+  "recentActivity": [
+    {
+      "timestamp": "2026-02-12T03:39:59Z",
+      "type": "executed",
+      "taskId": "capture-377",
+      "message": "Make learning evidence useful for business reviews without heavy reporting overhead: Delegated via OpenClaw SSH (status=completed, task_id=4e1795a9-5cca-4e8b-807a-3b7c0092b012): Article already published and verified live. SEO sprint complete."
     },
     {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
-    }
-  ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-12T03:39:01Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
-  "recentActivity": [
+      "timestamp": "2026-02-12T03:39:07Z",
+      "type": "executed",
+      "taskId": "capture-377",
+      "message": "Autonomous writing sprint: Make learning evidence useful for business reviews without heavy reporting overhead: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-12T03:39:01Z",
       "type": "skipped",
@@ -478,22 +494,10 @@
       "type": "executed",
       "taskId": "capture-348",
       "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T02:12:17Z",
-      "type": "skipped",
-      "taskId": "capture-347",
-      "message": "Design learning for decision quality, not completion rates: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
-    },
-    {
-      "timestamp": "2026-02-12T02:12:13Z",
-      "type": "executed",
-      "taskId": "capture-347",
-      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T03:39:03Z",
+    "updatedAt": "2026-02-12T03:41:07Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -683,23 +687,30 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 21,
+      "completed": 22,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
-        "completed": 21,
+        "completed": 22,
         "cancelled": 58
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-432",
+        "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+        "status": "completed",
+        "updated_at": "2026-02-12T03:39:59Z",
+        "next_steps": "Monitor engagement metrics and business reviews alignment over next 30 days",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-431",
         "title": "Design without losing human judgment",
-        "status": "failed",
-        "updated_at": "2026-02-12T03:39:01Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-12T03:39:03Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-430",
@@ -844,19 +855,50 @@
         "updated_at": "2026-02-12T02:38:13Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-412",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-12T02:27:17Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 234,
+          "created_at": "2026-02-12T03:39:59Z",
+          "capture_id": 377,
+          "openclaw_row_id": 432,
+          "source": "openclaw_ssh",
+          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+          "agent_id": "publishing-qa",
+          "agent_role": "Publishing QA",
+          "note": "Article already published at https://shreyaskorad.in/posts/make-learning-evidence-useful-for-business-reviews-without-heavy-reporting-overhead.html. 200 status code confirmed. Sitemap and RSS verified.",
+          "action_hint": "Monitor engagement and business review alignment over 30 days. Update refresh triggers based on implementation learnings.",
+          "handoff_to": "supervisor"
+        },
+        {
+          "id": 233,
+          "created_at": "2026-02-12T03:39:59Z",
+          "capture_id": 377,
+          "openclaw_row_id": 432,
+          "source": "openclaw_ssh",
+          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+          "agent_id": "writer",
+          "agent_role": "Writer",
+          "note": "Drafted article in site format. Applied Humanizer guidance: no em dashes, no bullets, no blockquotes, sentence-case headings, personal conversational voice.",
+          "action_hint": "Ready for publish QA.",
+          "handoff_to": "publishing-qa"
+        },
+        {
+          "id": 232,
+          "created_at": "2026-02-12T03:39:59Z",
+          "capture_id": 377,
+          "openclaw_row_id": 432,
+          "source": "openclaw_ssh",
+          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+          "agent_id": "topic-scout",
+          "agent_role": "Topic Scout",
+          "note": "Selected 'Make learning evidence useful for business reviews without heavy reporting overhead' as topic. Did not verify search conditions due to blocked Brave API key.",
+          "action_hint": "Future runs should verify current learning evidence trends before topic selection.",
+          "handoff_to": "publishing-qa"
+        },
         {
           "id": 231,
           "created_at": "2026-02-12T03:35:58Z",
@@ -1012,45 +1054,6 @@
           "note": "Final edited copy complete. Word count 149 words (slightly below 150-200 range per style rules, but functional). No em dashes, no bullets, no blockquotes. Sentence-case headings. Personal, conversational voice.",
           "action_hint": "Ready for publish QA.",
           "handoff_to": "publishing-qa"
-        },
-        {
-          "id": 219,
-          "created_at": "2026-02-12T03:32:19Z",
-          "capture_id": 374,
-          "openclaw_row_id": 429,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Title, excerpt, and headings verified for reader intent alignment. No SEO/process meta content present. Voice is personal and practical.",
-          "action_hint": "Ready for final edit.",
-          "handoff_to": "editor"
-        },
-        {
-          "id": 218,
-          "created_at": "2026-02-12T03:32:19Z",
-          "capture_id": 374,
-          "openclaw_row_id": 429,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "writer",
-          "agent_role": "Writer",
-          "note": "Drafted article in 149 words (within 150-200 range). Applied Humanizer guidance: no em dashes, no bullets, no blockquotes, sentence-case headings, personal conversational voice. Included practical workplace scenario and reflective question.",
-          "action_hint": "Ready for reader intent optimization and final edit.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 217,
-          "created_at": "2026-02-12T03:32:19Z",
-          "capture_id": 374,
-          "openclaw_row_id": 429,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "research-analyst",
-          "agent_role": "Research Analyst",
-          "note": "Did not execute due to blocked search. Would gather credible source material if available.",
-          "action_hint": "Future runs should source framework evidence and practical examples before writing.",
-          "handoff_to": "writer"
         }
       ]
     },
@@ -1249,28 +1252,28 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 22,
+        "completed": 23,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "cancelled": 97
       },
       "today": {
-        "completed": 21,
+        "completed": 22,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-430",
-        "row_id": 430,
-        "capture_id": 375,
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
+        "id": "openclaw-432",
+        "row_id": 432,
+        "capture_id": 377,
+        "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
         "status": "completed",
-        "updated_at": "2026-02-12T03:35:58Z",
-        "next_steps": "Monitor reader engagement and LxD workflow adoption metrics over next 30 days",
+        "updated_at": "2026-02-12T03:39:59Z",
+        "next_steps": "Monitor engagement metrics and business reviews alignment over next 30 days",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
@@ -1280,22 +1283,28 @@
       },
       "focusNote": {
         "agent_id": "publishing-qa",
-        "created_at": "2026-02-12T03:35:58Z",
-        "note": "Article published successfully to https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html. Sitemap and RSS confirmed. Status code 200, content rendering correctly. Word count slightly below range (149 vs 150-200) but functional per constraints. No major blockers encountered.",
-        "action_hint": "Monitor engagement metrics and team adoption over 30 days. Update refresh triggers based on reader feedback and implementation learnings.",
+        "created_at": "2026-02-12T03:39:59Z",
+        "note": "Article already published at https://shreyaskorad.in/posts/make-learning-evidence-useful-for-business-reviews-without-heavy-reporting-overhead.html. 200 status code confirmed. Sitemap and RSS verified.",
+        "action_hint": "Monitor engagement and business review alignment over 30 days. Update refresh triggers based on implementation learnings.",
         "handoff_to": "supervisor"
       },
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-12T03:39:01Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-12T03:37:37Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-432",
+          "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+          "status": "completed",
+          "updated_at": "2026-02-12T03:39:59Z"
+        },
+        {
           "id": "openclaw-431",
           "title": "Design without losing human judgment",
-          "status": "failed",
-          "updated_at": "2026-02-12T03:39:01Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-12T03:39:03Z"
         },
         {
           "id": "openclaw-430",
@@ -1344,12 +1353,6 @@
           "title": "Design without losing human judgment",
           "status": "completed",
           "updated_at": "2026-02-12T03:11:57Z"
-        },
-        {
-          "id": "openclaw-422",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-12T03:09:07Z"
         }
       ],
       "recentOutputs": [
@@ -1455,36 +1458,36 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-430",
+        "focusTaskId": "openclaw-432",
         "total": 9,
-        "done": 8,
-        "remaining": 1,
+        "done": 3,
+        "remaining": 6,
         "doneIds": [
           "topic-scout",
-          "serp-keyword",
-          "brief-architect",
-          "research-analyst",
           "writer",
-          "editor",
-          "refresh-planner",
           "publishing-qa"
         ],
         "remainingIds": [
-          "seo-optimizer"
+          "serp-keyword",
+          "brief-architect",
+          "research-analyst",
+          "seo-optimizer",
+          "editor",
+          "refresh-planner"
         ],
-        "lastStageAt": "2026-02-12T03:35:58Z"
+        "lastStageAt": "2026-02-12T03:39:59Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
-        "lastStatus": "recovered",
+        "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T03:38:22Z",
+        "lastStartedAt": "2026-02-12T03:39:03Z",
         "lastFinishedAt": "2026-02-12T03:37:37Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1549,7 +1552,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T03:39:03Z",
+    "updatedAt": "2026-02-12T03:41:07Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
