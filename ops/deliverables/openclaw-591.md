@@ -1,14 +1,20 @@
 # Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
 
-- Task ID: openclaw-570
-- Status: cancelled
-- Created: 2026-02-12T12:47:11Z
-- Updated: 2026-02-12T12:54:46Z
+- Task ID: openclaw-591
+- Status: completed
+- Created: 2026-02-12T15:11:18Z
+- Updated: 2026-02-12T15:13:32Z
 
 ## Summary
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+No summary provided.
 
 ## Deliverable Output
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T15:16:25Z)
+
+## Last Error
+OpenClaw returned no usable markdown deliverable.
+
+## Draft Deliverable (Fallback)
 # Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
 
 ## Objective and success metrics
@@ -55,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
