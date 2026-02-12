@@ -1,28 +1,28 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T10:59:23Z",
+    "updatedAt": "2026-02-12T10:59:49Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
     "totalTasks": 11,
     "queued": 1,
-    "active": 0,
+    "active": 1,
     "completed": 9,
-    "due": 1,
-    "blocked": 1,
-    "executedTotal": 10,
+    "due": 0,
+    "blocked": 0,
+    "executedTotal": 9,
     "byStatus": {
+      "running": 1,
       "queued": 1,
-      "completed": 9,
-      "failed": 1
+      "completed": 9
     }
   },
   "laneMetrics": {
     "execution": {
-      "visible": 0,
-      "executedTotal": 10
+      "visible": 1,
+      "executedTotal": 9
     },
     "queue": {
       "visible": 1,
@@ -33,14 +33,33 @@
       "totalClosed": 9
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
-  "execution": [],
+  "execution": [
+    {
+      "id": "openclaw-554",
+      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "running",
+      "sequence": 0,
+      "createdAt": "2026-02-12T10:59:01Z",
+      "updatedAt": "2026-02-12T10:59:01Z",
+      "completedAt": null,
+      "ageHours": 0.01,
+      "deliverySummary": "OpenClaw SSH execution in progress.",
+      "deliverableUrl": "/ops/deliverables/openclaw-554.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
   "queueTop": [
     {
       "id": "inbox-868",
@@ -50,7 +69,7 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-12T10:47:34Z",
-      "updatedAt": "2026-02-12T10:59:23Z",
+      "updatedAt": "2026-02-12T10:59:49Z",
       "completedAt": null,
       "ageHours": 0.2,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
@@ -65,28 +84,7 @@
       "needsReview": false
     }
   ],
-  "userActionsDue": [
-    {
-      "id": "openclaw-553",
-      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "failed",
-      "sequence": 0,
-      "createdAt": "2026-02-12T10:56:11Z",
-      "updatedAt": "2026-02-12T10:56:41Z",
-      "completedAt": "2026-02-12T10:56:41Z",
-      "ageHours": 0.05,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-553.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    }
-  ],
+  "userActionsDue": [],
   "completedRecent": [
     {
       "id": "openclaw-540",
@@ -98,7 +96,7 @@
       "createdAt": "2026-02-12T08:49:32Z",
       "updatedAt": "2026-02-12T08:49:57Z",
       "completedAt": "2026-02-12T08:49:57Z",
-      "ageHours": 2.16,
+      "ageHours": 2.17,
       "deliverySummary": "Monitor engagement and coaching adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-540.md",
       "notes": [],
@@ -116,7 +114,7 @@
       "createdAt": "2026-02-12T08:47:49Z",
       "updatedAt": "2026-02-12T08:48:16Z",
       "completedAt": "2026-02-12T08:48:16Z",
-      "ageHours": 2.19,
+      "ageHours": 2.2,
       "deliverySummary": "Monitor engagement and behavior shift adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-539.md",
       "notes": [],
@@ -152,7 +150,7 @@
       "createdAt": "2026-02-12T08:40:36Z",
       "updatedAt": "2026-02-12T08:41:35Z",
       "completedAt": "2026-02-12T08:41:35Z",
-      "ageHours": 2.31,
+      "ageHours": 2.32,
       "deliverySummary": "Monitor engagement and behavior adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-537.md",
       "notes": [],
@@ -170,7 +168,7 @@
       "createdAt": "2026-02-12T08:37:47Z",
       "updatedAt": "2026-02-12T08:38:22Z",
       "completedAt": "2026-02-12T08:38:22Z",
-      "ageHours": 2.36,
+      "ageHours": 2.37,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-536.md",
       "notes": [],
@@ -188,7 +186,7 @@
       "createdAt": "2026-02-12T08:21:35Z",
       "updatedAt": "2026-02-12T08:22:22Z",
       "completedAt": "2026-02-12T08:22:22Z",
-      "ageHours": 2.63,
+      "ageHours": 2.64,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-531.md",
       "notes": [],
@@ -224,7 +222,7 @@
       "createdAt": "2026-02-12T07:56:54Z",
       "updatedAt": "2026-02-12T07:57:39Z",
       "completedAt": "2026-02-12T07:57:39Z",
-      "ageHours": 3.04,
+      "ageHours": 3.05,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-525.md",
       "notes": [],
@@ -242,7 +240,7 @@
       "createdAt": "2026-02-12T07:54:29Z",
       "updatedAt": "2026-02-12T07:54:57Z",
       "completedAt": "2026-02-12T07:54:57Z",
-      "ageHours": 3.08,
+      "ageHours": 3.09,
       "deliverySummary": "Monitor engagement and evidence adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-524.md",
       "notes": [],
@@ -266,11 +264,7 @@
     },
     {
       "level": "info",
-      "message": "Queue has 1 task(s). OpenClaw will continue dispatching sequentially while idle."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
+      "message": "OpenClaw is actively executing 1 task(s) in sequence (WIP=1)."
     }
   ],
   "errors": [
@@ -643,7 +637,7 @@
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T10:59:23Z",
+    "updatedAt": "2026-02-12T10:59:49Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -1715,7 +1709,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T10:59:23Z",
+    "updatedAt": "2026-02-12T10:59:49Z",
     "metrics": {
       "reviewRequested": 1,
       "proceedCount": 0,
