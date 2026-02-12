@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T10:49:04Z",
+    "updatedAt": "2026-02-12T10:50:16Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -51,7 +51,7 @@
       "createdAt": "2026-02-12T10:47:34Z",
       "updatedAt": "2026-02-12T10:47:34Z",
       "completedAt": null,
-      "ageHours": 0.03,
+      "ageHours": 0.05,
       "deliverySummary": "OpenClaw SSH execution in progress.",
       "deliverableUrl": "/ops/deliverables/openclaw-551.md",
       "notes": [],
@@ -69,9 +69,9 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-12T10:47:34Z",
-      "updatedAt": "2026-02-12T10:49:04Z",
+      "updatedAt": "2026-02-12T10:50:16Z",
       "completedAt": null,
-      "ageHours": 0.03,
+      "ageHours": 0.05,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -96,7 +96,7 @@
       "createdAt": "2026-02-12T08:49:32Z",
       "updatedAt": "2026-02-12T08:49:57Z",
       "completedAt": "2026-02-12T08:49:57Z",
-      "ageHours": 1.99,
+      "ageHours": 2.01,
       "deliverySummary": "Monitor engagement and coaching adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-540.md",
       "notes": [],
@@ -114,7 +114,7 @@
       "createdAt": "2026-02-12T08:47:49Z",
       "updatedAt": "2026-02-12T08:48:16Z",
       "completedAt": "2026-02-12T08:48:16Z",
-      "ageHours": 2.02,
+      "ageHours": 2.04,
       "deliverySummary": "Monitor engagement and behavior shift adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-539.md",
       "notes": [],
@@ -132,7 +132,7 @@
       "createdAt": "2026-02-12T08:43:25Z",
       "updatedAt": "2026-02-12T08:46:01Z",
       "completedAt": "2026-02-12T08:46:01Z",
-      "ageHours": 2.09,
+      "ageHours": 2.11,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-538.md",
       "notes": [],
@@ -150,7 +150,7 @@
       "createdAt": "2026-02-12T08:40:36Z",
       "updatedAt": "2026-02-12T08:41:35Z",
       "completedAt": "2026-02-12T08:41:35Z",
-      "ageHours": 2.14,
+      "ageHours": 2.16,
       "deliverySummary": "Monitor engagement and behavior adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-537.md",
       "notes": [],
@@ -168,7 +168,7 @@
       "createdAt": "2026-02-12T08:37:47Z",
       "updatedAt": "2026-02-12T08:38:22Z",
       "completedAt": "2026-02-12T08:38:22Z",
-      "ageHours": 2.19,
+      "ageHours": 2.21,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-536.md",
       "notes": [],
@@ -186,7 +186,7 @@
       "createdAt": "2026-02-12T08:21:35Z",
       "updatedAt": "2026-02-12T08:22:22Z",
       "completedAt": "2026-02-12T08:22:22Z",
-      "ageHours": 2.46,
+      "ageHours": 2.48,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-531.md",
       "notes": [],
@@ -204,7 +204,7 @@
       "createdAt": "2026-02-12T08:18:08Z",
       "updatedAt": "2026-02-12T08:19:12Z",
       "completedAt": "2026-02-12T08:19:12Z",
-      "ageHours": 2.52,
+      "ageHours": 2.54,
       "deliverySummary": "Monitor engagement and team adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-530.md",
       "notes": [],
@@ -222,7 +222,7 @@
       "createdAt": "2026-02-12T07:56:54Z",
       "updatedAt": "2026-02-12T07:57:39Z",
       "completedAt": "2026-02-12T07:57:39Z",
-      "ageHours": 2.87,
+      "ageHours": 2.89,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-525.md",
       "notes": [],
@@ -240,7 +240,7 @@
       "createdAt": "2026-02-12T07:54:29Z",
       "updatedAt": "2026-02-12T07:54:57Z",
       "completedAt": "2026-02-12T07:54:57Z",
-      "ageHours": 2.91,
+      "ageHours": 2.93,
       "deliverySummary": "Monitor engagement and evidence adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-524.md",
       "notes": [],
@@ -252,7 +252,7 @@
   "observations": [
     {
       "level": "info",
-      "message": "Autonomous mode is active: review gates and blocked/failed tasks are auto-resolved."
+      "message": "Autonomous mode is active: review gates are bypassed and blocked/failed tasks follow retry-with-cooldown before final close."
     },
     {
       "level": "info",
@@ -631,7 +631,7 @@
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T10:49:04Z",
+    "updatedAt": "2026-02-12T10:50:16Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -1702,7 +1702,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T10:49:04Z",
+    "updatedAt": "2026-02-12T10:50:16Z",
     "metrics": {
       "reviewRequested": 1,
       "proceedCount": 0,
