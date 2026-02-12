@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T09:22:17Z",
+    "updatedAt": "2026-02-12T09:37:55Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -9,13 +9,12 @@
     "totalTasks": 10,
     "queued": 0,
     "active": 0,
-    "completed": 9,
-    "due": 1,
-    "blocked": 1,
+    "completed": 10,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 9,
-      "failed": 1
+      "completed": 10
     }
   },
   "laneMetrics": {
@@ -28,42 +27,39 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 9,
-      "totalClosed": 9
+      "visible": 10,
+      "totalClosed": 10
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-544",
+      "id": "openclaw-541",
       "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-12T09:17:57Z",
-      "updatedAt": "2026-02-12T09:17:57Z",
-      "completedAt": "2026-02-12T09:17:57Z",
-      "ageHours": 0.07,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-544.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-12T08:51:57Z",
+      "updatedAt": "2026-02-12T08:51:57Z",
+      "completedAt": "2026-02-12T08:51:57Z",
+      "ageHours": 0.77,
+      "deliverySummary": "Monitor engagement and learning transfer adoption over 30 days",
+      "deliverableUrl": "/ops/deliverables/openclaw-541.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
     {
       "id": "openclaw-540",
       "title": "Design manager enablement that links coaching actions to team capability growth",
@@ -74,7 +70,7 @@
       "createdAt": "2026-02-12T08:49:57Z",
       "updatedAt": "2026-02-12T08:49:57Z",
       "completedAt": "2026-02-12T08:49:57Z",
-      "ageHours": 0.54,
+      "ageHours": 0.8,
       "deliverySummary": "Monitor engagement and coaching adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-540.md",
       "notes": [],
@@ -92,7 +88,7 @@
       "createdAt": "2026-02-12T08:48:16Z",
       "updatedAt": "2026-02-12T08:48:16Z",
       "completedAt": "2026-02-12T08:48:16Z",
-      "ageHours": 0.57,
+      "ageHours": 0.83,
       "deliverySummary": "Monitor engagement and behavior shift adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-539.md",
       "notes": [],
@@ -110,7 +106,7 @@
       "createdAt": "2026-02-12T08:46:01Z",
       "updatedAt": "2026-02-12T08:46:01Z",
       "completedAt": "2026-02-12T08:46:01Z",
-      "ageHours": 0.6,
+      "ageHours": 0.87,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-538.md",
       "notes": [],
@@ -128,7 +124,7 @@
       "createdAt": "2026-02-12T08:41:35Z",
       "updatedAt": "2026-02-12T08:41:35Z",
       "completedAt": "2026-02-12T08:41:35Z",
-      "ageHours": 0.68,
+      "ageHours": 0.94,
       "deliverySummary": "Monitor engagement and behavior adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-537.md",
       "notes": [],
@@ -146,7 +142,7 @@
       "createdAt": "2026-02-12T08:38:22Z",
       "updatedAt": "2026-02-12T08:38:22Z",
       "completedAt": "2026-02-12T08:38:22Z",
-      "ageHours": 0.73,
+      "ageHours": 0.99,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-536.md",
       "notes": [],
@@ -164,7 +160,7 @@
       "createdAt": "2026-02-12T08:22:22Z",
       "updatedAt": "2026-02-12T08:22:22Z",
       "completedAt": "2026-02-12T08:22:22Z",
-      "ageHours": 1.0,
+      "ageHours": 1.26,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-531.md",
       "notes": [],
@@ -182,7 +178,7 @@
       "createdAt": "2026-02-12T08:19:12Z",
       "updatedAt": "2026-02-12T08:19:12Z",
       "completedAt": "2026-02-12T08:19:12Z",
-      "ageHours": 1.05,
+      "ageHours": 1.31,
       "deliverySummary": "Monitor engagement and team adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-530.md",
       "notes": [],
@@ -200,7 +196,7 @@
       "createdAt": "2026-02-12T07:57:39Z",
       "updatedAt": "2026-02-12T07:57:39Z",
       "completedAt": "2026-02-12T07:57:39Z",
-      "ageHours": 1.41,
+      "ageHours": 1.67,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-525.md",
       "notes": [],
@@ -218,7 +214,7 @@
       "createdAt": "2026-02-12T07:54:57Z",
       "updatedAt": "2026-02-12T07:54:57Z",
       "completedAt": "2026-02-12T07:54:57Z",
-      "ageHours": 1.46,
+      "ageHours": 1.72,
       "deliverySummary": "Monitor engagement and evidence adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-524.md",
       "notes": [],
@@ -243,19 +239,9 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-12T09:17:57Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
+  "errors": [],
   "recentActivity": [
     {
       "timestamp": "2026-02-12T09:17:57Z",
@@ -619,7 +605,7 @@
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T09:22:17Z",
+    "updatedAt": "2026-02-12T09:37:55Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -811,10 +797,9 @@
       "total": 80,
       "completed": 71,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
-        "cancelled": 8,
+        "cancelled": 9,
         "completed": 71
       }
     },
@@ -822,10 +807,10 @@
       {
         "id": "openclaw-544",
         "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "failed",
-        "updated_at": "2026-02-12T09:17:57Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-12T09:23:05Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-543",
@@ -1378,14 +1363,14 @@
         "completed": 107,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 12
+        "blocked": 0,
+        "cancelled": 13
       },
       "today": {
         "completed": 107,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
@@ -1412,16 +1397,16 @@
         "handoff_to": "supervisor"
       },
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-12T09:17:57Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-12T09:35:15Z"
       },
       "recentIdeas": [
         {
           "id": "openclaw-544",
           "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "failed",
-          "updated_at": "2026-02-12T09:17:57Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-12T09:23:05Z"
         },
         {
           "id": "openclaw-543",
@@ -1605,12 +1590,12 @@
         "tickInProgress": false,
         "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T09:13:21Z",
-        "lastFinishedAt": "2026-02-12T09:17:59Z",
+        "lastStartedAt": "2026-02-12T09:33:29Z",
+        "lastFinishedAt": "2026-02-12T09:35:15Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1675,7 +1660,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T09:22:17Z",
+    "updatedAt": "2026-02-12T09:37:55Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
