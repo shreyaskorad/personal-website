@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T02:12:17Z",
+    "updatedAt": "2026-02-12T02:13:56Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -43,20 +43,20 @@
   "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-402",
+      "id": "openclaw-403",
       "title": "Design learning for decision quality, not completion rates",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-12T02:12:17Z",
-      "updatedAt": "2026-02-12T02:12:17Z",
-      "completedAt": "2026-02-12T02:12:17Z",
+      "createdAt": "2026-02-12T02:13:55Z",
+      "updatedAt": "2026-02-12T02:13:55Z",
+      "completedAt": "2026-02-12T02:13:55Z",
       "ageHours": 0.0,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-402.md",
+      "deliverySummary": "Automatic compact retry failed. Wait for next autonomous cycle and smaller memory payload.",
+      "deliverableUrl": "/ops/deliverables/openclaw-403.md",
       "notes": [
-        "OpenClaw SSH execution failed."
+        "Context overflow retry failed."
       ],
       "scope": "professional",
       "hasDeliverable": true,
@@ -74,7 +74,7 @@
       "createdAt": "2026-02-12T02:07:02Z",
       "updatedAt": "2026-02-12T02:07:02Z",
       "completedAt": "2026-02-12T02:07:02Z",
-      "ageHours": 0.09,
+      "ageHours": 0.12,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-397.md",
       "notes": [],
@@ -108,11 +108,23 @@
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-12T02:12:17Z",
-      "message": "OpenClaw SSH execution failed."
+      "timestamp": "2026-02-12T02:13:55Z",
+      "message": "Context overflow retry failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-12T02:13:55Z",
+      "type": "executed",
+      "taskId": "capture-348",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=failed, task_id=7e8ba769-52fa-4a52-bcf5-de1681bbd1a8): Context overflow: prompt too large for the model. Try again with less input or a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-12T02:13:08Z",
+      "type": "executed",
+      "taskId": "capture-348",
+      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-12T02:12:17Z",
       "type": "skipped",
@@ -460,22 +472,10 @@
       "type": "executed",
       "taskId": "capture-319",
       "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T00:33:14Z",
-      "type": "skipped",
-      "taskId": "capture-318",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: LLM request timed out. (unknown)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
-    },
-    {
-      "timestamp": "2026-02-12T00:23:09Z",
-      "type": "executed",
-      "taskId": "capture-318",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T02:12:17Z",
+    "updatedAt": "2026-02-12T02:13:56Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -676,12 +676,20 @@
     },
     "recentTasks": [
       {
-        "id": "openclaw-402",
+        "id": "openclaw-403",
         "title": "Design learning for decision quality, not completion rates",
         "status": "failed",
-        "updated_at": "2026-02-12T02:12:17Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "updated_at": "2026-02-12T02:13:55Z",
+        "next_steps": "Automatic compact retry failed. Wait for next autonomous cycle and smaller memory payload.",
+        "blockers": "Context overflow retry failed."
+      },
+      {
+        "id": "openclaw-402",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-12T02:13:05Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-401",
@@ -826,19 +834,24 @@
         "updated_at": "2026-02-12T00:44:24Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-383",
-        "title": "Design without losing human judgment",
-        "status": "cancelled",
-        "updated_at": "2026-02-12T00:43:27Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 158,
+          "created_at": "2026-02-12T02:13:55Z",
+          "capture_id": 348,
+          "openclaw_row_id": 403,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try again with less input or a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
         {
           "id": 157,
           "created_at": "2026-02-12T02:07:02Z",
@@ -1020,19 +1033,6 @@
           "note": "I can see that **\"Build a practical LxD workflow for small teams shipping weekly\"** has already been successfully published to your website. The article is live at https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html and is returning a 200 status code. ## Publish QA Evide...",
           "action_hint": "",
           "handoff_to": ""
-        },
-        {
-          "id": 143,
-          "created_at": "2026-02-11T18:58:15Z",
-          "capture_id": 222,
-          "openclaw_row_id": 275,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article 'Build a practical LxD workflow for small teams shipping weekly' already published and verified live at https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html. 200 status code confirmed. Content present and accessible.",
-          "action_hint": "No new publishing needed for this topic. Requesting user clarification on desired next action.",
-          "handoff_to": "supervisor"
         }
       ]
     },
@@ -1231,11 +1231,11 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 18,
+        "completed": 17,
         "active": 0,
         "queued": 0,
         "blocked": 1,
-        "cancelled": 101
+        "cancelled": 102
       },
       "today": {
         "completed": 4,
@@ -1269,15 +1269,21 @@
       },
       "bottleneck": {
         "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-12T02:12:17Z"
+        "reason": "Context overflow retry failed.",
+        "at": "2026-02-12T02:13:55Z"
       },
       "recentIdeas": [
         {
-          "id": "openclaw-402",
+          "id": "openclaw-403",
           "title": "Design learning for decision quality, not completion rates",
           "status": "failed",
-          "updated_at": "2026-02-12T02:12:17Z"
+          "updated_at": "2026-02-12T02:13:55Z"
+        },
+        {
+          "id": "openclaw-402",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "cancelled",
+          "updated_at": "2026-02-12T02:13:05Z"
         },
         {
           "id": "openclaw-401",
@@ -1326,12 +1332,6 @@
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
           "updated_at": "2026-02-12T01:45:05Z"
-        },
-        {
-          "id": "openclaw-393",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "cancelled",
-          "updated_at": "2026-02-12T01:33:39Z"
         }
       ],
       "recentOutputs": [
@@ -1460,8 +1460,8 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T02:12:09Z",
-        "lastFinishedAt": "2026-02-12T02:11:24Z",
+        "lastStartedAt": "2026-02-12T02:13:05Z",
+        "lastFinishedAt": "2026-02-12T02:12:19Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1530,7 +1530,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T02:12:17Z",
+    "updatedAt": "2026-02-12T02:13:56Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
