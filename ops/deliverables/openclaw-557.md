@@ -1,12 +1,12 @@
 # Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
 
-- Task ID: openclaw-554
-- Status: running
-- Created: 2026-02-12T10:59:01Z
-- Updated: 2026-02-12T10:59:01Z
+- Task ID: openclaw-557
+- Status: failed
+- Created: 2026-02-12T11:14:48Z
+- Updated: 2026-02-12T11:19:18Z
 
 ## Summary
-OpenClaw SSH execution in progress.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
 # Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
@@ -55,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-OpenClaw SSH execution in progress.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

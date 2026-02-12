@@ -1,90 +1,68 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T10:59:49Z",
+    "updatedAt": "2026-02-12T11:19:18Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
-    "totalTasks": 11,
-    "queued": 1,
-    "active": 1,
+    "totalTasks": 10,
+    "queued": 0,
+    "active": 0,
     "completed": 9,
-    "due": 0,
-    "blocked": 0,
-    "executedTotal": 9,
+    "due": 1,
+    "blocked": 1,
+    "executedTotal": 10,
     "byStatus": {
-      "running": 1,
-      "queued": 1,
-      "completed": 9
+      "completed": 9,
+      "failed": 1
     }
   },
   "laneMetrics": {
     "execution": {
-      "visible": 1,
-      "executedTotal": 9
+      "visible": 0,
+      "executedTotal": 10
     },
     "queue": {
-      "visible": 1,
-      "totalQueued": 1
+      "visible": 0,
+      "totalQueued": 0
     },
     "completed": {
       "visible": 9,
       "totalClosed": 9
     },
     "due": {
-      "visible": 0,
+      "visible": 1,
       "reviewRequired": 0,
-      "failed": 0,
+      "failed": 1,
       "blocked": 0,
       "needsInput": 0
     }
   },
-  "execution": [
+  "execution": [],
+  "queueTop": [],
+  "userActionsDue": [
     {
-      "id": "openclaw-554",
+      "id": "openclaw-557",
       "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
       "source": "openclaw",
       "priority": "medium",
-      "status": "running",
+      "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-12T10:59:01Z",
-      "updatedAt": "2026-02-12T10:59:01Z",
-      "completedAt": null,
-      "ageHours": 0.01,
-      "deliverySummary": "OpenClaw SSH execution in progress.",
-      "deliverableUrl": "/ops/deliverables/openclaw-554.md",
-      "notes": [],
+      "createdAt": "2026-02-12T11:14:48Z",
+      "updatedAt": "2026-02-12T11:19:18Z",
+      "completedAt": "2026-02-12T11:19:18Z",
+      "ageHours": 0.08,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-557.md",
+      "notes": [
+        "OpenClaw SSH execution failed."
+      ],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
     }
   ],
-  "queueTop": [
-    {
-      "id": "inbox-868",
-      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-      "source": "dictation-router",
-      "priority": "high",
-      "status": "queued",
-      "sequence": 1,
-      "createdAt": "2026-02-12T10:47:34Z",
-      "updatedAt": "2026-02-12T10:59:49Z",
-      "completedAt": null,
-      "ageHours": 0.2,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=504",
-        "inbox_item_id=868"
-      ],
-      "action": "create_task",
-      "scope": "professional",
-      "hasDeliverable": false,
-      "needsReview": false
-    }
-  ],
-  "userActionsDue": [],
   "completedRecent": [
     {
       "id": "openclaw-540",
@@ -96,7 +74,7 @@
       "createdAt": "2026-02-12T08:49:32Z",
       "updatedAt": "2026-02-12T08:49:57Z",
       "completedAt": "2026-02-12T08:49:57Z",
-      "ageHours": 2.17,
+      "ageHours": 2.5,
       "deliverySummary": "Monitor engagement and coaching adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-540.md",
       "notes": [],
@@ -114,7 +92,7 @@
       "createdAt": "2026-02-12T08:47:49Z",
       "updatedAt": "2026-02-12T08:48:16Z",
       "completedAt": "2026-02-12T08:48:16Z",
-      "ageHours": 2.2,
+      "ageHours": 2.52,
       "deliverySummary": "Monitor engagement and behavior shift adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-539.md",
       "notes": [],
@@ -132,7 +110,7 @@
       "createdAt": "2026-02-12T08:43:25Z",
       "updatedAt": "2026-02-12T08:46:01Z",
       "completedAt": "2026-02-12T08:46:01Z",
-      "ageHours": 2.27,
+      "ageHours": 2.6,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-538.md",
       "notes": [],
@@ -150,7 +128,7 @@
       "createdAt": "2026-02-12T08:40:36Z",
       "updatedAt": "2026-02-12T08:41:35Z",
       "completedAt": "2026-02-12T08:41:35Z",
-      "ageHours": 2.32,
+      "ageHours": 2.65,
       "deliverySummary": "Monitor engagement and behavior adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-537.md",
       "notes": [],
@@ -168,7 +146,7 @@
       "createdAt": "2026-02-12T08:37:47Z",
       "updatedAt": "2026-02-12T08:38:22Z",
       "completedAt": "2026-02-12T08:38:22Z",
-      "ageHours": 2.37,
+      "ageHours": 2.69,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-536.md",
       "notes": [],
@@ -186,7 +164,7 @@
       "createdAt": "2026-02-12T08:21:35Z",
       "updatedAt": "2026-02-12T08:22:22Z",
       "completedAt": "2026-02-12T08:22:22Z",
-      "ageHours": 2.64,
+      "ageHours": 2.96,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-531.md",
       "notes": [],
@@ -204,7 +182,7 @@
       "createdAt": "2026-02-12T08:18:08Z",
       "updatedAt": "2026-02-12T08:19:12Z",
       "completedAt": "2026-02-12T08:19:12Z",
-      "ageHours": 2.69,
+      "ageHours": 3.02,
       "deliverySummary": "Monitor engagement and team adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-530.md",
       "notes": [],
@@ -222,7 +200,7 @@
       "createdAt": "2026-02-12T07:56:54Z",
       "updatedAt": "2026-02-12T07:57:39Z",
       "completedAt": "2026-02-12T07:57:39Z",
-      "ageHours": 3.05,
+      "ageHours": 3.37,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-525.md",
       "notes": [],
@@ -240,7 +218,7 @@
       "createdAt": "2026-02-12T07:54:29Z",
       "updatedAt": "2026-02-12T07:54:57Z",
       "completedAt": "2026-02-12T07:54:57Z",
-      "ageHours": 3.09,
+      "ageHours": 3.41,
       "deliverySummary": "Monitor engagement and evidence adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-524.md",
       "notes": [],
@@ -264,17 +242,50 @@
     },
     {
       "level": "info",
-      "message": "OpenClaw is actively executing 1 task(s) in sequence (WIP=1)."
+      "message": "No queued or active execution tasks right now."
+    },
+    {
+      "level": "warn",
+      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-12T10:56:41Z",
+      "timestamp": "2026-02-12T11:19:18Z",
+      "message": "OpenClaw SSH execution failed."
+    },
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-12T11:14:02Z",
       "message": "OpenClaw SSH execution failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-12T11:19:18Z",
+      "type": "skipped",
+      "taskId": "capture-504",
+      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+    },
+    {
+      "timestamp": "2026-02-12T11:14:02Z",
+      "type": "skipped",
+      "taskId": "capture-504",
+      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+    },
+    {
+      "timestamp": "2026-02-12T11:08:47Z",
+      "type": "skipped",
+      "taskId": "capture-504",
+      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+    },
+    {
+      "timestamp": "2026-02-12T11:03:31Z",
+      "type": "skipped",
+      "taskId": "capture-504",
+      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+    },
     {
       "timestamp": "2026-02-12T10:56:41Z",
       "type": "skipped",
@@ -610,34 +621,10 @@
       "type": "executed",
       "taskId": "capture-477",
       "message": "Make learning evidence useful for business reviews without heavy reporting overhead: Delegated via OpenClaw SSH (status=completed, task_id=726be50f-81c9-4bb9-a1c9-a9dfbc0e8624): Article already published and verified live. Topic: Make learning evidence useful for business reviews without heavy reporting overhead."
-    },
-    {
-      "timestamp": "2026-02-12T07:54:28Z",
-      "type": "executed",
-      "taskId": "capture-477",
-      "message": "Autonomous writing sprint: Make learning evidence useful for business reviews without heavy reporting overhead: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T07:52:35Z",
-      "type": "executed",
-      "taskId": "capture-476",
-      "message": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning tran...: Delegated via OpenClaw SSH (status=completed, task_id=7f9d0ccc-76b2-4cfc-8a66-c6b3b8f7113d): "
-    },
-    {
-      "timestamp": "2026-02-12T07:51:55Z",
-      "type": "executed",
-      "taskId": "capture-476",
-      "message": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning transfer: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T07:46:45Z",
-      "type": "skipped",
-      "taskId": "capture-475",
-      "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T10:59:49Z",
+    "updatedAt": "2026-02-12T11:19:18Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -827,32 +814,55 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 61,
-      "queued": 1,
-      "blocked": 1,
+      "completed": 59,
+      "queued": 0,
+      "blocked": 2,
       "byStatus": {
-        "running": 1,
-        "failed": 1,
-        "cancelled": 17,
-        "completed": 61
+        "failed": 2,
+        "cancelled": 19,
+        "completed": 59
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-557",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "failed",
+        "updated_at": "2026-02-12T11:19:18Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-556",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "failed",
+        "updated_at": "2026-02-12T11:14:02Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-555",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "cancelled",
+        "updated_at": "2026-02-12T11:14:48Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #871.",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-554",
         "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "running",
-        "updated_at": "2026-02-12T10:59:01Z",
-        "next_steps": "OpenClaw SSH execution in progress.",
+        "status": "cancelled",
+        "updated_at": "2026-02-12T11:09:32Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #870.",
         "blockers": ""
       },
       {
         "id": "openclaw-553",
         "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "failed",
-        "updated_at": "2026-02-12T10:56:41Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-12T11:04:17Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #869.",
+        "blockers": ""
       },
       {
         "id": "openclaw-552",
@@ -972,30 +982,6 @@
         "status": "completed",
         "updated_at": "2026-02-12T08:46:01Z",
         "next_steps": "Monitor engagement and judgment adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-537",
-        "title": "Build feedback rituals that convert learning into visible team behavior",
-        "status": "completed",
-        "updated_at": "2026-02-12T08:41:35Z",
-        "next_steps": "Monitor engagement and behavior adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-536",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "completed",
-        "updated_at": "2026-02-12T08:38:22Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-535",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-12T08:34:59Z",
-        "next_steps": "",
         "blockers": ""
       }
     ],
@@ -1394,30 +1380,20 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 100,
-        "active": 1,
+        "completed": 97,
+        "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 18
+        "blocked": 2,
+        "cancelled": 21
       },
       "today": {
-        "completed": 100,
-        "active": 1,
+        "completed": 97,
+        "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 2,
         "published": 0
       },
-      "activeTask": {
-        "id": "openclaw-554",
-        "row_id": 554,
-        "capture_id": 504,
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "running",
-        "updated_at": "2026-02-12T10:59:01Z",
-        "next_steps": "OpenClaw SSH execution in progress.",
-        "blockers": "",
-        "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
-      },
+      "activeTask": null,
       "lastCompletedTask": {
         "id": "openclaw-541",
         "row_id": 541,
@@ -1430,39 +1406,53 @@
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
       "pendingQueue": {
-        "count": 1,
-        "inboxCount": 1,
+        "count": 0,
+        "inboxCount": 0,
         "openclawQueuedCount": 0,
-        "recent": [
-          {
-            "id": "inbox-868",
-            "capture_id": 504,
-            "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-            "status": "pending",
-            "detail": "Waiting for OpenClaw execution",
-            "created_at": "2026-02-12T10:47:34Z",
-            "executed_at": ""
-          }
-        ]
+        "recent": []
       },
-      "focusNote": {},
+      "focusNote": {
+        "agent_id": "publishing-qa",
+        "created_at": "2026-02-12T08:51:57Z",
+        "note": "Article confirmed live at https://shreyaskorad.in/posts/use-reflective-debriefs-after-projects-to-strengthen-learning-transfer.html. 200 status code confirmed. Sitemap and RSS verified.",
+        "action_hint": "Monitor engagement and learning transfer adoption over 30 days. Update refresh triggers based on implementation feedback.",
+        "handoff_to": "supervisor"
+      },
       "bottleneck": {
-        "state": "watch",
-        "reason": "Progress appears stuck at topic-scout; downstream stages have not started.",
-        "at": "2026-02-12T10:59:01Z"
+        "state": "blocked",
+        "reason": "OpenClaw SSH execution failed.",
+        "at": "2026-02-12T11:19:18Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-557",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "failed",
+          "updated_at": "2026-02-12T11:19:18Z"
+        },
+        {
+          "id": "openclaw-556",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "failed",
+          "updated_at": "2026-02-12T11:14:02Z"
+        },
+        {
+          "id": "openclaw-555",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "cancelled",
+          "updated_at": "2026-02-12T11:14:48Z"
+        },
+        {
           "id": "openclaw-554",
           "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "running",
-          "updated_at": "2026-02-12T10:59:01Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-12T11:09:32Z"
         },
         {
           "id": "openclaw-553",
           "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "failed",
-          "updated_at": "2026-02-12T10:56:41Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-12T11:04:17Z"
         },
         {
           "id": "openclaw-552",
@@ -1493,24 +1483,6 @@
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "cancelled",
           "updated_at": "2026-02-12T10:28:04Z"
-        },
-        {
-          "id": "openclaw-547",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "cancelled",
-          "updated_at": "2026-02-12T10:18:19Z"
-        },
-        {
-          "id": "openclaw-546",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "cancelled",
-          "updated_at": "2026-02-12T10:08:36Z"
-        },
-        {
-          "id": "openclaw-545",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "cancelled",
-          "updated_at": "2026-02-12T09:48:28Z"
         }
       ],
       "recentOutputs": [
@@ -1616,35 +1588,36 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-554",
+        "focusTaskId": "openclaw-541",
         "total": 9,
-        "done": 0,
-        "remaining": 9,
-        "doneIds": [],
-        "remainingIds": [
+        "done": 3,
+        "remaining": 6,
+        "doneIds": [
           "topic-scout",
+          "writer",
+          "publishing-qa"
+        ],
+        "remainingIds": [
           "serp-keyword",
           "brief-architect",
           "research-analyst",
-          "writer",
           "seo-optimizer",
           "editor",
-          "refresh-planner",
-          "publishing-qa"
+          "refresh-planner"
         ],
-        "lastStageAt": ""
+        "lastStageAt": "2026-02-12T08:51:57Z"
       },
       "pipeline": {
-        "workerStarted": false,
+        "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T10:59:01Z",
-        "lastFinishedAt": "2026-02-12T10:58:01Z",
+        "lastStartedAt": "2026-02-12T11:14:48Z",
+        "lastFinishedAt": "2026-02-12T11:14:03Z",
         "runtime": {
-          "pending_inbox": 1,
-          "active_openclaw": 1,
-          "blocked_or_failed_openclaw": 1
+          "pending_inbox": 0,
+          "active_openclaw": 0,
+          "blocked_or_failed_openclaw": 2
         }
       }
     },
@@ -1709,9 +1682,9 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T10:59:49Z",
+    "updatedAt": "2026-02-12T11:19:18Z",
     "metrics": {
-      "reviewRequested": 1,
+      "reviewRequested": 0,
       "proceedCount": 0,
       "closeCount": 0
     },
