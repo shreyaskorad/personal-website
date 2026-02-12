@@ -1,9 +1,9 @@
 # Deliverable: Design learning for decision quality, not completion rates
 
-- Task ID: openclaw-354
+- Task ID: openclaw-355
 - Status: failed
-- Created: 2026-02-12T00:05:28Z
-- Updated: 2026-02-12T00:05:28Z
+- Created: 2026-02-12T00:06:24Z
+- Updated: 2026-02-12T00:06:24Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
