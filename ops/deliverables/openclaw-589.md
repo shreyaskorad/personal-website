@@ -1,9 +1,9 @@
 # Deliverable: Design manager enablement that links coaching actions to team capability growth
 
-- Task ID: openclaw-586
+- Task ID: openclaw-589
 - Status: failed
-- Created: 2026-02-12T14:35:44Z
-- Updated: 2026-02-12T14:42:52Z
+- Created: 2026-02-12T14:55:14Z
+- Updated: 2026-02-12T15:00:34Z
 
 ## Summary
 Rewrite required before publish. Violations: missing direct author voice; repeats the same core point
