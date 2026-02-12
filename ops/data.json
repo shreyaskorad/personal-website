@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T07:02:04Z",
+    "updatedAt": "2026-02-12T07:09:29Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -9,13 +9,12 @@
     "totalTasks": 10,
     "queued": 0,
     "active": 0,
-    "completed": 9,
-    "due": 1,
-    "blocked": 1,
+    "completed": 10,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 9,
-      "failed": 1
+      "completed": 10
     }
   },
   "laneMetrics": {
@@ -28,42 +27,39 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 9,
-      "totalClosed": 9
+      "visible": 10,
+      "totalClosed": 10
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-504",
-      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+      "id": "openclaw-505",
+      "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-12T06:57:44Z",
-      "updatedAt": "2026-02-12T06:57:44Z",
-      "completedAt": "2026-02-12T06:57:44Z",
-      "ageHours": 0.07,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-504.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-12T07:08:57Z",
+      "updatedAt": "2026-02-12T07:08:57Z",
+      "completedAt": "2026-02-12T07:08:57Z",
+      "ageHours": 0.01,
+      "deliverySummary": "Monitor engagement and evidence adoption over 30 days",
+      "deliverableUrl": "/ops/deliverables/openclaw-505.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
     {
       "id": "openclaw-503",
       "title": "Design manager enablement that links coaching actions to team capability growth",
@@ -74,7 +70,7 @@
       "createdAt": "2026-02-12T06:45:22Z",
       "updatedAt": "2026-02-12T06:45:22Z",
       "completedAt": "2026-02-12T06:45:22Z",
-      "ageHours": 0.28,
+      "ageHours": 0.4,
       "deliverySummary": "Monitor engagement and coaching team capability growth over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-503.md",
       "notes": [],
@@ -92,7 +88,7 @@
       "createdAt": "2026-02-12T06:39:05Z",
       "updatedAt": "2026-02-12T06:39:05Z",
       "completedAt": "2026-02-12T06:39:05Z",
-      "ageHours": 0.38,
+      "ageHours": 0.51,
       "deliverySummary": "Monitor engagement and behavior shift adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-502.md",
       "notes": [],
@@ -110,7 +106,7 @@
       "createdAt": "2026-02-12T06:36:12Z",
       "updatedAt": "2026-02-12T06:36:12Z",
       "completedAt": "2026-02-12T06:36:12Z",
-      "ageHours": 0.43,
+      "ageHours": 0.56,
       "deliverySummary": "Monitor engagement and judgment improvement adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-501.md",
       "notes": [],
@@ -128,7 +124,7 @@
       "createdAt": "2026-02-12T06:33:45Z",
       "updatedAt": "2026-02-12T06:33:45Z",
       "completedAt": "2026-02-12T06:33:45Z",
-      "ageHours": 0.47,
+      "ageHours": 0.6,
       "deliverySummary": "Monitor engagement and team adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-500.md",
       "notes": [],
@@ -146,9 +142,27 @@
       "createdAt": "2026-02-12T06:30:45Z",
       "updatedAt": "2026-02-12T06:30:45Z",
       "completedAt": "2026-02-12T06:30:45Z",
-      "ageHours": 0.52,
+      "ageHours": 0.65,
       "deliverySummary": "Monitor engagement and prompt adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-499.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
+      "id": "openclaw-498",
+      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-12T06:27:38Z",
+      "updatedAt": "2026-02-12T06:27:38Z",
+      "completedAt": "2026-02-12T06:27:38Z",
+      "ageHours": 0.7,
+      "deliverySummary": "Monitor engagement and manager coaching adoption over 30 days",
+      "deliverableUrl": "/ops/deliverables/openclaw-498.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -164,7 +178,7 @@
       "createdAt": "2026-02-12T06:17:15Z",
       "updatedAt": "2026-02-12T06:17:15Z",
       "completedAt": "2026-02-12T06:17:15Z",
-      "ageHours": 0.75,
+      "ageHours": 0.87,
       "deliverySummary": "Monitor engagement and design decision-making adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-494.md",
       "notes": [],
@@ -182,7 +196,7 @@
       "createdAt": "2026-02-12T06:14:29Z",
       "updatedAt": "2026-02-12T06:14:29Z",
       "completedAt": "2026-02-12T06:14:29Z",
-      "ageHours": 0.79,
+      "ageHours": 0.92,
       "deliverySummary": "Monitor engagement and team adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-493.md",
       "notes": [],
@@ -200,27 +214,9 @@
       "createdAt": "2026-02-12T06:00:43Z",
       "updatedAt": "2026-02-12T06:00:43Z",
       "completedAt": "2026-02-12T06:00:43Z",
-      "ageHours": 1.02,
+      "ageHours": 1.15,
       "deliverySummary": "Monitor engagement and onboarding judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-488.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-487",
-      "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-12T05:58:09Z",
-      "updatedAt": "2026-02-12T05:58:09Z",
-      "completedAt": "2026-02-12T05:58:09Z",
-      "ageHours": 1.07,
-      "deliverySummary": "Monitor engagement and business review alignment over 30 days",
-      "deliverableUrl": "/ops/deliverables/openclaw-487.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -243,20 +239,22 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    }
+  ],
+  "errors": [],
+  "recentActivity": [
+    {
+      "timestamp": "2026-02-12T07:08:57Z",
+      "type": "executed",
+      "taskId": "capture-449",
+      "message": "Make learning evidence useful for business reviews without heavy reporting overhead: Delegated via OpenClaw SSH (status=completed, task_id=84ef6efa-c53b-4b75-907c-9beeb2574892): Article already published and verified live. Topic: Make learning evidence useful for business reviews without heavy reporting overhead."
     },
     {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
-    }
-  ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-12T06:57:44Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
-  "recentActivity": [
+      "timestamp": "2026-02-12T07:02:59Z",
+      "type": "executed",
+      "taskId": "capture-449",
+      "message": "Autonomous writing sprint: Make learning evidence useful for business reviews without heavy reporting overhead: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-12T06:57:44Z",
       "type": "skipped",
@@ -604,22 +602,10 @@
       "type": "executed",
       "taskId": "capture-420",
       "message": "Autonomous writing sprint: Use AI in learning design without losing human judgment: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T05:35:36Z",
-      "type": "executed",
-      "taskId": "capture-419",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=d848445c-51c0-40c7-b802-6708653afc2c): Article already published and verified live. Topic: Build a practical LxD workflow for small teams shipping weekly."
-    },
-    {
-      "timestamp": "2026-02-12T05:33:10Z",
-      "type": "executed",
-      "taskId": "capture-419",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T07:02:04Z",
+    "updatedAt": "2026-02-12T07:09:30Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -803,7 +789,7 @@
       ],
       "error": "",
       "cache": {
-        "hit": false,
+        "hit": true,
         "fetchedAt": "2026-02-12T07:02:07Z"
       }
     },
@@ -811,21 +797,28 @@
       "total": 80,
       "completed": 73,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
         "completed": 73,
-        "cancelled": 6
+        "cancelled": 7
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-505",
+        "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+        "status": "completed",
+        "updated_at": "2026-02-12T07:08:57Z",
+        "next_steps": "Monitor engagement and evidence adoption over 30 days",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-504",
         "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "failed",
-        "updated_at": "2026-02-12T06:57:44Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-12T07:02:55Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-503",
@@ -970,19 +963,50 @@
         "updated_at": "2026-02-12T05:57:37Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-485",
-        "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "completed",
-        "updated_at": "2026-02-12T05:53:37Z",
-        "next_steps": "Monitor engagement and coaching team capability growth over 30 days",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 404,
+          "created_at": "2026-02-12T07:08:57Z",
+          "capture_id": 449,
+          "openclaw_row_id": 505,
+          "source": "openclaw_ssh",
+          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+          "agent_id": "publishing-qa",
+          "agent_role": "Publishing QA",
+          "note": "Article confirmed live at https://shreyaskorad.in/posts/make-learning-evidence-useful-for-business-reviews-without-heavy-reporting-overhead.html. 200 status code confirmed. Sitemap and RSS verified.",
+          "action_hint": "Monitor engagement and evidence adoption over 30 days. Update refresh triggers based on implementation feedback.",
+          "handoff_to": "supervisor"
+        },
+        {
+          "id": 403,
+          "created_at": "2026-02-12T07:08:57Z",
+          "capture_id": 449,
+          "openclaw_row_id": 505,
+          "source": "openclaw_ssh",
+          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+          "agent_id": "writer",
+          "agent_role": "Writer",
+          "note": "Drafted article in site format. Applied Humanizer guidance: no em dashes, no bullets, no blockquotes, sentence-case headings, personal conversational voice.",
+          "action_hint": "Content ready for publish QA.",
+          "handoff_to": "publishing-qa"
+        },
+        {
+          "id": 402,
+          "created_at": "2026-02-12T07:08:57Z",
+          "capture_id": 449,
+          "openclaw_row_id": 505,
+          "source": "openclaw_ssh",
+          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+          "agent_id": "topic-scout",
+          "agent_role": "Topic Scout",
+          "note": "Topic selected and verified not duplicate. Ready for publishing.",
+          "action_hint": "Topic validated as unique and actionable.",
+          "handoff_to": "publishing-qa"
+        },
         {
           "id": 401,
           "created_at": "2026-02-12T06:45:22Z",
@@ -1133,45 +1157,6 @@
           "openclaw_row_id": 500,
           "source": "openclaw_ssh",
           "task_title": "Build feedback rituals that convert learning into visible team behavior",
-          "agent_id": "topic-scout",
-          "agent_role": "Topic Scout",
-          "note": "Topic selected and verified not duplicate. Ready for publishing.",
-          "action_hint": "Topic validated as unique and actionable.",
-          "handoff_to": "publishing-qa"
-        },
-        {
-          "id": 389,
-          "created_at": "2026-02-12T06:30:45Z",
-          "capture_id": 443,
-          "openclaw_row_id": 499,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning prompts that improve decisions during real project pressure",
-          "agent_id": "publishing-qa",
-          "agent_role": "Publishing QA",
-          "note": "Article confirmed live at https://shreyaskorad.in/posts/design-learning-prompts-that-improve-decisions-during-real-project-pressure.html. 200 status code confirmed. Sitemap and RSS verified.",
-          "action_hint": "Monitor engagement and prompt adoption over 30 days. Update refresh triggers based on implementation feedback.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 388,
-          "created_at": "2026-02-12T06:30:45Z",
-          "capture_id": 443,
-          "openclaw_row_id": 499,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning prompts that improve decisions during real project pressure",
-          "agent_id": "writer",
-          "agent_role": "Writer",
-          "note": "Drafted article in site format. Applied Humanizer guidance: no em dashes, no bullets, no blockquotes, sentence-case headings, personal conversational voice.",
-          "action_hint": "Content ready for publish QA.",
-          "handoff_to": "publishing-qa"
-        },
-        {
-          "id": 387,
-          "created_at": "2026-02-12T06:30:45Z",
-          "capture_id": 443,
-          "openclaw_row_id": 499,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning prompts that improve decisions during real project pressure",
           "agent_id": "topic-scout",
           "agent_role": "Topic Scout",
           "note": "Topic selected and verified not duplicate. Ready for publishing.",
@@ -1378,25 +1363,25 @@
         "completed": 88,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 31
+        "blocked": 0,
+        "cancelled": 32
       },
       "today": {
         "completed": 88,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-503",
-        "row_id": 503,
-        "capture_id": 447,
-        "title": "Design manager enablement that links coaching actions to team capability growth",
+        "id": "openclaw-505",
+        "row_id": 505,
+        "capture_id": 449,
+        "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
         "status": "completed",
-        "updated_at": "2026-02-12T06:45:22Z",
-        "next_steps": "Monitor engagement and coaching team capability growth over 30 days",
+        "updated_at": "2026-02-12T07:08:57Z",
+        "next_steps": "Monitor engagement and evidence adoption over 30 days",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
@@ -1406,22 +1391,28 @@
       },
       "focusNote": {
         "agent_id": "publishing-qa",
-        "created_at": "2026-02-12T06:45:22Z",
-        "note": "Article confirmed live at https://shreyaskorad.in/posts/design-manager-enablement-that-links-coaching-actions-to-team-capability-growth.html. 200 status code confirmed. Sitemap and RSS verified.",
-        "action_hint": "Monitor engagement and coaching team capability growth over 30 days. Update refresh triggers based on implementation feedback.",
+        "created_at": "2026-02-12T07:08:57Z",
+        "note": "Article confirmed live at https://shreyaskorad.in/posts/make-learning-evidence-useful-for-business-reviews-without-heavy-reporting-overhead.html. 200 status code confirmed. Sitemap and RSS verified.",
+        "action_hint": "Monitor engagement and evidence adoption over 30 days. Update refresh triggers based on implementation feedback.",
         "handoff_to": "supervisor"
       },
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-12T06:57:44Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-12T07:02:10Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-505",
+          "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+          "status": "completed",
+          "updated_at": "2026-02-12T07:08:57Z"
+        },
+        {
           "id": "openclaw-504",
           "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "failed",
-          "updated_at": "2026-02-12T06:57:44Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-12T07:02:55Z"
         },
         {
           "id": "openclaw-503",
@@ -1470,12 +1461,6 @@
           "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
           "status": "completed",
           "updated_at": "2026-02-12T06:22:01Z"
-        },
-        {
-          "id": "openclaw-495",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-12T06:19:59Z"
         }
       ],
       "recentOutputs": [
@@ -1581,7 +1566,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-503",
+        "focusTaskId": "openclaw-505",
         "total": 9,
         "done": 3,
         "remaining": 6,
@@ -1598,19 +1583,19 @@
           "editor",
           "refresh-planner"
         ],
-        "lastStageAt": "2026-02-12T06:45:22Z"
+        "lastStageAt": "2026-02-12T07:08:57Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T06:47:10Z",
-        "lastFinishedAt": "2026-02-12T06:46:25Z",
+        "lastStartedAt": "2026-02-12T07:02:55Z",
+        "lastFinishedAt": "2026-02-12T07:02:10Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1675,7 +1660,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T07:02:04Z",
+    "updatedAt": "2026-02-12T07:09:29Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
