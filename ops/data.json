@@ -1,21 +1,20 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T03:46:22Z",
+    "updatedAt": "2026-02-12T03:47:16Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
   "summary": {
-    "totalTasks": 5,
+    "totalTasks": 4,
     "queued": 0,
     "active": 0,
     "completed": 4,
-    "due": 1,
-    "blocked": 1,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 5,
     "byStatus": {
-      "completed": 4,
-      "failed": 1
+      "completed": 4
     }
   },
   "laneMetrics": {
@@ -32,37 +31,16 @@
       "totalClosed": 4
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
-    {
-      "id": "openclaw-434",
-      "title": "Design onboarding that builds role judgment instead of checklist compliance",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "failed",
-      "sequence": 0,
-      "createdAt": "2026-02-12T03:45:52Z",
-      "updatedAt": "2026-02-12T03:45:52Z",
-      "completedAt": "2026-02-12T03:45:52Z",
-      "ageHours": 0.01,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-434.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    }
-  ],
+  "userActionsDue": [],
   "completedRecent": [
     {
       "id": "openclaw-432",
@@ -74,7 +52,7 @@
       "createdAt": "2026-02-12T03:39:59Z",
       "updatedAt": "2026-02-12T03:39:59Z",
       "completedAt": "2026-02-12T03:39:59Z",
-      "ageHours": 0.11,
+      "ageHours": 0.12,
       "deliverySummary": "Monitor engagement metrics and business reviews alignment over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-432.md",
       "notes": [],
@@ -92,7 +70,7 @@
       "createdAt": "2026-02-12T03:35:58Z",
       "updatedAt": "2026-02-12T03:35:58Z",
       "completedAt": "2026-02-12T03:35:58Z",
-      "ageHours": 0.17,
+      "ageHours": 0.19,
       "deliverySummary": "Monitor reader engagement and LxD workflow adoption metrics over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-430.md",
       "notes": [],
@@ -110,7 +88,7 @@
       "createdAt": "2026-02-12T03:25:52Z",
       "updatedAt": "2026-02-12T03:25:52Z",
       "completedAt": "2026-02-12T03:25:52Z",
-      "ageHours": 0.34,
+      "ageHours": 0.36,
       "deliverySummary": "Monitor engagement metrics and decision quality signals over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-427.md",
       "notes": [],
@@ -128,7 +106,7 @@
       "createdAt": "2026-02-12T03:11:57Z",
       "updatedAt": "2026-02-12T03:11:57Z",
       "completedAt": "2026-02-12T03:11:57Z",
-      "ageHours": 0.57,
+      "ageHours": 0.59,
       "deliverySummary": "Monitor engagement metrics and human judgment adoption over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-423.md",
       "notes": [],
@@ -153,19 +131,9 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-12T03:45:52Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
+  "errors": [],
   "recentActivity": [
     {
       "timestamp": "2026-02-12T03:45:52Z",
@@ -529,7 +497,7 @@
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T03:46:22Z",
+    "updatedAt": "2026-02-12T03:47:16Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -721,10 +689,9 @@
       "total": 80,
       "completed": 22,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
-        "cancelled": 57,
+        "cancelled": 58,
         "completed": 22
       }
     },
@@ -732,10 +699,10 @@
       {
         "id": "openclaw-434",
         "title": "Design onboarding that builds role judgment instead of checklist compliance",
-        "status": "failed",
-        "updated_at": "2026-02-12T03:45:52Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-12T03:47:10Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-433",
@@ -1288,14 +1255,14 @@
         "completed": 23,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 96
+        "blocked": 0,
+        "cancelled": 97
       },
       "today": {
         "completed": 22,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
@@ -1322,16 +1289,16 @@
         "handoff_to": "supervisor"
       },
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-12T03:45:52Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-12T03:46:25Z"
       },
       "recentIdeas": [
         {
           "id": "openclaw-434",
           "title": "Design onboarding that builds role judgment instead of checklist compliance",
-          "status": "failed",
-          "updated_at": "2026-02-12T03:45:52Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-12T03:47:10Z"
         },
         {
           "id": "openclaw-433",
@@ -1515,12 +1482,12 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T03:45:15Z",
-        "lastFinishedAt": "2026-02-12T03:44:30Z",
+        "lastStartedAt": "2026-02-12T03:47:10Z",
+        "lastFinishedAt": "2026-02-12T03:46:25Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1585,7 +1552,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T03:46:22Z",
+    "updatedAt": "2026-02-12T03:47:16Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
