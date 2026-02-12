@@ -1,34 +1,34 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T04:13:27Z",
+    "updatedAt": "2026-02-12T04:15:05Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
   "summary": {
-    "totalTasks": 6,
+    "totalTasks": 7,
     "queued": 0,
     "active": 0,
-    "completed": 6,
+    "completed": 7,
     "due": 0,
     "blocked": 0,
-    "executedTotal": 7,
+    "executedTotal": 8,
     "byStatus": {
-      "completed": 6
+      "completed": 7
     }
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 7
+      "executedTotal": 8
     },
     "queue": {
       "visible": 0,
       "totalQueued": 0
     },
     "completed": {
-      "visible": 6,
-      "totalClosed": 6
+      "visible": 7,
+      "totalClosed": 7
     },
     "due": {
       "visible": 0,
@@ -43,6 +43,24 @@
   "userActionsDue": [],
   "completedRecent": [
     {
+      "id": "openclaw-446",
+      "title": "Build feedback rituals that convert learning into visible team behavior",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-12T04:14:31Z",
+      "updatedAt": "2026-02-12T04:14:31Z",
+      "completedAt": "2026-02-12T04:14:31Z",
+      "ageHours": 0.01,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-446.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
       "id": "openclaw-445",
       "title": "Design learning prompts that improve decisions during real project pressure",
       "source": "openclaw",
@@ -52,7 +70,7 @@
       "createdAt": "2026-02-12T04:12:13Z",
       "updatedAt": "2026-02-12T04:12:13Z",
       "completedAt": "2026-02-12T04:12:13Z",
-      "ageHours": 0.02,
+      "ageHours": 0.05,
       "deliverySummary": "Verify topic uniqueness, execute 9-agent pipeline (topic scout \u2192 writer \u2192 publishing qa)",
       "deliverableUrl": "/ops/deliverables/openclaw-445.md",
       "notes": [],
@@ -70,7 +88,7 @@
       "createdAt": "2026-02-12T04:10:32Z",
       "updatedAt": "2026-02-12T04:10:32Z",
       "completedAt": "2026-02-12T04:10:32Z",
-      "ageHours": 0.05,
+      "ageHours": 0.08,
       "deliverySummary": "Monitor engagement and manager adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-444.md",
       "notes": [],
@@ -88,7 +106,7 @@
       "createdAt": "2026-02-12T04:01:06Z",
       "updatedAt": "2026-02-12T04:01:06Z",
       "completedAt": "2026-02-12T04:01:06Z",
-      "ageHours": 0.21,
+      "ageHours": 0.23,
       "deliverySummary": "Monitor engagement and team adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-440.md",
       "notes": [],
@@ -106,7 +124,7 @@
       "createdAt": "2026-02-12T03:58:48Z",
       "updatedAt": "2026-02-12T03:58:48Z",
       "completedAt": "2026-02-12T03:58:48Z",
-      "ageHours": 0.24,
+      "ageHours": 0.27,
       "deliverySummary": "Monitor engagement and team adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-439.md",
       "notes": [],
@@ -124,7 +142,7 @@
       "createdAt": "2026-02-12T03:39:59Z",
       "updatedAt": "2026-02-12T03:39:59Z",
       "completedAt": "2026-02-12T03:39:59Z",
-      "ageHours": 0.56,
+      "ageHours": 0.59,
       "deliverySummary": "Monitor engagement metrics and business reviews alignment over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-432.md",
       "notes": [],
@@ -142,7 +160,7 @@
       "createdAt": "2026-02-12T03:25:52Z",
       "updatedAt": "2026-02-12T03:25:52Z",
       "completedAt": "2026-02-12T03:25:52Z",
-      "ageHours": 0.79,
+      "ageHours": 0.82,
       "deliverySummary": "Monitor engagement metrics and decision quality signals over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-427.md",
       "notes": [],
@@ -171,6 +189,18 @@
   ],
   "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-12T04:14:31Z",
+      "type": "executed",
+      "taskId": "capture-390",
+      "message": "Build feedback rituals that convert learning into visible team behavior: Delegated via OpenClaw SSH (status=completed, task_id=cc0abb5a-0f0c-47d0-b941-e8f6e8a3a574): # Build Feedback Rituals That Convert Learning Into Visible Team Behavior\n\nLearning stays theoretical until you build rituals that make it stick. Teams absorb new concepts but struggle to apply them because feedback feels ad-hoc and inconsistent. I've seen teams complete training programs with enthusiastic participants yet watch weeks later as nothing changes. The learning dies because there's no ritual that forces people to practice and get feedback.\n\n## Core point\nFeedback rituals create a predictable rhythm where learning happens in real time. Instead of waiting for formal reviews teams implement short weekly check-ins where people share what they applied and what worked. These rituals surface problems early and reinforce good habits. The key is consistency and simplicity.\n\n## Practical takeaway\nStart with a two-minute daily check-in where team members state one thing they tried from recent learning and what happened. Follow up with a weekly 15-minute review where you discuss patterns and challenges. The rituals should feel frictionless not burdensome. If people resist the ritual they'll stop learning fast.\n\nYour rituals should amplify learning not dilute it. A simple daily check-in beats a perfect quarterly workshop because it happens in real time and builds practice into daily work."
+    },
+    {
+      "timestamp": "2026-02-12T04:14:19Z",
+      "type": "executed",
+      "taskId": "capture-390",
+      "message": "Autonomous writing sprint: Build feedback rituals that convert learning into visible team behavior: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-12T04:12:13Z",
       "type": "executed",
@@ -518,22 +548,10 @@
       "type": "executed",
       "taskId": "capture-361",
       "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T02:41:29Z",
-      "type": "executed",
-      "taskId": "capture-360",
-      "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=completed, task_id=e71f133a-91f1-4404-95ab-348d81692176): The user wants me to execute this task as an execution worker. Looking at the team memory notes, I can see that the article \"Design without losing human judgment\" is already published and verified live. The supervisor explicitly stated:\n\n- Article 'Design without losing human judgment' already published and verified live at https://shreyaskorad.in/posts/design-without-losing-human-judgment.html. 200 status code co... (action: No new publishing needed for this topic. Requesting user clarification on desired next action.; handoff_to: supervisor)\n\nI have already verified in my previous work that this article is live at the correct URL. The supervisor has clearly indicated that no new publishing is needed for this topic and that they want user clarification on what to do next.\n\nI should:\n1. Report the status as completed (since the article is already published)\n2. Include the publish QA evidence showing the article is live\n3. Provide measurement handoff\n4. Ask the user what they would like to do next\n\nThis is not a case where I need to create a new article - the task description says \"Write one publish-ready article\" but the memory shows it's already published and the supervisor said no new publishing is needed.\n\nLet me provide the final JSON response with all the required information."
-    },
-    {
-      "timestamp": "2026-02-12T02:39:12Z",
-      "type": "executed",
-      "taskId": "capture-360",
-      "message": "Autonomous writing sprint: Use AI in learning design without losing human judgment: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T04:13:27Z",
+    "updatedAt": "2026-02-12T04:15:05Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -723,15 +741,23 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 32,
+      "completed": 33,
       "queued": 0,
       "blocked": 0,
       "byStatus": {
-        "completed": 32,
-        "cancelled": 48
+        "completed": 33,
+        "cancelled": 47
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-446",
+        "title": "Build feedback rituals that convert learning into visible team behavior",
+        "status": "completed",
+        "updated_at": "2026-02-12T04:14:31Z",
+        "next_steps": "",
+        "blockers": ""
+      },
       {
         "id": "openclaw-445",
         "title": "Design learning prompts that improve decisions during real project pressure",
@@ -883,19 +909,24 @@
         "updated_at": "2026-02-12T03:25:52Z",
         "next_steps": "Monitor engagement metrics and decision quality signals over next 30 days",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-426",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "completed",
-        "updated_at": "2026-02-12T03:22:43Z",
-        "next_steps": "Monitor engagement metrics and decision quality signals over next 30 days",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 262,
+          "created_at": "2026-02-12T04:14:31Z",
+          "capture_id": 390,
+          "openclaw_row_id": 446,
+          "source": "openclaw_ssh",
+          "task_title": "Build feedback rituals that convert learning into visible team behavior",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "# Build Feedback Rituals That Convert Learning Into Visible Team Behavior Learning stays theoretical until you build rituals that make it stick. Teams absorb new concepts but struggle to apply them because feedback feels ad-hoc and inconsistent. I've seen teams complete training programs with enthusiastic participan...",
+          "action_hint": "",
+          "handoff_to": ""
+        },
         {
           "id": 261,
           "created_at": "2026-02-12T04:12:13Z",
@@ -1077,19 +1108,6 @@
           "note": "Topic selected and verified not to be a duplicate. Ready for publishing.",
           "action_hint": "Topic validated as unique and actionable.",
           "handoff_to": "publishing-qa"
-        },
-        {
-          "id": 247,
-          "created_at": "2026-02-12T03:58:48Z",
-          "capture_id": 383,
-          "openclaw_row_id": 439,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "publishing-qa",
-          "agent_role": "Publishing QA",
-          "note": "Article confirmed live at https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html. 200 status code confirmed. Sitemap and RSS verified.",
-          "action_hint": "Monitor engagement and team adoption over 30 days. Update refresh triggers based on implementation feedback.",
-          "handoff_to": "supervisor"
         }
       ]
     },
@@ -1288,14 +1306,14 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 32,
+        "completed": 33,
         "active": 0,
         "queued": 0,
         "blocked": 0,
-        "cancelled": 88
+        "cancelled": 87
       },
       "today": {
-        "completed": 32,
+        "completed": 33,
         "active": 0,
         "queued": 0,
         "blocked": 0,
@@ -1303,13 +1321,13 @@
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-445",
-        "row_id": 445,
-        "capture_id": 389,
-        "title": "Design learning prompts that improve decisions during real project pressure",
+        "id": "openclaw-446",
+        "row_id": 446,
+        "capture_id": 390,
+        "title": "Build feedback rituals that convert learning into visible team behavior",
         "status": "completed",
-        "updated_at": "2026-02-12T04:12:13Z",
-        "next_steps": "Verify topic uniqueness, execute 9-agent pipeline (topic scout \u2192 writer \u2192 publishing qa)",
+        "updated_at": "2026-02-12T04:14:31Z",
+        "next_steps": "",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
@@ -1318,18 +1336,24 @@
         "recent": []
       },
       "focusNote": {
-        "agent_id": "topic-scout",
-        "created_at": "2026-02-12T04:12:13Z",
-        "note": "Selected 'Design learning prompts that improve decisions during real project pressure' as topic. Domain: LxD/AI decision quality. Focus: prompts under pressure. Did not verify search conditions due to blocked Brave API key.",
-        "action_hint": "Future runs should verify current AI prompt trends before topic selection.",
-        "handoff_to": "serp-keyword"
+        "agent_id": "supervisor",
+        "created_at": "2026-02-12T04:14:31Z",
+        "note": "# Build Feedback Rituals That Convert Learning Into Visible Team Behavior Learning stays theoretical until you build rituals that make it stick. Teams absorb new concepts but struggle to apply them because feedback feels ad-hoc and inconsistent. I've seen teams complete training programs with enthusiastic participan...",
+        "action_hint": "",
+        "handoff_to": ""
       },
       "bottleneck": {
         "state": "idle",
         "reason": "No active writing run at this moment.",
-        "at": "2026-02-12T04:11:05Z"
+        "at": "2026-02-12T04:13:30Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-446",
+          "title": "Build feedback rituals that convert learning into visible team behavior",
+          "status": "completed",
+          "updated_at": "2026-02-12T04:14:31Z"
+        },
         {
           "id": "openclaw-445",
           "title": "Design learning prompts that improve decisions during real project pressure",
@@ -1383,12 +1407,6 @@
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "completed",
           "updated_at": "2026-02-12T03:55:05Z"
-        },
-        {
-          "id": "openclaw-436",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-12T03:52:34Z"
         }
       ],
       "recentOutputs": [
@@ -1494,14 +1512,13 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-445",
+        "focusTaskId": "openclaw-446",
         "total": 9,
-        "done": 1,
-        "remaining": 8,
-        "doneIds": [
-          "topic-scout"
-        ],
+        "done": 0,
+        "remaining": 9,
+        "doneIds": [],
         "remainingIds": [
+          "topic-scout",
           "serp-keyword",
           "brief-architect",
           "research-analyst",
@@ -1511,15 +1528,15 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-12T04:12:13Z"
+        "lastStageAt": "2026-02-12T04:14:31Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T04:11:50Z",
-        "lastFinishedAt": "2026-02-12T04:11:05Z",
+        "lastStartedAt": "2026-02-12T04:14:15Z",
+        "lastFinishedAt": "2026-02-12T04:13:30Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1588,7 +1605,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T04:13:27Z",
+    "updatedAt": "2026-02-12T04:15:05Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
