@@ -1,18 +1,19 @@
 # Deliverable: Design learning for decision quality, not completion rates
 
-- Task ID: openclaw-385
+- Task ID: openclaw-386
 - Status: completed
-- Created: 2026-02-12T00:45:22Z
-- Updated: 2026-02-12T00:45:22Z
+- Created: 2026-02-12T00:48:32Z
+- Updated: 2026-02-12T00:48:32Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T00:46:51Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T00:52:37Z)
 
 ## Last Error
-OpenClaw returned no usable markdown deliverable.
+OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: LLM request timed out. (unknown) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)
+Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)
 
 ## Draft Deliverable (Fallback)
 # Deliverable Draft: Design Learning For Decision Quality, Not Completion Rates SEO blog operating system

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T00:46:52Z",
+    "updatedAt": "2026-02-12T00:52:37Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -43,18 +43,18 @@
   "userActionsDue": [],
   "completedRecent": [
     {
-      "id": "openclaw-385",
+      "id": "openclaw-386",
       "title": "Design learning for decision quality, not completion rates",
       "source": "openclaw",
       "priority": "medium",
       "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-12T00:45:22Z",
-      "updatedAt": "2026-02-12T00:45:22Z",
-      "completedAt": "2026-02-12T00:45:22Z",
-      "ageHours": 0.03,
+      "createdAt": "2026-02-12T00:48:32Z",
+      "updatedAt": "2026-02-12T00:48:32Z",
+      "completedAt": "2026-02-12T00:48:32Z",
+      "ageHours": 0.07,
       "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-385.md",
+      "deliverableUrl": "/ops/deliverables/openclaw-386.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -81,6 +81,18 @@
   ],
   "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-12T00:48:32Z",
+      "type": "executed",
+      "taskId": "capture-331",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=e899d9df-9179-4f93-bae5-b4b3941e99a8): "
+    },
+    {
+      "timestamp": "2026-02-12T00:47:43Z",
+      "type": "executed",
+      "taskId": "capture-331",
+      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-12T00:45:22Z",
       "type": "executed",
@@ -428,22 +440,10 @@
       "type": "executed",
       "taskId": "capture-302",
       "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T00:07:20Z",
-      "type": "skipped",
-      "taskId": "capture-301",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
-    },
-    {
-      "timestamp": "2026-02-12T00:07:16Z",
-      "type": "executed",
-      "taskId": "capture-301",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T00:46:52Z",
+    "updatedAt": "2026-02-12T00:52:37Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -633,15 +633,23 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 2,
+      "completed": 3,
       "queued": 0,
       "blocked": 0,
       "byStatus": {
-        "completed": 2,
-        "cancelled": 78
+        "completed": 3,
+        "cancelled": 77
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-386",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "completed",
+        "updated_at": "2026-02-12T00:48:32Z",
+        "next_steps": "",
+        "blockers": ""
+      },
       {
         "id": "openclaw-385",
         "title": "Design learning for decision quality, not completion rates",
@@ -791,14 +799,6 @@
         "title": "Design without losing human judgment",
         "status": "cancelled",
         "updated_at": "2026-02-12T00:18:24Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-366",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-12T00:17:28Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
       }
@@ -1205,7 +1205,7 @@
         "cancelled": 88
       },
       "today": {
-        "completed": 1,
+        "completed": 2,
         "active": 0,
         "queued": 0,
         "blocked": 0,
@@ -1213,12 +1213,12 @@
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-385",
-        "row_id": 385,
-        "capture_id": 330,
+        "id": "openclaw-386",
+        "row_id": 386,
+        "capture_id": 331,
         "title": "Design learning for decision quality, not completion rates",
         "status": "completed",
-        "updated_at": "2026-02-12T00:45:22Z",
+        "updated_at": "2026-02-12T00:48:32Z",
         "next_steps": "",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
@@ -1231,9 +1231,15 @@
       "bottleneck": {
         "state": "idle",
         "reason": "No active writing run at this moment.",
-        "at": "2026-02-12T00:43:39Z"
+        "at": "2026-02-12T00:46:54Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-386",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "completed",
+          "updated_at": "2026-02-12T00:48:32Z"
+        },
         {
           "id": "openclaw-385",
           "title": "Design learning for decision quality, not completion rates",
@@ -1287,12 +1293,6 @@
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
           "updated_at": "2026-02-12T00:37:50Z"
-        },
-        {
-          "id": "openclaw-376",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "cancelled",
-          "updated_at": "2026-02-12T00:36:54Z"
         }
       ],
       "recentOutputs": [
@@ -1398,7 +1398,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-385",
+        "focusTaskId": "openclaw-386",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1421,8 +1421,8 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T00:44:24Z",
-        "lastFinishedAt": "2026-02-12T00:43:39Z",
+        "lastStartedAt": "2026-02-12T00:47:39Z",
+        "lastFinishedAt": "2026-02-12T00:46:54Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1491,7 +1491,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T00:46:52Z",
+    "updatedAt": "2026-02-12T00:52:37Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
