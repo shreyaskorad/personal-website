@@ -1,20 +1,14 @@
 # Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
 
-- Task ID: openclaw-471
-- Status: completed
-- Created: 2026-02-12T05:26:04Z
-- Updated: 2026-02-12T05:26:04Z
+- Task ID: openclaw-477
+- Status: blocked
+- Created: 2026-02-12T05:39:05Z
+- Updated: 2026-02-12T05:39:05Z
 
 ## Summary
-Monitor engagement and retrospective adoption over 30 days
+Request complete task description to proceed
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T05:26:36Z)
-
-## Last Error
-OpenClaw returned no usable markdown deliverable.
-
-## Draft Deliverable (Fallback)
 # Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
 
 ## Objective and success metrics
@@ -61,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Monitor engagement and retrospective adoption over 30 days
+Request complete task description to proceed
+
+## Blockers / Notes
+Task description incomplete - stops at 'weekly one-'
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
