@@ -1,9 +1,9 @@
 # Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-572
+- Task ID: openclaw-574
 - Status: failed
-- Created: 2026-02-12T13:02:31Z
-- Updated: 2026-02-12T13:07:01Z
+- Created: 2026-02-12T13:17:49Z
+- Updated: 2026-02-12T13:22:19Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
