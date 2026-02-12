@@ -1,34 +1,34 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T04:15:05Z",
+    "updatedAt": "2026-02-12T04:17:11Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
   "summary": {
-    "totalTasks": 7,
+    "totalTasks": 8,
     "queued": 0,
     "active": 0,
-    "completed": 7,
+    "completed": 8,
     "due": 0,
     "blocked": 0,
-    "executedTotal": 8,
+    "executedTotal": 9,
     "byStatus": {
-      "completed": 7
+      "completed": 8
     }
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 8
+      "executedTotal": 9
     },
     "queue": {
       "visible": 0,
       "totalQueued": 0
     },
     "completed": {
-      "visible": 7,
-      "totalClosed": 7
+      "visible": 8,
+      "totalClosed": 8
     },
     "due": {
       "visible": 0,
@@ -43,6 +43,24 @@
   "userActionsDue": [],
   "completedRecent": [
     {
+      "id": "openclaw-447",
+      "title": "Improve judgment without adding course fatigue",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-12T04:16:27Z",
+      "updatedAt": "2026-02-12T04:16:27Z",
+      "completedAt": "2026-02-12T04:16:27Z",
+      "ageHours": 0.01,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-447.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
       "id": "openclaw-446",
       "title": "Build feedback rituals that convert learning into visible team behavior",
       "source": "openclaw",
@@ -52,7 +70,7 @@
       "createdAt": "2026-02-12T04:14:31Z",
       "updatedAt": "2026-02-12T04:14:31Z",
       "completedAt": "2026-02-12T04:14:31Z",
-      "ageHours": 0.01,
+      "ageHours": 0.04,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-446.md",
       "notes": [],
@@ -70,7 +88,7 @@
       "createdAt": "2026-02-12T04:12:13Z",
       "updatedAt": "2026-02-12T04:12:13Z",
       "completedAt": "2026-02-12T04:12:13Z",
-      "ageHours": 0.05,
+      "ageHours": 0.08,
       "deliverySummary": "Verify topic uniqueness, execute 9-agent pipeline (topic scout \u2192 writer \u2192 publishing qa)",
       "deliverableUrl": "/ops/deliverables/openclaw-445.md",
       "notes": [],
@@ -88,7 +106,7 @@
       "createdAt": "2026-02-12T04:10:32Z",
       "updatedAt": "2026-02-12T04:10:32Z",
       "completedAt": "2026-02-12T04:10:32Z",
-      "ageHours": 0.08,
+      "ageHours": 0.11,
       "deliverySummary": "Monitor engagement and manager adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-444.md",
       "notes": [],
@@ -106,7 +124,7 @@
       "createdAt": "2026-02-12T04:01:06Z",
       "updatedAt": "2026-02-12T04:01:06Z",
       "completedAt": "2026-02-12T04:01:06Z",
-      "ageHours": 0.23,
+      "ageHours": 0.27,
       "deliverySummary": "Monitor engagement and team adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-440.md",
       "notes": [],
@@ -124,7 +142,7 @@
       "createdAt": "2026-02-12T03:58:48Z",
       "updatedAt": "2026-02-12T03:58:48Z",
       "completedAt": "2026-02-12T03:58:48Z",
-      "ageHours": 0.27,
+      "ageHours": 0.31,
       "deliverySummary": "Monitor engagement and team adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-439.md",
       "notes": [],
@@ -142,7 +160,7 @@
       "createdAt": "2026-02-12T03:39:59Z",
       "updatedAt": "2026-02-12T03:39:59Z",
       "completedAt": "2026-02-12T03:39:59Z",
-      "ageHours": 0.59,
+      "ageHours": 0.62,
       "deliverySummary": "Monitor engagement metrics and business reviews alignment over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-432.md",
       "notes": [],
@@ -160,7 +178,7 @@
       "createdAt": "2026-02-12T03:25:52Z",
       "updatedAt": "2026-02-12T03:25:52Z",
       "completedAt": "2026-02-12T03:25:52Z",
-      "ageHours": 0.82,
+      "ageHours": 0.86,
       "deliverySummary": "Monitor engagement metrics and decision quality signals over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-427.md",
       "notes": [],
@@ -189,6 +207,18 @@
   ],
   "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-12T04:16:27Z",
+      "type": "executed",
+      "taskId": "capture-391",
+      "message": "Improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=completed, task_id=c9698ee5-1c3f-4700-b5c8-7c3c0a81fc81): # Improve Judgment Without Adding Course Fatigue\n\nPeople are already drowning in course fatigue. They attend training sessions and immediately forget them because the content doesn't connect to real work. You can improve judgment without more training by creating practice opportunities instead of more content. I've seen leaders attend endless workshops on decision-making yet make worse decisions because they never had a chance to practice applying what they learned.\n\n## Core point\nJudgment improves through practice not lectures. When people apply concepts in real situations and get feedback they build decision muscles. Course fatigue happens because learners absorb information without applying it. The solution is to embed learning into daily work where people can experiment and adjust based on real results.\n\n## Practical takeaway\nCreate short practice sessions before important decisions. Give teams a real problem to solve using the concepts they learned. After they make a decision have them reflect on what worked and what didn't. This mirrors how athletes practice before games instead of just watching videos. The practice builds judgment better than any course ever could.\n\nYour judgment training should feel like practice not another seminar. Real work problems with honest feedback create the kind of learning that sticks long after a workshop ends."
+    },
+    {
+      "timestamp": "2026-02-12T04:15:57Z",
+      "type": "executed",
+      "taskId": "capture-391",
+      "message": "Autonomous writing sprint: Use scenario based practice to improve judgment without adding course fatigue: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-12T04:14:31Z",
       "type": "executed",
@@ -536,22 +566,10 @@
       "type": "executed",
       "taskId": "capture-362",
       "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T02:54:26Z",
-      "type": "executed",
-      "taskId": "capture-361",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=15acef1c-dfcb-4811-89d5-980868d57be9): Article already published and verified live. SEO sprint complete."
-    },
-    {
-      "timestamp": "2026-02-12T02:47:09Z",
-      "type": "executed",
-      "taskId": "capture-361",
-      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T04:15:05Z",
+    "updatedAt": "2026-02-12T04:17:11Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -741,15 +759,23 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 33,
+      "completed": 34,
       "queued": 0,
       "blocked": 0,
       "byStatus": {
-        "completed": 33,
-        "cancelled": 47
+        "completed": 34,
+        "cancelled": 46
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-447",
+        "title": "Improve judgment without adding course fatigue",
+        "status": "completed",
+        "updated_at": "2026-02-12T04:16:27Z",
+        "next_steps": "",
+        "blockers": ""
+      },
       {
         "id": "openclaw-446",
         "title": "Build feedback rituals that convert learning into visible team behavior",
@@ -901,19 +927,24 @@
         "updated_at": "2026-02-12T03:29:02Z",
         "next_steps": "Monitor reader engagement and LXD workflow adoption metrics over next 30 days",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-427",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "completed",
-        "updated_at": "2026-02-12T03:25:52Z",
-        "next_steps": "Monitor engagement metrics and decision quality signals over next 30 days",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 263,
+          "created_at": "2026-02-12T04:16:27Z",
+          "capture_id": 391,
+          "openclaw_row_id": 447,
+          "source": "openclaw_ssh",
+          "task_title": "Improve judgment without adding course fatigue",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "# Improve Judgment Without Adding Course Fatigue People are already drowning in course fatigue. They attend training sessions and immediately forget them because the content doesn't connect to real work. You can improve judgment without more training by creating practice opportunities instead of more content. I've s...",
+          "action_hint": "",
+          "handoff_to": ""
+        },
         {
           "id": 262,
           "created_at": "2026-02-12T04:14:31Z",
@@ -1094,19 +1125,6 @@
           "agent_role": "Writer",
           "note": "Drafted article in site format. Applied Humanizer guidance: no em dashes, no bullets, no blockquotes, sentence-case headings, personal conversational voice.",
           "action_hint": "Content ready for publish QA.",
-          "handoff_to": "publishing-qa"
-        },
-        {
-          "id": 248,
-          "created_at": "2026-02-12T04:01:06Z",
-          "capture_id": 384,
-          "openclaw_row_id": 440,
-          "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
-          "agent_id": "topic-scout",
-          "agent_role": "Topic Scout",
-          "note": "Topic selected and verified not to be a duplicate. Ready for publishing.",
-          "action_hint": "Topic validated as unique and actionable.",
           "handoff_to": "publishing-qa"
         }
       ]
@@ -1306,14 +1324,14 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 33,
+        "completed": 34,
         "active": 0,
         "queued": 0,
         "blocked": 0,
-        "cancelled": 87
+        "cancelled": 86
       },
       "today": {
-        "completed": 33,
+        "completed": 34,
         "active": 0,
         "queued": 0,
         "blocked": 0,
@@ -1321,12 +1339,12 @@
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-446",
-        "row_id": 446,
-        "capture_id": 390,
-        "title": "Build feedback rituals that convert learning into visible team behavior",
+        "id": "openclaw-447",
+        "row_id": 447,
+        "capture_id": 391,
+        "title": "Improve judgment without adding course fatigue",
         "status": "completed",
-        "updated_at": "2026-02-12T04:14:31Z",
+        "updated_at": "2026-02-12T04:16:27Z",
         "next_steps": "",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
@@ -1337,17 +1355,23 @@
       },
       "focusNote": {
         "agent_id": "supervisor",
-        "created_at": "2026-02-12T04:14:31Z",
-        "note": "# Build Feedback Rituals That Convert Learning Into Visible Team Behavior Learning stays theoretical until you build rituals that make it stick. Teams absorb new concepts but struggle to apply them because feedback feels ad-hoc and inconsistent. I've seen teams complete training programs with enthusiastic participan...",
+        "created_at": "2026-02-12T04:16:27Z",
+        "note": "# Improve Judgment Without Adding Course Fatigue People are already drowning in course fatigue. They attend training sessions and immediately forget them because the content doesn't connect to real work. You can improve judgment without more training by creating practice opportunities instead of more content. I've s...",
         "action_hint": "",
         "handoff_to": ""
       },
       "bottleneck": {
         "state": "idle",
         "reason": "No active writing run at this moment.",
-        "at": "2026-02-12T04:13:30Z"
+        "at": "2026-02-12T04:15:08Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-447",
+          "title": "Improve judgment without adding course fatigue",
+          "status": "completed",
+          "updated_at": "2026-02-12T04:16:27Z"
+        },
         {
           "id": "openclaw-446",
           "title": "Build feedback rituals that convert learning into visible team behavior",
@@ -1401,12 +1425,6 @@
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "completed",
           "updated_at": "2026-02-12T03:57:00Z"
-        },
-        {
-          "id": "openclaw-437",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-12T03:55:05Z"
         }
       ],
       "recentOutputs": [
@@ -1512,7 +1530,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-446",
+        "focusTaskId": "openclaw-447",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1528,15 +1546,15 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-12T04:14:31Z"
+        "lastStageAt": "2026-02-12T04:16:27Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T04:14:15Z",
-        "lastFinishedAt": "2026-02-12T04:13:30Z",
+        "lastStartedAt": "2026-02-12T04:15:53Z",
+        "lastFinishedAt": "2026-02-12T04:15:08Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1605,7 +1623,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T04:15:05Z",
+    "updatedAt": "2026-02-12T04:17:11Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
