@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T00:40:48Z",
+    "updatedAt": "2026-02-12T00:41:44Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -42,18 +42,18 @@
   "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-381",
+      "id": "openclaw-382",
       "title": "Build a practical LXD workflow for small teams shipping weekly",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-12T00:40:47Z",
-      "updatedAt": "2026-02-12T00:40:47Z",
-      "completedAt": "2026-02-12T00:40:47Z",
+      "createdAt": "2026-02-12T00:41:44Z",
+      "updatedAt": "2026-02-12T00:41:44Z",
+      "completedAt": "2026-02-12T00:41:44Z",
       "ageHours": 0.0,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-381.md",
+      "deliverableUrl": "/ops/deliverables/openclaw-382.md",
       "notes": [
         "OpenClaw SSH execution failed."
       ],
@@ -88,11 +88,23 @@
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-12T00:40:47Z",
+      "timestamp": "2026-02-12T00:41:44Z",
       "message": "OpenClaw SSH execution failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-12T00:41:44Z",
+      "type": "skipped",
+      "taskId": "capture-327",
+      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-12T00:41:40Z",
+      "type": "executed",
+      "taskId": "capture-327",
+      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-12T00:40:47Z",
       "type": "skipped",
@@ -440,22 +452,10 @@
       "type": "executed",
       "taskId": "capture-298",
       "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T00:03:36Z",
-      "type": "skipped",
-      "taskId": "capture-297",
-      "message": "Design learning for decision quality, not completion rates: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
-    },
-    {
-      "timestamp": "2026-02-12T00:03:32Z",
-      "type": "executed",
-      "taskId": "capture-297",
-      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T00:40:48Z",
+    "updatedAt": "2026-02-12T00:41:44Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -645,23 +645,31 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 5,
+      "completed": 4,
       "queued": 0,
       "blocked": 1,
       "byStatus": {
         "failed": 1,
-        "cancelled": 74,
-        "completed": 5
+        "cancelled": 75,
+        "completed": 4
       }
     },
     "recentTasks": [
       {
-        "id": "openclaw-381",
+        "id": "openclaw-382",
         "title": "Build a practical LXD workflow for small teams shipping weekly",
         "status": "failed",
-        "updated_at": "2026-02-12T00:40:47Z",
+        "updated_at": "2026-02-12T00:41:44Z",
         "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
         "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-381",
+        "title": "Build a practical LXD workflow for small teams shipping weekly",
+        "status": "cancelled",
+        "updated_at": "2026-02-12T00:41:36Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-380",
@@ -804,14 +812,6 @@
         "title": "Design learning for decision quality, not completion rates",
         "status": "cancelled",
         "updated_at": "2026-02-12T00:14:41Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-362",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-12T00:13:45Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
       }
@@ -1211,11 +1211,11 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 35,
+        "completed": 34,
         "active": 0,
         "queued": 0,
         "blocked": 1,
-        "cancelled": 84
+        "cancelled": 85
       },
       "today": {
         "completed": 0,
@@ -1244,14 +1244,20 @@
       "bottleneck": {
         "state": "blocked",
         "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-12T00:40:47Z"
+        "at": "2026-02-12T00:41:44Z"
       },
       "recentIdeas": [
         {
-          "id": "openclaw-381",
+          "id": "openclaw-382",
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "failed",
-          "updated_at": "2026-02-12T00:40:47Z"
+          "updated_at": "2026-02-12T00:41:44Z"
+        },
+        {
+          "id": "openclaw-381",
+          "title": "Build a practical LXD workflow for small teams shipping weekly",
+          "status": "cancelled",
+          "updated_at": "2026-02-12T00:41:36Z"
         },
         {
           "id": "openclaw-380",
@@ -1300,12 +1306,6 @@
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "cancelled",
           "updated_at": "2026-02-12T00:34:06Z"
-        },
-        {
-          "id": "openclaw-372",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "cancelled",
-          "updated_at": "2026-02-12T00:23:05Z"
         }
       ],
       "recentOutputs": [
@@ -1434,8 +1434,8 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T00:40:39Z",
-        "lastFinishedAt": "2026-02-12T00:39:54Z",
+        "lastStartedAt": "2026-02-12T00:41:36Z",
+        "lastFinishedAt": "2026-02-12T00:40:51Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1504,7 +1504,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T00:40:48Z",
+    "updatedAt": "2026-02-12T00:41:44Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
