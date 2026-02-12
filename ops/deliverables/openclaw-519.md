@@ -9,6 +9,12 @@
 Monitor engagement and behavior adoption over 30 days
 
 ## Deliverable Output
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T07:41:26Z)
+
+## Last Error
+OpenClaw returned no usable markdown deliverable.
+
+## Draft Deliverable (Fallback)
 # Deliverable Draft: Build Feedback Rituals That Convert Learning Into Visible Team Behavior SEO blog operating system
 
 ## Objective and success metrics
