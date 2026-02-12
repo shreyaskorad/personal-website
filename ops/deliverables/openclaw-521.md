@@ -1,21 +1,15 @@
-# Deliverable: Design learning prompts that improve decisions during real project pressure
+# Deliverable: Create L&D reviews that focus on behavior shifts not completion dashboards
 
-- Task ID: openclaw-499
-- Status: completed
-- Created: 2026-02-12T06:30:45Z
-- Updated: 2026-02-12T06:30:45Z
+- Task ID: openclaw-521
+- Status: failed
+- Created: 2026-02-12T07:39:40Z
+- Updated: 2026-02-12T07:39:40Z
 
 ## Summary
-Monitor engagement and prompt adoption over 30 days
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T06:32:03Z)
-
-## Last Error
-OpenClaw returned no usable markdown deliverable.
-
-## Draft Deliverable (Fallback)
-# Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
+# Deliverable Draft: Create L&D Reviews That Focus On Behavior Shifts Not Completion Dashboards SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -61,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Monitor engagement and prompt adoption over 30 days
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

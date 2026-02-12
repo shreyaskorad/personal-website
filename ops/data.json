@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T07:24:34Z",
+    "updatedAt": "2026-02-12T07:40:10Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -9,12 +9,13 @@
     "totalTasks": 10,
     "queued": 0,
     "active": 0,
-    "completed": 10,
-    "due": 0,
-    "blocked": 0,
+    "completed": 9,
+    "due": 1,
+    "blocked": 1,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 10
+      "completed": 9,
+      "failed": 1
     }
   },
   "laneMetrics": {
@@ -27,21 +28,114 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 10,
-      "totalClosed": 10
+      "visible": 9,
+      "totalClosed": 9
     },
     "due": {
-      "visible": 0,
+      "visible": 1,
       "reviewRequired": 0,
-      "failed": 0,
+      "failed": 1,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [],
+  "userActionsDue": [
+    {
+      "id": "openclaw-521",
+      "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "failed",
+      "sequence": 0,
+      "createdAt": "2026-02-12T07:39:40Z",
+      "updatedAt": "2026-02-12T07:39:40Z",
+      "completedAt": "2026-02-12T07:39:40Z",
+      "ageHours": 0.01,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-521.md",
+      "notes": [
+        "OpenClaw SSH execution failed."
+      ],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
   "completedRecent": [
+    {
+      "id": "openclaw-520",
+      "title": "Improve judgment without adding course fatigue",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-12T07:38:19Z",
+      "updatedAt": "2026-02-12T07:38:19Z",
+      "completedAt": "2026-02-12T07:38:19Z",
+      "ageHours": 0.03,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-520.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
+      "id": "openclaw-519",
+      "title": "Build feedback rituals that convert learning into visible team behavior",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-12T07:37:13Z",
+      "updatedAt": "2026-02-12T07:37:13Z",
+      "completedAt": "2026-02-12T07:37:13Z",
+      "ageHours": 0.05,
+      "deliverySummary": "Monitor engagement and behavior adoption over 30 days",
+      "deliverableUrl": "/ops/deliverables/openclaw-519.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
+      "id": "openclaw-518",
+      "title": "Design learning prompts that improve decisions during real project pressure",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-12T07:34:31Z",
+      "updatedAt": "2026-02-12T07:34:31Z",
+      "completedAt": "2026-02-12T07:34:31Z",
+      "ageHours": 0.09,
+      "deliverySummary": "Monitor engagement and decision-improvement adoption over 30 days",
+      "deliverableUrl": "/ops/deliverables/openclaw-518.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
+      "id": "openclaw-517",
+      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-12T07:31:46Z",
+      "updatedAt": "2026-02-12T07:31:46Z",
+      "completedAt": "2026-02-12T07:31:46Z",
+      "ageHours": 0.14,
+      "deliverySummary": "Monitor engagement and coaching conversation adoption over 30 days",
+      "deliverableUrl": "/ops/deliverables/openclaw-517.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
     {
       "id": "openclaw-512",
       "title": "Design without losing human judgment",
@@ -52,7 +146,7 @@
       "createdAt": "2026-02-12T07:22:39Z",
       "updatedAt": "2026-02-12T07:22:39Z",
       "completedAt": "2026-02-12T07:22:39Z",
-      "ageHours": 0.03,
+      "ageHours": 0.29,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-512.md",
       "notes": [],
@@ -70,27 +164,9 @@
       "createdAt": "2026-02-12T07:20:33Z",
       "updatedAt": "2026-02-12T07:20:33Z",
       "completedAt": "2026-02-12T07:20:33Z",
-      "ageHours": 0.07,
+      "ageHours": 0.33,
       "deliverySummary": "Monitor engagement and team adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-511.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-507",
-      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-12T07:12:43Z",
-      "updatedAt": "2026-02-12T07:12:43Z",
-      "completedAt": "2026-02-12T07:12:43Z",
-      "ageHours": 0.2,
-      "deliverySummary": "Monitor engagement and cross-functional learning adoption over 30 days",
-      "deliverableUrl": "/ops/deliverables/openclaw-507.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -106,7 +182,7 @@
       "createdAt": "2026-02-12T07:10:44Z",
       "updatedAt": "2026-02-12T07:10:44Z",
       "completedAt": "2026-02-12T07:10:44Z",
-      "ageHours": 0.23,
+      "ageHours": 0.49,
       "deliverySummary": "Monitor engagement and judgment adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-506.md",
       "notes": [],
@@ -124,7 +200,7 @@
       "createdAt": "2026-02-12T07:08:57Z",
       "updatedAt": "2026-02-12T07:08:57Z",
       "completedAt": "2026-02-12T07:08:57Z",
-      "ageHours": 0.26,
+      "ageHours": 0.52,
       "deliverySummary": "Monitor engagement and evidence adoption over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-505.md",
       "notes": [],
@@ -142,81 +218,9 @@
       "createdAt": "2026-02-12T06:45:22Z",
       "updatedAt": "2026-02-12T06:45:22Z",
       "completedAt": "2026-02-12T06:45:22Z",
-      "ageHours": 0.65,
+      "ageHours": 0.91,
       "deliverySummary": "Monitor engagement and coaching team capability growth over 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-503.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-502",
-      "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-12T06:39:05Z",
-      "updatedAt": "2026-02-12T06:39:05Z",
-      "completedAt": "2026-02-12T06:39:05Z",
-      "ageHours": 0.76,
-      "deliverySummary": "Monitor engagement and behavior shift adoption over 30 days",
-      "deliverableUrl": "/ops/deliverables/openclaw-502.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-501",
-      "title": "Improve judgment without adding course fatigue",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-12T06:36:12Z",
-      "updatedAt": "2026-02-12T06:36:12Z",
-      "completedAt": "2026-02-12T06:36:12Z",
-      "ageHours": 0.81,
-      "deliverySummary": "Monitor engagement and judgment improvement adoption over 30 days",
-      "deliverableUrl": "/ops/deliverables/openclaw-501.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-500",
-      "title": "Build feedback rituals that convert learning into visible team behavior",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-12T06:33:45Z",
-      "updatedAt": "2026-02-12T06:33:45Z",
-      "completedAt": "2026-02-12T06:33:45Z",
-      "ageHours": 0.85,
-      "deliverySummary": "Monitor engagement and team adoption over 30 days",
-      "deliverableUrl": "/ops/deliverables/openclaw-500.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-499",
-      "title": "Design learning prompts that improve decisions during real project pressure",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-12T06:30:45Z",
-      "updatedAt": "2026-02-12T06:30:45Z",
-      "completedAt": "2026-02-12T06:30:45Z",
-      "ageHours": 0.9,
-      "deliverySummary": "Monitor engagement and prompt adoption over 30 days",
-      "deliverableUrl": "/ops/deliverables/openclaw-499.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -239,10 +243,176 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    },
+    {
+      "level": "warn",
+      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-12T07:39:40Z",
+      "message": "OpenClaw SSH execution failed."
+    }
+  ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-12T07:40:10Z",
+      "type": "executed",
+      "taskId": "capture-474",
+      "message": "Quick final: Stored in Codex inbox"
+    },
+    {
+      "timestamp": "2026-02-12T07:39:40Z",
+      "type": "skipped",
+      "taskId": "capture-473",
+      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-12T07:39:36Z",
+      "type": "executed",
+      "taskId": "capture-473",
+      "message": "Autonomous writing sprint: Create L&D reviews that focus on behavior shifts not completion dashboards: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-12T07:38:47Z",
+      "type": "executed",
+      "taskId": "capture-472",
+      "message": "Check: Stored in Codex inbox"
+    },
+    {
+      "timestamp": "2026-02-12T07:38:19Z",
+      "type": "executed",
+      "taskId": "capture-471",
+      "message": "Improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=completed, task_id=29679a31-456e-4034-adb6-0ac3e3e7c5ad): "
+    },
+    {
+      "timestamp": "2026-02-12T07:37:55Z",
+      "type": "executed",
+      "taskId": "capture-471",
+      "message": "Autonomous writing sprint: Use scenario based practice to improve judgment without adding course fatigue: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-12T07:37:13Z",
+      "type": "executed",
+      "taskId": "capture-470",
+      "message": "Meta style payload test: Stored in Codex inbox"
+    },
+    {
+      "timestamp": "2026-02-12T07:37:13Z",
+      "type": "executed",
+      "taskId": "capture-469",
+      "message": "Post meta support test: Stored in Codex inbox"
+    },
+    {
+      "timestamp": "2026-02-12T07:37:13Z",
+      "type": "executed",
+      "taskId": "capture-468",
+      "message": "Build feedback rituals that convert learning into visible team behavior: Delegated via OpenClaw SSH (status=completed, task_id=7a4c6d7a-cda2-4a4c-936e-2ab67e5ca900): Article already published and verified live. Topic: Build feedback rituals that convert learning into visible team behavior."
+    },
+    {
+      "timestamp": "2026-02-12T07:36:33Z",
+      "type": "executed",
+      "taskId": "capture-468",
+      "message": "Autonomous writing sprint: Build feedback rituals that convert learning into visible team behavior: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-12T07:34:31Z",
+      "type": "executed",
+      "taskId": "capture-467",
+      "message": "Final whatsapp smoke: Stored in Codex inbox"
+    },
+    {
+      "timestamp": "2026-02-12T07:34:31Z",
+      "type": "executed",
+      "taskId": "capture-466",
+      "message": "Design learning prompts that improve decisions during real project pressure: Delegated via OpenClaw SSH (status=completed, task_id=6b82eb5f-9663-4234-8a36-4265e02b9440): Article already published and verified live. Topic: Design learning prompts that improve decisions during real project pressure."
+    },
+    {
+      "timestamp": "2026-02-12T07:33:31Z",
+      "type": "executed",
+      "taskId": "capture-466",
+      "message": "Autonomous writing sprint: Design learning prompts that improve decisions during real project pressure: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-12T07:31:46Z",
+      "type": "executed",
+      "taskId": "capture-465",
+      "message": "Fix: Stored in Codex inbox"
+    },
+    {
+      "timestamp": "2026-02-12T07:31:46Z",
+      "type": "executed",
+      "taskId": "capture-464",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=99a98bf1-37b6-4d10-acc2-9372e45b6057): Article already published and verified live. Topic: Coach managers to run better learning conversations in weekly one-on-ones."
+    },
+    {
+      "timestamp": "2026-02-12T07:30:54Z",
+      "type": "executed",
+      "taskId": "capture-464",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-12T07:29:11Z",
+      "type": "executed",
+      "taskId": "capture-463",
+      "message": "Check: Stored in Codex inbox"
+    },
+    {
+      "timestamp": "2026-02-12T07:28:58Z",
+      "type": "executed",
+      "taskId": "capture-462",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=a91e424b-67e7-4864-84dd-1d7f33fe0b4d): Article already published and verified live. Topic: Coach managers to run better learning conversations in weekly one-on-ones."
+    },
+    {
+      "timestamp": "2026-02-12T07:28:28Z",
+      "type": "executed",
+      "taskId": "capture-462",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-12T07:27:57Z",
+      "type": "executed",
+      "taskId": "capture-461",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=70994a97-0b89-4d6d-b7d0-653e00d54d67): Article already published and verified live. Topic: Coach managers to run better learning conversations in weekly one-on-ones."
+    },
+    {
+      "timestamp": "2026-02-12T07:27:31Z",
+      "type": "executed",
+      "taskId": "capture-461",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-12T07:27:27Z",
+      "type": "executed",
+      "taskId": "capture-460",
+      "message": "Second whatsapp webhook test: Stored in Codex inbox"
+    },
+    {
+      "timestamp": "2026-02-12T07:26:56Z",
+      "type": "executed",
+      "taskId": "capture-459",
+      "message": "Manual whatsapp diagnostic: Stored in Codex inbox"
+    },
+    {
+      "timestamp": "2026-02-12T07:26:00Z",
+      "type": "executed",
+      "taskId": "capture-458",
+      "message": "Ping from whatsapp webhook test: Stored in Codex inbox"
+    },
+    {
+      "timestamp": "2026-02-12T07:25:39Z",
+      "type": "executed",
+      "taskId": "capture-457",
+      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and pr: Delegated via OpenClaw SSH (status=completed, task_id=9fee5e9b-5cb0-4283-9076-0be7877ff36c): Article already published and verified live. Topic: Design without losing human judgment."
+    },
+    {
+      "timestamp": "2026-02-12T07:24:38Z",
+      "type": "executed",
+      "taskId": "capture-457",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-12T07:22:39Z",
       "type": "executed",
@@ -446,166 +616,10 @@
       "type": "executed",
       "taskId": "capture-440",
       "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T06:19:59Z",
-      "type": "executed",
-      "taskId": "capture-439",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=8e8504ac-e13b-478e-93b4-b2b481003216): I cannot proceed without the complete topic description. The title cuts off at \"weekly one...\" and the description doesn't specify a particular angle or topic.\n\nPlease provide:\n1. **A complete, specific topic/title** for the article\n2. **A particular focus or angle** within LxD, gamification, data-informed learning, or practical AI use in learning\n\nWithout this information, I cannot generate a publish-ready article."
-    },
-    {
-      "timestamp": "2026-02-12T06:19:42Z",
-      "type": "executed",
-      "taskId": "capture-439",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T06:17:15Z",
-      "type": "executed",
-      "taskId": "capture-438",
-      "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=completed, task_id=e9b3de19-d191-42d2-869d-74e6eb19d44b): Article already published and verified live. Topic: Design without losing human judgment."
-    },
-    {
-      "timestamp": "2026-02-12T06:16:21Z",
-      "type": "executed",
-      "taskId": "capture-438",
-      "message": "Autonomous writing sprint: Use AI in learning design without losing human judgment: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T06:14:29Z",
-      "type": "executed",
-      "taskId": "capture-437",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=54f2fb90-da47-432d-a618-107c2978be43): Article already published and verified live. Topic: Build a practical LxD workflow for small teams shipping weekly."
-    },
-    {
-      "timestamp": "2026-02-12T06:13:45Z",
-      "type": "executed",
-      "taskId": "capture-437",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T06:11:23Z",
-      "type": "executed",
-      "taskId": "capture-436",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=a6a8a43d-9c72-468c-b04f-6f8c9f7623d0): Article already published and verified live. Topic: Build a practical LxD workflow for small teams shipping weekly."
-    },
-    {
-      "timestamp": "2026-02-12T06:10:28Z",
-      "type": "executed",
-      "taskId": "capture-436",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T06:08:22Z",
-      "type": "executed",
-      "taskId": "capture-435",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=6b54ea87-3274-4853-9fb2-d4a89f38b09b): Article already published and verified live. Topic: Build a practical LxD workflow for small teams shipping weekly."
-    },
-    {
-      "timestamp": "2026-02-12T06:07:34Z",
-      "type": "executed",
-      "taskId": "capture-435",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T06:06:05Z",
-      "type": "executed",
-      "taskId": "capture-434",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=9a630f01-3789-4897-b34f-c137a085be2e): Article already published and verified live. Topic: Build a practical LxD workflow for small teams shipping weekly."
-    },
-    {
-      "timestamp": "2026-02-12T06:05:25Z",
-      "type": "executed",
-      "taskId": "capture-434",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T06:02:56Z",
-      "type": "executed",
-      "taskId": "capture-433",
-      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...: Delegated via OpenClaw SSH (status=completed, task_id=2495bed5-4ab0-4450-9471-8e66a5e51361): Article already published and verified live. Topic: Help cross-functional teams learn faster through shared project retrospectives."
-    },
-    {
-      "timestamp": "2026-02-12T06:02:21Z",
-      "type": "executed",
-      "taskId": "capture-433",
-      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project retrospectives: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T06:00:43Z",
-      "type": "executed",
-      "taskId": "capture-432",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: Delegated via OpenClaw SSH (status=completed, task_id=c03ee04f-7177-4489-affb-0a9d9da511fd): Article already published and verified live. Topic: Design onboarding that builds role judgment instead of checklist compliance."
-    },
-    {
-      "timestamp": "2026-02-12T06:00:15Z",
-      "type": "executed",
-      "taskId": "capture-432",
-      "message": "Autonomous writing sprint: Design onboarding that builds role judgment instead of checklist compliance: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T05:58:09Z",
-      "type": "executed",
-      "taskId": "capture-431",
-      "message": "Make learning evidence useful for business reviews without heavy reporting overhead: Delegated via OpenClaw SSH (status=completed, task_id=600429f0-b8e2-4cb5-811b-909cf148de28): Article already published and verified live. Topic: Make learning evidence useful for business reviews without heavy reporting overhead."
-    },
-    {
-      "timestamp": "2026-02-12T05:57:41Z",
-      "type": "executed",
-      "taskId": "capture-431",
-      "message": "Autonomous writing sprint: Make learning evidence useful for business reviews without heavy reporting overhead: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T05:55:53Z",
-      "type": "executed",
-      "taskId": "capture-430",
-      "message": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning tran...: Delegated via OpenClaw SSH (status=blocked, task_id=3ab4dac7-4855-4cdd-a856-d959a61510ca): Checking if topic already published. Title incomplete: 'Use reflective debriefs after projects to strengthen learning tran...'"
-    },
-    {
-      "timestamp": "2026-02-12T05:55:37Z",
-      "type": "executed",
-      "taskId": "capture-430",
-      "message": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning transfer: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T05:53:37Z",
-      "type": "executed",
-      "taskId": "capture-429",
-      "message": "Design manager enablement that links coaching actions to team capability growth: Delegated via OpenClaw SSH (status=completed, task_id=d3a869f7-e135-4e45-b4d5-f4bfa78b9f5a): Article already published and verified live. Topic: Design manager enablement that links coaching actions to team capability growth."
-    },
-    {
-      "timestamp": "2026-02-12T05:53:14Z",
-      "type": "executed",
-      "taskId": "capture-429",
-      "message": "Autonomous writing sprint: Design manager enablement that links coaching actions to team capability growth: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T05:51:39Z",
-      "type": "executed",
-      "taskId": "capture-428",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: Delegated via OpenClaw SSH (status=completed, task_id=49ca1f94-4333-4b62-a15f-17098181717e): Article already published and verified live. Topic: Create LxD reviews that focus on behavior shifts not completion dashboards."
-    },
-    {
-      "timestamp": "2026-02-12T05:51:13Z",
-      "type": "executed",
-      "taskId": "capture-428",
-      "message": "Autonomous writing sprint: Create L&D reviews that focus on behavior shifts not completion dashboards: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T05:49:43Z",
-      "type": "executed",
-      "taskId": "capture-427",
-      "message": "Improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=completed, task_id=12a108f4-bf01-4bb5-bc3f-7b56d5a1aa90): Article already published and verified live. Topic: Improve judgment without adding course fatigue."
-    },
-    {
-      "timestamp": "2026-02-12T05:49:24Z",
-      "type": "executed",
-      "taskId": "capture-427",
-      "message": "Autonomous writing sprint: Use scenario based practice to improve judgment without adding course fatigue: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T07:24:34Z",
+    "updatedAt": "2026-02-12T07:40:10Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -686,7 +700,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-12T07:02:07Z",
+      "asOf": "2026-02-12T07:32:50Z",
       "lookbackDays": 28,
       "summary": {
         "users": 30,
@@ -790,20 +804,93 @@
       "error": "",
       "cache": {
         "hit": true,
-        "fetchedAt": "2026-02-12T07:02:07Z"
+        "fetchedAt": "2026-02-12T07:32:50Z"
       }
     },
     "taskStats": {
       "total": 80,
       "completed": 74,
       "queued": 0,
-      "blocked": 0,
+      "blocked": 1,
       "byStatus": {
+        "failed": 1,
         "completed": 74,
-        "cancelled": 6
+        "cancelled": 5
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-521",
+        "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+        "status": "failed",
+        "updated_at": "2026-02-12T07:39:40Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-520",
+        "title": "Improve judgment without adding course fatigue",
+        "status": "completed",
+        "updated_at": "2026-02-12T07:38:19Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-519",
+        "title": "Build feedback rituals that convert learning into visible team behavior",
+        "status": "completed",
+        "updated_at": "2026-02-12T07:37:13Z",
+        "next_steps": "Monitor engagement and behavior adoption over 30 days",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-518",
+        "title": "Design learning prompts that improve decisions during real project pressure",
+        "status": "completed",
+        "updated_at": "2026-02-12T07:34:31Z",
+        "next_steps": "Monitor engagement and decision-improvement adoption over 30 days",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-517",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "completed",
+        "updated_at": "2026-02-12T07:31:46Z",
+        "next_steps": "Monitor engagement and coaching conversation adoption over 30 days",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-516",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "completed",
+        "updated_at": "2026-02-12T07:28:58Z",
+        "next_steps": "Monitor engagement and coaching conversation adoption over 30 days",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-515",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "completed",
+        "updated_at": "2026-02-12T07:27:57Z",
+        "next_steps": "Monitor engagement and coaching conversation adoption over 30 days",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-514",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "completed",
+        "updated_at": "2026-02-12T07:25:39Z",
+        "next_steps": "Monitor engagement and judgment adoption over 30 days",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-513",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "cancelled",
+        "updated_at": "2026-02-12T07:25:11Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
+      },
       {
         "id": "openclaw-512",
         "title": "Design without losing human judgment",
@@ -891,103 +978,31 @@
         "updated_at": "2026-02-12T06:39:05Z",
         "next_steps": "Monitor engagement and behavior shift adoption over 30 days",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-501",
-        "title": "Improve judgment without adding course fatigue",
-        "status": "completed",
-        "updated_at": "2026-02-12T06:36:12Z",
-        "next_steps": "Monitor engagement and judgment improvement adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-500",
-        "title": "Build feedback rituals that convert learning into visible team behavior",
-        "status": "completed",
-        "updated_at": "2026-02-12T06:33:45Z",
-        "next_steps": "Monitor engagement and team adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-499",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "completed",
-        "updated_at": "2026-02-12T06:30:45Z",
-        "next_steps": "Monitor engagement and prompt adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-498",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-12T06:27:38Z",
-        "next_steps": "Monitor engagement and manager coaching adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-497",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-12T06:24:44Z",
-        "next_steps": "Monitor engagement and manager coaching adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-496",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-12T06:22:01Z",
-        "next_steps": "Monitor engagement and manager coaching adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-495",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-12T06:19:59Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-494",
-        "title": "Design without losing human judgment",
-        "status": "completed",
-        "updated_at": "2026-02-12T06:17:15Z",
-        "next_steps": "Monitor engagement and design decision-making adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-493",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "completed",
-        "updated_at": "2026-02-12T06:14:29Z",
-        "next_steps": "Monitor engagement and team adoption over 30 days",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
         {
-          "id": 425,
-          "created_at": "2026-02-12T07:22:39Z",
-          "capture_id": 456,
-          "openclaw_row_id": 512,
+          "id": 443,
+          "created_at": "2026-02-12T07:37:13Z",
+          "capture_id": 468,
+          "openclaw_row_id": 519,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
+          "task_title": "Build feedback rituals that convert learning into visible team behavior",
           "agent_id": "publishing-qa",
           "agent_role": "Publishing QA",
-          "note": "Article confirmed live at https://shreyaskorad.in/posts/design-without-losing-human-judgment.html. 200 status code confirmed. Sitemap and RSS verified.",
-          "action_hint": "Monitor engagement and judgment adoption over 30 days. Update refresh triggers based on implementation feedback.",
+          "note": "Article confirmed live at https://shreyaskorad.in/posts/build-feedback-rituals-that-convert-learning-into-visible-team-behavior.html. 200 status code confirmed. Sitemap and RSS verified.",
+          "action_hint": "Monitor engagement and behavior adoption over 30 days. Update refresh triggers based on implementation feedback.",
           "handoff_to": "supervisor"
         },
         {
-          "id": 424,
-          "created_at": "2026-02-12T07:22:39Z",
-          "capture_id": 456,
-          "openclaw_row_id": 512,
+          "id": 442,
+          "created_at": "2026-02-12T07:37:13Z",
+          "capture_id": 468,
+          "openclaw_row_id": 519,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
+          "task_title": "Build feedback rituals that convert learning into visible team behavior",
           "agent_id": "writer",
           "agent_role": "Writer",
           "note": "Drafted article in site format. Applied Humanizer guidance: no em dashes, no bullets, no blockquotes, sentence-case headings, personal conversational voice.",
@@ -995,12 +1010,12 @@
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 423,
-          "created_at": "2026-02-12T07:22:39Z",
-          "capture_id": 456,
-          "openclaw_row_id": 512,
+          "id": 441,
+          "created_at": "2026-02-12T07:37:13Z",
+          "capture_id": 468,
+          "openclaw_row_id": 519,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
+          "task_title": "Build feedback rituals that convert learning into visible team behavior",
           "agent_id": "topic-scout",
           "agent_role": "Topic Scout",
           "note": "Topic selected and verified not duplicate. Ready for publishing.",
@@ -1008,25 +1023,25 @@
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 422,
-          "created_at": "2026-02-12T07:20:33Z",
-          "capture_id": 455,
-          "openclaw_row_id": 511,
+          "id": 440,
+          "created_at": "2026-02-12T07:34:31Z",
+          "capture_id": 466,
+          "openclaw_row_id": 518,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Design learning prompts that improve decisions during real project pressure",
           "agent_id": "publishing-qa",
           "agent_role": "Publishing QA",
-          "note": "Article confirmed live at https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html. 200 status code confirmed. Sitemap and RSS verified.",
-          "action_hint": "Monitor engagement and team adoption over 30 days. Update refresh triggers based on implementation feedback.",
+          "note": "Article confirmed live at https://shreyaskorad.in/posts/design-learning-prompts-that-improve-decisions-during-real-project-pressure.html. 200 status code confirmed. Sitemap and RSS verified.",
+          "action_hint": "Monitor engagement and decision-improvement adoption over 30 days. Update refresh triggers based on implementation feedback.",
           "handoff_to": "supervisor"
         },
         {
-          "id": 421,
-          "created_at": "2026-02-12T07:20:33Z",
-          "capture_id": 455,
-          "openclaw_row_id": 511,
+          "id": 439,
+          "created_at": "2026-02-12T07:34:31Z",
+          "capture_id": 466,
+          "openclaw_row_id": 518,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Design learning prompts that improve decisions during real project pressure",
           "agent_id": "writer",
           "agent_role": "Writer",
           "note": "Drafted article in site format. Applied Humanizer guidance: no em dashes, no bullets, no blockquotes, sentence-case headings, personal conversational voice.",
@@ -1034,12 +1049,12 @@
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 420,
-          "created_at": "2026-02-12T07:20:33Z",
-          "capture_id": 455,
-          "openclaw_row_id": 511,
+          "id": 438,
+          "created_at": "2026-02-12T07:34:31Z",
+          "capture_id": 466,
+          "openclaw_row_id": 518,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Design learning prompts that improve decisions during real project pressure",
           "agent_id": "topic-scout",
           "agent_role": "Topic Scout",
           "note": "Topic selected and verified not duplicate. Ready for publishing.",
@@ -1047,25 +1062,25 @@
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 419,
-          "created_at": "2026-02-12T07:18:14Z",
-          "capture_id": 454,
-          "openclaw_row_id": 510,
+          "id": 437,
+          "created_at": "2026-02-12T07:31:46Z",
+          "capture_id": 464,
+          "openclaw_row_id": 517,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "publishing-qa",
           "agent_role": "Publishing QA",
-          "note": "Article confirmed live at https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html. 200 status code confirmed. Sitemap and RSS verified.",
-          "action_hint": "Monitor engagement and team adoption over 30 days. Update refresh triggers based on implementation feedback.",
+          "note": "Article confirmed live at https://shreyaskorad.in/posts/coach-managers-to-run-better-learning-conversations-in-weekly-one-on-ones.html. 200 status code confirmed. Sitemap and RSS verified.",
+          "action_hint": "Monitor engagement and coaching conversation adoption over 30 days. Update refresh triggers based on implementation feedback.",
           "handoff_to": "supervisor"
         },
         {
-          "id": 418,
-          "created_at": "2026-02-12T07:18:14Z",
-          "capture_id": 454,
-          "openclaw_row_id": 510,
+          "id": 436,
+          "created_at": "2026-02-12T07:31:46Z",
+          "capture_id": 464,
+          "openclaw_row_id": 517,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "writer",
           "agent_role": "Writer",
           "note": "Drafted article in site format. Applied Humanizer guidance: no em dashes, no bullets, no blockquotes, sentence-case headings, personal conversational voice.",
@@ -1073,12 +1088,12 @@
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 417,
-          "created_at": "2026-02-12T07:18:14Z",
-          "capture_id": 454,
-          "openclaw_row_id": 510,
+          "id": 435,
+          "created_at": "2026-02-12T07:31:46Z",
+          "capture_id": 464,
+          "openclaw_row_id": 517,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "topic-scout",
           "agent_role": "Topic Scout",
           "note": "Topic selected and verified not duplicate. Ready for publishing.",
@@ -1086,25 +1101,25 @@
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 416,
-          "created_at": "2026-02-12T07:16:26Z",
-          "capture_id": 453,
-          "openclaw_row_id": 509,
+          "id": 434,
+          "created_at": "2026-02-12T07:28:58Z",
+          "capture_id": 462,
+          "openclaw_row_id": 516,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "publishing-qa",
           "agent_role": "Publishing QA",
-          "note": "Article confirmed live at https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html. 200 status code confirmed. Sitemap and RSS verified.",
-          "action_hint": "Monitor engagement and team adoption over 30 days. Update refresh triggers based on implementation feedback.",
+          "note": "Article confirmed live at https://shreyaskorad.in/posts/coach-managers-to-run-better-learning-conversations-in-weekly-one-on-ones.html. 200 status code confirmed. Sitemap and RSS verified.",
+          "action_hint": "Monitor engagement and coaching conversation adoption over 30 days. Update refresh triggers based on implementation feedback.",
           "handoff_to": "supervisor"
         },
         {
-          "id": 415,
-          "created_at": "2026-02-12T07:16:26Z",
-          "capture_id": 453,
-          "openclaw_row_id": 509,
+          "id": 433,
+          "created_at": "2026-02-12T07:28:58Z",
+          "capture_id": 462,
+          "openclaw_row_id": 516,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "writer",
           "agent_role": "Writer",
           "note": "Drafted article in site format. Applied Humanizer guidance: no em dashes, no bullets, no blockquotes, sentence-case headings, personal conversational voice.",
@@ -1112,12 +1127,12 @@
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 414,
-          "created_at": "2026-02-12T07:16:26Z",
-          "capture_id": 453,
-          "openclaw_row_id": 509,
+          "id": 432,
+          "created_at": "2026-02-12T07:28:58Z",
+          "capture_id": 462,
+          "openclaw_row_id": 516,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "topic-scout",
           "agent_role": "Topic Scout",
           "note": "Topic selected and verified not duplicate. Ready for publishing.",
@@ -1125,25 +1140,25 @@
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 413,
-          "created_at": "2026-02-12T07:14:32Z",
-          "capture_id": 452,
-          "openclaw_row_id": 508,
+          "id": 431,
+          "created_at": "2026-02-12T07:27:57Z",
+          "capture_id": 461,
+          "openclaw_row_id": 515,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "publishing-qa",
           "agent_role": "Publishing QA",
-          "note": "Article confirmed live at https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html. 200 status code confirmed. Sitemap and RSS verified.",
-          "action_hint": "Monitor engagement and team adoption over 30 days. Update refresh triggers based on implementation feedback.",
+          "note": "Article confirmed live at https://shreyaskorad.in/posts/coach-managers-to-run-better-learning-conversations-in-weekly-one-on-ones.html. 200 status code confirmed. Sitemap and RSS verified.",
+          "action_hint": "Monitor engagement and coaching conversation adoption over 30 days. Update refresh triggers based on implementation feedback.",
           "handoff_to": "supervisor"
         },
         {
-          "id": 412,
-          "created_at": "2026-02-12T07:14:32Z",
-          "capture_id": 452,
-          "openclaw_row_id": 508,
+          "id": 430,
+          "created_at": "2026-02-12T07:27:57Z",
+          "capture_id": 461,
+          "openclaw_row_id": 515,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "writer",
           "agent_role": "Writer",
           "note": "Drafted article in site format. Applied Humanizer guidance: no em dashes, no bullets, no blockquotes, sentence-case headings, personal conversational voice.",
@@ -1151,12 +1166,12 @@
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 411,
-          "created_at": "2026-02-12T07:14:32Z",
-          "capture_id": 452,
-          "openclaw_row_id": 508,
+          "id": 429,
+          "created_at": "2026-02-12T07:27:57Z",
+          "capture_id": 461,
+          "openclaw_row_id": 515,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "topic-scout",
           "agent_role": "Topic Scout",
           "note": "Topic selected and verified not duplicate. Ready for publishing.",
@@ -1360,28 +1375,28 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 93,
+        "completed": 99,
         "active": 0,
         "queued": 0,
-        "blocked": 0,
-        "cancelled": 27
+        "blocked": 1,
+        "cancelled": 20
       },
       "today": {
-        "completed": 93,
+        "completed": 99,
         "active": 0,
         "queued": 0,
-        "blocked": 0,
+        "blocked": 1,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-512",
-        "row_id": 512,
-        "capture_id": 456,
-        "title": "Design without losing human judgment",
+        "id": "openclaw-520",
+        "row_id": 520,
+        "capture_id": 471,
+        "title": "Improve judgment without adding course fatigue",
         "status": "completed",
-        "updated_at": "2026-02-12T07:22:39Z",
-        "next_steps": "Monitor engagement and judgment adoption over 30 days",
+        "updated_at": "2026-02-12T07:38:19Z",
+        "next_steps": "",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
@@ -1389,78 +1404,72 @@
         "count": 0,
         "recent": []
       },
-      "focusNote": {
-        "agent_id": "publishing-qa",
-        "created_at": "2026-02-12T07:22:39Z",
-        "note": "Article confirmed live at https://shreyaskorad.in/posts/design-without-losing-human-judgment.html. 200 status code confirmed. Sitemap and RSS verified.",
-        "action_hint": "Monitor engagement and judgment adoption over 30 days. Update refresh triggers based on implementation feedback.",
-        "handoff_to": "supervisor"
-      },
+      "focusNote": {},
       "bottleneck": {
-        "state": "idle",
-        "reason": "No active writing run at this moment.",
-        "at": "2026-02-12T07:23:23Z"
+        "state": "blocked",
+        "reason": "OpenClaw SSH execution failed.",
+        "at": "2026-02-12T07:39:40Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-521",
+          "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+          "status": "failed",
+          "updated_at": "2026-02-12T07:39:40Z"
+        },
+        {
+          "id": "openclaw-520",
+          "title": "Improve judgment without adding course fatigue",
+          "status": "completed",
+          "updated_at": "2026-02-12T07:38:19Z"
+        },
+        {
+          "id": "openclaw-519",
+          "title": "Build feedback rituals that convert learning into visible team behavior",
+          "status": "completed",
+          "updated_at": "2026-02-12T07:37:13Z"
+        },
+        {
+          "id": "openclaw-518",
+          "title": "Design learning prompts that improve decisions during real project pressure",
+          "status": "completed",
+          "updated_at": "2026-02-12T07:34:31Z"
+        },
+        {
+          "id": "openclaw-517",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "completed",
+          "updated_at": "2026-02-12T07:31:46Z"
+        },
+        {
+          "id": "openclaw-516",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "completed",
+          "updated_at": "2026-02-12T07:28:58Z"
+        },
+        {
+          "id": "openclaw-515",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "completed",
+          "updated_at": "2026-02-12T07:27:57Z"
+        },
+        {
+          "id": "openclaw-514",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "completed",
+          "updated_at": "2026-02-12T07:25:39Z"
+        },
+        {
+          "id": "openclaw-513",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "cancelled",
+          "updated_at": "2026-02-12T07:25:11Z"
+        },
         {
           "id": "openclaw-512",
           "title": "Design without losing human judgment",
           "status": "completed",
           "updated_at": "2026-02-12T07:22:39Z"
-        },
-        {
-          "id": "openclaw-511",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-12T07:20:33Z"
-        },
-        {
-          "id": "openclaw-510",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-12T07:18:14Z"
-        },
-        {
-          "id": "openclaw-509",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-12T07:16:26Z"
-        },
-        {
-          "id": "openclaw-508",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-12T07:14:32Z"
-        },
-        {
-          "id": "openclaw-507",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-12T07:12:43Z"
-        },
-        {
-          "id": "openclaw-506",
-          "title": "Design onboarding that builds role judgment instead of checklist compliance",
-          "status": "completed",
-          "updated_at": "2026-02-12T07:10:44Z"
-        },
-        {
-          "id": "openclaw-505",
-          "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "status": "completed",
-          "updated_at": "2026-02-12T07:08:57Z"
-        },
-        {
-          "id": "openclaw-504",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "cancelled",
-          "updated_at": "2026-02-12T07:02:55Z"
-        },
-        {
-          "id": "openclaw-503",
-          "title": "Design manager enablement that links coaching actions to team capability growth",
-          "status": "completed",
-          "updated_at": "2026-02-12T06:45:22Z"
         }
       ],
       "recentOutputs": [
@@ -1566,36 +1575,35 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-512",
+        "focusTaskId": "openclaw-520",
         "total": 9,
-        "done": 3,
-        "remaining": 6,
-        "doneIds": [
-          "topic-scout",
-          "writer",
-          "publishing-qa"
-        ],
+        "done": 0,
+        "remaining": 9,
+        "doneIds": [],
         "remainingIds": [
+          "topic-scout",
           "serp-keyword",
           "brief-architect",
           "research-analyst",
+          "writer",
           "seo-optimizer",
           "editor",
-          "refresh-planner"
+          "refresh-planner",
+          "publishing-qa"
         ],
-        "lastStageAt": "2026-02-12T07:22:39Z"
+        "lastStageAt": ""
       },
       "pipeline": {
         "workerStarted": true,
-        "tickInProgress": true,
-        "lastStatus": "running",
+        "tickInProgress": false,
+        "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T07:24:34Z",
-        "lastFinishedAt": "2026-02-12T07:23:23Z",
+        "lastStartedAt": "2026-02-12T07:37:51Z",
+        "lastFinishedAt": "2026-02-12T07:39:32Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 0
+          "blocked_or_failed_openclaw": 1
         }
       }
     },
@@ -1660,7 +1668,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T07:24:34Z",
+    "updatedAt": "2026-02-12T07:40:10Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
