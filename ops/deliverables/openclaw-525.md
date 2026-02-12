@@ -1,21 +1,21 @@
-# Deliverable: Design learning for decision quality, not completion rates
+# Deliverable: Design onboarding that builds role judgment instead of checklist compliance
 
-- Task ID: openclaw-232
+- Task ID: openclaw-525
 - Status: completed
-- Created: 2026-02-11T14:41:34Z
-- Updated: 2026-02-11T14:41:34Z
+- Created: 2026-02-12T07:56:54Z
+- Updated: 2026-02-12T07:57:39Z
 
 ## Summary
-Monitor audience engagement and decision quality metrics over next 30 days
+Monitor engagement and judgment adoption over 30 days
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-11T15:11:27Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T08:01:59Z)
 
 ## Last Error
 OpenClaw SSH command timed out after 260s
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Design Learning For Decision Quality, Not Completion Rates SEO blog operating system
+# Deliverable Draft: Design Onboarding That Builds Role Judgment Instead Of Checklist Compliance SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Monitor audience engagement and decision quality metrics over next 30 days
+Monitor engagement and judgment adoption over 30 days
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

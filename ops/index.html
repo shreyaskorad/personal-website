@@ -1198,6 +1198,7 @@
                 <span class="tag">done: ${escapeHtml(today.completed ?? 0)}</span>
                 <span class="tag">published: ${escapeHtml(today.published ?? 0)}</span>
                 <span class="tag">pending queue: ${escapeHtml(pendingQueue.count ?? 0)}</span>
+                <span class="tag">inbox ${escapeHtml(pendingQueue.inboxCount ?? 0)} | openclaw ${escapeHtml(pendingQueue.openclawQueuedCount ?? 0)}</span>
               </div>
               <div class="muted" style="margin-top:8px;">Repo checks</div>
               <div class="tags">${checkRows}</div>

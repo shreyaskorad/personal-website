@@ -380,6 +380,16 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     bullets: list[str] = []
     if isinstance(bullets_raw, list):
         bullets = [sanitize_text(b) for b in bullets_raw if sanitize_text(b)]
+    # Force no bullet lists in final posts. Fold any bullet content into prose.
+    if bullets:
+        tail = sections[-1]["paragraphs"] if sections else None
+        if isinstance(tail, list):
+            for item in bullets[:4]:
+                if item:
+                    tail.append(item)
+        else:
+            sections.append({'heading': '', 'paragraphs': bullets[:4]})
+    bullets = []
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
 
@@ -398,7 +408,7 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
         'excerpt': excerpt,
         'meta_description': meta_description,
         'sections': sections,
-        'bullets': bullets[:4],
+        'bullets': [],
         'closing': closing,
     }
 

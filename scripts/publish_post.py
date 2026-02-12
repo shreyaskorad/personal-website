@@ -287,10 +287,8 @@ def build_article_html(sections: list[dict], bullets: list[str], closing: str) -
         for paragraph in section.get("paragraphs", []):
             lines.append(f"            <p>{escape(paragraph)}</p>")
     if bullets:
-        lines.append("            <ul>")
         for item in bullets:
-            lines.append(f"                <li>{escape(item)}</li>")
-        lines.append("            </ul>")
+            lines.append(f"            <p>{escape(item)}</p>")
     if closing:
         lines.append(f"            <p>{escape(closing)}</p>")
     lines.append("        </article>")
