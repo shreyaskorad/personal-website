@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T00:43:36Z",
+    "updatedAt": "2026-02-12T00:46:52Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -9,12 +9,12 @@
     "totalTasks": 1,
     "queued": 0,
     "active": 0,
-    "completed": 0,
-    "due": 1,
-    "blocked": 1,
+    "completed": 1,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 3,
     "byStatus": {
-      "failed": 1
+      "completed": 1
     }
   },
   "laneMetrics": {
@@ -27,42 +27,40 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 0,
-      "totalClosed": 0
+      "visible": 1,
+      "totalClosed": 1
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-384",
+      "id": "openclaw-385",
       "title": "Design learning for decision quality, not completion rates",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-12T00:43:36Z",
-      "updatedAt": "2026-02-12T00:43:36Z",
-      "completedAt": "2026-02-12T00:43:36Z",
-      "ageHours": 0.0,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-384.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-12T00:45:22Z",
+      "updatedAt": "2026-02-12T00:45:22Z",
+      "completedAt": "2026-02-12T00:45:22Z",
+      "ageHours": 0.03,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-385.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
     }
   ],
-  "completedRecent": [],
   "observations": [
     {
       "level": "info",
@@ -79,20 +77,22 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    }
+  ],
+  "errors": [],
+  "recentActivity": [
+    {
+      "timestamp": "2026-02-12T00:45:22Z",
+      "type": "executed",
+      "taskId": "capture-330",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=9bbe6ab5-4f19-4070-95e6-d789e8c29618): "
     },
     {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
-    }
-  ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-12T00:43:36Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
-  "recentActivity": [
+      "timestamp": "2026-02-12T00:44:28Z",
+      "type": "executed",
+      "taskId": "capture-330",
+      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-12T00:43:36Z",
       "type": "skipped",
@@ -440,22 +440,10 @@
       "type": "executed",
       "taskId": "capture-301",
       "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-12T00:06:24Z",
-      "type": "skipped",
-      "taskId": "capture-300",
-      "message": "Design learning for decision quality, not completion rates: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
-    },
-    {
-      "timestamp": "2026-02-12T00:06:20Z",
-      "type": "executed",
-      "taskId": "capture-300",
-      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T00:43:36Z",
+    "updatedAt": "2026-02-12T00:46:52Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -647,21 +635,28 @@
       "total": 80,
       "completed": 2,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
-        "cancelled": 77,
-        "completed": 2
+        "completed": 2,
+        "cancelled": 78
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-385",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "completed",
+        "updated_at": "2026-02-12T00:45:22Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-384",
         "title": "Design learning for decision quality, not completion rates",
-        "status": "failed",
-        "updated_at": "2026-02-12T00:43:36Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-12T00:44:24Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-383",
@@ -804,14 +799,6 @@
         "title": "Build a practical LXD workflow for small teams shipping weekly",
         "status": "cancelled",
         "updated_at": "2026-02-12T00:17:28Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-365",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-12T00:16:33Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
       }
@@ -1214,24 +1201,24 @@
         "completed": 32,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 87
+        "blocked": 0,
+        "cancelled": 88
       },
       "today": {
-        "completed": 0,
+        "completed": 1,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-315",
-        "row_id": 315,
-        "capture_id": 260,
+        "id": "openclaw-385",
+        "row_id": 385,
+        "capture_id": 330,
         "title": "Design learning for decision quality, not completion rates",
         "status": "completed",
-        "updated_at": "2026-02-11T22:28:13Z",
+        "updated_at": "2026-02-12T00:45:22Z",
         "next_steps": "",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
@@ -1242,16 +1229,22 @@
       },
       "focusNote": {},
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-12T00:43:36Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-12T00:43:39Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-385",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "completed",
+          "updated_at": "2026-02-12T00:45:22Z"
+        },
+        {
           "id": "openclaw-384",
           "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "updated_at": "2026-02-12T00:43:36Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-12T00:44:24Z"
         },
         {
           "id": "openclaw-383",
@@ -1300,12 +1293,6 @@
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
           "updated_at": "2026-02-12T00:36:54Z"
-        },
-        {
-          "id": "openclaw-375",
-          "title": "Design without losing human judgment",
-          "status": "cancelled",
-          "updated_at": "2026-02-12T00:35:58Z"
         }
       ],
       "recentOutputs": [
@@ -1411,7 +1398,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-315",
+        "focusTaskId": "openclaw-385",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1434,12 +1421,12 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T00:43:27Z",
-        "lastFinishedAt": "2026-02-12T00:42:42Z",
+        "lastStartedAt": "2026-02-12T00:44:24Z",
+        "lastFinishedAt": "2026-02-12T00:43:39Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1504,7 +1491,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T00:43:36Z",
+    "updatedAt": "2026-02-12T00:46:52Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
