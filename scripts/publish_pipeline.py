@@ -423,6 +423,11 @@ def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
     looks_like_control_prompt = (
         'you are an execution worker' in title_l
         or 'return json only' in title_l
+        or title_l.startswith('write and publish a blog post')
+        or title_l.startswith('write a blog post')
+        or title_l.startswith('write one blog')
+        or title_l.startswith('create the final publish-ready blog article')
+        or title_l.startswith('create final publish-ready blog article')
         or title_l.startswith('autonomous seo blog sprint')
         or title_l.startswith('[mon ')
         or title_l.startswith('[tue ')
