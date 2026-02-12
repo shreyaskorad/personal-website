@@ -1,12 +1,12 @@
 # Deliverable: Design onboarding that builds role judgment instead of checklist compliance
 
-- Task ID: openclaw-433
-- Status: cancelled
-- Created: 2026-02-12T03:42:18Z
-- Updated: 2026-02-12T03:42:18Z
+- Task ID: openclaw-434
+- Status: failed
+- Created: 2026-02-12T03:45:52Z
+- Updated: 2026-02-12T03:45:52Z
 
 ## Summary
-Auto-closed by autonomous mode to keep execution deterministic.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
 # Deliverable Draft: Design Onboarding That Builds Role Judgment Instead Of Checklist Compliance SEO blog operating system
@@ -55,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-closed by autonomous mode to keep execution deterministic.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
