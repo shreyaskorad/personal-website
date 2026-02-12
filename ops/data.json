@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-11T23:50:44Z",
+    "updatedAt": "2026-02-12T00:01:41Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
@@ -43,18 +43,18 @@
   "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-349",
+      "id": "openclaw-350",
       "title": "Build a practical LXD workflow for small teams shipping weekly",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-11T23:50:44Z",
-      "updatedAt": "2026-02-11T23:50:44Z",
-      "completedAt": "2026-02-11T23:50:44Z",
+      "createdAt": "2026-02-12T00:01:41Z",
+      "updatedAt": "2026-02-12T00:01:41Z",
+      "completedAt": "2026-02-12T00:01:41Z",
       "ageHours": 0.0,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-349.md",
+      "deliverableUrl": "/ops/deliverables/openclaw-350.md",
       "notes": [
         "OpenClaw SSH execution failed."
       ],
@@ -74,7 +74,7 @@
       "createdAt": "2026-02-11T22:28:13Z",
       "updatedAt": "2026-02-11T22:28:13Z",
       "completedAt": "2026-02-11T22:28:13Z",
-      "ageHours": 1.38,
+      "ageHours": 1.56,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-315.md",
       "notes": [],
@@ -108,11 +108,23 @@
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-11T23:50:44Z",
+      "timestamp": "2026-02-12T00:01:41Z",
       "message": "OpenClaw SSH execution failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-12T00:01:41Z",
+      "type": "skipped",
+      "taskId": "capture-295",
+      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: LLM request timed out. (unknown)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-11T23:51:36Z",
+      "type": "executed",
+      "taskId": "capture-295",
+      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-11T23:50:44Z",
       "type": "skipped",
@@ -460,22 +472,10 @@
       "type": "executed",
       "taskId": "capture-266",
       "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-11T23:02:35Z",
-      "type": "skipped",
-      "taskId": "capture-265",
-      "message": "Design learning for decision quality, not completion rates: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
-    },
-    {
-      "timestamp": "2026-02-11T23:02:31Z",
-      "type": "executed",
-      "taskId": "capture-265",
-      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-11T23:50:44Z",
+    "updatedAt": "2026-02-12T00:01:41Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -556,15 +556,15 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-11T23:23:33Z",
+      "asOf": "2026-02-12T00:01:44Z",
       "lookbackDays": 28,
       "summary": {
         "users": 30,
-        "sessions": 56,
+        "sessions": 75,
         "engagedSessions": 23,
-        "engagementRatePct": 41.1,
-        "avgSessionDurationSec": 410.7,
-        "pageViewsPerSession": 4.41,
+        "engagementRatePct": 30.7,
+        "avgSessionDurationSec": 647.4,
+        "pageViewsPerSession": 4.77,
         "vsPrevious": {
           "usersPct": null,
           "sessionsPct": null
@@ -573,24 +573,30 @@
       "channels": [
         {
           "channel": "Direct",
-          "sessions": 45,
+          "sessions": 64,
           "users": 19,
-          "sessionShare": 80.4
+          "sessionShare": 71.1
+        },
+        {
+          "channel": "Unassigned",
+          "sessions": 15,
+          "users": 2,
+          "sessionShare": 16.7
         },
         {
           "channel": "Organic Search",
           "sessions": 11,
           "users": 11,
-          "sessionShare": 19.6
+          "sessionShare": 12.2
         }
       ],
       "topPosts": [
         {
           "path": "/writing.html",
-          "pageviews": 63,
-          "sessions": 19,
-          "engagementRatePct": 89.5,
-          "avgSessionDurationSec": 156.8
+          "pageviews": 131,
+          "sessions": 38,
+          "engagementRatePct": 44.7,
+          "avgSessionDurationSec": 447.5
         },
         {
           "path": "/posts/if-everyone-is-losing-jobs-who-pays-for-ai-infrastructure.html",
@@ -600,6 +606,13 @@
           "avgSessionDurationSec": 655.5
         },
         {
+          "path": "/posts/publishing-without-wordpress.html",
+          "pageviews": 9,
+          "sessions": 9,
+          "engagementRatePct": 55.6,
+          "avgSessionDurationSec": 39.5
+        },
+        {
           "path": "/posts/accelerando-ld.html",
           "pageviews": 7,
           "sessions": 3,
@@ -607,44 +620,37 @@
           "avgSessionDurationSec": 227.3
         },
         {
-          "path": "/posts/publishing-without-wordpress.html",
-          "pageviews": 6,
-          "sessions": 6,
-          "engagementRatePct": 83.3,
-          "avgSessionDurationSec": 59.1
-        },
-        {
-          "path": "/posts/the-object-without-attachment.html",
-          "pageviews": 3,
-          "sessions": 1,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 159.7
-        },
-        {
-          "path": "/posts/ai-hype-vs-adoption.html",
-          "pageviews": 2,
+          "path": "/posts/ai-and-the-future-of-learning-finding-meaning-in-an-age-of-instant-feedback-openclaw-113.html",
+          "pageviews": 4,
           "sessions": 2,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 3.9
+          "engagementRatePct": 0.0,
+          "avgSessionDurationSec": 899.8
         },
         {
-          "path": "/posts/skills-in-ld.html",
-          "pageviews": 1,
-          "sessions": 1,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 4.1
+          "path": "/posts/design-gamification-for-decision-quality-not-points-openclaw-147.html",
+          "pageviews": 4,
+          "sessions": 2,
+          "engagementRatePct": 0.0,
+          "avgSessionDurationSec": 1168.4
         },
         {
-          "path": "/posts/where-we-go-from-here.html",
-          "pageviews": 1,
-          "sessions": 1,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 11.3
+          "path": "/posts/gamification-seo-blog-sprint-operating-playbook-openclaw-147.html",
+          "pageviews": 4,
+          "sessions": 3,
+          "engagementRatePct": 0.0,
+          "avgSessionDurationSec": 784.0
+        },
+        {
+          "path": "/posts/design-without-losing-human-judgment.html",
+          "pageviews": 3,
+          "sessions": 2,
+          "engagementRatePct": 0.0,
+          "avgSessionDurationSec": 562.9
         }
       ],
       "insights": [
-        "Organic Search share is only 19.6%, which suggests discoverability is still weak.",
-        "Traffic is concentrated: the top post contributes 67.0% of views within top content."
+        "Organic Search share is only 12.2%, which suggests discoverability is still weak.",
+        "Traffic is concentrated: the top post contributes 75.7% of views within top content."
       ],
       "nextActions": [
         "Tighten opening paragraphs to define one concrete workplace problem and one expected outcome in the first 3 sentences.",
@@ -653,29 +659,37 @@
       ],
       "error": "",
       "cache": {
-        "hit": true,
-        "fetchedAt": "2026-02-11T23:23:33Z"
+        "hit": false,
+        "fetchedAt": "2026-02-12T00:01:44Z"
       }
     },
     "taskStats": {
       "total": 80,
-      "completed": 27,
+      "completed": 26,
       "queued": 0,
       "blocked": 1,
       "byStatus": {
         "failed": 1,
-        "cancelled": 52,
-        "completed": 27
+        "cancelled": 53,
+        "completed": 26
       }
     },
     "recentTasks": [
       {
-        "id": "openclaw-349",
+        "id": "openclaw-350",
         "title": "Build a practical LXD workflow for small teams shipping weekly",
         "status": "failed",
-        "updated_at": "2026-02-11T23:50:44Z",
+        "updated_at": "2026-02-12T00:01:41Z",
         "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
         "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-349",
+        "title": "Build a practical LXD workflow for small teams shipping weekly",
+        "status": "cancelled",
+        "updated_at": "2026-02-11T23:51:32Z",
+        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
+        "blockers": ""
       },
       {
         "id": "openclaw-348",
@@ -818,14 +832,6 @@
         "title": "Design learning for decision quality, not completion rates",
         "status": "cancelled",
         "updated_at": "2026-02-11T23:24:21Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-330",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-11T23:23:22Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
       }
@@ -1225,18 +1231,18 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 63,
+        "completed": 62,
         "active": 0,
         "queued": 0,
         "blocked": 1,
-        "cancelled": 56
+        "cancelled": 57
       },
       "today": {
-        "completed": 63,
+        "completed": 0,
         "active": 0,
         "queued": 0,
         "blocked": 1,
-        "published": 3
+        "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
@@ -1258,14 +1264,20 @@
       "bottleneck": {
         "state": "blocked",
         "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-11T23:50:44Z"
+        "at": "2026-02-12T00:01:41Z"
       },
       "recentIdeas": [
         {
-          "id": "openclaw-349",
+          "id": "openclaw-350",
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "failed",
-          "updated_at": "2026-02-11T23:50:44Z"
+          "updated_at": "2026-02-12T00:01:41Z"
+        },
+        {
+          "id": "openclaw-349",
+          "title": "Build a practical LXD workflow for small teams shipping weekly",
+          "status": "cancelled",
+          "updated_at": "2026-02-11T23:51:32Z"
         },
         {
           "id": "openclaw-348",
@@ -1314,12 +1326,6 @@
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "cancelled",
           "updated_at": "2026-02-11T23:44:00Z"
-        },
-        {
-          "id": "openclaw-340",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "cancelled",
-          "updated_at": "2026-02-11T23:32:38Z"
         }
       ],
       "recentOutputs": [
@@ -1448,8 +1454,8 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-11T23:50:36Z",
-        "lastFinishedAt": "2026-02-11T23:49:51Z",
+        "lastStartedAt": "2026-02-11T23:51:32Z",
+        "lastFinishedAt": "2026-02-11T23:50:47Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1518,7 +1524,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-11T23:50:44Z",
+    "updatedAt": "2026-02-12T00:01:41Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
