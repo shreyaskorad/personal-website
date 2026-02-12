@@ -17,9 +17,10 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 PUBLISH_SCRIPT = ROOT / 'scripts' / 'publish_post.py'
 FEED_SCRIPT = ROOT / 'scripts' / 'generate-feeds.js'
-LOCK_FILE = ROOT / '.publish.lock'
+STATE_DIR = Path('/Users/shreyas-clawd/.openclaw/state')
+LOCK_FILE = STATE_DIR / 'publish.lock'
 HISTORY_FILE = Path('/Users/shreyas-clawd/.openclaw/state/publish-image-history.json')
-SANITIZED_PAYLOAD = ROOT / '.publish-payload.sanitized.json'
+SANITIZED_PAYLOAD = STATE_DIR / 'publish-payload.sanitized.json'
 
 RECENT_IMAGE_WINDOW = 12
 
@@ -127,6 +128,52 @@ def run(cmd: list[str], check: bool = True) -> subprocess.CompletedProcess[str]:
         detail = (proc.stderr or proc.stdout or '').strip()
         raise RuntimeError(f"Command failed ({' '.join(cmd)}): {detail}")
     return proc
+
+
+def cleanup_repo_state() -> None:
+    subprocess.run(['git', 'rebase', '--abort'], cwd=ROOT, text=True, capture_output=True)
+    subprocess.run(['git', 'merge', '--abort'], cwd=ROOT, text=True, capture_output=True)
+
+
+def has_worktree_changes() -> bool:
+    proc = subprocess.run(['git', 'status', '--porcelain'], cwd=ROOT, text=True, capture_output=True)
+    return bool((proc.stdout or '').strip())
+
+
+def stash_local_changes() -> str | None:
+    stamp = datetime.utcnow().strftime('%Y%m%d%H%M%S')
+    note = f'openclaw-publish-autostash-{stamp}'
+    proc = subprocess.run(
+        ['git', 'stash', 'push', '-u', '-m', note],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    output = f"{proc.stdout or ''}\n{proc.stderr or ''}".strip()
+    if 'No local changes to save' in output:
+        return None
+    if proc.returncode != 0:
+        raise RuntimeError(f'Failed to stash local changes: {output}')
+
+    ref_proc = subprocess.run(
+        ['git', 'stash', 'list', '--format=%gd', '-n', '1'],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    stash_ref = (ref_proc.stdout or '').strip().splitlines()[0] if (ref_proc.stdout or '').strip() else ''
+    if not stash_ref:
+        raise RuntimeError('Stash succeeded but no stash reference was found')
+    return stash_ref
+
+
+def restore_stash(stash_ref: str | None) -> None:
+    if not stash_ref:
+        return
+    pop = subprocess.run(['git', 'stash', 'pop', stash_ref], cwd=ROOT, text=True, capture_output=True)
+    if pop.returncode != 0:
+        detail = (pop.stderr or pop.stdout or '').strip()
+        warn(f'Failed to auto-restore stashed changes ({stash_ref}): {detail}')
 
 
 def slugify(text: str) -> str:
@@ -367,11 +414,16 @@ def choose_image(title: str, lead: str, tags: list[str], slug: str) -> dict[str,
 
 def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
     title = sanitize_text(raw_title or '') or 'Untitled note'
+    title = re.sub(r'\s*\[[^\]]+\]\s*', ' ', title).strip()
+    title = re.sub(r'\bpublish:?\s*$', '', title, flags=re.IGNORECASE).strip()
+    title = re.sub(r'\bpublis\s*$', '', title, flags=re.IGNORECASE).strip()
+    title = sanitize_text(title) or 'Untitled note'
     title_l = title.lower()
 
     looks_like_control_prompt = (
         'you are an execution worker' in title_l
         or 'return json only' in title_l
+        or title_l.startswith('autonomous seo blog sprint')
         or title_l.startswith('[mon ')
         or title_l.startswith('[tue ')
         or title_l.startswith('[wed ')
@@ -462,12 +514,18 @@ def has_staged_changes() -> bool:
     return proc.returncode != 0
 
 
-def prepare_publish_branch() -> str:
+def prepare_publish_branch() -> tuple[str, str | None]:
     # Always publish from a clean branch rooted at latest origin/main.
+    cleanup_repo_state()
+    stash_ref = None
+    if has_worktree_changes():
+        warn('Working tree had local changes; stashing before publish run')
+        stash_ref = stash_local_changes()
+
     branch = f"publish/{datetime.utcnow().strftime('%Y%m%d%H%M%S')}"
     run(['git', 'fetch', 'origin', 'main'])
     run(['git', 'checkout', '-B', branch, 'origin/main'])
-    return branch
+    return branch, stash_ref
 
 
 def commit_and_push(message: str) -> str:
@@ -484,6 +542,7 @@ def commit_and_push(message: str) -> str:
 
         last_error = (push.stderr or push.stdout or '').strip()
         warn(f'Push attempt {attempt} failed; trying rebase and retry')
+        cleanup_repo_state()
 
         fetch = subprocess.run(['git', 'fetch', 'origin', 'main'], cwd=ROOT, text=True, capture_output=True)
         if fetch.returncode != 0:
@@ -517,6 +576,7 @@ def main() -> None:
     if not input_path.exists():
         die(f'Input file not found: {input_path}', 2)
 
+    STATE_DIR.mkdir(parents=True, exist_ok=True)
     lock_handle = LOCK_FILE.open('w')
     try:
         fcntl.flock(lock_handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -524,58 +584,63 @@ def main() -> None:
         die('Another publish operation is in progress', 75)
 
     starting_branch = (run(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], check=False).stdout or '').strip() or 'main'
-    publish_branch = prepare_publish_branch()
+    publish_branch = ''
+    stashed_ref = None
+    try:
+        publish_branch, stashed_ref = prepare_publish_branch()
 
-    raw = json.loads(input_path.read_text())
-    payload = sanitize_payload(raw)
-    SANITIZED_PAYLOAD.write_text(json.dumps(payload, indent=2))
+        raw = json.loads(input_path.read_text())
+        payload = sanitize_payload(raw)
+        SANITIZED_PAYLOAD.write_text(json.dumps(payload, indent=2))
 
-    cmd = ['python3', str(PUBLISH_SCRIPT), '--input', str(SANITIZED_PAYLOAD), '--no-git']
-    if args.force:
-        cmd.append('--force')
+        cmd = ['python3', str(PUBLISH_SCRIPT), '--input', str(SANITIZED_PAYLOAD), '--no-git']
+        if args.force:
+            cmd.append('--force')
 
-    attempts = 0
-    publish_out = ''
-    while True:
-        attempts += 1
-        proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True)
-        publish_out = (proc.stdout or '') + ('\n' + proc.stderr if proc.stderr else '')
-        if proc.returncode == 0:
-            break
+        attempts = 0
+        publish_out = ''
+        while True:
+            attempts += 1
+            proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True)
+            publish_out = (proc.stdout or '') + ('\n' + proc.stderr if proc.stderr else '')
+            if proc.returncode == 0:
+                break
 
-        if attempts > max(1, args.max_retries):
-            die(f'publish_post.py failed after {attempts} attempt(s):\n{publish_out}')
+            if attempts > max(1, args.max_retries):
+                die(f'publish_post.py failed after {attempts} attempt(s):\n{publish_out}')
 
-        warn('publish_post.py failed; retrying once after short backoff')
-        time.sleep(2)
+            warn('publish_post.py failed; retrying once after short backoff')
+            time.sleep(2)
 
-    run(['node', str(FEED_SCRIPT)])
+        run(['node', str(FEED_SCRIPT)])
 
-    title = payload['title']
-    slug = payload['slug']
-    stage_files(slug)
+        title = payload['title']
+        slug = payload['slug']
+        stage_files(slug)
 
-    commit_msg = f'Publish blog post: {title}'
-    if len(commit_msg) > 100:
-        commit_msg = commit_msg[:97] + '...'
+        commit_msg = f'Publish blog post: {title}'
+        if len(commit_msg) > 100:
+            commit_msg = commit_msg[:97] + '...'
 
-    push_status = commit_and_push(commit_msg)
-    sha = get_head_sha()
+        push_status = commit_and_push(commit_msg)
+        sha = get_head_sha()
 
-    if starting_branch and starting_branch != publish_branch:
-        subprocess.run(['git', 'checkout', starting_branch], cwd=ROOT, text=True, capture_output=True)
-
-    result = {
-        'status': 'ok',
-        'title': title,
-        'slug': slug,
-        'url': f'https://shreyaskorad.in/posts/{slug}.html',
-        'commit': sha,
-        'push': push_status,
-        'branch': publish_branch,
-        'sanitized_payload': str(SANITIZED_PAYLOAD),
-    }
-    print(json.dumps(result, indent=2))
+        result = {
+            'status': 'ok',
+            'title': title,
+            'slug': slug,
+            'url': f'https://shreyaskorad.in/posts/{slug}.html',
+            'commit': sha,
+            'push': push_status,
+            'branch': publish_branch,
+            'sanitized_payload': str(SANITIZED_PAYLOAD),
+        }
+        print(json.dumps(result, indent=2))
+    finally:
+        if starting_branch and publish_branch and starting_branch != publish_branch:
+            subprocess.run(['git', 'checkout', starting_branch], cwd=ROOT, text=True, capture_output=True)
+        if stashed_ref:
+            restore_stash(stashed_ref)
 
 
 if __name__ == '__main__':
