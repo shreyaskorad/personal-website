@@ -1,30 +1,32 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-12T03:41:16Z",
+    "updatedAt": "2026-02-12T03:42:18Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "b7a4ca03fe0446a1"
   },
   "summary": {
-    "totalTasks": 4,
-    "queued": 0,
-    "active": 0,
+    "totalTasks": 6,
+    "queued": 1,
+    "active": 1,
     "completed": 4,
     "due": 0,
     "blocked": 0,
     "executedTotal": 4,
     "byStatus": {
+      "running": 1,
+      "queued": 1,
       "completed": 4
     }
   },
   "laneMetrics": {
     "execution": {
-      "visible": 0,
+      "visible": 1,
       "executedTotal": 4
     },
     "queue": {
-      "visible": 0,
-      "totalQueued": 0
+      "visible": 1,
+      "totalQueued": 1
     },
     "completed": {
       "visible": 4,
@@ -38,8 +40,50 @@
       "needsInput": 0
     }
   },
-  "execution": [],
-  "queueTop": [],
+  "execution": [
+    {
+      "id": "openclaw-433",
+      "title": "Design onboarding that builds role judgment instead of checklist compliance",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "running",
+      "sequence": 0,
+      "createdAt": "2026-02-12T03:41:58Z",
+      "updatedAt": "2026-02-12T03:41:58Z",
+      "completedAt": null,
+      "ageHours": 0.01,
+      "deliverySummary": "OpenClaw SSH execution in progress.",
+      "deliverableUrl": "/ops/deliverables/openclaw-433.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
+  "queueTop": [
+    {
+      "id": "inbox-740",
+      "title": "Design onboarding that builds role judgment instead of checklist compliance",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 1,
+      "createdAt": "2026-02-12T03:41:58Z",
+      "updatedAt": "2026-02-12T03:42:18Z",
+      "completedAt": null,
+      "ageHours": 0.01,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=378",
+        "inbox_item_id=740"
+      ],
+      "action": "create_task",
+      "scope": "professional",
+      "hasDeliverable": false,
+      "needsReview": false
+    }
+  ],
   "userActionsDue": [],
   "completedRecent": [
     {
@@ -52,7 +96,7 @@
       "createdAt": "2026-02-12T03:39:59Z",
       "updatedAt": "2026-02-12T03:39:59Z",
       "completedAt": "2026-02-12T03:39:59Z",
-      "ageHours": 0.02,
+      "ageHours": 0.04,
       "deliverySummary": "Monitor engagement metrics and business reviews alignment over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-432.md",
       "notes": [],
@@ -70,7 +114,7 @@
       "createdAt": "2026-02-12T03:35:58Z",
       "updatedAt": "2026-02-12T03:35:58Z",
       "completedAt": "2026-02-12T03:35:58Z",
-      "ageHours": 0.09,
+      "ageHours": 0.11,
       "deliverySummary": "Monitor reader engagement and LxD workflow adoption metrics over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-430.md",
       "notes": [],
@@ -88,7 +132,7 @@
       "createdAt": "2026-02-12T03:25:52Z",
       "updatedAt": "2026-02-12T03:25:52Z",
       "completedAt": "2026-02-12T03:25:52Z",
-      "ageHours": 0.26,
+      "ageHours": 0.27,
       "deliverySummary": "Monitor engagement metrics and decision quality signals over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-427.md",
       "notes": [],
@@ -106,7 +150,7 @@
       "createdAt": "2026-02-12T03:11:57Z",
       "updatedAt": "2026-02-12T03:11:57Z",
       "completedAt": "2026-02-12T03:11:57Z",
-      "ageHours": 0.49,
+      "ageHours": 0.51,
       "deliverySummary": "Monitor engagement metrics and human judgment adoption over next 30 days",
       "deliverableUrl": "/ops/deliverables/openclaw-423.md",
       "notes": [],
@@ -130,11 +174,17 @@
     },
     {
       "level": "info",
-      "message": "No queued or active execution tasks right now."
+      "message": "OpenClaw is actively executing 1 task(s) in sequence (WIP=1)."
     }
   ],
   "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-12T03:41:58Z",
+      "type": "executed",
+      "taskId": "capture-378",
+      "message": "Autonomous writing sprint: Design onboarding that builds role judgment instead of checklist compliance: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-12T03:39:59Z",
       "type": "executed",
@@ -488,16 +538,10 @@
       "type": "executed",
       "taskId": "capture-348",
       "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=failed, task_id=7e8ba769-52fa-4a52-bcf5-de1681bbd1a8): Context overflow: prompt too large for the model. Try again with less input or a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-12T02:13:08Z",
-      "type": "executed",
-      "taskId": "capture-348",
-      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-12T03:41:16Z",
+    "updatedAt": "2026-02-12T03:42:18Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -688,14 +732,23 @@
     "taskStats": {
       "total": 80,
       "completed": 22,
-      "queued": 0,
+      "queued": 1,
       "blocked": 0,
       "byStatus": {
+        "running": 1,
         "completed": 22,
-        "cancelled": 58
+        "cancelled": 57
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-433",
+        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "status": "running",
+        "updated_at": "2026-02-12T03:41:58Z",
+        "next_steps": "OpenClaw SSH execution in progress.",
+        "blockers": ""
+      },
       {
         "id": "openclaw-432",
         "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
@@ -845,14 +898,6 @@
         "title": "Build a practical LXD workflow for small teams shipping weekly",
         "status": "cancelled",
         "updated_at": "2026-02-12T02:39:09Z",
-        "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-413",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-12T02:38:13Z",
         "next_steps": "Auto-closed by autonomous mode to keep execution deterministic.",
         "blockers": ""
       }
@@ -1253,19 +1298,29 @@
       "summary": {
         "total": 120,
         "completed": 23,
-        "active": 0,
+        "active": 1,
         "queued": 0,
         "blocked": 0,
-        "cancelled": 97
+        "cancelled": 96
       },
       "today": {
         "completed": 22,
-        "active": 0,
+        "active": 1,
         "queued": 0,
         "blocked": 0,
         "published": 0
       },
-      "activeTask": null,
+      "activeTask": {
+        "id": "openclaw-433",
+        "row_id": 433,
+        "capture_id": 378,
+        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "status": "running",
+        "updated_at": "2026-02-12T03:41:58Z",
+        "next_steps": "OpenClaw SSH execution in progress.",
+        "blockers": "",
+        "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
+      },
       "lastCompletedTask": {
         "id": "openclaw-432",
         "row_id": 432,
@@ -1278,22 +1333,32 @@
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
       "pendingQueue": {
-        "count": 0,
-        "recent": []
+        "count": 1,
+        "recent": [
+          {
+            "id": "inbox-740",
+            "capture_id": 378,
+            "title": "Design onboarding that builds role judgment instead of checklist compliance",
+            "status": "pending",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-12T03:41:58Z",
+            "executed_at": ""
+          }
+        ]
       },
-      "focusNote": {
-        "agent_id": "publishing-qa",
-        "created_at": "2026-02-12T03:39:59Z",
-        "note": "Article already published at https://shreyaskorad.in/posts/make-learning-evidence-useful-for-business-reviews-without-heavy-reporting-overhead.html. 200 status code confirmed. Sitemap and RSS verified.",
-        "action_hint": "Monitor engagement and business review alignment over 30 days. Update refresh triggers based on implementation learnings.",
-        "handoff_to": "supervisor"
-      },
+      "focusNote": {},
       "bottleneck": {
-        "state": "idle",
-        "reason": "No active writing run at this moment.",
-        "at": "2026-02-12T03:41:09Z"
+        "state": "watch",
+        "reason": "Progress appears stuck at topic-scout; downstream stages have not started.",
+        "at": "2026-02-12T03:41:58Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-433",
+          "title": "Design onboarding that builds role judgment instead of checklist compliance",
+          "status": "running",
+          "updated_at": "2026-02-12T03:41:58Z"
+        },
         {
           "id": "openclaw-432",
           "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
@@ -1347,12 +1412,6 @@
           "title": "Design learning for decision quality, not completion rates",
           "status": "completed",
           "updated_at": "2026-02-12T03:15:14Z"
-        },
-        {
-          "id": "openclaw-423",
-          "title": "Design without losing human judgment",
-          "status": "completed",
-          "updated_at": "2026-02-12T03:11:57Z"
         }
       ],
       "recentOutputs": [
@@ -1458,35 +1517,34 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-432",
+        "focusTaskId": "openclaw-433",
         "total": 9,
-        "done": 3,
-        "remaining": 6,
-        "doneIds": [
-          "topic-scout",
-          "writer",
-          "publishing-qa"
-        ],
+        "done": 0,
+        "remaining": 9,
+        "doneIds": [],
         "remainingIds": [
+          "topic-scout",
           "serp-keyword",
           "brief-architect",
           "research-analyst",
+          "writer",
           "seo-optimizer",
           "editor",
-          "refresh-planner"
+          "refresh-planner",
+          "publishing-qa"
         ],
-        "lastStageAt": "2026-02-12T03:39:59Z"
+        "lastStageAt": ""
       },
       "pipeline": {
         "workerStarted": true,
-        "tickInProgress": false,
-        "lastStatus": "ok",
+        "tickInProgress": true,
+        "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-12T03:39:03Z",
+        "lastStartedAt": "2026-02-12T03:41:54Z",
         "lastFinishedAt": "2026-02-12T03:41:09Z",
         "runtime": {
-          "pending_inbox": 0,
-          "active_openclaw": 0,
+          "pending_inbox": 1,
+          "active_openclaw": 1,
           "blocked_or_failed_openclaw": 0
         }
       }
@@ -1552,9 +1610,9 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-12T03:41:16Z",
+    "updatedAt": "2026-02-12T03:42:18Z",
     "metrics": {
-      "reviewRequested": 0,
+      "reviewRequested": 1,
       "proceedCount": 0,
       "closeCount": 0
     },
