@@ -365,8 +365,37 @@ def choose_image(title: str, lead: str, tags: list[str], slug: str) -> dict[str,
     }
 
 
+def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
+    title = sanitize_text(raw_title or '') or 'Untitled note'
+    title_l = title.lower()
+
+    looks_like_control_prompt = (
+        'you are an execution worker' in title_l
+        or 'return json only' in title_l
+        or title_l.startswith('[mon ')
+        or title_l.startswith('[tue ')
+        or title_l.startswith('[wed ')
+        or title_l.startswith('[thu ')
+        or title_l.startswith('[fri ')
+        or title_l.startswith('[sat ')
+        or title_l.startswith('[sun ')
+    )
+    if not looks_like_control_prompt:
+        return title
+
+    description = str(raw_description or '')
+    match = re.search(r'\bTitle:\s*(.+?)\s+Priority:\s*', description, flags=re.IGNORECASE | re.DOTALL)
+    if match:
+        recovered = sanitize_text(match.group(1))
+        if recovered and 'you are an execution worker' not in recovered.lower():
+            warn(f'Recovered publish title from embedded task field: {recovered[:120]}')
+            return recovered
+
+    die(f'Refusing to publish control-prompt title: {title}')
+
+
 def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
-    title = sanitize_text(raw.get('title', '')) or 'Untitled note'
+    title = normalize_publish_title(raw.get('title', ''), raw.get('description', ''))
     slug = sanitize_text(raw.get('slug', '')) or slugify(title)
 
     lead = sanitize_text(raw.get('lead', '') or raw.get('excerpt', '') or title)
