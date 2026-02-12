@@ -380,16 +380,6 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     bullets: list[str] = []
     if isinstance(bullets_raw, list):
         bullets = [sanitize_text(b) for b in bullets_raw if sanitize_text(b)]
-    # Force no bullet lists in final posts. Fold any bullet content into prose.
-    if bullets:
-        tail = sections[-1]["paragraphs"] if sections else None
-        if isinstance(tail, list):
-            for item in bullets[:4]:
-                if item:
-                    tail.append(item)
-        else:
-            sections.append({'heading': '', 'paragraphs': bullets[:4]})
-    bullets = []
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
 
@@ -408,7 +398,7 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
         'excerpt': excerpt,
         'meta_description': meta_description,
         'sections': sections,
-        'bullets': [],
+        'bullets': bullets[:4],
         'closing': closing,
     }
 
@@ -443,6 +433,14 @@ def has_staged_changes() -> bool:
     return proc.returncode != 0
 
 
+def prepare_publish_branch() -> str:
+    # Always publish from a clean branch rooted at latest origin/main.
+    branch = f"publish/{datetime.utcnow().strftime('%Y%m%d%H%M%S')}"
+    run(['git', 'fetch', 'origin', 'main'])
+    run(['git', 'checkout', '-B', branch, 'origin/main'])
+    return branch
+
+
 def commit_and_push(message: str) -> str:
     if not has_staged_changes():
         return 'no_changes'
@@ -458,10 +456,16 @@ def commit_and_push(message: str) -> str:
         last_error = (push.stderr or push.stdout or '').strip()
         warn(f'Push attempt {attempt} failed; trying rebase and retry')
 
-        pull = subprocess.run(['git', 'pull', '--rebase', 'origin', 'main'], cwd=ROOT, text=True, capture_output=True)
-        if pull.returncode != 0:
+        fetch = subprocess.run(['git', 'fetch', 'origin', 'main'], cwd=ROOT, text=True, capture_output=True)
+        if fetch.returncode != 0:
+            last_error = (fetch.stderr or fetch.stdout or last_error).strip()
+            time.sleep(attempt * 2)
+            continue
+
+        rebase = subprocess.run(['git', 'rebase', 'origin/main'], cwd=ROOT, text=True, capture_output=True)
+        if rebase.returncode != 0:
             subprocess.run(['git', 'rebase', '--abort'], cwd=ROOT, text=True, capture_output=True)
-            last_error = (pull.stderr or pull.stdout or last_error).strip()
+            last_error = (rebase.stderr or rebase.stdout or last_error).strip()
 
         time.sleep(attempt * 2)
 
@@ -489,6 +493,8 @@ def main() -> None:
         fcntl.flock(lock_handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
     except BlockingIOError:
         die('Another publish operation is in progress', 75)
+
+    publish_branch = prepare_publish_branch()
 
     raw = json.loads(input_path.read_text())
     payload = sanitize_payload(raw)
@@ -533,6 +539,7 @@ def main() -> None:
         'url': f'https://shreyaskorad.in/posts/{slug}.html',
         'commit': sha,
         'push': push_status,
+        'branch': publish_branch,
         'sanitized_payload': str(SANITIZED_PAYLOAD),
     }
     print(json.dumps(result, indent=2))
