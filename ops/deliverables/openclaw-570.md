@@ -1,9 +1,9 @@
 # Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
 
-- Task ID: openclaw-568
+- Task ID: openclaw-570
 - Status: failed
-- Created: 2026-02-12T12:31:54Z
-- Updated: 2026-02-12T12:36:24Z
+- Created: 2026-02-12T12:47:11Z
+- Updated: 2026-02-12T12:51:41Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
