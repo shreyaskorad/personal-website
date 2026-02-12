@@ -1,21 +1,15 @@
-# Deliverable: Design onboarding that builds role judgment instead of checklist compliance
+# Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
 
-- Task ID: openclaw-525
-- Status: completed
-- Created: 2026-02-12T07:56:54Z
-- Updated: 2026-02-12T07:57:39Z
+- Task ID: openclaw-566
+- Status: failed
+- Created: 2026-02-12T12:16:34Z
+- Updated: 2026-02-12T12:21:04Z
 
 ## Summary
-Monitor engagement and judgment adoption over 30 days
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T08:01:59Z)
-
-## Last Error
-OpenClaw SSH command timed out after 260s
-
-## Draft Deliverable (Fallback)
-# Deliverable Draft: Design Onboarding That Builds Role Judgment Instead Of Checklist Compliance SEO blog operating system
+# Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -61,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Monitor engagement and judgment adoption over 30 days
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
