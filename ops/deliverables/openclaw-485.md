@@ -1,15 +1,15 @@
 # Deliverable: Design manager enablement that links coaching actions to team capability growth
 
-- Task ID: openclaw-467
+- Task ID: openclaw-485
 - Status: completed
-- Created: 2026-02-12T05:12:49Z
-- Updated: 2026-02-12T05:12:49Z
+- Created: 2026-02-12T05:53:37Z
+- Updated: 2026-02-12T05:53:37Z
 
 ## Summary
-Verify topic uniqueness, execute topic scout → writer → publishing qa
+Monitor engagement and coaching team capability growth over 30 days
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T05:14:11Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-12T05:54:44Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Verify topic uniqueness, execute topic scout → writer → publishing qa
+Monitor engagement and coaching team capability growth over 30 days
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
