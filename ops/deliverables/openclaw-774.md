@@ -1,15 +1,15 @@
-# Deliverable: Design manager enablement that links coaching actions to team capability growth
+# Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
 
-- Task ID: openclaw-772
+- Task ID: openclaw-774
 - Status: failed
-- Created: 2026-02-13T12:28:38Z
-- Updated: 2026-02-13T12:33:08Z
+- Created: 2026-02-13T12:49:10Z
+- Updated: 2026-02-13T12:53:40Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-# Deliverable Draft: Design Manager Enablement That Links Coaching Actions To Team Capability Growth SEO blog operating system
+# Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.

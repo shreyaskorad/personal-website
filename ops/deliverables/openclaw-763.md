@@ -1,20 +1,14 @@
 # Deliverable: Improve judgment without adding course fatigue
 
-- Task ID: openclaw-733
-- Status: completed
-- Created: 2026-02-13T09:24:11Z
-- Updated: 2026-02-13T09:25:23Z
+- Task ID: openclaw-763
+- Status: cancelled
+- Created: 2026-02-13T11:23:23Z
+- Updated: 2026-02-13T11:31:00Z
 
 ## Summary
-Monitor engagement and judgment adoption over 30 days
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-13T09:27:03Z)
-
-## Last Error
-OpenClaw returned no usable markdown deliverable.
-
-## Draft Deliverable (Fallback)
 # Deliverable Draft: Improve Judgment Without Adding Course Fatigue SEO blog operating system
 
 ## Objective and success metrics
@@ -61,7 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Monitor engagement and judgment adoption over 30 days
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
