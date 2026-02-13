@@ -1,9 +1,9 @@
 # Deliverable: Create L&D reviews that focus on behavior shifts not completion dashboards
 
-- Task ID: openclaw-766
+- Task ID: openclaw-768
 - Status: failed
-- Created: 2026-02-13T11:42:43Z
-- Updated: 2026-02-13T11:47:13Z
+- Created: 2026-02-13T11:57:57Z
+- Updated: 2026-02-13T12:02:27Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
