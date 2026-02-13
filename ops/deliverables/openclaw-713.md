@@ -1,15 +1,15 @@
 # Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-695
+- Task ID: openclaw-713
 - Status: completed
-- Created: 2026-02-13T07:22:18Z
-- Updated: 2026-02-13T07:23:13Z
+- Created: 2026-02-13T08:18:09Z
+- Updated: 2026-02-13T08:18:53Z
 
 ## Summary
-No summary provided.
+Monitor engagement and decision improvement adoption over 30 days
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-13T07:24:55Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-13T08:19:51Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
+Monitor engagement and decision improvement adoption over 30 days
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
