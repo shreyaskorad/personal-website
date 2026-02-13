@@ -1,18 +1,19 @@
 # Deliverable: Design onboarding that builds role judgment instead of checklist compliance
 
-- Task ID: openclaw-823
+- Task ID: openclaw-856
 - Status: completed
-- Created: 2026-02-13T18:52:37Z
-- Updated: 2026-02-13T18:52:54Z
+- Created: 2026-02-13T22:55:34Z
+- Updated: 2026-02-13T22:56:09Z
 
 ## Summary
-No summary provided.
+Recheck RSS indexing in 48h; monitor 30-day engagement; track onboarding judgment metrics; refine checklist-to-judgment transition
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-13T18:54:23Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-13T23:12:55Z)
 
 ## Last Error
-OpenClaw returned no usable markdown deliverable.
+OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer
+client_loop: send disconnect: Broken pipe
 
 ## Draft Deliverable (Fallback)
 # Deliverable Draft: Design Onboarding That Builds Role Judgment Instead Of Checklist Compliance SEO blog operating system
@@ -61,7 +62,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
+Recheck RSS indexing in 48h; monitor 30-day engagement; track onboarding judgment metrics; refine checklist-to-judgment transition
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
