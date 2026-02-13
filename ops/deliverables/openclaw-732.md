@@ -1,21 +1,21 @@
-# Deliverable: Design learning prompts that improve decisions during real project pressure
+# Deliverable: Build feedback rituals that convert learning into visible team behavior
 
-- Task ID: openclaw-713
+- Task ID: openclaw-732
 - Status: completed
-- Created: 2026-02-13T08:18:09Z
-- Updated: 2026-02-13T08:18:53Z
+- Created: 2026-02-13T09:20:21Z
+- Updated: 2026-02-13T09:21:47Z
 
 ## Summary
-Monitor engagement and decision improvement adoption over 30 days
+Monitor engagement and behavior shift adoption over 30 days
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-13T08:19:51Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-13T09:23:14Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
+# Deliverable Draft: Build Feedback Rituals That Convert Learning Into Visible Team Behavior SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Monitor engagement and decision improvement adoption over 30 days
+Monitor engagement and behavior shift adoption over 30 days
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
