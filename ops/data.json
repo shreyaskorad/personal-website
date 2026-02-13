@@ -1,1627 +1,1011 @@
 {
   "meta": {
-    "title": "Task Dashboard",
-    "updatedAt": "2026-02-13T15:45:55Z",
-    "source": "Dictation Router + OpenClaw supervisor",
-    "uiTemplateVersion": "a9dbebebb8a6da7e"
+    "title": "OpenClaw Control Dashboard",
+    "updatedAt": "2026-02-13T15:58:57.087Z",
+    "fingerprint": "f37b0d8d78cb1bab",
+    "source": "PersonalOS task + activity + OpenClaw error logs"
   },
   "summary": {
-    "totalTasks": 6,
+    "totalTasks": 40,
     "queued": 0,
     "active": 0,
-    "completed": 5,
-    "due": 1,
-    "blocked": 1,
-    "executedTotal": 8,
+    "completed": 15,
+    "blocked": 0,
     "byStatus": {
-      "completed": 5,
-      "failed": 1
-    }
-  },
-  "laneMetrics": {
-    "execution": {
-      "visible": 0,
-      "executedTotal": 8
-    },
-    "queue": {
-      "visible": 0,
-      "totalQueued": 0
-    },
-    "completed": {
-      "visible": 5,
-      "totalClosed": 5
-    },
-    "due": {
-      "visible": 1,
-      "reviewRequired": 0,
-      "failed": 1,
-      "blocked": 0,
-      "needsInput": 0
+      "cancelled": 25,
+      "completed": 15
     }
   },
   "execution": [],
   "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-806",
-      "title": "Design learning prompts that improve decisions during real project pressure",
-      "source": "openclaw",
+      "id": "task-1770808158975-vazb",
+      "title": "[Mon 2026-02-09 12:31 GMT+5:30] Convert the following dictation into clean JSON",
+      "source": "handoff",
       "priority": "medium",
-      "status": "failed",
-      "sequence": 0,
-      "createdAt": "2026-02-13T15:42:12Z",
-      "updatedAt": "2026-02-13T15:45:55Z",
-      "completedAt": "2026-02-13T15:45:55Z",
-      "ageHours": 0.06,
-      "deliverySummary": "Rewrite required before publish. Violations: repeats the same core point",
-      "deliverableUrl": "/ops/deliverables/openclaw-806.md",
+      "status": "completed",
+      "sequence": 4,
+      "createdAt": "2026-02-09T07:24:07.790Z",
+      "updatedAt": "2026-02-12T13:42:42.222Z",
+      "completedAt": "2026-02-12T13:42:42.222Z",
+      "ageHours": 104.6,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/convert-the-following-dictation-into-clean-json.html\",",
+      "deliverableUrl": null,
       "notes": [
-        "Publish quality gate failed."
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/convert-the-following-dictation-into-clean-json.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158978-fv3o",
+      "title": "[Mon 2026-02-09 12:34 GMT+5:30] Create the FINAL publish-ready blog article for this",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 5,
+      "createdAt": "2026-02-09T07:24:07.793Z",
+      "updatedAt": "2026-02-12T13:44:07.835Z",
+      "completedAt": "2026-02-12T13:44:07.835Z",
+      "ageHours": 104.6,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/write-one-blog-do.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/write-one-blog-do.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158691-dsjb",
+      "title": "[Wed 2026-02-11 13:59 GMT+5:30] You are an execution worker",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 29,
+      "createdAt": "2026-02-11T11:09:18.691Z",
+      "updatedAt": "2026-02-12T13:03:09.269Z",
+      "completedAt": "2026-02-12T13:03:09.269Z",
+      "ageHours": 52.85,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-data-operating-model-for-teams-with-weekly-execution-rhythm.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-data-operating-model-for-teams-with-weekly-execution-rhythm.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158695-bj3l",
+      "title": "[Wed 2026-02-11 13:59 GMT+5:30] Create a serialized SEO blog operating playbook for",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 30,
+      "createdAt": "2026-02-11T11:09:18.695Z",
+      "updatedAt": "2026-02-12T13:03:18.137Z",
+      "completedAt": "2026-02-12T13:03:18.137Z",
+      "ageHours": 52.85,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158695-bj3l-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158695-bj3l-workflow-system.md",
+      "notes": [
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158695-bj3l-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158701-xz2c",
+      "title": "[Wed 2026-02-11 14:20 GMT+5:30] You are an execution worker",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 31,
+      "createdAt": "2026-02-11T11:09:18.701Z",
+      "updatedAt": "2026-02-12T13:03:33.558Z",
+      "completedAt": "2026-02-12T13:03:33.558Z",
+      "ageHours": 52.85,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-lxd-operating-model-for-teams-with-weekly-execution-rhythm.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-lxd-operating-model-for-teams-with-weekly-execution-rhythm.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158704-o723",
+      "title": "[Wed 2026-02-11 14:21 GMT+5:30] Create a serialized SEO blog operating playbook for",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 32,
+      "createdAt": "2026-02-11T11:09:18.705Z",
+      "updatedAt": "2026-02-12T13:04:41.538Z",
+      "completedAt": "2026-02-12T13:04:41.538Z",
+      "ageHours": 52.85,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158704-o723-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158704-o723-workflow-system.md",
+      "notes": [
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158704-o723-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158869-b9h0",
+      "title": "[WhatsApp +918766662719 +3h 2026-02-08 12:31 GMT+5:30] Publish: I haven’t used PowerPoint in",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 33,
+      "createdAt": "2026-02-08T08:19:30.337Z",
+      "updatedAt": "2026-02-12T13:05:05.608Z",
+      "completedAt": "2026-02-12T13:05:05.608Z",
+      "ageHours": 127.68,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/i-havent-used-powerpoint-in-whatsapp-918766662719-3h-2026-02-08-1231-gmt530-publis.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/i-havent-used-powerpoint-in-whatsapp-918766662719-3h-2026-02-08-1231-gmt530-publis.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158872-b52d",
+      "title": "[WhatsApp +918766662719 +29s 2026-02-08 12:35 GMT+5:30] Publish: Humans are wired to bond",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 34,
+      "createdAt": "2026-02-08T08:19:30.338Z",
+      "updatedAt": "2026-02-12T13:05:33.366Z",
+      "completedAt": "2026-02-12T13:05:33.366Z",
+      "ageHours": 127.68,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/humans-are-wired-to-bond-whatsapp-918766662719-29s-2026-02-08-1235-gmt530-publish.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/humans-are-wired-to-bond-whatsapp-918766662719-29s-2026-02-08-1235-gmt530-publish.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158877-ben4",
+      "title": "DICTATION #61 Summary: I need to figure way out I lineup tasks",
+      "source": "dictation-web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 35,
+      "createdAt": "2026-02-08T08:24:49.673Z",
+      "updatedAt": "2026-02-12T13:06:06.030Z",
+      "completedAt": "2026-02-12T13:06:06.030Z",
+      "ageHours": 127.59,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158877-ben4-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158877-ben4-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158877-ben4-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158880-8i5t",
+      "title": "DICTATION #62 Summary: Core idea is sequence tasks by limits and do",
+      "source": "dictation-web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 36,
+      "createdAt": "2026-02-08T08:24:49.674Z",
+      "updatedAt": "2026-02-12T13:09:44.442Z",
+      "completedAt": "2026-02-12T13:09:44.442Z",
+      "ageHours": 127.59,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158880-8i5t-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158880-8i5t-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158880-8i5t-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158898-p65u",
+      "title": "figure out task lineup system for AI systems - capture everything sequence",
+      "source": "web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 37,
+      "createdAt": "2026-02-08T17:58:41.754Z",
+      "updatedAt": "2026-02-12T13:15:56.628Z",
+      "completedAt": "2026-02-12T13:15:56.628Z",
+      "ageHours": 118.02,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158898-p65u-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158898-p65u-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158898-p65u-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158901-4hw9",
+      "title": "sequence tasks by time limits do one task perfectly before next implement",
+      "source": "web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 38,
+      "createdAt": "2026-02-08T18:03:17.026Z",
+      "updatedAt": "2026-02-12T13:16:05.842Z",
+      "completedAt": "2026-02-12T13:16:05.842Z",
+      "ageHours": 117.95,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158901-4hw9-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158901-4hw9-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158901-4hw9-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770904063480-siky",
+      "title": "Write and publish a blog post about AI-native L&D workflows",
+      "source": "web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 40,
+      "createdAt": "2026-02-12T13:44:52.756Z",
+      "updatedAt": "2026-02-12T13:47:51.515Z",
+      "completedAt": "2026-02-12T13:47:51.515Z",
+      "ageHours": 26.25,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/write-and-publish-a-blog-post-about-ai-native-ld-workflows.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/write-and-publish-a-blog-post-about-ai-native-ld-workflows.html"
+      ]
     }
   ],
   "completedRecent": [
     {
-      "id": "openclaw-801",
-      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-      "source": "openclaw",
+      "id": "task-1770904063480-siky",
+      "title": "Write and publish a blog post about AI-native L&D workflows",
+      "source": "web",
       "priority": "medium",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-13T15:19:19Z",
-      "updatedAt": "2026-02-13T15:19:41Z",
-      "completedAt": "2026-02-13T15:19:41Z",
-      "ageHours": 0.44,
-      "deliverySummary": "Monitor engagement and coaching conversation adoption over 30 days",
-      "deliverableUrl": "/ops/deliverables/openclaw-801.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 40,
+      "createdAt": "2026-02-12T13:44:52.756Z",
+      "updatedAt": "2026-02-12T13:47:51.515Z",
+      "completedAt": "2026-02-12T13:47:51.515Z",
+      "ageHours": 26.25,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/write-and-publish-a-blog-post-about-ai-native-ld-workflows.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/write-and-publish-a-blog-post-about-ai-native-ld-workflows.html"
+      ]
     },
     {
-      "id": "openclaw-797",
-      "title": "Design without losing human judgment",
-      "source": "openclaw",
+      "id": "task-1770808158978-fv3o",
+      "title": "[Mon 2026-02-09 12:34 GMT+5:30] Create the FINAL publish-ready blog article for this",
+      "source": "handoff",
       "priority": "medium",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-13T15:04:55Z",
-      "updatedAt": "2026-02-13T15:05:40Z",
-      "completedAt": "2026-02-13T15:05:40Z",
-      "ageHours": 0.68,
-      "deliverySummary": "Monitor engagement and AI integration adoption over 30 days",
-      "deliverableUrl": "/ops/deliverables/openclaw-797.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 5,
+      "createdAt": "2026-02-09T07:24:07.793Z",
+      "updatedAt": "2026-02-12T13:44:07.835Z",
+      "completedAt": "2026-02-12T13:44:07.835Z",
+      "ageHours": 104.6,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/write-one-blog-do.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/write-one-blog-do.html\","
+      ]
     },
     {
-      "id": "openclaw-796",
-      "title": "Build a practical LXD workflow for small teams shipping weekly",
-      "source": "openclaw",
+      "id": "task-1770808158975-vazb",
+      "title": "[Mon 2026-02-09 12:31 GMT+5:30] Convert the following dictation into clean JSON",
+      "source": "handoff",
       "priority": "medium",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-13T15:00:36Z",
-      "updatedAt": "2026-02-13T15:01:24Z",
-      "completedAt": "2026-02-13T15:01:24Z",
-      "ageHours": 0.76,
-      "deliverySummary": "Monitor engagement and workflow adoption over 30 days",
-      "deliverableUrl": "/ops/deliverables/openclaw-796.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 4,
+      "createdAt": "2026-02-09T07:24:07.790Z",
+      "updatedAt": "2026-02-12T13:42:42.222Z",
+      "completedAt": "2026-02-12T13:42:42.222Z",
+      "ageHours": 104.6,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/convert-the-following-dictation-into-clean-json.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/convert-the-following-dictation-into-clean-json.html\","
+      ]
     },
     {
-      "id": "openclaw-787",
-      "title": "Design onboarding that builds role judgment instead of checklist compliance",
-      "source": "openclaw",
+      "id": "task-1770808158901-4hw9",
+      "title": "sequence tasks by time limits do one task perfectly before next implement",
+      "source": "web",
       "priority": "medium",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-13T14:13:05Z",
-      "updatedAt": "2026-02-13T14:13:45Z",
-      "completedAt": "2026-02-13T14:13:45Z",
-      "ageHours": 1.55,
+      "sequence": 38,
+      "createdAt": "2026-02-08T18:03:17.026Z",
+      "updatedAt": "2026-02-12T13:16:05.842Z",
+      "completedAt": "2026-02-12T13:16:05.842Z",
+      "ageHours": 117.95,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158901-4hw9-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158901-4hw9-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158901-4hw9-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158898-p65u",
+      "title": "figure out task lineup system for AI systems - capture everything sequence",
+      "source": "web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 37,
+      "createdAt": "2026-02-08T17:58:41.754Z",
+      "updatedAt": "2026-02-12T13:15:56.628Z",
+      "completedAt": "2026-02-12T13:15:56.628Z",
+      "ageHours": 118.02,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158898-p65u-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158898-p65u-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158898-p65u-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158880-8i5t",
+      "title": "DICTATION #62 Summary: Core idea is sequence tasks by limits and do",
+      "source": "dictation-web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 36,
+      "createdAt": "2026-02-08T08:24:49.674Z",
+      "updatedAt": "2026-02-12T13:09:44.442Z",
+      "completedAt": "2026-02-12T13:09:44.442Z",
+      "ageHours": 127.59,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158880-8i5t-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158880-8i5t-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158880-8i5t-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158877-ben4",
+      "title": "DICTATION #61 Summary: I need to figure way out I lineup tasks",
+      "source": "dictation-web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 35,
+      "createdAt": "2026-02-08T08:24:49.673Z",
+      "updatedAt": "2026-02-12T13:06:06.030Z",
+      "completedAt": "2026-02-12T13:06:06.030Z",
+      "ageHours": 127.59,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158877-ben4-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158877-ben4-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158877-ben4-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158872-b52d",
+      "title": "[WhatsApp +918766662719 +29s 2026-02-08 12:35 GMT+5:30] Publish: Humans are wired to bond",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 34,
+      "createdAt": "2026-02-08T08:19:30.338Z",
+      "updatedAt": "2026-02-12T13:05:33.366Z",
+      "completedAt": "2026-02-12T13:05:33.366Z",
+      "ageHours": 127.68,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/humans-are-wired-to-bond-whatsapp-918766662719-29s-2026-02-08-1235-gmt530-publish.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/humans-are-wired-to-bond-whatsapp-918766662719-29s-2026-02-08-1235-gmt530-publish.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158869-b9h0",
+      "title": "[WhatsApp +918766662719 +3h 2026-02-08 12:31 GMT+5:30] Publish: I haven’t used PowerPoint in",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 33,
+      "createdAt": "2026-02-08T08:19:30.337Z",
+      "updatedAt": "2026-02-12T13:05:05.608Z",
+      "completedAt": "2026-02-12T13:05:05.608Z",
+      "ageHours": 127.68,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/i-havent-used-powerpoint-in-whatsapp-918766662719-3h-2026-02-08-1231-gmt530-publis.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/i-havent-used-powerpoint-in-whatsapp-918766662719-3h-2026-02-08-1231-gmt530-publis.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158704-o723",
+      "title": "[Wed 2026-02-11 14:21 GMT+5:30] Create a serialized SEO blog operating playbook for",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 32,
+      "createdAt": "2026-02-11T11:09:18.705Z",
+      "updatedAt": "2026-02-12T13:04:41.538Z",
+      "completedAt": "2026-02-12T13:04:41.538Z",
+      "ageHours": 52.85,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158704-o723-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158704-o723-workflow-system.md",
+      "notes": [
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158704-o723-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158701-xz2c",
+      "title": "[Wed 2026-02-11 14:20 GMT+5:30] You are an execution worker",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 31,
+      "createdAt": "2026-02-11T11:09:18.701Z",
+      "updatedAt": "2026-02-12T13:03:33.558Z",
+      "completedAt": "2026-02-12T13:03:33.558Z",
+      "ageHours": 52.85,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-lxd-operating-model-for-teams-with-weekly-execution-rhythm.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-lxd-operating-model-for-teams-with-weekly-execution-rhythm.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158695-bj3l",
+      "title": "[Wed 2026-02-11 13:59 GMT+5:30] Create a serialized SEO blog operating playbook for",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 30,
+      "createdAt": "2026-02-11T11:09:18.695Z",
+      "updatedAt": "2026-02-12T13:03:18.137Z",
+      "completedAt": "2026-02-12T13:03:18.137Z",
+      "ageHours": 52.85,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158695-bj3l-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158695-bj3l-workflow-system.md",
+      "notes": [
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158695-bj3l-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158691-dsjb",
+      "title": "[Wed 2026-02-11 13:59 GMT+5:30] You are an execution worker",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 29,
+      "createdAt": "2026-02-11T11:09:18.691Z",
+      "updatedAt": "2026-02-12T13:03:09.269Z",
+      "completedAt": "2026-02-12T13:03:09.269Z",
+      "ageHours": 52.85,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-data-operating-model-for-teams-with-weekly-execution-rhythm.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-data-operating-model-for-teams-with-weekly-execution-rhythm.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158686-kut0",
+      "title": "[Wed 2026-02-11 13:38 GMT+5:30] You are an execution worker",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 28,
+      "createdAt": "2026-02-11T11:09:18.686Z",
+      "updatedAt": "2026-02-12T13:01:02.475Z",
+      "completedAt": "2026-02-12T13:01:02.476Z",
+      "ageHours": 52.85,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/wed-2026-02-11-1338-gmt530-you-are-an-execution-worker.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/wed-2026-02-11-1338-gmt530-you-are-an-execution-worker.html\","
+      ]
+    },
+    {
+      "id": "SEO-BLOG-001",
+      "title": "Create brief and outline for decision quality learning blog post",
+      "source": "unknown",
+      "priority": "high",
+      "status": "completed",
+      "sequence": 27,
+      "createdAt": "2026-02-11T11:09:18.686Z",
+      "updatedAt": "2026-02-11T11:09:18.686Z",
+      "completedAt": null,
+      "ageHours": 52.85,
       "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-787.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-782",
-      "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-13T13:38:21Z",
-      "updatedAt": "2026-02-13T13:40:15Z",
-      "completedAt": "2026-02-13T13:40:15Z",
-      "ageHours": 2.13,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-782.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "deliverableUrl": null,
+      "notes": []
     }
   ],
   "observations": [
     {
-      "level": "info",
-      "message": "Autonomous mode is active: review gates are bypassed and blocked/failed tasks follow retry-with-cooldown before final close."
-    },
-    {
-      "level": "info",
-      "message": "Blog autopilot is active: non-autonomous tasks are prioritized first; one new blog run is auto-seeded whenever idle with ~5 min break (unlimited/day)."
-    },
-    {
-      "level": "info",
-      "message": "Blog publish automation is active: completed blog deliverables are converted to post payloads and pushed via publish_pipeline."
-    },
-    {
-      "level": "info",
-      "message": "No queued or active execution tasks right now."
-    },
-    {
       "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
+      "message": "Recent runtime errors detected (40 captured signals in logs)."
+    },
+    {
+      "level": "info",
+      "message": "13 task(s) need your decision: proceed with direction or close."
+    },
+    {
+      "level": "info",
+      "message": "Execution preference is iterative: continue after review is favored."
+    },
+    {
+      "level": "info",
+      "message": "Recurring preference keywords: loss, operating, every, delivered, captured."
     }
   ],
   "errors": [
     {
-      "source": "openclaw",
-      "timestamp": "2026-02-13T15:45:55Z",
-      "message": "Publish quality gate failed."
+      "source": "gateway",
+      "timestamp": "2026-02-13T20:07:34.549+05:30",
+      "message": "2026-02-13T20:07:34.549+05:30 Gateway failed to start: gateway already running (pid 31466); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T20:07:24.555+05:30",
+      "message": "2026-02-13T20:07:24.555+05:30 Gateway failed to start: gateway already running (pid 31466); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T20:07:14.467+05:30",
+      "message": "2026-02-13T20:07:14.467+05:30 Gateway failed to start: gateway already running (pid 31466); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T20:07:02.446+05:30",
+      "message": "2026-02-13T20:07:02.446+05:30 Gateway failed to start: gateway already running (pid 31466); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T20:06:51.652+05:30",
+      "message": "2026-02-13T20:06:51.652+05:30 Gateway failed to start: gateway already running (pid 31466); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T20:05:08.724+05:30",
+      "message": "2026-02-13T20:05:08.724+05:30 Gateway failed to start: gateway already running (pid 30879); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T20:04:58.384+05:30",
+      "message": "2026-02-13T20:04:58.384+05:30 Gateway failed to start: gateway already running (pid 30879); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T20:04:47.988+05:30",
+      "message": "2026-02-13T20:04:47.988+05:30 Gateway failed to start: gateway already running (pid 30879); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T20:04:37.882+05:30",
+      "message": "2026-02-13T20:04:37.882+05:30 Gateway failed to start: gateway already running (pid 30879); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:30:37.290Z",
+      "message": "2026-02-13T14:30:37.290Z [diagnostic] lane task error: lane=session:agent:wa:whatsapp:default:direct:+918766662719 durationMs=27 error=\"FailoverError: No API key found for provider \"zai\". Auth store: /Users/shreyas-clawd/.openclaw/agents/wa/agent/auth-profi..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:30:37.288Z",
+      "message": "2026-02-13T14:30:37.288Z [diagnostic] lane task error: lane=main durationMs=20 error=\"FailoverError: No API key found for provider \"zai\". Auth store: /Users/shreyas-clawd/.openclaw/agents/wa/agent/auth-profiles.json (agentDir: /Users/shreyas-clawd/.openclaw..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:30:37.256Z",
+      "message": "2026-02-13T14:30:37.256Z [diagnostic] lane task error: lane=session:agent:wa:whatsapp:default:direct:+918766662719 durationMs=28 error=\"FailoverError: No API key found for provider \"zai\". Auth store: /Users/shreyas-clawd/.openclaw/agents/wa/agent/auth-profi..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:30:37.253Z",
+      "message": "2026-02-13T14:30:37.253Z [diagnostic] lane task error: lane=main durationMs=20 error=\"FailoverError: No API key found for provider \"zai\". Auth store: /Users/shreyas-clawd/.openclaw/agents/wa/agent/auth-profiles.json (agentDir: /Users/shreyas-clawd/.openclaw..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:30:37.221Z",
+      "message": "2026-02-13T14:30:37.221Z [diagnostic] lane task error: lane=session:agent:wa:whatsapp:default:direct:+918766662719 durationMs=32 error=\"FailoverError: No API key found for provider \"zai\". Auth store: /Users/shreyas-clawd/.openclaw/agents/wa/agent/auth-profi..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:30:37.218Z",
+      "message": "2026-02-13T14:30:37.218Z [diagnostic] lane task error: lane=main durationMs=26 error=\"FailoverError: No API key found for provider \"zai\". Auth store: /Users/shreyas-clawd/.openclaw/agents/wa/agent/auth-profiles.json (agentDir: /Users/shreyas-clawd/.openclaw..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:30:37.181Z",
+      "message": "2026-02-13T14:30:37.181Z [diagnostic] lane task error: lane=session:agent:wa:whatsapp:default:direct:+918766662719 durationMs=56 error=\"FailoverError: No API key found for provider \"zai\". Auth store: /Users/shreyas-clawd/.openclaw/agents/wa/agent/auth-profi..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:30:37.179Z",
+      "message": "2026-02-13T14:30:37.179Z [diagnostic] lane task error: lane=main durationMs=49 error=\"FailoverError: No API key found for provider \"zai\". Auth store: /Users/shreyas-clawd/.openclaw/agents/wa/agent/auth-profiles.json (agentDir: /Users/shreyas-clawd/.openclaw..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:30:37.117Z",
+      "message": "2026-02-13T14:30:37.117Z [diagnostic] lane task error: lane=session:agent:wa:whatsapp:default:direct:+918766662719 durationMs=46 error=\"FailoverError: No API key found for provider \"zai\". Auth store: /Users/shreyas-clawd/.openclaw/agents/wa/agent/auth-profi..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:30:37.115Z",
+      "message": "2026-02-13T14:30:37.115Z [diagnostic] lane task error: lane=main durationMs=36 error=\"FailoverError: No API key found for provider \"zai\". Auth store: /Users/shreyas-clawd/.openclaw/agents/wa/agent/auth-profiles.json (agentDir: /Users/shreyas-clawd/.openclaw..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:58:28.616+05:30",
+      "message": "2026-02-13T19:58:28.616+05:30 Gateway failed to start: gateway already running (pid 29736); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:58:18.812+05:30",
+      "message": "2026-02-13T19:58:18.812+05:30 Gateway failed to start: gateway already running (pid 29736); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:58:07.792+05:30",
+      "message": "2026-02-13T19:58:07.792+05:30 Gateway failed to start: gateway already running (pid 29736); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:57:56.787+05:30",
+      "message": "2026-02-13T19:57:56.787+05:30 Gateway failed to start: gateway already running (pid 29736); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:57:47.809+05:30",
+      "message": "2026-02-13T19:57:47.809+05:30 Gateway failed to start: gateway already running (pid 29736); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:57:35.645+05:30",
+      "message": "2026-02-13T19:57:35.645+05:30 Gateway failed to start: gateway already running (pid 29736); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:57:24.984+05:30",
+      "message": "2026-02-13T19:57:24.984+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:57:14.070+05:30",
+      "message": "2026-02-13T19:57:14.070+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:57:04.086+05:30",
+      "message": "2026-02-13T19:57:04.086+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:56:53.114+05:30",
+      "message": "2026-02-13T19:56:53.114+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:56:42.155+05:30",
+      "message": "2026-02-13T19:56:42.155+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:56:33.186+05:30",
+      "message": "2026-02-13T19:56:33.186+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:56:22.222+05:30",
+      "message": "2026-02-13T19:56:22.222+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:56:11.211+05:30",
+      "message": "2026-02-13T19:56:11.211+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:55:59.476+05:30",
+      "message": "2026-02-13T19:55:59.476+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:55:49.793+05:30",
+      "message": "2026-02-13T19:55:49.793+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:55:39.142+05:30",
+      "message": "2026-02-13T19:55:39.142+05:30 Gateway failed to start: gateway already running (pid 28988); lock timeout after 5000ms"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:22:31.990Z",
+      "message": "2026-02-13T14:22:31.990Z [agent/embedded] embedded run timeout: runId=fdaa5815-2ad3-44cb-bb2a-1ba762fc961a sessionId=dictation-router timeoutMs=240000"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T19:51:40.854+05:30",
+      "message": "2026-02-13T19:51:40.854+05:30 [tools] exec failed: 0"
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:20:43.880Z",
+      "message": "2026-02-13T14:20:43.880Z [diagnostic] lane task error: lane=session:agent:wa:whatsapp:default:direct:+918766662719 durationMs=150128 error=\"FailoverError: LLM request timed out.\""
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-13T14:20:43.876Z",
+      "message": "2026-02-13T14:20:43.876Z [diagnostic] lane task error: lane=main durationMs=150118 error=\"FailoverError: LLM request timed out.\""
     }
   ],
   "recentActivity": [
     {
-      "timestamp": "2026-02-13T15:43:16Z",
-      "type": "executed",
-      "taskId": "capture-669",
-      "message": "Design learning prompts that improve decisions during real project pressure: Delegated via OpenClaw SSH (status=completed, task_id=62d9c9f7-a972-43f7-91ad-3235c71e3604): Article already published and verified live. Topic: Design learning prompts that improve decisions during real project pressure"
+      "timestamp": "2026-02-13T12:31:48.006Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:38:36Z",
-      "type": "executed",
-      "taskId": "capture-669",
-      "message": "Design learning prompts that improve decisions during real project pressure: Delegated via OpenClaw SSH (status=completed, task_id=d580856e-a3d4-4514-8eb5-898a4427dfe7): Article already published and verified live. Topic: Design learning prompts that improve decisions during real project pressure"
+      "timestamp": "2026-02-13T12:31:47.987Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:32:46Z",
-      "type": "executed",
-      "taskId": "capture-669",
-      "message": "Design learning prompts that improve decisions during real project pressure: Delegated via OpenClaw SSH (status=completed, task_id=efc7790e-9305-4ea0-a453-c0ee12d8f1c1): "
+      "timestamp": "2026-02-13T12:31:47.972Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:27:12Z",
-      "type": "executed",
-      "taskId": "capture-669",
-      "message": "Design learning prompts that improve decisions during real project pressure: Delegated via OpenClaw SSH (status=completed, task_id=b17cf205-6b65-404b-a77a-e09487403441): Article already published and verified live. Topic: Design learning prompts that improve decisions during real project pressure"
+      "timestamp": "2026-02-13T12:31:47.952Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:22:18Z",
-      "type": "executed",
-      "taskId": "capture-669",
-      "message": "Design learning prompts that improve decisions during real project pressure: Delegated via OpenClaw SSH (status=completed, task_id=e3004d25-3e38-458d-b5bf-2089758eeb84): Article already published and verified live. Topic: Design learning prompts that improve decisions during real project pressure"
+      "timestamp": "2026-02-13T12:26:44.387Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:21:39Z",
-      "type": "executed",
-      "taskId": "capture-669",
-      "message": "Autonomous writing sprint: Design learning prompts that improve decisions during real project pressure: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T12:26:44.372Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:19:41Z",
-      "type": "executed",
-      "taskId": "capture-668",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=7040104c-7c42-454d-bd7b-7e5e0493992e): Article already published and verified live. Topic: Coach managers to run better learning conversations in weekly ones"
+      "timestamp": "2026-02-13T12:26:44.355Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:19:19Z",
-      "type": "executed",
-      "taskId": "capture-668",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T12:26:44.330Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:17:19Z",
-      "type": "executed",
-      "taskId": "capture-667",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=bf5df610-7c90-495e-86da-c9793ccd5bdb): "
+      "timestamp": "2026-02-13T12:21:40.655Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:16:28Z",
-      "type": "executed",
-      "taskId": "capture-667",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T12:21:40.637Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:13:18Z",
-      "type": "executed",
-      "taskId": "capture-666",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=7f56ce46-02cf-4800-97d9-d3be9c695f68): Article already published and verified live. Topic: Coach managers to run better learning conversations in weekly ones"
+      "timestamp": "2026-02-13T12:21:40.623Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:11:55Z",
-      "type": "executed",
-      "taskId": "capture-666",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T12:21:40.592Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:08:49Z",
-      "type": "executed",
-      "taskId": "capture-665",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=81881bfc-406a-4b31-bb7c-6b98f5a0ad27): Article already published and verified live. Topic: Coach managers to run better learning conversations in weekly ones"
+      "timestamp": "2026-02-13T12:16:37.010Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:08:03Z",
-      "type": "executed",
-      "taskId": "capture-665",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T12:16:36.993Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:05:40Z",
-      "type": "executed",
-      "taskId": "capture-664",
-      "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=completed, task_id=55576b32-d21c-44a9-809c-637ecc6faa5a): Article already published and verified live. Topic: Design without losing human judgment"
+      "timestamp": "2026-02-13T12:16:36.973Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:04:55Z",
-      "type": "executed",
-      "taskId": "capture-664",
-      "message": "Autonomous writing sprint: Use AI in learning design without losing human judgment: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T12:16:36.947Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:01:24Z",
-      "type": "executed",
-      "taskId": "capture-663",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=1029c6bd-101a-4c93-af55-9b201eb7d444): Article already published and verified live. Topic: Build a practical LxD workflow for small teams shipping weekly"
+      "timestamp": "2026-02-13T12:11:33.360Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T15:00:36Z",
-      "type": "executed",
-      "taskId": "capture-663",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T12:11:33.345Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:57:57Z",
-      "type": "executed",
-      "taskId": "capture-662",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=d28e49f2-7c6c-4915-a926-94b9ff7dc8bf): Article already published and verified live. Topic: Build a practical LxD workflow for small teams shipping weekly"
+      "timestamp": "2026-02-13T12:11:33.329Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:56:39Z",
-      "type": "executed",
-      "taskId": "capture-662",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T12:11:33.303Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:53:00Z",
-      "type": "executed",
-      "taskId": "capture-661",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=in_progress, task_id=n/a): "
+      "timestamp": "2026-02-13T12:10:10.327Z",
+      "type": "model_fallbacks_synced",
+      "taskId": "system",
+      "message": "Synced free fallback chain (0 added, 0 removed)"
     },
     {
-      "timestamp": "2026-02-13T14:52:52Z",
-      "type": "executed",
-      "taskId": "capture-661",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T12:06:29.720Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:52:03Z",
-      "type": "executed",
-      "taskId": "capture-660",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=in_progress, task_id=n/a): "
+      "timestamp": "2026-02-13T12:06:29.707Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:48:18Z",
-      "type": "skipped",
-      "taskId": "capture-660",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+      "timestamp": "2026-02-13T12:06:29.695Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:40:34Z",
-      "type": "skipped",
-      "taskId": "capture-660",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+      "timestamp": "2026-02-13T12:06:29.675Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:32:56Z",
-      "type": "skipped",
-      "taskId": "capture-660",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+      "timestamp": "2026-02-13T12:01:27.527Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:25:20Z",
-      "type": "skipped",
-      "taskId": "capture-660",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: return code 1"
+      "timestamp": "2026-02-13T12:01:27.517Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:23:34Z",
-      "type": "executed",
-      "taskId": "capture-660",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T12:01:27.507Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:17:47Z",
-      "type": "executed",
-      "taskId": "capture-659",
-      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...: Delegated via OpenClaw SSH (status=completed, task_id=628fafc6-ab04-40d0-bdff-d25f9d0cff50): "
+      "timestamp": "2026-02-13T12:01:27.493Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:17:03Z",
-      "type": "executed",
-      "taskId": "capture-659",
-      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project retrospectives: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T11:56:25.291Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:13:45Z",
-      "type": "executed",
-      "taskId": "capture-658",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: Delegated via OpenClaw SSH (status=completed, task_id=59e9be99-f991-41c8-a9c1-abbf694d832a): "
+      "timestamp": "2026-02-13T11:56:25.281Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:09:55Z",
-      "type": "skipped",
-      "taskId": "capture-658",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+      "timestamp": "2026-02-13T11:56:25.269Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T14:02:14Z",
-      "type": "skipped",
-      "taskId": "capture-658",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+      "timestamp": "2026-02-13T11:56:25.256Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T13:54:36Z",
-      "type": "skipped",
-      "taskId": "capture-658",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+      "timestamp": "2026-02-13T11:51:23.159Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T13:44:51Z",
-      "type": "skipped",
-      "taskId": "capture-658",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+      "timestamp": "2026-02-13T11:51:23.150Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T13:40:20Z",
-      "type": "executed",
-      "taskId": "capture-658",
-      "message": "Autonomous writing sprint: Design onboarding that builds role judgment instead of checklist compliance: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-13T11:51:23.141Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T13:39:30Z",
-      "type": "executed",
-      "taskId": "capture-657",
-      "message": "Make learning evidence useful for business reviews without heavy reporting overhead: Delegated via OpenClaw SSH (status=in_progress, task_id=n/a): "
+      "timestamp": "2026-02-13T11:51:23.130Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T13:34:04Z",
-      "type": "executed",
-      "taskId": "capture-657",
-      "message": "Make learning evidence useful for business reviews without heavy reporting overhead: Delegated via OpenClaw SSH (status=completed, task_id=0d27c6ad-7732-4bf3-8ef0-fe6c4718f98f): Article already published and verified live. Topic: Make learning evidence useful for business reviews without heavy reporting overhead"
+      "timestamp": "2026-02-13T11:46:21.078Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T13:29:17Z",
-      "type": "executed",
-      "taskId": "capture-657",
-      "message": "Make learning evidence useful for business reviews without heavy reporting overhead: Delegated via OpenClaw SSH (status=completed, task_id=953f6e5c-f69e-4ccb-9ac5-444f2ac09bf3): Article already published and verified live. Topic: Make learning evidence useful for business reviews without heavy reporting overhead"
+      "timestamp": "2026-02-13T11:46:21.068Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-13T13:25:02Z",
-      "type": "executed",
-      "taskId": "capture-657",
-      "message": "Make learning evidence useful for business reviews without heavy reporting overhead: Delegated via OpenClaw SSH (status=completed, task_id=2785414c-1c68-4acb-ad21-005d0a9e3961): Article already published and verified live. Topic: Make learning evidence useful for business reviews without heavy reporting overhead"
-    },
-    {
-      "timestamp": "2026-02-13T13:20:14Z",
-      "type": "executed",
-      "taskId": "capture-657",
-      "message": "Make learning evidence useful for business reviews without heavy reporting overhead: Delegated via OpenClaw SSH (status=completed, task_id=0b8e33e9-430a-48e0-9592-5a9a25569fad): Article already published and verified live. Topic: Make learning evidence useful for business reviews without heavy reporting overhead"
-    },
-    {
-      "timestamp": "2026-02-13T13:19:39Z",
-      "type": "executed",
-      "taskId": "capture-657",
-      "message": "Autonomous writing sprint: Make learning evidence useful for business reviews without heavy reporting overhead: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-13T13:15:11Z",
-      "type": "executed",
-      "taskId": "capture-656",
-      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: Delegated via OpenClaw SSH (status=in_progress, task_id=n/a): "
-    },
-    {
-      "timestamp": "2026-02-13T13:09:04Z",
-      "type": "skipped",
-      "taskId": "capture-656",
-      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T13:01:22Z",
-      "type": "skipped",
-      "taskId": "capture-656",
-      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T12:53:40Z",
-      "type": "skipped",
-      "taskId": "capture-656",
-      "message": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning tran...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T12:49:10Z",
-      "type": "executed",
-      "taskId": "capture-656",
-      "message": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning transfer: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-13T12:40:54Z",
-      "type": "skipped",
-      "taskId": "capture-655",
-      "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T12:33:08Z",
-      "type": "skipped",
-      "taskId": "capture-655",
-      "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T12:25:31Z",
-      "type": "skipped",
-      "taskId": "capture-655",
-      "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T12:17:50Z",
-      "type": "skipped",
-      "taskId": "capture-655",
-      "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T12:10:13Z",
-      "type": "skipped",
-      "taskId": "capture-655",
-      "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T12:05:42Z",
-      "type": "executed",
-      "taskId": "capture-655",
-      "message": "Autonomous writing sprint: Design manager enablement that links coaching actions to team capability growth: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-13T12:02:28Z",
-      "type": "skipped",
-      "taskId": "capture-654",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T11:54:52Z",
-      "type": "skipped",
-      "taskId": "capture-654",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T11:47:13Z",
-      "type": "skipped",
-      "taskId": "capture-654",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T11:39:37Z",
-      "type": "skipped",
-      "taskId": "capture-654",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-13T11:31:34Z",
-      "type": "executed",
-      "taskId": "capture-654",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: Delegated via OpenClaw SSH (status=completed, task_id=e8159d85-f4e9-4440-8534-51391ff23c4a): Article already published and verified live. Topic: Create L&D reviews that focus on behavior shifts not completion dashboards"
-    },
-    {
-      "timestamp": "2026-02-13T11:31:03Z",
-      "type": "executed",
-      "taskId": "capture-654",
-      "message": "Autonomous writing sprint: Create L&D reviews that focus on behavior shifts not completion dashboards: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-13T11:27:53Z",
-      "type": "skipped",
-      "taskId": "capture-653",
-      "message": "Improve judgment without adding course fatigue: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+      "timestamp": "2026-02-13T11:46:21.056Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     }
   ],
-  "blogDashboard": {
-    "updatedAt": "2026-02-13T15:45:55Z",
-    "site": {
-      "name": "Shreyas Korad - Writing",
-      "url": "https://shreyaskorad.github.io/personal-website",
-      "repo_hint": "/Users/shreyas/Documents/New project/.tmp/personal-website-ops-clean",
-      "posts_path": "posts",
-      "writing_index_path": "writing.html",
-      "publish_script": "scripts/publish_post.py",
-      "style_rules_path": "blog-writing-rules.md",
-      "primary_topics": [
-        "L&D",
-        "gamification",
-        "data",
-        "LXD",
-        "AI"
-      ]
-    },
-    "execution": {
-      "subagent_strategy": "serialized",
-      "effective_parallelism": 1,
-      "global_wip_note": "OpenClaw queue remains WIP=1 at orchestrator level."
-    },
-    "agents": [
-      {
-        "id": "topic-scout",
-        "role": "Topic Scout",
-        "goal": "Identify high-upside topics tied to L&D, gamification, data, LXD, and AI.",
-        "output": "Prioritized topic slate with thesis, audience intent, and ranking opportunity."
-      },
-      {
-        "id": "serp-keyword",
-        "role": "Keyword and SERP Analyst",
-        "goal": "Map keyword clusters, search intent, and competitor coverage gaps.",
-        "output": "Primary keyword, supporting entities, SERP gap notes, and internal-link targets."
-      },
-      {
-        "id": "brief-architect",
-        "role": "Brief Architect",
-        "goal": "Convert strategy into a clear brief and outline with unique angle.",
-        "output": "Approved brief with section plan, CTA, and evidence requirements."
-      },
-      {
-        "id": "research-analyst",
-        "role": "Research Analyst",
-        "goal": "Gather credible source material and practical examples.",
-        "output": "Source-backed notes, claims table, and references for each major section."
-      },
-      {
-        "id": "writer",
-        "role": "Writer",
-        "goal": "Draft publishable post aligned with site voice and audience needs.",
-        "output": "Complete draft post in site format."
-      },
-      {
-        "id": "seo-optimizer",
-        "role": "Reader intent optimizer",
-        "goal": "Keep title, framing, and examples aligned to practical reader intent.",
-        "output": "Clear title/excerpt/heading refinements and relevance checks."
-      },
-      {
-        "id": "editor",
-        "role": "Editor",
-        "goal": "Improve clarity, authority, and readability while preserving intent.",
-        "output": "Final edited copy with quality notes and resolved issues."
-      },
-      {
-        "id": "refresh-planner",
-        "role": "Refresh Planner",
-        "goal": "Define update cadence to protect rankings and freshness.",
-        "output": "Post-publication refresh plan with triggers and review cadence."
-      },
-      {
-        "id": "publishing-qa",
-        "role": "Publishing QA",
-        "goal": "Publish and verify the post is live and correctly indexed.",
-        "output": "Publish proof with URL, timestamp, and pass/fail checklist."
-      }
-    ],
-    "publishOwner": "Publishing QA",
-    "analytics": {
-      "status": "ok",
-      "asOf": "2026-02-13T15:41:21Z",
-      "lookbackDays": 28,
-      "summary": {
-        "users": 32,
-        "sessions": 89,
-        "engagedSessions": 40,
-        "engagementRatePct": 44.9,
-        "avgSessionDurationSec": 708.4,
-        "pageViewsPerSession": 5.02,
-        "vsPrevious": {
-          "usersPct": null,
-          "sessionsPct": null
-        }
-      },
-      "channels": [
-        {
-          "channel": "Direct",
-          "sessions": 78,
-          "users": 21,
-          "sessionShare": 81.2
-        },
-        {
-          "channel": "Organic Search",
-          "sessions": 11,
-          "users": 11,
-          "sessionShare": 11.5
-        },
-        {
-          "channel": "Unassigned",
-          "sessions": 7,
-          "users": 2,
-          "sessionShare": 7.3
-        }
-      ],
-      "topPosts": [
-        {
-          "path": "/writing.html",
-          "pageviews": 165,
-          "sessions": 50,
-          "engagementRatePct": 68.0,
-          "avgSessionDurationSec": 510.1
-        },
-        {
-          "path": "/posts/make-learning-evidence-useful-for-business-reviews-without-heavy-reporting-overhead.html",
-          "pageviews": 13,
-          "sessions": 4,
-          "engagementRatePct": 0.0,
-          "avgSessionDurationSec": 564.7
-        },
-        {
-          "path": "/posts/if-everyone-is-losing-jobs-who-pays-for-ai-infrastructure.html",
-          "pageviews": 11,
-          "sessions": 6,
-          "engagementRatePct": 83.3,
-          "avgSessionDurationSec": 655.5
-        },
-        {
-          "path": "/posts/publishing-without-wordpress.html",
-          "pageviews": 11,
-          "sessions": 11,
-          "engagementRatePct": 81.8,
-          "avgSessionDurationSec": 131.7
-        },
-        {
-          "path": "/posts/accelerando-ld.html",
-          "pageviews": 7,
-          "sessions": 3,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 227.3
-        },
-        {
-          "path": "/posts/ai-and-the-future-of-learning-finding-meaning-in-an-age-of-instant-feedback-openclaw-113.html",
-          "pageviews": 4,
-          "sessions": 2,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 42.7
-        },
-        {
-          "path": "/posts/design-gamification-for-decision-quality-not-points-openclaw-147.html",
-          "pageviews": 4,
-          "sessions": 2,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 139.3
-        },
-        {
-          "path": "/posts/gamification-seo-blog-sprint-operating-playbook-openclaw-147.html",
-          "pageviews": 4,
-          "sessions": 3,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 676.7
-        }
-      ],
-      "insights": [
-        "Organic Search share is only 11.5%, which suggests discoverability is still weak.",
-        "Traffic is concentrated: the top post contributes 75.3% of views within top content."
-      ],
-      "nextActions": [
-        "Tighten opening paragraphs to define one concrete workplace problem and one expected outcome in the first 3 sentences.",
-        "Double down on your top-performing themes by publishing one follow-up post per week linked from high-traffic articles.",
-        "Add fresh internal links from /writing.html to newer posts so authority and traffic flow across the portfolio."
-      ],
-      "error": "",
-      "cache": {
-        "hit": true,
-        "fetchedAt": "2026-02-13T15:41:21Z"
-      }
-    },
-    "taskStats": {
-      "total": 80,
-      "completed": 35,
-      "queued": 0,
-      "blocked": 1,
-      "byStatus": {
-        "failed": 1,
-        "cancelled": 44,
-        "completed": 35
-      }
-    },
-    "recentTasks": [
-      {
-        "id": "openclaw-806",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "failed",
-        "updated_at": "2026-02-13T15:45:55Z",
-        "next_steps": "Rewrite required before publish. Violations: repeats the same core point",
-        "blockers": "Publish quality gate failed."
-      },
-      {
-        "id": "openclaw-805",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T15:42:06Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1120.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-804",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T15:37:32Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1119.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-803",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T15:31:23Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1118.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-802",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T15:26:13Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1117.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-801",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-13T15:19:41Z",
-        "next_steps": "Monitor engagement and coaching conversation adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-800",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-13T15:17:19Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-799",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-13T15:13:18Z",
-        "next_steps": "Monitor engagement and coaching conversation adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-798",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-13T15:08:49Z",
-        "next_steps": "Monitor engagement and coaching conversation adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-797",
-        "title": "Design without losing human judgment",
-        "status": "completed",
-        "updated_at": "2026-02-13T15:05:40Z",
-        "next_steps": "Monitor engagement and AI integration adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-796",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "completed",
-        "updated_at": "2026-02-13T15:01:24Z",
-        "next_steps": "Monitor engagement and workflow adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-795",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "completed",
-        "updated_at": "2026-02-13T14:57:57Z",
-        "next_steps": "Monitor engagement and workflow adoption over 30 days",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-794",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "completed",
-        "updated_at": "2026-02-13T14:53:45Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-793",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "completed",
-        "updated_at": "2026-02-13T14:52:48Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-792",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T14:51:20Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1107.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-791",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T14:43:44Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1106.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-790",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T14:35:58Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1105.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-789",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T14:28:22Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1104.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-788",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-13T14:17:47Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-787",
-        "title": "Design onboarding that builds role judgment instead of checklist compliance",
-        "status": "completed",
-        "updated_at": "2026-02-13T14:13:45Z",
-        "next_steps": "",
-        "blockers": ""
-      }
-    ],
-    "teamMemory": {
-      "count": 25,
-      "recent": [
-        {
-          "id": 794,
-          "created_at": "2026-02-13T15:43:16Z",
-          "capture_id": 669,
-          "openclaw_row_id": 806,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning prompts that improve decisions during real project pressure",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 793,
-          "created_at": "2026-02-13T15:38:36Z",
-          "capture_id": 669,
-          "openclaw_row_id": 805,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning prompts that improve decisions during real project pressure",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 792,
-          "created_at": "2026-02-13T15:27:12Z",
-          "capture_id": 669,
-          "openclaw_row_id": 803,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning prompts that improve decisions during real project pressure",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 791,
-          "created_at": "2026-02-13T15:22:18Z",
-          "capture_id": 669,
-          "openclaw_row_id": 802,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning prompts that improve decisions during real project pressure",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 790,
-          "created_at": "2026-02-13T15:19:41Z",
-          "capture_id": 668,
-          "openclaw_row_id": 801,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 789,
-          "created_at": "2026-02-13T15:13:18Z",
-          "capture_id": 666,
-          "openclaw_row_id": 799,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 788,
-          "created_at": "2026-02-13T15:08:49Z",
-          "capture_id": 665,
-          "openclaw_row_id": 798,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 787,
-          "created_at": "2026-02-13T15:05:40Z",
-          "capture_id": 664,
-          "openclaw_row_id": 797,
-          "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 786,
-          "created_at": "2026-02-13T15:01:24Z",
-          "capture_id": 663,
-          "openclaw_row_id": 796,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 785,
-          "created_at": "2026-02-13T14:57:57Z",
-          "capture_id": 662,
-          "openclaw_row_id": 795,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 784,
-          "created_at": "2026-02-13T13:34:04Z",
-          "capture_id": 657,
-          "openclaw_row_id": 781,
-          "source": "openclaw_ssh",
-          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 783,
-          "created_at": "2026-02-13T13:29:17Z",
-          "capture_id": 657,
-          "openclaw_row_id": 780,
-          "source": "openclaw_ssh",
-          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 782,
-          "created_at": "2026-02-13T13:25:02Z",
-          "capture_id": 657,
-          "openclaw_row_id": 779,
-          "source": "openclaw_ssh",
-          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 781,
-          "created_at": "2026-02-13T13:20:14Z",
-          "capture_id": 657,
-          "openclaw_row_id": 778,
-          "source": "openclaw_ssh",
-          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 780,
-          "created_at": "2026-02-13T11:31:34Z",
-          "capture_id": 654,
-          "openclaw_row_id": 764,
-          "source": "openclaw_ssh",
-          "task_title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-          "action_hint": "Topic already exists and is live.",
-          "handoff_to": "supervisor"
-        }
-      ]
-    },
-    "publishStats": {
-      "total": 54,
-      "published": 3,
-      "failed": 30,
-      "ignored": 21,
-      "byStatus": {
-        "failed": 30,
-        "ignored": 21,
-        "published": 3
-      },
-      "recent": [
-        {
-          "openclaw_row_id": 806,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:45:55Z"
-        },
-        {
-          "openclaw_row_id": 805,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:39:00Z"
-        },
-        {
-          "openclaw_row_id": 804,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:34:31Z"
-        },
-        {
-          "openclaw_row_id": 803,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:28:14Z"
-        },
-        {
-          "openclaw_row_id": 802,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:23:11Z"
-        },
-        {
-          "openclaw_row_id": 781,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T13:35:11Z"
-        },
-        {
-          "openclaw_row_id": 780,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T13:30:19Z"
-        },
-        {
-          "openclaw_row_id": 779,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T13:25:35Z"
-        },
-        {
-          "openclaw_row_id": 778,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T13:20:32Z"
-        },
-        {
-          "openclaw_row_id": 764,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T11:31:56Z"
-        },
-        {
-          "openclaw_row_id": 762,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T11:20:17Z"
-        },
-        {
-          "openclaw_row_id": 761,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T11:15:55Z"
-        },
-        {
-          "openclaw_row_id": 760,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T11:10:31Z"
-        },
-        {
-          "openclaw_row_id": 759,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T11:04:07Z"
-        },
-        {
-          "openclaw_row_id": 757,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T10:55:15Z"
-        },
-        {
-          "openclaw_row_id": 756,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: opening and closing are not anchored to same core concept; repeats the same core point",
-          "updated_at": "2026-02-13T10:45:44Z"
-        },
-        {
-          "openclaw_row_id": 755,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T10:39:23Z"
-        },
-        {
-          "openclaw_row_id": 754,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T10:33:43Z"
-        },
-        {
-          "openclaw_row_id": 753,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T10:28:39Z"
-        },
-        {
-          "openclaw_row_id": 748,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 139 outside 150-200; missing direct author voice; repeats the same core point",
-          "updated_at": "2026-02-13T10:11:14Z"
-        }
-      ]
-    },
-    "progress": {
-      "summary": {
-        "total": 120,
-        "completed": 75,
-        "active": 0,
-        "queued": 0,
-        "blocked": 1,
-        "cancelled": 44
-      },
-      "today": {
-        "completed": 75,
-        "active": 0,
-        "queued": 0,
-        "blocked": 1,
-        "published": 0
-      },
-      "activeTask": null,
-      "lastCompletedTask": {
-        "id": "openclaw-801",
-        "row_id": 801,
-        "capture_id": 668,
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-13T15:19:41Z",
-        "next_steps": "Monitor engagement and coaching conversation adoption over 30 days",
-        "blockers": "",
-        "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
-      },
-      "pendingQueue": {
-        "count": 0,
-        "inboxCount": 0,
-        "openclawQueuedCount": 0,
-        "recent": []
-      },
-      "focusNote": {
-        "agent_id": "supervisor",
-        "created_at": "2026-02-13T15:19:41Z",
-        "note": "Article verified as already published via sitemap and RSS check. No additional action needed.",
-        "action_hint": "Topic already exists and is live.",
-        "handoff_to": "supervisor"
-      },
-      "bottleneck": {
-        "state": "blocked",
-        "reason": "Publish quality gate failed.",
-        "at": "2026-02-13T15:45:55Z"
-      },
-      "recentIdeas": [
-        {
-          "id": "openclaw-806",
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "failed",
-          "updated_at": "2026-02-13T15:45:55Z"
-        },
-        {
-          "id": "openclaw-805",
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "cancelled",
-          "updated_at": "2026-02-13T15:42:06Z"
-        },
-        {
-          "id": "openclaw-804",
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "cancelled",
-          "updated_at": "2026-02-13T15:37:32Z"
-        },
-        {
-          "id": "openclaw-803",
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "cancelled",
-          "updated_at": "2026-02-13T15:31:23Z"
-        },
-        {
-          "id": "openclaw-802",
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "cancelled",
-          "updated_at": "2026-02-13T15:26:13Z"
-        },
-        {
-          "id": "openclaw-801",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-13T15:19:41Z"
-        },
-        {
-          "id": "openclaw-800",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-13T15:17:19Z"
-        },
-        {
-          "id": "openclaw-799",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-13T15:13:18Z"
-        },
-        {
-          "id": "openclaw-798",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-13T15:08:49Z"
-        },
-        {
-          "id": "openclaw-797",
-          "title": "Design without losing human judgment",
-          "status": "completed",
-          "updated_at": "2026-02-13T15:05:40Z"
-        }
-      ],
-      "recentOutputs": [
-        {
-          "id": "openclaw-806",
-          "row_id": 806,
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:45:55Z"
-        },
-        {
-          "id": "openclaw-805",
-          "row_id": 805,
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:39:00Z"
-        },
-        {
-          "id": "openclaw-804",
-          "row_id": 804,
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:34:31Z"
-        },
-        {
-          "id": "openclaw-803",
-          "row_id": 803,
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:28:14Z"
-        },
-        {
-          "id": "openclaw-802",
-          "row_id": 802,
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:23:11Z"
-        },
-        {
-          "id": "openclaw-781",
-          "row_id": 781,
-          "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T13:35:11Z"
-        },
-        {
-          "id": "openclaw-780",
-          "row_id": 780,
-          "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T13:30:19Z"
-        },
-        {
-          "id": "openclaw-779",
-          "row_id": 779,
-          "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T13:25:35Z"
-        },
-        {
-          "id": "openclaw-778",
-          "row_id": 778,
-          "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T13:20:32Z"
-        },
-        {
-          "id": "openclaw-764",
-          "row_id": 764,
-          "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T11:31:56Z"
-        }
-      ],
-      "stages": {
-        "focusTaskId": "openclaw-801",
-        "total": 9,
-        "done": 0,
-        "remaining": 9,
-        "doneIds": [],
-        "remainingIds": [
-          "topic-scout",
-          "serp-keyword",
-          "brief-architect",
-          "research-analyst",
-          "writer",
-          "seo-optimizer",
-          "editor",
-          "refresh-planner",
-          "publishing-qa"
-        ],
-        "lastStageAt": "2026-02-13T15:19:41Z"
-      },
-      "pipeline": {
-        "workerStarted": true,
-        "tickInProgress": false,
-        "lastStatus": "recovered",
-        "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-13T15:42:06Z",
-        "lastFinishedAt": "2026-02-13T15:43:43Z",
-        "runtime": {
-          "pending_inbox": 0,
-          "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
-        }
-      }
-    },
-    "repoState": {
-      "repo_hint": "/Users/shreyas/Documents/New project/.tmp/personal-website-ops-clean",
-      "exists": true,
-      "posts_path": "posts",
-      "writing_index_path": "writing.html",
-      "publish_script": "scripts/publish_post.py",
-      "style_rules_path": "blog-writing-rules.md",
-      "checks": {
-        "posts_dir": true,
-        "writing_index": true,
-        "publish_script": true,
-        "style_rules": true,
-        "sitemap": true,
-        "rss": true
-      },
-      "post_count": 12,
-      "recent_posts": [
-        {
-          "name": "design-gamification-for-decision-quality-not-points-openclaw-147.html",
-          "updated_at": "2026-02-11T10:55:43Z"
-        },
-        {
-          "name": "ai-and-the-future-of-learning-finding-meaning-in-an-age-of-instant-feedback-openclaw-113.html",
-          "updated_at": "2026-02-11T10:52:52Z"
-        },
-        {
-          "name": "games-in-learning-development-beyond-engagement-to-real-transformation-openclaw-90.html",
-          "updated_at": "2026-02-11T10:52:52Z"
-        },
-        {
-          "name": "accelerando-ld.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "ai-hype-vs-adoption.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "art-craft.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "if-everyone-is-losing-jobs-who-pays-for-ai-infrastructure.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "publishing-without-wordpress.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "skills-in-ld.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "the-human-edge.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        }
-      ]
-    }
-  },
   "personalization": {
-    "updatedAt": "2026-02-13T15:45:55Z",
+    "updatedAt": "2026-02-12T13:47:51.513Z",
     "metrics": {
-      "reviewRequested": 0,
-      "proceedCount": 0,
+      "reviewRequested": 21,
+      "proceedCount": 2,
       "closeCount": 0
     },
-    "topKeywords": [],
+    "topKeywords": [
+      "loss",
+      "operating",
+      "every",
+      "delivered",
+      "captured",
+      "sequenced",
+      "design",
+      "sequencing"
+    ],
     "insights": [
-      "FULL_AUTO_PIPELINE is active: captures auto-run through processing, execution, and ops sync."
+      "Execution preference is iterative: continue after review is favored.",
+      "Recurring preference keywords: loss, operating, every, delivered, captured."
     ]
   },
   "controls": {
-    "refresh": "/api/ops/sync",
-    "status_overview": "/api/status/overview",
-    "captures": "/api/captures",
-    "openclaw_tasks": "/api/openclaw/tasks",
-    "blog_publish_backlog": "/api/blog/publish-backlog",
-    "analytics": "/api/ops/analytics"
+    "board": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js board",
+    "brief": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js brief",
+    "priority": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js priority <task-id> <critical|high|medium|low>",
+    "sequence": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js sequence <task-id> <number>",
+    "start": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js start <task-id>",
+    "done": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js done <task-id> \"<delivery-summary>\"",
+    "proceed": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js proceed <task-id> \"<direction>\"",
+    "close": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js close <task-id> \"<note>\""
   }
 }
