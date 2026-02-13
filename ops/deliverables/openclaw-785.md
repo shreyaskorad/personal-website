@@ -1,9 +1,9 @@
 # Deliverable: Design onboarding that builds role judgment instead of checklist compliance
 
-- Task ID: openclaw-783
+- Task ID: openclaw-785
 - Status: failed
-- Created: 2026-02-13T13:40:20Z
-- Updated: 2026-02-13T13:44:51Z
+- Created: 2026-02-13T13:57:44Z
+- Updated: 2026-02-13T14:02:14Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
