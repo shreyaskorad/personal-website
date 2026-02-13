@@ -1,12 +1,12 @@
 # Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-745
+- Task ID: openclaw-748
 - Status: failed
-- Created: 2026-02-13T09:54:42Z
-- Updated: 2026-02-13T09:56:12Z
+- Created: 2026-02-13T10:08:35Z
+- Updated: 2026-02-13T10:11:14Z
 
 ## Summary
-Rewrite required before publish. Violations: repeats the same core point
+Rewrite required before publish. Violations: word count 139 outside 150-200; missing direct author voice; repeats the same core point
 
 ## Deliverable Output
 # Design without losing human judgment
@@ -18,8 +18,6 @@ I watched a design team use AI to draft a leadership scenario in minutes, then s
 
 ## Practical takeaway
 AI can accelerate structure, options, and first drafts, but it cannot own consequences. In workplace learning, consequences are everything. If a learner applies the advice in a tense conversation tomorrow, who carries the cost of a bad call?
-
-The better operating model is simple. Let the model generate, then force a human review for intent, risk, and context before anything ships. I care less about how quickly content appears and more about whether the final design helps people make better decisions under pressure.
 
 When teams treat AI as a partner in production and keep judgment as the final gate, output gets sharper and trust stays intact. Speed still matters, but direction matters more. That is the balance worth protecting.
 
