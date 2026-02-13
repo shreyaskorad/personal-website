@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-13T21:24:51Z",
+    "updatedAt": "2026-02-13T21:47:00Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -9,13 +9,12 @@
     "totalTasks": 8,
     "queued": 0,
     "active": 0,
-    "completed": 7,
-    "due": 1,
-    "blocked": 1,
+    "completed": 8,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 7,
-      "failed": 1
+      "completed": 8
     }
   },
   "laneMetrics": {
@@ -28,42 +27,39 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 7,
-      "totalClosed": 7
+      "visible": 8,
+      "totalClosed": 8
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-850",
+      "id": "openclaw-851",
       "title": "Design manager enablement that links coaching actions to team capability growth",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-13T21:08:52Z",
-      "updatedAt": "2026-02-13T21:24:51Z",
-      "completedAt": "2026-02-13T21:24:51Z",
-      "ageHours": 0.27,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-850.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-13T21:41:32Z",
+      "updatedAt": "2026-02-13T21:42:08Z",
+      "completedAt": "2026-02-13T21:42:08Z",
+      "ageHours": 0.09,
+      "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track behavior-shift metrics; refine coaching enablement framework",
+      "deliverableUrl": "/ops/deliverables/openclaw-851.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
     {
       "id": "openclaw-844",
       "title": "Improve judgment without adding course fatigue",
@@ -74,7 +70,7 @@
       "createdAt": "2026-02-13T20:27:28Z",
       "updatedAt": "2026-02-13T20:27:47Z",
       "completedAt": "2026-02-13T20:27:47Z",
-      "ageHours": 0.96,
+      "ageHours": 1.33,
       "deliverySummary": "Monitor RSS indexing update in 2-3 hours; re-check after 48h; measure 30-day engagement and decision quality impact",
       "deliverableUrl": "/ops/deliverables/openclaw-844.md",
       "notes": [],
@@ -92,7 +88,7 @@
       "createdAt": "2026-02-13T19:41:21Z",
       "updatedAt": "2026-02-13T19:42:21Z",
       "completedAt": "2026-02-13T19:42:21Z",
-      "ageHours": 1.73,
+      "ageHours": 2.09,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-841.md",
       "notes": [],
@@ -110,7 +106,7 @@
       "createdAt": "2026-02-13T19:38:52Z",
       "updatedAt": "2026-02-13T19:39:42Z",
       "completedAt": "2026-02-13T19:39:42Z",
-      "ageHours": 1.77,
+      "ageHours": 2.14,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-840.md",
       "notes": [],
@@ -128,7 +124,7 @@
       "createdAt": "2026-02-13T19:36:08Z",
       "updatedAt": "2026-02-13T19:37:15Z",
       "completedAt": "2026-02-13T19:37:15Z",
-      "ageHours": 1.81,
+      "ageHours": 2.18,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-839.md",
       "notes": [],
@@ -146,7 +142,7 @@
       "createdAt": "2026-02-13T19:25:41Z",
       "updatedAt": "2026-02-13T19:25:59Z",
       "completedAt": "2026-02-13T19:25:59Z",
-      "ageHours": 1.99,
+      "ageHours": 2.36,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-834.md",
       "notes": [],
@@ -164,7 +160,7 @@
       "createdAt": "2026-02-13T19:24:29Z",
       "updatedAt": "2026-02-13T19:24:37Z",
       "completedAt": "2026-02-13T19:24:37Z",
-      "ageHours": 2.01,
+      "ageHours": 2.38,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-833.md",
       "notes": [],
@@ -182,7 +178,7 @@
       "createdAt": "2026-02-13T18:52:37Z",
       "updatedAt": "2026-02-13T18:52:54Z",
       "completedAt": "2026-02-13T18:52:54Z",
-      "ageHours": 2.54,
+      "ageHours": 2.91,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-823.md",
       "notes": [],
@@ -207,20 +203,16 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-13T21:24:51Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
+  "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-13T21:42:08Z",
+      "type": "executed",
+      "taskId": "capture-691",
+      "message": "Design manager enablement that links coaching actions to team capability growth: Delegated via OpenClaw SSH (status=completed, task_id=334de55b-a139-4204-8ea8-c80de0ce4a90): Article live: 200 status, slug canonical match, sitemap indexed, RSS pending; measurement plan set"
+    },
     {
       "timestamp": "2026-02-13T21:24:51Z",
       "type": "skipped",
@@ -574,16 +566,10 @@
       "type": "skipped",
       "taskId": "capture-673",
       "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
-    },
-    {
-      "timestamp": "2026-02-13T17:00:17Z",
-      "type": "executed",
-      "taskId": "capture-673",
-      "message": "Autonomous writing sprint: Design manager enablement that links coaching actions to team capability growth: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-13T21:24:51Z",
+    "updatedAt": "2026-02-13T21:47:00Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -767,29 +753,36 @@
       ],
       "error": "",
       "cache": {
-        "hit": false,
+        "hit": true,
         "fetchedAt": "2026-02-13T21:24:56Z"
       }
     },
     "taskStats": {
       "total": 80,
-      "completed": 31,
+      "completed": 32,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
-        "cancelled": 48,
-        "completed": 31
+        "completed": 32,
+        "cancelled": 48
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-851",
+        "title": "Design manager enablement that links coaching actions to team capability growth",
+        "status": "completed",
+        "updated_at": "2026-02-13T21:42:08Z",
+        "next_steps": "Recheck RSS indexing in 48h; monitor 30-day engagement; track behavior-shift metrics; refine coaching enablement framework",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-850",
         "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "failed",
-        "updated_at": "2026-02-13T21:24:51Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-13T21:41:28Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1165.",
+        "blockers": ""
       },
       {
         "id": "openclaw-849",
@@ -934,19 +927,76 @@
         "updated_at": "2026-02-13T19:24:25Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1147.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-831",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "completed",
-        "updated_at": "2026-02-13T19:19:35Z",
-        "next_steps": "",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 823,
+          "created_at": "2026-02-13T21:42:08Z",
+          "capture_id": 691,
+          "openclaw_row_id": 851,
+          "source": "openclaw_ssh",
+          "task_title": "Design manager enablement that links coaching actions to team capability growth",
+          "agent_id": "refresh-planner",
+          "agent_role": "Refresh Planner",
+          "note": "Update cadence: quarterly behavior-shift reviews, annual coaching enablement audit",
+          "action_hint": "Align refresh triggers with business performance metrics",
+          "handoff_to": "supervisor"
+        },
+        {
+          "id": 822,
+          "created_at": "2026-02-13T21:42:08Z",
+          "capture_id": 691,
+          "openclaw_row_id": 851,
+          "source": "openclaw_ssh",
+          "task_title": "Design manager enablement that links coaching actions to team capability growth",
+          "agent_id": "editor",
+          "agent_role": "Editor",
+          "note": "Article refined to 200 words, sentence-case headings, no em dashes",
+          "action_hint": "Ensure personal voice and practical scenarios",
+          "handoff_to": "refresh-planner"
+        },
+        {
+          "id": 821,
+          "created_at": "2026-02-13T21:42:08Z",
+          "capture_id": 691,
+          "openclaw_row_id": 851,
+          "source": "openclaw_ssh",
+          "task_title": "Design manager enablement that links coaching actions to team capability growth",
+          "agent_id": "publishing-qa",
+          "agent_role": "Publishing QA",
+          "note": "Article verified live with full content; awaiting RSS sync",
+          "action_hint": "Refresh check after 48h; track engagement",
+          "handoff_to": "supervisor"
+        },
+        {
+          "id": 820,
+          "created_at": "2026-02-13T21:42:08Z",
+          "capture_id": 691,
+          "openclaw_row_id": 851,
+          "source": "openclaw_ssh",
+          "task_title": "Design manager enablement that links coaching actions to team capability growth",
+          "agent_id": "research-analyst",
+          "agent_role": "Research Analyst",
+          "note": "Validated coaching action data and capability metrics from team memory",
+          "action_hint": "Verify source links and measurable outcomes",
+          "handoff_to": "writer"
+        },
+        {
+          "id": 819,
+          "created_at": "2026-02-13T21:42:08Z",
+          "capture_id": 691,
+          "openclaw_row_id": 851,
+          "source": "openclaw_ssh",
+          "task_title": "Design manager enablement that links coaching actions to team capability growth",
+          "agent_id": "topic-scout",
+          "agent_role": "Topic Scout",
+          "note": "Selected manager enablement coaching capability link for high practical relevance",
+          "action_hint": "Document coaching-to-capability case studies",
+          "handoff_to": "research-analyst"
+        },
         {
           "id": 818,
           "created_at": "2026-02-13T20:53:05Z",
@@ -1074,71 +1124,6 @@
           "agent_id": "supervisor",
           "agent_role": "Supervisor",
           "note": "Unhandled stop reason: abort",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 808,
-          "created_at": "2026-02-13T19:37:15Z",
-          "capture_id": 686,
-          "openclaw_row_id": 839,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Unhandled stop reason: abort",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 807,
-          "created_at": "2026-02-13T19:34:28Z",
-          "capture_id": 685,
-          "openclaw_row_id": 838,
-          "source": "openclaw_ssh",
-          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Unhandled stop reason: abort",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 806,
-          "created_at": "2026-02-13T19:28:49Z",
-          "capture_id": 684,
-          "openclaw_row_id": 836,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 805,
-          "created_at": "2026-02-13T19:27:23Z",
-          "capture_id": 683,
-          "openclaw_row_id": 835,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 804,
-          "created_at": "2026-02-13T19:25:59Z",
-          "capture_id": 682,
-          "openclaw_row_id": 834,
-          "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
           "action_hint": "",
           "handoff_to": ""
         }
@@ -1343,25 +1328,25 @@
         "completed": 49,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 70
+        "blocked": 0,
+        "cancelled": 71
       },
       "today": {
         "completed": 49,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-844",
-        "row_id": 844,
-        "capture_id": 689,
-        "title": "Improve judgment without adding course fatigue",
+        "id": "openclaw-851",
+        "row_id": 851,
+        "capture_id": 691,
+        "title": "Design manager enablement that links coaching actions to team capability growth",
         "status": "completed",
-        "updated_at": "2026-02-13T20:27:47Z",
-        "next_steps": "Monitor RSS indexing update in 2-3 hours; re-check after 48h; measure 30-day engagement and decision quality impact",
+        "updated_at": "2026-02-13T21:42:08Z",
+        "next_steps": "Recheck RSS indexing in 48h; monitor 30-day engagement; track behavior-shift metrics; refine coaching enablement framework",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
@@ -1372,23 +1357,29 @@
         "recent": []
       },
       "focusNote": {
-        "agent_id": "publishing-qa",
-        "created_at": "2026-02-13T20:27:47Z",
-        "note": "Article verified live with full content; awaiting RSS sync",
-        "action_hint": "Refresh check after 48h",
+        "agent_id": "refresh-planner",
+        "created_at": "2026-02-13T21:42:08Z",
+        "note": "Update cadence: quarterly behavior-shift reviews, annual coaching enablement audit",
+        "action_hint": "Align refresh triggers with business performance metrics",
         "handoff_to": "supervisor"
       },
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-13T21:24:51Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-13T21:25:44Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-851",
+          "title": "Design manager enablement that links coaching actions to team capability growth",
+          "status": "completed",
+          "updated_at": "2026-02-13T21:42:08Z"
+        },
+        {
           "id": "openclaw-850",
           "title": "Design manager enablement that links coaching actions to team capability growth",
-          "status": "failed",
-          "updated_at": "2026-02-13T21:24:51Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-13T21:41:28Z"
         },
         {
           "id": "openclaw-849",
@@ -1437,12 +1428,6 @@
           "title": "Improve judgment without adding course fatigue",
           "status": "cancelled",
           "updated_at": "2026-02-13T20:19:49Z"
-        },
-        {
-          "id": "openclaw-841",
-          "title": "Build feedback rituals that convert learning into visible team behavior",
-          "status": "completed",
-          "updated_at": "2026-02-13T19:42:21Z"
         }
       ],
       "recentOutputs": [
@@ -1548,36 +1533,36 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-844",
+        "focusTaskId": "openclaw-851",
         "total": 9,
-        "done": 3,
-        "remaining": 6,
+        "done": 5,
+        "remaining": 4,
         "doneIds": [
           "topic-scout",
           "research-analyst",
+          "editor",
+          "refresh-planner",
           "publishing-qa"
         ],
         "remainingIds": [
           "serp-keyword",
           "brief-architect",
           "writer",
-          "seo-optimizer",
-          "editor",
-          "refresh-planner"
+          "seo-optimizer"
         ],
-        "lastStageAt": "2026-02-13T20:27:47Z"
+        "lastStageAt": "2026-02-13T21:42:08Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-13T21:08:48Z",
-        "lastFinishedAt": "2026-02-13T20:53:05Z",
+        "lastStartedAt": "2026-02-13T21:41:27Z",
+        "lastFinishedAt": "2026-02-13T21:25:44Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1642,7 +1627,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-13T21:24:51Z",
+    "updatedAt": "2026-02-13T21:47:00Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,

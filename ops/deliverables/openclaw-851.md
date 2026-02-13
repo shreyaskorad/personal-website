@@ -1,14 +1,21 @@
 # Deliverable: Design manager enablement that links coaching actions to team capability growth
 
-- Task ID: openclaw-850
-- Status: failed
-- Created: 2026-02-13T21:08:52Z
-- Updated: 2026-02-13T21:24:51Z
+- Task ID: openclaw-851
+- Status: completed
+- Created: 2026-02-13T21:41:32Z
+- Updated: 2026-02-13T21:42:08Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Recheck RSS indexing in 48h; monitor 30-day engagement; track behavior-shift metrics; refine coaching enablement framework
 
 ## Deliverable Output
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-13T21:46:59Z)
+
+## Last Error
+OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer
+client_loop: send disconnect: Broken pipe
+
+## Draft Deliverable (Fallback)
 # Deliverable Draft: Design Manager Enablement That Links Coaching Actions To Team Capability Growth SEO blog operating system
 
 ## Objective and success metrics
@@ -55,10 +62,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
-
-## Blockers / Notes
-OpenClaw SSH execution failed.
+Recheck RSS indexing in 48h; monitor 30-day engagement; track behavior-shift metrics; refine coaching enablement framework
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
