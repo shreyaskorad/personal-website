@@ -1,12 +1,12 @@
 # Deliverable: Design learning prompts that improve decisions during real project pressure
 
 - Task ID: openclaw-806
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-13T15:42:12Z
-- Updated: 2026-02-13T15:45:55Z
+- Updated: 2026-02-13T15:49:04Z
 
 ## Summary
-Rewrite required before publish. Violations: repeats the same core point
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 # Design learning prompts that improve decisions during real project pressure
@@ -22,9 +22,6 @@ Use decision-focused prompts during project work to surface what you do not know
 What single prompt would make your project decisions more evidence-based? Create reusable templates for recurring decisions and test them with real projects. If the prompt improves outcomes over time, make it a permanent habit.
 
 Structured prompts surface hidden assumptions and reduce pressure-induced errors. Teams that pause for evidence-based questions before decisions make better choices under real-world pressure.
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
