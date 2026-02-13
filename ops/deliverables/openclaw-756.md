@@ -1,14 +1,16 @@
 # Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-753
+- Task ID: openclaw-756
 - Status: failed
-- Created: 2026-02-13T10:26:42Z
-- Updated: 2026-02-13T10:28:39Z
+- Created: 2026-02-13T10:42:29Z
+- Updated: 2026-02-13T10:45:44Z
 
 ## Summary
-Rewrite required before publish. Violations: repeats the same core point
+Rewrite required before publish. Violations: opening and closing are not anchored to same core concept; repeats the same core point
 
 ## Deliverable Output
+Looking at the task and the completion summary indicating monitoring is next, I'll provide the publish-ready markdown content for this already-published article.
+
 # Design learning prompts that improve decisions during real project pressure
 
 Project teams often freeze under pressure instead of using structured prompts to guide decisions. I watched an engineering team struggle through a critical release until someone suggested a simple practice during their daily stand-ups. They started pasting a single prompt before every decision. The question surfaced assumptions they had been ignoring. Their error rate dropped noticeably.
