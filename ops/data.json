@@ -1,20 +1,20 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-13T20:49:11Z",
+    "updatedAt": "2026-02-13T21:24:51Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
-    "totalTasks": 9,
+    "totalTasks": 8,
     "queued": 0,
     "active": 0,
-    "completed": 8,
+    "completed": 7,
     "due": 1,
     "blocked": 1,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 8,
+      "completed": 7,
       "failed": 1
     }
   },
@@ -28,8 +28,8 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 8,
-      "totalClosed": 8
+      "visible": 7,
+      "totalClosed": 7
     },
     "due": {
       "visible": 1,
@@ -43,20 +43,20 @@
   "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-848",
-      "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+      "id": "openclaw-850",
+      "title": "Design manager enablement that links coaching actions to team capability growth",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-13T20:48:47Z",
-      "updatedAt": "2026-02-13T20:49:11Z",
-      "completedAt": "2026-02-13T20:49:11Z",
-      "ageHours": 0.01,
-      "deliverySummary": "Rewrite required before publish. Violations: repeats the same core point",
-      "deliverableUrl": "/ops/deliverables/openclaw-848.md",
+      "createdAt": "2026-02-13T21:08:52Z",
+      "updatedAt": "2026-02-13T21:24:51Z",
+      "completedAt": "2026-02-13T21:24:51Z",
+      "ageHours": 0.27,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-850.md",
       "notes": [
-        "Publish quality gate failed."
+        "OpenClaw SSH execution failed."
       ],
       "scope": "professional",
       "hasDeliverable": true,
@@ -74,7 +74,7 @@
       "createdAt": "2026-02-13T20:27:28Z",
       "updatedAt": "2026-02-13T20:27:47Z",
       "completedAt": "2026-02-13T20:27:47Z",
-      "ageHours": 0.36,
+      "ageHours": 0.96,
       "deliverySummary": "Monitor RSS indexing update in 2-3 hours; re-check after 48h; measure 30-day engagement and decision quality impact",
       "deliverableUrl": "/ops/deliverables/openclaw-844.md",
       "notes": [],
@@ -92,7 +92,7 @@
       "createdAt": "2026-02-13T19:41:21Z",
       "updatedAt": "2026-02-13T19:42:21Z",
       "completedAt": "2026-02-13T19:42:21Z",
-      "ageHours": 1.13,
+      "ageHours": 1.73,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-841.md",
       "notes": [],
@@ -110,7 +110,7 @@
       "createdAt": "2026-02-13T19:38:52Z",
       "updatedAt": "2026-02-13T19:39:42Z",
       "completedAt": "2026-02-13T19:39:42Z",
-      "ageHours": 1.17,
+      "ageHours": 1.77,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-840.md",
       "notes": [],
@@ -128,7 +128,7 @@
       "createdAt": "2026-02-13T19:36:08Z",
       "updatedAt": "2026-02-13T19:37:15Z",
       "completedAt": "2026-02-13T19:37:15Z",
-      "ageHours": 1.22,
+      "ageHours": 1.81,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-839.md",
       "notes": [],
@@ -146,7 +146,7 @@
       "createdAt": "2026-02-13T19:25:41Z",
       "updatedAt": "2026-02-13T19:25:59Z",
       "completedAt": "2026-02-13T19:25:59Z",
-      "ageHours": 1.39,
+      "ageHours": 1.99,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-834.md",
       "notes": [],
@@ -164,7 +164,7 @@
       "createdAt": "2026-02-13T19:24:29Z",
       "updatedAt": "2026-02-13T19:24:37Z",
       "completedAt": "2026-02-13T19:24:37Z",
-      "ageHours": 1.41,
+      "ageHours": 2.01,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-833.md",
       "notes": [],
@@ -182,27 +182,9 @@
       "createdAt": "2026-02-13T18:52:37Z",
       "updatedAt": "2026-02-13T18:52:54Z",
       "completedAt": "2026-02-13T18:52:54Z",
-      "ageHours": 1.94,
+      "ageHours": 2.54,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-823.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-811",
-      "title": "Design manager enablement that links coaching actions to team capability growth",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-13T17:36:27Z",
-      "updatedAt": "2026-02-13T17:42:25Z",
-      "completedAt": "2026-02-13T17:42:25Z",
-      "ageHours": 3.21,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-811.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -234,11 +216,29 @@
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-13T20:49:11Z",
-      "message": "Publish quality gate failed."
+      "timestamp": "2026-02-13T21:24:51Z",
+      "message": "OpenClaw SSH execution failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-13T21:24:51Z",
+      "type": "skipped",
+      "taskId": "capture-691",
+      "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
+    },
+    {
+      "timestamp": "2026-02-13T21:08:52Z",
+      "type": "executed",
+      "taskId": "capture-691",
+      "message": "Autonomous writing sprint: Design manager enablement that links coaching actions to team capability growth: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-13T20:53:05Z",
+      "type": "executed",
+      "taskId": "capture-690",
+      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: Delegated via OpenClaw SSH (status=completed, task_id=4a1f902a-1270-4f00-aa0a-1e6dd3d6bf84): # Create L&D reviews that focus on behavior shifts not completion dashboards\n\nMost L&D reviews count how many courses were finished, but they rarely show whether work actually changed. In my team we saw high completion numbers while the same old habits persisted. What if we measured what truly moved instead of what was simply logged?\n\n## Core point\n\nWe replaced the completion dashboard with a simple question: after a learning event, what concrete behavior changed? The team logged these observations in a shared note, linked each shift to a business outcome, and retired the old metric\u2011only view. Managers reported clearer alignment between learning and daily work, and employees felt their effort mattered.\n\n## Practical takeaway\n\nAdd a one\u2011sentence field to your review form that captures the most visible behavior change. Ask the learner to note one example and the manager to confirm it in the next one\u2011on\u2011one. Use those notes to update performance metrics instead of a static completion count.\n\nFocus on behavior shifts, not dashboards, and watch learning become a visible part of everyday work."
+    },
     {
       "timestamp": "2026-02-13T20:49:11Z",
       "type": "executed",
@@ -580,28 +580,10 @@
       "type": "executed",
       "taskId": "capture-673",
       "message": "Autonomous writing sprint: Design manager enablement that links coaching actions to team capability growth: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-13T16:17:15Z",
-      "type": "executed",
-      "taskId": "capture-672",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: Delegated via OpenClaw SSH (status=completed, task_id=8e748293-2df5-4313-b3d2-5699c087b8ab): Article already published and verified live. Topic: Create L&D reviews that focus on behavior shifts not completion dashboards"
-    },
-    {
-      "timestamp": "2026-02-13T16:16:43Z",
-      "type": "executed",
-      "taskId": "capture-672",
-      "message": "Autonomous writing sprint: Create L&D reviews that focus on behavior shifts not completion dashboards: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-13T16:15:08Z",
-      "type": "executed",
-      "taskId": "capture-671",
-      "message": "Improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=completed, task_id=8c382030-5572-4134-8e8f-db1c37b1d630): Article already published and verified live. Topic: Improve judgment without adding course fatigue"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-13T20:49:11Z",
+    "updatedAt": "2026-02-13T21:24:51Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -682,7 +664,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-13T20:47:13Z",
+      "asOf": "2026-02-13T21:24:56Z",
       "lookbackDays": 28,
       "summary": {
         "users": 32,
@@ -785,8 +767,8 @@
       ],
       "error": "",
       "cache": {
-        "hit": true,
-        "fetchedAt": "2026-02-13T20:47:13Z"
+        "hit": false,
+        "fetchedAt": "2026-02-13T21:24:56Z"
       }
     },
     "taskStats": {
@@ -802,12 +784,28 @@
     },
     "recentTasks": [
       {
+        "id": "openclaw-850",
+        "title": "Design manager enablement that links coaching actions to team capability growth",
+        "status": "failed",
+        "updated_at": "2026-02-13T21:24:51Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-849",
+        "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+        "status": "cancelled",
+        "updated_at": "2026-02-13T21:08:48Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-848",
         "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-        "status": "failed",
-        "updated_at": "2026-02-13T20:49:11Z",
-        "next_steps": "Rewrite required before publish. Violations: repeats the same core point",
-        "blockers": "Publish quality gate failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-13T20:52:15Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1163.",
+        "blockers": ""
       },
       {
         "id": "openclaw-847",
@@ -944,27 +942,24 @@
         "updated_at": "2026-02-13T19:19:35Z",
         "next_steps": "",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-830",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T19:19:22Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1145.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-829",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T19:15:48Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1144.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 818,
+          "created_at": "2026-02-13T20:53:05Z",
+          "capture_id": 690,
+          "openclaw_row_id": 849,
+          "source": "openclaw_ssh",
+          "task_title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "# Create L&D reviews that focus on behavior shifts not completion dashboards Most L&D reviews count how many courses were finished, but they rarely show whether work actually changed. In my team we saw high completion numbers while the same old habits persisted. What if we measured what truly moved instead of what w...",
+          "action_hint": "",
+          "handoff_to": ""
+        },
         {
           "id": 817,
           "created_at": "2026-02-13T20:49:11Z",
@@ -1146,33 +1141,29 @@
           "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
           "action_hint": "",
           "handoff_to": ""
-        },
-        {
-          "id": 803,
-          "created_at": "2026-02-13T19:24:37Z",
-          "capture_id": 681,
-          "openclaw_row_id": 833,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
         }
       ]
     },
     "publishStats": {
-      "total": 56,
+      "total": 57,
       "published": 3,
-      "failed": 32,
+      "failed": 33,
       "ignored": 21,
       "byStatus": {
-        "failed": 32,
+        "failed": 33,
         "ignored": 21,
         "published": 3
       },
       "recent": [
+        {
+          "openclaw_row_id": 849,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: repeats the same core point",
+          "updated_at": "2026-02-13T20:53:05Z"
+        },
         {
           "openclaw_row_id": 848,
           "status": "failed",
@@ -1343,29 +1334,20 @@
           "commit": "",
           "error": "Style rules violation: repeats the same core point",
           "updated_at": "2026-02-13T10:39:23Z"
-        },
-        {
-          "openclaw_row_id": 754,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T10:33:43Z"
         }
       ]
     },
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 51,
+        "completed": 49,
         "active": 0,
         "queued": 0,
         "blocked": 1,
-        "cancelled": 68
+        "cancelled": 70
       },
       "today": {
-        "completed": 51,
+        "completed": 49,
         "active": 0,
         "queued": 0,
         "blocked": 1,
@@ -1398,15 +1380,27 @@
       },
       "bottleneck": {
         "state": "blocked",
-        "reason": "Publish quality gate failed.",
-        "at": "2026-02-13T20:49:11Z"
+        "reason": "OpenClaw SSH execution failed.",
+        "at": "2026-02-13T21:24:51Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-850",
+          "title": "Design manager enablement that links coaching actions to team capability growth",
+          "status": "failed",
+          "updated_at": "2026-02-13T21:24:51Z"
+        },
+        {
+          "id": "openclaw-849",
+          "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+          "status": "cancelled",
+          "updated_at": "2026-02-13T21:08:48Z"
+        },
+        {
           "id": "openclaw-848",
           "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-          "status": "failed",
-          "updated_at": "2026-02-13T20:49:11Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-13T20:52:15Z"
         },
         {
           "id": "openclaw-847",
@@ -1449,21 +1443,19 @@
           "title": "Build feedback rituals that convert learning into visible team behavior",
           "status": "completed",
           "updated_at": "2026-02-13T19:42:21Z"
-        },
-        {
-          "id": "openclaw-840",
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "completed",
-          "updated_at": "2026-02-13T19:39:42Z"
-        },
-        {
-          "id": "openclaw-839",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-13T19:37:15Z"
         }
       ],
       "recentOutputs": [
+        {
+          "id": "openclaw-849",
+          "row_id": 849,
+          "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: repeats the same core point",
+          "updated_at": "2026-02-13T20:53:05Z"
+        },
         {
           "id": "openclaw-848",
           "row_id": 848,
@@ -1553,16 +1545,6 @@
           "slug": "",
           "error": "Style rules violation: repeats the same core point",
           "updated_at": "2026-02-13T13:30:19Z"
-        },
-        {
-          "id": "openclaw-779",
-          "row_id": 779,
-          "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T13:25:35Z"
         }
       ],
       "stages": {
@@ -1590,8 +1572,8 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-13T20:48:43Z",
-        "lastFinishedAt": "2026-02-13T20:47:58Z",
+        "lastStartedAt": "2026-02-13T21:08:48Z",
+        "lastFinishedAt": "2026-02-13T20:53:05Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1660,7 +1642,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-13T20:49:11Z",
+    "updatedAt": "2026-02-13T21:24:51Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,

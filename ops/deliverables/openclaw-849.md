@@ -1,12 +1,12 @@
 # Deliverable: Create L&D reviews that focus on behavior shifts not completion dashboards
 
-- Task ID: openclaw-848
-- Status: failed
-- Created: 2026-02-13T20:48:47Z
-- Updated: 2026-02-13T20:49:11Z
+- Task ID: openclaw-849
+- Status: cancelled
+- Created: 2026-02-13T20:52:19Z
+- Updated: 2026-02-13T21:08:48Z
 
 ## Summary
-Rewrite required before publish. Violations: repeats the same core point
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 # Create L&D reviews that focus on behavior shifts not completion dashboards
@@ -22,9 +22,6 @@ We replaced the completion dashboard with a simple question: after a learning ev
 Add a one‑sentence field to your review form that captures the most visible behavior change. Ask the learner to note one example and the manager to confirm it in the next one‑on‑one. Use those notes to update performance metrics instead of a static completion count.
 
 Focus on behavior shifts, not dashboards, and watch learning become a visible part of everyday work.
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
