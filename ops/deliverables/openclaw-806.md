@@ -1,9 +1,9 @@
 # Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-803
+- Task ID: openclaw-806
 - Status: failed
-- Created: 2026-02-13T15:26:17Z
-- Updated: 2026-02-13T15:28:14Z
+- Created: 2026-02-13T15:42:12Z
+- Updated: 2026-02-13T15:45:55Z
 
 ## Summary
 Rewrite required before publish. Violations: repeats the same core point
