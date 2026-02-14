@@ -1,14 +1,21 @@
 # Deliverable: Make learning evidence useful for business reviews without heavy reporting overhead
 
-- Task ID: openclaw-886
-- Status: failed
-- Created: 2026-02-14T05:57:11Z
-- Updated: 2026-02-14T06:37:00Z
+- Task ID: openclaw-887
+- Status: completed
+- Created: 2026-02-14T06:58:36Z
+- Updated: 2026-02-14T06:59:06Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Publish using publish_post.py script
 
 ## Deliverable Output
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T07:31:54Z)
+
+## Last Error
+OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer
+client_loop: send disconnect: Broken pipe
+
+## Draft Deliverable (Fallback)
 # Deliverable Draft: Make Learning Evidence Useful For Business Reviews Without Heavy Reporting Overhead SEO blog operating system
 
 ## Objective and success metrics
@@ -55,10 +62,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
-
-## Blockers / Notes
-OpenClaw SSH execution failed.
+Publish using publish_post.py script
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
