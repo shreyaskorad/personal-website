@@ -1,9 +1,9 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-866
+- Task ID: openclaw-867
 - Status: failed
-- Created: 2026-02-14T03:14:17Z
-- Updated: 2026-02-14T03:15:16Z
+- Created: 2026-02-14T03:32:59Z
+- Updated: 2026-02-14T03:33:56Z
 
 ## Summary
 Rewrite required before publish. Violations: repeats the same core point
