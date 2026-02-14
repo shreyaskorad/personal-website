@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-13T23:29:50Z",
+    "updatedAt": "2026-02-14T00:02:40Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -9,13 +9,12 @@
     "totalTasks": 9,
     "queued": 0,
     "active": 0,
-    "completed": 8,
-    "due": 1,
-    "blocked": 1,
+    "completed": 9,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 8,
-      "failed": 1
+      "completed": 9
     }
   },
   "laneMetrics": {
@@ -28,42 +27,39 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 8,
-      "totalClosed": 8
+      "visible": 9,
+      "totalClosed": 9
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-857",
+      "id": "openclaw-858",
       "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-13T23:13:47Z",
-      "updatedAt": "2026-02-13T23:29:50Z",
-      "completedAt": "2026-02-13T23:29:50Z",
-      "ageHours": 0.27,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-857.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-13T23:44:43Z",
+      "updatedAt": "2026-02-13T23:45:24Z",
+      "completedAt": "2026-02-13T23:45:24Z",
+      "ageHours": 0.3,
+      "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track learning transfer metrics; refine project debrief framework",
+      "deliverableUrl": "/ops/deliverables/openclaw-858.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
     {
       "id": "openclaw-856",
       "title": "Design onboarding that builds role judgment instead of checklist compliance",
@@ -74,7 +70,7 @@
       "createdAt": "2026-02-13T22:55:34Z",
       "updatedAt": "2026-02-13T22:56:09Z",
       "completedAt": "2026-02-13T22:56:09Z",
-      "ageHours": 0.57,
+      "ageHours": 1.12,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track onboarding judgment metrics; refine checklist-to-judgment transition",
       "deliverableUrl": "/ops/deliverables/openclaw-856.md",
       "notes": [],
@@ -92,7 +88,7 @@
       "createdAt": "2026-02-13T22:38:07Z",
       "updatedAt": "2026-02-13T22:38:14Z",
       "completedAt": "2026-02-13T22:38:14Z",
-      "ageHours": 0.86,
+      "ageHours": 1.41,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-855.md",
       "notes": [],
@@ -110,7 +106,7 @@
       "createdAt": "2026-02-13T21:41:32Z",
       "updatedAt": "2026-02-13T21:42:08Z",
       "completedAt": "2026-02-13T21:42:08Z",
-      "ageHours": 1.81,
+      "ageHours": 2.35,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track behavior-shift metrics; refine coaching enablement framework",
       "deliverableUrl": "/ops/deliverables/openclaw-851.md",
       "notes": [],
@@ -128,7 +124,7 @@
       "createdAt": "2026-02-13T20:27:28Z",
       "updatedAt": "2026-02-13T20:27:47Z",
       "completedAt": "2026-02-13T20:27:47Z",
-      "ageHours": 3.04,
+      "ageHours": 3.59,
       "deliverySummary": "Monitor RSS indexing update in 2-3 hours; re-check after 48h; measure 30-day engagement and decision quality impact",
       "deliverableUrl": "/ops/deliverables/openclaw-844.md",
       "notes": [],
@@ -146,7 +142,7 @@
       "createdAt": "2026-02-13T19:41:21Z",
       "updatedAt": "2026-02-13T19:42:21Z",
       "completedAt": "2026-02-13T19:42:21Z",
-      "ageHours": 3.81,
+      "ageHours": 4.36,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-841.md",
       "notes": [],
@@ -164,7 +160,7 @@
       "createdAt": "2026-02-13T19:38:52Z",
       "updatedAt": "2026-02-13T19:39:42Z",
       "completedAt": "2026-02-13T19:39:42Z",
-      "ageHours": 3.85,
+      "ageHours": 4.4,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-840.md",
       "notes": [],
@@ -182,7 +178,7 @@
       "createdAt": "2026-02-13T19:25:41Z",
       "updatedAt": "2026-02-13T19:25:59Z",
       "completedAt": "2026-02-13T19:25:59Z",
-      "ageHours": 4.07,
+      "ageHours": 4.62,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-834.md",
       "notes": [],
@@ -200,7 +196,7 @@
       "createdAt": "2026-02-13T19:24:29Z",
       "updatedAt": "2026-02-13T19:24:37Z",
       "completedAt": "2026-02-13T19:24:37Z",
-      "ageHours": 4.09,
+      "ageHours": 4.64,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-833.md",
       "notes": [],
@@ -225,20 +221,16 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-13T23:29:50Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
+  "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-13T23:45:24Z",
+      "type": "executed",
+      "taskId": "capture-695",
+      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: Delegated via OpenClaw SSH (status=completed, task_id=0f394d80-3ffa-4ec2-959e-6e7b8c0a950f): Article live: 200 status, slug canonical match, sitemap indexed, RSS pending; measurement plan set"
+    },
     {
       "timestamp": "2026-02-13T23:29:50Z",
       "type": "skipped",
@@ -592,16 +584,10 @@
       "type": "skipped",
       "taskId": "capture-675",
       "message": "Make learning evidence useful for business reviews without heavy reporting overhead: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\n[diagnostic] lane task error: lane=main durationMs=777 error=\"Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\"\n[diagnostic] lane task error: lane=session:agent:main:main durationMs=786 error=\"Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\"\nError: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory"
-    },
-    {
-      "timestamp": "2026-02-13T18:29:15Z",
-      "type": "skipped",
-      "taskId": "capture-675",
-      "message": "Make learning evidence useful for business reviews without heavy reporting overhead: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\n[diagnostic] lane task error: lane=main durationMs=574 error=\"Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\"\n[diagnostic] lane task error: lane=session:agent:main:main durationMs=583 error=\"Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\"\nError: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-13T23:29:50Z",
+    "updatedAt": "2026-02-14T00:02:40Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -682,15 +668,15 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-13T23:29:54Z",
+      "asOf": "2026-02-14T00:02:44Z",
       "lookbackDays": 28,
       "summary": {
-        "users": 32,
-        "sessions": 89,
+        "users": 33,
+        "sessions": 92,
         "engagedSessions": 40,
-        "engagementRatePct": 44.9,
-        "avgSessionDurationSec": 708.4,
-        "pageViewsPerSession": 5.02,
+        "engagementRatePct": 43.5,
+        "avgSessionDurationSec": 692.3,
+        "pageViewsPerSession": 4.96,
         "vsPrevious": {
           "usersPct": null,
           "sessionsPct": null
@@ -699,30 +685,30 @@
       "channels": [
         {
           "channel": "Direct",
-          "sessions": 78,
-          "users": 21,
-          "sessionShare": 81.2
+          "sessions": 81,
+          "users": 22,
+          "sessionShare": 81.8
         },
         {
           "channel": "Organic Search",
           "sessions": 11,
           "users": 11,
-          "sessionShare": 11.5
+          "sessionShare": 11.1
         },
         {
           "channel": "Unassigned",
           "sessions": 7,
           "users": 2,
-          "sessionShare": 7.3
+          "sessionShare": 7.1
         }
       ],
       "topPosts": [
         {
           "path": "/writing.html",
-          "pageviews": 165,
-          "sessions": 50,
-          "engagementRatePct": 68.0,
-          "avgSessionDurationSec": 510.1
+          "pageviews": 168,
+          "sessions": 52,
+          "engagementRatePct": 65.4,
+          "avgSessionDurationSec": 500.1
         },
         {
           "path": "/posts/make-learning-evidence-useful-for-business-reviews-without-heavy-reporting-overhead.html",
@@ -775,8 +761,8 @@
         }
       ],
       "insights": [
-        "Organic Search share is only 11.5%, which suggests discoverability is still weak.",
-        "Traffic is concentrated: the top post contributes 75.3% of views within top content."
+        "Organic Search share is only 11.1%, which suggests discoverability is still weak.",
+        "Traffic is concentrated: the top post contributes 75.7% of views within top content."
       ],
       "nextActions": [
         "Tighten opening paragraphs to define one concrete workplace problem and one expected outcome in the first 3 sentences.",
@@ -786,28 +772,35 @@
       "error": "",
       "cache": {
         "hit": false,
-        "fetchedAt": "2026-02-13T23:29:54Z"
+        "fetchedAt": "2026-02-14T00:02:44Z"
       }
     },
     "taskStats": {
       "total": 80,
-      "completed": 34,
+      "completed": 35,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
-        "completed": 34,
+        "completed": 35,
         "cancelled": 45
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-858",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "completed",
+        "updated_at": "2026-02-13T23:45:24Z",
+        "next_steps": "Recheck RSS indexing in 48h; monitor 30-day engagement; track learning transfer metrics; refine project debrief framework",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-857",
         "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "failed",
-        "updated_at": "2026-02-13T23:29:50Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-13T23:44:40Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1172.",
+        "blockers": ""
       },
       {
         "id": "openclaw-856",
@@ -952,19 +945,76 @@
         "updated_at": "2026-02-13T19:37:15Z",
         "next_steps": "",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-838",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-13T19:34:28Z",
-        "next_steps": "",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 840,
+          "created_at": "2026-02-13T23:45:24Z",
+          "capture_id": 695,
+          "openclaw_row_id": 858,
+          "source": "openclaw_ssh",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "agent_id": "refresh-planner",
+          "agent_role": "Refresh Planner",
+          "note": "Update cadence: quarterly debrief reviews, annual learning transfer audit",
+          "action_hint": "Align refresh triggers with business performance metrics",
+          "handoff_to": "supervisor"
+        },
+        {
+          "id": 839,
+          "created_at": "2026-02-13T23:45:24Z",
+          "capture_id": 695,
+          "openclaw_row_id": 858,
+          "source": "openclaw_ssh",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "agent_id": "editor",
+          "agent_role": "Editor",
+          "note": "Article refined to 200 words, sentence-case headings, no em dashes",
+          "action_hint": "Ensure personal voice and practical scenarios",
+          "handoff_to": "refresh-planner"
+        },
+        {
+          "id": 838,
+          "created_at": "2026-02-13T23:45:24Z",
+          "capture_id": 695,
+          "openclaw_row_id": 858,
+          "source": "openclaw_ssh",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "agent_id": "publishing-qa",
+          "agent_role": "Publishing QA",
+          "note": "Article verified live with full content; awaiting RSS sync",
+          "action_hint": "Refresh check after 48h; track engagement",
+          "handoff_to": "supervisor"
+        },
+        {
+          "id": 837,
+          "created_at": "2026-02-13T23:45:24Z",
+          "capture_id": 695,
+          "openclaw_row_id": 858,
+          "source": "openclaw_ssh",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "agent_id": "research-analyst",
+          "agent_role": "Research Analyst",
+          "note": "Validated debrief data and learning transfer metrics from team memory",
+          "action_hint": "Verify source links and measurable outcomes",
+          "handoff_to": "writer"
+        },
+        {
+          "id": 836,
+          "created_at": "2026-02-13T23:45:24Z",
+          "capture_id": 695,
+          "openclaw_row_id": 858,
+          "source": "openclaw_ssh",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "agent_id": "topic-scout",
+          "agent_role": "Topic Scout",
+          "note": "Selected project debriefs for learning transfer practical relevance",
+          "action_hint": "Document debrief case studies and learning transfer metrics",
+          "handoff_to": "research-analyst"
+        },
         {
           "id": 835,
           "created_at": "2026-02-13T22:56:09Z",
@@ -1094,71 +1144,6 @@
           "note": "Validated evidence data and business review metrics from team memory",
           "action_hint": "Verify source links and measurable outcomes",
           "handoff_to": "writer"
-        },
-        {
-          "id": 825,
-          "created_at": "2026-02-13T22:20:59Z",
-          "capture_id": 693,
-          "openclaw_row_id": 854,
-          "source": "openclaw_ssh",
-          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "agent_id": "topic-scout",
-          "agent_role": "Topic Scout",
-          "note": "Selected learning evidence for business reviews for high practical relevance",
-          "action_hint": "Document evidence-gathering case studies",
-          "handoff_to": "research-analyst"
-        },
-        {
-          "id": 824,
-          "created_at": "2026-02-13T21:57:31Z",
-          "capture_id": 692,
-          "openclaw_row_id": 853,
-          "source": "openclaw_ssh",
-          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Unhandled stop reason: abort",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 823,
-          "created_at": "2026-02-13T21:42:08Z",
-          "capture_id": 691,
-          "openclaw_row_id": 851,
-          "source": "openclaw_ssh",
-          "task_title": "Design manager enablement that links coaching actions to team capability growth",
-          "agent_id": "refresh-planner",
-          "agent_role": "Refresh Planner",
-          "note": "Update cadence: quarterly behavior-shift reviews, annual coaching enablement audit",
-          "action_hint": "Align refresh triggers with business performance metrics",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 822,
-          "created_at": "2026-02-13T21:42:08Z",
-          "capture_id": 691,
-          "openclaw_row_id": 851,
-          "source": "openclaw_ssh",
-          "task_title": "Design manager enablement that links coaching actions to team capability growth",
-          "agent_id": "editor",
-          "agent_role": "Editor",
-          "note": "Article refined to 200 words, sentence-case headings, no em dashes",
-          "action_hint": "Ensure personal voice and practical scenarios",
-          "handoff_to": "refresh-planner"
-        },
-        {
-          "id": 821,
-          "created_at": "2026-02-13T21:42:08Z",
-          "capture_id": 691,
-          "openclaw_row_id": 851,
-          "source": "openclaw_ssh",
-          "task_title": "Design manager enablement that links coaching actions to team capability growth",
-          "agent_id": "publishing-qa",
-          "agent_role": "Publishing QA",
-          "note": "Article verified live with full content; awaiting RSS sync",
-          "action_hint": "Refresh check after 48h; track engagement",
-          "handoff_to": "supervisor"
         }
       ]
     },
@@ -1361,25 +1346,25 @@
         "completed": 46,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 73
+        "blocked": 0,
+        "cancelled": 74
       },
       "today": {
-        "completed": 46,
+        "completed": 0,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-856",
-        "row_id": 856,
-        "capture_id": 694,
-        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "id": "openclaw-858",
+        "row_id": 858,
+        "capture_id": 695,
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
         "status": "completed",
-        "updated_at": "2026-02-13T22:56:09Z",
-        "next_steps": "Recheck RSS indexing in 48h; monitor 30-day engagement; track onboarding judgment metrics; refine checklist-to-judgment transition",
+        "updated_at": "2026-02-13T23:45:24Z",
+        "next_steps": "Recheck RSS indexing in 48h; monitor 30-day engagement; track learning transfer metrics; refine project debrief framework",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
@@ -1391,22 +1376,28 @@
       },
       "focusNote": {
         "agent_id": "refresh-planner",
-        "created_at": "2026-02-13T22:56:09Z",
-        "note": "Update cadence: quarterly onboarding reviews, annual judgment transition audit",
+        "created_at": "2026-02-13T23:45:24Z",
+        "note": "Update cadence: quarterly debrief reviews, annual learning transfer audit",
         "action_hint": "Align refresh triggers with business performance metrics",
         "handoff_to": "supervisor"
       },
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-13T23:29:50Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-13T23:46:30Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-858",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "completed",
+          "updated_at": "2026-02-13T23:45:24Z"
+        },
+        {
           "id": "openclaw-857",
           "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "failed",
-          "updated_at": "2026-02-13T23:29:50Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-13T23:44:40Z"
         },
         {
           "id": "openclaw-856",
@@ -1455,12 +1446,6 @@
           "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
           "status": "cancelled",
           "updated_at": "2026-02-13T21:08:48Z"
-        },
-        {
-          "id": "openclaw-848",
-          "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-          "status": "cancelled",
-          "updated_at": "2026-02-13T20:52:15Z"
         }
       ],
       "recentOutputs": [
@@ -1566,7 +1551,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-856",
+        "focusTaskId": "openclaw-858",
         "total": 9,
         "done": 5,
         "remaining": 4,
@@ -1583,19 +1568,19 @@
           "writer",
           "seo-optimizer"
         ],
-        "lastStageAt": "2026-02-13T22:56:09Z"
+        "lastStageAt": "2026-02-13T23:45:24Z"
       },
       "pipeline": {
         "workerStarted": true,
-        "tickInProgress": true,
-        "lastStatus": "running",
+        "tickInProgress": false,
+        "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-13T23:13:43Z",
-        "lastFinishedAt": "2026-02-13T23:12:58Z",
+        "lastStartedAt": "2026-02-13T23:44:39Z",
+        "lastFinishedAt": "2026-02-13T23:46:30Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1660,7 +1645,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-13T23:29:50Z",
+    "updatedAt": "2026-02-14T00:02:40Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
