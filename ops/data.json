@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-14T08:57:22Z",
+    "updatedAt": "2026-02-14T09:53:35Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -9,13 +9,12 @@
     "totalTasks": 10,
     "queued": 0,
     "active": 0,
-    "completed": 9,
-    "due": 1,
-    "blocked": 1,
+    "completed": 10,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 9,
-      "failed": 1
+      "completed": 10
     }
   },
   "laneMetrics": {
@@ -28,42 +27,39 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 9,
-      "totalClosed": 9
+      "visible": 10,
+      "totalClosed": 10
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-888",
+      "id": "openclaw-889",
       "title": "Design onboarding that builds role judgment instead of checklist compliance",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-14T08:40:21Z",
-      "updatedAt": "2026-02-14T08:57:22Z",
-      "completedAt": "2026-02-14T08:57:22Z",
-      "ageHours": 0.28,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-888.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-14T09:52:02Z",
+      "updatedAt": "2026-02-14T09:52:38Z",
+      "completedAt": "2026-02-14T09:52:38Z",
+      "ageHours": 0.03,
+      "deliverySummary": "Publish using publish_post.py script",
+      "deliverableUrl": "/ops/deliverables/openclaw-889.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
     {
       "id": "openclaw-887",
       "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
@@ -74,7 +70,7 @@
       "createdAt": "2026-02-14T06:58:36Z",
       "updatedAt": "2026-02-14T06:59:06Z",
       "completedAt": "2026-02-14T06:59:06Z",
-      "ageHours": 1.98,
+      "ageHours": 2.92,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-887.md",
       "notes": [],
@@ -92,7 +88,7 @@
       "createdAt": "2026-02-14T04:35:00Z",
       "updatedAt": "2026-02-14T04:35:36Z",
       "completedAt": "2026-02-14T04:35:36Z",
-      "ageHours": 4.37,
+      "ageHours": 5.31,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-885.md",
       "notes": [],
@@ -110,7 +106,7 @@
       "createdAt": "2026-02-14T04:18:23Z",
       "updatedAt": "2026-02-14T04:19:06Z",
       "completedAt": "2026-02-14T04:19:06Z",
-      "ageHours": 4.65,
+      "ageHours": 5.59,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-881.md",
       "notes": [],
@@ -128,7 +124,7 @@
       "createdAt": "2026-02-14T04:16:11Z",
       "updatedAt": "2026-02-14T04:16:29Z",
       "completedAt": "2026-02-14T04:16:29Z",
-      "ageHours": 4.69,
+      "ageHours": 5.62,
       "deliverySummary": "Write article content, publish via publish_post.py, verify live status",
       "deliverableUrl": "/ops/deliverables/openclaw-880.md",
       "notes": [],
@@ -146,7 +142,7 @@
       "createdAt": "2026-02-14T04:13:19Z",
       "updatedAt": "2026-02-14T04:14:29Z",
       "completedAt": "2026-02-14T04:14:29Z",
-      "ageHours": 4.73,
+      "ageHours": 5.67,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-879.md",
       "notes": [],
@@ -164,7 +160,7 @@
       "createdAt": "2026-02-14T04:07:51Z",
       "updatedAt": "2026-02-14T04:08:08Z",
       "completedAt": "2026-02-14T04:08:08Z",
-      "ageHours": 4.83,
+      "ageHours": 5.76,
       "deliverySummary": "Write article content, format for site, run publish script, verify live status",
       "deliverableUrl": "/ops/deliverables/openclaw-878.md",
       "notes": [],
@@ -182,7 +178,7 @@
       "createdAt": "2026-02-14T04:05:12Z",
       "updatedAt": "2026-02-14T04:05:38Z",
       "completedAt": "2026-02-14T04:05:38Z",
-      "ageHours": 4.87,
+      "ageHours": 5.81,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-877.md",
       "notes": [],
@@ -200,7 +196,7 @@
       "createdAt": "2026-02-14T03:55:13Z",
       "updatedAt": "2026-02-14T03:55:30Z",
       "completedAt": "2026-02-14T03:55:30Z",
-      "ageHours": 5.04,
+      "ageHours": 5.97,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-872.md",
       "notes": [],
@@ -218,7 +214,7 @@
       "createdAt": "2026-02-14T03:48:40Z",
       "updatedAt": "2026-02-14T03:49:06Z",
       "completedAt": "2026-02-14T03:49:06Z",
-      "ageHours": 5.15,
+      "ageHours": 6.08,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-871.md",
       "notes": [],
@@ -243,20 +239,16 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-14T08:57:22Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
+  "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-14T09:52:38Z",
+      "type": "executed",
+      "taskId": "capture-712",
+      "message": "Design onboarding that builds role judgment instead of checklist compliance: Delegated via OpenClaw SSH (status=completed, task_id=c59ef72e-5f48-4cd8-9e51-4423e79f3c91): Article drafted: Design onboarding that builds role judgment instead of checklist compliance, 150-200 words"
+    },
     {
       "timestamp": "2026-02-14T08:57:22Z",
       "type": "skipped",
@@ -610,16 +602,10 @@
       "type": "executed",
       "taskId": "capture-691",
       "message": "Design manager enablement that links coaching actions to team capability growth: Delegated via OpenClaw SSH (status=completed, task_id=334de55b-a139-4204-8ea8-c80de0ce4a90): Article live: 200 status, slug canonical match, sitemap indexed, RSS pending; measurement plan set"
-    },
-    {
-      "timestamp": "2026-02-13T21:24:51Z",
-      "type": "skipped",
-      "taskId": "capture-691",
-      "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-14T08:57:22Z",
+    "updatedAt": "2026-02-14T09:53:35Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -700,7 +686,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-14T08:39:02Z",
+      "asOf": "2026-02-14T09:53:39Z",
       "lookbackDays": 28,
       "summary": {
         "users": 34,
@@ -797,29 +783,36 @@
       ],
       "error": "",
       "cache": {
-        "hit": true,
-        "fetchedAt": "2026-02-14T08:39:02Z"
+        "hit": false,
+        "fetchedAt": "2026-02-14T09:53:39Z"
       }
     },
     "taskStats": {
       "total": 80,
       "completed": 36,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
         "completed": 36,
-        "cancelled": 43
+        "cancelled": 44
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-889",
+        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "status": "completed",
+        "updated_at": "2026-02-14T09:52:38Z",
+        "next_steps": "Publish using publish_post.py script",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-888",
         "title": "Design onboarding that builds role judgment instead of checklist compliance",
-        "status": "failed",
-        "updated_at": "2026-02-14T08:57:22Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-14T09:51:58Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1203.",
+        "blockers": ""
       },
       {
         "id": "openclaw-887",
@@ -964,19 +957,24 @@
         "updated_at": "2026-02-14T03:48:36Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1185.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-869",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-14T03:44:56Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1184.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 922,
+          "created_at": "2026-02-14T09:52:38Z",
+          "capture_id": 712,
+          "openclaw_row_id": 889,
+          "source": "openclaw_ssh",
+          "task_title": "Design onboarding that builds role judgment instead of checklist compliance",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Publish using publish_post.py script",
+          "action_hint": "Publish using publish_post.py script",
+          "handoff_to": ""
+        },
         {
           "id": 921,
           "created_at": "2026-02-14T06:59:06Z",
@@ -1157,19 +1155,6 @@
           "agent_role": "Research Analyst",
           "note": "Will validate behavioral change evidence from team memory",
           "action_hint": "Gather case studies of feedback rituals",
-          "handoff_to": "writer"
-        },
-        {
-          "id": 907,
-          "created_at": "2026-02-14T04:08:08Z",
-          "capture_id": 706,
-          "openclaw_row_id": 878,
-          "source": "openclaw_ssh",
-          "task_title": "Build feedback rituals that convert learning into visible team behavior",
-          "agent_id": "topic-scout",
-          "agent_role": "Topic Scout",
-          "note": "Selected feedback rituals topic with practical relevance",
-          "action_hint": "Document team behavior change patterns",
           "handoff_to": "writer"
         }
       ]
@@ -1370,27 +1355,27 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 51,
+        "completed": 52,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "cancelled": 68
       },
       "today": {
-        "completed": 15,
+        "completed": 16,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-887",
-        "row_id": 887,
-        "capture_id": 711,
-        "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
+        "id": "openclaw-889",
+        "row_id": 889,
+        "capture_id": 712,
+        "title": "Design onboarding that builds role judgment instead of checklist compliance",
         "status": "completed",
-        "updated_at": "2026-02-14T06:59:06Z",
+        "updated_at": "2026-02-14T09:52:38Z",
         "next_steps": "Publish using publish_post.py script",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
@@ -1403,22 +1388,28 @@
       },
       "focusNote": {
         "agent_id": "supervisor",
-        "created_at": "2026-02-14T06:59:06Z",
+        "created_at": "2026-02-14T09:52:38Z",
         "note": "Publish using publish_post.py script",
-        "action_hint": "Execute publish script and verify live status",
-        "handoff_to": "supervisor"
+        "action_hint": "Publish using publish_post.py script",
+        "handoff_to": ""
       },
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-14T08:57:22Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-14T09:51:12Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-889",
+          "title": "Design onboarding that builds role judgment instead of checklist compliance",
+          "status": "completed",
+          "updated_at": "2026-02-14T09:52:38Z"
+        },
+        {
           "id": "openclaw-888",
           "title": "Design onboarding that builds role judgment instead of checklist compliance",
-          "status": "failed",
-          "updated_at": "2026-02-14T08:57:22Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-14T09:51:58Z"
         },
         {
           "id": "openclaw-887",
@@ -1467,12 +1458,6 @@
           "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
           "status": "completed",
           "updated_at": "2026-02-14T04:16:29Z"
-        },
-        {
-          "id": "openclaw-879",
-          "title": "Improve judgment without adding course fatigue",
-          "status": "completed",
-          "updated_at": "2026-02-14T04:14:29Z"
         }
       ],
       "recentOutputs": [
@@ -1578,36 +1563,35 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-887",
+        "focusTaskId": "openclaw-889",
         "total": 9,
-        "done": 2,
-        "remaining": 7,
-        "doneIds": [
-          "topic-scout",
-          "research-analyst"
-        ],
+        "done": 0,
+        "remaining": 9,
+        "doneIds": [],
         "remainingIds": [
+          "topic-scout",
           "serp-keyword",
           "brief-architect",
+          "research-analyst",
           "writer",
           "seo-optimizer",
           "editor",
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-14T06:59:06Z"
+        "lastStageAt": "2026-02-14T09:52:38Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-14T08:40:17Z",
-        "lastFinishedAt": "2026-02-14T08:39:05Z",
+        "lastStartedAt": "2026-02-14T09:51:58Z",
+        "lastFinishedAt": "2026-02-14T09:51:12Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1672,7 +1656,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-14T08:57:22Z",
+    "updatedAt": "2026-02-14T09:53:35Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
