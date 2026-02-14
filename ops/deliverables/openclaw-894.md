@@ -1,19 +1,18 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-871
+- Task ID: openclaw-894
 - Status: completed
-- Created: 2026-02-14T03:48:40Z
-- Updated: 2026-02-14T03:49:06Z
+- Created: 2026-02-14T10:05:06Z
+- Updated: 2026-02-14T10:05:49Z
 
 ## Summary
-Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow
+Publish using publish_post.py script
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T03:54:20Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T10:06:55Z)
 
 ## Last Error
-OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer
-client_loop: send disconnect: Broken pipe
+OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
 # Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
@@ -62,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow
+Publish using publish_post.py script
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
