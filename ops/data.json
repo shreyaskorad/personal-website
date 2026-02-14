@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-14T00:39:53Z",
+    "updatedAt": "2026-02-14T01:13:49Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -43,18 +43,18 @@
   "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-860",
+      "id": "openclaw-861",
       "title": "Build a practical LXD workflow for small teams shipping weekly",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-14T00:21:50Z",
-      "updatedAt": "2026-02-14T00:39:53Z",
-      "completedAt": "2026-02-14T00:39:53Z",
-      "ageHours": 0.3,
+      "createdAt": "2026-02-14T00:58:08Z",
+      "updatedAt": "2026-02-14T01:13:48Z",
+      "completedAt": "2026-02-14T01:13:48Z",
+      "ageHours": 0.26,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-860.md",
+      "deliverableUrl": "/ops/deliverables/openclaw-861.md",
       "notes": [
         "OpenClaw SSH execution failed."
       ],
@@ -74,7 +74,7 @@
       "createdAt": "2026-02-13T23:44:43Z",
       "updatedAt": "2026-02-13T23:45:24Z",
       "completedAt": "2026-02-13T23:45:24Z",
-      "ageHours": 0.92,
+      "ageHours": 1.49,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track learning transfer metrics; refine project debrief framework",
       "deliverableUrl": "/ops/deliverables/openclaw-858.md",
       "notes": [],
@@ -92,7 +92,7 @@
       "createdAt": "2026-02-13T22:55:34Z",
       "updatedAt": "2026-02-13T22:56:09Z",
       "completedAt": "2026-02-13T22:56:09Z",
-      "ageHours": 1.74,
+      "ageHours": 2.31,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track onboarding judgment metrics; refine checklist-to-judgment transition",
       "deliverableUrl": "/ops/deliverables/openclaw-856.md",
       "notes": [],
@@ -110,7 +110,7 @@
       "createdAt": "2026-02-13T22:38:07Z",
       "updatedAt": "2026-02-13T22:38:14Z",
       "completedAt": "2026-02-13T22:38:14Z",
-      "ageHours": 2.03,
+      "ageHours": 2.6,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-855.md",
       "notes": [],
@@ -128,7 +128,7 @@
       "createdAt": "2026-02-13T21:41:32Z",
       "updatedAt": "2026-02-13T21:42:08Z",
       "completedAt": "2026-02-13T21:42:08Z",
-      "ageHours": 2.97,
+      "ageHours": 3.54,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track behavior-shift metrics; refine coaching enablement framework",
       "deliverableUrl": "/ops/deliverables/openclaw-851.md",
       "notes": [],
@@ -146,7 +146,7 @@
       "createdAt": "2026-02-13T20:27:28Z",
       "updatedAt": "2026-02-13T20:27:47Z",
       "completedAt": "2026-02-13T20:27:47Z",
-      "ageHours": 4.21,
+      "ageHours": 4.77,
       "deliverySummary": "Monitor RSS indexing update in 2-3 hours; re-check after 48h; measure 30-day engagement and decision quality impact",
       "deliverableUrl": "/ops/deliverables/openclaw-844.md",
       "notes": [],
@@ -164,7 +164,7 @@
       "createdAt": "2026-02-13T19:41:21Z",
       "updatedAt": "2026-02-13T19:42:21Z",
       "completedAt": "2026-02-13T19:42:21Z",
-      "ageHours": 4.98,
+      "ageHours": 5.54,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-841.md",
       "notes": [],
@@ -182,7 +182,7 @@
       "createdAt": "2026-02-13T19:38:52Z",
       "updatedAt": "2026-02-13T19:39:42Z",
       "completedAt": "2026-02-13T19:39:42Z",
-      "ageHours": 5.02,
+      "ageHours": 5.58,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-840.md",
       "notes": [],
@@ -200,7 +200,7 @@
       "createdAt": "2026-02-13T19:25:41Z",
       "updatedAt": "2026-02-13T19:25:59Z",
       "completedAt": "2026-02-13T19:25:59Z",
-      "ageHours": 5.24,
+      "ageHours": 5.8,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-834.md",
       "notes": [],
@@ -234,11 +234,17 @@
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-14T00:39:53Z",
+      "timestamp": "2026-02-14T01:13:48Z",
       "message": "OpenClaw SSH execution failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-14T01:13:48Z",
+      "type": "skipped",
+      "taskId": "capture-696",
+      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
+    },
     {
       "timestamp": "2026-02-14T00:39:53Z",
       "type": "skipped",
@@ -592,16 +598,10 @@
       "type": "skipped",
       "taskId": "capture-676",
       "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\n[diagnostic] lane task error: lane=main durationMs=410 error=\"Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\"\n[diagnostic] lane task error: lane=session:agent:main:main durationMs=419 error=\"Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\"\nError: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory"
-    },
-    {
-      "timestamp": "2026-02-13T18:49:24Z",
-      "type": "executed",
-      "taskId": "capture-676",
-      "message": "Autonomous writing sprint: Design onboarding that builds role judgment instead of checklist compliance: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-14T00:39:53Z",
+    "updatedAt": "2026-02-14T01:13:49Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -682,7 +682,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-14T00:39:56Z",
+      "asOf": "2026-02-14T01:13:53Z",
       "lookbackDays": 28,
       "summary": {
         "users": 33,
@@ -786,7 +786,7 @@
       "error": "",
       "cache": {
         "hit": false,
-        "fetchedAt": "2026-02-14T00:39:56Z"
+        "fetchedAt": "2026-02-14T01:13:53Z"
       }
     },
     "taskStats": {
@@ -802,12 +802,20 @@
     },
     "recentTasks": [
       {
-        "id": "openclaw-860",
+        "id": "openclaw-861",
         "title": "Build a practical LXD workflow for small teams shipping weekly",
         "status": "failed",
-        "updated_at": "2026-02-14T00:39:53Z",
+        "updated_at": "2026-02-14T01:13:48Z",
         "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
         "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-860",
+        "title": "Build a practical LXD workflow for small teams shipping weekly",
+        "status": "cancelled",
+        "updated_at": "2026-02-14T00:58:04Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1175.",
+        "blockers": ""
       },
       {
         "id": "openclaw-859",
@@ -951,14 +959,6 @@
         "status": "cancelled",
         "updated_at": "2026-02-13T20:19:49Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1157.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-841",
-        "title": "Build feedback rituals that convert learning into visible team behavior",
-        "status": "completed",
-        "updated_at": "2026-02-13T19:42:21Z",
-        "next_steps": "",
         "blockers": ""
       }
     ],
@@ -1358,11 +1358,11 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 44,
+        "completed": 43,
         "active": 0,
         "queued": 0,
         "blocked": 1,
-        "cancelled": 75
+        "cancelled": 76
       },
       "today": {
         "completed": 0,
@@ -1399,14 +1399,20 @@
       "bottleneck": {
         "state": "blocked",
         "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-14T00:39:53Z"
+        "at": "2026-02-14T01:13:48Z"
       },
       "recentIdeas": [
         {
-          "id": "openclaw-860",
+          "id": "openclaw-861",
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "failed",
-          "updated_at": "2026-02-14T00:39:53Z"
+          "updated_at": "2026-02-14T01:13:48Z"
+        },
+        {
+          "id": "openclaw-860",
+          "title": "Build a practical LXD workflow for small teams shipping weekly",
+          "status": "cancelled",
+          "updated_at": "2026-02-14T00:58:04Z"
         },
         {
           "id": "openclaw-859",
@@ -1455,12 +1461,6 @@
           "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
           "status": "cancelled",
           "updated_at": "2026-02-13T21:57:21Z"
-        },
-        {
-          "id": "openclaw-851",
-          "title": "Design manager enablement that links coaching actions to team capability growth",
-          "status": "completed",
-          "updated_at": "2026-02-13T21:42:08Z"
         }
       ],
       "recentOutputs": [
@@ -1590,8 +1590,8 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-14T00:21:45Z",
-        "lastFinishedAt": "2026-02-14T00:04:34Z",
+        "lastStartedAt": "2026-02-14T00:58:03Z",
+        "lastFinishedAt": "2026-02-14T00:42:15Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1660,7 +1660,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-14T00:39:53Z",
+    "updatedAt": "2026-02-14T01:13:49Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
