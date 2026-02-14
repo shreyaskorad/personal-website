@@ -1,21 +1,14 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-863
-- Status: completed
-- Created: 2026-02-14T01:48:57Z
-- Updated: 2026-02-14T01:49:48Z
+- Task ID: openclaw-864
+- Status: failed
+- Created: 2026-02-14T02:06:51Z
+- Updated: 2026-02-14T02:22:19Z
 
 ## Summary
-Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LXD workflow
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T02:05:58Z)
-
-## Last Error
-OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer
-client_loop: send disconnect: Broken pipe
-
-## Draft Deliverable (Fallback)
 # Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
 
 ## Objective and success metrics
@@ -62,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LXD workflow
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
