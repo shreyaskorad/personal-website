@@ -1,21 +1,21 @@
-# Deliverable: Design without losing human judgment
+# Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-872
+- Task ID: openclaw-877
 - Status: completed
-- Created: 2026-02-14T03:55:13Z
-- Updated: 2026-02-14T03:55:30Z
+- Created: 2026-02-14T04:05:12Z
+- Updated: 2026-02-14T04:05:38Z
 
 ## Summary
 Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T03:56:27Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T04:06:10Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
+# Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.

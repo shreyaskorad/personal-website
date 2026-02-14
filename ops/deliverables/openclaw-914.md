@@ -1,21 +1,15 @@
-# Deliverable: Build feedback rituals that convert learning into visible team behavior
+# Deliverable: Create L&D reviews that focus on behavior shifts not completion dashboards
 
-- Task ID: openclaw-878
-- Status: completed
-- Created: 2026-02-14T04:07:51Z
-- Updated: 2026-02-14T04:08:08Z
+- Task ID: openclaw-914
+- Status: failed
+- Created: 2026-02-14T11:30:13Z
+- Updated: 2026-02-14T11:30:54Z
 
 ## Summary
-Write article content, format for site, run publish script, verify live status
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T04:12:28Z)
-
-## Last Error
-OpenClaw SSH command timed out after 260s
-
-## Draft Deliverable (Fallback)
-# Deliverable Draft: Build Feedback Rituals That Convert Learning Into Visible Team Behavior SEO blog operating system
+# Deliverable Draft: Create L&D Reviews That Focus On Behavior Shifts Not Completion Dashboards SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -61,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Write article content, format for site, run publish script, verify live status
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
