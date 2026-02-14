@@ -1,15 +1,21 @@
-# Deliverable: Create L&D reviews that focus on behavior shifts not completion dashboards
+# Deliverable: Make learning evidence useful for business reviews without heavy reporting overhead
 
-- Task ID: openclaw-918
-- Status: cancelled
-- Created: 2026-02-14T11:44:47Z
-- Updated: 2026-02-14T11:47:56Z
+- Task ID: openclaw-961
+- Status: completed
+- Created: 2026-02-14T13:45:50Z
+- Updated: 2026-02-14T13:46:07Z
 
 ## Summary
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+No summary provided.
 
 ## Deliverable Output
-# Deliverable Draft: Create L&D Reviews That Focus On Behavior Shifts Not Completion Dashboards SEO blog operating system
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T13:46:28Z)
+
+## Last Error
+OpenClaw returned no usable markdown deliverable.
+
+## Draft Deliverable (Fallback)
+# Deliverable Draft: Make Learning Evidence Useful For Business Reviews Without Heavy Reporting Overhead SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

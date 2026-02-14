@@ -1,22 +1,21 @@
-# Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
+# Deliverable: Improve judgment without adding course fatigue
 
-- Task ID: openclaw-953
+- Task ID: openclaw-957
 - Status: completed
-- Created: 2026-02-14T13:31:21Z
-- Updated: 2026-02-14T13:31:43Z
+- Created: 2026-02-14T13:39:14Z
+- Updated: 2026-02-14T13:39:32Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T13:32:25Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T13:40:37Z)
 
 ## Last Error
-OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model. (rate_limit) | openrouter/openai/gpt-oss-120b:free: Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model. (rate_limit)
-Error: All models failed (2): zai/glm-4.7-flas
+OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
+# Deliverable Draft: Improve Judgment Without Adding Course Fatigue SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.

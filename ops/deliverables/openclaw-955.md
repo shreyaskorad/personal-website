@@ -1,22 +1,21 @@
-# Deliverable: Make learning evidence useful for business reviews without heavy reporting overhead
+# Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-926
+- Task ID: openclaw-955
 - Status: completed
-- Created: 2026-02-14T12:08:29Z
-- Updated: 2026-02-14T12:08:52Z
+- Created: 2026-02-14T13:36:28Z
+- Updated: 2026-02-14T13:36:37Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T12:09:36Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T13:36:59Z)
 
 ## Last Error
-OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: HTTP 429: Rate limit reached for requests (rate_limit) | openrouter/openai/gpt-oss-120b:free: HTTP 429: Rate limit reached for requests (rate_limit)
-Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) 
+OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Make Learning Evidence Useful For Business Reviews Without Heavy Reporting Overhead SEO blog operating system
+# Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
