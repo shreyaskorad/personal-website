@@ -1,14 +1,20 @@
 # Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-997
-- Status: cancelled
-- Created: 2026-02-14T14:56:38Z
-- Updated: 2026-02-14T14:59:44Z
+- Task ID: openclaw-1017
+- Status: completed
+- Created: 2026-02-14T15:40:54Z
+- Updated: 2026-02-14T15:42:20Z
 
 ## Summary
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+No summary provided.
 
 ## Deliverable Output
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T15:43:27Z)
+
+## Last Error
+OpenClaw SSH command failed: Connection to 192.168.1.29 port 22 timed out
+
+## Draft Deliverable (Fallback)
 # Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
 
 ## Objective and success metrics
@@ -55,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
