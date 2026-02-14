@@ -1,21 +1,21 @@
-# Deliverable: Build a practical LXD workflow for small teams shipping weekly
+# Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-948
+- Task ID: openclaw-968
 - Status: completed
-- Created: 2026-02-14T13:18:42Z
-- Updated: 2026-02-14T13:19:08Z
+- Created: 2026-02-14T13:56:53Z
+- Updated: 2026-02-14T13:57:12Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T13:19:36Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T13:58:48Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
+# Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
