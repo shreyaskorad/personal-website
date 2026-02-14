@@ -1,20 +1,20 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-14T12:16:48Z",
+    "updatedAt": "2026-02-14T12:31:58Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
-    "totalTasks": 6,
+    "totalTasks": 5,
     "queued": 0,
     "active": 0,
-    "completed": 5,
+    "completed": 4,
     "due": 1,
     "blocked": 1,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 5,
+      "completed": 4,
       "failed": 1
     }
   },
@@ -28,8 +28,8 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 5,
-      "totalClosed": 5
+      "visible": 4,
+      "totalClosed": 4
     },
     "due": {
       "visible": 1,
@@ -43,18 +43,18 @@
   "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-928",
-      "title": "Design onboarding that builds role judgment instead of checklist compliance",
+      "id": "openclaw-933",
+      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-14T12:14:27Z",
-      "updatedAt": "2026-02-14T12:14:31Z",
-      "completedAt": "2026-02-14T12:14:31Z",
-      "ageHours": 0.04,
+      "createdAt": "2026-02-14T12:30:23Z",
+      "updatedAt": "2026-02-14T12:30:26Z",
+      "completedAt": "2026-02-14T12:30:26Z",
+      "ageHours": 0.03,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-928.md",
+      "deliverableUrl": "/ops/deliverables/openclaw-933.md",
       "notes": [
         "OpenClaw SSH execution failed."
       ],
@@ -74,27 +74,9 @@
       "createdAt": "2026-02-14T12:08:29Z",
       "updatedAt": "2026-02-14T12:08:52Z",
       "completedAt": "2026-02-14T12:08:52Z",
-      "ageHours": 0.14,
+      "ageHours": 0.39,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-926.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-925",
-      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-14T12:07:05Z",
-      "updatedAt": "2026-02-14T12:07:18Z",
-      "completedAt": "2026-02-14T12:07:18Z",
-      "ageHours": 0.16,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-925.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -110,7 +92,7 @@
       "createdAt": "2026-02-14T11:26:28Z",
       "updatedAt": "2026-02-14T11:26:57Z",
       "completedAt": "2026-02-14T11:26:57Z",
-      "ageHours": 0.84,
+      "ageHours": 1.09,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-913.md",
       "notes": [],
@@ -128,7 +110,7 @@
       "createdAt": "2026-02-14T11:22:18Z",
       "updatedAt": "2026-02-14T11:23:38Z",
       "completedAt": "2026-02-14T11:23:38Z",
-      "ageHours": 0.91,
+      "ageHours": 1.16,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-912.md",
       "notes": [],
@@ -146,7 +128,7 @@
       "createdAt": "2026-02-14T10:05:06Z",
       "updatedAt": "2026-02-14T10:05:49Z",
       "completedAt": "2026-02-14T10:05:49Z",
-      "ageHours": 2.2,
+      "ageHours": 2.45,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-894.md",
       "notes": [],
@@ -180,11 +162,47 @@
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-14T12:14:31Z",
+      "timestamp": "2026-02-14T12:30:26Z",
       "message": "OpenClaw SSH execution failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-14T12:30:26Z",
+      "type": "skipped",
+      "taskId": "capture-731",
+      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-14T12:27:12Z",
+      "type": "skipped",
+      "taskId": "capture-731",
+      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-14T12:27:09Z",
+      "type": "executed",
+      "taskId": "capture-731",
+      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project retrospectives: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-14T12:24:03Z",
+      "type": "skipped",
+      "taskId": "capture-730",
+      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-14T12:20:53Z",
+      "type": "skipped",
+      "taskId": "capture-730",
+      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-14T12:17:44Z",
+      "type": "skipped",
+      "taskId": "capture-730",
+      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
     {
       "timestamp": "2026-02-14T12:14:31Z",
       "type": "skipped",
@@ -508,46 +526,10 @@
       "type": "executed",
       "taskId": "capture-714",
       "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=a64f06f7-4372-480e-8d4a-ce83ce1c7e76): Article drafted: Build a practical LxD workflow for small teams shipping weekly, 150-200 words"
-    },
-    {
-      "timestamp": "2026-02-14T09:56:50Z",
-      "type": "executed",
-      "taskId": "capture-714",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T09:55:04Z",
-      "type": "executed",
-      "taskId": "capture-713",
-      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...: Delegated via OpenClaw SSH (status=completed, task_id=ac1d4f82-43cc-40d6-bde6-36f1387116bb): Article drafted: Help cross-functional teams learn faster through shared project retrospectives, 150-200 words"
-    },
-    {
-      "timestamp": "2026-02-14T09:54:31Z",
-      "type": "executed",
-      "taskId": "capture-713",
-      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project retrospectives: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T09:52:38Z",
-      "type": "executed",
-      "taskId": "capture-712",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: Delegated via OpenClaw SSH (status=completed, task_id=c59ef72e-5f48-4cd8-9e51-4423e79f3c91): Article drafted: Design onboarding that builds role judgment instead of checklist compliance, 150-200 words"
-    },
-    {
-      "timestamp": "2026-02-14T08:57:22Z",
-      "type": "skipped",
-      "taskId": "capture-712",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
-    },
-    {
-      "timestamp": "2026-02-14T08:40:21Z",
-      "type": "executed",
-      "taskId": "capture-712",
-      "message": "Autonomous writing sprint: Design onboarding that builds role judgment instead of checklist compliance: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-14T12:16:48Z",
+    "updatedAt": "2026-02-14T12:31:58Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -628,7 +610,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-14T11:59:08Z",
+      "asOf": "2026-02-14T12:29:34Z",
       "lookbackDays": 28,
       "summary": {
         "users": 34,
@@ -726,28 +708,68 @@
       "error": "",
       "cache": {
         "hit": true,
-        "fetchedAt": "2026-02-14T11:59:08Z"
+        "fetchedAt": "2026-02-14T12:29:34Z"
       }
     },
     "taskStats": {
       "total": 80,
-      "completed": 34,
+      "completed": 32,
       "queued": 0,
       "blocked": 1,
       "byStatus": {
         "failed": 1,
-        "cancelled": 45,
-        "completed": 34
+        "cancelled": 47,
+        "completed": 32
       }
     },
     "recentTasks": [
       {
-        "id": "openclaw-928",
-        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "id": "openclaw-933",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
         "status": "failed",
-        "updated_at": "2026-02-14T12:14:31Z",
+        "updated_at": "2026-02-14T12:30:26Z",
         "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
         "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-932",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "cancelled",
+        "updated_at": "2026-02-14T12:30:19Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1247.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-931",
+        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "status": "cancelled",
+        "updated_at": "2026-02-14T12:27:05Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-930",
+        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "status": "cancelled",
+        "updated_at": "2026-02-14T12:23:55Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1245.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-929",
+        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "status": "cancelled",
+        "updated_at": "2026-02-14T12:20:46Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1244.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-928",
+        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "status": "cancelled",
+        "updated_at": "2026-02-14T12:17:36Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1243.",
+        "blockers": ""
       },
       {
         "id": "openclaw-927",
@@ -859,46 +881,6 @@
         "status": "cancelled",
         "updated_at": "2026-02-14T11:33:59Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1229.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-913",
-        "title": "Improve judgment without adding course fatigue",
-        "status": "completed",
-        "updated_at": "2026-02-14T11:26:57Z",
-        "next_steps": "Publish using publish_post.py script",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-912",
-        "title": "Build feedback rituals that convert learning into visible team behavior",
-        "status": "completed",
-        "updated_at": "2026-02-14T11:23:38Z",
-        "next_steps": "Publish using publish_post.py script",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-911",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "cancelled",
-        "updated_at": "2026-02-14T11:22:14Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-910",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "cancelled",
-        "updated_at": "2026-02-14T11:18:01Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1225.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-909",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "cancelled",
-        "updated_at": "2026-02-14T11:13:43Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1224.",
         "blockers": ""
       }
     ],
@@ -1298,11 +1280,11 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 50,
+        "completed": 48,
         "active": 0,
         "queued": 0,
         "blocked": 1,
-        "cancelled": 69
+        "cancelled": 71
       },
       "today": {
         "completed": 29,
@@ -1339,14 +1321,44 @@
       "bottleneck": {
         "state": "blocked",
         "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-14T12:14:31Z"
+        "at": "2026-02-14T12:30:26Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-933",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "failed",
+          "updated_at": "2026-02-14T12:30:26Z"
+        },
+        {
+          "id": "openclaw-932",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "cancelled",
+          "updated_at": "2026-02-14T12:30:19Z"
+        },
+        {
+          "id": "openclaw-931",
+          "title": "Design onboarding that builds role judgment instead of checklist compliance",
+          "status": "cancelled",
+          "updated_at": "2026-02-14T12:27:05Z"
+        },
+        {
+          "id": "openclaw-930",
+          "title": "Design onboarding that builds role judgment instead of checklist compliance",
+          "status": "cancelled",
+          "updated_at": "2026-02-14T12:23:55Z"
+        },
+        {
+          "id": "openclaw-929",
+          "title": "Design onboarding that builds role judgment instead of checklist compliance",
+          "status": "cancelled",
+          "updated_at": "2026-02-14T12:20:46Z"
+        },
+        {
           "id": "openclaw-928",
           "title": "Design onboarding that builds role judgment instead of checklist compliance",
-          "status": "failed",
-          "updated_at": "2026-02-14T12:14:31Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-14T12:17:36Z"
         },
         {
           "id": "openclaw-927",
@@ -1371,36 +1383,6 @@
           "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
           "status": "cancelled",
           "updated_at": "2026-02-14T12:07:01Z"
-        },
-        {
-          "id": "openclaw-923",
-          "title": "Design manager enablement that links coaching actions to team capability growth",
-          "status": "cancelled",
-          "updated_at": "2026-02-14T12:03:52Z"
-        },
-        {
-          "id": "openclaw-922",
-          "title": "Design manager enablement that links coaching actions to team capability growth",
-          "status": "cancelled",
-          "updated_at": "2026-02-14T12:00:39Z"
-        },
-        {
-          "id": "openclaw-921",
-          "title": "Design manager enablement that links coaching actions to team capability growth",
-          "status": "cancelled",
-          "updated_at": "2026-02-14T11:57:25Z"
-        },
-        {
-          "id": "openclaw-920",
-          "title": "Design manager enablement that links coaching actions to team capability growth",
-          "status": "cancelled",
-          "updated_at": "2026-02-14T11:54:15Z"
-        },
-        {
-          "id": "openclaw-919",
-          "title": "Design manager enablement that links coaching actions to team capability growth",
-          "status": "cancelled",
-          "updated_at": "2026-02-14T11:51:06Z"
         }
       ],
       "recentOutputs": [
@@ -1529,8 +1511,8 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-14T12:16:47Z",
-        "lastFinishedAt": "2026-02-14T12:16:02Z",
+        "lastStartedAt": "2026-02-14T12:31:57Z",
+        "lastFinishedAt": "2026-02-14T12:31:12Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
@@ -1599,7 +1581,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-14T12:16:48Z",
+    "updatedAt": "2026-02-14T12:31:58Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
