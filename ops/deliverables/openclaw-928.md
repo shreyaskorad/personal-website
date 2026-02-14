@@ -1,22 +1,15 @@
-# Deliverable: Make learning evidence useful for business reviews without heavy reporting overhead
+# Deliverable: Design onboarding that builds role judgment instead of checklist compliance
 
-- Task ID: openclaw-887
-- Status: completed
-- Created: 2026-02-14T06:58:36Z
-- Updated: 2026-02-14T06:59:06Z
+- Task ID: openclaw-928
+- Status: failed
+- Created: 2026-02-14T12:14:27Z
+- Updated: 2026-02-14T12:14:31Z
 
 ## Summary
-Publish using publish_post.py script
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T07:31:54Z)
-
-## Last Error
-OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer
-client_loop: send disconnect: Broken pipe
-
-## Draft Deliverable (Fallback)
-# Deliverable Draft: Make Learning Evidence Useful For Business Reviews Without Heavy Reporting Overhead SEO blog operating system
+# Deliverable Draft: Design Onboarding That Builds Role Judgment Instead Of Checklist Compliance SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -62,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Publish using publish_post.py script
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
