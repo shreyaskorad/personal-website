@@ -1,21 +1,21 @@
-# Deliverable: Design onboarding that builds role judgment instead of checklist compliance
+# Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-962
+- Task ID: openclaw-987
 - Status: completed
-- Created: 2026-02-14T13:47:17Z
-- Updated: 2026-02-14T13:47:36Z
+- Created: 2026-02-14T14:34:17Z
+- Updated: 2026-02-14T14:34:37Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T13:47:54Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T14:35:50Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Design Onboarding That Builds Role Judgment Instead Of Checklist Compliance SEO blog operating system
+# Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.

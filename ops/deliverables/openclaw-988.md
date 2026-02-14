@@ -1,21 +1,21 @@
-# Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
+# Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-972
+- Task ID: openclaw-988
 - Status: completed
-- Created: 2026-02-14T14:04:50Z
-- Updated: 2026-02-14T14:05:17Z
+- Created: 2026-02-14T14:36:39Z
+- Updated: 2026-02-14T14:36:58Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T14:05:48Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T14:37:20Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
+# Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
