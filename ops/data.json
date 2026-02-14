@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-14T14:52:33Z",
+    "updatedAt": "2026-02-14T15:09:09Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -9,13 +9,12 @@
     "totalTasks": 10,
     "queued": 0,
     "active": 0,
-    "completed": 9,
-    "due": 1,
-    "blocked": 1,
+    "completed": 10,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 9,
-      "failed": 1
+      "completed": 10
     }
   },
   "laneMetrics": {
@@ -28,42 +27,93 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 9,
-      "totalClosed": 9
+      "visible": 10,
+      "totalClosed": 10
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-995",
-      "title": "Design learning prompts that improve decisions during real project pressure",
+      "id": "openclaw-1002",
+      "title": "Design manager enablement that links coaching actions to team capability growth",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-14T14:50:13Z",
-      "updatedAt": "2026-02-14T14:50:17Z",
-      "completedAt": "2026-02-14T14:50:17Z",
-      "ageHours": 0.04,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-995.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-14T15:08:18Z",
+      "updatedAt": "2026-02-14T15:08:50Z",
+      "completedAt": "2026-02-14T15:08:50Z",
+      "ageHours": 0.01,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-1002.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
+    {
+      "id": "openclaw-1001",
+      "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-14T15:06:45Z",
+      "updatedAt": "2026-02-14T15:07:08Z",
+      "completedAt": "2026-02-14T15:07:08Z",
+      "ageHours": 0.04,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-1001.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
+      "id": "openclaw-1000",
+      "title": "Improve judgment without adding course fatigue",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-14T15:05:12Z",
+      "updatedAt": "2026-02-14T15:05:32Z",
+      "completedAt": "2026-02-14T15:05:32Z",
+      "ageHours": 0.07,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-1000.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
+      "id": "openclaw-999",
+      "title": "Build feedback rituals that convert learning into visible team behavior",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-14T15:02:58Z",
+      "updatedAt": "2026-02-14T15:03:08Z",
+      "completedAt": "2026-02-14T15:03:08Z",
+      "ageHours": 0.1,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-999.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
     {
       "id": "openclaw-992",
       "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
@@ -74,7 +124,7 @@
       "createdAt": "2026-02-14T14:42:39Z",
       "updatedAt": "2026-02-14T14:42:57Z",
       "completedAt": "2026-02-14T14:42:57Z",
-      "ageHours": 0.17,
+      "ageHours": 0.44,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-992.md",
       "notes": [],
@@ -92,7 +142,7 @@
       "createdAt": "2026-02-14T14:36:39Z",
       "updatedAt": "2026-02-14T14:36:58Z",
       "completedAt": "2026-02-14T14:36:58Z",
-      "ageHours": 0.27,
+      "ageHours": 0.54,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-988.md",
       "notes": [],
@@ -110,7 +160,7 @@
       "createdAt": "2026-02-14T14:34:17Z",
       "updatedAt": "2026-02-14T14:34:37Z",
       "completedAt": "2026-02-14T14:34:37Z",
-      "ageHours": 0.3,
+      "ageHours": 0.58,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-987.md",
       "notes": [],
@@ -128,7 +178,7 @@
       "createdAt": "2026-02-14T14:26:45Z",
       "updatedAt": "2026-02-14T14:27:04Z",
       "completedAt": "2026-02-14T14:27:04Z",
-      "ageHours": 0.43,
+      "ageHours": 0.71,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-982.md",
       "notes": [],
@@ -146,7 +196,7 @@
       "createdAt": "2026-02-14T14:24:23Z",
       "updatedAt": "2026-02-14T14:24:44Z",
       "completedAt": "2026-02-14T14:24:44Z",
-      "ageHours": 0.47,
+      "ageHours": 0.75,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-981.md",
       "notes": [],
@@ -155,72 +205,18 @@
       "needsReview": false
     },
     {
-      "id": "openclaw-979",
-      "title": "Design manager enablement that links coaching actions to team capability growth",
+      "id": "openclaw-973",
+      "title": "Design learning prompts that improve decisions during real project pressure",
       "source": "openclaw",
       "priority": "medium",
       "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-14T14:21:30Z",
-      "updatedAt": "2026-02-14T14:21:40Z",
-      "completedAt": "2026-02-14T14:21:40Z",
-      "ageHours": 0.52,
+      "createdAt": "2026-02-14T14:06:43Z",
+      "updatedAt": "2026-02-14T14:07:12Z",
+      "completedAt": "2026-02-14T14:07:12Z",
+      "ageHours": 1.04,
       "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-979.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-976",
-      "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-14T14:12:51Z",
-      "updatedAt": "2026-02-14T14:13:20Z",
-      "completedAt": "2026-02-14T14:13:20Z",
-      "ageHours": 0.66,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-976.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-975",
-      "title": "Improve judgment without adding course fatigue",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-14T14:11:02Z",
-      "updatedAt": "2026-02-14T14:11:29Z",
-      "completedAt": "2026-02-14T14:11:29Z",
-      "ageHours": 0.69,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-975.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-974",
-      "title": "Build feedback rituals that convert learning into visible team behavior",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-14T14:08:29Z",
-      "updatedAt": "2026-02-14T14:09:01Z",
-      "completedAt": "2026-02-14T14:09:01Z",
-      "ageHours": 0.73,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-974.md",
+      "deliverableUrl": "/ops/deliverables/openclaw-973.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -243,20 +239,76 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    }
+  ],
+  "errors": [],
+  "recentActivity": [
+    {
+      "timestamp": "2026-02-14T15:08:50Z",
+      "type": "executed",
+      "taskId": "capture-781",
+      "message": "Design manager enablement that links coaching actions to team capability growth: Delegated via OpenClaw SSH (status=completed, task_id=e7a368e1-e861-41a7-a48d-69211786a2de): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
     },
     {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
-    }
-  ],
-  "errors": [
+      "timestamp": "2026-02-14T15:08:18Z",
+      "type": "executed",
+      "taskId": "capture-781",
+      "message": "Autonomous writing sprint: Design manager enablement that links coaching actions to team capability growth: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
-      "source": "openclaw",
-      "timestamp": "2026-02-14T14:50:17Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
-  "recentActivity": [
+      "timestamp": "2026-02-14T15:07:08Z",
+      "type": "executed",
+      "taskId": "capture-780",
+      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: Delegated via OpenClaw SSH (status=completed, task_id=79583f77-e466-41c6-ab61-44c795400cf5): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-14T15:06:45Z",
+      "type": "executed",
+      "taskId": "capture-780",
+      "message": "Autonomous writing sprint: Create L&D reviews that focus on behavior shifts not completion dashboards: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-14T15:05:32Z",
+      "type": "executed",
+      "taskId": "capture-779",
+      "message": "Improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=completed, task_id=2e748aef-56f4-42ae-9d90-eac128883754): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-14T15:05:12Z",
+      "type": "executed",
+      "taskId": "capture-779",
+      "message": "Autonomous writing sprint: Use scenario based practice to improve judgment without adding course fatigue: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-14T15:03:08Z",
+      "type": "executed",
+      "taskId": "capture-778",
+      "message": "Build feedback rituals that convert learning into visible team behavior: Delegated via OpenClaw SSH (status=completed, task_id=419fce30-4b1d-4947-bc90-8a8b765b7958): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-14T14:59:52Z",
+      "type": "skipped",
+      "taskId": "capture-778",
+      "message": "Build feedback rituals that convert learning into visible team behavior: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-14T14:59:48Z",
+      "type": "executed",
+      "taskId": "capture-778",
+      "message": "Autonomous writing sprint: Build feedback rituals that convert learning into visible team behavior: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-14T14:56:42Z",
+      "type": "skipped",
+      "taskId": "capture-777",
+      "message": "Design learning prompts that improve decisions during real project pressure: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-14T14:53:33Z",
+      "type": "skipped",
+      "taskId": "capture-777",
+      "message": "Design learning prompts that improve decisions during real project pressure: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
     {
       "timestamp": "2026-02-14T14:50:17Z",
       "type": "skipped",
@@ -550,76 +602,10 @@
       "type": "executed",
       "taskId": "capture-755",
       "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=4f63cb37-0520-4dff-8c11-7353ef1a9cf0): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-14T13:59:38Z",
-      "type": "executed",
-      "taskId": "capture-755",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T13:57:12Z",
-      "type": "executed",
-      "taskId": "capture-754",
-      "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=completed, task_id=2e4b2e45-2f33-4a8c-98de-d1e0d2f2b2f7): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-14T13:56:53Z",
-      "type": "executed",
-      "taskId": "capture-754",
-      "message": "Autonomous writing sprint: Use AI in learning design without losing human judgment: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T13:55:47Z",
-      "type": "executed",
-      "taskId": "capture-753",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=b7797b6a-b11a-4335-8060-103f9691ff77): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-14T13:55:29Z",
-      "type": "executed",
-      "taskId": "capture-753",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T13:54:21Z",
-      "type": "executed",
-      "taskId": "capture-752",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=a661aedc-4729-4bd4-a8ca-55cf90e125b6): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-14T13:54:02Z",
-      "type": "executed",
-      "taskId": "capture-752",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T13:52:53Z",
-      "type": "executed",
-      "taskId": "capture-751",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=2ff44c41-81ec-4d56-b982-3757c0ced7bd): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-14T13:52:34Z",
-      "type": "executed",
-      "taskId": "capture-751",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T13:51:26Z",
-      "type": "executed",
-      "taskId": "capture-750",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=660c8a2e-2899-4c80-8949-ce0f5890b571): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-14T13:51:08Z",
-      "type": "executed",
-      "taskId": "capture-750",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-14T14:52:33Z",
+    "updatedAt": "2026-02-14T15:09:09Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -700,7 +686,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-14T14:33:28Z",
+      "asOf": "2026-02-14T15:04:22Z",
       "lookbackDays": 28,
       "summary": {
         "users": 34,
@@ -798,28 +784,83 @@
       "error": "",
       "cache": {
         "hit": true,
-        "fetchedAt": "2026-02-14T14:33:28Z"
+        "fetchedAt": "2026-02-14T15:04:22Z"
       }
     },
     "taskStats": {
       "total": 80,
-      "completed": 46,
+      "completed": 50,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
-        "cancelled": 33,
-        "completed": 46
+        "completed": 50,
+        "cancelled": 30
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-1002",
+        "title": "Design manager enablement that links coaching actions to team capability growth",
+        "status": "completed",
+        "updated_at": "2026-02-14T15:08:50Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1001",
+        "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+        "status": "completed",
+        "updated_at": "2026-02-14T15:07:08Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1000",
+        "title": "Improve judgment without adding course fatigue",
+        "status": "completed",
+        "updated_at": "2026-02-14T15:05:32Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-999",
+        "title": "Build feedback rituals that convert learning into visible team behavior",
+        "status": "completed",
+        "updated_at": "2026-02-14T15:03:08Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-998",
+        "title": "Build feedback rituals that convert learning into visible team behavior",
+        "status": "cancelled",
+        "updated_at": "2026-02-14T15:02:54Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1313.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-997",
+        "title": "Design learning prompts that improve decisions during real project pressure",
+        "status": "cancelled",
+        "updated_at": "2026-02-14T14:59:44Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-996",
+        "title": "Design learning prompts that improve decisions during real project pressure",
+        "status": "cancelled",
+        "updated_at": "2026-02-14T14:56:34Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1311.",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-995",
         "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "failed",
-        "updated_at": "2026-02-14T14:50:17Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-14T14:53:25Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1310.",
+        "blockers": ""
       },
       {
         "id": "openclaw-994",
@@ -916,67 +957,63 @@
         "updated_at": "2026-02-14T14:28:34Z",
         "next_steps": "",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-982",
-        "title": "Design onboarding that builds role judgment instead of checklist compliance",
-        "status": "completed",
-        "updated_at": "2026-02-14T14:27:04Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-981",
-        "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-        "status": "completed",
-        "updated_at": "2026-02-14T14:24:44Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-980",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-14T14:23:14Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-979",
-        "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "completed",
-        "updated_at": "2026-02-14T14:21:40Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-978",
-        "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "cancelled",
-        "updated_at": "2026-02-14T14:21:26Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1293.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-977",
-        "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "cancelled",
-        "updated_at": "2026-02-14T14:18:17Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1292.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-976",
-        "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-        "status": "completed",
-        "updated_at": "2026-02-14T14:13:20Z",
-        "next_steps": "",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 1079,
+          "created_at": "2026-02-14T15:08:50Z",
+          "capture_id": 781,
+          "openclaw_row_id": 1002,
+          "source": "openclaw_ssh",
+          "task_title": "Design manager enablement that links coaching actions to team capability growth",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1078,
+          "created_at": "2026-02-14T15:07:08Z",
+          "capture_id": 780,
+          "openclaw_row_id": 1001,
+          "source": "openclaw_ssh",
+          "task_title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1077,
+          "created_at": "2026-02-14T15:05:32Z",
+          "capture_id": 779,
+          "openclaw_row_id": 1000,
+          "source": "openclaw_ssh",
+          "task_title": "Improve judgment without adding course fatigue",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1076,
+          "created_at": "2026-02-14T15:03:08Z",
+          "capture_id": 778,
+          "openclaw_row_id": 999,
+          "source": "openclaw_ssh",
+          "task_title": "Build feedback rituals that convert learning into visible team behavior",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
         {
           "id": 1075,
           "created_at": "2026-02-14T14:42:57Z",
@@ -1114,58 +1151,6 @@
           "openclaw_row_id": 982,
           "source": "openclaw_ssh",
           "task_title": "Design onboarding that builds role judgment instead of checklist compliance",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1064,
-          "created_at": "2026-02-14T14:24:44Z",
-          "capture_id": 765,
-          "openclaw_row_id": 981,
-          "source": "openclaw_ssh",
-          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1063,
-          "created_at": "2026-02-14T14:23:14Z",
-          "capture_id": 764,
-          "openclaw_row_id": 980,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning tran...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1062,
-          "created_at": "2026-02-14T14:21:40Z",
-          "capture_id": 763,
-          "openclaw_row_id": 979,
-          "source": "openclaw_ssh",
-          "task_title": "Design manager enablement that links coaching actions to team capability growth",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1061,
-          "created_at": "2026-02-14T14:13:20Z",
-          "capture_id": 762,
-          "openclaw_row_id": 976,
-          "source": "openclaw_ssh",
-          "task_title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
           "agent_id": "supervisor",
           "agent_role": "Supervisor",
           "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
@@ -1370,27 +1355,27 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 66,
+        "completed": 64,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 53
+        "blocked": 0,
+        "cancelled": 56
       },
       "today": {
-        "completed": 66,
+        "completed": 64,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-992",
-        "row_id": 992,
-        "capture_id": 776,
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "id": "openclaw-1002",
+        "row_id": 1002,
+        "capture_id": 781,
+        "title": "Design manager enablement that links coaching actions to team capability growth",
         "status": "completed",
-        "updated_at": "2026-02-14T14:42:57Z",
+        "updated_at": "2026-02-14T15:08:50Z",
         "next_steps": "",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
@@ -1403,22 +1388,64 @@
       },
       "focusNote": {
         "agent_id": "supervisor",
-        "created_at": "2026-02-14T14:42:57Z",
+        "created_at": "2026-02-14T15:08:50Z",
         "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
         "action_hint": "",
         "handoff_to": ""
       },
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-14T14:50:17Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-14T15:07:29Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-1002",
+          "title": "Design manager enablement that links coaching actions to team capability growth",
+          "status": "completed",
+          "updated_at": "2026-02-14T15:08:50Z"
+        },
+        {
+          "id": "openclaw-1001",
+          "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+          "status": "completed",
+          "updated_at": "2026-02-14T15:07:08Z"
+        },
+        {
+          "id": "openclaw-1000",
+          "title": "Improve judgment without adding course fatigue",
+          "status": "completed",
+          "updated_at": "2026-02-14T15:05:32Z"
+        },
+        {
+          "id": "openclaw-999",
+          "title": "Build feedback rituals that convert learning into visible team behavior",
+          "status": "completed",
+          "updated_at": "2026-02-14T15:03:08Z"
+        },
+        {
+          "id": "openclaw-998",
+          "title": "Build feedback rituals that convert learning into visible team behavior",
+          "status": "cancelled",
+          "updated_at": "2026-02-14T15:02:54Z"
+        },
+        {
+          "id": "openclaw-997",
+          "title": "Design learning prompts that improve decisions during real project pressure",
+          "status": "cancelled",
+          "updated_at": "2026-02-14T14:59:44Z"
+        },
+        {
+          "id": "openclaw-996",
+          "title": "Design learning prompts that improve decisions during real project pressure",
+          "status": "cancelled",
+          "updated_at": "2026-02-14T14:56:34Z"
+        },
+        {
           "id": "openclaw-995",
           "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "failed",
-          "updated_at": "2026-02-14T14:50:17Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-14T14:53:25Z"
         },
         {
           "id": "openclaw-994",
@@ -1431,48 +1458,6 @@
           "title": "Design learning prompts that improve decisions during real project pressure",
           "status": "cancelled",
           "updated_at": "2026-02-14T14:47:01Z"
-        },
-        {
-          "id": "openclaw-992",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-14T14:42:57Z"
-        },
-        {
-          "id": "openclaw-991",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-14T14:41:28Z"
-        },
-        {
-          "id": "openclaw-990",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-14T14:39:58Z"
-        },
-        {
-          "id": "openclaw-989",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-14T14:38:30Z"
-        },
-        {
-          "id": "openclaw-988",
-          "title": "Design without losing human judgment",
-          "status": "completed",
-          "updated_at": "2026-02-14T14:36:58Z"
-        },
-        {
-          "id": "openclaw-987",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-14T14:34:37Z"
-        },
-        {
-          "id": "openclaw-986",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-14T14:33:02Z"
         }
       ],
       "recentOutputs": [
@@ -1578,7 +1563,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-992",
+        "focusTaskId": "openclaw-1002",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1594,19 +1579,19 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-14T14:42:57Z"
+        "lastStageAt": "2026-02-14T15:08:50Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-14T14:52:33Z",
-        "lastFinishedAt": "2026-02-14T14:51:48Z",
+        "lastStartedAt": "2026-02-14T15:08:14Z",
+        "lastFinishedAt": "2026-02-14T15:07:29Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1671,7 +1656,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-14T14:52:33Z",
+    "updatedAt": "2026-02-14T15:09:09Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
