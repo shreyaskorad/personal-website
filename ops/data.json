@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-14T10:25:24Z",
+    "updatedAt": "2026-02-14T10:40:56Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -9,13 +9,12 @@
     "totalTasks": 10,
     "queued": 0,
     "active": 0,
-    "completed": 9,
-    "due": 1,
-    "blocked": 1,
+    "completed": 10,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 9,
-      "failed": 1
+      "completed": 10
     }
   },
   "laneMetrics": {
@@ -28,42 +27,39 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 9,
-      "totalClosed": 9
+      "visible": 10,
+      "totalClosed": 10
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-899",
-      "title": "Design without losing human judgment",
+      "id": "openclaw-902",
+      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-14T10:24:17Z",
-      "updatedAt": "2026-02-14T10:25:24Z",
-      "completedAt": "2026-02-14T10:25:24Z",
-      "ageHours": 0.02,
-      "deliverySummary": "Rewrite required before publish. Violations: repeats the same core point",
-      "deliverableUrl": "/ops/deliverables/openclaw-899.md",
-      "notes": [
-        "Publish quality gate failed."
-      ],
+      "createdAt": "2026-02-14T10:38:24Z",
+      "updatedAt": "2026-02-14T10:39:21Z",
+      "completedAt": "2026-02-14T10:39:21Z",
+      "ageHours": 0.04,
+      "deliverySummary": "Publish using publish_post.py script",
+      "deliverableUrl": "/ops/deliverables/openclaw-902.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
     {
       "id": "openclaw-894",
       "title": "Build a practical LXD workflow for small teams shipping weekly",
@@ -74,27 +70,9 @@
       "createdAt": "2026-02-14T10:05:06Z",
       "updatedAt": "2026-02-14T10:05:49Z",
       "completedAt": "2026-02-14T10:05:49Z",
-      "ageHours": 0.34,
+      "ageHours": 0.6,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-894.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-890",
-      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-14T09:54:31Z",
-      "updatedAt": "2026-02-14T09:55:04Z",
-      "completedAt": "2026-02-14T09:55:04Z",
-      "ageHours": 0.52,
-      "deliverySummary": "Publish using publish_post.py script",
-      "deliverableUrl": "/ops/deliverables/openclaw-890.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -110,7 +88,7 @@
       "createdAt": "2026-02-14T09:52:02Z",
       "updatedAt": "2026-02-14T09:52:38Z",
       "completedAt": "2026-02-14T09:52:38Z",
-      "ageHours": 0.56,
+      "ageHours": 0.82,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-889.md",
       "notes": [],
@@ -128,7 +106,7 @@
       "createdAt": "2026-02-14T06:58:36Z",
       "updatedAt": "2026-02-14T06:59:06Z",
       "completedAt": "2026-02-14T06:59:06Z",
-      "ageHours": 3.45,
+      "ageHours": 3.71,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-887.md",
       "notes": [],
@@ -146,7 +124,7 @@
       "createdAt": "2026-02-14T04:18:23Z",
       "updatedAt": "2026-02-14T04:19:06Z",
       "completedAt": "2026-02-14T04:19:06Z",
-      "ageHours": 6.12,
+      "ageHours": 6.38,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-881.md",
       "notes": [],
@@ -164,7 +142,7 @@
       "createdAt": "2026-02-14T04:16:11Z",
       "updatedAt": "2026-02-14T04:16:29Z",
       "completedAt": "2026-02-14T04:16:29Z",
-      "ageHours": 6.15,
+      "ageHours": 6.41,
       "deliverySummary": "Write article content, publish via publish_post.py, verify live status",
       "deliverableUrl": "/ops/deliverables/openclaw-880.md",
       "notes": [],
@@ -182,7 +160,7 @@
       "createdAt": "2026-02-14T04:13:19Z",
       "updatedAt": "2026-02-14T04:14:29Z",
       "completedAt": "2026-02-14T04:14:29Z",
-      "ageHours": 6.2,
+      "ageHours": 6.46,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-879.md",
       "notes": [],
@@ -200,7 +178,7 @@
       "createdAt": "2026-02-14T04:07:51Z",
       "updatedAt": "2026-02-14T04:08:08Z",
       "completedAt": "2026-02-14T04:08:08Z",
-      "ageHours": 6.29,
+      "ageHours": 6.55,
       "deliverySummary": "Write article content, format for site, run publish script, verify live status",
       "deliverableUrl": "/ops/deliverables/openclaw-878.md",
       "notes": [],
@@ -218,9 +196,27 @@
       "createdAt": "2026-02-14T04:05:12Z",
       "updatedAt": "2026-02-14T04:05:38Z",
       "completedAt": "2026-02-14T04:05:38Z",
-      "ageHours": 6.34,
+      "ageHours": 6.6,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-877.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
+      "id": "openclaw-872",
+      "title": "Design without losing human judgment",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-14T03:55:13Z",
+      "updatedAt": "2026-02-14T03:55:30Z",
+      "completedAt": "2026-02-14T03:55:30Z",
+      "ageHours": 6.76,
+      "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow",
+      "deliverableUrl": "/ops/deliverables/openclaw-872.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -243,20 +239,40 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    }
+  ],
+  "errors": [],
+  "recentActivity": [
+    {
+      "timestamp": "2026-02-14T10:39:21Z",
+      "type": "executed",
+      "taskId": "capture-720",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=29caa08c-722e-438f-ab4b-5d37bbdd2ec8): Article drafted: Coach managers to run better learning conversations in weekly one-on-ones, 150-200 words"
     },
     {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
-    }
-  ],
-  "errors": [
+      "timestamp": "2026-02-14T10:38:24Z",
+      "type": "executed",
+      "taskId": "capture-720",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
-      "source": "openclaw",
-      "timestamp": "2026-02-14T10:25:24Z",
-      "message": "Publish quality gate failed."
-    }
-  ],
-  "recentActivity": [
+      "timestamp": "2026-02-14T10:35:44Z",
+      "type": "executed",
+      "taskId": "capture-719",
+      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: Delegated via OpenClaw SSH (status=completed, task_id=6252092f-1cdc-42a1-b3c5-7d89242893c7): Article drafted: Create learning opportunities that build judgment through real decisions, 150-200 words"
+    },
+    {
+      "timestamp": "2026-02-14T10:30:00Z",
+      "type": "executed",
+      "taskId": "capture-719",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=8cdc4857-9d06-4232-ba70-4cc3b24912bb): Article drafted: Coach managers to run better learning conversations in weekly one-on-ones, 150-200 words"
+    },
+    {
+      "timestamp": "2026-02-14T10:28:36Z",
+      "type": "executed",
+      "taskId": "capture-719",
+      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-14T10:25:24Z",
       "type": "executed",
@@ -586,40 +602,10 @@
       "type": "skipped",
       "taskId": "capture-698",
       "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
-    },
-    {
-      "timestamp": "2026-02-14T02:22:19Z",
-      "type": "skipped",
-      "taskId": "capture-698",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
-    },
-    {
-      "timestamp": "2026-02-14T02:06:51Z",
-      "type": "executed",
-      "taskId": "capture-698",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T01:49:48Z",
-      "type": "executed",
-      "taskId": "capture-697",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=a4d2c890-baf4-4825-b686-66d7bb2e8ef9): Article live: 200 status, slug canonical match, sitemap indexed, RSS pending; measurement plan set"
-    },
-    {
-      "timestamp": "2026-02-14T01:48:57Z",
-      "type": "executed",
-      "taskId": "capture-697",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T01:31:27Z",
-      "type": "executed",
-      "taskId": "capture-696",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=100d2e7b-5e95-4461-9a54-3098bf1ffda3): "
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-14T10:25:24Z",
+    "updatedAt": "2026-02-14T10:40:56Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -797,29 +783,52 @@
       ],
       "error": "",
       "cache": {
-        "hit": false,
+        "hit": true,
         "fetchedAt": "2026-02-14T10:25:27Z"
       }
     },
     "taskStats": {
       "total": 80,
-      "completed": 40,
+      "completed": 42,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
-        "cancelled": 39,
-        "completed": 40
+        "completed": 42,
+        "cancelled": 38
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-902",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "completed",
+        "updated_at": "2026-02-14T10:39:21Z",
+        "next_steps": "Publish using publish_post.py script",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-901",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "completed",
+        "updated_at": "2026-02-14T10:35:44Z",
+        "next_steps": "Publish using publish_post.py script",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-900",
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "status": "cancelled",
+        "updated_at": "2026-02-14T10:34:17Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1215.",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-899",
         "title": "Design without losing human judgment",
-        "status": "failed",
-        "updated_at": "2026-02-14T10:25:24Z",
-        "next_steps": "Rewrite required before publish. Violations: repeats the same core point",
-        "blockers": "Publish quality gate failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-14T10:28:32Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-898",
@@ -948,55 +957,18 @@
         "updated_at": "2026-02-14T04:30:23Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1198.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-882",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "cancelled",
-        "updated_at": "2026-02-14T04:26:14Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1197.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-881",
-        "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "completed",
-        "updated_at": "2026-02-14T04:19:06Z",
-        "next_steps": "Publish using publish_post.py script",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-880",
-        "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-        "status": "completed",
-        "updated_at": "2026-02-14T04:16:29Z",
-        "next_steps": "Write article content, publish via publish_post.py, verify live status",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
         {
-          "id": 955,
-          "created_at": "2026-02-14T10:25:24Z",
-          "capture_id": 718,
-          "openclaw_row_id": 899,
+          "id": 976,
+          "created_at": "2026-02-14T10:39:21Z",
+          "capture_id": 720,
+          "openclaw_row_id": 902,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "# Design without losing human judgment Do your AI tools ever override the best judgment, or do they support it? I once joined a design team that automated every decision through an AI assistant. When the AI made a suggestion that felt off, the team followed it anyway. The output looked consistent, but the decisions...",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 954,
-          "created_at": "2026-02-14T10:21:11Z",
-          "capture_id": 718,
-          "openclaw_row_id": 898,
-          "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "supervisor",
           "agent_role": "Supervisor",
           "note": "Article ready for publishing via publish_post.py script",
@@ -1004,12 +976,12 @@
           "handoff_to": "supervisor"
         },
         {
-          "id": 953,
-          "created_at": "2026-02-14T10:21:11Z",
-          "capture_id": 718,
-          "openclaw_row_id": 898,
+          "id": 975,
+          "created_at": "2026-02-14T10:39:21Z",
+          "capture_id": 720,
+          "openclaw_row_id": 902,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "publishing-qa",
           "agent_role": "Publishing QA",
           "note": "Article ready for publishing via publish_post.py script",
@@ -1017,25 +989,25 @@
           "handoff_to": "supervisor"
         },
         {
-          "id": 952,
-          "created_at": "2026-02-14T10:21:11Z",
-          "capture_id": 718,
-          "openclaw_row_id": 898,
+          "id": 974,
+          "created_at": "2026-02-14T10:39:21Z",
+          "capture_id": 720,
+          "openclaw_row_id": 902,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "refresh-planner",
           "agent_role": "Refresh Planner",
-          "note": "Update cadence: quarterly design reviews, annual judgment audit",
-          "action_hint": "Align refresh triggers with design quality metrics",
+          "note": "Update cadence: quarterly coaching reviews, annual manager audit",
+          "action_hint": "Align refresh triggers with coaching quality metrics",
           "handoff_to": "supervisor"
         },
         {
-          "id": 951,
-          "created_at": "2026-02-14T10:21:11Z",
-          "capture_id": 718,
-          "openclaw_row_id": 898,
+          "id": 973,
+          "created_at": "2026-02-14T10:39:21Z",
+          "capture_id": 720,
+          "openclaw_row_id": 902,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "editor",
           "agent_role": "Editor",
           "note": "Article refined to 200 words, sentence-case headings, no em dashes",
@@ -1043,90 +1015,51 @@
           "handoff_to": "refresh-planner"
         },
         {
-          "id": 950,
-          "created_at": "2026-02-14T10:21:11Z",
-          "capture_id": 718,
-          "openclaw_row_id": 898,
+          "id": 972,
+          "created_at": "2026-02-14T10:39:21Z",
+          "capture_id": 720,
+          "openclaw_row_id": 902,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "writer",
           "agent_role": "Writer",
           "note": "Article written with reflective question and workplace scenario",
-          "action_hint": "Include practical scenario of AI suggesting design options",
+          "action_hint": "Include practical scenario of manager adding learning check",
           "handoff_to": "editor"
         },
         {
-          "id": 949,
-          "created_at": "2026-02-14T10:21:11Z",
-          "capture_id": 718,
-          "openclaw_row_id": 898,
+          "id": 971,
+          "created_at": "2026-02-14T10:39:21Z",
+          "capture_id": 720,
+          "openclaw_row_id": 902,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "research-analyst",
           "agent_role": "Research Analyst",
-          "note": "Will validate judgment-preserving patterns from team memory",
-          "action_hint": "Gather case studies of successful AI-human collaboration",
+          "note": "Will validate coaching patterns from team memory",
+          "action_hint": "Gather case studies of effective one-on-one conversations",
           "handoff_to": "writer"
         },
         {
-          "id": 948,
-          "created_at": "2026-02-14T10:21:11Z",
-          "capture_id": 718,
-          "openclaw_row_id": 898,
+          "id": 970,
+          "created_at": "2026-02-14T10:39:21Z",
+          "capture_id": 720,
+          "openclaw_row_id": 902,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
           "agent_id": "topic-scout",
           "agent_role": "Topic Scout",
-          "note": "Selected judgment-supporting AI design topic",
-          "action_hint": "Document case studies of AI-assisted decision making",
+          "note": "Selected manager coaching conversations topic with practical relevance",
+          "action_hint": "Document one-on-one patterns that surface learning",
           "handoff_to": "research-analyst"
         },
         {
-          "id": 947,
-          "created_at": "2026-02-14T10:16:03Z",
-          "capture_id": 718,
-          "openclaw_row_id": 897,
+          "id": 969,
+          "created_at": "2026-02-14T10:35:44Z",
+          "capture_id": 719,
+          "openclaw_row_id": 901,
           "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "PRE-PUSH-CHECKLIST RESULT Check | PASS/FAIL/N/A | Evidence Git hygiene | PASS | clean tree, branch main up to date with origin/main Sync safety | PASS | origin fetched, no ahead/behind detected Anti-pattern scan | FAIL | duplicate opening sentences found (e.g., build-a-practical-lxd-workflow-for-small-teams-shipping...",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 946,
-          "created_at": "2026-02-14T10:12:13Z",
-          "capture_id": 718,
-          "openclaw_row_id": 896,
-          "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Publish using publish_post.py script",
-          "action_hint": "Publish using publish_post.py script",
-          "handoff_to": ""
-        },
-        {
-          "id": 945,
-          "created_at": "2026-02-14T10:08:22Z",
-          "capture_id": 718,
-          "openclaw_row_id": 895,
-          "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Publish using publish_post.py script",
-          "action_hint": "Publish using publish_post.py script",
-          "handoff_to": ""
-        },
-        {
-          "id": 944,
-          "created_at": "2026-02-14T10:05:49Z",
-          "capture_id": 717,
-          "openclaw_row_id": 894,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
           "agent_id": "supervisor",
           "agent_role": "Supervisor",
           "note": "Article ready for publishing via publish_post.py script",
@@ -1134,57 +1067,118 @@
           "handoff_to": "supervisor"
         },
         {
-          "id": 943,
-          "created_at": "2026-02-14T10:05:49Z",
-          "capture_id": 717,
-          "openclaw_row_id": 894,
+          "id": 968,
+          "created_at": "2026-02-14T10:35:44Z",
+          "capture_id": 719,
+          "openclaw_row_id": 901,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
           "agent_id": "publishing-qa",
           "agent_role": "Publishing QA",
-          "note": "Article verified live with full content; awaiting RSS sync",
-          "action_hint": "Refresh check after 48h; track engagement",
+          "note": "Article ready for publishing via publish_post.py script",
+          "action_hint": "Execute publish script and verify live status",
           "handoff_to": "supervisor"
         },
         {
-          "id": 942,
-          "created_at": "2026-02-14T10:05:49Z",
-          "capture_id": 717,
-          "openclaw_row_id": 894,
+          "id": 967,
+          "created_at": "2026-02-14T10:35:44Z",
+          "capture_id": 719,
+          "openclaw_row_id": 901,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
           "agent_id": "refresh-planner",
           "agent_role": "Refresh Planner",
-          "note": "Update cadence: quarterly workflow reviews, annual shipping\u8282\u594f audit",
-          "action_hint": "Align refresh triggers with business performance metrics",
+          "note": "Update cadence: quarterly learning reviews, annual judgment audit",
+          "action_hint": "Align refresh triggers with decision quality metrics",
           "handoff_to": "supervisor"
         },
         {
-          "id": 941,
-          "created_at": "2026-02-14T10:05:49Z",
-          "capture_id": 717,
-          "openclaw_row_id": 894,
+          "id": 966,
+          "created_at": "2026-02-14T10:35:44Z",
+          "capture_id": 719,
+          "openclaw_row_id": 901,
           "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
           "agent_id": "editor",
           "agent_role": "Editor",
           "note": "Article refined to 200 words, sentence-case headings, no em dashes",
           "action_hint": "Ensure personal voice and practical scenarios",
           "handoff_to": "refresh-planner"
+        },
+        {
+          "id": 965,
+          "created_at": "2026-02-14T10:35:44Z",
+          "capture_id": 719,
+          "openclaw_row_id": 901,
+          "source": "openclaw_ssh",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "agent_id": "writer",
+          "agent_role": "Writer",
+          "note": "Article written with reflective question and workplace scenario",
+          "action_hint": "Include practical scenario of manager asking about decisions",
+          "handoff_to": "editor"
+        },
+        {
+          "id": 964,
+          "created_at": "2026-02-14T10:35:44Z",
+          "capture_id": 719,
+          "openclaw_row_id": 901,
+          "source": "openclaw_ssh",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "agent_id": "research-analyst",
+          "agent_role": "Research Analyst",
+          "note": "Will validate judgment evidence from team memory",
+          "action_hint": "Gather case studies of decision-focused learning",
+          "handoff_to": "writer"
+        },
+        {
+          "id": 963,
+          "created_at": "2026-02-14T10:35:44Z",
+          "capture_id": 719,
+          "openclaw_row_id": 901,
+          "source": "openclaw_ssh",
+          "task_title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "agent_id": "topic-scout",
+          "agent_role": "Topic Scout",
+          "note": "Selected judgment-building learning opportunities topic",
+          "action_hint": "Document decision-based learning patterns",
+          "handoff_to": "research-analyst"
+        },
+        {
+          "id": 962,
+          "created_at": "2026-02-14T10:30:00Z",
+          "capture_id": 719,
+          "openclaw_row_id": 900,
+          "source": "openclaw_ssh",
+          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Article ready for publishing via publish_post.py script",
+          "action_hint": "Execute publish script and verify live status",
+          "handoff_to": "supervisor"
         }
       ]
     },
     "publishStats": {
-      "total": 72,
+      "total": 73,
       "published": 3,
-      "failed": 48,
+      "failed": 49,
       "ignored": 21,
       "byStatus": {
-        "failed": 48,
+        "failed": 49,
         "ignored": 21,
         "published": 3
       },
       "recent": [
+        {
+          "openclaw_row_id": 900,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: word count 201 outside 150-200; repeats the same core point",
+          "updated_at": "2026-02-14T10:31:16Z"
+        },
         {
           "openclaw_row_id": 899,
           "status": "failed",
@@ -1355,42 +1349,33 @@
           "commit": "",
           "error": "Style rules violation: repeats the same core point",
           "updated_at": "2026-02-13T15:45:55Z"
-        },
-        {
-          "openclaw_row_id": 805,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-13T15:39:00Z"
         }
       ]
     },
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 56,
+        "completed": 57,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "cancelled": 63
       },
       "today": {
-        "completed": 21,
+        "completed": 23,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-894",
-        "row_id": 894,
-        "capture_id": 717,
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
+        "id": "openclaw-902",
+        "row_id": 902,
+        "capture_id": 720,
+        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
         "status": "completed",
-        "updated_at": "2026-02-14T10:05:49Z",
+        "updated_at": "2026-02-14T10:39:21Z",
         "next_steps": "Publish using publish_post.py script",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
@@ -1403,22 +1388,40 @@
       },
       "focusNote": {
         "agent_id": "supervisor",
-        "created_at": "2026-02-14T10:05:49Z",
+        "created_at": "2026-02-14T10:39:21Z",
         "note": "Article ready for publishing via publish_post.py script",
         "action_hint": "Execute publish script and verify live status",
         "handoff_to": "supervisor"
       },
       "bottleneck": {
-        "state": "blocked",
-        "reason": "Publish quality gate failed.",
-        "at": "2026-02-14T10:25:24Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-14T10:39:55Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-902",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "completed",
+          "updated_at": "2026-02-14T10:39:21Z"
+        },
+        {
+          "id": "openclaw-901",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "completed",
+          "updated_at": "2026-02-14T10:35:44Z"
+        },
+        {
+          "id": "openclaw-900",
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "cancelled",
+          "updated_at": "2026-02-14T10:34:17Z"
+        },
+        {
           "id": "openclaw-899",
           "title": "Design without losing human judgment",
-          "status": "failed",
-          "updated_at": "2026-02-14T10:25:24Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-14T10:28:32Z"
         },
         {
           "id": "openclaw-898",
@@ -1455,27 +1458,19 @@
           "title": "Build a practical LXD workflow for small teams shipping weekly",
           "status": "completed",
           "updated_at": "2026-02-14T10:03:26Z"
-        },
-        {
-          "id": "openclaw-892",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-14T10:00:32Z"
-        },
-        {
-          "id": "openclaw-891",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-14T09:57:14Z"
-        },
-        {
-          "id": "openclaw-890",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-14T09:55:04Z"
         }
       ],
       "recentOutputs": [
+        {
+          "id": "openclaw-900",
+          "row_id": 900,
+          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: word count 201 outside 150-200; repeats the same core point",
+          "updated_at": "2026-02-14T10:31:16Z"
+        },
         {
           "id": "openclaw-899",
           "row_id": 899,
@@ -1565,20 +1560,10 @@
           "slug": "",
           "error": "Style rules violation: repeats the same core point",
           "updated_at": "2026-02-14T03:45:34Z"
-        },
-        {
-          "id": "openclaw-869",
-          "row_id": 869,
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-14T03:41:54Z"
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-894",
+        "focusTaskId": "openclaw-902",
         "total": 9,
         "done": 6,
         "remaining": 3,
@@ -1595,19 +1580,19 @@
           "brief-architect",
           "seo-optimizer"
         ],
-        "lastStageAt": "2026-02-14T10:05:49Z"
+        "lastStageAt": "2026-02-14T10:39:21Z"
       },
       "pipeline": {
         "workerStarted": true,
-        "tickInProgress": true,
-        "lastStatus": "running",
+        "tickInProgress": false,
+        "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-14T10:24:13Z",
-        "lastFinishedAt": "2026-02-14T10:23:28Z",
+        "lastStartedAt": "2026-02-14T10:38:19Z",
+        "lastFinishedAt": "2026-02-14T10:39:55Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1672,7 +1657,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-14T10:25:24Z",
+    "updatedAt": "2026-02-14T10:40:56Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
