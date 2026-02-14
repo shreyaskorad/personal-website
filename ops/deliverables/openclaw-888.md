@@ -1,21 +1,14 @@
 # Deliverable: Design onboarding that builds role judgment instead of checklist compliance
 
-- Task ID: openclaw-856
-- Status: completed
-- Created: 2026-02-13T22:55:34Z
-- Updated: 2026-02-13T22:56:09Z
+- Task ID: openclaw-888
+- Status: failed
+- Created: 2026-02-14T08:40:21Z
+- Updated: 2026-02-14T08:57:22Z
 
 ## Summary
-Recheck RSS indexing in 48h; monitor 30-day engagement; track onboarding judgment metrics; refine checklist-to-judgment transition
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-13T23:12:55Z)
-
-## Last Error
-OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer
-client_loop: send disconnect: Broken pipe
-
-## Draft Deliverable (Fallback)
 # Deliverable Draft: Design Onboarding That Builds Role Judgment Instead Of Checklist Compliance SEO blog operating system
 
 ## Objective and success metrics
@@ -62,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Recheck RSS indexing in 48h; monitor 30-day engagement; track onboarding judgment metrics; refine checklist-to-judgment transition
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-14T08:38:59Z",
+    "updatedAt": "2026-02-14T08:57:22Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -9,12 +9,13 @@
     "totalTasks": 10,
     "queued": 0,
     "active": 0,
-    "completed": 10,
-    "due": 0,
-    "blocked": 0,
+    "completed": 9,
+    "due": 1,
+    "blocked": 1,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 10
+      "completed": 9,
+      "failed": 1
     }
   },
   "laneMetrics": {
@@ -27,20 +28,41 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 10,
-      "totalClosed": 10
+      "visible": 9,
+      "totalClosed": 9
     },
     "due": {
-      "visible": 0,
+      "visible": 1,
       "reviewRequired": 0,
-      "failed": 0,
+      "failed": 1,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [],
+  "userActionsDue": [
+    {
+      "id": "openclaw-888",
+      "title": "Design onboarding that builds role judgment instead of checklist compliance",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "failed",
+      "sequence": 0,
+      "createdAt": "2026-02-14T08:40:21Z",
+      "updatedAt": "2026-02-14T08:57:22Z",
+      "completedAt": "2026-02-14T08:57:22Z",
+      "ageHours": 0.28,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-888.md",
+      "notes": [
+        "OpenClaw SSH execution failed."
+      ],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
   "completedRecent": [
     {
       "id": "openclaw-887",
@@ -52,7 +74,7 @@
       "createdAt": "2026-02-14T06:58:36Z",
       "updatedAt": "2026-02-14T06:59:06Z",
       "completedAt": "2026-02-14T06:59:06Z",
-      "ageHours": 1.67,
+      "ageHours": 1.98,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-887.md",
       "notes": [],
@@ -70,7 +92,7 @@
       "createdAt": "2026-02-14T04:35:00Z",
       "updatedAt": "2026-02-14T04:35:36Z",
       "completedAt": "2026-02-14T04:35:36Z",
-      "ageHours": 4.07,
+      "ageHours": 4.37,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-885.md",
       "notes": [],
@@ -88,7 +110,7 @@
       "createdAt": "2026-02-14T04:18:23Z",
       "updatedAt": "2026-02-14T04:19:06Z",
       "completedAt": "2026-02-14T04:19:06Z",
-      "ageHours": 4.34,
+      "ageHours": 4.65,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-881.md",
       "notes": [],
@@ -106,7 +128,7 @@
       "createdAt": "2026-02-14T04:16:11Z",
       "updatedAt": "2026-02-14T04:16:29Z",
       "completedAt": "2026-02-14T04:16:29Z",
-      "ageHours": 4.38,
+      "ageHours": 4.69,
       "deliverySummary": "Write article content, publish via publish_post.py, verify live status",
       "deliverableUrl": "/ops/deliverables/openclaw-880.md",
       "notes": [],
@@ -124,7 +146,7 @@
       "createdAt": "2026-02-14T04:13:19Z",
       "updatedAt": "2026-02-14T04:14:29Z",
       "completedAt": "2026-02-14T04:14:29Z",
-      "ageHours": 4.43,
+      "ageHours": 4.73,
       "deliverySummary": "Publish using publish_post.py script",
       "deliverableUrl": "/ops/deliverables/openclaw-879.md",
       "notes": [],
@@ -142,7 +164,7 @@
       "createdAt": "2026-02-14T04:07:51Z",
       "updatedAt": "2026-02-14T04:08:08Z",
       "completedAt": "2026-02-14T04:08:08Z",
-      "ageHours": 4.52,
+      "ageHours": 4.83,
       "deliverySummary": "Write article content, format for site, run publish script, verify live status",
       "deliverableUrl": "/ops/deliverables/openclaw-878.md",
       "notes": [],
@@ -160,7 +182,7 @@
       "createdAt": "2026-02-14T04:05:12Z",
       "updatedAt": "2026-02-14T04:05:38Z",
       "completedAt": "2026-02-14T04:05:38Z",
-      "ageHours": 4.56,
+      "ageHours": 4.87,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-877.md",
       "notes": [],
@@ -178,7 +200,7 @@
       "createdAt": "2026-02-14T03:55:13Z",
       "updatedAt": "2026-02-14T03:55:30Z",
       "completedAt": "2026-02-14T03:55:30Z",
-      "ageHours": 4.73,
+      "ageHours": 5.04,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-872.md",
       "notes": [],
@@ -196,27 +218,9 @@
       "createdAt": "2026-02-14T03:48:40Z",
       "updatedAt": "2026-02-14T03:49:06Z",
       "completedAt": "2026-02-14T03:49:06Z",
-      "ageHours": 4.84,
+      "ageHours": 5.15,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow",
       "deliverableUrl": "/ops/deliverables/openclaw-871.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-856",
-      "title": "Design onboarding that builds role judgment instead of checklist compliance",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-13T22:55:34Z",
-      "updatedAt": "2026-02-13T22:56:09Z",
-      "completedAt": "2026-02-13T22:56:09Z",
-      "ageHours": 9.72,
-      "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track onboarding judgment metrics; refine checklist-to-judgment transition",
-      "deliverableUrl": "/ops/deliverables/openclaw-856.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -239,10 +243,32 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    },
+    {
+      "level": "warn",
+      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-14T08:57:22Z",
+      "message": "OpenClaw SSH execution failed."
+    }
+  ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-14T08:57:22Z",
+      "type": "skipped",
+      "taskId": "capture-712",
+      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
+    },
+    {
+      "timestamp": "2026-02-14T08:40:21Z",
+      "type": "executed",
+      "taskId": "capture-712",
+      "message": "Autonomous writing sprint: Design onboarding that builds role judgment instead of checklist compliance: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-14T06:59:06Z",
       "type": "executed",
@@ -590,22 +616,10 @@
       "type": "skipped",
       "taskId": "capture-691",
       "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
-    },
-    {
-      "timestamp": "2026-02-13T21:08:52Z",
-      "type": "executed",
-      "taskId": "capture-691",
-      "message": "Autonomous writing sprint: Design manager enablement that links coaching actions to team capability growth: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-13T20:53:05Z",
-      "type": "executed",
-      "taskId": "capture-690",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: Delegated via OpenClaw SSH (status=completed, task_id=4a1f902a-1270-4f00-aa0a-1e6dd3d6bf84): # Create L&D reviews that focus on behavior shifts not completion dashboards\n\nMost L&D reviews count how many courses were finished, but they rarely show whether work actually changed. In my team we saw high completion numbers while the same old habits persisted. What if we measured what truly moved instead of what was simply logged?\n\n## Core point\n\nWe replaced the completion dashboard with a simple question: after a learning event, what concrete behavior changed? The team logged these observations in a shared note, linked each shift to a business outcome, and retired the old metric\u2011only view. Managers reported clearer alignment between learning and daily work, and employees felt their effort mattered.\n\n## Practical takeaway\n\nAdd a one\u2011sentence field to your review form that captures the most visible behavior change. Ask the learner to note one example and the manager to confirm it in the next one\u2011on\u2011one. Use those notes to update performance metrics instead of a static completion count.\n\nFocus on behavior shifts, not dashboards, and watch learning become a visible part of everyday work."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-14T08:38:59Z",
+    "updatedAt": "2026-02-14T08:57:22Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -783,21 +797,30 @@
       ],
       "error": "",
       "cache": {
-        "hit": false,
+        "hit": true,
         "fetchedAt": "2026-02-14T08:39:02Z"
       }
     },
     "taskStats": {
       "total": 80,
-      "completed": 37,
+      "completed": 36,
       "queued": 0,
-      "blocked": 0,
+      "blocked": 1,
       "byStatus": {
-        "completed": 37,
+        "failed": 1,
+        "completed": 36,
         "cancelled": 43
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-888",
+        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "status": "failed",
+        "updated_at": "2026-02-14T08:57:22Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
       {
         "id": "openclaw-887",
         "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
@@ -948,14 +971,6 @@
         "status": "cancelled",
         "updated_at": "2026-02-14T03:44:56Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1184.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-868",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "cancelled",
-        "updated_at": "2026-02-14T03:41:02Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
         "blockers": ""
       }
     ],
@@ -1358,14 +1373,14 @@
         "completed": 51,
         "active": 0,
         "queued": 0,
-        "blocked": 0,
-        "cancelled": 69
+        "blocked": 1,
+        "cancelled": 68
       },
       "today": {
         "completed": 15,
         "active": 0,
         "queued": 0,
-        "blocked": 0,
+        "blocked": 1,
         "published": 0
       },
       "activeTask": null,
@@ -1394,11 +1409,17 @@
         "handoff_to": "supervisor"
       },
       "bottleneck": {
-        "state": "idle",
-        "reason": "No active writing run at this moment.",
-        "at": "2026-02-14T07:57:46Z"
+        "state": "blocked",
+        "reason": "OpenClaw SSH execution failed.",
+        "at": "2026-02-14T08:57:22Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-888",
+          "title": "Design onboarding that builds role judgment instead of checklist compliance",
+          "status": "failed",
+          "updated_at": "2026-02-14T08:57:22Z"
+        },
         {
           "id": "openclaw-887",
           "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
@@ -1452,12 +1473,6 @@
           "title": "Improve judgment without adding course fatigue",
           "status": "completed",
           "updated_at": "2026-02-14T04:14:29Z"
-        },
-        {
-          "id": "openclaw-878",
-          "title": "Build feedback rituals that convert learning into visible team behavior",
-          "status": "completed",
-          "updated_at": "2026-02-14T04:08:08Z"
         }
       ],
       "recentOutputs": [
@@ -1587,12 +1602,12 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-14T08:31:22Z",
-        "lastFinishedAt": "2026-02-14T07:57:46Z",
+        "lastStartedAt": "2026-02-14T08:40:17Z",
+        "lastFinishedAt": "2026-02-14T08:39:05Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 0
+          "blocked_or_failed_openclaw": 1
         }
       }
     },
@@ -1657,7 +1672,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-14T08:38:59Z",
+    "updatedAt": "2026-02-14T08:57:22Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
