@@ -1,21 +1,21 @@
-# Deliverable: Improve judgment without adding course fatigue
+# Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-957
+- Task ID: openclaw-973
 - Status: completed
-- Created: 2026-02-14T13:39:14Z
-- Updated: 2026-02-14T13:39:32Z
+- Created: 2026-02-14T14:06:43Z
+- Updated: 2026-02-14T14:07:12Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T13:40:37Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T14:07:40Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Improve Judgment Without Adding Course Fatigue SEO blog operating system
+# Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
