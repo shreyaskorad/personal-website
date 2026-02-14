@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-14T01:13:49Z",
+    "updatedAt": "2026-02-14T01:48:00Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -9,13 +9,12 @@
     "totalTasks": 9,
     "queued": 0,
     "active": 0,
-    "completed": 8,
-    "due": 1,
-    "blocked": 1,
+    "completed": 9,
+    "due": 0,
+    "blocked": 0,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 8,
-      "failed": 1
+      "completed": 9
     }
   },
   "laneMetrics": {
@@ -28,42 +27,39 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 8,
-      "totalClosed": 8
+      "visible": 9,
+      "totalClosed": 9
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-861",
+      "id": "openclaw-862",
       "title": "Build a practical LXD workflow for small teams shipping weekly",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-14T00:58:08Z",
-      "updatedAt": "2026-02-14T01:13:48Z",
-      "completedAt": "2026-02-14T01:13:48Z",
-      "ageHours": 0.26,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-861.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
+      "createdAt": "2026-02-14T01:30:55Z",
+      "updatedAt": "2026-02-14T01:31:27Z",
+      "completedAt": "2026-02-14T01:31:27Z",
+      "ageHours": 0.29,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-862.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
     {
       "id": "openclaw-858",
       "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
@@ -74,7 +70,7 @@
       "createdAt": "2026-02-13T23:44:43Z",
       "updatedAt": "2026-02-13T23:45:24Z",
       "completedAt": "2026-02-13T23:45:24Z",
-      "ageHours": 1.49,
+      "ageHours": 2.06,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track learning transfer metrics; refine project debrief framework",
       "deliverableUrl": "/ops/deliverables/openclaw-858.md",
       "notes": [],
@@ -92,7 +88,7 @@
       "createdAt": "2026-02-13T22:55:34Z",
       "updatedAt": "2026-02-13T22:56:09Z",
       "completedAt": "2026-02-13T22:56:09Z",
-      "ageHours": 2.31,
+      "ageHours": 2.88,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track onboarding judgment metrics; refine checklist-to-judgment transition",
       "deliverableUrl": "/ops/deliverables/openclaw-856.md",
       "notes": [],
@@ -110,7 +106,7 @@
       "createdAt": "2026-02-13T22:38:07Z",
       "updatedAt": "2026-02-13T22:38:14Z",
       "completedAt": "2026-02-13T22:38:14Z",
-      "ageHours": 2.6,
+      "ageHours": 3.17,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-855.md",
       "notes": [],
@@ -128,7 +124,7 @@
       "createdAt": "2026-02-13T21:41:32Z",
       "updatedAt": "2026-02-13T21:42:08Z",
       "completedAt": "2026-02-13T21:42:08Z",
-      "ageHours": 3.54,
+      "ageHours": 4.11,
       "deliverySummary": "Recheck RSS indexing in 48h; monitor 30-day engagement; track behavior-shift metrics; refine coaching enablement framework",
       "deliverableUrl": "/ops/deliverables/openclaw-851.md",
       "notes": [],
@@ -146,7 +142,7 @@
       "createdAt": "2026-02-13T20:27:28Z",
       "updatedAt": "2026-02-13T20:27:47Z",
       "completedAt": "2026-02-13T20:27:47Z",
-      "ageHours": 4.77,
+      "ageHours": 5.34,
       "deliverySummary": "Monitor RSS indexing update in 2-3 hours; re-check after 48h; measure 30-day engagement and decision quality impact",
       "deliverableUrl": "/ops/deliverables/openclaw-844.md",
       "notes": [],
@@ -164,7 +160,7 @@
       "createdAt": "2026-02-13T19:41:21Z",
       "updatedAt": "2026-02-13T19:42:21Z",
       "completedAt": "2026-02-13T19:42:21Z",
-      "ageHours": 5.54,
+      "ageHours": 6.11,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-841.md",
       "notes": [],
@@ -182,7 +178,7 @@
       "createdAt": "2026-02-13T19:38:52Z",
       "updatedAt": "2026-02-13T19:39:42Z",
       "completedAt": "2026-02-13T19:39:42Z",
-      "ageHours": 5.58,
+      "ageHours": 6.15,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-840.md",
       "notes": [],
@@ -200,7 +196,7 @@
       "createdAt": "2026-02-13T19:25:41Z",
       "updatedAt": "2026-02-13T19:25:59Z",
       "completedAt": "2026-02-13T19:25:59Z",
-      "ageHours": 5.8,
+      "ageHours": 6.37,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-834.md",
       "notes": [],
@@ -225,20 +221,16 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-14T01:13:48Z",
-      "message": "OpenClaw SSH execution failed."
-    }
-  ],
+  "errors": [],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-14T01:31:27Z",
+      "type": "executed",
+      "taskId": "capture-696",
+      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=100d2e7b-5e95-4461-9a54-3098bf1ffda3): "
+    },
     {
       "timestamp": "2026-02-14T01:13:48Z",
       "type": "skipped",
@@ -592,16 +584,10 @@
       "type": "executed",
       "taskId": "capture-676",
       "message": "Design onboarding that builds role judgment instead of checklist compliance: Delegated via OpenClaw SSH (status=completed, task_id=a4055ca3-e7f8-4d54-9c9a-7e6b206c8152): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-13T18:49:30Z",
-      "type": "skipped",
-      "taskId": "capture-676",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\n[diagnostic] lane task error: lane=main durationMs=410 error=\"Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\"\n[diagnostic] lane task error: lane=session:agent:main:main durationMs=419 error=\"Error: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory\"\nError: Failed to inspect sandbox image: failed to connect to the docker API at unix:///var/run/docker.sock; check if the path is correct and if the daemon is running: dial unix /var/run/docker.sock: connect: no such file or directory"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-14T01:13:49Z",
+    "updatedAt": "2026-02-14T01:48:00Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -682,7 +668,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-14T01:13:53Z",
+      "asOf": "2026-02-14T01:48:05Z",
       "lookbackDays": 28,
       "summary": {
         "users": 33,
@@ -786,28 +772,35 @@
       "error": "",
       "cache": {
         "hit": false,
-        "fetchedAt": "2026-02-14T01:13:53Z"
+        "fetchedAt": "2026-02-14T01:48:05Z"
       }
     },
     "taskStats": {
       "total": 80,
       "completed": 35,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "failed": 1,
-        "cancelled": 44,
-        "completed": 35
+        "completed": 35,
+        "cancelled": 45
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-862",
+        "title": "Build a practical LXD workflow for small teams shipping weekly",
+        "status": "completed",
+        "updated_at": "2026-02-14T01:31:27Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-861",
         "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "failed",
-        "updated_at": "2026-02-14T01:13:48Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-14T01:30:50Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1176.",
+        "blockers": ""
       },
       {
         "id": "openclaw-860",
@@ -951,14 +944,6 @@
         "status": "cancelled",
         "updated_at": "2026-02-13T20:27:24Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1158.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-842",
-        "title": "Improve judgment without adding course fatigue",
-        "status": "cancelled",
-        "updated_at": "2026-02-13T20:19:49Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1157.",
         "blockers": ""
       }
     ],
@@ -1361,25 +1346,25 @@
         "completed": 43,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 76
+        "blocked": 0,
+        "cancelled": 77
       },
       "today": {
-        "completed": 0,
+        "completed": 1,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-858",
-        "row_id": 858,
-        "capture_id": 695,
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+        "id": "openclaw-862",
+        "row_id": 862,
+        "capture_id": 696,
+        "title": "Build a practical LXD workflow for small teams shipping weekly",
         "status": "completed",
-        "updated_at": "2026-02-13T23:45:24Z",
-        "next_steps": "Recheck RSS indexing in 48h; monitor 30-day engagement; track learning transfer metrics; refine project debrief framework",
+        "updated_at": "2026-02-14T01:31:27Z",
+        "next_steps": "",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
@@ -1389,24 +1374,24 @@
         "openclawQueuedCount": 0,
         "recent": []
       },
-      "focusNote": {
-        "agent_id": "refresh-planner",
-        "created_at": "2026-02-13T23:45:24Z",
-        "note": "Update cadence: quarterly debrief reviews, annual learning transfer audit",
-        "action_hint": "Align refresh triggers with business performance metrics",
-        "handoff_to": "supervisor"
-      },
+      "focusNote": {},
       "bottleneck": {
-        "state": "blocked",
-        "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-14T01:13:48Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-14T01:14:42Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-862",
+          "title": "Build a practical LXD workflow for small teams shipping weekly",
+          "status": "completed",
+          "updated_at": "2026-02-14T01:31:27Z"
+        },
+        {
           "id": "openclaw-861",
           "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "failed",
-          "updated_at": "2026-02-14T01:13:48Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-14T01:30:50Z"
         },
         {
           "id": "openclaw-860",
@@ -1455,12 +1440,6 @@
           "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
           "status": "completed",
           "updated_at": "2026-02-13T21:57:31Z"
-        },
-        {
-          "id": "openclaw-852",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "cancelled",
-          "updated_at": "2026-02-13T21:57:21Z"
         }
       ],
       "recentOutputs": [
@@ -1566,36 +1545,35 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-858",
+        "focusTaskId": "openclaw-862",
         "total": 9,
-        "done": 5,
-        "remaining": 4,
-        "doneIds": [
+        "done": 0,
+        "remaining": 9,
+        "doneIds": [],
+        "remainingIds": [
           "topic-scout",
+          "serp-keyword",
+          "brief-architect",
           "research-analyst",
+          "writer",
+          "seo-optimizer",
           "editor",
           "refresh-planner",
           "publishing-qa"
         ],
-        "remainingIds": [
-          "serp-keyword",
-          "brief-architect",
-          "writer",
-          "seo-optimizer"
-        ],
-        "lastStageAt": "2026-02-13T23:45:24Z"
+        "lastStageAt": ""
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-14T00:58:03Z",
-        "lastFinishedAt": "2026-02-14T00:42:15Z",
+        "lastStartedAt": "2026-02-14T01:30:50Z",
+        "lastFinishedAt": "2026-02-14T01:14:42Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1660,7 +1638,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-14T01:13:49Z",
+    "updatedAt": "2026-02-14T01:48:00Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,

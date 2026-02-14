@@ -1,14 +1,21 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-861
-- Status: failed
-- Created: 2026-02-14T00:58:08Z
-- Updated: 2026-02-14T01:13:48Z
+- Task ID: openclaw-862
+- Status: completed
+- Created: 2026-02-14T01:30:55Z
+- Updated: 2026-02-14T01:31:27Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+No summary provided.
 
 ## Deliverable Output
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T01:48:00Z)
+
+## Last Error
+OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer
+client_loop: send disconnect: Broken pipe
+
+## Draft Deliverable (Fallback)
 # Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
 
 ## Objective and success metrics
@@ -55,10 +62,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
-
-## Blockers / Notes
-OpenClaw SSH execution failed.
+Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
