@@ -1,22 +1,21 @@
-# Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
+# Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-858
+- Task ID: openclaw-877
 - Status: completed
-- Created: 2026-02-13T23:44:43Z
-- Updated: 2026-02-13T23:45:24Z
+- Created: 2026-02-14T04:05:12Z
+- Updated: 2026-02-14T04:05:38Z
 
 ## Summary
-Recheck RSS indexing in 48h; monitor 30-day engagement; track learning transfer metrics; refine project debrief framework
+Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T00:02:40Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T04:06:10Z)
 
 ## Last Error
-OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer
-client_loop: send disconnect: Broken pipe
+OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
+# Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -62,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Recheck RSS indexing in 48h; monitor 30-day engagement; track learning transfer metrics; refine project debrief framework
+Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

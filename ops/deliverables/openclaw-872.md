@@ -1,15 +1,15 @@
 # Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-834
+- Task ID: openclaw-872
 - Status: completed
-- Created: 2026-02-13T19:25:41Z
-- Updated: 2026-02-13T19:25:59Z
+- Created: 2026-02-14T03:55:13Z
+- Updated: 2026-02-14T03:55:30Z
 
 ## Summary
-No summary provided.
+Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-13T19:26:17Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T03:56:27Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
+Recheck RSS indexing in 48h; monitor 30-day engagement; track weekly shipping metrics; refine LxD workflow
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
