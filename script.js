@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextTag = normalizeTag(tag);
         const candidate = nextTag && (nextTag === 'all' || tagCounts.has(nextTag)) ? nextTag : 'all';
         activeTag = candidate;
+        renderFilterButtons();
         applyFilters(options);
     };
 
