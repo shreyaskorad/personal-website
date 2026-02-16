@@ -1,21 +1,21 @@
-# Deliverable: Make learning evidence useful for business reviews without heavy reporting overhead
+# Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-1074
+- Task ID: openclaw-1098
 - Status: completed
-- Created: 2026-02-16T11:48:54Z
-- Updated: 2026-02-16T11:49:15Z
+- Created: 2026-02-16T12:48:01Z
+- Updated: 2026-02-16T12:48:23Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T11:49:59Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T12:48:46Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Make Learning Evidence Useful For Business Reviews Without Heavy Reporting Overhead SEO blog operating system
+# Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
