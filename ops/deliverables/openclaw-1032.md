@@ -1,21 +1,21 @@
-# Deliverable: Build a practical LXD workflow for small teams shipping weekly
+# Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-1028
+- Task ID: openclaw-1032
 - Status: completed
-- Created: 2026-02-16T08:49:06Z
-- Updated: 2026-02-16T08:49:43Z
+- Created: 2026-02-16T08:59:05Z
+- Updated: 2026-02-16T08:59:38Z
 
 ## Summary
-No summary provided.
+Monitor engagement and AI adoption over 30 days
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T08:50:24Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T09:00:31Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
+# Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
+Monitor engagement and AI adoption over 30 days
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
