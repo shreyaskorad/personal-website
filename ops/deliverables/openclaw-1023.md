@@ -1,21 +1,21 @@
-# Deliverable: Make learning evidence useful for business reviews without heavy reporting overhead
+# Deliverable: Design manager enablement that links coaching actions to team capability growth
 
-- Task ID: openclaw-1004
+- Task ID: openclaw-1023
 - Status: completed
-- Created: 2026-02-14T15:11:50Z
-- Updated: 2026-02-14T15:12:14Z
+- Created: 2026-02-16T08:37:42Z
+- Updated: 2026-02-16T08:38:21Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T15:12:33Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T08:39:40Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Make Learning Evidence Useful For Business Reviews Without Heavy Reporting Overhead SEO blog operating system
+# Deliverable Draft: Design Manager Enablement That Links Coaching Actions To Team Capability Growth SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.

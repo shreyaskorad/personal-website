@@ -1,21 +1,15 @@
-# Deliverable: Design onboarding that builds role judgment instead of checklist compliance
+# Deliverable: Create L&D reviews that focus on behavior shifts not completion dashboards
 
-- Task ID: openclaw-1005
+- Task ID: openclaw-1022
 - Status: completed
-- Created: 2026-02-14T15:13:22Z
-- Updated: 2026-02-14T15:13:46Z
+- Created: 2026-02-16T08:36:32Z
+- Updated: 2026-02-16T08:37:38Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-14T15:15:02Z)
-
-## Last Error
-OpenClaw returned no usable markdown deliverable.
-
-## Draft Deliverable (Fallback)
-# Deliverable Draft: Design Onboarding That Builds Role Judgment Instead Of Checklist Compliance SEO blog operating system
+# Deliverable Draft: Create L&D Reviews That Focus On Behavior Shifts Not Completion Dashboards SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
