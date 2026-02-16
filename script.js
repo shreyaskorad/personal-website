@@ -1,3 +1,40 @@
+const normalizeTag = (tag) => {
+    if (!tag) {
+        return '';
+    }
+
+    return tag
+        .replace(/\u00a0/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase();
+};
+
+const formatTagLabel = (tag) => {
+    const normalized = normalizeTag(tag);
+    if (!normalized) {
+        return '';
+    }
+
+    const acronyms = new Map([
+        ['ai', 'AI'],
+        ['lxd', 'LxD'],
+        ['l&d', 'L&D'],
+        ['ld', 'L&D'],
+        ['ux', 'UX'],
+        ['ui', 'UI'],
+        ['seo', 'SEO']
+    ]);
+
+    if (acronyms.has(normalized)) {
+        return acronyms.get(normalized);
+    }
+
+    return normalized
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, (char) => char.toUpperCase());
+};
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
@@ -10,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Close menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
+        navLinks.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 navToggle.classList.remove('active');
@@ -37,9 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleList = document.querySelector('#article-list');
     const articles = Array.from(document.querySelectorAll('.article-card'));
     const searchInput = document.querySelector('#article-search');
-    const filterButtons = Array.from(document.querySelectorAll('.filter-link'));
+    const filterContainer = document.querySelector('.article-filters');
     const emptyState = document.querySelector('#no-results');
-    let activeTag = 'all';
+    const queryParams = new URLSearchParams(window.location.search);
+    let activeTag = normalizeTag(queryParams.get('tag')) || 'all';
 
     const getArticleText = (article, attr, selector) => {
         const fromData = article.dataset[attr];
@@ -52,16 +90,164 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getTags = (article) => {
         const raw = article.dataset.tags || '';
-        return raw.split(',').map(tag => tag.trim().toLowerCase()).filter(Boolean);
+        const tags = raw
+            .split(',')
+            .map((tag) => normalizeTag(tag))
+            .filter(Boolean);
+        return Array.from(new Set(tags));
     };
 
-    const formatTag = (tag) => {
-        if (tag.toLowerCase() === 'ai') {
-            return 'AI';
+    const buildTagCounts = () => {
+        const counts = new Map();
+
+        articles.forEach((article) => {
+            getTags(article).forEach((tag) => {
+                counts.set(tag, (counts.get(tag) || 0) + 1);
+            });
+        });
+
+        return counts;
+    };
+
+    const tagCounts = buildTagCounts();
+
+    if (activeTag !== 'all' && !tagCounts.has(activeTag)) {
+        activeTag = 'all';
+    }
+
+    const sortedTags = Array.from(tagCounts.entries())
+        .sort((a, b) => {
+            if (b[1] !== a[1]) {
+                return b[1] - a[1];
+            }
+            return a[0].localeCompare(b[0]);
+        })
+        .map(([tag]) => tag);
+
+    const syncUrlState = () => {
+        const url = new URL(window.location.href);
+        const query = searchInput ? searchInput.value.trim() : '';
+
+        if (activeTag && activeTag !== 'all') {
+            url.searchParams.set('tag', activeTag);
+        } else {
+            url.searchParams.delete('tag');
         }
-        return tag
-            .replace(/-/g, ' ')
-            .replace(/\b\w/g, (char) => char.toUpperCase());
+
+        if (query) {
+            url.searchParams.set('q', query);
+        } else {
+            url.searchParams.delete('q');
+        }
+
+        const nextUrl = `${url.pathname}${url.search}${url.hash}`;
+        window.history.replaceState({}, '', nextUrl);
+    };
+
+    const updateTagChipStates = () => {
+        document.querySelectorAll('.article-tags .tag-filter').forEach((chip) => {
+            chip.classList.toggle('active', normalizeTag(chip.dataset.tag) === activeTag);
+        });
+    };
+
+    const setActiveFilterButton = () => {
+        document.querySelectorAll('.filter-link').forEach((button) => {
+            const isActive = normalizeTag(button.dataset.tag) === activeTag;
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+        });
+    };
+
+    const applyFilters = (options = { syncUrl: true }) => {
+        const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        let visibleCount = 0;
+
+        articles.forEach((article) => {
+            const tags = getTags(article);
+            const matchesTag = activeTag === 'all' || tags.includes(activeTag);
+            const title = getArticleText(article, 'title', 'h3');
+            const excerpt = getArticleText(article, 'excerpt', 'p');
+            const tagText = tags.join(' ');
+            const matchesQuery = !query || title.includes(query) || excerpt.includes(query) || tagText.includes(query);
+            const show = matchesTag && matchesQuery;
+            article.hidden = !show;
+            if (show) {
+                visibleCount += 1;
+            }
+        });
+
+        if (emptyState) {
+            emptyState.hidden = visibleCount > 0;
+            if (!emptyState.hidden) {
+                const conditions = [];
+                if (activeTag !== 'all') {
+                    conditions.push(`tag \"${formatTagLabel(activeTag)}\"`);
+                }
+                if (query) {
+                    conditions.push(`search \"${query}\"`);
+                }
+
+                emptyState.textContent = conditions.length
+                    ? `No articles found for ${conditions.join(' + ')}.`
+                    : 'No articles found.';
+            }
+        }
+
+        setActiveFilterButton();
+        updateTagChipStates();
+
+        if (options.syncUrl) {
+            syncUrlState();
+        }
+    };
+
+    const setActiveTag = (tag, options = { syncUrl: true }) => {
+        const nextTag = normalizeTag(tag);
+        const candidate = nextTag && (nextTag === 'all' || tagCounts.has(nextTag)) ? nextTag : 'all';
+        activeTag = candidate;
+        applyFilters(options);
+    };
+
+    const createFilterButton = (tag, count, isAll = false) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'filter-link';
+        button.dataset.tag = tag;
+        button.setAttribute('aria-pressed', 'false');
+
+        const label = document.createElement('span');
+        label.className = 'filter-label';
+        label.textContent = isAll ? 'All' : formatTagLabel(tag);
+
+        const countBubble = document.createElement('span');
+        countBubble.className = 'filter-count';
+        countBubble.textContent = String(count);
+
+        button.append(label, countBubble);
+        button.addEventListener('click', () => {
+            setActiveTag(tag);
+        });
+
+        return button;
+    };
+
+    const renderFilterButtons = () => {
+        if (!filterContainer) {
+            return;
+        }
+
+        filterContainer.innerHTML = '';
+
+        const maxVisibleTags = 12;
+        const visibleTags = sortedTags.slice(0, maxVisibleTags);
+        if (activeTag !== 'all' && !visibleTags.includes(activeTag)) {
+            visibleTags.unshift(activeTag);
+        }
+
+        filterContainer.appendChild(createFilterButton('all', articles.length, true));
+        visibleTags.forEach((tag) => {
+            filterContainer.appendChild(createFilterButton(tag, tagCounts.get(tag) || 0));
+        });
     };
 
     const renderTags = () => {
@@ -72,16 +258,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const body = article.querySelector('.article-body') || article;
-            if (body.querySelector('.article-tags')) {
-                return;
+            const existing = body.querySelector('.article-tags');
+            if (existing) {
+                existing.remove();
             }
 
             const tagContainer = document.createElement('div');
             tagContainer.className = 'article-tags';
+
             tags.forEach((tag) => {
                 const chip = document.createElement('span');
-                chip.className = 'tag';
-                chip.textContent = formatTag(tag);
+                chip.className = 'tag tag-filter';
+                chip.dataset.tag = tag;
+                chip.textContent = formatTagLabel(tag);
+                chip.setAttribute('role', 'button');
+                chip.setAttribute('tabindex', '0');
+                chip.setAttribute('aria-label', `Filter by ${formatTagLabel(tag)}`);
                 tagContainer.appendChild(chip);
             });
 
@@ -94,52 +286,103 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const applyFilters = () => {
-        const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
-        let visibleCount = 0;
-        
-        articles.forEach(article => {
-            const tags = getTags(article);
-            const matchesTag = activeTag === 'all' || tags.includes(activeTag);
-            const title = getArticleText(article, 'title', 'h3');
-            const excerpt = getArticleText(article, 'excerpt', 'p');
-            const tagText = tags.join(' ');
-            const matchesQuery = !query || title.includes(query) || excerpt.includes(query) || tagText.includes(query);
-            const show = matchesTag && matchesQuery;
-            article.hidden = !show;
-            if (show) visibleCount++;
-        });
-
-        if (emptyState) {
-            emptyState.hidden = visibleCount > 0;
-        }
-    };
-
     if (articleList) {
         const sorted = [...articles].sort((a, b) => {
             const aDate = a.dataset.date ? new Date(a.dataset.date).getTime() : 0;
             const bDate = b.dataset.date ? new Date(b.dataset.date).getTime() : 0;
             return bDate - aDate;
         });
-        sorted.forEach(article => articleList.appendChild(article));
+        sorted.forEach((article) => articleList.appendChild(article));
+
+        articleList.addEventListener('click', (event) => {
+            const chip = event.target.closest('.tag-filter');
+            if (!chip) {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+            setActiveTag(chip.dataset.tag || 'all');
+        });
+
+        articleList.addEventListener('keydown', (event) => {
+            const chip = event.target.closest('.tag-filter');
+            if (!chip || (event.key !== 'Enter' && event.key !== ' ')) {
+                return;
+            }
+
+            event.preventDefault();
+            setActiveTag(chip.dataset.tag || 'all');
+        });
+    }
+
+    const initialQuery = queryParams.get('q');
+    if (searchInput && initialQuery) {
+        searchInput.value = initialQuery;
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            applyFilters();
+        });
     }
 
     renderTags();
+    renderFilterButtons();
+    setActiveTag(activeTag, { syncUrl: false });
+});
 
-    if (searchInput) {
-        searchInput.addEventListener('input', applyFilters);
+// Convert post tags into links back to filtered writing page
+document.addEventListener('DOMContentLoaded', () => {
+    const postMeta = document.querySelector('.post .post-meta');
+    if (!postMeta) {
+        return;
     }
 
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            activeTag = button.dataset.tag || 'all';
-            applyFilters();
-        });
-    });
+    const parts = (postMeta.textContent || '')
+        .split('·')
+        .map((part) => part.trim())
+        .filter(Boolean);
 
-    applyFilters();
+    if (parts.length < 3) {
+        return;
+    }
+
+    const datePart = parts[0];
+    const readTimePart = parts[1];
+    const rawTagPart = parts.slice(2).join(' · ');
+    const tags = rawTagPart
+        .split(',')
+        .map((tag) => normalizeTag(tag))
+        .filter(Boolean);
+
+    if (!tags.length) {
+        return;
+    }
+
+    postMeta.innerHTML = '';
+
+    const appendText = (text) => {
+        postMeta.appendChild(document.createTextNode(text));
+    };
+
+    appendText(datePart);
+    appendText(' · ');
+    appendText(readTimePart);
+    appendText(' · ');
+
+    tags.forEach((tag, index) => {
+        if (index > 0) {
+            appendText(', ');
+        }
+
+        const link = document.createElement('a');
+        link.className = 'post-tag-link';
+        link.href = `../writing.html?tag=${encodeURIComponent(tag)}`;
+        link.textContent = formatTagLabel(tag);
+        link.setAttribute('aria-label', `View posts tagged ${formatTagLabel(tag)}`);
+        postMeta.appendChild(link);
+    });
 });
 
 // Subtle scroll animations
@@ -149,7 +392,7 @@ const observerOptions = {
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
@@ -162,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatables = document.querySelectorAll(
         '.value-card, .service-item, .diagram-item, .case-study, .article-card, .fade-up, .philosophy-card, .approach-step, .project-type'
     );
-    
+
     animatables.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(16px)';
@@ -182,8 +425,8 @@ document.head.insertAdjacentHTML('beforeend', `
 `);
 
 // Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
