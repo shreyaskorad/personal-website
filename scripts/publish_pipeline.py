@@ -429,6 +429,12 @@ def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
         or title_l.startswith('create the final publish-ready blog article')
         or title_l.startswith('create final publish-ready blog article')
         or title_l.startswith('autonomous seo blog sprint')
+        or title_l.startswith('autonomous writing sprint')
+        or title_l.startswith('improve ')
+        or 'dictation #' in title_l
+        or 'adhoc-' in title_l
+        or 'raw context snippet' in title_l
+        or re.search(r'\bquality score\s*\d+\s*\/\s*\d+\b', title_l) is not None
         or title_l.startswith('[mon ')
         or title_l.startswith('[tue ')
         or title_l.startswith('[wed ')
@@ -445,6 +451,16 @@ def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
     if match:
         recovered = sanitize_text(match.group(1))
         if recovered and 'you are an execution worker' not in recovered.lower():
+            recovered_l = recovered.lower()
+            if (
+                recovered_l.startswith('autonomous writing sprint')
+                or recovered_l.startswith('improve ')
+                or 'dictation #' in recovered_l
+                or 'adhoc-' in recovered_l
+                or 'raw context snippet' in recovered_l
+                or re.search(r'\bquality score\s*\d+\s*\/\s*\d+\b', recovered_l)
+            ):
+                die(f'Refusing to publish task-like title: {recovered}')
             warn(f'Recovered publish title from embedded task field: {recovered[:120]}')
             return recovered
 
