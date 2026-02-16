@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-16T08:15:22Z",
+    "updatedAt": "2026-02-16T08:33:21Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -9,12 +9,13 @@
     "totalTasks": 10,
     "queued": 0,
     "active": 0,
-    "completed": 10,
-    "due": 0,
-    "blocked": 0,
+    "completed": 9,
+    "due": 1,
+    "blocked": 1,
     "executedTotal": 10,
     "byStatus": {
-      "completed": 10
+      "completed": 9,
+      "failed": 1
     }
   },
   "laneMetrics": {
@@ -27,21 +28,78 @@
       "totalQueued": 0
     },
     "completed": {
-      "visible": 10,
-      "totalClosed": 10
+      "visible": 9,
+      "totalClosed": 9
     },
     "due": {
-      "visible": 0,
+      "visible": 1,
       "reviewRequired": 0,
-      "failed": 0,
+      "failed": 1,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [],
+  "userActionsDue": [
+    {
+      "id": "openclaw-1021",
+      "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "failed",
+      "sequence": 0,
+      "createdAt": "2026-02-16T08:28:21Z",
+      "updatedAt": "2026-02-16T08:32:51Z",
+      "completedAt": "2026-02-16T08:32:51Z",
+      "ageHours": 0.08,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-1021.md",
+      "notes": [
+        "OpenClaw SSH execution failed."
+      ],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
   "completedRecent": [
+    {
+      "id": "openclaw-1020",
+      "title": "Improve judgment without adding course fatigue",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-16T08:24:49Z",
+      "updatedAt": "2026-02-16T08:25:52Z",
+      "completedAt": "2026-02-16T08:25:52Z",
+      "ageHours": 0.14,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-1020.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
+      "id": "openclaw-1019",
+      "title": "Build feedback rituals that convert learning into visible team behavior",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-16T08:23:36Z",
+      "updatedAt": "2026-02-16T08:24:45Z",
+      "completedAt": "2026-02-16T08:24:45Z",
+      "ageHours": 0.16,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-1019.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
     {
       "id": "openclaw-1017",
       "title": "Design learning prompts that improve decisions during real project pressure",
@@ -52,7 +110,7 @@
       "createdAt": "2026-02-14T15:40:54Z",
       "updatedAt": "2026-02-14T15:42:20Z",
       "completedAt": "2026-02-14T15:42:20Z",
-      "ageHours": 40.57,
+      "ageHours": 40.87,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-1017.md",
       "notes": [],
@@ -70,7 +128,7 @@
       "createdAt": "2026-02-14T15:38:49Z",
       "updatedAt": "2026-02-14T15:39:25Z",
       "completedAt": "2026-02-14T15:39:25Z",
-      "ageHours": 40.61,
+      "ageHours": 40.91,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-1016.md",
       "notes": [],
@@ -88,7 +146,7 @@
       "createdAt": "2026-02-14T15:30:28Z",
       "updatedAt": "2026-02-14T15:31:04Z",
       "completedAt": "2026-02-14T15:31:04Z",
-      "ageHours": 40.75,
+      "ageHours": 41.05,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-1012.md",
       "notes": [],
@@ -106,7 +164,7 @@
       "createdAt": "2026-02-14T15:27:42Z",
       "updatedAt": "2026-02-14T15:28:17Z",
       "completedAt": "2026-02-14T15:28:17Z",
-      "ageHours": 40.79,
+      "ageHours": 41.09,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-1011.md",
       "notes": [],
@@ -124,7 +182,7 @@
       "createdAt": "2026-02-14T15:13:22Z",
       "updatedAt": "2026-02-14T15:13:46Z",
       "completedAt": "2026-02-14T15:13:46Z",
-      "ageHours": 41.03,
+      "ageHours": 41.33,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-1005.md",
       "notes": [],
@@ -142,7 +200,7 @@
       "createdAt": "2026-02-14T15:11:50Z",
       "updatedAt": "2026-02-14T15:12:14Z",
       "completedAt": "2026-02-14T15:12:14Z",
-      "ageHours": 41.06,
+      "ageHours": 41.36,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-1004.md",
       "notes": [],
@@ -160,63 +218,9 @@
       "createdAt": "2026-02-14T15:08:18Z",
       "updatedAt": "2026-02-14T15:08:50Z",
       "completedAt": "2026-02-14T15:08:50Z",
-      "ageHours": 41.12,
+      "ageHours": 41.42,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-1002.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-1001",
-      "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-14T15:06:45Z",
-      "updatedAt": "2026-02-14T15:07:08Z",
-      "completedAt": "2026-02-14T15:07:08Z",
-      "ageHours": 41.14,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1001.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-1000",
-      "title": "Improve judgment without adding course fatigue",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-14T15:05:12Z",
-      "updatedAt": "2026-02-14T15:05:32Z",
-      "completedAt": "2026-02-14T15:05:32Z",
-      "ageHours": 41.17,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1000.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-999",
-      "title": "Build feedback rituals that convert learning into visible team behavior",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-14T15:02:58Z",
-      "updatedAt": "2026-02-14T15:03:08Z",
-      "completedAt": "2026-02-14T15:03:08Z",
-      "ageHours": 41.21,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-999.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -239,10 +243,62 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    },
+    {
+      "level": "warn",
+      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-16T08:32:51Z",
+      "message": "OpenClaw SSH execution failed."
+    }
+  ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-16T08:32:51Z",
+      "type": "skipped",
+      "taskId": "capture-798",
+      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+    },
+    {
+      "timestamp": "2026-02-16T08:28:21Z",
+      "type": "executed",
+      "taskId": "capture-798",
+      "message": "Autonomous writing sprint: Create L&D reviews that focus on behavior shifts not completion dashboards: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-16T08:25:06Z",
+      "type": "executed",
+      "taskId": "capture-797",
+      "message": "Improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=in_progress, task_id=n/a): "
+    },
+    {
+      "timestamp": "2026-02-16T08:24:49Z",
+      "type": "executed",
+      "taskId": "capture-797",
+      "message": "Autonomous writing sprint: Use scenario based practice to improve judgment without adding course fatigue: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-16T08:23:59Z",
+      "type": "executed",
+      "taskId": "capture-796",
+      "message": "Build feedback rituals that convert learning into visible team behavior: Delegated via OpenClaw SSH (status=in_progress, task_id=n/a): "
+    },
+    {
+      "timestamp": "2026-02-16T08:20:29Z",
+      "type": "skipped",
+      "taskId": "capture-796",
+      "message": "Build feedback rituals that convert learning into visible team behavior: OpenClaw SSH execution failed: OpenClaw SSH command failed: return code 1"
+    },
+    {
+      "timestamp": "2026-02-16T08:19:40Z",
+      "type": "executed",
+      "taskId": "capture-796",
+      "message": "Autonomous writing sprint: Build feedback rituals that convert learning into visible team behavior: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-14T15:42:20Z",
       "type": "executed",
@@ -560,52 +616,10 @@
       "type": "executed",
       "taskId": "capture-772",
       "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=completed, task_id=b37f24ec-a7d8-488b-90f0-3108a6f4dcfd): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-14T14:36:39Z",
-      "type": "executed",
-      "taskId": "capture-772",
-      "message": "Autonomous writing sprint: Use AI in learning design without losing human judgment: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T14:34:37Z",
-      "type": "executed",
-      "taskId": "capture-771",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=d46fe991-f4b5-423a-92ba-8394e0d50c18): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-14T14:34:17Z",
-      "type": "executed",
-      "taskId": "capture-771",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T14:33:02Z",
-      "type": "executed",
-      "taskId": "capture-770",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=b9822a08-3ed9-44e1-ab90-4b1ebd31e37f): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-14T14:32:44Z",
-      "type": "executed",
-      "taskId": "capture-770",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-14T14:31:36Z",
-      "type": "executed",
-      "taskId": "capture-769",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=ca08b445-9659-4a94-9f82-22775c4c6da6): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-14T14:31:15Z",
-      "type": "executed",
-      "taskId": "capture-769",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-16T08:15:22Z",
+    "updatedAt": "2026-02-16T08:33:21Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -789,15 +803,48 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 62,
+      "completed": 64,
       "queued": 0,
-      "blocked": 0,
+      "blocked": 1,
       "byStatus": {
-        "completed": 62,
-        "cancelled": 18
+        "failed": 1,
+        "completed": 64,
+        "cancelled": 15
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-1021",
+        "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+        "status": "failed",
+        "updated_at": "2026-02-16T08:32:51Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-1020",
+        "title": "Improve judgment without adding course fatigue",
+        "status": "completed",
+        "updated_at": "2026-02-16T08:25:52Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1019",
+        "title": "Build feedback rituals that convert learning into visible team behavior",
+        "status": "completed",
+        "updated_at": "2026-02-16T08:24:45Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1018",
+        "title": "Build feedback rituals that convert learning into visible team behavior",
+        "status": "cancelled",
+        "updated_at": "2026-02-16T08:23:31Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1333.",
+        "blockers": ""
+      },
       {
         "id": "openclaw-1017",
         "title": "Design learning prompts that improve decisions during real project pressure",
@@ -924,38 +971,6 @@
         "status": "completed",
         "updated_at": "2026-02-14T15:08:50Z",
         "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1001",
-        "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-        "status": "completed",
-        "updated_at": "2026-02-14T15:07:08Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1000",
-        "title": "Improve judgment without adding course fatigue",
-        "status": "completed",
-        "updated_at": "2026-02-14T15:05:32Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-999",
-        "title": "Build feedback rituals that convert learning into visible team behavior",
-        "status": "completed",
-        "updated_at": "2026-02-14T15:03:08Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-998",
-        "title": "Build feedback rituals that convert learning into visible team behavior",
-        "status": "cancelled",
-        "updated_at": "2026-02-14T15:02:54Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1313.",
         "blockers": ""
       }
     ],
@@ -1355,27 +1370,27 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 70,
+        "completed": 71,
         "active": 0,
         "queued": 0,
-        "blocked": 0,
-        "cancelled": 50
+        "blocked": 1,
+        "cancelled": 48
       },
       "today": {
-        "completed": 0,
+        "completed": 2,
         "active": 0,
         "queued": 0,
-        "blocked": 0,
+        "blocked": 1,
         "published": 0
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-1017",
-        "row_id": 1017,
-        "capture_id": 795,
-        "title": "Design learning prompts that improve decisions during real project pressure",
+        "id": "openclaw-1020",
+        "row_id": 1020,
+        "capture_id": 797,
+        "title": "Improve judgment without adding course fatigue",
         "status": "completed",
-        "updated_at": "2026-02-14T15:42:20Z",
+        "updated_at": "2026-02-16T08:25:52Z",
         "next_steps": "",
         "blockers": "",
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
@@ -1386,19 +1401,37 @@
         "openclawQueuedCount": 0,
         "recent": []
       },
-      "focusNote": {
-        "agent_id": "supervisor",
-        "created_at": "2026-02-14T15:42:20Z",
-        "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-        "action_hint": "",
-        "handoff_to": ""
-      },
+      "focusNote": {},
       "bottleneck": {
-        "state": "idle",
-        "reason": "No active writing run at this moment.",
-        "at": "2026-02-16T08:14:31Z"
+        "state": "blocked",
+        "reason": "OpenClaw SSH execution failed.",
+        "at": "2026-02-16T08:32:51Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-1021",
+          "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
+          "status": "failed",
+          "updated_at": "2026-02-16T08:32:51Z"
+        },
+        {
+          "id": "openclaw-1020",
+          "title": "Improve judgment without adding course fatigue",
+          "status": "completed",
+          "updated_at": "2026-02-16T08:25:52Z"
+        },
+        {
+          "id": "openclaw-1019",
+          "title": "Build feedback rituals that convert learning into visible team behavior",
+          "status": "completed",
+          "updated_at": "2026-02-16T08:24:45Z"
+        },
+        {
+          "id": "openclaw-1018",
+          "title": "Build feedback rituals that convert learning into visible team behavior",
+          "status": "cancelled",
+          "updated_at": "2026-02-16T08:23:31Z"
+        },
         {
           "id": "openclaw-1017",
           "title": "Design learning prompts that improve decisions during real project pressure",
@@ -1434,30 +1467,6 @@
           "title": "Design without losing human judgment",
           "status": "completed",
           "updated_at": "2026-02-14T15:31:04Z"
-        },
-        {
-          "id": "openclaw-1011",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-14T15:28:17Z"
-        },
-        {
-          "id": "openclaw-1010",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-14T15:26:20Z"
-        },
-        {
-          "id": "openclaw-1009",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-14T15:24:13Z"
-        },
-        {
-          "id": "openclaw-1008",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-14T15:22:11Z"
         }
       ],
       "recentOutputs": [
@@ -1563,7 +1572,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-1017",
+        "focusTaskId": "openclaw-1020",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1579,19 +1588,19 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-14T15:42:20Z"
+        "lastStageAt": ""
       },
       "pipeline": {
         "workerStarted": true,
-        "tickInProgress": true,
-        "lastStatus": "running",
+        "tickInProgress": false,
+        "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-16T08:15:16Z",
-        "lastFinishedAt": "2026-02-16T08:14:31Z",
+        "lastStartedAt": "2026-02-16T08:28:16Z",
+        "lastFinishedAt": "2026-02-16T08:33:02Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 0
+          "blocked_or_failed_openclaw": 1
         }
       }
     },
@@ -1656,7 +1665,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-16T08:15:22Z",
+    "updatedAt": "2026-02-16T08:33:21Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
