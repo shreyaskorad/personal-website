@@ -1,21 +1,21 @@
-# Deliverable: Improve judgment without adding course fatigue
+# Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-1020
+- Task ID: openclaw-1062
 - Status: completed
-- Created: 2026-02-16T08:24:49Z
-- Updated: 2026-02-16T08:25:52Z
+- Created: 2026-02-16T11:16:58Z
+- Updated: 2026-02-16T11:18:39Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T08:27:31Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T11:19:21Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Improve Judgment Without Adding Course Fatigue SEO blog operating system
+# Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
