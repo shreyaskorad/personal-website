@@ -1,21 +1,21 @@
-# Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
+# Deliverable: Design onboarding that builds role judgment instead of checklist compliance
 
-- Task ID: openclaw-1104
+- Task ID: openclaw-1112
 - Status: completed
-- Created: 2026-02-16T12:57:28Z
-- Updated: 2026-02-16T12:57:50Z
+- Created: 2026-02-16T13:18:47Z
+- Updated: 2026-02-16T13:19:46Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T12:58:13Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T13:20:39Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
+# Deliverable Draft: Design Onboarding That Builds Role Judgment Instead Of Checklist Compliance SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.

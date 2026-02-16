@@ -1,22 +1,21 @@
-# Deliverable: Create L&D reviews that focus on behavior shifts not completion dashboards
+# Deliverable: Make learning evidence useful for business reviews without heavy reporting overhead
 
-- Task ID: openclaw-1089
+- Task ID: openclaw-1111
 - Status: completed
-- Created: 2026-02-16T12:30:49Z
-- Updated: 2026-02-16T12:31:38Z
+- Created: 2026-02-16T13:16:11Z
+- Updated: 2026-02-16T13:17:02Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T12:33:21Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T13:17:57Z)
 
 ## Last Error
-OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model. (rate_limit) | openrouter/openai/gpt-oss-120b:free: Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model. (rate_limit)
-Error: All models failed (2): zai/glm-4.7-flas
+OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Create L&D Reviews That Focus On Behavior Shifts Not Completion Dashboards SEO blog operating system
+# Deliverable Draft: Make Learning Evidence Useful For Business Reviews Without Heavy Reporting Overhead SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
