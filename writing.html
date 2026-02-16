@@ -65,16 +65,24 @@
                     <input id="article-search" type="search" placeholder="Search posts… ( / )" autocomplete="off">
                     <button id="article-search-clear" class="search-clear" type="button" aria-label="Clear search" hidden>Clear</button>
                 </div>
-                <a class="rss-link" href="rss.xml" aria-label="RSS feed">
-                    <span>RSS</span>
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M4 11a9 9 0 0 1 9 9" />
-                        <path d="M4 4a16 16 0 0 1 16 16" />
-                        <circle cx="5" cy="19" r="1.5" />
-                    </svg>
-                </a>
+                <div class="rss-actions">
+                    <a class="rss-link" href="rss.xml" aria-label="RSS feed">
+                        <span>Subscribe RSS</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 11a9 9 0 0 1 9 9" />
+                            <path d="M4 4a16 16 0 0 1 16 16" />
+                            <circle cx="5" cy="19" r="1.5" />
+                        </svg>
+                    </a>
+                    <button id="rss-copy" class="rss-copy" type="button" aria-label="Copy RSS feed URL">Copy RSS</button>
+                </div>
             </div>
             <p class="search-status" id="search-status" aria-live="polite"></p>
+            <div class="active-controls" id="active-controls" hidden>
+                <span class="active-chip" id="active-tag-chip" hidden></span>
+                <span class="active-chip" id="active-query-chip" hidden></span>
+                <button class="active-clear" id="clear-filters" type="button">Clear all</button>
+            </div>
 
             <div class="article-list" id="article-list">
 
@@ -445,6 +453,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260216-searchfix3"></script>
+    <script src="script.js?v=20260216-pageux1"></script>
 </body>
 </html>

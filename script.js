@@ -136,6 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('#article-search');
     const searchClear = document.querySelector('#article-search-clear');
     const searchStatus = document.querySelector('#search-status');
+    const activeControls = document.querySelector('#active-controls');
+    const activeTagChip = document.querySelector('#active-tag-chip');
+    const activeQueryChip = document.querySelector('#active-query-chip');
+    const clearFiltersButton = document.querySelector('#clear-filters');
+    const rssCopyButton = document.querySelector('#rss-copy');
     const filterContainer = document.querySelector('.article-filters');
     const emptyState = document.querySelector('#no-results');
     const queryParams = new URLSearchParams(window.location.search);
@@ -268,6 +273,33 @@ document.addEventListener('DOMContentLoaded', () => {
         searchStatus.textContent = `${visibleCount} ${suffix} (${parts.join(' · ')})`;
     };
 
+    const updateActiveControls = (query, activeSearchTag) => {
+        if (!activeControls || !activeTagChip || !activeQueryChip || !clearFiltersButton) {
+            return;
+        }
+
+        const hasTag = activeSearchTag !== 'all';
+        const hasQuery = Boolean(query);
+
+        if (hasTag) {
+            activeTagChip.hidden = false;
+            activeTagChip.textContent = `Tag: ${formatTagLabel(activeSearchTag)}`;
+        } else {
+            activeTagChip.hidden = true;
+            activeTagChip.textContent = '';
+        }
+
+        if (hasQuery) {
+            activeQueryChip.hidden = false;
+            activeQueryChip.textContent = `Query: ${query}`;
+        } else {
+            activeQueryChip.hidden = true;
+            activeQueryChip.textContent = '';
+        }
+
+        activeControls.hidden = !(hasTag || hasQuery);
+    };
+
     const updateSearchHighlights = (queryTerms) => {
         orderedByDate.forEach((article) => {
             const index = articleIndex.get(article);
@@ -393,6 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateSearchHighlights(highlightTerms);
         updateSearchStatus(visibleCount, query, activeTag);
+        updateActiveControls(query, activeTag);
 
         if (searchClear && searchInput) {
             searchClear.hidden = searchInput.value.trim().length === 0;
@@ -554,6 +587,59 @@ document.addEventListener('DOMContentLoaded', () => {
             searchInput.value = '';
             applyFilters();
             searchInput.focus();
+        });
+    }
+
+    if (clearFiltersButton) {
+        clearFiltersButton.addEventListener('click', () => {
+            if (searchInput) {
+                searchInput.value = '';
+            }
+            setActiveTag('all');
+            if (searchInput) {
+                searchInput.focus();
+            }
+        });
+    }
+
+    if (rssCopyButton) {
+        rssCopyButton.addEventListener('click', async () => {
+            const rssUrl = new URL('rss.xml', window.location.href).toString();
+            const originalText = rssCopyButton.textContent || 'Copy RSS';
+            const copyViaTextarea = () => {
+                const temp = document.createElement('textarea');
+                temp.value = rssUrl;
+                temp.setAttribute('readonly', '');
+                temp.style.position = 'fixed';
+                temp.style.opacity = '0';
+                document.body.appendChild(temp);
+                temp.focus();
+                temp.select();
+                let ok = false;
+                try {
+                    ok = document.execCommand('copy');
+                } catch (err) {
+                    ok = false;
+                }
+                document.body.removeChild(temp);
+                return ok;
+            };
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(rssUrl);
+                    rssCopyButton.textContent = 'Copied';
+                } else if (copyViaTextarea()) {
+                    rssCopyButton.textContent = 'Copied';
+                } else {
+                    rssCopyButton.textContent = 'Copy failed';
+                }
+            } catch (err) {
+                rssCopyButton.textContent = copyViaTextarea() ? 'Copied' : 'Copy failed';
+            }
+            window.setTimeout(() => {
+                rssCopyButton.textContent = originalText;
+            }, 1400);
         });
     }
 
