@@ -508,6 +508,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 chip.setAttribute('role', 'button');
                 chip.setAttribute('tabindex', '0');
                 chip.setAttribute('aria-label', `Filter by ${formatTagLabel(tag)}`);
+                const activateChip = (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    setActiveTag(tag, { syncUrl: true, clearQuery: true });
+                };
+                chip.addEventListener('click', activateChip);
+                chip.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        activateChip(event);
+                    }
+                });
                 tagContainer.appendChild(chip);
             });
 
