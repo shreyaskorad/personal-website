@@ -1,21 +1,22 @@
-# Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
+# Deliverable: Create L&D reviews that focus on behavior shifts not completion dashboards
 
-- Task ID: openclaw-1082
+- Task ID: openclaw-1089
 - Status: completed
-- Created: 2026-02-16T12:14:23Z
-- Updated: 2026-02-16T12:14:45Z
+- Created: 2026-02-16T12:30:49Z
+- Updated: 2026-02-16T12:31:38Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T12:15:08Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T12:33:21Z)
 
 ## Last Error
-OpenClaw returned no usable markdown deliverable.
+OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model. (rate_limit) | openrouter/openai/gpt-oss-120b:free: Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model. (rate_limit)
+Error: All models failed (2): zai/glm-4.7-flas
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
+# Deliverable Draft: Create L&D Reviews That Focus On Behavior Shifts Not Completion Dashboards SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
