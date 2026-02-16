@@ -395,9 +395,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const setActiveTag = (tag, options = { syncUrl: true }) => {
+    const setActiveTag = (tag, options = { syncUrl: true, clearQuery: false }) => {
         const nextTag = normalizeTag(tag);
         const candidate = nextTag && (nextTag === 'all' || tagCounts.has(nextTag)) ? nextTag : 'all';
+        if (options.clearQuery && searchInput && searchInput.value.trim()) {
+            searchInput.value = '';
+        }
         activeTag = candidate;
         renderFilterButtons();
         applyFilters(options);
@@ -493,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             event.preventDefault();
             event.stopPropagation();
-            setActiveTag(chip.dataset.tag || 'all');
+            setActiveTag(chip.dataset.tag || 'all', { syncUrl: true, clearQuery: true });
         });
 
         articleList.addEventListener('keydown', (event) => {
@@ -503,7 +506,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             event.preventDefault();
-            setActiveTag(chip.dataset.tag || 'all');
+            setActiveTag(chip.dataset.tag || 'all', { syncUrl: true, clearQuery: true });
         });
     }
 
