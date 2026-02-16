@@ -3,11 +3,22 @@ const normalizeTag = (tag) => {
         return '';
     }
 
-    return tag
+    const normalized = tag
+        .replace(/&amp;/gi, '&')
         .replace(/\u00a0/g, ' ')
+        .replace(/[_/]/g, ' ')
         .replace(/\s+/g, ' ')
         .trim()
         .toLowerCase();
+
+    const aliases = new Map([
+        ['l&d', 'lxd'],
+        ['ld', 'lxd'],
+        ['learning and development', 'lxd'],
+        ['learning-development', 'lxd']
+    ]);
+
+    return aliases.get(normalized) || normalized;
 };
 
 const formatTagLabel = (tag) => {
@@ -423,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         button.append(label, countBubble);
         button.addEventListener('click', () => {
-            setActiveTag(tag);
+            setActiveTag(tag, { syncUrl: true, clearQuery: true });
         });
 
         return button;
