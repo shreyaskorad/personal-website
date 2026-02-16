@@ -1,1678 +1,1251 @@
 {
   "meta": {
-    "title": "Task Dashboard",
-    "updatedAt": "2026-02-16T18:23:14Z",
-    "source": "Dictation Router + OpenClaw supervisor",
-    "uiTemplateVersion": "a9dbebebb8a6da7e"
+    "title": "OpenClaw Control Dashboard",
+    "updatedAt": "2026-02-16T18:26:01.713Z",
+    "fingerprint": "15fbf1eb7eeabf1c",
+    "source": "PersonalOS task + activity + OpenClaw error logs"
   },
   "summary": {
-    "totalTasks": 10,
-    "queued": 0,
-    "active": 0,
-    "completed": 10,
-    "due": 0,
+    "totalTasks": 204,
+    "queued": 1,
+    "active": 1,
+    "completed": 21,
     "blocked": 0,
-    "executedTotal": 10,
     "byStatus": {
-      "completed": 10
+      "cancelled": 181,
+      "completed": 21,
+      "queued": 1,
+      "in_progress": 1
     }
   },
-  "laneMetrics": {
-    "execution": {
-      "visible": 0,
-      "executedTotal": 10
-    },
-    "queue": {
-      "visible": 0,
-      "totalQueued": 0
-    },
-    "completed": {
-      "visible": 10,
-      "totalClosed": 10
-    },
-    "due": {
-      "visible": 0,
-      "reviewRequired": 0,
-      "failed": 0,
-      "blocked": 0,
-      "needsInput": 0
+  "execution": [
+    {
+      "id": "task-1771266097158-yo0w",
+      "title": "DICTATION #adhoc-1771232787082 - extracted task 3 Action item: Analyze organic traffic trends",
+      "source": "dictation-web",
+      "priority": "medium",
+      "status": "in_progress",
+      "sequence": 204,
+      "createdAt": "2026-02-16T09:06:27.172Z",
+      "updatedAt": "2026-02-16T18:21:38.353Z",
+      "completedAt": null,
+      "ageHours": 9.33,
+      "deliverySummary": "",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation"
+      ]
     }
-  },
-  "execution": [],
-  "queueTop": [],
-  "userActionsDue": [],
+  ],
+  "queueTop": [
+    {
+      "id": "task-1771260651107-i7cv",
+      "title": "DICTATION #adhoc-1771260651095 - extracted task 1 Action item: rewrite: Improve \"we are",
+      "source": "dictation-web",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 178,
+      "createdAt": "2026-02-16T16:50:51.107Z",
+      "updatedAt": "2026-02-16T18:21:37.499Z",
+      "completedAt": null,
+      "ageHours": 1.59,
+      "deliverySummary": "",
+      "deliverableUrl": null,
+      "notes": []
+    }
+  ],
+  "userActionsDue": [
+    {
+      "id": "task-1770808158975-vazb",
+      "title": "[Mon 2026-02-09 12:31 GMT+5:30] Convert the following dictation into clean JSON",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 4,
+      "createdAt": "2026-02-09T07:24:07.790Z",
+      "updatedAt": "2026-02-12T13:42:42.222Z",
+      "completedAt": "2026-02-12T13:42:42.222Z",
+      "ageHours": 179.03,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/convert-the-following-dictation-into-clean-json.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/convert-the-following-dictation-into-clean-json.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158978-fv3o",
+      "title": "[Mon 2026-02-09 12:34 GMT+5:30] Create the FINAL publish-ready blog article for this",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 5,
+      "createdAt": "2026-02-09T07:24:07.793Z",
+      "updatedAt": "2026-02-12T13:44:07.835Z",
+      "completedAt": "2026-02-12T13:44:07.835Z",
+      "ageHours": 179.03,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/write-one-blog-do.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/write-one-blog-do.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158691-dsjb",
+      "title": "[Wed 2026-02-11 13:59 GMT+5:30] You are an execution worker",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 29,
+      "createdAt": "2026-02-11T11:09:18.691Z",
+      "updatedAt": "2026-02-12T13:03:09.269Z",
+      "completedAt": "2026-02-12T13:03:09.269Z",
+      "ageHours": 127.28,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-data-operating-model-for-teams-with-weekly-execution-rhythm.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-data-operating-model-for-teams-with-weekly-execution-rhythm.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158695-bj3l",
+      "title": "[Wed 2026-02-11 13:59 GMT+5:30] Create a serialized SEO blog operating playbook for",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 30,
+      "createdAt": "2026-02-11T11:09:18.695Z",
+      "updatedAt": "2026-02-12T13:03:18.137Z",
+      "completedAt": "2026-02-12T13:03:18.137Z",
+      "ageHours": 127.28,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158695-bj3l-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158695-bj3l-workflow-system.md",
+      "notes": [
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158695-bj3l-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158701-xz2c",
+      "title": "[Wed 2026-02-11 14:20 GMT+5:30] You are an execution worker",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 31,
+      "createdAt": "2026-02-11T11:09:18.701Z",
+      "updatedAt": "2026-02-12T13:03:33.558Z",
+      "completedAt": "2026-02-12T13:03:33.558Z",
+      "ageHours": 127.28,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-lxd-operating-model-for-teams-with-weekly-execution-rhythm.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-lxd-operating-model-for-teams-with-weekly-execution-rhythm.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158704-o723",
+      "title": "[Wed 2026-02-11 14:21 GMT+5:30] Create a serialized SEO blog operating playbook for",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 32,
+      "createdAt": "2026-02-11T11:09:18.705Z",
+      "updatedAt": "2026-02-12T13:04:41.538Z",
+      "completedAt": "2026-02-12T13:04:41.538Z",
+      "ageHours": 127.28,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158704-o723-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158704-o723-workflow-system.md",
+      "notes": [
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158704-o723-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158869-b9h0",
+      "title": "[WhatsApp +918766662719 +3h 2026-02-08 12:31 GMT+5:30] Publish: I haven’t used PowerPoint in",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 33,
+      "createdAt": "2026-02-08T08:19:30.337Z",
+      "updatedAt": "2026-02-12T13:05:05.608Z",
+      "completedAt": "2026-02-12T13:05:05.608Z",
+      "ageHours": 202.11,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/i-havent-used-powerpoint-in-whatsapp-918766662719-3h-2026-02-08-1231-gmt530-publis.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/i-havent-used-powerpoint-in-whatsapp-918766662719-3h-2026-02-08-1231-gmt530-publis.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158872-b52d",
+      "title": "[WhatsApp +918766662719 +29s 2026-02-08 12:35 GMT+5:30] Publish: Humans are wired to bond",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 34,
+      "createdAt": "2026-02-08T08:19:30.338Z",
+      "updatedAt": "2026-02-12T13:05:33.366Z",
+      "completedAt": "2026-02-12T13:05:33.366Z",
+      "ageHours": 202.11,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/humans-are-wired-to-bond-whatsapp-918766662719-29s-2026-02-08-1235-gmt530-publish.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/humans-are-wired-to-bond-whatsapp-918766662719-29s-2026-02-08-1235-gmt530-publish.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158877-ben4",
+      "title": "DICTATION #61 Summary: I need to figure way out I lineup tasks",
+      "source": "dictation-web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 35,
+      "createdAt": "2026-02-08T08:24:49.673Z",
+      "updatedAt": "2026-02-12T13:06:06.030Z",
+      "completedAt": "2026-02-12T13:06:06.030Z",
+      "ageHours": 202.02,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158877-ben4-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158877-ben4-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158877-ben4-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158880-8i5t",
+      "title": "DICTATION #62 Summary: Core idea is sequence tasks by limits and do",
+      "source": "dictation-web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 36,
+      "createdAt": "2026-02-08T08:24:49.674Z",
+      "updatedAt": "2026-02-12T13:09:44.442Z",
+      "completedAt": "2026-02-12T13:09:44.442Z",
+      "ageHours": 202.02,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158880-8i5t-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158880-8i5t-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158880-8i5t-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158898-p65u",
+      "title": "figure out task lineup system for AI systems - capture everything sequence",
+      "source": "web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 37,
+      "createdAt": "2026-02-08T17:58:41.754Z",
+      "updatedAt": "2026-02-12T13:15:56.628Z",
+      "completedAt": "2026-02-12T13:15:56.628Z",
+      "ageHours": 192.46,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158898-p65u-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158898-p65u-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158898-p65u-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158901-4hw9",
+      "title": "sequence tasks by time limits do one task perfectly before next implement",
+      "source": "web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 38,
+      "createdAt": "2026-02-08T18:03:17.026Z",
+      "updatedAt": "2026-02-12T13:16:05.842Z",
+      "completedAt": "2026-02-12T13:16:05.842Z",
+      "ageHours": 192.38,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158901-4hw9-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158901-4hw9-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158901-4hw9-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770904063480-siky",
+      "title": "Write and publish a blog post about AI-native L&D workflows",
+      "source": "web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 40,
+      "createdAt": "2026-02-12T13:44:52.756Z",
+      "updatedAt": "2026-02-12T13:47:51.515Z",
+      "completedAt": "2026-02-12T13:47:51.515Z",
+      "ageHours": 100.69,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/write-and-publish-a-blog-post-about-ai-native-ld-workflows.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/write-and-publish-a-blog-post-about-ai-native-ld-workflows.html"
+      ]
+    },
+    {
+      "id": "task-1771231971774-kr9v",
+      "title": "Autonomous SEO sprint: execute one full serialized cycle for shreyaskorad website this",
+      "source": "web",
+      "priority": "high",
+      "status": "completed",
+      "sequence": 78,
+      "createdAt": "2026-02-16T08:52:51.774Z",
+      "updatedAt": "2026-02-16T08:56:23.183Z",
+      "completedAt": "2026-02-16T08:56:23.183Z",
+      "ageHours": 9.56,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/autonomous-seo-sprint-execute-one-full-serialized-cycle-for-shreyaskorad-website-this-wee.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/autonomous-seo-sprint-execute-one-full-serialized-cycle-for-shreyaskorad-website-this-wee.html"
+      ]
+    },
+    {
+      "id": "task-1771232720546-usmc",
+      "title": "Write and publish a focused, high-quality blog post about AI-native L&D workflows",
+      "source": "web",
+      "priority": "high",
+      "status": "completed",
+      "sequence": 82,
+      "createdAt": "2026-02-16T09:05:20.546Z",
+      "updatedAt": "2026-02-16T09:05:33.702Z",
+      "completedAt": "2026-02-16T09:05:33.702Z",
+      "ageHours": 9.35,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/ai-native-ld-workflows-for-small-teams-include-practical-examples-actionable-frameworks.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/ai-native-ld-workflows-for-small-teams-include-practical-examples-actionable-frameworks.html"
+      ]
+    },
+    {
+      "id": "task-1771232787135-gdid",
+      "title": "DICTATION #adhoc-1771232787082 - extracted task 2 Action item: com 📋 SUMMARY: -",
+      "source": "dictation-web",
+      "priority": "high",
+      "status": "completed",
+      "sequence": 84,
+      "createdAt": "2026-02-16T09:06:27.135Z",
+      "updatedAt": "2026-02-16T09:26:49.870Z",
+      "completedAt": "2026-02-16T09:26:49.870Z",
+      "ageHours": 9.33,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/dictation-adhoc-1771232787082-extracted-task-2-action-item-com-summary-publish-c.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/dictation-adhoc-1771232787082-extracted-task-2-action-item-com-summary-publish-c.html"
+      ]
+    },
+    {
+      "id": "task-1771239150383-51xm",
+      "title": "DICTATION #adhoc-1771239150375 - extracted task 1 Action item: publish: Improve \"Where We",
+      "source": "dictation-web",
+      "priority": "high",
+      "status": "completed",
+      "sequence": 107,
+      "createdAt": "2026-02-16T10:52:30.383Z",
+      "updatedAt": "2026-02-16T10:57:40.147Z",
+      "completedAt": "2026-02-16T10:57:40.147Z",
+      "ageHours": 7.56,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-dictation-adhoc-1771239150375-extracted-task-1-action-item.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-dictation-adhoc-1771239150375-extracted-task-1-action-item.html"
+      ]
+    },
+    {
+      "id": "task-1771239150407-emuc",
+      "title": "DICTATION #adhoc-1771239150375 - extracted task 2 Action item: Required fixes: expand depth",
+      "source": "dictation-web",
+      "priority": "high",
+      "status": "completed",
+      "sequence": 108,
+      "createdAt": "2026-02-16T10:52:30.407Z",
+      "updatedAt": "2026-02-16T11:12:54.551Z",
+      "completedAt": "2026-02-16T11:12:54.551Z",
+      "ageHours": 7.56,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-go-from-here.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-go-from-here.html"
+      ]
+    },
+    {
+      "id": "task-1771239150426-iwe7",
+      "title": "DICTATION #adhoc-1771239150375 - extracted task 3 Action item: Required fixes: expand depth",
+      "source": "dictation-web",
+      "priority": "high",
+      "status": "completed",
+      "sequence": 109,
+      "createdAt": "2026-02-16T10:52:30.426Z",
+      "updatedAt": "2026-02-16T11:28:11.209Z",
+      "completedAt": "2026-02-16T11:28:11.209Z",
+      "ageHours": 7.56,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-go-from-here.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-go-from-here.html"
+      ]
+    }
+  ],
   "completedRecent": [
     {
-      "id": "openclaw-1184",
-      "title": "Build feedback rituals that convert learning into visible team behavior",
-      "source": "openclaw",
-      "priority": "medium",
+      "id": "task-1771239150426-iwe7",
+      "title": "DICTATION #adhoc-1771239150375 - extracted task 3 Action item: Required fixes: expand depth",
+      "source": "dictation-web",
+      "priority": "high",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-16T18:20:29Z",
-      "updatedAt": "2026-02-16T18:21:47Z",
-      "completedAt": "2026-02-16T18:21:47Z",
-      "ageHours": 0.05,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1184.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 109,
+      "createdAt": "2026-02-16T10:52:30.426Z",
+      "updatedAt": "2026-02-16T11:28:11.209Z",
+      "completedAt": "2026-02-16T11:28:11.209Z",
+      "ageHours": 7.56,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-go-from-here.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-go-from-here.html"
+      ]
     },
     {
-      "id": "openclaw-1183",
-      "title": "Design learning prompts that improve decisions during real project pressure",
-      "source": "openclaw",
-      "priority": "medium",
+      "id": "task-1771239150407-emuc",
+      "title": "DICTATION #adhoc-1771239150375 - extracted task 2 Action item: Required fixes: expand depth",
+      "source": "dictation-web",
+      "priority": "high",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-16T18:16:41Z",
-      "updatedAt": "2026-02-16T18:18:09Z",
-      "completedAt": "2026-02-16T18:18:09Z",
-      "ageHours": 0.11,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1183.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 108,
+      "createdAt": "2026-02-16T10:52:30.407Z",
+      "updatedAt": "2026-02-16T11:12:54.551Z",
+      "completedAt": "2026-02-16T11:12:54.551Z",
+      "ageHours": 7.56,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-go-from-here.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-go-from-here.html"
+      ]
     },
     {
-      "id": "openclaw-1182",
-      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-      "source": "openclaw",
-      "priority": "medium",
+      "id": "task-1771239150383-51xm",
+      "title": "DICTATION #adhoc-1771239150375 - extracted task 1 Action item: publish: Improve \"Where We",
+      "source": "dictation-web",
+      "priority": "high",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-16T18:12:57Z",
-      "updatedAt": "2026-02-16T18:14:27Z",
-      "completedAt": "2026-02-16T18:14:27Z",
-      "ageHours": 0.17,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1182.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 107,
+      "createdAt": "2026-02-16T10:52:30.383Z",
+      "updatedAt": "2026-02-16T10:57:40.147Z",
+      "completedAt": "2026-02-16T10:57:40.147Z",
+      "ageHours": 7.56,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-dictation-adhoc-1771239150375-extracted-task-1-action-item.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/improve-where-we-dictation-adhoc-1771239150375-extracted-task-1-action-item.html"
+      ]
     },
     {
-      "id": "openclaw-1178",
-      "title": "Design without losing human judgment",
-      "source": "openclaw",
-      "priority": "medium",
+      "id": "task-1771232787135-gdid",
+      "title": "DICTATION #adhoc-1771232787082 - extracted task 2 Action item: com 📋 SUMMARY: -",
+      "source": "dictation-web",
+      "priority": "high",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-16T17:56:30Z",
-      "updatedAt": "2026-02-16T17:57:46Z",
-      "completedAt": "2026-02-16T17:57:46Z",
-      "ageHours": 0.45,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1178.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 84,
+      "createdAt": "2026-02-16T09:06:27.135Z",
+      "updatedAt": "2026-02-16T09:26:49.870Z",
+      "completedAt": "2026-02-16T09:26:49.870Z",
+      "ageHours": 9.33,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/dictation-adhoc-1771232787082-extracted-task-2-action-item-com-summary-publish-c.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/dictation-adhoc-1771232787082-extracted-task-2-action-item-com-summary-publish-c.html"
+      ]
     },
     {
-      "id": "openclaw-1177",
-      "title": "Build a practical LXD workflow for small teams shipping weekly",
-      "source": "openclaw",
-      "priority": "medium",
+      "id": "task-1771232720546-usmc",
+      "title": "Write and publish a focused, high-quality blog post about AI-native L&D workflows",
+      "source": "web",
+      "priority": "high",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-16T17:53:00Z",
-      "updatedAt": "2026-02-16T17:54:18Z",
-      "completedAt": "2026-02-16T17:54:18Z",
-      "ageHours": 0.5,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1177.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 82,
+      "createdAt": "2026-02-16T09:05:20.546Z",
+      "updatedAt": "2026-02-16T09:05:33.702Z",
+      "completedAt": "2026-02-16T09:05:33.702Z",
+      "ageHours": 9.35,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/ai-native-ld-workflows-for-small-teams-include-practical-examples-actionable-frameworks.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/ai-native-ld-workflows-for-small-teams-include-practical-examples-actionable-frameworks.html"
+      ]
     },
     {
-      "id": "openclaw-1172",
-      "title": "Design onboarding that builds role judgment instead of checklist compliance",
-      "source": "openclaw",
-      "priority": "medium",
+      "id": "task-1771231971774-kr9v",
+      "title": "Autonomous SEO sprint: execute one full serialized cycle for shreyaskorad website this",
+      "source": "web",
+      "priority": "high",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-16T17:35:41Z",
-      "updatedAt": "2026-02-16T17:36:53Z",
-      "completedAt": "2026-02-16T17:36:53Z",
-      "ageHours": 0.79,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1172.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 78,
+      "createdAt": "2026-02-16T08:52:51.774Z",
+      "updatedAt": "2026-02-16T08:56:23.183Z",
+      "completedAt": "2026-02-16T08:56:23.183Z",
+      "ageHours": 9.56,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/autonomous-seo-sprint-execute-one-full-serialized-cycle-for-shreyaskorad-website-this-wee.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/autonomous-seo-sprint-execute-one-full-serialized-cycle-for-shreyaskorad-website-this-wee.html"
+      ]
     },
     {
-      "id": "openclaw-1171",
-      "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-      "source": "openclaw",
+      "id": "task-1770904063480-siky",
+      "title": "Write and publish a blog post about AI-native L&D workflows",
+      "source": "web",
       "priority": "medium",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-16T17:32:16Z",
-      "updatedAt": "2026-02-16T17:33:35Z",
-      "completedAt": "2026-02-16T17:33:35Z",
-      "ageHours": 0.85,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1171.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 40,
+      "createdAt": "2026-02-12T13:44:52.756Z",
+      "updatedAt": "2026-02-12T13:47:51.515Z",
+      "completedAt": "2026-02-12T13:47:51.515Z",
+      "ageHours": 100.69,
+      "deliverySummary": "Published blog via pipeline: https://shreyaskorad.in/posts/write-and-publish-a-blog-post-about-ai-native-ld-workflows.html",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: https://shreyaskorad.in/posts/write-and-publish-a-blog-post-about-ai-native-ld-workflows.html"
+      ]
     },
     {
-      "id": "openclaw-1169",
-      "title": "Design manager enablement that links coaching actions to team capability growth",
-      "source": "openclaw",
+      "id": "task-1770808158978-fv3o",
+      "title": "[Mon 2026-02-09 12:34 GMT+5:30] Create the FINAL publish-ready blog article for this",
+      "source": "handoff",
       "priority": "medium",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-16T17:24:49Z",
-      "updatedAt": "2026-02-16T17:26:04Z",
-      "completedAt": "2026-02-16T17:26:04Z",
-      "ageHours": 0.97,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1169.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 5,
+      "createdAt": "2026-02-09T07:24:07.793Z",
+      "updatedAt": "2026-02-12T13:44:07.835Z",
+      "completedAt": "2026-02-12T13:44:07.835Z",
+      "ageHours": 179.03,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/write-one-blog-do.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/write-one-blog-do.html\","
+      ]
     },
     {
-      "id": "openclaw-1168",
-      "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-      "source": "openclaw",
+      "id": "task-1770808158975-vazb",
+      "title": "[Mon 2026-02-09 12:31 GMT+5:30] Convert the following dictation into clean JSON",
+      "source": "handoff",
       "priority": "medium",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-16T17:21:28Z",
-      "updatedAt": "2026-02-16T17:22:44Z",
-      "completedAt": "2026-02-16T17:22:44Z",
-      "ageHours": 1.03,
-      "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1168.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "sequence": 4,
+      "createdAt": "2026-02-09T07:24:07.790Z",
+      "updatedAt": "2026-02-12T13:42:42.222Z",
+      "completedAt": "2026-02-12T13:42:42.222Z",
+      "ageHours": 179.03,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/convert-the-following-dictation-into-clean-json.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/convert-the-following-dictation-into-clean-json.html\","
+      ]
     },
     {
-      "id": "openclaw-1167",
-      "title": "Improve judgment without adding course fatigue",
-      "source": "openclaw",
+      "id": "task-1770808158901-4hw9",
+      "title": "sequence tasks by time limits do one task perfectly before next implement",
+      "source": "web",
       "priority": "medium",
       "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-16T17:18:04Z",
-      "updatedAt": "2026-02-16T17:19:20Z",
-      "completedAt": "2026-02-16T17:19:20Z",
-      "ageHours": 1.09,
+      "sequence": 38,
+      "createdAt": "2026-02-08T18:03:17.026Z",
+      "updatedAt": "2026-02-12T13:16:05.842Z",
+      "completedAt": "2026-02-12T13:16:05.842Z",
+      "ageHours": 192.38,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158901-4hw9-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158901-4hw9-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158901-4hw9-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158898-p65u",
+      "title": "figure out task lineup system for AI systems - capture everything sequence",
+      "source": "web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 37,
+      "createdAt": "2026-02-08T17:58:41.754Z",
+      "updatedAt": "2026-02-12T13:15:56.628Z",
+      "completedAt": "2026-02-12T13:15:56.628Z",
+      "ageHours": 192.46,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158898-p65u-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158898-p65u-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158898-p65u-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158880-8i5t",
+      "title": "DICTATION #62 Summary: Core idea is sequence tasks by limits and do",
+      "source": "dictation-web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 36,
+      "createdAt": "2026-02-08T08:24:49.674Z",
+      "updatedAt": "2026-02-12T13:09:44.442Z",
+      "completedAt": "2026-02-12T13:09:44.442Z",
+      "ageHours": 202.02,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158880-8i5t-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158880-8i5t-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158880-8i5t-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158877-ben4",
+      "title": "DICTATION #61 Summary: I need to figure way out I lineup tasks",
+      "source": "dictation-web",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 35,
+      "createdAt": "2026-02-08T08:24:49.673Z",
+      "updatedAt": "2026-02-12T13:06:06.030Z",
+      "completedAt": "2026-02-12T13:06:06.030Z",
+      "ageHours": 202.02,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158877-ben4-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158877-ben4-workflow-system.md",
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158877-ben4-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158872-b52d",
+      "title": "[WhatsApp +918766662719 +29s 2026-02-08 12:35 GMT+5:30] Publish: Humans are wired to bond",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 34,
+      "createdAt": "2026-02-08T08:19:30.338Z",
+      "updatedAt": "2026-02-12T13:05:33.366Z",
+      "completedAt": "2026-02-12T13:05:33.366Z",
+      "ageHours": 202.11,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/humans-are-wired-to-bond-whatsapp-918766662719-29s-2026-02-08-1235-gmt530-publish.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/humans-are-wired-to-bond-whatsapp-918766662719-29s-2026-02-08-1235-gmt530-publish.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158869-b9h0",
+      "title": "[WhatsApp +918766662719 +3h 2026-02-08 12:31 GMT+5:30] Publish: I haven’t used PowerPoint in",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 33,
+      "createdAt": "2026-02-08T08:19:30.337Z",
+      "updatedAt": "2026-02-12T13:05:05.608Z",
+      "completedAt": "2026-02-12T13:05:05.608Z",
+      "ageHours": 202.11,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/i-havent-used-powerpoint-in-whatsapp-918766662719-3h-2026-02-08-1231-gmt530-publis.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Auto-imported from inbox reconciliation",
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/i-havent-used-powerpoint-in-whatsapp-918766662719-3h-2026-02-08-1231-gmt530-publis.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158704-o723",
+      "title": "[Wed 2026-02-11 14:21 GMT+5:30] Create a serialized SEO blog operating playbook for",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 32,
+      "createdAt": "2026-02-11T11:09:18.705Z",
+      "updatedAt": "2026-02-12T13:04:41.538Z",
+      "completedAt": "2026-02-12T13:04:41.538Z",
+      "ageHours": 127.28,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158704-o723-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158704-o723-workflow-system.md",
+      "notes": [
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158704-o723-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158701-xz2c",
+      "title": "[Wed 2026-02-11 14:20 GMT+5:30] You are an execution worker",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 31,
+      "createdAt": "2026-02-11T11:09:18.701Z",
+      "updatedAt": "2026-02-12T13:03:33.558Z",
+      "completedAt": "2026-02-12T13:03:33.558Z",
+      "ageHours": 127.28,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-lxd-operating-model-for-teams-with-weekly-execution-rhythm.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-lxd-operating-model-for-teams-with-weekly-execution-rhythm.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158695-bj3l",
+      "title": "[Wed 2026-02-11 13:59 GMT+5:30] Create a serialized SEO blog operating playbook for",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 30,
+      "createdAt": "2026-02-11T11:09:18.695Z",
+      "updatedAt": "2026-02-12T13:03:18.137Z",
+      "completedAt": "2026-02-12T13:03:18.137Z",
+      "ageHours": 127.28,
+      "deliverySummary": "Generated workflow system plan: /ops/deliverables/task-1770808158695-bj3l-workflow-system.md",
+      "deliverableUrl": "/ops/deliverables/task-1770808158695-bj3l-workflow-system.md",
+      "notes": [
+        "Delivery summary: Generated workflow system plan: /Users/shreyas-clawd/Documents/PersonalOS/.tasks/deliverables/task-1770808158695-bj3l-workflow-system.md"
+      ]
+    },
+    {
+      "id": "task-1770808158691-dsjb",
+      "title": "[Wed 2026-02-11 13:59 GMT+5:30] You are an execution worker",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 29,
+      "createdAt": "2026-02-11T11:09:18.691Z",
+      "updatedAt": "2026-02-12T13:03:09.269Z",
+      "completedAt": "2026-02-12T13:03:09.269Z",
+      "ageHours": 127.28,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-data-operating-model-for-teams-with-weekly-execution-rhythm.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/autonomous-seo-blog-sprint-data-operating-model-for-teams-with-weekly-execution-rhythm.html\","
+      ]
+    },
+    {
+      "id": "task-1770808158686-kut0",
+      "title": "[Wed 2026-02-11 13:38 GMT+5:30] You are an execution worker",
+      "source": "handoff",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 28,
+      "createdAt": "2026-02-11T11:09:18.686Z",
+      "updatedAt": "2026-02-12T13:01:02.475Z",
+      "completedAt": "2026-02-12T13:01:02.476Z",
+      "ageHours": 127.28,
+      "deliverySummary": "Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/wed-2026-02-11-1338-gmt530-you-are-an-execution-worker.html\",",
+      "deliverableUrl": null,
+      "notes": [
+        "Delivery summary: Published blog via pipeline: \"url\": \"https://shreyaskorad.in/posts/wed-2026-02-11-1338-gmt530-you-are-an-execution-worker.html\","
+      ]
+    },
+    {
+      "id": "SEO-BLOG-001",
+      "title": "Create brief and outline for decision quality learning blog post",
+      "source": "unknown",
+      "priority": "high",
+      "status": "completed",
+      "sequence": 27,
+      "createdAt": "2026-02-11T11:09:18.686Z",
+      "updatedAt": "2026-02-11T11:09:18.686Z",
+      "completedAt": null,
+      "ageHours": 127.28,
       "deliverySummary": "",
-      "deliverableUrl": "/ops/deliverables/openclaw-1167.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
+      "deliverableUrl": null,
+      "notes": []
     }
   ],
   "observations": [
     {
-      "level": "info",
-      "message": "Autonomous mode is active: review gates are bypassed and blocked/failed tasks follow retry-with-cooldown before final close."
+      "level": "warn",
+      "message": "Recent runtime errors detected (40 captured signals in logs)."
     },
     {
       "level": "info",
-      "message": "Blog autopilot is active: non-autonomous tasks are prioritized first; one new blog run is auto-seeded whenever idle with ~5 min break (unlimited/day)."
+      "message": "19 task(s) need your decision: proceed with direction or close."
     },
     {
       "level": "info",
-      "message": "Blog publish automation is active: completed blog deliverables are converted to post payloads and pushed via publish_pipeline."
+      "message": "Execution preference is iterative: continue after review is favored."
     },
     {
       "level": "info",
-      "message": "No queued or active execution tasks right now."
+      "message": "Recurring preference keywords: loss, operating, every, delivered, captured."
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:25:40.024Z",
+      "message": "2026-02-16T18:25:40.024Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:25:32.774Z",
+      "message": "2026-02-16T18:25:32.774Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1960 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:25:00.909Z",
+      "message": "2026-02-16T18:25:00.909Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:24:53.143Z",
+      "message": "2026-02-16T18:24:53.143Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1958 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:23:13.699Z",
+      "message": "2026-02-16T18:23:13.699Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:23:06.035Z",
+      "message": "2026-02-16T18:23:06.035Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1956 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:22:32.687Z",
+      "message": "2026-02-16T18:22:32.687Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:22:25.389Z",
+      "message": "2026-02-16T18:22:25.389Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1954 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:21:47.538Z",
+      "message": "2026-02-16T18:21:47.538Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:21:40.230Z",
+      "message": "2026-02-16T18:21:40.230Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1952 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:21:09.900Z",
+      "message": "2026-02-16T18:21:09.900Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:21:02.244Z",
+      "message": "2026-02-16T18:21:02.244Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1950 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:19:39.375Z",
+      "message": "2026-02-16T18:19:39.375Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:19:31.663Z",
+      "message": "2026-02-16T18:19:31.663Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1948 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:18:54.532Z",
+      "message": "2026-02-16T18:18:54.532Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:18:48.101Z",
+      "message": "2026-02-16T18:18:48.101Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1946 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:18:09.066Z",
+      "message": "2026-02-16T18:18:09.066Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:18:00.997Z",
+      "message": "2026-02-16T18:18:00.997Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1944 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:17:27.803Z",
+      "message": "2026-02-16T18:17:27.803Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:17:20.345Z",
+      "message": "2026-02-16T18:17:20.345Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1942 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:15:51.680Z",
+      "message": "2026-02-16T18:15:51.680Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:15:44.090Z",
+      "message": "2026-02-16T18:15:44.090Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1940 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:15:07.837Z",
+      "message": "2026-02-16T18:15:07.837Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:14:59.961Z",
+      "message": "2026-02-16T18:14:59.961Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1938 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:14:27.377Z",
+      "message": "2026-02-16T18:14:27.377Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:14:20.639Z",
+      "message": "2026-02-16T18:14:20.639Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1936 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:13:43.106Z",
+      "message": "2026-02-16T18:13:43.106Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:13:36.288Z",
+      "message": "2026-02-16T18:13:36.288Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1934 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:12:07.466Z",
+      "message": "2026-02-16T18:12:07.466Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:12:00.515Z",
+      "message": "2026-02-16T18:12:00.515Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1932 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:11:25.482Z",
+      "message": "2026-02-16T18:11:25.482Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:11:18.846Z",
+      "message": "2026-02-16T18:11:18.846Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1930 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:10:43.500Z",
+      "message": "2026-02-16T18:10:43.500Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:10:35.634Z",
+      "message": "2026-02-16T18:10:35.634Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1928 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:09:55.372Z",
+      "message": "2026-02-16T18:09:55.372Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:09:46.996Z",
+      "message": "2026-02-16T18:09:46.996Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1926 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:08:13.691Z",
+      "message": "2026-02-16T18:08:13.691Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:08:06.948Z",
+      "message": "2026-02-16T18:08:06.948Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1924 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:07:31.401Z",
+      "message": "2026-02-16T18:07:31.401Z [agent/embedded] auto-compaction failed for zai/glm-4.7-flash: Summarization failed: 400 Invalid API parameter, please check the documentation.Requested token count exceeds the model's maximum context length of 202752 tokens. You re..."
+    },
+    {
+      "source": "gateway",
+      "timestamp": "2026-02-16T18:07:24.563Z",
+      "message": "2026-02-16T18:07:24.563Z [agent/embedded] [context-overflow-diag] sessionKey=agent:main:main provider=zai/glm-4.7-flash source=assistantError messages=1922 sessionFile=/Users/shreyas-clawd/.openclaw/agents/main/sessions/dictation-router.jsonl compactionAtte..."
+    }
+  ],
   "recentActivity": [
     {
-      "timestamp": "2026-02-16T18:21:47Z",
-      "type": "executed",
-      "taskId": "capture-940",
-      "message": "Build feedback rituals that convert learning into visible team behavior: Delegated via OpenClaw SSH (status=completed, task_id=e0cba6dc-fb70-4774-be9f-bbdb4f77ee98): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:26:01.705Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from dictation-web: dictation_malformed_action_item"
     },
     {
-      "timestamp": "2026-02-16T18:20:29Z",
-      "type": "executed",
-      "taskId": "capture-940",
-      "message": "Autonomous writing sprint: Build feedback rituals that convert learning into visible team behavior: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:26:01.584Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: queued_proxy_noise"
     },
     {
-      "timestamp": "2026-02-16T18:18:09Z",
-      "type": "executed",
-      "taskId": "capture-939",
-      "message": "Design learning prompts that improve decisions during real project pressure: Delegated via OpenClaw SSH (status=completed, task_id=8a2cf278-0bf3-43f4-8bee-34c0a92fc89a): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:21:38.390Z",
+      "type": "auto_advanced",
+      "taskId": "task-1771266097158-yo0w",
+      "message": "Auto-started from queue head: task-1771266097158-yo0w"
     },
     {
-      "timestamp": "2026-02-16T18:16:41Z",
-      "type": "executed",
-      "taskId": "capture-939",
-      "message": "Autonomous writing sprint: Design learning prompts that improve decisions during real project pressure: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:21:38.371Z",
+      "type": "started",
+      "taskId": "task-1771266097158-yo0w",
+      "message": "Task moved to in_progress"
     },
     {
-      "timestamp": "2026-02-16T18:14:27Z",
-      "type": "executed",
-      "taskId": "capture-938",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=174cd09d-9188-4ad8-a54f-5d2e7d0d69e4): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:21:38.175Z",
+      "type": "auto_cancelled",
+      "taskId": "task-1771265794701-8kz3",
+      "message": "Auto-cancelled unsupported task in autonomy mode"
     },
     {
-      "timestamp": "2026-02-16T18:12:57Z",
-      "type": "executed",
-      "taskId": "capture-938",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:21:38.155Z",
+      "type": "cancelled",
+      "taskId": "task-1771265794701-8kz3",
+      "message": "No autonomous handler matched this task."
     },
     {
-      "timestamp": "2026-02-16T18:10:43Z",
-      "type": "executed",
-      "taskId": "capture-937",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=623d9eac-2c9b-4166-9c17-647b79308360): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:21:37.514Z",
+      "type": "queue_intelligence_refreshed",
+      "taskId": "system",
+      "message": "Refreshed intelligence for 1 task(s)"
     },
     {
-      "timestamp": "2026-02-16T18:09:10Z",
-      "type": "executed",
-      "taskId": "capture-937",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:21:37.173Z",
+      "type": "reconciled",
+      "taskId": "task-1771266097158-yo0w",
+      "message": "Imported from inbox (dictation-web)"
     },
     {
-      "timestamp": "2026-02-16T18:06:54Z",
-      "type": "executed",
-      "taskId": "capture-936",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=09894f60-b3c8-4f2f-94d3-faeb28d4867e): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:21:36.986Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-16T18:03:44Z",
-      "type": "executed",
-      "taskId": "capture-936",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:21:36.969Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-16T18:01:32Z",
-      "type": "executed",
-      "taskId": "capture-935",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=9d060e9a-3c23-4f18-a47c-4a0908944aef): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:21:36.948Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-16T18:00:07Z",
-      "type": "executed",
-      "taskId": "capture-935",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:16:35.936Z",
+      "type": "auto_advanced",
+      "taskId": "task-1771265794701-8kz3",
+      "message": "Auto-started from queue head: task-1771265794701-8kz3"
     },
     {
-      "timestamp": "2026-02-16T17:57:46Z",
-      "type": "executed",
-      "taskId": "capture-934",
-      "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=completed, task_id=af21262c-b357-4176-91de-417ce4d49b4a): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:16:35.917Z",
+      "type": "started",
+      "taskId": "task-1771265794701-8kz3",
+      "message": "Task moved to in_progress"
     },
     {
-      "timestamp": "2026-02-16T17:56:30Z",
-      "type": "executed",
-      "taskId": "capture-934",
-      "message": "Autonomous writing sprint: Use AI in learning design without losing human judgment: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:16:35.722Z",
+      "type": "auto_cancelled",
+      "taskId": "task-1771265188864-1h5z",
+      "message": "Auto-cancelled unsupported task in autonomy mode"
     },
     {
-      "timestamp": "2026-02-16T17:54:19Z",
-      "type": "executed",
-      "taskId": "capture-933",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=020026e0-0efa-459a-a14f-e013ab218da9): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:16:35.702Z",
+      "type": "cancelled",
+      "taskId": "task-1771265188864-1h5z",
+      "message": "No autonomous handler matched this task."
     },
     {
-      "timestamp": "2026-02-16T17:53:00Z",
-      "type": "executed",
-      "taskId": "capture-933",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:16:35.060Z",
+      "type": "queue_intelligence_refreshed",
+      "taskId": "system",
+      "message": "Refreshed intelligence for 1 task(s)"
     },
     {
-      "timestamp": "2026-02-16T17:50:42Z",
-      "type": "executed",
-      "taskId": "capture-932",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=50bb7dc8-fcda-4da9-abd4-bcf0bfec3c1f): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:16:34.717Z",
+      "type": "reconciled",
+      "taskId": "task-1771265794701-8kz3",
+      "message": "Imported from inbox (web)"
     },
     {
-      "timestamp": "2026-02-16T17:49:22Z",
-      "type": "executed",
-      "taskId": "capture-932",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:16:34.530Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-16T17:47:04Z",
-      "type": "executed",
-      "taskId": "capture-931",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=0045d61d-143a-4994-87f0-93988469815a): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:16:34.511Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-16T17:45:46Z",
-      "type": "executed",
-      "taskId": "capture-931",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:16:34.491Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-16T17:43:39Z",
-      "type": "executed",
-      "taskId": "capture-930",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=ca575206-1221-47e9-b52b-a9e22c5b043c): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:16:16.035Z",
+      "type": "auto_advanced",
+      "taskId": "task-1771265188864-1h5z",
+      "message": "Auto-started from queue head: task-1771265188864-1h5z"
     },
     {
-      "timestamp": "2026-02-16T17:42:26Z",
-      "type": "executed",
-      "taskId": "capture-930",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:16:16.019Z",
+      "type": "started",
+      "taskId": "task-1771265188864-1h5z",
+      "message": "Task moved to in_progress"
     },
     {
-      "timestamp": "2026-02-16T17:40:13Z",
-      "type": "executed",
-      "taskId": "capture-929",
-      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...: Delegated via OpenClaw SSH (status=completed, task_id=9f4940e4-3bf3-4762-9984-e49ce880891a): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:16:15.877Z",
+      "type": "auto_cancelled",
+      "taskId": "task-1771265707587-q6rh",
+      "message": "Auto-cancelled unsupported task in autonomy mode"
     },
     {
-      "timestamp": "2026-02-16T17:39:00Z",
-      "type": "executed",
-      "taskId": "capture-929",
-      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project retrospectives: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:16:15.862Z",
+      "type": "cancelled",
+      "taskId": "task-1771265707587-q6rh",
+      "message": "No autonomous handler matched this task."
     },
     {
-      "timestamp": "2026-02-16T17:36:54Z",
-      "type": "executed",
-      "taskId": "capture-928",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: Delegated via OpenClaw SSH (status=completed, task_id=51a820b1-79aa-4c77-a41c-b3abbf1d6170): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:16:15.380Z",
+      "type": "queue_intelligence_refreshed",
+      "taskId": "system",
+      "message": "Refreshed intelligence for 1 task(s)"
     },
     {
-      "timestamp": "2026-02-16T17:35:41Z",
-      "type": "executed",
-      "taskId": "capture-928",
-      "message": "Autonomous writing sprint: Design onboarding that builds role judgment instead of checklist compliance: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:16:15.025Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-16T17:33:35Z",
-      "type": "executed",
-      "taskId": "capture-927",
-      "message": "Make learning evidence useful for business reviews without heavy reporting overhead: Delegated via OpenClaw SSH (status=completed, task_id=f9afb589-3679-41a5-95d4-723776783015): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:16:15.010Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-16T17:32:16Z",
-      "type": "executed",
-      "taskId": "capture-927",
-      "message": "Autonomous writing sprint: Make learning evidence useful for business reviews without heavy reporting overhead: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:16:14.995Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: execution_wrapper"
     },
     {
-      "timestamp": "2026-02-16T17:29:42Z",
-      "type": "executed",
-      "taskId": "capture-926",
-      "message": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning tran...: Delegated via OpenClaw SSH (status=completed, task_id=7354c5e0-f7f8-4554-863c-3adbeb794369): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:16:06.877Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from dictation-web: dictation_malformed_action_item"
     },
     {
-      "timestamp": "2026-02-16T17:28:20Z",
-      "type": "executed",
-      "taskId": "capture-926",
-      "message": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning transfer: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:16:06.755Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped intake from handoff: queued_proxy_noise"
     },
     {
-      "timestamp": "2026-02-16T17:26:04Z",
-      "type": "executed",
-      "taskId": "capture-925",
-      "message": "Design manager enablement that links coaching actions to team capability growth: Delegated via OpenClaw SSH (status=completed, task_id=cb128ee8-c858-4f51-a88f-f83b14dba84b): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:15:08.691Z",
+      "type": "auto_advanced",
+      "taskId": "task-1771265707587-q6rh",
+      "message": "Auto-started from queue head: task-1771265707587-q6rh"
     },
     {
-      "timestamp": "2026-02-16T17:24:49Z",
-      "type": "executed",
-      "taskId": "capture-925",
-      "message": "Autonomous writing sprint: Design manager enablement that links coaching actions to team capability growth: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:15:08.676Z",
+      "type": "started",
+      "taskId": "task-1771265707587-q6rh",
+      "message": "Task moved to in_progress"
     },
     {
-      "timestamp": "2026-02-16T17:22:44Z",
-      "type": "executed",
-      "taskId": "capture-924",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: Delegated via OpenClaw SSH (status=completed, task_id=78bfb27d-eff5-4088-9b0e-265b71628336): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:15:08.505Z",
+      "type": "auto_cancelled",
+      "taskId": "task-1771265707549-bxc9",
+      "message": "Auto-cancelled unsupported task in autonomy mode"
     },
     {
-      "timestamp": "2026-02-16T17:21:28Z",
-      "type": "executed",
-      "taskId": "capture-924",
-      "message": "Autonomous writing sprint: Create L&D reviews that focus on behavior shifts not completion dashboards: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:15:08.491Z",
+      "type": "cancelled",
+      "taskId": "task-1771265707549-bxc9",
+      "message": "No autonomous handler matched this task."
     },
     {
-      "timestamp": "2026-02-16T17:19:20Z",
-      "type": "executed",
-      "taskId": "capture-923",
-      "message": "Improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=completed, task_id=584f624f-3352-4930-afbe-10346f209658): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:15:08.339Z",
+      "type": "auto_advanced",
+      "taskId": "task-1771265707549-bxc9",
+      "message": "Auto-started from queue head: task-1771265707549-bxc9"
     },
     {
-      "timestamp": "2026-02-16T17:18:04Z",
-      "type": "executed",
-      "taskId": "capture-923",
-      "message": "Autonomous writing sprint: Use scenario based practice to improve judgment without adding course fatigue: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:15:08.323Z",
+      "type": "started",
+      "taskId": "task-1771265707549-bxc9",
+      "message": "Task moved to in_progress"
     },
     {
-      "timestamp": "2026-02-16T17:16:03Z",
-      "type": "executed",
-      "taskId": "capture-922",
-      "message": "Build feedback rituals that convert learning into visible team behavior: Delegated via OpenClaw SSH (status=completed, task_id=edab7446-1378-4006-aa7c-0aea4829b14f): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:15:07.942Z",
+      "type": "queue_intelligence_refreshed",
+      "taskId": "system",
+      "message": "Refreshed intelligence for 2 task(s)"
     },
     {
-      "timestamp": "2026-02-16T17:14:45Z",
-      "type": "executed",
-      "taskId": "capture-922",
-      "message": "Autonomous writing sprint: Build feedback rituals that convert learning into visible team behavior: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:15:07.687Z",
+      "type": "reconciled",
+      "taskId": "task-1771265707681-ca7a",
+      "message": "Imported from inbox (dictation-web)"
     },
     {
-      "timestamp": "2026-02-16T17:12:40Z",
-      "type": "executed",
-      "taskId": "capture-921",
-      "message": "Design learning prompts that improve decisions during real project pressure: Delegated via OpenClaw SSH (status=completed, task_id=866ef27b-a26c-4f2b-aff9-0d1e14db7d28): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+      "timestamp": "2026-02-16T18:15:07.674Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped reconciled intake from dictation-web: dictation_malformed_action_item"
     },
     {
-      "timestamp": "2026-02-16T17:11:27Z",
-      "type": "executed",
-      "taskId": "capture-921",
-      "message": "Autonomous writing sprint: Design learning prompts that improve decisions during real project pressure: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-16T17:09:25Z",
-      "type": "executed",
-      "taskId": "capture-920",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=a83457b8-4f7d-416f-b4c0-f108b0b77ab1): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-16T17:08:08Z",
-      "type": "executed",
-      "taskId": "capture-920",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-16T17:06:04Z",
-      "type": "executed",
-      "taskId": "capture-919",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=82201ab4-8186-4983-8ac4-b1bb2c15d70c): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-16T17:04:49Z",
-      "type": "executed",
-      "taskId": "capture-919",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-16T17:02:47Z",
-      "type": "executed",
-      "taskId": "capture-918",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=3d231622-ffb8-48b1-880b-ccc155c4ba15): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-16T17:01:26Z",
-      "type": "executed",
-      "taskId": "capture-918",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-16T16:59:18Z",
-      "type": "executed",
-      "taskId": "capture-917",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=913f1b3e-54c1-46ff-8d22-6e9128758ad8): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-16T16:58:07Z",
-      "type": "executed",
-      "taskId": "capture-917",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-16T16:56:04Z",
-      "type": "executed",
-      "taskId": "capture-916",
-      "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=completed, task_id=dbf1e141-9297-4e63-9453-e855f2a726ce): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-16T16:54:50Z",
-      "type": "executed",
-      "taskId": "capture-916",
-      "message": "Autonomous writing sprint: Use AI in learning design without losing human judgment: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-16T16:52:39Z",
-      "type": "executed",
-      "taskId": "capture-915",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=63c6e54d-51df-4783-bd68-ccf2e9ecf693): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-16T16:51:22Z",
-      "type": "executed",
-      "taskId": "capture-915",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-16T16:49:14Z",
-      "type": "executed",
-      "taskId": "capture-914",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=4bff2314-d456-433b-9fbc-4abac8a9cd0b): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-16T16:47:58Z",
-      "type": "executed",
-      "taskId": "capture-914",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-16T16:45:50Z",
-      "type": "executed",
-      "taskId": "capture-913",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=0a68c68f-289a-4593-8bc0-2d4e28dbac80): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-16T16:42:01Z",
-      "type": "skipped",
-      "taskId": "capture-913",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (2): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/openai/gpt-oss-120b:free: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
-    },
-    {
-      "timestamp": "2026-02-16T16:38:48Z",
-      "type": "executed",
-      "taskId": "capture-913",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=failed, task_id=51e7ffd2-7a4f-4282-8d72-3f5022b91f43): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-16T16:36:09Z",
-      "type": "executed",
-      "taskId": "capture-913",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-16T16:34:14Z",
-      "type": "executed",
-      "taskId": "capture-912",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=e234065d-8654-4f43-9f2d-a81596ff99bc): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-16T16:32:58Z",
-      "type": "executed",
-      "taskId": "capture-912",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
+      "timestamp": "2026-02-16T18:15:07.662Z",
+      "type": "intake_dropped",
+      "taskId": "system",
+      "message": "Dropped reconciled intake from dictation-web: dictation_malformed_action_item"
     }
   ],
-  "blogDashboard": {
-    "updatedAt": "2026-02-16T18:23:14Z",
-    "site": {
-      "name": "Shreyas Korad - Writing",
-      "url": "https://shreyaskorad.github.io/personal-website",
-      "repo_hint": "/Users/shreyas/Documents/New project/.tmp/personal-website-ops-clean",
-      "posts_path": "posts",
-      "writing_index_path": "writing.html",
-      "publish_script": "scripts/publish_post.py",
-      "style_rules_path": "blog-writing-rules.md",
-      "primary_topics": [
-        "L&D",
-        "gamification",
-        "data",
-        "LXD",
-        "AI"
-      ]
-    },
-    "execution": {
-      "subagent_strategy": "serialized",
-      "effective_parallelism": 1,
-      "global_wip_note": "OpenClaw queue remains WIP=1 at orchestrator level."
-    },
-    "agents": [
-      {
-        "id": "topic-scout",
-        "role": "Topic Scout",
-        "goal": "Identify high-upside topics tied to L&D, gamification, data, LXD, and AI.",
-        "output": "Prioritized topic slate with thesis, audience intent, and ranking opportunity."
-      },
-      {
-        "id": "serp-keyword",
-        "role": "Keyword and SERP Analyst",
-        "goal": "Map keyword clusters, search intent, and competitor coverage gaps.",
-        "output": "Primary keyword, supporting entities, SERP gap notes, and internal-link targets."
-      },
-      {
-        "id": "brief-architect",
-        "role": "Brief Architect",
-        "goal": "Convert strategy into a clear brief and outline with unique angle.",
-        "output": "Approved brief with section plan, CTA, and evidence requirements."
-      },
-      {
-        "id": "research-analyst",
-        "role": "Research Analyst",
-        "goal": "Gather credible source material and practical examples.",
-        "output": "Source-backed notes, claims table, and references for each major section."
-      },
-      {
-        "id": "writer",
-        "role": "Writer",
-        "goal": "Draft publishable post aligned with site voice and audience needs.",
-        "output": "Complete draft post in site format."
-      },
-      {
-        "id": "seo-optimizer",
-        "role": "Reader intent optimizer",
-        "goal": "Keep title, framing, and examples aligned to practical reader intent.",
-        "output": "Clear title/excerpt/heading refinements and relevance checks."
-      },
-      {
-        "id": "editor",
-        "role": "Editor",
-        "goal": "Improve clarity, authority, and readability while preserving intent.",
-        "output": "Final edited copy with quality notes and resolved issues."
-      },
-      {
-        "id": "refresh-planner",
-        "role": "Refresh Planner",
-        "goal": "Define update cadence to protect rankings and freshness.",
-        "output": "Post-publication refresh plan with triggers and review cadence."
-      },
-      {
-        "id": "publishing-qa",
-        "role": "Publishing QA",
-        "goal": "Publish and verify the post is live and correctly indexed.",
-        "output": "Publish proof with URL, timestamp, and pass/fail checklist."
-      }
-    ],
-    "publishOwner": "Publishing QA",
-    "analytics": {
-      "status": "ok",
-      "asOf": "2026-02-16T17:59:18Z",
-      "lookbackDays": 28,
-      "summary": {
-        "users": 34,
-        "sessions": 97,
-        "engagedSessions": 55,
-        "engagementRatePct": 56.7,
-        "avgSessionDurationSec": 606.1,
-        "pageViewsPerSession": 4.93,
-        "vsPrevious": {
-          "usersPct": null,
-          "sessionsPct": null
-        }
-      },
-      "channels": [
-        {
-          "channel": "Direct",
-          "sessions": 86,
-          "users": 23,
-          "sessionShare": 88.7
-        },
-        {
-          "channel": "Organic Search",
-          "sessions": 11,
-          "users": 11,
-          "sessionShare": 11.3
-        }
-      ],
-      "topPosts": [
-        {
-          "path": "/writing.html",
-          "pageviews": 176,
-          "sessions": 55,
-          "engagementRatePct": 89.1,
-          "avgSessionDurationSec": 452.4
-        },
-        {
-          "path": "/posts/make-learning-evidence-useful-for-business-reviews-without-heavy-reporting-overhead.html",
-          "pageviews": 13,
-          "sessions": 4,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 147.4
-        },
-        {
-          "path": "/posts/publishing-without-wordpress.html",
-          "pageviews": 13,
-          "sessions": 13,
-          "engagementRatePct": 92.3,
-          "avgSessionDurationSec": 29.6
-        },
-        {
-          "path": "/posts/if-everyone-is-losing-jobs-who-pays-for-ai-infrastructure.html",
-          "pageviews": 11,
-          "sessions": 6,
-          "engagementRatePct": 83.3,
-          "avgSessionDurationSec": 655.5
-        },
-        {
-          "path": "/posts/accelerando-ld.html",
-          "pageviews": 7,
-          "sessions": 3,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 227.3
-        },
-        {
-          "path": "/posts/ai-and-the-future-of-learning-finding-meaning-in-an-age-of-instant-feedback-openclaw-113.html",
-          "pageviews": 4,
-          "sessions": 2,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 42.7
-        },
-        {
-          "path": "/posts/design-decision-quality-training-that-builds-practical-judgment-instead-of-compliance.html",
-          "pageviews": 4,
-          "sessions": 4,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 264.9
-        },
-        {
-          "path": "/posts/design-gamification-for-decision-quality-not-points-openclaw-147.html",
-          "pageviews": 4,
-          "sessions": 2,
-          "engagementRatePct": 100.0,
-          "avgSessionDurationSec": 139.3
-        }
-      ],
-      "insights": [
-        "Organic Search share is only 11.3%, which suggests discoverability is still weak.",
-        "Traffic is concentrated: the top post contributes 75.9% of views within top content."
-      ],
-      "nextActions": [
-        "Preserve the current narrative style and expand on topics that already show strong engagement.",
-        "Double down on your top-performing themes by publishing one follow-up post per week linked from high-traffic articles.",
-        "Add fresh internal links from /writing.html to newer posts so authority and traffic flow across the portfolio."
-      ],
-      "error": "",
-      "cache": {
-        "hit": true,
-        "fetchedAt": "2026-02-16T17:59:18Z"
-      }
-    },
-    "taskStats": {
-      "total": 80,
-      "completed": 74,
-      "queued": 0,
-      "blocked": 0,
-      "byStatus": {
-        "completed": 74,
-        "cancelled": 6
-      }
-    },
-    "recentTasks": [
-      {
-        "id": "openclaw-1184",
-        "title": "Build feedback rituals that convert learning into visible team behavior",
-        "status": "completed",
-        "updated_at": "2026-02-16T18:21:47Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1183",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "completed",
-        "updated_at": "2026-02-16T18:18:09Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1182",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-16T18:14:27Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1181",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-16T18:10:43Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1180",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-16T18:06:54Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1179",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-16T18:01:32Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1178",
-        "title": "Design without losing human judgment",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:57:46Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1177",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:54:18Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1176",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:50:42Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1175",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:47:03Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1174",
-        "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:43:39Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1173",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:40:13Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1172",
-        "title": "Design onboarding that builds role judgment instead of checklist compliance",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:36:53Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1171",
-        "title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:33:35Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1170",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:29:41Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1169",
-        "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:26:04Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1168",
-        "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:22:44Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1167",
-        "title": "Improve judgment without adding course fatigue",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:19:20Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1166",
-        "title": "Build feedback rituals that convert learning into visible team behavior",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:16:03Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1165",
-        "title": "Design learning prompts that improve decisions during real project pressure",
-        "status": "completed",
-        "updated_at": "2026-02-16T17:12:40Z",
-        "next_steps": "",
-        "blockers": ""
-      }
-    ],
-    "teamMemory": {
-      "count": 25,
-      "recent": [
-        {
-          "id": 1244,
-          "created_at": "2026-02-16T18:21:47Z",
-          "capture_id": 940,
-          "openclaw_row_id": 1184,
-          "source": "openclaw_ssh",
-          "task_title": "Build feedback rituals that convert learning into visible team behavior",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1243,
-          "created_at": "2026-02-16T18:18:09Z",
-          "capture_id": 939,
-          "openclaw_row_id": 1183,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning prompts that improve decisions during real project pressure",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1242,
-          "created_at": "2026-02-16T18:14:27Z",
-          "capture_id": 938,
-          "openclaw_row_id": 1182,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1241,
-          "created_at": "2026-02-16T18:10:43Z",
-          "capture_id": 937,
-          "openclaw_row_id": 1181,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1240,
-          "created_at": "2026-02-16T18:06:54Z",
-          "capture_id": 936,
-          "openclaw_row_id": 1180,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1239,
-          "created_at": "2026-02-16T18:01:32Z",
-          "capture_id": 935,
-          "openclaw_row_id": 1179,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1238,
-          "created_at": "2026-02-16T17:57:46Z",
-          "capture_id": 934,
-          "openclaw_row_id": 1178,
-          "source": "openclaw_ssh",
-          "task_title": "Design without losing human judgment",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1237,
-          "created_at": "2026-02-16T17:54:19Z",
-          "capture_id": 933,
-          "openclaw_row_id": 1177,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1236,
-          "created_at": "2026-02-16T17:50:42Z",
-          "capture_id": 932,
-          "openclaw_row_id": 1176,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1235,
-          "created_at": "2026-02-16T17:47:04Z",
-          "capture_id": 931,
-          "openclaw_row_id": 1175,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1234,
-          "created_at": "2026-02-16T17:43:39Z",
-          "capture_id": 930,
-          "openclaw_row_id": 1174,
-          "source": "openclaw_ssh",
-          "task_title": "Build a practical LXD workflow for small teams shipping weekly",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1233,
-          "created_at": "2026-02-16T17:40:13Z",
-          "capture_id": 929,
-          "openclaw_row_id": 1173,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1232,
-          "created_at": "2026-02-16T17:36:54Z",
-          "capture_id": 928,
-          "openclaw_row_id": 1172,
-          "source": "openclaw_ssh",
-          "task_title": "Design onboarding that builds role judgment instead of checklist compliance",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1231,
-          "created_at": "2026-02-16T17:33:35Z",
-          "capture_id": 927,
-          "openclaw_row_id": 1171,
-          "source": "openclaw_ssh",
-          "task_title": "Make learning evidence useful for business reviews without heavy reporting overhead",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1230,
-          "created_at": "2026-02-16T17:29:42Z",
-          "capture_id": 926,
-          "openclaw_row_id": 1170,
-          "source": "openclaw_ssh",
-          "task_title": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning tran...",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        }
-      ]
-    },
-    "publishStats": {
-      "total": 80,
-      "published": 2,
-      "failed": 64,
-      "ignored": 14,
-      "byStatus": {
-        "failed": 64,
-        "ignored": 14,
-        "published": 2
-      },
-      "recent": [
-        {
-          "openclaw_row_id": 1046,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-16T10:03:56Z"
-        },
-        {
-          "openclaw_row_id": 1045,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-16T09:59:24Z"
-        },
-        {
-          "openclaw_row_id": 1044,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-16T09:51:56Z"
-        },
-        {
-          "openclaw_row_id": 1041,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 205 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-16T09:32:31Z"
-        },
-        {
-          "openclaw_row_id": 1040,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 205 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-16T09:28:01Z"
-        },
-        {
-          "openclaw_row_id": 1039,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 205 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-16T09:23:18Z"
-        },
-        {
-          "openclaw_row_id": 1035,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-16T09:12:33Z"
-        },
-        {
-          "openclaw_row_id": 1034,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-16T09:09:05Z"
-        },
-        {
-          "openclaw_row_id": 911,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 209 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-14T11:19:12Z"
-        },
-        {
-          "openclaw_row_id": 910,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 209 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-14T11:14:56Z"
-        },
-        {
-          "openclaw_row_id": 909,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 209 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-14T11:10:41Z"
-        },
-        {
-          "openclaw_row_id": 908,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 209 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-14T11:06:46Z"
-        },
-        {
-          "openclaw_row_id": 907,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 209 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-14T11:01:28Z"
-        },
-        {
-          "openclaw_row_id": 905,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 212 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-14T10:53:25Z"
-        },
-        {
-          "openclaw_row_id": 904,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 212 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-14T10:49:03Z"
-        },
-        {
-          "openclaw_row_id": 900,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: word count 201 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-14T10:31:16Z"
-        },
-        {
-          "openclaw_row_id": 899,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-14T10:25:24Z"
-        },
-        {
-          "openclaw_row_id": 898,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-14T10:21:11Z"
-        },
-        {
-          "openclaw_row_id": 897,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-14T10:16:58Z"
-        },
-        {
-          "openclaw_row_id": 896,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-14T10:12:13Z"
-        }
-      ]
-    },
-    "progress": {
-      "summary": {
-        "total": 120,
-        "completed": 112,
-        "active": 0,
-        "queued": 0,
-        "blocked": 0,
-        "cancelled": 8
-      },
-      "today": {
-        "completed": 112,
-        "active": 0,
-        "queued": 0,
-        "blocked": 0,
-        "published": 0
-      },
-      "activeTask": null,
-      "lastCompletedTask": {
-        "id": "openclaw-1184",
-        "row_id": 1184,
-        "capture_id": 940,
-        "title": "Build feedback rituals that convert learning into visible team behavior",
-        "status": "completed",
-        "updated_at": "2026-02-16T18:21:47Z",
-        "next_steps": "",
-        "blockers": "",
-        "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
-      },
-      "pendingQueue": {
-        "count": 0,
-        "inboxCount": 0,
-        "openclawQueuedCount": 0,
-        "recent": []
-      },
-      "focusNote": {
-        "agent_id": "supervisor",
-        "created_at": "2026-02-16T18:21:47Z",
-        "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-        "action_hint": "",
-        "handoff_to": ""
-      },
-      "bottleneck": {
-        "state": "idle",
-        "reason": "No active writing run at this moment.",
-        "at": "2026-02-16T18:22:24Z"
-      },
-      "recentIdeas": [
-        {
-          "id": "openclaw-1184",
-          "title": "Build feedback rituals that convert learning into visible team behavior",
-          "status": "completed",
-          "updated_at": "2026-02-16T18:21:47Z"
-        },
-        {
-          "id": "openclaw-1183",
-          "title": "Design learning prompts that improve decisions during real project pressure",
-          "status": "completed",
-          "updated_at": "2026-02-16T18:18:09Z"
-        },
-        {
-          "id": "openclaw-1182",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-16T18:14:27Z"
-        },
-        {
-          "id": "openclaw-1181",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-16T18:10:43Z"
-        },
-        {
-          "id": "openclaw-1180",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-16T18:06:54Z"
-        },
-        {
-          "id": "openclaw-1179",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "completed",
-          "updated_at": "2026-02-16T18:01:32Z"
-        },
-        {
-          "id": "openclaw-1178",
-          "title": "Design without losing human judgment",
-          "status": "completed",
-          "updated_at": "2026-02-16T17:57:46Z"
-        },
-        {
-          "id": "openclaw-1177",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-16T17:54:18Z"
-        },
-        {
-          "id": "openclaw-1176",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-16T17:50:42Z"
-        },
-        {
-          "id": "openclaw-1175",
-          "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "completed",
-          "updated_at": "2026-02-16T17:47:03Z"
-        }
-      ],
-      "recentOutputs": [
-        {
-          "id": "openclaw-1046",
-          "row_id": 1046,
-          "title": "",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-16T10:03:56Z"
-        },
-        {
-          "id": "openclaw-1045",
-          "row_id": 1045,
-          "title": "",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-16T09:59:24Z"
-        },
-        {
-          "id": "openclaw-1044",
-          "row_id": 1044,
-          "title": "",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-16T09:51:56Z"
-        },
-        {
-          "id": "openclaw-1041",
-          "row_id": 1041,
-          "title": "",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: word count 205 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-16T09:32:31Z"
-        },
-        {
-          "id": "openclaw-1040",
-          "row_id": 1040,
-          "title": "",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: word count 205 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-16T09:28:01Z"
-        },
-        {
-          "id": "openclaw-1039",
-          "row_id": 1039,
-          "title": "",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: word count 205 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-16T09:23:18Z"
-        },
-        {
-          "id": "openclaw-1035",
-          "row_id": 1035,
-          "title": "",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-16T09:12:33Z"
-        },
-        {
-          "id": "openclaw-1034",
-          "row_id": 1034,
-          "title": "",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: repeats the same core point",
-          "updated_at": "2026-02-16T09:09:05Z"
-        },
-        {
-          "id": "openclaw-911",
-          "row_id": 911,
-          "title": "",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: word count 209 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-14T11:19:12Z"
-        },
-        {
-          "id": "openclaw-910",
-          "row_id": 910,
-          "title": "",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: word count 209 outside 150-200; repeats the same core point",
-          "updated_at": "2026-02-14T11:14:56Z"
-        }
-      ],
-      "stages": {
-        "focusTaskId": "openclaw-1184",
-        "total": 9,
-        "done": 0,
-        "remaining": 9,
-        "doneIds": [],
-        "remainingIds": [
-          "topic-scout",
-          "serp-keyword",
-          "brief-architect",
-          "research-analyst",
-          "writer",
-          "seo-optimizer",
-          "editor",
-          "refresh-planner",
-          "publishing-qa"
-        ],
-        "lastStageAt": "2026-02-16T18:21:47Z"
-      },
-      "pipeline": {
-        "workerStarted": true,
-        "tickInProgress": false,
-        "lastStatus": "recovered",
-        "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-16T18:20:25Z",
-        "lastFinishedAt": "2026-02-16T18:22:24Z",
-        "runtime": {
-          "pending_inbox": 0,
-          "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 0
-        }
-      }
-    },
-    "repoState": {
-      "repo_hint": "/Users/shreyas/Documents/New project/.tmp/personal-website-ops-clean",
-      "exists": true,
-      "posts_path": "posts",
-      "writing_index_path": "writing.html",
-      "publish_script": "scripts/publish_post.py",
-      "style_rules_path": "blog-writing-rules.md",
-      "checks": {
-        "posts_dir": true,
-        "writing_index": true,
-        "publish_script": true,
-        "style_rules": true,
-        "sitemap": true,
-        "rss": true
-      },
-      "post_count": 12,
-      "recent_posts": [
-        {
-          "name": "design-gamification-for-decision-quality-not-points-openclaw-147.html",
-          "updated_at": "2026-02-11T10:55:43Z"
-        },
-        {
-          "name": "ai-and-the-future-of-learning-finding-meaning-in-an-age-of-instant-feedback-openclaw-113.html",
-          "updated_at": "2026-02-11T10:52:52Z"
-        },
-        {
-          "name": "games-in-learning-development-beyond-engagement-to-real-transformation-openclaw-90.html",
-          "updated_at": "2026-02-11T10:52:52Z"
-        },
-        {
-          "name": "accelerando-ld.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "ai-hype-vs-adoption.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "art-craft.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "if-everyone-is-losing-jobs-who-pays-for-ai-infrastructure.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "publishing-without-wordpress.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "skills-in-ld.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        },
-        {
-          "name": "the-human-edge.html",
-          "updated_at": "2026-02-11T09:22:12Z"
-        }
-      ]
-    }
-  },
   "personalization": {
-    "updatedAt": "2026-02-16T18:23:14Z",
+    "updatedAt": "2026-02-16T11:28:11.204Z",
     "metrics": {
-      "reviewRequested": 0,
-      "proceedCount": 0,
+      "reviewRequested": 27,
+      "proceedCount": 2,
       "closeCount": 0
     },
-    "topKeywords": [],
+    "topKeywords": [
+      "loss",
+      "operating",
+      "every",
+      "delivered",
+      "captured",
+      "sequenced",
+      "design",
+      "sequencing"
+    ],
     "insights": [
-      "FULL_AUTO_PIPELINE is active: captures auto-run through processing, execution, and ops sync."
+      "Execution preference is iterative: continue after review is favored.",
+      "Recurring preference keywords: loss, operating, every, delivered, captured."
     ]
   },
   "controls": {
-    "refresh": "/api/ops/sync",
-    "status_overview": "/api/status/overview",
-    "captures": "/api/captures",
-    "openclaw_tasks": "/api/openclaw/tasks",
-    "blog_publish_backlog": "/api/blog/publish-backlog",
-    "analytics": "/api/ops/analytics"
+    "board": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js board",
+    "brief": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js brief",
+    "priority": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js priority <task-id> <critical|high|medium|low>",
+    "sequence": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js sequence <task-id> <number>",
+    "start": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js start <task-id>",
+    "done": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js done <task-id> \"<delivery-summary>\"",
+    "proceed": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js proceed <task-id> \"<direction>\"",
+    "close": "node /Users/shreyas-clawd/Documents/PersonalOS/.tasks/taskflow.js close <task-id> \"<note>\""
   }
 }
