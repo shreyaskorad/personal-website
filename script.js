@@ -35,6 +35,55 @@ const formatTagLabel = (tag) => {
         .replace(/\b\w/g, (char) => char.toUpperCase());
 };
 
+const normalizeSearchText = (text) => {
+    if (!text) {
+        return '';
+    }
+
+    return String(text)
+        .toLowerCase()
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9&+\s-]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+};
+
+const tokenizeSearchQuery = (query) => {
+    const normalized = normalizeSearchText(query);
+    if (!normalized) {
+        return [];
+    }
+    const tokens = normalized.split(' ').filter((token) => token.length > 1);
+    return Array.from(new Set(tokens));
+};
+
+const escapeHtml = (value) => String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const highlightText = (rawText, rawTerms) => {
+    const text = String(rawText || '');
+    const terms = Array.from(new Set((rawTerms || []).map((t) => t.trim()).filter((t) => t.length > 1)));
+    if (!terms.length) {
+        return escapeHtml(text);
+    }
+
+    const pattern = new RegExp(`(${terms.map((term) => escapeRegExp(term)).join('|')})`, 'ig');
+    const parts = text.split(pattern);
+    return parts.map((part) => {
+        const lower = part.toLowerCase();
+        const isMatch = terms.some((term) => lower === term.toLowerCase());
+        const escaped = escapeHtml(part);
+        return isMatch ? `<mark class="search-hit">${escaped}</mark>` : escaped;
+    }).join('');
+};
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
@@ -74,18 +123,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleList = document.querySelector('#article-list');
     const articles = Array.from(document.querySelectorAll('.article-card'));
     const searchInput = document.querySelector('#article-search');
+    const searchClear = document.querySelector('#article-search-clear');
+    const searchStatus = document.querySelector('#search-status');
     const filterContainer = document.querySelector('.article-filters');
     const emptyState = document.querySelector('#no-results');
     const queryParams = new URLSearchParams(window.location.search);
     let activeTag = normalizeTag(queryParams.get('tag')) || 'all';
+    const articleIndex = new Map();
+    const byDateDesc = (a, b) => {
+        const aDate = a.dataset.date ? new Date(a.dataset.date).getTime() : 0;
+        const bDate = b.dataset.date ? new Date(b.dataset.date).getTime() : 0;
+        return bDate - aDate;
+    };
+    const orderedByDate = [...articles].sort(byDateDesc);
 
     const getArticleText = (article, attr, selector) => {
         const fromData = article.dataset[attr];
         if (fromData) {
-            return fromData.toLowerCase();
+            return fromData;
         }
         const el = article.querySelector(selector);
-        return el ? el.textContent.toLowerCase() : '';
+        return el ? (el.textContent || '') : '';
     };
 
     const getTags = (article) => {
@@ -124,6 +182,23 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .map(([tag]) => tag);
 
+    const buildArticleIndex = () => {
+        orderedByDate.forEach((article) => {
+            const titleRaw = getArticleText(article, 'title', 'h3').trim();
+            const excerptRaw = getArticleText(article, 'excerpt', '.article-body p').trim();
+            const tags = getTags(article);
+            articleIndex.set(article, {
+                titleRaw,
+                excerptRaw,
+                titleNorm: normalizeSearchText(titleRaw),
+                excerptNorm: normalizeSearchText(excerptRaw),
+                tags,
+                tagNorm: normalizeSearchText(tags.join(' '))
+            });
+        });
+    };
+    buildArticleIndex();
+
     const syncUrlState = () => {
         const url = new URL(window.location.href);
         const query = searchInput ? searchInput.value.trim() : '';
@@ -158,23 +233,135 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const applyFilters = (options = { syncUrl: true }) => {
-        const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
-        let visibleCount = 0;
+    const updateSearchStatus = (visibleCount, query, activeSearchTag) => {
+        if (!searchStatus) {
+            return;
+        }
 
-        articles.forEach((article) => {
-            const tags = getTags(article);
+        const hasQuery = Boolean(query);
+        const hasTag = activeSearchTag !== 'all';
+        if (!hasQuery && !hasTag) {
+            searchStatus.textContent = '';
+            return;
+        }
+
+        const parts = [];
+        if (hasTag) {
+            parts.push(`tag: ${formatTagLabel(activeSearchTag)}`);
+        }
+        if (hasQuery) {
+            parts.push(`query: "${query}"`);
+        }
+
+        const suffix = visibleCount === 1 ? 'result' : 'results';
+        searchStatus.textContent = `${visibleCount} ${suffix} (${parts.join(' · ')})`;
+    };
+
+    const updateSearchHighlights = (queryTerms) => {
+        orderedByDate.forEach((article) => {
+            const index = articleIndex.get(article);
+            if (!index) {
+                return;
+            }
+
+            const titleEl = article.querySelector('h3');
+            if (titleEl) {
+                titleEl.innerHTML = highlightText(index.titleRaw, queryTerms);
+            }
+
+            const excerptEl = article.querySelector('.article-body p');
+            if (excerptEl) {
+                excerptEl.innerHTML = highlightText(index.excerptRaw, queryTerms);
+            }
+
+            article.querySelectorAll('.article-tags .tag-filter').forEach((chip) => {
+                const label = chip.dataset.label || chip.textContent || '';
+                chip.innerHTML = highlightText(label, queryTerms);
+            });
+        });
+    };
+
+    const rankArticleForQuery = (index, queryNormalized, queryTokens) => {
+        if (!queryNormalized) {
+            return { matches: true, score: 0 };
+        }
+
+        const tokens = queryTokens.length ? queryTokens : [queryNormalized];
+        let score = 0;
+
+        for (const token of tokens) {
+            let tokenMatched = false;
+
+            if (index.titleNorm.includes(token)) {
+                tokenMatched = true;
+                score += 14;
+                if (index.titleNorm.startsWith(token)) {
+                    score += 4;
+                }
+            }
+            if (index.excerptNorm.includes(token)) {
+                tokenMatched = true;
+                score += 7;
+            }
+            if (index.tagNorm.includes(token)) {
+                tokenMatched = true;
+                score += 5;
+            }
+
+            if (!tokenMatched) {
+                return { matches: false, score: 0 };
+            }
+        }
+
+        if (tokens.length > 1) {
+            if (index.titleNorm.includes(queryNormalized)) {
+                score += 8;
+            } else if (index.excerptNorm.includes(queryNormalized) || index.tagNorm.includes(queryNormalized)) {
+                score += 4;
+            }
+        }
+
+        return { matches: true, score };
+    };
+
+    const applyFilters = (options = { syncUrl: true }) => {
+        const query = searchInput ? searchInput.value.trim() : '';
+        const queryNormalized = normalizeSearchText(query);
+        const queryTokens = tokenizeSearchQuery(query);
+        const highlightTerms = queryTokens.length ? queryTokens : (queryNormalized ? [queryNormalized] : []);
+        let visibleCount = 0;
+        const visibleMatches = [];
+        const visibleSet = new Set();
+
+        orderedByDate.forEach((article) => {
+            const index = articleIndex.get(article);
+            if (!index) {
+                return;
+            }
+            const tags = index.tags;
             const matchesTag = activeTag === 'all' || tags.includes(activeTag);
-            const title = getArticleText(article, 'title', 'h3');
-            const excerpt = getArticleText(article, 'excerpt', 'p');
-            const tagText = tags.join(' ');
-            const matchesQuery = !query || title.includes(query) || excerpt.includes(query) || tagText.includes(query);
+            const ranked = rankArticleForQuery(index, queryNormalized, queryTokens);
+            const matchesQuery = ranked.matches;
             const show = matchesTag && matchesQuery;
             article.hidden = !show;
             if (show) {
                 visibleCount += 1;
+                visibleSet.add(article);
+                visibleMatches.push({ article, score: ranked.score });
             }
         });
+
+        if (articleList) {
+            if (queryNormalized) {
+                const orderedVisible = visibleMatches
+                    .sort((a, b) => b.score - a.score || byDateDesc(a.article, b.article))
+                    .map((item) => item.article);
+                const hiddenByDate = orderedByDate.filter((article) => !visibleSet.has(article));
+                [...orderedVisible, ...hiddenByDate].forEach((article) => articleList.appendChild(article));
+            } else {
+                orderedByDate.forEach((article) => articleList.appendChild(article));
+            }
+        }
 
         if (emptyState) {
             emptyState.hidden = visibleCount > 0;
@@ -183,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (activeTag !== 'all') {
                     conditions.push(`tag \"${formatTagLabel(activeTag)}\"`);
                 }
-                if (query) {
+                if (queryNormalized) {
                     conditions.push(`search \"${query}\"`);
                 }
 
@@ -191,6 +378,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     ? `No articles found for ${conditions.join(' + ')}.`
                     : 'No articles found.';
             }
+        }
+
+        updateSearchHighlights(highlightTerms);
+        updateSearchStatus(visibleCount, query, activeTag);
+
+        if (searchClear && searchInput) {
+            searchClear.hidden = searchInput.value.trim().length === 0;
         }
 
         setActiveFilterButton();
@@ -252,7 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const renderTags = () => {
-        articles.forEach((article) => {
+        orderedByDate.forEach((article) => {
             const tags = getTags(article);
             if (!tags.length) {
                 return;
@@ -271,7 +465,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const chip = document.createElement('span');
                 chip.className = 'tag tag-filter';
                 chip.dataset.tag = tag;
-                chip.textContent = formatTagLabel(tag);
+                chip.dataset.label = formatTagLabel(tag);
+                chip.textContent = chip.dataset.label;
                 chip.setAttribute('role', 'button');
                 chip.setAttribute('tabindex', '0');
                 chip.setAttribute('aria-label', `Filter by ${formatTagLabel(tag)}`);
@@ -288,12 +483,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (articleList) {
-        const sorted = [...articles].sort((a, b) => {
-            const aDate = a.dataset.date ? new Date(a.dataset.date).getTime() : 0;
-            const bDate = b.dataset.date ? new Date(b.dataset.date).getTime() : 0;
-            return bDate - aDate;
-        });
-        sorted.forEach((article) => articleList.appendChild(article));
+        orderedByDate.forEach((article) => articleList.appendChild(article));
 
         articleList.addEventListener('click', (event) => {
             const chip = event.target.closest('.tag-filter');
@@ -323,10 +513,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (searchInput) {
+        let searchDebounce;
         searchInput.addEventListener('input', () => {
+            window.clearTimeout(searchDebounce);
+            searchDebounce = window.setTimeout(() => {
+                applyFilters();
+            }, 90);
+        });
+
+        searchInput.addEventListener('keydown', (event) => {
+            if (event.key !== 'Escape') {
+                return;
+            }
+            if (!searchInput.value.trim()) {
+                return;
+            }
+            event.preventDefault();
+            searchInput.value = '';
             applyFilters();
         });
     }
+
+    if (searchClear && searchInput) {
+        searchClear.hidden = !searchInput.value.trim();
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            applyFilters();
+            searchInput.focus();
+        });
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (!searchInput) {
+            return;
+        }
+        if (event.key !== '/') {
+            return;
+        }
+        const target = event.target;
+        const isTypingContext = target instanceof HTMLElement
+            && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable);
+        if (isTypingContext) {
+            return;
+        }
+        event.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+    });
 
     renderTags();
     renderFilterButtons();

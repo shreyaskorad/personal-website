@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://shreyaskorad.in/writing.html">
     <meta property="og:image" content="https://shreyaskorad.in/assets/images/blog/default.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css?v=20260216-tagfix2">
+    <link rel="stylesheet" href="styles.css?v=20260216-searchfix1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
@@ -60,9 +60,10 @@
                     <button class="filter-link" data-tag="systems" type="button">Systems</button>
                     <button class="filter-link" data-tag="leadership" type="button">Leadership</button>
                 </nav>
-                <div class="article-search">
+                <div class="article-search" role="search">
                     <label for="article-search" class="sr-only">Search</label>
-                    <input id="article-search" type="search" placeholder="Search…" autocomplete="off">
+                    <input id="article-search" type="search" placeholder="Search posts… ( / )" autocomplete="off">
+                    <button id="article-search-clear" class="search-clear" type="button" aria-label="Clear search" hidden>Clear</button>
                 </div>
                 <a class="rss-link" href="rss.xml" aria-label="RSS feed">
                     <span>RSS</span>
@@ -73,6 +74,7 @@
                     </svg>
                 </a>
             </div>
+            <p class="search-status" id="search-status" aria-live="polite"></p>
 
             <div class="article-list" id="article-list">
 
@@ -443,6 +445,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260216-tagfix2"></script>
+    <script src="script.js?v=20260216-searchfix1"></script>
 </body>
 </html>
