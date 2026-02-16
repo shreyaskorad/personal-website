@@ -3,22 +3,13 @@ const normalizeTag = (tag) => {
         return '';
     }
 
-    const normalized = tag
+    return tag
         .replace(/&amp;/gi, '&')
         .replace(/\u00a0/g, ' ')
         .replace(/[_/]/g, ' ')
         .replace(/\s+/g, ' ')
         .trim()
         .toLowerCase();
-
-    const aliases = new Map([
-        ['l&d', 'lxd'],
-        ['ld', 'lxd'],
-        ['learning and development', 'lxd'],
-        ['learning-development', 'lxd']
-    ]);
-
-    return aliases.get(normalized) || normalized;
 };
 
 const formatTagLabel = (tag) => {
