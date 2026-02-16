@@ -1,20 +1,14 @@
 # Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
 
-- Task ID: openclaw-1122
-- Status: completed
-- Created: 2026-02-16T13:49:51Z
-- Updated: 2026-02-16T13:50:53Z
+- Task ID: openclaw-1130
+- Status: failed
+- Created: 2026-02-16T14:28:29Z
+- Updated: 2026-02-16T14:46:03Z
 
 ## Summary
-No summary provided.
+Automatic compact retry failed. Wait for next autonomous cycle and smaller memory payload.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T13:52:05Z)
-
-## Last Error
-OpenClaw returned no usable markdown deliverable.
-
-## Draft Deliverable (Fallback)
 # Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
 
 ## Objective and success metrics
@@ -61,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
+Automatic compact retry failed. Wait for next autonomous cycle and smaller memory payload.
+
+## Blockers / Notes
+Context overflow retry failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
