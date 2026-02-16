@@ -1,21 +1,21 @@
-# Deliverable: Improve judgment without adding course fatigue
+# Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-1020
+- Task ID: openclaw-1037
 - Status: completed
-- Created: 2026-02-16T08:24:49Z
-- Updated: 2026-02-16T08:25:52Z
+- Created: 2026-02-16T09:16:56Z
+- Updated: 2026-02-16T09:17:16Z
 
 ## Summary
-No summary provided.
+Monitor engagement and decision quality adoption over 30 days
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T08:27:31Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-16T09:18:09Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Improve Judgment Without Adding Course Fatigue SEO blog operating system
+# Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
+Monitor engagement and decision quality adoption over 30 days
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
