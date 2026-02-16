@@ -108,6 +108,9 @@ UNSPLASH_KEYWORD_THEME = {
     "concept": "abstract",
     "object": "abstract",
 }
+CLAIM_KEYWORDS_RE = re.compile(r"\b(study|report|survey|analysis)\b", re.IGNORECASE)
+STAT_SIGNAL_RE = re.compile(r"\b(20\d{2}|[0-9]+(?:\.[0-9]+)?%|[0-9]+(?:\.[0-9]+)?x)\b")
+URL_RE = re.compile(r"https?://[^\s<>\"]+", re.IGNORECASE)
 
 
 def parse_date(value: str | None) -> datetime | None:
@@ -281,7 +284,43 @@ def build_unsplash_url(title: str, lead: str, tags: list[str], query_override: s
     return unsplash_photo_url(selected_id)
 
 
-def build_article_html(sections: list[dict], bullets: list[str], closing: str) -> str:
+def normalize_citations(raw_citations: object) -> list[dict[str, str]]:
+    citations: list[dict[str, str]] = []
+    if not isinstance(raw_citations, list):
+        return citations
+
+    seen_urls: set[str] = set()
+    for item in raw_citations:
+        if isinstance(item, str):
+            url = item.strip()
+            label = url
+        elif isinstance(item, dict):
+            url = str(item.get("url", "")).strip()
+            label = (
+                str(item.get("title", "")).strip()
+                or str(item.get("label", "")).strip()
+                or url
+            )
+        else:
+            continue
+
+        if not re.match(r"^https?://", url, flags=re.IGNORECASE):
+            continue
+        if url in seen_urls:
+            continue
+
+        seen_urls.add(url)
+        citations.append({"title": label, "url": url})
+
+    return citations
+
+
+def build_article_html(
+    sections: list[dict],
+    bullets: list[str],
+    closing: str,
+    citations: list[dict[str, str]],
+) -> str:
     lines = ["        <article class=\"post-content\">"]
     for section in sections:
         for paragraph in section.get("paragraphs", []):
@@ -291,6 +330,19 @@ def build_article_html(sections: list[dict], bullets: list[str], closing: str) -
             lines.append(f"            <p>{escape(item)}</p>")
     if closing:
         lines.append(f"            <p>{escape(closing)}</p>")
+    if citations:
+        lines.append("            <h2>Sources</h2>")
+        lines.append("            <ul>")
+        for citation in citations:
+            title = citation.get("title", "").strip() or citation.get("url", "").strip()
+            url = citation.get("url", "").strip()
+            lines.append(
+                "                <li>"
+                f"<a href=\"{escape(url, quote=True)}\" target=\"_blank\" rel=\"noopener\">"
+                f"{escape(title)}</a>"
+                "</li>"
+            )
+        lines.append("            </ul>")
     lines.append("        </article>")
     return "\n".join(lines)
 
@@ -342,6 +394,14 @@ def validate_text(text: str) -> None:
         raise ValueError("Em dash found in content")
     if "<blockquote" in text:
         raise ValueError("Blockquote tag found in content")
+
+
+def validate_citation_support(text: str, citations: list[dict[str, str]]) -> None:
+    has_claim_keywords = CLAIM_KEYWORDS_RE.search(text) is not None
+    has_stat_signal = STAT_SIGNAL_RE.search(text) is not None
+    has_url = URL_RE.search(text) is not None or any(c.get("url") for c in citations)
+    if has_claim_keywords and has_stat_signal and not has_url:
+        raise ValueError("Research/statistical claim detected without source URL")
 
 
 def warn(message: str) -> None:
@@ -428,6 +488,7 @@ def main() -> None:
     sections = payload.get("sections", [])
     bullets = payload.get("bullets", [])
     closing = payload.get("closing", "").strip()
+    citations = normalize_citations(payload.get("citations", []))
 
     if len(sections) < 2:
         raise ValueError("At least two sections are required")
@@ -438,6 +499,7 @@ def main() -> None:
         + bullets
     )
     validate_text(article_text)
+    validate_citation_support(article_text, citations)
 
     core = core_keywords(lead)
     closing_tokens = core_keywords(closing)
@@ -499,7 +561,7 @@ def main() -> None:
     image_src = f"{image_filename}?v={image_cache_key}"
 
     template = TEMPLATE_PATH.read_text()
-    article_html = build_article_html(sections, bullets, closing)
+    article_html = build_article_html(sections, bullets, closing, citations)
     html = replace_article_section(template, article_html)
 
     replacements = {

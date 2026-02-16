@@ -246,6 +246,33 @@ def normalize_tags(raw_tags: Any, title: str, lead: str) -> list[str]:
     return tags[:3]
 
 
+def normalize_citations(raw_citations: Any) -> list[dict[str, str]]:
+    citations: list[dict[str, str]] = []
+    if not isinstance(raw_citations, list):
+        return citations
+
+    seen_urls: set[str] = set()
+    for item in raw_citations:
+        if isinstance(item, str):
+            url = sanitize_text(item)
+            label = url
+        elif isinstance(item, dict):
+            url = sanitize_text(item.get('url', ''))
+            label = sanitize_text(item.get('title', '') or item.get('label', '') or url)
+        else:
+            continue
+
+        if not re.match(r'^https?://', url, flags=re.IGNORECASE):
+            continue
+        if url in seen_urls:
+            continue
+
+        seen_urls.add(url)
+        citations.append({'title': label, 'url': url})
+
+    return citations[:8]
+
+
 def ensure_date(value: Any) -> str:
     if isinstance(value, str) and value.strip():
         return value.strip()
@@ -484,6 +511,7 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
         bullets = [sanitize_text(b) for b in bullets_raw if sanitize_text(b)]
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
+    citations = normalize_citations(raw.get('citations', []) or raw.get('sources', []))
 
     lead_core = core_keywords(lead)
     closing_core = core_keywords(closing)
@@ -496,6 +524,7 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
         'slug': slug,
         'date': ensure_date(raw.get('date')),
         'tags': tags,
+        'citations': citations,
         'lead': lead,
         'excerpt': excerpt,
         'meta_description': meta_description,
