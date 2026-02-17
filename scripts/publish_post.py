@@ -7,6 +7,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 from datetime import datetime
 from html import escape
 from pathlib import Path
@@ -408,10 +409,38 @@ def warn(message: str) -> None:
     print(f"[publish_post] warning: {message}", file=sys.stderr)
 
 
+def run_git_command_result(args: list[str]) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(args, cwd=ROOT, capture_output=True, text=True)
+
+
 def run_git_command(args: list[str]) -> None:
-    result = subprocess.run(args, cwd=ROOT, capture_output=True, text=True)
+    result = run_git_command_result(args)
     if result.returncode != 0:
         raise RuntimeError(result.stderr.strip() or result.stdout.strip())
+
+
+def current_branch() -> str:
+    result = run_git_command_result(["git", "rev-parse", "--abbrev-ref", "HEAD"])
+    if result.returncode != 0:
+        return "HEAD"
+    return (result.stdout or "").strip() or "HEAD"
+
+
+def cleanup_repo_state() -> None:
+    subprocess.run(["git", "rebase", "--abort"], cwd=ROOT, capture_output=True, text=True)
+    subprocess.run(["git", "merge", "--abort"], cwd=ROOT, capture_output=True, text=True)
+    subprocess.run(["git", "cherry-pick", "--abort"], cwd=ROOT, capture_output=True, text=True)
+    subprocess.run(["git", "am", "--abort"], cwd=ROOT, capture_output=True, text=True)
+
+
+def ensure_primary_branch() -> None:
+    if current_branch() != "HEAD":
+        return
+    checkout = run_git_command_result(["git", "checkout", "main"])
+    if checkout.returncode != 0:
+        checkout = run_git_command_result(["git", "checkout", "master"])
+    if checkout.returncode != 0:
+        raise RuntimeError("Repository is detached and could not switch to main/master")
 
 
 def has_unstaged_changes() -> bool:
@@ -440,14 +469,17 @@ def stash_changes_keep_index() -> bool:
 
 
 def pop_stash() -> None:
-    subprocess.run(["git", "stash", "pop"], cwd=ROOT, capture_output=True, text=True)
+    result = run_git_command_result(["git", "stash", "pop"])
+    if result.returncode != 0:
+        warn("Auto-stash could not be restored cleanly; resolve with `git stash list` and `git stash pop`.")
 
 
 def commit_and_push(files: list[Path], message: str) -> None:
     if not (ROOT / ".git").exists():
         raise RuntimeError("Git repository not found at site root")
 
-    run_git_command(["git", "pull", "--ff-only"])
+    cleanup_repo_state()
+    ensure_primary_branch()
 
     run_git_command(["git", "add", *[str(f) for f in files]])
 
@@ -460,11 +492,30 @@ def commit_and_push(files: list[Path], message: str) -> None:
 
         run_git_command(["git", "commit", "-m", message])
 
-        dry_run = subprocess.run(["git", "push", "--dry-run"], cwd=ROOT, capture_output=True, text=True)
-        if dry_run.returncode != 0:
-            raise RuntimeError(dry_run.stderr.strip() or dry_run.stdout.strip())
+        last_error = ""
+        for attempt in range(1, 4):
+            push = run_git_command_result(["git", "push", "origin", "HEAD:main"])
+            if push.returncode == 0:
+                return
 
-        run_git_command(["git", "push"])
+            last_error = (push.stderr or push.stdout or f"push attempt {attempt} failed").strip()
+            warn(f"Push attempt {attempt} failed; trying fetch/rebase retry")
+
+            cleanup_repo_state()
+            fetch = run_git_command_result(["git", "fetch", "origin", "main"])
+            if fetch.returncode != 0:
+                last_error = (fetch.stderr or fetch.stdout or last_error).strip()
+                time.sleep(attempt * 2)
+                continue
+
+            rebase = run_git_command_result(["git", "rebase", "origin/main"])
+            if rebase.returncode != 0:
+                run_git_command_result(["git", "rebase", "--abort"])
+                last_error = (rebase.stderr or rebase.stdout or last_error).strip()
+
+            time.sleep(attempt * 2)
+
+        raise RuntimeError(f"Push failed after retries: {last_error}")
     finally:
         if did_stash:
             pop_stash()
