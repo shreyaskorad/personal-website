@@ -1,9 +1,9 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-1334
+- Task ID: openclaw-1336
 - Status: failed
-- Created: 2026-02-17T17:29:10Z
-- Updated: 2026-02-17T17:33:40Z
+- Created: 2026-02-17T17:43:08Z
+- Updated: 2026-02-17T17:47:38Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
