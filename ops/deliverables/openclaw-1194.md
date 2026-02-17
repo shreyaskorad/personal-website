@@ -1,9 +1,9 @@
 # Deliverable: Design manager enablement that links coaching actions to team capability growth
 
-- Task ID: openclaw-1192
+- Task ID: openclaw-1194
 - Status: failed
-- Created: 2026-02-16T19:07:36Z
-- Updated: 2026-02-16T19:12:06Z
+- Created: 2026-02-17T00:56:49Z
+- Updated: 2026-02-17T01:11:30Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
