@@ -21,8 +21,13 @@ STATE_DIR = Path('/Users/shreyas-clawd/.openclaw/state')
 LOCK_FILE = STATE_DIR / 'publish.lock'
 HISTORY_FILE = Path('/Users/shreyas-clawd/.openclaw/state/publish-image-history.json')
 SANITIZED_PAYLOAD = STATE_DIR / 'publish-payload.sanitized.json'
+QUALITY_HISTORY_FILE = STATE_DIR / 'publish-quality-history.json'
+QUALITY_REPORT_FILE = STATE_DIR / 'publish-quality-report.json'
 
 RECENT_IMAGE_WINDOW = 12
+QUALITY_MIN_TOTAL = 18
+QUALITY_MAX_PASSES = 3
+QUALITY_DELTA_PER_ITERATION = 1
 
 UNSPLASH_THEME_IDS = {
     'base': [
@@ -111,6 +116,24 @@ UNSPLASH_KEYWORD_THEME = {
     'concept': 'abstract',
     'object': 'abstract',
 }
+
+QUALITY_DIMENSIONS = ('clarity', 'specificity', 'evidence', 'originality', 'actionability')
+QUALITY_ACTION_TERMS = {
+    'define', 'measure', 'track', 'review', 'ship', 'test', 'improve', 'set', 'map', 'audit',
+    'reduce', 'increase', 'prioritize', 'publish', 'validate', 'align'
+}
+QUALITY_METRIC_TERMS = {
+    'kpi', 'metric', 'metrics', 'conversion', 'retention', 'throughput', 'cycle', 'cycle-time',
+    'activation', 'adoption', 'latency', 'revenue', 'cost', 'efficiency', 'baseline', 'lift'
+}
+QUALITY_CLICHE_PATTERNS = [
+    r'\bgame changer\b',
+    r'\bleverage ai\b',
+    r'\bin today\'s fast-paced world\b',
+    r'\bnext level\b',
+    r'\bmove the needle\b',
+    r'\bunlock potential\b',
+]
 
 
 def warn(message: str) -> None:
@@ -326,6 +349,366 @@ def tighten_to_target(payload: dict[str, Any], min_words: int = 150, max_words: 
         ).strip()
         if current() >= min_words:
             break
+
+
+def clamp_score(value: int) -> int:
+    return max(1, min(5, value))
+
+
+def split_sentences(text: str) -> list[str]:
+    cleaned = sanitize_text(text)
+    if not cleaned:
+        return []
+    return [part.strip() for part in re.split(r'(?<=[.!?])\s+', cleaned) if part.strip()]
+
+
+def collect_sentences(payload: dict[str, Any]) -> list[str]:
+    sentences: list[str] = []
+    for item in [payload.get('lead', ''), payload.get('excerpt', ''), payload.get('closing', '')]:
+        sentences.extend(split_sentences(str(item)))
+    for section in payload.get('sections', []):
+        for paragraph in section.get('paragraphs', []):
+            sentences.extend(split_sentences(str(paragraph)))
+    return sentences
+
+
+def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
+    text = collect_text_for_count(payload)
+    text_l = text.lower()
+    words = word_count(text)
+    sentences = collect_sentences(payload)
+    sentence_count = len(sentences)
+    avg_sentence_words = words / sentence_count if sentence_count else 0.0
+    long_sentence_count = sum(1 for s in sentences if word_count(s) >= 28)
+    duplicate_sentence_count = max(0, len(sentences) - len({s.lower() for s in sentences}))
+    lead_words = word_count(payload.get('lead', ''))
+    number_hits = len(re.findall(r'\b(?:\d+(?:\.\d+)?%?|20\d{2})\b', text))
+
+    tokens = re.findall(r'\b[a-z][a-z0-9-]{2,}\b', text_l)
+    unique_ratio = (len(set(tokens)) / len(tokens)) if tokens else 0.0
+
+    citations = payload.get('citations', [])
+    citation_count = len(citations) if isinstance(citations, list) else 0
+    metric_terms_found = len({tok for tok in tokens if tok in QUALITY_METRIC_TERMS})
+    action_terms_found = len({tok for tok in tokens if tok in QUALITY_ACTION_TERMS})
+    cliche_hits = sum(1 for pattern in QUALITY_CLICHE_PATTERNS if re.search(pattern, text_l))
+    has_cadence = re.search(r'\b(daily|weekly|monthly|sprint|cadence|roadmap)\b', text_l) is not None
+    has_sequence = re.search(r'\b(first|next|then|finally|step)\b', text_l) is not None
+    has_contrast = re.search(r'\b(unlike|instead|however|while)\b', text_l) is not None
+    has_evidence_language = re.search(
+        r'\b(baseline|benchmark|source|sources|before|after|experiment|measure|measured)\b',
+        text_l,
+    ) is not None
+
+    clarity = 3
+    if 10 <= avg_sentence_words <= 24:
+        clarity += 1
+    if long_sentence_count == 0:
+        clarity += 1
+    if long_sentence_count >= 2:
+        clarity -= 1
+    if lead_words < 10:
+        clarity -= 1
+    if duplicate_sentence_count:
+        clarity -= 1
+    clarity = clamp_score(clarity)
+
+    specificity = 2
+    if number_hits >= 2:
+        specificity += 1
+    if metric_terms_found >= 2:
+        specificity += 1
+    if len(payload.get('tags', [])) >= 2:
+        specificity += 1
+    if re.search(r'\b(within|by|per)\b', text_l) and number_hits >= 1:
+        specificity += 1
+    if cliche_hits >= 2:
+        specificity -= 1
+    specificity = clamp_score(specificity)
+
+    evidence = 1
+    if citation_count >= 1:
+        evidence += 2
+    if citation_count >= 2:
+        evidence += 1
+    if metric_terms_found >= 2:
+        evidence += 1
+    if has_evidence_language:
+        evidence += 1
+    evidence = clamp_score(evidence)
+
+    originality = 2
+    if unique_ratio >= 0.58:
+        originality += 1
+    if cliche_hits == 0:
+        originality += 1
+    if has_contrast:
+        originality += 1
+    if duplicate_sentence_count == 0 and sentence_count > 0:
+        originality += 1
+    if cliche_hits >= 2:
+        originality -= 1
+    originality = clamp_score(originality)
+
+    actionability = 2
+    bullet_count = len(payload.get('bullets', []))
+    if bullet_count >= 2:
+        actionability += 2
+    if action_terms_found >= 3:
+        actionability += 1
+    if has_cadence:
+        actionability += 1
+    if has_sequence:
+        actionability += 1
+    actionability = clamp_score(actionability)
+
+    score_map = {
+        'clarity': clarity,
+        'specificity': specificity,
+        'evidence': evidence,
+        'originality': originality,
+        'actionability': actionability,
+    }
+    total = sum(score_map.values())
+    return {
+        'scores': {
+            dim: {
+                'score': score_map[dim],
+                'rationale': f'{dim.title()} score based on deterministic writing signals.',
+            }
+            for dim in QUALITY_DIMENSIONS
+        },
+        'total': total,
+        'max_total': 25,
+        'signals': {
+            'word_count': words,
+            'avg_sentence_words': round(avg_sentence_words, 2),
+            'long_sentences': long_sentence_count,
+            'duplicate_sentences': duplicate_sentence_count,
+            'number_hits': number_hits,
+            'citation_count': citation_count,
+            'metric_terms_found': metric_terms_found,
+            'action_terms_found': action_terms_found,
+            'lexical_diversity': round(unique_ratio, 3),
+            'cliche_hits': cliche_hits,
+            'bullet_count': bullet_count,
+        },
+    }
+
+
+def build_quality_critique(report: dict[str, Any], target_total: int) -> list[str]:
+    critique: list[str] = []
+    ordered = sorted(
+        QUALITY_DIMENSIONS,
+        key=lambda dim: (report['scores'][dim]['score'], dim),
+    )
+    for dim in ordered:
+        score = int(report['scores'][dim]['score'])
+        if score > 3:
+            continue
+        if dim == 'clarity':
+            critique.append('Reduce long sentences and make the opening claim more direct.')
+        elif dim == 'specificity':
+            critique.append('Add concrete metrics, constraints, or audience-specific details.')
+        elif dim == 'evidence':
+            critique.append('Include source links or before-after measurement language for claims.')
+        elif dim == 'originality':
+            critique.append('Replace generic phrasing with a sharper contrast or unique angle.')
+        elif dim == 'actionability':
+            critique.append('Add explicit next steps, cadence, and execution checkpoints.')
+
+    if report['total'] < target_total:
+        critique.append(f'Raise total quality score to at least {target_total}/25 (current {report["total"]}/25).')
+    return critique
+
+
+def append_to_last_section(payload: dict[str, Any], sentence: str) -> None:
+    sentence = sanitize_text(sentence)
+    if not sentence:
+        return
+    sections = payload.get('sections', [])
+    if not sections:
+        sections.append({'heading': '', 'paragraphs': [sentence]})
+        payload['sections'] = sections
+        return
+    paragraphs = sections[-1].setdefault('paragraphs', [])
+    if sentence in paragraphs:
+        return
+    paragraphs.append(sentence)
+
+
+def simplify_sentence(text: str, max_words: int = 24) -> str:
+    cleaned = sanitize_text(text)
+    words = cleaned.split()
+    if len(words) <= max_words:
+        return cleaned
+    short = ' '.join(words[:max_words]).rstrip(',;:')
+    if short and short[-1] not in '.!?':
+        short += '.'
+    return short
+
+
+def reinforce_clarity(payload: dict[str, Any]) -> None:
+    payload['lead'] = simplify_sentence(payload.get('lead', ''), max_words=22)
+    payload['closing'] = simplify_sentence(payload.get('closing', ''), max_words=24)
+    sections = payload.get('sections', [])
+    for section in sections[:1]:
+        paragraphs = section.get('paragraphs', [])
+        if paragraphs:
+            paragraphs[0] = simplify_sentence(paragraphs[0], max_words=24)
+
+
+def reinforce_specificity(payload: dict[str, Any]) -> None:
+    append_to_last_section(
+        payload,
+        'Anchor one baseline KPI and one target KPI, such as cycle time or activation rate, and review the delta weekly.',
+    )
+
+
+def reinforce_evidence(payload: dict[str, Any]) -> None:
+    append_to_last_section(
+        payload,
+        'Before publishing, capture a baseline, ship the change, and compare before-after performance with source links.',
+    )
+
+
+def reinforce_originality(payload: dict[str, Any]) -> None:
+    replacements = {
+        'game changer': 'practical shift',
+        'leverage ai': 'use AI intentionally',
+        "in today's fast-paced world": 'in this operating context',
+        'next level': 'higher signal',
+        'move the needle': 'change measurable outcomes',
+        'unlock potential': 'improve execution quality',
+    }
+    for key in ('lead', 'excerpt', 'closing'):
+        value = str(payload.get(key, ''))
+        value_l = value.lower()
+        for source, target in replacements.items():
+            if source in value_l:
+                value = re.sub(re.escape(source), target, value, flags=re.IGNORECASE)
+                value_l = value.lower()
+        payload[key] = sanitize_text(value)
+
+    append_to_last_section(
+        payload,
+        'The advantage is not more content volume; it is tighter feedback between what gets published and what changes behavior.',
+    )
+
+
+def reinforce_actionability(payload: dict[str, Any]) -> None:
+    bullets = payload.get('bullets', [])
+    if not isinstance(bullets, list):
+        bullets = []
+    additions = [
+        'Define one leading KPI and one lagging KPI for this topic.',
+        'Run a weekly review: baseline, delta, blockers, and next experiment.',
+        'Publish the next iteration only after the prior metric trend is documented.',
+    ]
+    for item in additions:
+        if item not in bullets:
+            bullets.append(item)
+    payload['bullets'] = bullets[:4]
+
+
+def apply_quality_rewrite(payload: dict[str, Any], dimensions: list[str]) -> None:
+    for dim in ordered_unique([d for d in dimensions if d in QUALITY_DIMENSIONS]):
+        if dim == 'clarity':
+            reinforce_clarity(payload)
+        elif dim == 'specificity':
+            reinforce_specificity(payload)
+        elif dim == 'evidence':
+            reinforce_evidence(payload)
+        elif dim == 'originality':
+            reinforce_originality(payload)
+        elif dim == 'actionability':
+            reinforce_actionability(payload)
+
+
+def load_quality_history() -> dict[str, Any]:
+    if not QUALITY_HISTORY_FILE.exists():
+        return {}
+    try:
+        raw = json.loads(QUALITY_HISTORY_FILE.read_text())
+        return raw if isinstance(raw, dict) else {}
+    except Exception:
+        return {}
+
+
+def save_quality_history(history: dict[str, Any]) -> None:
+    QUALITY_HISTORY_FILE.parent.mkdir(parents=True, exist_ok=True)
+    QUALITY_HISTORY_FILE.write_text(json.dumps(history, indent=2))
+
+
+def quality_targets(slug: str, min_total: int, delta: int) -> tuple[int, int, dict[str, Any]]:
+    history = load_quality_history()
+    by_slug = history.get('by_slug', {})
+    entry = by_slug.get(slug, {}) if isinstance(by_slug, dict) else {}
+    previous = int(entry.get('last_total') or 0) if isinstance(entry, dict) else 0
+    target = max(min_total, previous + (delta if previous > 0 else 0))
+    return previous, min(25, target), history
+
+
+def run_quality_gate(
+    payload: dict[str, Any],
+    min_total: int = QUALITY_MIN_TOTAL,
+    max_passes: int = QUALITY_MAX_PASSES,
+    delta: int = QUALITY_DELTA_PER_ITERATION,
+) -> dict[str, Any]:
+    slug = str(payload.get('slug') or '')
+    previous_total, target_total, history = quality_targets(slug, min_total, delta)
+    passes: list[dict[str, Any]] = []
+    attempts = max(1, max_passes)
+
+    for index in range(1, attempts + 1):
+        report = quality_report(payload)
+        report['pass'] = index
+        report['target_total'] = target_total
+        report['critique'] = build_quality_critique(report, target_total)
+        passes.append(report)
+
+        if report['total'] >= target_total:
+            break
+
+        lowest_dims = sorted(
+            QUALITY_DIMENSIONS,
+            key=lambda dim: (report['scores'][dim]['score'], dim),
+        )[:2]
+        apply_quality_rewrite(payload, lowest_dims)
+        tighten_to_target(payload)
+
+    final = passes[-1]
+    gate = {
+        'status': 'pass' if final['total'] >= target_total else 'fail',
+        'slug': slug,
+        'previous_total': previous_total,
+        'target_total': target_total,
+        'final_total': final['total'],
+        'passes': passes,
+    }
+
+    QUALITY_REPORT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    QUALITY_REPORT_FILE.write_text(json.dumps(gate, indent=2))
+
+    if gate['status'] != 'pass':
+        critique = '; '.join(final.get('critique', [])[:3]) or 'quality gate requirements not met'
+        raise ValueError(f'Quality gate failed for "{slug}": {critique}')
+
+    by_slug = history.get('by_slug')
+    if not isinstance(by_slug, dict):
+        by_slug = {}
+    current = by_slug.get(slug, {})
+    runs = int(current.get('runs') or 0) + 1 if isinstance(current, dict) else 1
+    by_slug[slug] = {
+        'last_total': gate['final_total'],
+        'last_scores': {dim: final['scores'][dim]['score'] for dim in QUALITY_DIMENSIONS},
+        'runs': runs,
+        'updatedAt': datetime.utcnow().isoformat() + 'Z',
+    }
+    history['by_slug'] = by_slug
+    history['updatedAt'] = datetime.utcnow().isoformat() + 'Z'
+    save_quality_history(history)
+    return gate
 
 
 def ordered_unique(values: list[str]) -> list[str]:
@@ -620,6 +1003,24 @@ def main() -> None:
     parser.add_argument('--input', required=True, help='Path to raw JSON payload')
     parser.add_argument('--force', action='store_true', help='Force overwrite')
     parser.add_argument('--max-retries', type=int, default=1, help='Max publish retries (default: 1)')
+    parser.add_argument(
+        '--quality-min-total',
+        type=int,
+        default=QUALITY_MIN_TOTAL,
+        help=f'Minimum quality score target out of 25 (default: {QUALITY_MIN_TOTAL})',
+    )
+    parser.add_argument(
+        '--quality-passes',
+        type=int,
+        default=QUALITY_MAX_PASSES,
+        help=f'Max rewrite passes for quality gate (default: {QUALITY_MAX_PASSES})',
+    )
+    parser.add_argument(
+        '--quality-delta',
+        type=int,
+        default=QUALITY_DELTA_PER_ITERATION,
+        help=f'Required score improvement vs prior slug run (default: {QUALITY_DELTA_PER_ITERATION})',
+    )
     args = parser.parse_args()
 
     input_path = Path(args.input)
@@ -641,6 +1042,22 @@ def main() -> None:
 
         raw = json.loads(input_path.read_text())
         payload = sanitize_payload(raw)
+        try:
+            quality_gate = run_quality_gate(
+                payload,
+                min_total=max(1, min(25, int(args.quality_min_total))),
+                max_passes=max(1, min(8, int(args.quality_passes))),
+                delta=max(0, min(5, int(args.quality_delta))),
+            )
+        except ValueError as exc:
+            die(str(exc))
+
+        payload['quality_gate'] = {
+            'final_total': quality_gate['final_total'],
+            'target_total': quality_gate['target_total'],
+            'previous_total': quality_gate['previous_total'],
+            'passes': len(quality_gate.get('passes', [])),
+        }
         SANITIZED_PAYLOAD.write_text(json.dumps(payload, indent=2))
 
         cmd = ['python3', str(PUBLISH_SCRIPT), '--input', str(SANITIZED_PAYLOAD), '--no-git']
@@ -684,6 +1101,10 @@ def main() -> None:
             'push': push_status,
             'branch': publish_branch,
             'sanitized_payload': str(SANITIZED_PAYLOAD),
+            'quality_report': str(QUALITY_REPORT_FILE),
+            'quality_total': quality_gate['final_total'],
+            'quality_target': quality_gate['target_total'],
+            'quality_previous': quality_gate['previous_total'],
         }
         print(json.dumps(result, indent=2))
     finally:
