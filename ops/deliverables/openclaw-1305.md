@@ -1,9 +1,9 @@
 # Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-1301
+- Task ID: openclaw-1305
 - Status: blocked
-- Created: 2026-02-17T15:22:37Z
-- Updated: 2026-02-17T15:22:50Z
+- Created: 2026-02-17T15:37:18Z
+- Updated: 2026-02-17T15:37:32Z
 
 ## Summary
 Choose new topic not previously published or rewrite with significantly different angle
