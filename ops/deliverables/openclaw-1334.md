@@ -1,12 +1,12 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-1331
-- Status: blocked
-- Created: 2026-02-17T17:14:08Z
-- Updated: 2026-02-17T17:16:08Z
+- Task ID: openclaw-1334
+- Status: failed
+- Created: 2026-02-17T17:29:10Z
+- Updated: 2026-02-17T17:33:40Z
 
 ## Summary
-1) Choose a unique, fresh title aligned to L&D or LXD topics. 2) Conduct topic discovery to shortlist 3 candidates per rules. 3) Verify title uniqueness in git and posts before briefing
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
 # Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
@@ -55,10 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-1) Choose a unique, fresh title aligned to L&D or LXD topics. 2) Conduct topic discovery to shortlist 3 candidates per rules. 3) Verify title uniqueness in git and posts before briefing
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Blockers / Notes
-Title 'Build a practical LXD workflow for small teams shipping weekly' exists in git history and published posts. Supervisor notes confirm 5+ duplicate task executions with same URL https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
