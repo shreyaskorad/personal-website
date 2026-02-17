@@ -1,15 +1,15 @@
-# Deliverable: Make learning evidence useful for business reviews without heavy reporting overhead
+# Deliverable: Design onboarding that builds role judgment instead of checklist compliance
 
-- Task ID: openclaw-1204
+- Task ID: openclaw-1208
 - Status: failed
-- Created: 2026-02-17T04:59:55Z
-- Updated: 2026-02-17T05:04:25Z
+- Created: 2026-02-17T05:18:44Z
+- Updated: 2026-02-17T05:18:48Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-# Deliverable Draft: Make Learning Evidence Useful For Business Reviews Without Heavy Reporting Overhead SEO blog operating system
+# Deliverable Draft: Design Onboarding That Builds Role Judgment Instead Of Checklist Compliance SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
