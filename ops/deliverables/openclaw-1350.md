@@ -1,15 +1,15 @@
 # Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
 
-- Task ID: openclaw-1349
+- Task ID: openclaw-1350
 - Status: completed
-- Created: 2026-02-17T19:09:27Z
-- Updated: 2026-02-17T19:13:41Z
+- Created: 2026-02-17T19:16:05Z
+- Updated: 2026-02-17T19:16:24Z
 
 ## Summary
-Check sitemap and RSS for existing articles on weekly one-on-ones; conduct topic discovery; execute full lifecycle
+Verify title uniqueness, execute full publishing pipeline, verify live URL and indexing
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-17T19:15:11Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-17T19:17:15Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Check sitemap and RSS for existing articles on weekly one-on-ones; conduct topic discovery; execute full lifecycle
+Verify title uniqueness, execute full publishing pipeline, verify live URL and indexing
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
