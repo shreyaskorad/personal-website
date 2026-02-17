@@ -526,6 +526,7 @@ def main() -> None:
     parser.add_argument("--input", required=True, help="Path to JSON payload")
     parser.add_argument("--force", action="store_true", help="Overwrite existing post")
     parser.add_argument("--no-git", action="store_true", help="Skip git commit/push")
+    parser.add_argument("--max-retries", type=int, default=1, help="Compatibility flag; retries are handled by wrapper scripts")
     args = parser.parse_args()
 
     payload = json.loads(Path(args.input).read_text())
