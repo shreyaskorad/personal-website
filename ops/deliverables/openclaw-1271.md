@@ -1,15 +1,15 @@
-# Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
+# Deliverable: Design learning prompts that improve decisions during real project pressure
 
-- Task ID: openclaw-1267
+- Task ID: openclaw-1271
 - Status: failed
-- Created: 2026-02-17T12:44:26Z
-- Updated: 2026-02-17T12:48:56Z
+- Created: 2026-02-17T13:04:33Z
+- Updated: 2026-02-17T13:09:03Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-# Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
+# Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
