@@ -1,12 +1,12 @@
 # Deliverable: Design learning prompts that improve decisions during real project pressure
 
 - Task ID: openclaw-1274
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-17T13:22:35Z
-- Updated: 2026-02-17T13:26:38Z
+- Updated: 2026-02-17T13:29:45Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 # Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
@@ -55,10 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
-
-## Blockers / Notes
-OpenClaw SSH execution failed.
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
