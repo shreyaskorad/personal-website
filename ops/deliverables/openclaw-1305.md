@@ -1,12 +1,12 @@
 # Deliverable: Design without losing human judgment
 
 - Task ID: openclaw-1305
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-17T15:37:18Z
-- Updated: 2026-02-17T15:37:32Z
+- Updated: 2026-02-17T15:40:38Z
 
 ## Summary
-Choose new topic not previously published or rewrite with significantly different angle
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 ```json
@@ -29,9 +29,6 @@ Choose new topic not previously published or rewrite with significantly differen
   ]
 }
 ```
-
-## Blockers / Notes
-Exact title 'Design without losing human judgment' exists in posts directory (published Feb 11, 2026); Git log shows commit 0994930 with this exact title
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
