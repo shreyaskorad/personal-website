@@ -508,7 +508,7 @@ def commit_and_push(files: list[Path], message: str) -> None:
                 time.sleep(attempt * 2)
                 continue
 
-            rebase = run_git_command_result(["git", "rebase", "origin/main"])
+            rebase = run_git_command_result(["git", "rebase", "-X", "theirs", "origin/main"])
             if rebase.returncode != 0:
                 run_git_command_result(["git", "rebase", "--abort"])
                 last_error = (rebase.stderr or rebase.stdout or last_error).strip()
