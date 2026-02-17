@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog - Shreyas Korad Learning Design & Gamification">
+    <meta name="keywords" content="Blog, Articles, Learning Design, Gamification">
+    <title>Blog | Shreyas Korad</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --gray-600: #475569;
+            --white: #ffffff;
+            --light: #f8fafc;
+            --radius: 0.5rem;
+            --max-width: 1200px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--dark); background: var(--light); }
+        a { color: var(--primary); text-decoration: none; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+        .navbar { background: var(--white); border-bottom: 1px solid #e2e8f0; padding: 1rem 0; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--gray-600); font-weight: 500; }
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%); color: var(--white); padding: 4rem 0; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; opacity: 0.95; }
+        .blog { padding: 4rem 0; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .post { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.2s; }
+        .post:hover { transform: translateY(-4px); }
+        .post-image { height: 200px; background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+        .post-content { padding: 1.5rem; }
+        .post-tag { display: inline-block; background: var(--primary); color: var(--white); padding: 0.25rem 0.75rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 500; margin-bottom: 0.75rem; }
+        .post-content h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+        .post-content p { color: var(--gray-600); font-size: 0.95rem; margin-bottom: 1rem; }
+        .read-more { color: var(--primary); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.25rem; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .nav-links { gap: 1rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Shreyas<span>Korad</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Practical insights, frameworks, and strategies for learning transformation</p>
+        </div>
+    </section>
+    <section class="blog">
+        <div class="container">
+            <div class="blog-grid">
+                <article class="post">
+                    <div class="post-image">📱</div>
+                    <div class="post-content">
+                        <span class="post-tag">Mobile Learning</span>
+                        <h3>Mobile-First Learning Design Principles</h3>
+                        <p>How to create learning experiences that work seamlessly across all devices and contexts.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="post">
+                    <div class="post-image">♿</div>
+                    <div class="post-content">
+                        <span class="post-tag">Accessibility</span>
+                        <h3>Accessibility 101: Creating Inclusive Learning</h3>
+                        <p>Practical strategies for making your learning content accessible to all learners.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="post">
+                    <div class="post-image">🎮</div>
+                    <div class="post-content">
+                        <span class="post-tag">Gamification</span>
+                        <h3>12 Gamification Mechanics for Corporate Training</h3>
+                        <p>Proven game mechanics that drive engagement and knowledge retention.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="post">
+                    <div class="post-image">📊</div>
+                    <div class="post-content">
+                        <span class="post-tag">Analytics</span>
+                        <h3>Measuring Learning ROI: A Practical Framework</h3>
+                        <p>How to calculate and communicate the business value of your learning programs.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="post">
+                    <div class="post-image">⚡</div>
+                    <div class="post-content">
+                        <span class="post-tag">Microlearning</span>
+                        <h3>Micro-Learning: Snackable Content for Busy Learners</h3>
+                        <p>Strategies for delivering high-impact learning in 5-10 minute segments.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="post">
+                    <div class="post-image">🤖</div>
+                    <div class="post-content">
+                        <span class="post-tag">AI Learning</span>
+                        <h3>The Future of AI in Learning Design</h3>
+                        <p>How artificial intelligence is transforming personalized learning experiences.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="post">
+                    <div class="post-image">🎯</div>
+                    <div class="post-content">
+                        <span class="post-tag">Framework</span>
+                        <h3>The ADDIE Model Reimagined for Digital Age</h3>
+                        <p>Adapting classic instructional design frameworks for modern learning environments.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="post">
+                    <div class="post-image">💡</div>
+                    <div class="post-content">
+                        <span class="post-tag">Strategy</span>
+                        <h3>5 Steps to Build a Learning-First Culture</h3>
+                        <p>Practical framework for transforming your organization's approach to learning.</p>
+                        <a href="posts/how-small-teams-can-implement-data-informed-learning-decisions-without-heavy-infrastructure.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
