@@ -42,11 +42,31 @@ STUDY_SOURCE_POOL = [
         'url': 'https://www.nber.org/papers/w31161',
     },
     {
+        'title': 'Attention Is All You Need (arXiv:1706.03762)',
+        'url': 'https://arxiv.org/abs/1706.03762',
+    },
+    {
+        'title': 'Language Models are Few-Shot Learners (arXiv:2005.14165)',
+        'url': 'https://arxiv.org/abs/2005.14165',
+    },
+    {
+        'title': 'Training language models to follow instructions with human feedback (arXiv:2203.02155)',
+        'url': 'https://arxiv.org/abs/2203.02155',
+    },
+    {
+        'title': 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (arXiv:2201.11903)',
+        'url': 'https://arxiv.org/abs/2201.11903',
+    },
+    {
         'title': 'On the Opportunities and Risks of Foundation Models (arXiv:2108.07258)',
         'url': 'https://arxiv.org/abs/2108.07258',
     },
     {
-        'title': 'GPTs are GPTs: An Early Look at Labor Market Impact Potential (arXiv:2303.10130)',
+        'title': 'GPT-4 Technical Report (arXiv:2303.08774)',
+        'url': 'https://arxiv.org/abs/2303.08774',
+    },
+    {
+        'title': 'GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models (arXiv:2303.10130)',
         'url': 'https://arxiv.org/abs/2303.10130',
     },
     {
@@ -186,6 +206,26 @@ SECTION_HEADING_DEFAULTS = [
     'Review checkpoint',
     'Next iteration',
 ]
+INSTRUCTION_LINE_PATTERNS = [
+    re.compile(r'\bcite at least\b.*\bstudy link', flags=re.IGNORECASE),
+    re.compile(r'\bremove unsupported (?:statistical )?claims?\b', flags=re.IGNORECASE),
+    re.compile(r'\bsource link rule\b', flags=re.IGNORECASE),
+    re.compile(r'\bevery external claim must include\b', flags=re.IGNORECASE),
+    re.compile(r'\bif a source cannot be verified\b', flags=re.IGNORECASE),
+    re.compile(r'\breturn only markdown\b', flags=re.IGNORECASE),
+    re.compile(r'\bno json\b', flags=re.IGNORECASE),
+    re.compile(r'\bno process commentary\b', flags=re.IGNORECASE),
+    re.compile(r'^\s*task:\s*', flags=re.IGNORECASE),
+    re.compile(r'^\s*generated:\s*', flags=re.IGNORECASE),
+    re.compile(r'^\s*rewrite priorities\b', flags=re.IGNORECASE),
+    re.compile(r'^\s*publish flow\b', flags=re.IGNORECASE),
+    re.compile(r'\bquality score\b', flags=re.IGNORECASE),
+    re.compile(r'\bmatched post:\b', flags=re.IGNORECASE),
+]
+FRAGMENT_ENDING_RE = re.compile(
+    r'\b(?:by|for|with|to|from|of|in|on|at|as|and|or|but|so|than|then|if|when|while|because|that|which)\.?\s*$',
+    flags=re.IGNORECASE,
+)
 
 
 def warn(message: str) -> None:
@@ -266,6 +306,38 @@ def sanitize_text(text: str) -> str:
     return ' '.join(text.strip().split())
 
 
+def is_instructional_line(text: str) -> bool:
+    value = sanitize_text(text)
+    if not value:
+        return False
+    return any(pattern.search(value) for pattern in INSTRUCTION_LINE_PATTERNS)
+
+
+def is_likely_sentence_fragment(text: str) -> bool:
+    value = sanitize_text(text)
+    if not value:
+        return False
+    words = value.split()
+    if len(words) < 4 and value[-1] not in '.!?':
+        return True
+    if len(words) >= 5 and FRAGMENT_ENDING_RE.search(value):
+        return True
+    return False
+
+
+def sanitize_content_line(text: str) -> str:
+    value = sanitize_text(text)
+    if not value:
+        return ''
+    if is_instructional_line(value):
+        return ''
+    if is_likely_sentence_fragment(value):
+        return ''
+    if value[-1] not in '.!?':
+        value += '.'
+    return value
+
+
 def word_count(text: str) -> int:
     return len(re.findall(r'\b\w+\b', text))
 
@@ -294,22 +366,26 @@ def ensure_sections(raw_sections: Any, lead: str, excerpt: str, closing: str, ti
                 raw_paragraphs = [raw_paragraphs]
             if not isinstance(raw_paragraphs, list):
                 raw_paragraphs = []
-            paragraphs = [sanitize_text(p) for p in raw_paragraphs if sanitize_text(p)]
+            paragraphs = [sanitize_content_line(p) for p in raw_paragraphs if sanitize_content_line(p)]
             if paragraphs:
                 sections.append({'heading': heading, 'paragraphs': paragraphs[:6]})
 
     if len(sections) >= 2:
         return ensure_section_headings(sections, title)
 
-    body_a = excerpt or lead or f'{title} is changing how we work and decide.'
-    body_b = closing or 'The shift is practical: tools are faster, but judgment and direction still matter most.'
+    body_a = sanitize_content_line(excerpt) or sanitize_content_line(lead) or sanitize_content_line(
+        f'{title} is changing how we work and decide.'
+    )
+    body_b = sanitize_content_line(closing) or sanitize_content_line(
+        'The shift is practical: tools are faster, but judgment and direction still matter most.'
+    )
     warn('Payload sections were incomplete; generated fallback sections')
     fallback = [
         {
             'heading': '' if DISABLE_BODY_H2 else 'Key context',
             'paragraphs': [
-                sanitize_text(body_a),
-                sanitize_text(
+                body_a,
+                sanitize_content_line(
                     'Teams that link learning activity to real project outcomes improve judgment quality and reduce avoidable rework.'
                 ),
             ],
@@ -317,8 +393,8 @@ def ensure_sections(raw_sections: Any, lead: str, excerpt: str, closing: str, ti
         {
             'heading': '' if DISABLE_BODY_H2 else 'Execution move',
             'paragraphs': [
-                sanitize_text(body_b),
-                sanitize_text(
+                body_b,
+                sanitize_content_line(
                     'Set a weekly cadence to review one baseline metric, one change introduced, and one observed delta before publishing the next iteration.'
                 ),
             ],
@@ -339,7 +415,7 @@ def ensure_section_headings(sections: list[dict[str, Any]], title: str) -> list[
                 heading = SECTION_HEADING_DEFAULTS[idx]
             else:
                 heading = f'{title_topic}: section {idx + 1}'
-        paragraphs = [sanitize_text(p) for p in section.get('paragraphs', []) if sanitize_text(p)]
+        paragraphs = [sanitize_content_line(p) for p in section.get('paragraphs', []) if sanitize_content_line(p)]
         if not paragraphs:
             continue
         normalized.append({'heading': heading, 'paragraphs': paragraphs[:6]})
@@ -396,13 +472,38 @@ def is_study_url(url: str) -> bool:
     return False
 
 
+def recent_study_usage(max_posts: int = 60) -> dict[str, int]:
+    usage: dict[str, int] = {}
+    posts = sorted(
+        [p for p in (ROOT / 'posts').glob('*.html') if p.is_file()],
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )[:max_posts]
+    for post in posts:
+        try:
+            text = post.read_text()
+        except Exception:
+            continue
+        urls = {u.rstrip('.,;:!?') for u in re.findall(r'https?://[^\s"\'<)]+', text, flags=re.IGNORECASE)}
+        for url in urls:
+            if not is_study_url(url):
+                continue
+            key = sanitize_text(url).lower()
+            usage[key] = usage.get(key, 0) + 1
+    return usage
+
+
 def default_study_citations(seed: str, count: int = 3) -> list[dict[str, str]]:
     target = max(2, min(5, count))
     if not STUDY_SOURCE_POOL:
         return []
+    usage = recent_study_usage()
     ranked = sorted(
         STUDY_SOURCE_POOL,
-        key=lambda item: hashlib.sha256(f'{seed}|{item["url"]}'.encode('utf-8')).hexdigest(),
+        key=lambda item: (
+            usage.get(item['url'].lower(), 0),
+            hashlib.sha256(f'{seed}|{item["url"]}'.encode('utf-8')).hexdigest(),
+        ),
     )
     return ranked[:target]
 
@@ -459,17 +560,23 @@ def ensure_study_citations(
         seen.add(url)
         filtered.append({'title': title, 'url': url})
 
-    if len(filtered) >= min_count:
-        return filtered[:8]
-
-    for item in default_study_citations(seed, count=max(3, min_count + 1)):
+    target = max(min_count, 3)
+    for item in default_study_citations(seed, count=max(5, target + 1)):
         url = item['url']
         if url in seen:
             continue
         seen.add(url)
         filtered.append({'title': item['title'], 'url': url})
-        if len(filtered) >= max(min_count, 3):
+        if len(filtered) >= target:
             break
+    usage = recent_study_usage()
+    filtered = sorted(
+        filtered,
+        key=lambda item: (
+            usage.get(item['url'].lower(), 0),
+            hashlib.sha256(f'{seed}|{item["url"]}'.encode('utf-8')).hexdigest(),
+        ),
+    )
     return filtered[:8]
 
 
@@ -503,6 +610,24 @@ def collect_paragraphs(payload: dict[str, Any]) -> list[str]:
     return paragraphs
 
 
+def collect_content_lines(payload: dict[str, Any]) -> list[str]:
+    lines: list[str] = []
+    for key in ('lead', 'excerpt', 'closing', 'meta_description'):
+        value = sanitize_text(payload.get(key, ''))
+        if value:
+            lines.append(value)
+    for section in payload.get('sections', []):
+        for paragraph in section.get('paragraphs', []):
+            value = sanitize_text(paragraph)
+            if value:
+                lines.append(value)
+    for bullet in payload.get('bullets', []):
+        value = sanitize_text(bullet)
+        if value:
+            lines.append(value)
+    return lines
+
+
 def tighten_to_target(payload: dict[str, Any], min_words: int = QUALITY_MIN_WORDS, max_words: int = QUALITY_MAX_WORDS) -> None:
     def current() -> int:
         return word_count(collect_text_for_count(payload))
@@ -526,7 +651,7 @@ def tighten_to_target(payload: dict[str, Any], min_words: int = QUALITY_MIN_WORD
             )
         digest = hashlib.sha256(f'{title_topic}|{heading_text}|{index}'.encode('utf-8')).hexdigest()
         pick = int(digest[:8], 16) % len(seeds)
-        return sanitize_text(seeds[pick])
+        return sanitize_content_line(seeds[pick])
 
     expansion_index = 0
     while current() < min_words:
@@ -573,26 +698,32 @@ def tighten_to_target(payload: dict[str, Any], min_words: int = QUALITY_MIN_WORD
 
     while current() > max_words:
         changed = False
+
+        bullets = payload.get('bullets', [])
+        if isinstance(bullets, list) and len(bullets) > 2:
+            bullets.pop()
+            changed = True
+        if changed:
+            continue
+
+        section_total = sum(len(section.get('paragraphs', [])) for section in payload.get('sections', []))
         for section in reversed(payload.get('sections', [])):
             paragraphs = section.get('paragraphs', [])
-            if not paragraphs:
-                continue
-            last = paragraphs[-1]
-            chopped = re.sub(r'\s+[^\s]+$', '', last).strip()
-            if chopped and len(chopped.split()) >= 6:
-                paragraphs[-1] = chopped
-                changed = True
-                break
-            if len(paragraphs) > 1:
+            if len(paragraphs) > 2 and section_total > QUALITY_MIN_PARAGRAPHS:
                 paragraphs.pop()
+                section_total -= 1
                 changed = True
                 break
         if changed:
             continue
-        bullets = payload.get('bullets', [])
-        if bullets:
-            bullets.pop()
-            changed = True
+
+        closing = sanitize_text(payload.get('closing', ''))
+        if closing:
+            trimmed = simplify_sentence(closing, max_words=max(10, word_count(closing) - 4))
+            trimmed = sanitize_content_line(trimmed)
+            if trimmed and trimmed != closing:
+                payload['closing'] = trimmed
+                changed = True
         if not changed:
             break
 
@@ -636,6 +767,9 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
     avg_sentence_words = words / sentence_count if sentence_count else 0.0
     long_sentence_count = sum(1 for s in sentences if word_count(s) >= 28)
     duplicate_sentence_count = max(0, len(sentences) - len({s.lower() for s in sentences}))
+    content_lines = collect_content_lines(payload)
+    instruction_line_count = sum(1 for line in content_lines if is_instructional_line(line))
+    fragment_line_count = sum(1 for line in content_lines if is_likely_sentence_fragment(line))
     lead_words = word_count(payload.get('lead', ''))
     number_hits = len(re.findall(r'\b(?:\d+(?:\.\d+)?%?|20\d{2})\b', text))
 
@@ -775,6 +909,8 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             'heading_count': heading_count,
             'paragraph_count': paragraph_count,
             'short_paragraphs': short_paragraph_count,
+            'instructional_lines': instruction_line_count,
+            'fragment_lines': fragment_line_count,
         },
     }
 
@@ -844,11 +980,19 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
     generic_citation_titles = int(signals.get('generic_citation_titles') or 0)
     if generic_citation_titles > 0:
         failures.append('citation titles must be specific (generic "Source 1/2" labels are not allowed)')
+
+    instruction_lines = int(signals.get('instructional_lines') or 0)
+    if instruction_lines > 0:
+        failures.append('instruction/prompt text leaked into article body')
+
+    fragment_lines = int(signals.get('fragment_lines') or 0)
+    if fragment_lines > 0:
+        failures.append('article contains truncated sentence fragments')
     return failures
 
 
 def append_to_last_section(payload: dict[str, Any], sentence: str) -> None:
-    sentence = sanitize_text(sentence)
+    sentence = sanitize_content_line(sentence)
     if not sentence:
         return
     sections = payload.get('sections', [])
@@ -866,11 +1010,11 @@ def simplify_sentence(text: str, max_words: int = 24) -> str:
     cleaned = sanitize_text(text)
     words = cleaned.split()
     if len(words) <= max_words:
-        return cleaned
+        return sanitize_content_line(cleaned) or cleaned
     short = ' '.join(words[:max_words]).rstrip(',;:')
     if short and short[-1] not in '.!?':
         short += '.'
-    return short
+    return sanitize_content_line(short) or short
 
 
 def reinforce_clarity(payload: dict[str, Any]) -> None:
@@ -897,9 +1041,9 @@ def reinforce_specificity(payload: dict[str, Any]) -> None:
 def reinforce_evidence(payload: dict[str, Any]) -> None:
     topic = sanitize_text(payload.get('title', 'this topic')).lower()
     options = [
-        f'For {topic}, keep only external claims that include a direct source URL and a clear interpretation.',
-        f'Use a simple evidence check for {topic}: source link, claim context, and observable before-after signal.',
-        f'When writing about {topic}, remove unsupported statistical claims instead of softening them with vague wording.',
+        f'For {topic}, ground each external claim in one cited finding and one clear interpretation for practitioners.',
+        f'In {topic}, evidence stays useful when claims tie to observable before-after signals in the same workflow context.',
+        f'For {topic}, translate research into one concrete operational implication so teams can verify outcomes quickly.',
     ]
     pick = int(hashlib.sha256(f'{topic}|evidence'.encode('utf-8')).hexdigest()[:8], 16) % len(options)
     append_to_last_section(payload, options[pick])
@@ -1244,17 +1388,42 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     title = normalize_publish_title(raw.get('title', ''), raw.get('description', ''))
     slug = sanitize_text(raw.get('slug', '')) or slugify(title)
 
-    lead = sanitize_text(raw.get('lead', '') or raw.get('excerpt', '') or title)
-    excerpt = sanitize_text(raw.get('excerpt', '') or lead)
-    meta_description = sanitize_text(raw.get('meta_description', '') or excerpt)
-    closing = sanitize_text(raw.get('closing', '') or lead)
+    lead = sanitize_content_line(raw.get('lead', '') or raw.get('excerpt', '') or title)
+    excerpt = sanitize_content_line(raw.get('excerpt', '') or lead)
+    meta_description = sanitize_content_line(raw.get('meta_description', '') or excerpt)
+    closing = sanitize_content_line(raw.get('closing', '') or lead)
+
+    if not lead:
+        lead = sanitize_content_line(
+            f'{title} improves when each recommendation maps to one measurable decision in the next weekly review.'
+        )
+    if not excerpt:
+        excerpt = sanitize_content_line(
+            f'{title} gets stronger when teams pair each recommendation with one measured weekly decision.'
+        )
+    if not meta_description:
+        meta_description = sanitize_content_line(
+            f'This short evidence-first format keeps {title.lower()} clear, measurable, and useful in real execution contexts.'
+        )
+    if not closing:
+        closing = sanitize_content_line(
+            f'Use the next weekly review to validate one change in {title.lower()} and carry one proven lesson forward.'
+        )
 
     sections = ensure_sections(raw.get('sections', []), lead, excerpt, closing, title)
 
     bullets_raw = raw.get('bullets', [])
     bullets: list[str] = []
     if isinstance(bullets_raw, list):
-        bullets = [sanitize_text(b) for b in bullets_raw if sanitize_text(b)]
+        bullets = [sanitize_content_line(b) for b in bullets_raw if sanitize_content_line(b)]
+    if len(bullets) < 2:
+        defaults = [
+            sanitize_content_line('Track one leading metric and one lagging metric every week.'),
+            sanitize_content_line('Keep only external claims that include a study or report link.'),
+        ]
+        for item in defaults:
+            if item and item not in bullets:
+                bullets.append(item)
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
     citations = normalize_citations(raw.get('citations', []) or raw.get('sources', []))

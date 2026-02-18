@@ -37,11 +37,31 @@ STUDY_SOURCE_POOL = [
         "url": "https://www.nber.org/papers/w31161",
     },
     {
+        "title": "Attention Is All You Need (arXiv:1706.03762)",
+        "url": "https://arxiv.org/abs/1706.03762",
+    },
+    {
+        "title": "Language Models are Few-Shot Learners (arXiv:2005.14165)",
+        "url": "https://arxiv.org/abs/2005.14165",
+    },
+    {
+        "title": "Training language models to follow instructions with human feedback (arXiv:2203.02155)",
+        "url": "https://arxiv.org/abs/2203.02155",
+    },
+    {
+        "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (arXiv:2201.11903)",
+        "url": "https://arxiv.org/abs/2201.11903",
+    },
+    {
         "title": "On the Opportunities and Risks of Foundation Models (arXiv:2108.07258)",
         "url": "https://arxiv.org/abs/2108.07258",
     },
     {
-        "title": "GPTs are GPTs: An Early Look at Labor Market Impact Potential (arXiv:2303.10130)",
+        "title": "GPT-4 Technical Report (arXiv:2303.08774)",
+        "url": "https://arxiv.org/abs/2303.08774",
+    },
+    {
+        "title": "GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models (arXiv:2303.10130)",
         "url": "https://arxiv.org/abs/2303.10130",
     },
     {
@@ -158,6 +178,26 @@ UNSPLASH_KEYWORD_THEME = {
 CLAIM_KEYWORDS_RE = re.compile(r"\b(study|report|survey|analysis)\b", re.IGNORECASE)
 STAT_SIGNAL_RE = re.compile(r"\b(20\d{2}|[0-9]+(?:\.[0-9]+)?%|[0-9]+(?:\.[0-9]+)?x)\b")
 URL_RE = re.compile(r"https?://[^\s<>\"]+", re.IGNORECASE)
+INSTRUCTION_LINE_PATTERNS = [
+    re.compile(r"\bcite at least\b.*\bstudy link", flags=re.IGNORECASE),
+    re.compile(r"\bremove unsupported (?:statistical )?claims?\b", flags=re.IGNORECASE),
+    re.compile(r"\bsource link rule\b", flags=re.IGNORECASE),
+    re.compile(r"\bevery external claim must include\b", flags=re.IGNORECASE),
+    re.compile(r"\bif a source cannot be verified\b", flags=re.IGNORECASE),
+    re.compile(r"\breturn only markdown\b", flags=re.IGNORECASE),
+    re.compile(r"\bno json\b", flags=re.IGNORECASE),
+    re.compile(r"\bno process commentary\b", flags=re.IGNORECASE),
+    re.compile(r"^\s*task:\s*", flags=re.IGNORECASE),
+    re.compile(r"^\s*generated:\s*", flags=re.IGNORECASE),
+    re.compile(r"^\s*rewrite priorities\b", flags=re.IGNORECASE),
+    re.compile(r"^\s*publish flow\b", flags=re.IGNORECASE),
+    re.compile(r"\bquality score\b", flags=re.IGNORECASE),
+    re.compile(r"\bmatched post:\b", flags=re.IGNORECASE),
+]
+FRAGMENT_ENDING_RE = re.compile(
+    r"\b(?:by|for|with|to|from|of|in|on|at|as|and|or|but|so|than|then|if|when|while|because|that|which)\.?\s*$",
+    flags=re.IGNORECASE,
+)
 
 
 def parse_date(value: str | None) -> datetime | None:
@@ -193,6 +233,38 @@ def word_count(text: str) -> int:
 
 def normalize_spaces(text: str) -> str:
     return " ".join(str(text or "").split())
+
+
+def is_instructional_line(text: str) -> bool:
+    value = normalize_spaces(text)
+    if not value:
+        return False
+    return any(pattern.search(value) for pattern in INSTRUCTION_LINE_PATTERNS)
+
+
+def is_likely_sentence_fragment(text: str) -> bool:
+    value = normalize_spaces(text)
+    if not value:
+        return False
+    words = value.split()
+    if len(words) < 4 and value[-1] not in ".!?":
+        return True
+    if len(words) >= 5 and FRAGMENT_ENDING_RE.search(value):
+        return True
+    return False
+
+
+def sanitize_content_line(text: str) -> str:
+    value = normalize_spaces(text)
+    if not value:
+        return ""
+    if is_instructional_line(value):
+        return ""
+    if is_likely_sentence_fragment(value):
+        return ""
+    if value[-1] not in ".!?":
+        value += "."
+    return value
 
 
 def split_sentences(text: str) -> list[str]:
@@ -387,13 +459,38 @@ def is_study_url(url: str) -> bool:
     return False
 
 
+def recent_study_usage(max_posts: int = 60) -> dict[str, int]:
+    usage: dict[str, int] = {}
+    posts = sorted(
+        [p for p in POSTS_DIR.glob("*.html") if p.is_file()],
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )[:max_posts]
+    for post in posts:
+        try:
+            text = post.read_text()
+        except Exception:
+            continue
+        urls = {u.rstrip(".,;:!?") for u in re.findall(r"https?://[^\s\"'<)]+", text, flags=re.IGNORECASE)}
+        for url in urls:
+            if not is_study_url(url):
+                continue
+            key = normalize_spaces(url).lower()
+            usage[key] = usage.get(key, 0) + 1
+    return usage
+
+
 def default_study_citations(seed: str, count: int = 3) -> list[dict[str, str]]:
     if not STUDY_SOURCE_POOL:
         return []
     target = max(2, min(5, count))
+    usage = recent_study_usage()
     ranked = sorted(
         STUDY_SOURCE_POOL,
-        key=lambda item: hashlib.sha256(f"{seed}|{item['url']}".encode("utf-8")).hexdigest(),
+        key=lambda item: (
+            usage.get(item["url"].lower(), 0),
+            hashlib.sha256(f"{seed}|{item['url']}".encode("utf-8")).hexdigest(),
+        ),
     )
     return ranked[:target]
 
@@ -445,17 +542,23 @@ def ensure_study_citations(citations: list[dict[str, str]], seed: str, min_count
         seen.add(url)
         cleaned.append({"title": title, "url": url})
 
-    if len(cleaned) >= min_count:
-        return cleaned[:8]
-
-    for item in default_study_citations(seed, count=max(3, min_count + 1)):
+    target = max(min_count, 3)
+    for item in default_study_citations(seed, count=max(5, target + 1)):
         url = item["url"]
         if url in seen:
             continue
         seen.add(url)
         cleaned.append({"title": item["title"], "url": url})
-        if len(cleaned) >= max(min_count, 3):
+        if len(cleaned) >= target:
             break
+    usage = recent_study_usage()
+    cleaned = sorted(
+        cleaned,
+        key=lambda item: (
+            usage.get(item["url"].lower(), 0),
+            hashlib.sha256(f"{seed}|{item['url']}".encode("utf-8")).hexdigest(),
+        ),
+    )
     return cleaned[:8]
 
 
@@ -564,6 +667,13 @@ def validate_text(text: str) -> None:
 
 
 def validate_citation_support(text: str, citations: list[dict[str, str]]) -> None:
+    lines = [normalize_spaces(line) for line in text.splitlines() if normalize_spaces(line)]
+    for line in lines:
+        if is_instructional_line(line):
+            raise ValueError(f"Instruction text leaked into body content: {line[:120]}")
+        if is_likely_sentence_fragment(line):
+            raise ValueError(f"Sentence fragment detected in body content: {line[:120]}")
+
     has_claim_keywords = CLAIM_KEYWORDS_RE.search(text) is not None
     has_stat_signal = STAT_SIGNAL_RE.search(text) is not None
     has_url = URL_RE.search(text) is not None or any(c.get("url") for c in citations)
@@ -756,13 +866,41 @@ def main() -> None:
     title = payload["title"].strip()
     slug = payload.get("slug") or slugify(title)
     date_str = format_date(payload.get("date"))
-    tags = payload.get("tags", [])
-    lead = payload.get("lead", "").strip()
-    excerpt = payload.get("excerpt", "").strip() or lead
-    meta_description = payload.get("meta_description", "").strip() or excerpt
-    sections = payload.get("sections", [])
-    bullets = payload.get("bullets", [])
-    closing = payload.get("closing", "").strip()
+    tags = [normalize_spaces(t).lower() for t in payload.get("tags", []) if normalize_spaces(t)] if isinstance(payload.get("tags", []), list) else []
+    lead = sanitize_content_line(payload.get("lead", "") or payload.get("excerpt", "") or title)
+    excerpt = sanitize_content_line(payload.get("excerpt", "") or lead) or lead
+    meta_description = sanitize_content_line(payload.get("meta_description", "") or excerpt) or excerpt
+
+    sections: list[dict[str, object]] = []
+    raw_sections = payload.get("sections", [])
+    if isinstance(raw_sections, list):
+        for item in raw_sections:
+            if not isinstance(item, dict):
+                continue
+            heading = normalize_spaces(item.get("heading", ""))
+            paragraphs_raw = item.get("paragraphs", [])
+            if isinstance(paragraphs_raw, str):
+                paragraphs_raw = [paragraphs_raw]
+            if not isinstance(paragraphs_raw, list):
+                paragraphs_raw = []
+            paragraphs = [sanitize_content_line(p) for p in paragraphs_raw if sanitize_content_line(p)]
+            if paragraphs:
+                sections.append({"heading": heading, "paragraphs": paragraphs[:6]})
+
+    bullets: list[str] = []
+    raw_bullets = payload.get("bullets", [])
+    if isinstance(raw_bullets, list):
+        bullets = [sanitize_content_line(b) for b in raw_bullets if sanitize_content_line(b)]
+    if len(bullets) < 2:
+        defaults = [
+            sanitize_content_line("Track one leading metric and one lagging metric every week."),
+            sanitize_content_line("Keep only external claims that include a study or report link."),
+        ]
+        for item in defaults:
+            if item and item not in bullets:
+                bullets.append(item)
+
+    closing = sanitize_content_line(payload.get("closing", "") or lead) or lead
     citations = normalize_citations(payload.get("citations", []))
     citations = ensure_study_citations(citations, seed=f"{slug}|{title}|{','.join(tags)}", min_count=2)
 
