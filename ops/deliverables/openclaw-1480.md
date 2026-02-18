@@ -1,15 +1,21 @@
-# Deliverable: Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...
+# Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-1466
-- Status: cancelled
-- Created: 2026-02-18T13:39:11Z
-- Updated: 2026-02-18T13:42:17Z
+- Task ID: openclaw-1480
+- Status: completed
+- Created: 2026-02-18T14:42:59Z
+- Updated: 2026-02-18T14:44:05Z
 
 ## Summary
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+No summary provided.
 
 ## Deliverable Output
-# Deliverable Draft: Write One Publish-Ready Article In Your Authentic Focus Areas: L&D, Gamification, Lxd, Data-I SEO blog operating system
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-18T14:44:35Z)
+
+## Last Error
+OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (9): zai/glm-4.7-flash: ⚠️ API rate limit reached. Please try again later. (rate_limit) | zai/glm-5: No available auth profile for zai (all in cooldown or unavailable). (rate_limit) | zai/glm-4.7: No available auth profile for zai (all in cooldown or unavailable). (rate_limit) | zai/glm-4.7-flashx: No available auth profile for zai (all in cooldown or unavailable). (rate_limit) | zai/glm-
+
+## Draft Deliverable (Fallback)
+# Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
