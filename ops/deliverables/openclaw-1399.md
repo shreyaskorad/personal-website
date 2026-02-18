@@ -1,15 +1,15 @@
-# Deliverable: Design learning prompts that improve decisions during real project pressure
+# Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-1355
-- Status: cancelled
-- Created: 2026-02-17T19:39:51Z
-- Updated: 2026-02-17T21:41:28Z
+- Task ID: openclaw-1399
+- Status: blocked
+- Created: 2026-02-18T07:54:47Z
+- Updated: 2026-02-18T07:55:15Z
 
 ## Summary
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Choose new topic from domain-focused angles: LxD data-informed learning, gamification, or practical AI use in learning
 
 ## Deliverable Output
-# Deliverable Draft: Design Learning Prompts That Improve Decisions During Real Project Pressure SEO blog operating system
+# Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Choose new topic from domain-focused angles: LxD data-informed learning, gamification, or practical AI use in learning
+
+## Blockers / Notes
+Title 'Build a practical LxD workflow for small teams shipping weekly' already published at https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
