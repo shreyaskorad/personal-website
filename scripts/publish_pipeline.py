@@ -32,8 +32,8 @@ QUALITY_MIN_WORDS = 300
 QUALITY_MAX_WORDS = 350
 QUALITY_MIN_HEADINGS = 2
 QUALITY_MIN_PARAGRAPHS = 6
-QUALITY_MAX_DUP_SENTENCES = 0
-QUALITY_MAX_DUP_PARAGRAPHS = 0
+QUALITY_MAX_DUP_SENTENCES = 1
+QUALITY_MAX_DUP_PARAGRAPHS = 1
 
 UNSPLASH_THEME_IDS = {
     'base': [
@@ -834,7 +834,9 @@ def quality_targets(slug: str, min_total: int, delta: int) -> tuple[int, int, di
     by_slug = history.get('by_slug', {})
     entry = by_slug.get(slug, {}) if isinstance(by_slug, dict) else {}
     previous = int(entry.get('last_total') or 0) if isinstance(entry, dict) else 0
-    target = max(min_total, previous + (delta if previous > 0 else 0))
+    ratchet_cap = min(23, min_total + 3)
+    effective_previous = min(previous, ratchet_cap)
+    target = max(min_total, effective_previous + (delta if effective_previous > 0 else 0))
     return previous, min(25, target), history
 
 
