@@ -25,9 +25,15 @@ QUALITY_HISTORY_FILE = STATE_DIR / 'publish-quality-history.json'
 QUALITY_REPORT_FILE = STATE_DIR / 'publish-quality-report.json'
 
 RECENT_IMAGE_WINDOW = 12
-QUALITY_MIN_TOTAL = 18
-QUALITY_MAX_PASSES = 3
+QUALITY_MIN_TOTAL = 20
+QUALITY_MAX_PASSES = 4
 QUALITY_DELTA_PER_ITERATION = 1
+QUALITY_MIN_WORDS = 420
+QUALITY_MAX_WORDS = 1400
+QUALITY_MIN_HEADINGS = 2
+QUALITY_MIN_PARAGRAPHS = 6
+QUALITY_MAX_DUP_SENTENCES = 0
+QUALITY_MAX_DUP_PARAGRAPHS = 0
 
 UNSPLASH_THEME_IDS = {
     'base': [
@@ -133,6 +139,12 @@ QUALITY_CLICHE_PATTERNS = [
     r'\bnext level\b',
     r'\bmove the needle\b',
     r'\bunlock potential\b',
+]
+SECTION_HEADING_DEFAULTS = [
+    'Why this matters now',
+    'Where teams get stuck',
+    'A practical operating model',
+    'How to measure progress',
 ]
 
 
@@ -244,18 +256,52 @@ def ensure_sections(raw_sections: Any, lead: str, excerpt: str, closing: str, ti
                 raw_paragraphs = []
             paragraphs = [sanitize_text(p) for p in raw_paragraphs if sanitize_text(p)]
             if paragraphs:
-                sections.append({'heading': heading, 'paragraphs': paragraphs[:3]})
+                sections.append({'heading': heading, 'paragraphs': paragraphs[:4]})
 
     if len(sections) >= 2:
-        return sections
+        return ensure_section_headings(sections, title)
 
     body_a = excerpt or lead or f'{title} is changing how we work and decide.'
     body_b = closing or 'The shift is practical: tools are faster, but judgment and direction still matter most.'
     warn('Payload sections were incomplete; generated fallback sections')
-    return [
-        {'heading': '', 'paragraphs': [sanitize_text(body_a)]},
-        {'heading': '', 'paragraphs': [sanitize_text(body_b)]},
+    fallback = [
+        {
+            'heading': 'Why this matters now',
+            'paragraphs': [
+                sanitize_text(body_a),
+                sanitize_text(
+                    'Teams that link learning activity to real project outcomes improve judgment quality and reduce avoidable rework.'
+                ),
+            ],
+        },
+        {
+            'heading': 'How to execute this week',
+            'paragraphs': [
+                sanitize_text(body_b),
+                sanitize_text(
+                    'Set a weekly cadence to review one baseline metric, one change introduced, and one observed delta before publishing the next iteration.'
+                ),
+            ],
+        },
     ]
+    return ensure_section_headings(fallback, title)
+
+
+def ensure_section_headings(sections: list[dict[str, Any]], title: str) -> list[dict[str, Any]]:
+    normalized: list[dict[str, Any]] = []
+    title_topic = sanitize_text(title) or 'this topic'
+    for idx, section in enumerate(sections):
+        heading = sanitize_text(section.get('heading', ''))
+        if not heading:
+            if idx < len(SECTION_HEADING_DEFAULTS):
+                heading = SECTION_HEADING_DEFAULTS[idx]
+            else:
+                heading = f'{title_topic}: section {idx + 1}'
+        paragraphs = [sanitize_text(p) for p in section.get('paragraphs', []) if sanitize_text(p)]
+        if not paragraphs:
+            continue
+        normalized.append({'heading': heading, 'paragraphs': paragraphs[:4]})
+    return normalized
 
 
 def normalize_tags(raw_tags: Any, title: str, lead: str) -> list[str]:
@@ -314,9 +360,81 @@ def collect_text_for_count(payload: dict[str, Any]) -> str:
     return '\n'.join(parts)
 
 
-def tighten_to_target(payload: dict[str, Any], min_words: int = 150, max_words: int = 200) -> None:
+def collect_paragraphs(payload: dict[str, Any]) -> list[str]:
+    paragraphs: list[str] = []
+    for section in payload.get('sections', []):
+        for paragraph in section.get('paragraphs', []):
+            text = sanitize_text(paragraph)
+            if text:
+                paragraphs.append(text)
+    if sanitize_text(payload.get('closing', '')):
+        paragraphs.append(sanitize_text(payload.get('closing', '')))
+    return paragraphs
+
+
+def tighten_to_target(payload: dict[str, Any], min_words: int = QUALITY_MIN_WORDS, max_words: int = QUALITY_MAX_WORDS) -> None:
     def current() -> int:
         return word_count(collect_text_for_count(payload))
+
+    payload['sections'] = ensure_section_headings(payload.get('sections', []), payload.get('title', ''))
+    title_topic = sanitize_text(payload.get('title', '')) or 'this topic'
+    expansion_templates = [
+        'Start with a one-week baseline for {topic}: current cycle time, review latency, and the percentage of drafts that require major rework before publication.',
+        'Define explicit role ownership for {topic} so quality checks are not implicit: who drafts, who verifies claims, who approves publication, and who records outcome metrics.',
+        'Treat each publish cycle as an experiment for {topic}: state the change, expected effect, and the metric window you will use to judge whether the change should be kept.',
+        'Link every strategic claim in {topic} to execution evidence such as conversion movement, retention deltas, response quality, or measurable throughput changes from the prior cycle.',
+        'Use a weekly review ritual for {topic} with three outputs only: what changed, what moved, and what will be tested next so the next post compounds learning rather than repeating summaries.',
+        'Add a short failure log to {topic} documenting what did not work and why; this prevents teams from recycling polished language that lacks operational signal.',
+        'Before each publish decision on {topic}, confirm that the post names the target audience, the practical constraint, and the operating tradeoff involved in adopting the recommendation.',
+        'Maintain a source ledger for {topic} where every external statistic is linked to a URL and timestamp; if a claim cannot be traced quickly, remove it before publishing.',
+        'Prioritize one leading indicator and one lagging indicator for {topic} so teams can separate early movement from downstream impact and avoid judging quality by vanity metrics alone.',
+        'After publishing on {topic}, schedule a follow-up checkpoint that compares hypothesis versus outcome and feeds that delta into the outline for the next iteration.',
+    ]
+
+    def expansion_paragraph(index: int) -> str:
+        if index < len(expansion_templates):
+            return sanitize_text(expansion_templates[index].format(topic=title_topic))
+        return sanitize_text(
+            f'Execution checkpoint {index - len(expansion_templates) + 1} for {title_topic}: capture baseline metrics, publish one controlled change, and document the observed delta before moving to the next iteration.'
+        )
+
+    expansion_index = 0
+    while current() < min_words:
+        sections = payload.get('sections', [])
+        if not isinstance(sections, list):
+            sections = []
+        if not sections:
+            sections = ensure_sections([], payload.get('lead', ''), payload.get('excerpt', ''), payload.get('closing', ''), payload.get('title', ''))
+            payload['sections'] = sections
+
+        changed = False
+        for section in sections:
+            paragraphs = section.setdefault('paragraphs', [])
+            if len(paragraphs) >= 4:
+                continue
+            candidate = expansion_paragraph(expansion_index)
+            expansion_index += 1
+            if candidate in paragraphs:
+                continue
+            paragraphs.append(candidate)
+            changed = True
+            if current() >= min_words:
+                break
+
+        if changed:
+            continue
+
+        heading = SECTION_HEADING_DEFAULTS[len(sections) % len(SECTION_HEADING_DEFAULTS)]
+        payload.setdefault('sections', []).append(
+            {
+                'heading': heading,
+                'paragraphs': [
+                    expansion_paragraph(expansion_index),
+                    expansion_paragraph(expansion_index + 1),
+                ],
+            }
+        )
+        expansion_index += 2
 
     while current() > max_words:
         changed = False
@@ -341,13 +459,6 @@ def tighten_to_target(payload: dict[str, Any], min_words: int = 150, max_words: 
             bullets.pop()
             changed = True
         if not changed:
-            break
-
-    while current() < min_words:
-        payload['closing'] = (
-            f"{payload.get('closing','').strip()} The real advantage comes from pairing clearer intent with faster execution."
-        ).strip()
-        if current() >= min_words:
             break
 
 
@@ -376,6 +487,15 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
     text = collect_text_for_count(payload)
     text_l = text.lower()
     words = word_count(text)
+    sections = payload.get('sections', []) if isinstance(payload.get('sections', []), list) else []
+    headings = [sanitize_text(section.get('heading', '')) for section in sections if sanitize_text(section.get('heading', ''))]
+    heading_count = len(headings)
+    section_count = len(sections)
+    paragraphs = collect_paragraphs(payload)
+    paragraph_count = len(paragraphs)
+    short_paragraph_count = sum(1 for p in paragraphs if word_count(p) < 14)
+    duplicate_paragraph_count = max(0, paragraph_count - len({p.lower() for p in paragraphs}))
+
     sentences = collect_sentences(payload)
     sentence_count = len(sentences)
     avg_sentence_words = words / sentence_count if sentence_count else 0.0
@@ -409,7 +529,13 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         clarity -= 1
     if lead_words < 10:
         clarity -= 1
+    if short_paragraph_count >= 2:
+        clarity -= 1
+    if heading_count >= QUALITY_MIN_HEADINGS:
+        clarity += 1
     if duplicate_sentence_count:
+        clarity -= 1
+    if duplicate_paragraph_count:
         clarity -= 1
     clarity = clamp_score(clarity)
 
@@ -421,6 +547,8 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
     if len(payload.get('tags', [])) >= 2:
         specificity += 1
     if re.search(r'\b(within|by|per)\b', text_l) and number_hits >= 1:
+        specificity += 1
+    if paragraph_count >= QUALITY_MIN_PARAGRAPHS:
         specificity += 1
     if cliche_hits >= 2:
         specificity -= 1
@@ -444,8 +572,12 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         originality += 1
     if has_contrast:
         originality += 1
+    if duplicate_paragraph_count == 0 and paragraph_count > 0:
+        originality += 1
     if duplicate_sentence_count == 0 and sentence_count > 0:
         originality += 1
+    if duplicate_paragraph_count > QUALITY_MAX_DUP_PARAGRAPHS:
+        originality -= 1
     if cliche_hits >= 2:
         originality -= 1
     originality = clamp_score(originality)
@@ -459,6 +591,10 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
     if has_cadence:
         actionability += 1
     if has_sequence:
+        actionability += 1
+    if heading_count >= QUALITY_MIN_HEADINGS:
+        actionability += 1
+    if paragraph_count >= QUALITY_MIN_PARAGRAPHS:
         actionability += 1
     actionability = clamp_score(actionability)
 
@@ -485,6 +621,7 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             'avg_sentence_words': round(avg_sentence_words, 2),
             'long_sentences': long_sentence_count,
             'duplicate_sentences': duplicate_sentence_count,
+            'duplicate_paragraphs': duplicate_paragraph_count,
             'number_hits': number_hits,
             'citation_count': citation_count,
             'metric_terms_found': metric_terms_found,
@@ -492,6 +629,10 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             'lexical_diversity': round(unique_ratio, 3),
             'cliche_hits': cliche_hits,
             'bullet_count': bullet_count,
+            'section_count': section_count,
+            'heading_count': heading_count,
+            'paragraph_count': paragraph_count,
+            'short_paragraphs': short_paragraph_count,
         },
     }
 
@@ -517,9 +658,43 @@ def build_quality_critique(report: dict[str, Any], target_total: int) -> list[st
         elif dim == 'actionability':
             critique.append('Add explicit next steps, cadence, and execution checkpoints.')
 
+    for hard_failure in report.get('hard_failures', []):
+        critique.append(f'Hard requirement: {hard_failure}')
+
     if report['total'] < target_total:
         critique.append(f'Raise total quality score to at least {target_total}/25 (current {report["total"]}/25).')
     return critique
+
+
+def hard_quality_failures(report: dict[str, Any]) -> list[str]:
+    signals = report.get('signals', {}) if isinstance(report.get('signals', {}), dict) else {}
+    failures: list[str] = []
+    word_total = int(signals.get('word_count') or 0)
+    if word_total < QUALITY_MIN_WORDS:
+        failures.append(f'word count {word_total} is below minimum {QUALITY_MIN_WORDS}')
+    if word_total > QUALITY_MAX_WORDS:
+        failures.append(f'word count {word_total} exceeds maximum {QUALITY_MAX_WORDS}')
+
+    heading_count = int(signals.get('heading_count') or 0)
+    if heading_count < QUALITY_MIN_HEADINGS:
+        failures.append(f'heading count {heading_count} is below minimum {QUALITY_MIN_HEADINGS}')
+
+    paragraph_count = int(signals.get('paragraph_count') or 0)
+    if paragraph_count < QUALITY_MIN_PARAGRAPHS:
+        failures.append(f'paragraph count {paragraph_count} is below minimum {QUALITY_MIN_PARAGRAPHS}')
+
+    duplicate_sentences = int(signals.get('duplicate_sentences') or 0)
+    if duplicate_sentences > QUALITY_MAX_DUP_SENTENCES:
+        failures.append(
+            f'duplicate sentence count {duplicate_sentences} exceeds allowed maximum {QUALITY_MAX_DUP_SENTENCES}'
+        )
+
+    duplicate_paragraphs = int(signals.get('duplicate_paragraphs') or 0)
+    if duplicate_paragraphs > QUALITY_MAX_DUP_PARAGRAPHS:
+        failures.append(
+            f'duplicate paragraph count {duplicate_paragraphs} exceeds allowed maximum {QUALITY_MAX_DUP_PARAGRAPHS}'
+        )
+    return failures
 
 
 def append_to_last_section(payload: dict[str, Any], sentence: str) -> None:
@@ -664,22 +839,36 @@ def run_quality_gate(
         report = quality_report(payload)
         report['pass'] = index
         report['target_total'] = target_total
+        report['hard_failures'] = hard_quality_failures(report)
         report['critique'] = build_quality_critique(report, target_total)
         passes.append(report)
 
-        if report['total'] >= target_total:
+        if report['total'] >= target_total and not report['hard_failures']:
             break
 
         lowest_dims = sorted(
             QUALITY_DIMENSIONS,
             key=lambda dim: (report['scores'][dim]['score'], dim),
         )[:2]
-        apply_quality_rewrite(payload, lowest_dims)
-        tighten_to_target(payload)
+
+        rewrite_dims = list(lowest_dims)
+        signals = report.get('signals', {})
+        if int(signals.get('word_count') or 0) < QUALITY_MIN_WORDS or int(signals.get('paragraph_count') or 0) < QUALITY_MIN_PARAGRAPHS:
+            rewrite_dims = ordered_unique(['specificity', 'actionability', *rewrite_dims])
+        if int(signals.get('heading_count') or 0) < QUALITY_MIN_HEADINGS:
+            rewrite_dims = ordered_unique(['clarity', 'actionability', *rewrite_dims])
+        if (
+            int(signals.get('duplicate_sentences') or 0) > QUALITY_MAX_DUP_SENTENCES
+            or int(signals.get('duplicate_paragraphs') or 0) > QUALITY_MAX_DUP_PARAGRAPHS
+        ):
+            rewrite_dims = ordered_unique(['originality', 'clarity', *rewrite_dims])
+
+        apply_quality_rewrite(payload, rewrite_dims[:3])
+        tighten_to_target(payload, QUALITY_MIN_WORDS, QUALITY_MAX_WORDS)
 
     final = passes[-1]
     gate = {
-        'status': 'pass' if final['total'] >= target_total else 'fail',
+        'status': 'pass' if final['total'] >= target_total and not final.get('hard_failures') else 'fail',
         'slug': slug,
         'previous_total': previous_total,
         'target_total': target_total,
@@ -691,7 +880,9 @@ def run_quality_gate(
     QUALITY_REPORT_FILE.write_text(json.dumps(gate, indent=2))
 
     if gate['status'] != 'pass':
-        critique = '; '.join(final.get('critique', [])[:3]) or 'quality gate requirements not met'
+        reasons = list(final.get('hard_failures', [])[:3])
+        reasons.extend([item for item in final.get('critique', []) if not str(item).startswith('Hard requirement: ')][:2])
+        critique = '; '.join(reasons) or 'quality gate requirements not met'
         raise ValueError(f'Quality gate failed for "{slug}": {critique}')
 
     by_slug = history.get('by_slug')
@@ -823,58 +1014,68 @@ def choose_image(title: str, lead: str, tags: list[str], slug: str) -> dict[str,
 
 
 def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
-    title = sanitize_text(raw_title or '') or 'Untitled note'
+    title = sanitize_text(raw_title or '')
     title = re.sub(r'\s*\[[^\]]+\]\s*', ' ', title).strip()
     title = re.sub(r'\bpublish:?\s*$', '', title, flags=re.IGNORECASE).strip()
     title = re.sub(r'\bpublis\s*$', '', title, flags=re.IGNORECASE).strip()
-    title = sanitize_text(title) or 'Untitled note'
-    title_l = title.lower()
+    title = sanitize_text(title)
 
-    looks_like_control_prompt = (
-        'you are an execution worker' in title_l
-        or 'return json only' in title_l
-        or title_l.startswith('write and publish a blog post')
-        or title_l.startswith('write a blog post')
-        or title_l.startswith('write one blog')
-        or title_l.startswith('create the final publish-ready blog article')
-        or title_l.startswith('create final publish-ready blog article')
-        or title_l.startswith('autonomous seo blog sprint')
-        or title_l.startswith('autonomous writing sprint')
-        or title_l.startswith('improve ')
-        or 'dictation #' in title_l
-        or 'adhoc-' in title_l
-        or 'raw context snippet' in title_l
-        or re.search(r'\bquality score\s*\d+\s*\/\s*\d+\b', title_l) is not None
-        or title_l.startswith('[mon ')
-        or title_l.startswith('[tue ')
-        or title_l.startswith('[wed ')
-        or title_l.startswith('[thu ')
-        or title_l.startswith('[fri ')
-        or title_l.startswith('[sat ')
-        or title_l.startswith('[sun ')
-    )
-    if not looks_like_control_prompt:
+    def invalid_title(candidate: str) -> bool:
+        value = sanitize_text(candidate)
+        value_l = value.lower()
+        if not value:
+            return True
+        if value_l in {'untitled', 'untitled note', 'untitled post', 'new post', 'blog post'}:
+            return True
+        if len(value_l) < 8:
+            return True
+        if re.match(r'^(publish|write|draft|create)\s*:?\s*$', value_l):
+            return True
+        if re.match(r'^(improve|fix|update|rewrite)\b', value_l) and len(value_l.split()) <= 4:
+            return True
+        return (
+            'you are an execution worker' in value_l
+            or 'return json only' in value_l
+            or value_l.startswith('write and publish a blog post')
+            or value_l.startswith('write a blog post')
+            or value_l.startswith('write one blog')
+            or value_l.startswith('create the final publish-ready blog article')
+            or value_l.startswith('create final publish-ready blog article')
+            or value_l.startswith('autonomous seo blog sprint')
+            or value_l.startswith('autonomous writing sprint')
+            or 'dictation #' in value_l
+            or 'adhoc-' in value_l
+            or 'raw context snippet' in value_l
+            or 'summary context' in value_l
+            or re.search(r'\bquality score\s*\d+\s*\/\s*\d+\b', value_l) is not None
+            or value_l.startswith('[mon ')
+            or value_l.startswith('[tue ')
+            or value_l.startswith('[wed ')
+            or value_l.startswith('[thu ')
+            or value_l.startswith('[fri ')
+            or value_l.startswith('[sat ')
+            or value_l.startswith('[sun ')
+        )
+
+    if not invalid_title(title):
         return title
 
     description = str(raw_description or '')
     match = re.search(r'\bTitle:\s*(.+?)\s+Priority:\s*', description, flags=re.IGNORECASE | re.DOTALL)
     if match:
         recovered = sanitize_text(match.group(1))
-        if recovered and 'you are an execution worker' not in recovered.lower():
-            recovered_l = recovered.lower()
-            if (
-                recovered_l.startswith('autonomous writing sprint')
-                or recovered_l.startswith('improve ')
-                or 'dictation #' in recovered_l
-                or 'adhoc-' in recovered_l
-                or 'raw context snippet' in recovered_l
-                or re.search(r'\bquality score\s*\d+\s*\/\s*\d+\b', recovered_l)
-            ):
-                die(f'Refusing to publish task-like title: {recovered}')
+        if recovered and not invalid_title(recovered):
             warn(f'Recovered publish title from embedded task field: {recovered[:120]}')
             return recovered
 
-    die(f'Refusing to publish control-prompt title: {title}')
+    publish_match = re.search(r'\bpublish\s*:\s*(.+)$', description, flags=re.IGNORECASE | re.MULTILINE)
+    if publish_match:
+        recovered = sanitize_text(publish_match.group(1))
+        if recovered and not invalid_title(recovered):
+            warn(f'Recovered publish title from description publish field: {recovered[:120]}')
+            return recovered
+
+    die(f'Refusing to publish invalid title: {title or "empty title"}')
 
 
 def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
@@ -916,7 +1117,7 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
         'closing': closing,
     }
 
-    tighten_to_target(payload)
+    tighten_to_target(payload, QUALITY_MIN_WORDS, QUALITY_MAX_WORDS)
     payload['image'] = choose_image(title, lead, tags, slug)
     return payload
 

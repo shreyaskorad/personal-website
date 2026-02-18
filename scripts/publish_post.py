@@ -23,6 +23,12 @@ DEFAULT_IMAGE = ASSETS_DIR / "default.jpg"
 FALLBACK_IMAGE = ASSETS_DIR / "publishing-without-wordpress.jpg"
 MIN_IMAGE_BYTES = 80_000
 DATE_INPUT_FORMATS = ("%B %d, %Y", "%Y-%m-%d", "%d %b %Y")
+QUALITY_MIN_WORDS = 420
+QUALITY_MAX_WORDS = 1400
+QUALITY_MIN_HEADINGS = 2
+QUALITY_MIN_PARAGRAPHS = 6
+QUALITY_MAX_DUP_SENTENCES = 0
+QUALITY_MAX_DUP_PARAGRAPHS = 0
 UNSPLASH_THEME_IDS = {
     "base": [
         "1461749280684-dccba630e2f6",
@@ -143,6 +149,17 @@ def format_date(value: str | None) -> str:
 
 def word_count(text: str) -> int:
     return len(re.findall(r"\b\w+\b", text))
+
+
+def normalize_spaces(text: str) -> str:
+    return " ".join(str(text or "").split())
+
+
+def split_sentences(text: str) -> list[str]:
+    value = normalize_spaces(text)
+    if not value:
+        return []
+    return [part.strip() for part in re.split(r"(?<=[.!?])\s+", value) if part.strip()]
 
 
 def core_keywords(text: str) -> set[str]:
@@ -324,6 +341,9 @@ def build_article_html(
 ) -> str:
     lines = ["        <article class=\"post-content\">"]
     for section in sections:
+        heading = str(section.get("heading", "")).strip()
+        if heading:
+            lines.append(f"            <h2>{escape(heading)}</h2>")
         for paragraph in section.get("paragraphs", []):
             lines.append(f"            <p>{escape(paragraph)}</p>")
     if bullets:
@@ -403,6 +423,54 @@ def validate_citation_support(text: str, citations: list[dict[str, str]]) -> Non
     has_url = URL_RE.search(text) is not None or any(c.get("url") for c in citations)
     if has_claim_keywords and has_stat_signal and not has_url:
         raise ValueError("Research/statistical claim detected without source URL")
+
+
+def validate_quality_structure(
+    lead: str,
+    sections: list[dict],
+    bullets: list[str],
+    closing: str,
+    meta_description: str,
+) -> None:
+    heading_count = 0
+    paragraphs: list[str] = []
+    for section in sections:
+        heading = normalize_spaces(section.get("heading", ""))
+        if heading:
+            heading_count += 1
+        raw_paragraphs = section.get("paragraphs", [])
+        if isinstance(raw_paragraphs, list):
+            paragraphs.extend([normalize_spaces(p) for p in raw_paragraphs if normalize_spaces(p)])
+
+    if normalize_spaces(closing):
+        paragraphs.append(normalize_spaces(closing))
+
+    quality_text = "\n".join([lead, *paragraphs, *bullets, meta_description])
+    total_words = word_count(quality_text)
+    if total_words < QUALITY_MIN_WORDS:
+        raise ValueError(f"Word count {total_words} is below minimum {QUALITY_MIN_WORDS}")
+    if total_words > QUALITY_MAX_WORDS:
+        raise ValueError(f"Word count {total_words} exceeds maximum {QUALITY_MAX_WORDS}")
+
+    paragraph_count = len(paragraphs)
+    if paragraph_count < QUALITY_MIN_PARAGRAPHS:
+        raise ValueError(f"Paragraph count {paragraph_count} is below minimum {QUALITY_MIN_PARAGRAPHS}")
+
+    if heading_count < QUALITY_MIN_HEADINGS:
+        raise ValueError(f"Heading count {heading_count} is below minimum {QUALITY_MIN_HEADINGS}")
+
+    duplicate_paragraphs = max(0, len(paragraphs) - len({p.lower() for p in paragraphs}))
+    if duplicate_paragraphs > QUALITY_MAX_DUP_PARAGRAPHS:
+        raise ValueError(
+            f"Duplicate paragraph count {duplicate_paragraphs} exceeds maximum {QUALITY_MAX_DUP_PARAGRAPHS}"
+        )
+
+    sentences = split_sentences(quality_text)
+    duplicate_sentences = max(0, len(sentences) - len({s.lower() for s in sentences}))
+    if duplicate_sentences > QUALITY_MAX_DUP_SENTENCES:
+        raise ValueError(
+            f"Duplicate sentence count {duplicate_sentences} exceeds maximum {QUALITY_MAX_DUP_SENTENCES}"
+        )
 
 
 def warn(message: str) -> None:
@@ -552,6 +620,7 @@ def main() -> None:
     )
     validate_text(article_text)
     validate_citation_support(article_text, citations)
+    validate_quality_structure(lead, sections, bullets, closing, meta_description)
 
     core = core_keywords(lead)
     closing_tokens = core_keywords(closing)
@@ -559,8 +628,6 @@ def main() -> None:
         warn("Closing paragraph does not echo the core concept from the lead; continuing anyway")
 
     count = word_count(article_text)
-    if count < 150 or count > 200:
-        warn(f"Word count {count} is outside 150-200 range; continuing anyway")
 
     read_time = payload.get("read_time")
     if not read_time:
