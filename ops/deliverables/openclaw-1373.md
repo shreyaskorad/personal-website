@@ -1,12 +1,12 @@
 # Deliverable: Design manager enablement that links coaching actions to team capability growth
 
-- Task ID: openclaw-1370
-- Status: blocked
-- Created: 2026-02-18T05:23:13Z
-- Updated: 2026-02-18T05:24:12Z
+- Task ID: openclaw-1373
+- Status: failed
+- Created: 2026-02-18T05:41:23Z
+- Updated: 2026-02-18T05:45:53Z
 
 ## Summary
-Select alternative topic from sitemap: create-micro-learning-moments-in-daily-team-standups, data-informed-gamification-beyond-leaderboards, or cross-functional-learning-patterns-that-work-across-departments. Re-run with selected topic.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
 # Deliverable Draft: Design Manager Enablement That Links Coaching Actions To Team Capability Growth SEO blog operating system
@@ -55,10 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Select alternative topic from sitemap: create-micro-learning-moments-in-daily-team-standups, data-informed-gamification-beyond-leaderboards, or cross-functional-learning-patterns-that-work-across-departments. Re-run with selected topic.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Blockers / Notes
-Found existing post: design-manager-enablement-that-links-coaching-actions-to-team-capability-growth.html in sitemap. Verified 13 times. Task requires avoiding near-duplicate titles.
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
