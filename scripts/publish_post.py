@@ -23,12 +23,13 @@ DEFAULT_IMAGE = ASSETS_DIR / "default.jpg"
 FALLBACK_IMAGE = ASSETS_DIR / "publishing-without-wordpress.jpg"
 MIN_IMAGE_BYTES = 80_000
 DATE_INPUT_FORMATS = ("%B %d, %Y", "%Y-%m-%d", "%d %b %Y")
-QUALITY_MIN_WORDS = 300
-QUALITY_MAX_WORDS = 350
-QUALITY_MIN_HEADINGS = 2
+QUALITY_MIN_WORDS = 220
+QUALITY_MAX_WORDS = 300
+QUALITY_MIN_HEADINGS = 0
 QUALITY_MIN_PARAGRAPHS = 6
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
+DISABLE_BODY_H2 = True
 
 STUDY_SOURCE_POOL = [
     {
@@ -58,15 +59,15 @@ STUDY_SOURCE_POOL = [
 ]
 
 STUDY_URL_PATTERNS = [
-    r"nber\\.org/papers/",
-    r"arxiv\\.org/abs/",
-    r"doi\\.org/",
-    r"ourworldindata\\.org/",
-    r"gallup\\.com/workplace/",
-    r"nature\\.com/articles/",
-    r"science\\.org/doi/",
-    r"cell\\.com/",
-    r"jamanetwork\\.com/",
+    r"nber\.org/papers/",
+    r"arxiv\.org/abs/",
+    r"doi\.org/",
+    r"ourworldindata\.org/",
+    r"gallup\.com/workplace/",
+    r"nature\.com/articles/",
+    r"science\.org/doi/",
+    r"cell\.com/",
+    r"jamanetwork\.com/",
 ]
 UNSPLASH_THEME_IDS = {
     "base": [
@@ -368,6 +369,8 @@ def normalize_citations(raw_citations: object) -> list[dict[str, str]]:
         if url in seen_urls:
             continue
 
+        if is_generic_citation_title(label):
+            label = citation_title_from_url(url)
         seen_urls.add(url)
         citations.append({"title": label, "url": url})
 
@@ -395,6 +398,38 @@ def default_study_citations(seed: str, count: int = 3) -> list[dict[str, str]]:
     return ranked[:target]
 
 
+def is_generic_citation_title(title: str) -> bool:
+    value = normalize_spaces(title).lower()
+    if not value:
+        return True
+    if value in {"source", "study", "reference", "link"}:
+        return True
+    if re.match(r"^source\s*\d*$", value):
+        return True
+    if re.match(r"^reference\s*\d*$", value):
+        return True
+    return False
+
+
+def citation_title_from_url(url: str) -> str:
+    value = normalize_spaces(url)
+    lower = value.lower()
+    for item in STUDY_SOURCE_POOL:
+        if item["url"].lower() == lower:
+            return item["title"]
+    if "nber.org/papers/" in lower:
+        return "NBER Working Paper"
+    if "arxiv.org/abs/" in lower:
+        return "arXiv preprint"
+    if "doi.org/" in lower:
+        return "DOI-linked study"
+    if "ourworldindata.org/" in lower:
+        return "Our World in Data"
+    if "gallup.com/workplace/" in lower:
+        return "Gallup workplace research"
+    return value
+
+
 def ensure_study_citations(citations: list[dict[str, str]], seed: str, min_count: int = 2) -> list[dict[str, str]]:
     cleaned: list[dict[str, str]] = []
     seen: set[str] = set()
@@ -405,6 +440,8 @@ def ensure_study_citations(citations: list[dict[str, str]], seed: str, min_count
             continue
         if not is_study_url(url):
             continue
+        if is_generic_citation_title(title):
+            title = citation_title_from_url(url)
         seen.add(url)
         cleaned.append({"title": title, "url": url})
 
@@ -447,7 +484,7 @@ def build_article_html(
     paragraph_index = 0
     for section in sections:
         heading = str(section.get("heading", "")).strip()
-        if heading:
+        if heading and not DISABLE_BODY_H2:
             lines.append(f"            <h2>{escape(heading)}</h2>")
         for paragraph in section.get("paragraphs", []):
             anchor = inline_citation_anchor(citations, paragraph_index)
@@ -460,18 +497,19 @@ def build_article_html(
         anchor = inline_citation_anchor(citations, paragraph_index)
         lines.append(f"            <p>{escape(closing)}{anchor}</p>")
     if citations:
-        lines.append("            <h2>Sources</h2>")
-        lines.append("            <ul>")
-        for citation in citations:
+        lines.append("            <p><strong>References</strong></p>")
+        lines.append("            <ol>")
+        for idx, citation in enumerate(citations, start=1):
             title = citation.get("title", "").strip() or citation.get("url", "").strip()
             url = citation.get("url", "").strip()
             lines.append(
                 "                <li>"
+                f"{escape(title)}. "
                 f"<a href=\"{escape(url, quote=True)}\" target=\"_blank\" rel=\"noopener\">"
-                f"{escape(title)}</a>"
+                f"{escape(url)}</a>"
                 "</li>"
             )
-        lines.append("            </ul>")
+        lines.append("            </ol>")
     lines.append("        </article>")
     return "\n".join(lines)
 
@@ -531,6 +569,15 @@ def validate_citation_support(text: str, citations: list[dict[str, str]]) -> Non
     has_url = URL_RE.search(text) is not None or any(c.get("url") for c in citations)
     if has_claim_keywords and has_stat_signal and not has_url:
         raise ValueError("Research/statistical claim detected without source URL")
+    if len(citations) < 2:
+        raise ValueError("At least two study citations are required")
+    for citation in citations:
+        url = normalize_spaces(citation.get("url", ""))
+        title = normalize_spaces(citation.get("title", ""))
+        if not is_study_url(url):
+            raise ValueError(f"Citation URL is not an approved study/report source: {url}")
+        if is_generic_citation_title(title):
+            raise ValueError(f"Citation title must be specific, not generic: {title or 'empty'}")
 
 
 def validate_quality_structure(

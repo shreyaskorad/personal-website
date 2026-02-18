@@ -28,12 +28,13 @@ RECENT_IMAGE_WINDOW = 12
 QUALITY_MIN_TOTAL = 20
 QUALITY_MAX_PASSES = 4
 QUALITY_DELTA_PER_ITERATION = 1
-QUALITY_MIN_WORDS = 300
-QUALITY_MAX_WORDS = 350
-QUALITY_MIN_HEADINGS = 2
+QUALITY_MIN_WORDS = 220
+QUALITY_MAX_WORDS = 300
+QUALITY_MIN_HEADINGS = 0
 QUALITY_MIN_PARAGRAPHS = 6
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
+DISABLE_BODY_H2 = True
 
 STUDY_SOURCE_POOL = [
     {
@@ -305,7 +306,7 @@ def ensure_sections(raw_sections: Any, lead: str, excerpt: str, closing: str, ti
     warn('Payload sections were incomplete; generated fallback sections')
     fallback = [
         {
-            'heading': 'Why this matters now',
+            'heading': '' if DISABLE_BODY_H2 else 'Key context',
             'paragraphs': [
                 sanitize_text(body_a),
                 sanitize_text(
@@ -314,7 +315,7 @@ def ensure_sections(raw_sections: Any, lead: str, excerpt: str, closing: str, ti
             ],
         },
         {
-            'heading': 'How to execute this week',
+            'heading': '' if DISABLE_BODY_H2 else 'Execution move',
             'paragraphs': [
                 sanitize_text(body_b),
                 sanitize_text(
@@ -331,7 +332,9 @@ def ensure_section_headings(sections: list[dict[str, Any]], title: str) -> list[
     title_topic = sanitize_text(title) or 'this topic'
     for idx, section in enumerate(sections):
         heading = sanitize_text(section.get('heading', ''))
-        if not heading:
+        if DISABLE_BODY_H2:
+            heading = ''
+        elif not heading:
             if idx < len(SECTION_HEADING_DEFAULTS):
                 heading = SECTION_HEADING_DEFAULTS[idx]
             else:
@@ -404,6 +407,38 @@ def default_study_citations(seed: str, count: int = 3) -> list[dict[str, str]]:
     return ranked[:target]
 
 
+def is_generic_citation_title(title: str) -> bool:
+    value = sanitize_text(title).lower()
+    if not value:
+        return True
+    if value in {'source', 'study', 'reference', 'link'}:
+        return True
+    if re.match(r'^source\s*\d*$', value):
+        return True
+    if re.match(r'^reference\s*\d*$', value):
+        return True
+    return False
+
+
+def citation_title_from_url(url: str) -> str:
+    value = sanitize_text(url)
+    lower = value.lower()
+    for item in STUDY_SOURCE_POOL:
+        if item['url'].lower() == lower:
+            return item['title']
+    if 'nber.org/papers/' in lower:
+        return 'NBER Working Paper'
+    if 'arxiv.org/abs/' in lower:
+        return 'arXiv preprint'
+    if 'doi.org/' in lower:
+        return 'DOI-linked study'
+    if 'ourworldindata.org/' in lower:
+        return 'Our World in Data'
+    if 'gallup.com/workplace/' in lower:
+        return 'Gallup workplace research'
+    return value
+
+
 def ensure_study_citations(
     citations: list[dict[str, str]],
     *,
@@ -419,6 +454,8 @@ def ensure_study_citations(
             continue
         if not is_study_url(url):
             continue
+        if is_generic_citation_title(title):
+            title = citation_title_from_url(url)
         seen.add(url)
         filtered.append({'title': title, 'url': url})
 
@@ -520,7 +557,7 @@ def tighten_to_target(payload: dict[str, Any], min_words: int = QUALITY_MIN_WORD
         if changed:
             continue
 
-        heading = SECTION_HEADING_DEFAULTS[len(sections) % len(SECTION_HEADING_DEFAULTS)]
+        heading = '' if DISABLE_BODY_H2 else SECTION_HEADING_DEFAULTS[len(sections) % len(SECTION_HEADING_DEFAULTS)]
         candidate_a = section_expansion(heading, expansion_index)
         candidate_b = section_expansion(heading, expansion_index + 1)
         payload.setdefault('sections', []).append(
@@ -607,6 +644,12 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
 
     citations = payload.get('citations', [])
     citation_count = len(citations) if isinstance(citations, list) else 0
+    generic_citation_titles = 0
+    if isinstance(citations, list):
+        for item in citations:
+            title = sanitize_text(item.get('title', '') if isinstance(item, dict) else '')
+            if is_generic_citation_title(title):
+                generic_citation_titles += 1
     metric_terms_found = len({tok for tok in tokens if tok in QUALITY_METRIC_TERMS})
     action_terms_found = len({tok for tok in tokens if tok in QUALITY_ACTION_TERMS})
     cliche_hits = sum(1 for pattern in QUALITY_CLICHE_PATTERNS if re.search(pattern, text_l))
@@ -629,7 +672,7 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         clarity -= 1
     if short_paragraph_count >= 2:
         clarity -= 1
-    if heading_count >= QUALITY_MIN_HEADINGS:
+    if QUALITY_MIN_HEADINGS > 0 and heading_count >= QUALITY_MIN_HEADINGS:
         clarity += 1
     if duplicate_sentence_count:
         clarity -= 1
@@ -690,7 +733,7 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         actionability += 1
     if has_sequence:
         actionability += 1
-    if heading_count >= QUALITY_MIN_HEADINGS:
+    if QUALITY_MIN_HEADINGS > 0 and heading_count >= QUALITY_MIN_HEADINGS:
         actionability += 1
     if paragraph_count >= QUALITY_MIN_PARAGRAPHS:
         actionability += 1
@@ -722,6 +765,7 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             'duplicate_paragraphs': duplicate_paragraph_count,
             'number_hits': number_hits,
             'citation_count': citation_count,
+            'generic_citation_titles': generic_citation_titles,
             'metric_terms_found': metric_terms_found,
             'action_terms_found': action_terms_found,
             'lexical_diversity': round(unique_ratio, 3),
@@ -774,7 +818,7 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
         failures.append(f'word count {word_total} exceeds maximum {QUALITY_MAX_WORDS}')
 
     heading_count = int(signals.get('heading_count') or 0)
-    if heading_count < QUALITY_MIN_HEADINGS:
+    if QUALITY_MIN_HEADINGS > 0 and heading_count < QUALITY_MIN_HEADINGS:
         failures.append(f'heading count {heading_count} is below minimum {QUALITY_MIN_HEADINGS}')
 
     paragraph_count = int(signals.get('paragraph_count') or 0)
@@ -792,6 +836,14 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
         failures.append(
             f'duplicate paragraph count {duplicate_paragraphs} exceeds allowed maximum {QUALITY_MAX_DUP_PARAGRAPHS}'
         )
+
+    citation_count = int(signals.get('citation_count') or 0)
+    if citation_count < 2:
+        failures.append('at least two study/report citations are required')
+
+    generic_citation_titles = int(signals.get('generic_citation_titles') or 0)
+    if generic_citation_titles > 0:
+        failures.append('citation titles must be specific (generic "Source 1/2" labels are not allowed)')
     return failures
 
 
