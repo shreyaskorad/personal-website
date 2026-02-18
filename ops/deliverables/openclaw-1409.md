@@ -1,12 +1,12 @@
 # Deliverable: Design without losing human judgment
 
-- Task ID: openclaw-1408
-- Status: failed
-- Created: 2026-02-18T08:42:01Z
-- Updated: 2026-02-18T08:46:31Z
+- Task ID: openclaw-1409
+- Status: cancelled
+- Created: 2026-02-18T08:49:40Z
+- Updated: 2026-02-18T08:53:05Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 # Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
@@ -55,10 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
-
-## Blockers / Notes
-OpenClaw SSH execution failed.
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
