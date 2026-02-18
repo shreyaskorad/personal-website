@@ -1,12 +1,12 @@
 # Deliverable: Improve judgment without adding course fatigue
 
-- Task ID: openclaw-1495
-- Status: blocked
-- Created: 2026-02-18T15:52:28Z
-- Updated: 2026-02-18T15:52:46Z
+- Task ID: openclaw-1497
+- Status: cancelled
+- Created: 2026-02-18T15:59:21Z
+- Updated: 2026-02-18T16:02:37Z
 
 ## Summary
-Provide alternative title or specify whether to revise/update existing post. Suggested alternatives: 'How AI tools sharpen judgment without training overload', 'Replace course fatigue with decision-driven practice', 'Improve judgment by measuring decisions, not completions'
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 ```json
@@ -26,9 +26,6 @@ Provide alternative title or specify whether to revise/update existing post. Sug
   ]
 }
 ```
-
-## Blockers / Notes
-Title 'Improve judgment without adding course fatigue' exists at /Users/shreyas-clawd/Downloads/personal-website/posts/improve-judgment-without-adding-course-fatigue.html and is published. Per rules: avoid near-duplicate titles and duplicated themes.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
