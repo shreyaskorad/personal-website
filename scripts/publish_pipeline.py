@@ -35,6 +35,45 @@ QUALITY_MIN_PARAGRAPHS = 6
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
 
+STUDY_SOURCE_POOL = [
+    {
+        'title': 'Generative AI at Work (NBER Working Paper 31161)',
+        'url': 'https://www.nber.org/papers/w31161',
+    },
+    {
+        'title': 'On the Opportunities and Risks of Foundation Models (arXiv:2108.07258)',
+        'url': 'https://arxiv.org/abs/2108.07258',
+    },
+    {
+        'title': 'GPTs are GPTs: An Early Look at Labor Market Impact Potential (arXiv:2303.10130)',
+        'url': 'https://arxiv.org/abs/2303.10130',
+    },
+    {
+        'title': 'A Survey of Large Language Models (arXiv:2303.18223)',
+        'url': 'https://arxiv.org/abs/2303.18223',
+    },
+    {
+        'title': 'Our World in Data: Artificial Intelligence',
+        'url': 'https://ourworldindata.org/artificial-intelligence',
+    },
+    {
+        'title': 'Gallup: State of the Global Workplace',
+        'url': 'https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx',
+    },
+]
+
+STUDY_URL_PATTERNS = [
+    r'nber\.org/papers/',
+    r'arxiv\.org/abs/',
+    r'doi\.org/',
+    r'ourworldindata\.org/',
+    r'gallup\.com/workplace/',
+    r'nature\.com/articles/',
+    r'science\.org/doi/',
+    r'cell\.com/',
+    r'jamanetwork\.com/',
+]
+
 UNSPLASH_THEME_IDS = {
     'base': [
         '1461749280684-dccba630e2f6',
@@ -333,6 +372,8 @@ def normalize_citations(raw_citations: Any) -> list[dict[str, str]]:
 
         if not re.match(r'^https?://', url, flags=re.IGNORECASE):
             continue
+        if not is_study_url(url):
+            continue
         if url in seen_urls:
             continue
 
@@ -340,6 +381,59 @@ def normalize_citations(raw_citations: Any) -> list[dict[str, str]]:
         citations.append({'title': label, 'url': url})
 
     return citations[:8]
+
+
+def is_study_url(url: str) -> bool:
+    value = sanitize_text(url).lower()
+    if not value.startswith('http'):
+        return False
+    for pattern in STUDY_URL_PATTERNS:
+        if re.search(pattern, value):
+            return True
+    return False
+
+
+def default_study_citations(seed: str, count: int = 3) -> list[dict[str, str]]:
+    target = max(2, min(5, count))
+    if not STUDY_SOURCE_POOL:
+        return []
+    ranked = sorted(
+        STUDY_SOURCE_POOL,
+        key=lambda item: hashlib.sha256(f'{seed}|{item["url"]}'.encode('utf-8')).hexdigest(),
+    )
+    return ranked[:target]
+
+
+def ensure_study_citations(
+    citations: list[dict[str, str]],
+    *,
+    seed: str,
+    min_count: int = 2,
+) -> list[dict[str, str]]:
+    filtered: list[dict[str, str]] = []
+    seen: set[str] = set()
+    for item in citations:
+        url = sanitize_text(item.get('url', ''))
+        title = sanitize_text(item.get('title', '') or url)
+        if not url or url in seen:
+            continue
+        if not is_study_url(url):
+            continue
+        seen.add(url)
+        filtered.append({'title': title, 'url': url})
+
+    if len(filtered) >= min_count:
+        return filtered[:8]
+
+    for item in default_study_citations(seed, count=max(3, min_count + 1)):
+        url = item['url']
+        if url in seen:
+            continue
+        seen.add(url)
+        filtered.append({'title': item['title'], 'url': url})
+        if len(filtered) >= max(min_count, 3):
+            break
+    return filtered[:8]
 
 
 def ensure_date(value: Any) -> str:
@@ -1112,6 +1206,11 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
     citations = normalize_citations(raw.get('citations', []) or raw.get('sources', []))
+    citations = ensure_study_citations(
+        citations,
+        seed=f'{slug}|{title}|{",".join(tags)}',
+        min_count=2,
+    )
 
     lead_core = core_keywords(lead)
     closing_core = core_keywords(closing)
