@@ -141,10 +141,10 @@ QUALITY_CLICHE_PATTERNS = [
     r'\bunlock potential\b',
 ]
 SECTION_HEADING_DEFAULTS = [
-    'Why this matters now',
-    'Where teams get stuck',
-    'A practical operating model',
-    'How to measure progress',
+    'Key context',
+    'Execution move',
+    'Review checkpoint',
+    'Next iteration',
 ]
 
 
@@ -256,7 +256,7 @@ def ensure_sections(raw_sections: Any, lead: str, excerpt: str, closing: str, ti
                 raw_paragraphs = []
             paragraphs = [sanitize_text(p) for p in raw_paragraphs if sanitize_text(p)]
             if paragraphs:
-                sections.append({'heading': heading, 'paragraphs': paragraphs[:4]})
+                sections.append({'heading': heading, 'paragraphs': paragraphs[:6]})
 
     if len(sections) >= 2:
         return ensure_section_headings(sections, title)
@@ -300,7 +300,7 @@ def ensure_section_headings(sections: list[dict[str, Any]], title: str) -> list[
         paragraphs = [sanitize_text(p) for p in section.get('paragraphs', []) if sanitize_text(p)]
         if not paragraphs:
             continue
-        normalized.append({'heading': heading, 'paragraphs': paragraphs[:4]})
+        normalized.append({'heading': heading, 'paragraphs': paragraphs[:6]})
     return normalized
 
 
@@ -411,7 +411,7 @@ def tighten_to_target(payload: dict[str, Any], min_words: int = QUALITY_MIN_WORD
         for section in sections:
             heading = sanitize_text(section.get('heading', ''))
             paragraphs = section.setdefault('paragraphs', [])
-            if len(paragraphs) >= 4:
+            if len(paragraphs) >= 6:
                 continue
             candidate = section_expansion(heading, expansion_index)
             expansion_index += 1
