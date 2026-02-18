@@ -378,25 +378,24 @@ def tighten_to_target(payload: dict[str, Any], min_words: int = QUALITY_MIN_WORD
 
     payload['sections'] = ensure_section_headings(payload.get('sections', []), payload.get('title', ''))
     title_topic = sanitize_text(payload.get('title', '')) or 'this topic'
-    expansion_templates = [
-        'Start with a one-week baseline for {topic}: current cycle time, review latency, and the percentage of drafts that require major rework before publication.',
-        'Define explicit role ownership for {topic} so quality checks are not implicit: who drafts, who verifies claims, who approves publication, and who records outcome metrics.',
-        'Treat each publish cycle as an experiment for {topic}: state the change, expected effect, and the metric window you will use to judge whether the change should be kept.',
-        'Link every strategic claim in {topic} to execution evidence such as conversion movement, retention deltas, response quality, or measurable throughput changes from the prior cycle.',
-        'Use a weekly review ritual for {topic} with three outputs only: what changed, what moved, and what will be tested next so the next post compounds learning rather than repeating summaries.',
-        'Add a short failure log to {topic} documenting what did not work and why; this prevents teams from recycling polished language that lacks operational signal.',
-        'Before each publish decision on {topic}, confirm that the post names the target audience, the practical constraint, and the operating tradeoff involved in adopting the recommendation.',
-        'Maintain a source ledger for {topic} where every external statistic is linked to a URL and timestamp; if a claim cannot be traced quickly, remove it before publishing.',
-        'Prioritize one leading indicator and one lagging indicator for {topic} so teams can separate early movement from downstream impact and avoid judging quality by vanity metrics alone.',
-        'After publishing on {topic}, schedule a follow-up checkpoint that compares hypothesis versus outcome and feeds that delta into the outline for the next iteration.',
-    ]
+    paragraph_seed = collect_paragraphs(payload)
+    paragraph_seed_text = paragraph_seed[0] if paragraph_seed else sanitize_text(payload.get('lead', ''))
 
-    def expansion_paragraph(index: int) -> str:
-        if index < len(expansion_templates):
-            return sanitize_text(expansion_templates[index].format(topic=title_topic))
-        return sanitize_text(
-            f'Execution checkpoint {index - len(expansion_templates) + 1} for {title_topic}: capture baseline metrics, publish one controlled change, and document the observed delta before moving to the next iteration.'
-        )
+    def section_expansion(heading: str, index: int) -> str:
+        heading_text = sanitize_text(heading) or 'this section'
+        seeds = [
+            f'For {title_topic}, clarify one constraint in {heading_text.lower()} and connect it to a practical action that can be tested this week.',
+            f'In {heading_text.lower()}, keep one claim and one proof point so the reader can apply {title_topic} quickly without extra interpretation.',
+            f'Add one concrete example in {heading_text.lower()} that shows how {title_topic} changes a real decision under normal delivery pressure.',
+            f'Close {heading_text.lower()} with one simple review checkpoint so teams can inspect whether {title_topic} produced visible improvement.',
+        ]
+        if paragraph_seed_text:
+            seeds.append(
+                f'Build on this core idea: "{paragraph_seed_text[:120]}". Keep the extension short, specific, and directly useful for next-step execution.'
+            )
+        digest = hashlib.sha256(f'{title_topic}|{heading_text}|{index}'.encode('utf-8')).hexdigest()
+        pick = int(digest[:8], 16) % len(seeds)
+        return sanitize_text(seeds[pick])
 
     expansion_index = 0
     while current() < min_words:
@@ -408,15 +407,18 @@ def tighten_to_target(payload: dict[str, Any], min_words: int = QUALITY_MIN_WORD
             payload['sections'] = sections
 
         changed = False
+        existing = {sanitize_text(p).lower() for p in collect_paragraphs(payload)}
         for section in sections:
+            heading = sanitize_text(section.get('heading', ''))
             paragraphs = section.setdefault('paragraphs', [])
             if len(paragraphs) >= 4:
                 continue
-            candidate = expansion_paragraph(expansion_index)
+            candidate = section_expansion(heading, expansion_index)
             expansion_index += 1
-            if candidate in paragraphs:
+            if not candidate or candidate.lower() in existing:
                 continue
             paragraphs.append(candidate)
+            existing.add(candidate.lower())
             changed = True
             if current() >= min_words:
                 break
@@ -425,12 +427,14 @@ def tighten_to_target(payload: dict[str, Any], min_words: int = QUALITY_MIN_WORD
             continue
 
         heading = SECTION_HEADING_DEFAULTS[len(sections) % len(SECTION_HEADING_DEFAULTS)]
+        candidate_a = section_expansion(heading, expansion_index)
+        candidate_b = section_expansion(heading, expansion_index + 1)
         payload.setdefault('sections', []).append(
             {
                 'heading': heading,
                 'paragraphs': [
-                    expansion_paragraph(expansion_index),
-                    expansion_paragraph(expansion_index + 1),
+                    candidate_a,
+                    candidate_b,
                 ],
             }
         )
@@ -734,17 +738,25 @@ def reinforce_clarity(payload: dict[str, Any]) -> None:
 
 
 def reinforce_specificity(payload: dict[str, Any]) -> None:
-    append_to_last_section(
-        payload,
-        'Anchor one baseline KPI and one target KPI, such as cycle time or activation rate, and review the delta weekly.',
-    )
+    topic = sanitize_text(payload.get('title', 'this topic')).lower()
+    options = [
+        f'Name one leading and one lagging metric for {topic}, then define the weekly review point for both.',
+        f'For {topic}, state the baseline value first and then add the target value so progress can be assessed quickly.',
+        f'Keep specificity high in {topic} by tying each recommendation to one measurable indicator and one delivery horizon.',
+    ]
+    pick = int(hashlib.sha256(f'{topic}|specificity'.encode('utf-8')).hexdigest()[:8], 16) % len(options)
+    append_to_last_section(payload, options[pick])
 
 
 def reinforce_evidence(payload: dict[str, Any]) -> None:
-    append_to_last_section(
-        payload,
-        'Before publishing, capture a baseline, ship the change, and compare before-after performance with source links.',
-    )
+    topic = sanitize_text(payload.get('title', 'this topic')).lower()
+    options = [
+        f'For {topic}, keep only external claims that include a direct source URL and a clear interpretation.',
+        f'Use a simple evidence check for {topic}: source link, claim context, and observable before-after signal.',
+        f'When writing about {topic}, remove unsupported statistical claims instead of softening them with vague wording.',
+    ]
+    pick = int(hashlib.sha256(f'{topic}|evidence'.encode('utf-8')).hexdigest()[:8], 16) % len(options)
+    append_to_last_section(payload, options[pick])
 
 
 def reinforce_originality(payload: dict[str, Any]) -> None:
@@ -765,9 +777,10 @@ def reinforce_originality(payload: dict[str, Any]) -> None:
                 value_l = value.lower()
         payload[key] = sanitize_text(value)
 
+    topic = sanitize_text(payload.get('title', 'this topic')).lower()
     append_to_last_section(
         payload,
-        'The advantage is not more content volume; it is tighter feedback between what gets published and what changes behavior.',
+        f'Keep {topic} grounded in one distinctive observation from real work so the post does not read like reusable boilerplate.',
     )
 
 
@@ -775,10 +788,11 @@ def reinforce_actionability(payload: dict[str, Any]) -> None:
     bullets = payload.get('bullets', [])
     if not isinstance(bullets, list):
         bullets = []
+    topic = sanitize_text(payload.get('title', 'this topic')).lower()
     additions = [
-        'Define one leading KPI and one lagging KPI for this topic.',
-        'Run a weekly review: baseline, delta, blockers, and next experiment.',
-        'Publish the next iteration only after the prior metric trend is documented.',
+        f'Define one leading metric and one lagging metric for {topic}.',
+        'Run a weekly review with four notes: baseline, delta, blocker, next step.',
+        'Carry one lesson from the latest result into the next brief before publishing again.',
     ]
     for item in additions:
         if item not in bullets:
