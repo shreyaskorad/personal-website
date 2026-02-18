@@ -1,12 +1,12 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
-- Task ID: openclaw-1399
-- Status: blocked
-- Created: 2026-02-18T07:54:47Z
-- Updated: 2026-02-18T07:55:15Z
+- Task ID: openclaw-1403
+- Status: failed
+- Created: 2026-02-18T08:09:44Z
+- Updated: 2026-02-18T08:14:14Z
 
 ## Summary
-Choose new topic from domain-focused angles: LxD data-informed learning, gamification, or practical AI use in learning
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
 # Deliverable Draft: Build A Practical Lxd Workflow For Small Teams Shipping Weekly SEO blog operating system
@@ -55,10 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Choose new topic from domain-focused angles: LxD data-informed learning, gamification, or practical AI use in learning
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Blockers / Notes
-Title 'Build a practical LxD workflow for small teams shipping weekly' already published at https://shreyaskorad.in/posts/build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
