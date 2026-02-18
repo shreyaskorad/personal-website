@@ -1,15 +1,15 @@
-# Deliverable: Create L&D reviews that focus on behavior shifts not completion dashboards
+# Deliverable: Design manager enablement that links coaching actions to team capability growth
 
-- Task ID: openclaw-1366
+- Task ID: openclaw-1370
 - Status: blocked
-- Created: 2026-02-18T05:09:50Z
-- Updated: 2026-02-18T05:10:02Z
+- Created: 2026-02-18T05:23:13Z
+- Updated: 2026-02-18T05:24:12Z
 
 ## Summary
-Select alternative topic from sitemap: turn-project-feedback-into-actionable-learning-cycles, use-learning-data-to-surface-team-blind-spots-not-just-completion-metrics, or micro-learning-for-daily-decision-making. Re-run with selected topic.
+Select alternative topic from sitemap: create-micro-learning-moments-in-daily-team-standups, data-informed-gamification-beyond-leaderboards, or cross-functional-learning-patterns-that-work-across-departments. Re-run with selected topic.
 
 ## Deliverable Output
-# Deliverable Draft: Create L&D Reviews That Focus On Behavior Shifts Not Completion Dashboards SEO blog operating system
+# Deliverable Draft: Design Manager Enablement That Links Coaching Actions To Team Capability Growth SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,10 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Select alternative topic from sitemap: turn-project-feedback-into-actionable-learning-cycles, use-learning-data-to-surface-team-blind-spots-not-just-completion-metrics, or micro-learning-for-daily-decision-making. Re-run with selected topic.
+Select alternative topic from sitemap: create-micro-learning-moments-in-daily-team-standups, data-informed-gamification-beyond-leaderboards, or cross-functional-learning-patterns-that-work-across-departments. Re-run with selected topic.
 
 ## Blockers / Notes
-Found existing post: create-ld-reviews-that-focus-on-behavior-shifts-not-completion-dashboards.html in sitemap. Task requires avoiding near-duplicate titles.
+Found existing post: design-manager-enablement-that-links-coaching-actions-to-team-capability-growth.html in sitemap. Verified 13 times. Task requires avoiding near-duplicate titles.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
