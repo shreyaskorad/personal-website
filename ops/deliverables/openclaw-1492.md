@@ -1,12 +1,12 @@
 # Deliverable: Build feedback rituals that convert learning into visible team behavior
 
-- Task ID: openclaw-1491
-- Status: failed
-- Created: 2026-02-18T15:30:55Z
-- Updated: 2026-02-18T15:35:25Z
+- Task ID: openclaw-1492
+- Status: cancelled
+- Created: 2026-02-18T15:38:36Z
+- Updated: 2026-02-18T15:45:45Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 # Deliverable Draft: Build Feedback Rituals That Convert Learning Into Visible Team Behavior SEO blog operating system
@@ -55,10 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
-
-## Blockers / Notes
-OpenClaw SSH execution failed.
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
