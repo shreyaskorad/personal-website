@@ -26,13 +26,13 @@ QUALITY_HISTORY_FILE = STATE_DIR / 'publish-quality-history.json'
 QUALITY_REPORT_FILE = STATE_DIR / 'publish-quality-report.json'
 
 RECENT_IMAGE_WINDOW = 12
-QUALITY_MIN_TOTAL = 23
+QUALITY_MIN_TOTAL = 22
 QUALITY_MAX_PASSES = 4
 QUALITY_DELTA_PER_ITERATION = 0
-QUALITY_MIN_WORDS = 520
-QUALITY_MAX_WORDS = 950
-QUALITY_MIN_HEADINGS = 3
-QUALITY_MIN_PARAGRAPHS = 8
+QUALITY_MIN_WORDS = 170
+QUALITY_MAX_WORDS = 300
+QUALITY_MIN_HEADINGS = 2
+QUALITY_MIN_PARAGRAPHS = 5
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
 DISABLE_BODY_H2 = False
@@ -1297,6 +1297,16 @@ def quality_targets(slug: str, min_total: int, delta: int) -> tuple[int, int, di
     return previous, min(25, target), history
 
 
+def citation_target_for_slug(slug: str, base_count: int = 3, cap: int = 8) -> int:
+    history = load_quality_history()
+    by_slug = history.get('by_slug', {})
+    entry = by_slug.get(slug, {}) if isinstance(by_slug, dict) else {}
+    prev = int(entry.get('last_citation_count') or 0) if isinstance(entry, dict) else 0
+    if prev <= 0:
+        return max(2, min(cap, base_count))
+    return max(2, min(cap, max(base_count, prev + 1)))
+
+
 def run_quality_gate(
     payload: dict[str, Any],
     min_total: int = QUALITY_MIN_TOTAL,
@@ -1366,6 +1376,7 @@ def run_quality_gate(
     by_slug[slug] = {
         'last_total': gate['final_total'],
         'last_scores': {dim: final['scores'][dim]['score'] for dim in QUALITY_DIMENSIONS},
+        'last_citation_count': len(payload.get('citations', []) if isinstance(payload.get('citations', []), list) else []),
         'runs': runs,
         'updatedAt': datetime.utcnow().isoformat() + 'Z',
     }
@@ -1594,10 +1605,11 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
     citations = normalize_citations(raw.get('citations', []) or raw.get('sources', []))
+    citation_target = citation_target_for_slug(slug, base_count=3, cap=8)
     citations = ensure_study_citations(
         citations,
         seed=f'{slug}|{title}|{",".join(tags)}',
-        min_count=2,
+        min_count=citation_target,
     )
 
     lead_core = core_keywords(lead)

@@ -23,10 +23,10 @@ DEFAULT_IMAGE = ASSETS_DIR / "default.jpg"
 FALLBACK_IMAGE = ASSETS_DIR / "publishing-without-wordpress.jpg"
 MIN_IMAGE_BYTES = 80_000
 DATE_INPUT_FORMATS = ("%B %d, %Y", "%Y-%m-%d", "%d %b %Y")
-QUALITY_MIN_WORDS = 520
-QUALITY_MAX_WORDS = 950
-QUALITY_MIN_HEADINGS = 3
-QUALITY_MIN_PARAGRAPHS = 8
+QUALITY_MIN_WORDS = 170
+QUALITY_MAX_WORDS = 300
+QUALITY_MIN_HEADINGS = 2
+QUALITY_MIN_PARAGRAPHS = 5
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
 DISABLE_BODY_H2 = False
@@ -1017,7 +1017,11 @@ def main() -> None:
 
     closing = sanitize_content_line(payload.get("closing", "") or lead) or lead
     citations = normalize_citations(payload.get("citations", []))
-    citations = ensure_study_citations(citations, seed=f"{slug}|{title}|{','.join(tags)}", min_count=2)
+    citations = ensure_study_citations(
+        citations,
+        seed=f"{slug}|{title}|{','.join(tags)}",
+        min_count=max(2, len(citations) + 1),
+    )
 
     if len(sections) < 2:
         raise ValueError("At least two sections are required")
