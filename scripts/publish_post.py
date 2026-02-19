@@ -262,7 +262,7 @@ def normalize_spaces(text: str) -> str:
     return " ".join(str(text or "").split())
 
 
-def normalize_display_title(raw: str, max_words: int = 12, max_chars: int = 78) -> str:
+def normalize_display_title(raw: str, max_words: int = 14, max_chars: int = 96) -> str:
     title = normalize_spaces(raw)
     if not title:
         return ""

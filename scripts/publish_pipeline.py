@@ -335,7 +335,7 @@ def sanitize_text(text: str) -> str:
     return ' '.join(text.strip().split())
 
 
-def normalize_display_title(raw: str, *, max_words: int = 12, max_chars: int = 78) -> str:
+def normalize_display_title(raw: str, *, max_words: int = 14, max_chars: int = 96) -> str:
     title = sanitize_text(raw)
     if not title:
         return ''
