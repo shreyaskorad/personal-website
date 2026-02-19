@@ -748,6 +748,27 @@ def ensure_study_citations(
                 if len({d for d in selected_domains if d and d not in prior_domains}) >= required_new_domains:
                     break
 
+    if required_new_domains > 0 and selected:
+        chosen: list[dict[str, str]] = []
+        chosen_domains: set[str] = set()
+        for item in selected:
+            domain = citation_domain(item.get("url", ""))
+            if not domain or domain in prior_domains:
+                continue
+            if item in chosen:
+                continue
+            chosen.append(item)
+            chosen_domains.add(domain)
+            if len(chosen_domains) >= required_new_domains:
+                break
+        for item in selected:
+            if item in chosen:
+                continue
+            chosen.append(item)
+            if len(chosen) >= target:
+                break
+        selected = chosen
+
     return selected[:target]
 
 
