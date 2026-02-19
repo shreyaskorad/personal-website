@@ -9,59 +9,20 @@
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-18T14:44:35Z)
+# Design without losing human judgment
 
-## Last Error
-OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (9): zai/glm-4.7-flash: ⚠️ API rate limit reached. Please try again later. (rate_limit) | zai/glm-5: No available auth profile for zai (all in cooldown or unavailable). (rate_limit) | zai/glm-4.7: No available auth profile for zai (all in cooldown or unavailable). (rate_limit) | zai/glm-4.7-flashx: No available auth profile for zai (all in cooldown or unavailable). (rate_limit) | zai/glm-
+When I work on design without losing human judgment, I start with decision quality, not course activity. If the design does not help a team make better calls in real work, it will look busy without creating capability.
 
-## Draft Deliverable (Fallback)
-# Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
+## Core point
+The strongest shift happens when you connect learning moments to decisions managers and teams already face each week. In one workplace scenario, a team lead reviews a project handoff with a learner and uses a short debrief to surface trade-offs, not just whether a module was completed. That conversation becomes a coaching artifact the manager can revisit in the next project cycle to calibrate expectations and accountability.
 
-## Objective and success metrics
-Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
+## Practical takeaway
+Choose one decision your learners repeatedly struggle with, define what better judgment looks like, and gather lightweight evidence from team conversations and outcomes. Track one behavioral signal in weekly check-ins, and compare examples before and after the coaching shift so improvement is visible. What would change in your team if learning reviews focused on better decisions instead of completion updates?
 
-## Serialized agent roster
-1. Topic Scout - Identify high-upside topics tied to L&D, gamification, data, LXD, and AI.
-2. Keyword and SERP Analyst - Map keyword clusters, search intent, and competitor coverage gaps.
-3. Brief Architect - Convert strategy into a clear brief and outline with unique angle.
-4. Research Analyst - Gather credible source material and practical examples.
-5. Writer - Draft publishable post aligned with site voice and audience needs.
-6. Reader intent optimizer - Keep title, framing, and examples aligned to practical reader intent.
-7. Editor - Improve clarity, authority, and readability while preserving intent.
-8. Refresh Planner - Define update cadence to protect rankings and freshness.
-9. Publishing QA - Publish and verify the post is live and correctly indexed.
+This practice stays credible when manager coaching improves decision quality, strengthens team dialogue, and shows visible capability growth at work.
 
-## Workflow (intake to publish)
-1. Topic Scout identifies opportunities and ranks by business relevance.
-2. Keyword and SERP Analyst builds intent map and competitor gaps.
-3. Brief Architect converts strategy into outline and argument arc.
-4. Research Analyst gathers verified source notes and claims.
-5. Writer drafts publishable post in site format.
-6. SEO Optimizer improves title/meta/headings/internal links/schema.
-7. Editor finalizes voice, clarity, and readability.
-8. Refresh Planner defines update and republish triggers.
-9. Publishing QA uploads and validates end-to-end publish health.
-
-## Quality gates and acceptance criteria
-- Gate 1: topic and keyword fit for target audience intent.
-- Gate 2: evidence-backed draft with no fabricated claims.
-- Gate 3: on-page SEO checks pass before publish.
-- Gate 4: publishing QA confirms live URL and indexability.
-
-## Publishing QA checklist
-- Create/update post under `posts` and verify listing in `writing.html`.
-- Validate slug, canonical, meta title/description, and schema fields.
-- Verify HTTP 200 on final URL and correct render on desktop/mobile.
-- Confirm sitemap and RSS include the new post after publish.
-- Use `scripts/publish_post.py` when available for deterministic publishing.
-
-## Failure handling and fallback logic
-- If publish fails, do not mark task complete; create fix task with blocker evidence.
-- If SERP APIs/sources fail, retry sequentially with alternatives and direct sources.
-- Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
-
-## Notes
-Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow.
+## References
+See [OECD AI Policy Observatory](https://oecd.ai/); [McKinsey - The state of AI](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai); [Harvard Business Review](https://hbr.org/); [World Economic Forum](https://www.weforum.org/); [UNESCO on AI and education](https://www.unesco.org/en/digital-education/artificial-intelligence); [World Bank Education](https://www.worldbank.org/en/topic/education); [CIPD Learning and development](https://www.cipd.org/uk/topics/learning-development/); [ATD Research](https://www.td.org/insights); [Learning Guild resources](https://www.learningguild.com/); [MIT Sloan Management Review](https://sloanreview.mit.edu/).
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
