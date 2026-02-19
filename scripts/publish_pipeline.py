@@ -116,6 +116,14 @@ TOPIC_KEYWORDS = {
     'governance': ('risk', 'governance', 'policy', 'regulation', 'compliance'),
 }
 
+TITLE_TRAILING_STOPWORDS = {'and', 'with', 'for', 'to', 'about', 'on', 'of'}
+STYLE_DRIFT_PATTERNS = [
+    re.compile(r'\bbuild on this core idea\b', flags=re.IGNORECASE),
+    re.compile(r'\bclarify one constraint\b', flags=re.IGNORECASE),
+    re.compile(r'\bkeep one claim and one proof point\b', flags=re.IGNORECASE),
+    re.compile(r'\bproduced visible improvement\b', flags=re.IGNORECASE),
+]
+
 UNSPLASH_THEME_IDS = {
     'base': [
         '1461749280684-dccba630e2f6',
@@ -325,6 +333,38 @@ def sanitize_text(text: str) -> str:
     text = re.sub(r'<\s*blockquote[^>]*>', '', text, flags=re.IGNORECASE)
     text = re.sub(r'<\s*/\s*blockquote\s*>', '', text, flags=re.IGNORECASE)
     return ' '.join(text.strip().split())
+
+
+def normalize_display_title(raw: str, *, max_words: int = 12, max_chars: int = 78) -> str:
+    title = sanitize_text(raw)
+    if not title:
+        return ''
+
+    title = re.sub(
+        r'\b(with\s+\d+\s*(?:source links?|citations?|references?)|for this task|right now|return only markdown|no json|no process commentary)\b[\s\S]*$',
+        '',
+        title,
+        flags=re.IGNORECASE,
+    )
+    title = re.sub(r'\s*[|:]\s*(draft|rewrite|publish|task).*$','', title, flags=re.IGNORECASE)
+    title = title.strip(' -:;,.')
+
+    words = [w for w in title.split() if w]
+    while words and words[-1].lower() in TITLE_TRAILING_STOPWORDS:
+        words.pop()
+    if len(words) > max_words:
+        words = words[:max_words]
+    title = ' '.join(words).strip()
+    if len(title) > max_chars:
+        title = title[:max_chars].rsplit(' ', 1)[0].strip()
+
+    if title:
+        title = title[0].upper() + title[1:]
+    title = re.sub(r'\bAi\b', 'AI', title)
+    title = re.sub(r'\bL&d\b', 'L&D', title)
+    title = re.sub(r'\bLd\b', 'L&D', title)
+    title = re.sub(r'\bLxd\b', 'LxD', title)
+    return title.strip(' -:;,.')
 
 
 def is_instructional_line(text: str) -> bool:
@@ -769,14 +809,14 @@ def tighten_to_target(payload: dict[str, Any], min_words: int = QUALITY_MIN_WORD
     def section_expansion(heading: str, index: int) -> str:
         heading_text = sanitize_text(heading) or 'this section'
         seeds = [
-            f'For {title_topic}, clarify one constraint in {heading_text.lower()} and connect it to a practical action that can be tested this week.',
-            f'In {heading_text.lower()}, keep one claim and one proof point so the reader can apply {title_topic} quickly without extra interpretation.',
-            f'Add one concrete example in {heading_text.lower()} that shows how {title_topic} changes a real decision under normal delivery pressure.',
-            f'Close {heading_text.lower()} with one simple review checkpoint so teams can inspect whether {title_topic} produced visible improvement.',
+            f'In {heading_text.lower()}, link one decision point to one measurable outcome and one owner.',
+            f'Add one short example in {heading_text.lower()} showing what changed after applying the recommendation.',
+            f'In {heading_text.lower()}, state one risk and one mitigation so teams can act without ambiguity.',
+            f'Close {heading_text.lower()} with one next-step action and one review checkpoint date.',
         ]
-        if paragraph_seed_text:
+        if paragraph_seed_text and len(paragraph_seed_text.split()) > 6:
             seeds.append(
-                f'Build on this core idea: "{paragraph_seed_text[:120]}". Keep the extension short, specific, and directly useful for next-step execution.'
+                f'Keep the section aligned with the core idea: {simplify_sentence(paragraph_seed_text, max_words=18)}'
             )
         digest = hashlib.sha256(f'{title_topic}|{heading_text}|{index}'.encode('utf-8')).hexdigest()
         pick = int(digest[:8], 16) % len(seeds)
@@ -899,6 +939,7 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
     content_lines = collect_content_lines(payload)
     instruction_line_count = sum(1 for line in content_lines if is_instructional_line(line))
     fragment_line_count = sum(1 for line in content_lines if is_likely_sentence_fragment(line))
+    style_drift_count = sum(1 for line in content_lines if any(pattern.search(line) for pattern in STYLE_DRIFT_PATTERNS))
     lead_words = word_count(payload.get('lead', ''))
     number_hits = len(re.findall(r'\b(?:\d+(?:\.\d+)?%?|20\d{2})\b', text))
 
@@ -956,6 +997,8 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         clarity -= 1
     if duplicate_paragraph_count:
         clarity -= 1
+    if style_drift_count > 0:
+        clarity -= 1
     clarity = clamp_score(clarity)
 
     specificity = 2
@@ -1004,6 +1047,8 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
     if duplicate_paragraph_count > QUALITY_MAX_DUP_PARAGRAPHS:
         originality -= 1
     if cliche_hits >= 2:
+        originality -= 1
+    if style_drift_count > 0:
         originality -= 1
     originality = clamp_score(originality)
 
@@ -1065,6 +1110,7 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             'short_paragraphs': short_paragraph_count,
             'instructional_lines': instruction_line_count,
             'fragment_lines': fragment_line_count,
+            'style_drift_lines': style_drift_count,
         },
     }
 
@@ -1155,6 +1201,10 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
     fragment_lines = int(signals.get('fragment_lines') or 0)
     if fragment_lines > 0:
         failures.append('article contains truncated sentence fragments')
+
+    style_drift_lines = int(signals.get('style_drift_lines') or 0)
+    if style_drift_lines > 0:
+        failures.append('style drift detected from boilerplate/meta writing patterns')
     return failures
 
 
@@ -1502,7 +1552,7 @@ def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
     title = re.sub(r'\s*\[[^\]]+\]\s*', ' ', title).strip()
     title = re.sub(r'\bpublish:?\s*$', '', title, flags=re.IGNORECASE).strip()
     title = re.sub(r'\bpublis\s*$', '', title, flags=re.IGNORECASE).strip()
-    title = sanitize_text(title)
+    title = normalize_display_title(sanitize_text(title))
 
     def invalid_title(candidate: str) -> bool:
         value = sanitize_text(candidate)
@@ -1547,14 +1597,14 @@ def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
     description = str(raw_description or '')
     match = re.search(r'\bTitle:\s*(.+?)\s+Priority:\s*', description, flags=re.IGNORECASE | re.DOTALL)
     if match:
-        recovered = sanitize_text(match.group(1))
+        recovered = normalize_display_title(sanitize_text(match.group(1)))
         if recovered and not invalid_title(recovered):
             warn(f'Recovered publish title from embedded task field: {recovered[:120]}')
             return recovered
 
     publish_match = re.search(r'\bpublish\s*:\s*(.+)$', description, flags=re.IGNORECASE | re.MULTILINE)
     if publish_match:
-        recovered = sanitize_text(publish_match.group(1))
+        recovered = normalize_display_title(sanitize_text(publish_match.group(1)))
         if recovered and not invalid_title(recovered):
             warn(f'Recovered publish title from description publish field: {recovered[:120]}')
             return recovered

@@ -109,6 +109,13 @@ TOPIC_KEYWORDS = {
     "technical": ("prompt", "token", "transformer", "inference", "fine-tune", "embedding"),
     "governance": ("risk", "governance", "policy", "regulation", "compliance"),
 }
+TITLE_TRAILING_STOPWORDS = {"and", "with", "for", "to", "about", "on", "of"}
+STYLE_DRIFT_PATTERNS = [
+    re.compile(r"\bbuild on this core idea\b", flags=re.IGNORECASE),
+    re.compile(r"\bclarify one constraint\b", flags=re.IGNORECASE),
+    re.compile(r"\bkeep one claim and one proof point\b", flags=re.IGNORECASE),
+    re.compile(r"\bproduced visible improvement\b", flags=re.IGNORECASE),
+]
 UNSPLASH_THEME_IDS = {
     "base": [
         "1461749280684-dccba630e2f6",
@@ -253,6 +260,34 @@ def word_count(text: str) -> int:
 
 def normalize_spaces(text: str) -> str:
     return " ".join(str(text or "").split())
+
+
+def normalize_display_title(raw: str, max_words: int = 12, max_chars: int = 78) -> str:
+    title = normalize_spaces(raw)
+    if not title:
+        return ""
+    title = re.sub(
+        r"\b(with\s+\d+\s*(?:source links?|citations?|references?)|for this task|right now|return only markdown|no json|no process commentary)\b[\s\S]*$",
+        "",
+        title,
+        flags=re.IGNORECASE,
+    )
+    title = title.strip(" -:;,.")
+    words = [w for w in title.split() if w]
+    while words and words[-1].lower() in TITLE_TRAILING_STOPWORDS:
+        words.pop()
+    if len(words) > max_words:
+        words = words[:max_words]
+    title = " ".join(words).strip()
+    if len(title) > max_chars:
+        title = title[:max_chars].rsplit(" ", 1)[0].strip()
+    if title:
+        title = title[0].upper() + title[1:]
+    title = re.sub(r"\bAi\b", "AI", title)
+    title = re.sub(r"\bL&d\b", "L&D", title)
+    title = re.sub(r"\bLd\b", "L&D", title)
+    title = re.sub(r"\bLxd\b", "LxD", title)
+    return title.strip(" -:;,.")
 
 
 def is_instructional_line(text: str) -> bool:
@@ -852,6 +887,10 @@ def validate_quality_structure(
             f"Duplicate sentence count {duplicate_sentences} exceeds maximum {QUALITY_MAX_DUP_SENTENCES}"
         )
 
+    style_drift = sum(1 for line in paragraphs if any(pattern.search(line) for pattern in STYLE_DRIFT_PATTERNS))
+    if style_drift > 0:
+        raise ValueError("Style drift detected from boilerplate/meta writing patterns")
+
 
 def warn(message: str) -> None:
     print(f"[publish_post] warning: {message}", file=sys.stderr)
@@ -978,7 +1017,7 @@ def main() -> None:
     args = parser.parse_args()
 
     payload = json.loads(Path(args.input).read_text())
-    title = payload["title"].strip()
+    title = normalize_display_title(payload["title"].strip()) or payload["title"].strip()
     slug = payload.get("slug") or slugify(title)
     date_str = format_date(payload.get("date"))
     tags = [normalize_spaces(t).lower() for t in payload.get("tags", []) if normalize_spaces(t)] if isinstance(payload.get("tags", []), list) else []
