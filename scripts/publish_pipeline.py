@@ -12,6 +12,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,46 +41,52 @@ STUDY_SOURCE_POOL = [
     {
         'title': 'Generative AI at Work (NBER Working Paper 31161)',
         'url': 'https://www.nber.org/papers/w31161',
+        'topics': ['ai', 'productivity', 'workforce', 'learning'],
     },
     {
-        'title': 'Attention Is All You Need (arXiv:1706.03762)',
-        'url': 'https://arxiv.org/abs/1706.03762',
+        'title': 'OECD Skills Outlook 2023',
+        'url': 'https://www.oecd.org/skills/oecd-skills-outlook-e11c1c2d-en.htm',
+        'topics': ['learning', 'skills', 'workforce', 'policy'],
     },
     {
-        'title': 'Language Models are Few-Shot Learners (arXiv:2005.14165)',
-        'url': 'https://arxiv.org/abs/2005.14165',
+        'title': 'The Future of Jobs Report 2025 (World Economic Forum)',
+        'url': 'https://www.weforum.org/reports/the-future-of-jobs-report-2025',
+        'topics': ['skills', 'workforce', 'business', 'leadership'],
     },
     {
-        'title': 'Training language models to follow instructions with human feedback (arXiv:2203.02155)',
-        'url': 'https://arxiv.org/abs/2203.02155',
-    },
-    {
-        'title': 'Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (arXiv:2201.11903)',
-        'url': 'https://arxiv.org/abs/2201.11903',
-    },
-    {
-        'title': 'On the Opportunities and Risks of Foundation Models (arXiv:2108.07258)',
-        'url': 'https://arxiv.org/abs/2108.07258',
-    },
-    {
-        'title': 'GPT-4 Technical Report (arXiv:2303.08774)',
-        'url': 'https://arxiv.org/abs/2303.08774',
-    },
-    {
-        'title': 'GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models (arXiv:2303.10130)',
-        'url': 'https://arxiv.org/abs/2303.10130',
-    },
-    {
-        'title': 'A Survey of Large Language Models (arXiv:2303.18223)',
-        'url': 'https://arxiv.org/abs/2303.18223',
-    },
-    {
-        'title': 'Our World in Data: Artificial Intelligence',
-        'url': 'https://ourworldindata.org/artificial-intelligence',
+        'title': '2024 Workplace Learning Report (LinkedIn Learning)',
+        'url': 'https://learning.linkedin.com/resources/workplace-learning-report-2024',
+        'topics': ['learning', 'ld', 'skills', 'management'],
     },
     {
         'title': 'Gallup: State of the Global Workplace',
         'url': 'https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx',
+        'topics': ['workforce', 'engagement', 'management', 'leadership'],
+    },
+    {
+        'title': 'Our World in Data: Artificial Intelligence',
+        'url': 'https://ourworldindata.org/artificial-intelligence',
+        'topics': ['ai', 'workforce', 'trends'],
+    },
+    {
+        'title': 'Training language models to follow instructions with human feedback (arXiv:2203.02155)',
+        'url': 'https://arxiv.org/abs/2203.02155',
+        'topics': ['ai', 'technical', 'alignment'],
+    },
+    {
+        'title': 'On the Opportunities and Risks of Foundation Models (arXiv:2108.07258)',
+        'url': 'https://arxiv.org/abs/2108.07258',
+        'topics': ['ai', 'governance', 'risk', 'technical'],
+    },
+    {
+        'title': 'GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models (arXiv:2303.10130)',
+        'url': 'https://arxiv.org/abs/2303.10130',
+        'topics': ['ai', 'workforce', 'economics'],
+    },
+    {
+        'title': 'A Survey of Large Language Models (arXiv:2303.18223)',
+        'url': 'https://arxiv.org/abs/2303.18223',
+        'topics': ['ai', 'technical'],
     },
 ]
 
@@ -89,11 +96,25 @@ STUDY_URL_PATTERNS = [
     r'doi\.org/',
     r'ourworldindata\.org/',
     r'gallup\.com/workplace/',
+    r'weforum\.org/reports/',
+    r'oecd\.org/(en/)?skills/',
+    r'learning\.linkedin\.com/resources/workplace-learning-report',
     r'nature\.com/articles/',
     r'science\.org/doi/',
     r'cell\.com/',
     r'jamanetwork\.com/',
 ]
+
+TOPIC_KEYWORDS = {
+    'learning': ('learning', 'l&d', 'ld', 'training', 'upskill', 'reskill', 'curriculum', 'instruction'),
+    'skills': ('skill', 'skills', 'capability', 'capabilities', 'competency'),
+    'workforce': ('workforce', 'jobs', 'hiring', 'talent', 'employee', 'team', 'manager'),
+    'productivity': ('productivity', 'efficiency', 'throughput', 'cycle-time', 'roi', 'kpi', 'metric'),
+    'leadership': ('leadership', 'leader', 'executive', 'decision', 'stakeholder'),
+    'ai': ('ai', 'artificial intelligence', 'llm', 'model', 'automation', 'genai', 'copilot'),
+    'technical': ('prompt', 'token', 'transformer', 'fine-tune', 'inference', 'embedding'),
+    'governance': ('risk', 'governance', 'policy', 'regulation', 'compliance'),
+}
 
 UNSPLASH_THEME_IDS = {
     'base': [
@@ -472,6 +493,40 @@ def is_study_url(url: str) -> bool:
     return False
 
 
+def citation_domain(url: str) -> str:
+    try:
+        host = urlparse(sanitize_text(url)).netloc.lower()
+    except Exception:
+        host = ''
+    if host.startswith('www.'):
+        host = host[4:]
+    return host
+
+
+def infer_topics(text: str) -> set[str]:
+    value = sanitize_text(text).lower()
+    topics: set[str] = set()
+    if not value:
+        return {'workforce'}
+    for topic, words in TOPIC_KEYWORDS.items():
+        for word in words:
+            if word in value:
+                topics.add(topic)
+                break
+    if not topics:
+        topics.add('workforce')
+    return topics
+
+
+def is_technical_topic(topics: set[str]) -> bool:
+    if not topics:
+        return False
+    business_topics = {'learning', 'skills', 'workforce', 'productivity', 'leadership'}
+    if topics & business_topics:
+        return False
+    return 'technical' in topics or ('ai' in topics and 'governance' not in topics)
+
+
 def recent_study_usage(max_posts: int = 60) -> dict[str, int]:
     usage: dict[str, int] = {}
     posts = sorted(
@@ -494,18 +549,31 @@ def recent_study_usage(max_posts: int = 60) -> dict[str, int]:
 
 
 def default_study_citations(seed: str, count: int = 3) -> list[dict[str, str]]:
-    target = max(2, min(5, count))
+    target = max(2, min(8, count))
     if not STUDY_SOURCE_POOL:
         return []
     usage = recent_study_usage()
-    ranked = sorted(
-        STUDY_SOURCE_POOL,
-        key=lambda item: (
+    topics = infer_topics(seed)
+    technical = is_technical_topic(topics)
+
+    def rank_key(item: dict[str, Any]) -> tuple[Any, ...]:
+        item_topics = set(item.get('topics', []) or [])
+        topical_miss = 0 if (item_topics & topics) else 1
+        technical_penalty = 0
+        if not technical and 'technical' in item_topics and not (item_topics & {'workforce', 'learning', 'skills'}):
+            technical_penalty = 1
+        return (
+            topical_miss,
+            technical_penalty,
             usage.get(item['url'].lower(), 0),
             hashlib.sha256(f'{seed}|{item["url"]}'.encode('utf-8')).hexdigest(),
-        ),
+        )
+
+    ranked = sorted(
+        STUDY_SOURCE_POOL,
+        key=rank_key,
     )
-    return ranked[:target]
+    return [{'title': item['title'], 'url': item['url']} for item in ranked[:target]]
 
 
 def is_generic_citation_title(title: str) -> bool:
@@ -537,6 +605,12 @@ def citation_title_from_url(url: str) -> str:
         return 'Our World in Data'
     if 'gallup.com/workplace/' in lower:
         return 'Gallup workplace research'
+    if 'weforum.org/reports/' in lower:
+        return 'World Economic Forum report'
+    if 'oecd.org/' in lower:
+        return 'OECD report'
+    if 'learning.linkedin.com/' in lower:
+        return 'LinkedIn Learning report'
     return value
 
 
@@ -561,23 +635,78 @@ def ensure_study_citations(
         filtered.append({'title': title, 'url': url})
 
     target = max(min_count, 3)
-    for item in default_study_citations(seed, count=max(5, target + 1)):
+    topics = infer_topics(seed)
+    technical = is_technical_topic(topics)
+    max_arxiv = target if technical else max(1, target // 2)
+    usage = recent_study_usage()
+
+    domain_count = len({citation_domain(item['url']) for item in filtered if citation_domain(item['url'])})
+    arxiv_count = sum(1 for item in filtered if citation_domain(item['url']) == 'arxiv.org')
+
+    need_mix = len(filtered) < target or domain_count < 2 or arxiv_count > max_arxiv
+
+    for item in default_study_citations(seed, count=max(8, target + 3)):
         url = item['url']
         if url in seen:
             continue
+        domain = citation_domain(url)
+        if not technical and domain == 'arxiv.org' and arxiv_count >= max_arxiv:
+            continue
         seen.add(url)
         filtered.append({'title': item['title'], 'url': url})
-        if len(filtered) >= target:
+        if domain == 'arxiv.org':
+            arxiv_count += 1
+        if need_mix:
+            domain_count = len({citation_domain(c['url']) for c in filtered if citation_domain(c['url'])})
+        if len(filtered) >= max(target, 5) and domain_count >= 2:
             break
-    usage = recent_study_usage()
-    filtered = sorted(
-        filtered,
-        key=lambda item: (
-            usage.get(item['url'].lower(), 0),
-            hashlib.sha256(f'{seed}|{item["url"]}'.encode('utf-8')).hexdigest(),
-        ),
-    )
-    return filtered[:8]
+
+    def rank_key(item: dict[str, str]) -> tuple[Any, ...]:
+        item_url = item['url']
+        domain = citation_domain(item_url)
+        pool_entry = next((p for p in STUDY_SOURCE_POOL if p['url'].lower() == item_url.lower()), None)
+        item_topics = set(pool_entry.get('topics', []) if pool_entry else [])
+        topical_miss = 0 if (item_topics & topics) else 1
+        arxiv_penalty = 1 if (not technical and domain == 'arxiv.org') else 0
+        return (
+            topical_miss,
+            arxiv_penalty,
+            usage.get(item_url.lower(), 0),
+            hashlib.sha256(f'{seed}|{item_url}'.encode('utf-8')).hexdigest(),
+        )
+
+    ranked = sorted(filtered, key=rank_key)
+
+    selected: list[dict[str, str]] = []
+    selected_domains: set[str] = set()
+    selected_arxiv = 0
+    desired = max(target, 4)
+    for item in ranked:
+        domain = citation_domain(item['url'])
+        if not technical and domain == 'arxiv.org' and selected_arxiv >= max_arxiv:
+            continue
+        selected.append(item)
+        if domain:
+            selected_domains.add(domain)
+        if domain == 'arxiv.org':
+            selected_arxiv += 1
+        if len(selected) >= desired and len(selected_domains) >= 2:
+            break
+
+    if len(selected_domains) < 2:
+        for item in ranked:
+            if item in selected:
+                continue
+            domain = citation_domain(item['url'])
+            if domain and domain not in selected_domains:
+                selected.append(item)
+                selected_domains.add(domain)
+                if domain == 'arxiv.org':
+                    selected_arxiv += 1
+                if len(selected_domains) >= 2:
+                    break
+
+    return selected[:8]
 
 
 def ensure_date(value: Any) -> str:
@@ -779,11 +908,26 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
     citations = payload.get('citations', [])
     citation_count = len(citations) if isinstance(citations, list) else 0
     generic_citation_titles = 0
+    citation_domains: set[str] = set()
+    arxiv_citation_count = 0
+    topic_text = f'{payload.get("title", "")} {payload.get("lead", "")} {" ".join(payload.get("tags", []))}'
+    topics = infer_topics(topic_text)
+    technical_topic = is_technical_topic(topics)
+    topic_relevant_citation_count = 0
     if isinstance(citations, list):
         for item in citations:
+            url = sanitize_text(item.get('url', '') if isinstance(item, dict) else '')
             title = sanitize_text(item.get('title', '') if isinstance(item, dict) else '')
             if is_generic_citation_title(title):
                 generic_citation_titles += 1
+            domain = citation_domain(url)
+            if domain:
+                citation_domains.add(domain)
+                if domain == 'arxiv.org':
+                    arxiv_citation_count += 1
+            pool_entry = next((p for p in STUDY_SOURCE_POOL if p['url'].lower() == url.lower()), None)
+            if pool_entry and (set(pool_entry.get('topics', []) or []) & topics):
+                topic_relevant_citation_count += 1
     metric_terms_found = len({tok for tok in tokens if tok in QUALITY_METRIC_TERMS})
     action_terms_found = len({tok for tok in tokens if tok in QUALITY_ACTION_TERMS})
     cliche_hits = sum(1 for pattern in QUALITY_CLICHE_PATTERNS if re.search(pattern, text_l))
@@ -834,10 +978,16 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         evidence += 2
     if citation_count >= 2:
         evidence += 1
+    if len(citation_domains) >= 2:
+        evidence += 1
     if metric_terms_found >= 2:
         evidence += 1
     if has_evidence_language:
         evidence += 1
+    if topic_relevant_citation_count == 0 and citation_count > 0:
+        evidence -= 1
+    if not technical_topic and citation_count > 0 and arxiv_citation_count > max(1, citation_count // 2):
+        evidence -= 2
     evidence = clamp_score(evidence)
 
     originality = 2
@@ -900,6 +1050,10 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             'number_hits': number_hits,
             'citation_count': citation_count,
             'generic_citation_titles': generic_citation_titles,
+            'citation_domain_count': len(citation_domains),
+            'arxiv_citation_count': arxiv_citation_count,
+            'topic_relevant_citation_count': topic_relevant_citation_count,
+            'technical_topic': 1 if technical_topic else 0,
             'metric_terms_found': metric_terms_found,
             'action_terms_found': action_terms_found,
             'lexical_diversity': round(unique_ratio, 3),
@@ -980,6 +1134,19 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
     generic_citation_titles = int(signals.get('generic_citation_titles') or 0)
     if generic_citation_titles > 0:
         failures.append('citation titles must be specific (generic "Source 1/2" labels are not allowed)')
+
+    citation_domain_count = int(signals.get('citation_domain_count') or 0)
+    if citation_count >= 3 and citation_domain_count < 2:
+        failures.append('citations must span at least two distinct domains')
+
+    arxiv_citation_count = int(signals.get('arxiv_citation_count') or 0)
+    technical_topic = int(signals.get('technical_topic') or 0) == 1
+    if not technical_topic and citation_count >= 3 and arxiv_citation_count > max(1, citation_count // 2):
+        failures.append('citations are too arXiv-heavy for this topic; include workforce/learning/business sources')
+
+    topic_relevant_citation_count = int(signals.get('topic_relevant_citation_count') or 0)
+    if citation_count > 0 and topic_relevant_citation_count == 0:
+        failures.append('citations are not aligned with detected topic keywords')
 
     instruction_lines = int(signals.get('instructional_lines') or 0)
     if instruction_lines > 0:
