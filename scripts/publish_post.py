@@ -785,15 +785,14 @@ def insert_writing_entry(html: str, entry: str) -> str:
     return html.replace(marker, marker + "\n" + entry, 1)
 
 
-def upsert_writing_entry(html: str, slug: str, entry: str) -> str:
-    href = f"href=\"posts/{slug}.html\""
-    idx = html.find(href)
+def _find_writing_entry_bounds(html: str, marker: str) -> tuple[int, int] | None:
+    idx = html.find(marker)
     if idx == -1:
-        return insert_writing_entry(html, entry)
+        return None
 
     block_start = html.rfind("<a ", 0, idx)
     if block_start == -1:
-        return insert_writing_entry(html, entry)
+        return None
 
     line_start = html.rfind("\n", 0, block_start)
     if line_start != -1:
@@ -801,12 +800,86 @@ def upsert_writing_entry(html: str, slug: str, entry: str) -> str:
 
     block_end = html.find("</a>", idx)
     if block_end == -1:
-        return insert_writing_entry(html, entry)
+        return None
     block_end += len("</a>")
     if block_end < len(html) and html[block_end] == "\n":
         block_end += 1
+    return (block_start, block_end)
 
-    return html[:block_start] + entry + html[block_end:]
+
+def _normalize_title_key(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", str(value or "").lower()).strip()
+
+
+def dedupe_writing_entries(html: str) -> str:
+    marker = "<div class=\"article-list\" id=\"article-list\">"
+    start = html.find(marker)
+    if start == -1:
+        return html
+    list_start = start + len(marker)
+    end_marker = "id=\"no-results\""
+    list_end = html.find(end_marker, list_start)
+    if list_end == -1:
+        list_end = html.find("</div>", list_start)
+    if list_end == -1:
+        return html
+
+    body = html[list_start:list_end]
+    blocks = re.findall(r"\s*<a [\s\S]*?</a>\s*", body, flags=re.IGNORECASE)
+    if not blocks:
+        return html
+
+    seen: set[str] = set()
+    kept: list[str] = []
+    for block in blocks:
+        href_match = re.search(r'href="([^"]+)"', block, flags=re.IGNORECASE)
+        title_match = re.search(r'data-title="([^"]+)"', block, flags=re.IGNORECASE)
+        href = str(href_match.group(1) if href_match else "").strip().lower()
+        title_key = _normalize_title_key(title_match.group(1) if title_match else "")
+        dedupe_key = f"title:{title_key}" if title_key else f"href:{href}"
+        if dedupe_key and dedupe_key in seen:
+            continue
+        if dedupe_key:
+            seen.add(dedupe_key)
+        if href:
+            seen.add(f"href:{href}")
+        if title_key:
+            seen.add(f"title:{title_key}")
+        kept.append(block.strip())
+
+    rebuilt = "\n" + "\n".join(kept) + "\n" if kept else "\n"
+    return html[:list_start] + rebuilt + html[list_end:]
+
+
+def upsert_writing_entry(html: str, slug: str, entry: str) -> str:
+    href = f"href=\"posts/{slug}.html\""
+    markers = [href]
+    title_match = re.search(r'data-title="([^"]+)"', entry, flags=re.IGNORECASE)
+    if title_match:
+        title_marker = f'data-title="{title_match.group(1)}"'
+        markers.append(title_marker)
+        title_key = _normalize_title_key(title_match.group(1))
+        if title_key:
+            key_pattern = re.compile(r'data-title="([^"]+)"', flags=re.IGNORECASE)
+            for match in key_pattern.finditer(html):
+                if _normalize_title_key(match.group(1)) == title_key:
+                    markers.append(match.group(0))
+                    break
+
+    updated = html
+    replaced = False
+    for marker in markers:
+        bounds = _find_writing_entry_bounds(updated, marker)
+        if bounds is None:
+            continue
+        block_start, block_end = bounds
+        updated = updated[:block_start] + entry + updated[block_end:]
+        replaced = True
+        break
+
+    if not replaced:
+        updated = insert_writing_entry(updated, entry)
+    return dedupe_writing_entries(updated)
 
 
 def validate_text(text: str) -> None:
