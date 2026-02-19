@@ -35,46 +35,52 @@ STUDY_SOURCE_POOL = [
     {
         "title": "Generative AI at Work (NBER Working Paper 31161)",
         "url": "https://www.nber.org/papers/w31161",
+        "topics": ["ai", "productivity", "workforce", "learning"],
     },
     {
-        "title": "Attention Is All You Need (arXiv:1706.03762)",
-        "url": "https://arxiv.org/abs/1706.03762",
+        "title": "OECD Skills Outlook 2023",
+        "url": "https://www.oecd.org/skills/oecd-skills-outlook-e11c1c2d-en.htm",
+        "topics": ["learning", "skills", "workforce", "policy"],
     },
     {
-        "title": "Language Models are Few-Shot Learners (arXiv:2005.14165)",
-        "url": "https://arxiv.org/abs/2005.14165",
+        "title": "The Future of Jobs Report 2025 (World Economic Forum)",
+        "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2025",
+        "topics": ["skills", "workforce", "business", "leadership"],
     },
     {
-        "title": "Training language models to follow instructions with human feedback (arXiv:2203.02155)",
-        "url": "https://arxiv.org/abs/2203.02155",
-    },
-    {
-        "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (arXiv:2201.11903)",
-        "url": "https://arxiv.org/abs/2201.11903",
-    },
-    {
-        "title": "On the Opportunities and Risks of Foundation Models (arXiv:2108.07258)",
-        "url": "https://arxiv.org/abs/2108.07258",
-    },
-    {
-        "title": "GPT-4 Technical Report (arXiv:2303.08774)",
-        "url": "https://arxiv.org/abs/2303.08774",
-    },
-    {
-        "title": "GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models (arXiv:2303.10130)",
-        "url": "https://arxiv.org/abs/2303.10130",
-    },
-    {
-        "title": "A Survey of Large Language Models (arXiv:2303.18223)",
-        "url": "https://arxiv.org/abs/2303.18223",
-    },
-    {
-        "title": "Our World in Data: Artificial Intelligence",
-        "url": "https://ourworldindata.org/artificial-intelligence",
+        "title": "2024 Workplace Learning Report (LinkedIn Learning)",
+        "url": "https://learning.linkedin.com/resources/workplace-learning-report-2024",
+        "topics": ["learning", "ld", "skills", "management"],
     },
     {
         "title": "Gallup: State of the Global Workplace",
         "url": "https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx",
+        "topics": ["workforce", "engagement", "management", "leadership"],
+    },
+    {
+        "title": "Our World in Data: Artificial Intelligence",
+        "url": "https://ourworldindata.org/artificial-intelligence",
+        "topics": ["ai", "workforce", "trends"],
+    },
+    {
+        "title": "Training language models to follow instructions with human feedback (arXiv:2203.02155)",
+        "url": "https://arxiv.org/abs/2203.02155",
+        "topics": ["ai", "technical", "alignment"],
+    },
+    {
+        "title": "On the Opportunities and Risks of Foundation Models (arXiv:2108.07258)",
+        "url": "https://arxiv.org/abs/2108.07258",
+        "topics": ["ai", "technical", "governance", "risk"],
+    },
+    {
+        "title": "GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models (arXiv:2303.10130)",
+        "url": "https://arxiv.org/abs/2303.10130",
+        "topics": ["ai", "workforce", "economics"],
+    },
+    {
+        "title": "A Survey of Large Language Models (arXiv:2303.18223)",
+        "url": "https://arxiv.org/abs/2303.18223",
+        "topics": ["ai", "technical"],
     },
 ]
 
@@ -84,11 +90,25 @@ STUDY_URL_PATTERNS = [
     r"doi\.org/",
     r"ourworldindata\.org/",
     r"gallup\.com/workplace/",
+    r"weforum\.org/reports/",
+    r"oecd\.org/(en/)?skills/",
+    r"learning\.linkedin\.com/resources/workplace-learning-report",
     r"nature\.com/articles/",
     r"science\.org/doi/",
     r"cell\.com/",
     r"jamanetwork\.com/",
 ]
+
+TOPIC_KEYWORDS = {
+    "learning": ("learning", "l&d", "ld", "training", "upskill", "reskill", "instruction"),
+    "skills": ("skill", "skills", "capability", "competency"),
+    "workforce": ("workforce", "jobs", "talent", "employee", "team", "manager"),
+    "productivity": ("productivity", "efficiency", "cycle", "roi", "kpi", "metric"),
+    "leadership": ("leader", "leadership", "executive", "stakeholder", "decision"),
+    "ai": ("ai", "artificial intelligence", "llm", "model", "automation", "genai", "copilot"),
+    "technical": ("prompt", "token", "transformer", "inference", "fine-tune", "embedding"),
+    "governance": ("risk", "governance", "policy", "regulation", "compliance"),
+}
 UNSPLASH_THEME_IDS = {
     "base": [
         "1461749280684-dccba630e2f6",
@@ -459,6 +479,40 @@ def is_study_url(url: str) -> bool:
     return False
 
 
+def citation_domain(url: str) -> str:
+    try:
+        host = urlparse(normalize_spaces(url)).netloc.lower()
+    except Exception:
+        host = ""
+    if host.startswith("www."):
+        host = host[4:]
+    return host
+
+
+def infer_topics(text: str) -> set[str]:
+    value = normalize_spaces(text).lower()
+    topics: set[str] = set()
+    if not value:
+        return {"workforce"}
+    for topic, words in TOPIC_KEYWORDS.items():
+        for word in words:
+            if word in value:
+                topics.add(topic)
+                break
+    if not topics:
+        topics.add("workforce")
+    return topics
+
+
+def is_technical_topic(topics: set[str]) -> bool:
+    if not topics:
+        return False
+    business_topics = {"learning", "skills", "workforce", "productivity", "leadership"}
+    if topics & business_topics:
+        return False
+    return "technical" in topics or ("ai" in topics and "governance" not in topics)
+
+
 def recent_study_usage(max_posts: int = 60) -> dict[str, int]:
     usage: dict[str, int] = {}
     posts = sorted(
@@ -483,16 +537,29 @@ def recent_study_usage(max_posts: int = 60) -> dict[str, int]:
 def default_study_citations(seed: str, count: int = 3) -> list[dict[str, str]]:
     if not STUDY_SOURCE_POOL:
         return []
-    target = max(2, min(5, count))
+    target = max(2, min(8, count))
     usage = recent_study_usage()
+    topics = infer_topics(seed)
+    technical = is_technical_topic(topics)
+
+    def rank_key(item: dict[str, object]) -> tuple[object, ...]:
+        item_topics = set(item.get("topics", []) if isinstance(item.get("topics", []), list) else [])
+        topical_miss = 0 if (item_topics & topics) else 1
+        technical_penalty = 0
+        if not technical and "technical" in item_topics and not (item_topics & {"workforce", "learning", "skills"}):
+            technical_penalty = 1
+        return (
+            topical_miss,
+            technical_penalty,
+            usage.get(str(item["url"]).lower(), 0),
+            hashlib.sha256(f"{seed}|{item['url']}".encode("utf-8")).hexdigest(),
+        )
+
     ranked = sorted(
         STUDY_SOURCE_POOL,
-        key=lambda item: (
-            usage.get(item["url"].lower(), 0),
-            hashlib.sha256(f"{seed}|{item['url']}".encode("utf-8")).hexdigest(),
-        ),
+        key=rank_key,
     )
-    return ranked[:target]
+    return [{"title": str(item["title"]), "url": str(item["url"])} for item in ranked[:target]]
 
 
 def is_generic_citation_title(title: str) -> bool:
@@ -524,6 +591,12 @@ def citation_title_from_url(url: str) -> str:
         return "Our World in Data"
     if "gallup.com/workplace/" in lower:
         return "Gallup workplace research"
+    if "weforum.org/reports/" in lower:
+        return "World Economic Forum report"
+    if "oecd.org/" in lower:
+        return "OECD report"
+    if "learning.linkedin.com/" in lower:
+        return "LinkedIn Learning report"
     return value
 
 
@@ -543,23 +616,65 @@ def ensure_study_citations(citations: list[dict[str, str]], seed: str, min_count
         cleaned.append({"title": title, "url": url})
 
     target = max(min_count, 3)
-    for item in default_study_citations(seed, count=max(5, target + 1)):
+    topics = infer_topics(seed)
+    technical = is_technical_topic(topics)
+    max_arxiv = target if technical else max(1, target // 2)
+    arxiv_count = sum(1 for item in cleaned if citation_domain(item.get("url", "")) == "arxiv.org")
+    domains = {citation_domain(item.get("url", "")) for item in cleaned if citation_domain(item.get("url", ""))}
+
+    for item in default_study_citations(seed, count=max(8, target + 3)):
         url = item["url"]
         if url in seen:
             continue
+        domain = citation_domain(url)
+        if not technical and domain == "arxiv.org" and arxiv_count >= max_arxiv:
+            continue
         seen.add(url)
         cleaned.append({"title": item["title"], "url": url})
-        if len(cleaned) >= target:
+        if domain == "arxiv.org":
+            arxiv_count += 1
+        if domain:
+            domains.add(domain)
+        if len(cleaned) >= max(target, 4) and len(domains) >= 2:
             break
+
     usage = recent_study_usage()
-    cleaned = sorted(
+    ranked = sorted(
         cleaned,
         key=lambda item: (
+            1 if (not technical and citation_domain(item["url"]) == "arxiv.org") else 0,
             usage.get(item["url"].lower(), 0),
             hashlib.sha256(f"{seed}|{item['url']}".encode("utf-8")).hexdigest(),
         ),
     )
-    return cleaned[:8]
+    selected: list[dict[str, str]] = []
+    selected_domains: set[str] = set()
+    selected_arxiv = 0
+    desired = max(target, 4)
+    for item in ranked:
+        domain = citation_domain(item["url"])
+        if not technical and domain == "arxiv.org" and selected_arxiv >= max_arxiv:
+            continue
+        selected.append(item)
+        if domain:
+            selected_domains.add(domain)
+        if domain == "arxiv.org":
+            selected_arxiv += 1
+        if len(selected) >= desired and len(selected_domains) >= 2:
+            break
+
+    if len(selected_domains) < 2:
+        for item in ranked:
+            if item in selected:
+                continue
+            domain = citation_domain(item["url"])
+            if domain and domain not in selected_domains:
+                selected.append(item)
+                selected_domains.add(domain)
+                if len(selected_domains) >= 2:
+                    break
+
+    return selected[:8]
 
 
 def inline_citation_anchor(citations: list[dict[str, str]], paragraph_index: int) -> str:
