@@ -35,6 +35,7 @@ QUALITY_MIN_HEADINGS = 2
 QUALITY_MIN_PARAGRAPHS = 5
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
+CITATION_MAX_COUNT = 4
 DISABLE_BODY_H2 = False
 
 STUDY_SOURCE_POOL = [
@@ -512,15 +513,42 @@ def normalize_citations(raw_citations: Any) -> list[dict[str, str]]:
 
         if not re.match(r'^https?://', url, flags=re.IGNORECASE):
             continue
-        if not is_study_url(url):
-            continue
         if url in seen_urls:
             continue
 
         seen_urls.add(url)
+        if is_generic_citation_title(label):
+            label = citation_title_from_url(url)
         citations.append({'title': label, 'url': url})
 
-    return citations[:8]
+    return citations[:CITATION_MAX_COUNT]
+
+
+def parse_citation_policy(payload: dict[str, Any]) -> dict[str, Any]:
+    raw = payload.get('_citation_policy', {})
+    if not isinstance(raw, dict):
+        raw = {}
+    try:
+        target_count = int(raw.get('target_count', 0))
+    except Exception:
+        target_count = 0
+    try:
+        required_new_domains = int(raw.get('required_new_domains', 0))
+    except Exception:
+        required_new_domains = 0
+
+    recent_raw = raw.get('recent_domains', [])
+    recent_domains: set[str] = set()
+    if isinstance(recent_raw, list):
+        for value in recent_raw:
+            domain = sanitize_text(value).lower().strip()
+            if domain:
+                recent_domains.add(domain)
+    return {
+        'target_count': max(0, min(CITATION_MAX_COUNT, target_count)),
+        'required_new_domains': max(0, required_new_domains),
+        'recent_domains': recent_domains,
+    }
 
 
 def is_study_url(url: str) -> bool:
@@ -658,7 +686,10 @@ def ensure_study_citations(
     citations: list[dict[str, str]],
     *,
     seed: str,
-    min_count: int = 2,
+    min_count: int = 0,
+    required_new_domains: int = 0,
+    recent_domains: set[str] | None = None,
+    max_count: int = CITATION_MAX_COUNT,
 ) -> list[dict[str, str]]:
     filtered: list[dict[str, str]] = []
     seen: set[str] = set()
@@ -667,14 +698,17 @@ def ensure_study_citations(
         title = sanitize_text(item.get('title', '') or url)
         if not url or url in seen:
             continue
-        if not is_study_url(url):
-            continue
         if is_generic_citation_title(title):
             title = citation_title_from_url(url)
         seen.add(url)
         filtered.append({'title': title, 'url': url})
 
-    target = max(min_count, 3)
+    target = max(0, min(int(min_count), max_count))
+    required_new_domains = max(0, int(required_new_domains))
+    prior_domains = {sanitize_text(d).lower().strip() for d in (recent_domains or set()) if sanitize_text(d)}
+    if target <= 0:
+        return filtered[:max_count]
+
     topics = infer_topics(seed)
     technical = is_technical_topic(topics)
     max_arxiv = target if technical else max(1, target // 2)
@@ -682,8 +716,7 @@ def ensure_study_citations(
 
     domain_count = len({citation_domain(item['url']) for item in filtered if citation_domain(item['url'])})
     arxiv_count = sum(1 for item in filtered if citation_domain(item['url']) == 'arxiv.org')
-
-    need_mix = len(filtered) < target or domain_count < 2 or arxiv_count > max_arxiv
+    new_domain_count = len({d for d in {citation_domain(item['url']) for item in filtered} if d and d not in prior_domains})
 
     for item in default_study_citations(seed, count=max(8, target + 3)):
         url = item['url']
@@ -696,9 +729,11 @@ def ensure_study_citations(
         filtered.append({'title': item['title'], 'url': url})
         if domain == 'arxiv.org':
             arxiv_count += 1
-        if need_mix:
+        if domain:
             domain_count = len({citation_domain(c['url']) for c in filtered if citation_domain(c['url'])})
-        if len(filtered) >= max(target, 5) and domain_count >= 2:
+            if domain not in prior_domains:
+                new_domain_count += 1
+        if len(filtered) >= target and new_domain_count >= required_new_domains:
             break
 
     def rank_key(item: dict[str, str]) -> tuple[Any, ...]:
@@ -720,7 +755,7 @@ def ensure_study_citations(
     selected: list[dict[str, str]] = []
     selected_domains: set[str] = set()
     selected_arxiv = 0
-    desired = max(target, 4)
+    desired = target
     for item in ranked:
         domain = citation_domain(item['url'])
         if not technical and domain == 'arxiv.org' and selected_arxiv >= max_arxiv:
@@ -730,23 +765,24 @@ def ensure_study_citations(
             selected_domains.add(domain)
         if domain == 'arxiv.org':
             selected_arxiv += 1
-        if len(selected) >= desired and len(selected_domains) >= 2:
+        selected_new_domains = {d for d in selected_domains if d and d not in prior_domains}
+        if len(selected) >= desired and len(selected_new_domains) >= required_new_domains:
             break
 
-    if len(selected_domains) < 2:
+    if len({d for d in selected_domains if d and d not in prior_domains}) < required_new_domains:
         for item in ranked:
             if item in selected:
                 continue
             domain = citation_domain(item['url'])
-            if domain and domain not in selected_domains:
+            if domain and domain not in selected_domains and domain not in prior_domains:
                 selected.append(item)
                 selected_domains.add(domain)
                 if domain == 'arxiv.org':
                     selected_arxiv += 1
-                if len(selected_domains) >= 2:
+                if len({d for d in selected_domains if d and d not in prior_domains}) >= required_new_domains:
                     break
 
-    return selected[:8]
+    return selected[:max_count]
 
 
 def ensure_date(value: Any) -> str:
@@ -948,6 +984,10 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
 
     citations = payload.get('citations', [])
     citation_count = len(citations) if isinstance(citations, list) else 0
+    citation_policy = parse_citation_policy(payload)
+    required_citation_count = int(citation_policy['target_count'])
+    required_new_domain_count = int(citation_policy['required_new_domains'])
+    prior_domains = set(citation_policy['recent_domains'])
     generic_citation_titles = 0
     citation_domains: set[str] = set()
     arxiv_citation_count = 0
@@ -969,6 +1009,7 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             pool_entry = next((p for p in STUDY_SOURCE_POOL if p['url'].lower() == url.lower()), None)
             if pool_entry and (set(pool_entry.get('topics', []) or []) & topics):
                 topic_relevant_citation_count += 1
+    new_domain_count = len({domain for domain in citation_domains if domain not in prior_domains})
     metric_terms_found = len({tok for tok in tokens if tok in QUALITY_METRIC_TERMS})
     action_terms_found = len({tok for tok in tokens if tok in QUALITY_ACTION_TERMS})
     cliche_hits = sum(1 for pattern in QUALITY_CLICHE_PATTERNS if re.search(pattern, text_l))
@@ -1094,6 +1135,9 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             'duplicate_paragraphs': duplicate_paragraph_count,
             'number_hits': number_hits,
             'citation_count': citation_count,
+            'required_citation_count': required_citation_count,
+            'required_new_domain_count': required_new_domain_count,
+            'new_domain_count': new_domain_count,
             'generic_citation_titles': generic_citation_titles,
             'citation_domain_count': len(citation_domains),
             'arxiv_citation_count': arxiv_citation_count,
@@ -1174,25 +1218,20 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
         )
 
     citation_count = int(signals.get('citation_count') or 0)
-    if citation_count < 2:
-        failures.append('at least two study/report citations are required')
+    required_citation_count = int(signals.get('required_citation_count') or 0)
+    if required_citation_count > 0 and citation_count < required_citation_count:
+        failures.append(f'citation count {citation_count} is below required {required_citation_count}')
+    if citation_count > CITATION_MAX_COUNT:
+        failures.append(f'citation count {citation_count} exceeds maximum {CITATION_MAX_COUNT}')
 
     generic_citation_titles = int(signals.get('generic_citation_titles') or 0)
     if generic_citation_titles > 0:
         failures.append('citation titles must be specific (generic "Source 1/2" labels are not allowed)')
 
-    citation_domain_count = int(signals.get('citation_domain_count') or 0)
-    if citation_count >= 3 and citation_domain_count < 2:
-        failures.append('citations must span at least two distinct domains')
-
-    arxiv_citation_count = int(signals.get('arxiv_citation_count') or 0)
-    technical_topic = int(signals.get('technical_topic') or 0) == 1
-    if not technical_topic and citation_count >= 3 and arxiv_citation_count > max(1, citation_count // 2):
-        failures.append('citations are too arXiv-heavy for this topic; include workforce/learning/business sources')
-
-    topic_relevant_citation_count = int(signals.get('topic_relevant_citation_count') or 0)
-    if citation_count > 0 and topic_relevant_citation_count == 0:
-        failures.append('citations are not aligned with detected topic keywords')
+    required_new_domain_count = int(signals.get('required_new_domain_count') or 0)
+    new_domain_count = int(signals.get('new_domain_count') or 0)
+    if required_new_domain_count > 0 and citation_count > 0 and new_domain_count < required_new_domain_count:
+        failures.append('citations do not expand source domains versus recent posts')
 
     instruction_lines = int(signals.get('instructional_lines') or 0)
     if instruction_lines > 0:
@@ -1345,16 +1384,6 @@ def quality_targets(slug: str, min_total: int, delta: int) -> tuple[int, int, di
     effective_previous = min(previous, ratchet_cap)
     target = max(min_total, effective_previous + (delta if effective_previous > 0 else 0))
     return previous, min(25, target), history
-
-
-def citation_target_for_slug(slug: str, base_count: int = 3, cap: int = 8) -> int:
-    history = load_quality_history()
-    by_slug = history.get('by_slug', {})
-    entry = by_slug.get(slug, {}) if isinstance(by_slug, dict) else {}
-    prev = int(entry.get('last_citation_count') or 0) if isinstance(entry, dict) else 0
-    if prev <= 0:
-        return max(2, min(cap, base_count))
-    return max(2, min(cap, max(base_count, prev + 1)))
 
 
 def run_quality_gate(
@@ -1615,6 +1644,7 @@ def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
 def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     title = normalize_publish_title(raw.get('title', ''), raw.get('description', ''))
     slug = sanitize_text(raw.get('slug', '')) or slugify(title)
+    citation_policy = parse_citation_policy(raw)
 
     lead = sanitize_content_line(raw.get('lead', '') or raw.get('excerpt', '') or title)
     excerpt = sanitize_content_line(raw.get('excerpt', '') or lead)
@@ -1647,7 +1677,7 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     if len(bullets) < 2:
         defaults = [
             sanitize_content_line('Track one leading metric and one lagging metric every week.'),
-            sanitize_content_line('Keep only external claims that include a study or report link.'),
+            sanitize_content_line('Use external links only when they sharpen a specific claim.'),
         ]
         for item in defaults:
             if item and item not in bullets:
@@ -1655,11 +1685,13 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
     citations = normalize_citations(raw.get('citations', []) or raw.get('sources', []))
-    citation_target = citation_target_for_slug(slug, base_count=3, cap=8)
     citations = ensure_study_citations(
         citations,
         seed=f'{slug}|{title}|{",".join(tags)}',
-        min_count=citation_target,
+        min_count=int(citation_policy['target_count']),
+        required_new_domains=int(citation_policy['required_new_domains']),
+        recent_domains=set(citation_policy['recent_domains']),
+        max_count=CITATION_MAX_COUNT,
     )
 
     lead_core = core_keywords(lead)
@@ -1674,6 +1706,11 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
         'date': ensure_date(raw.get('date')),
         'tags': tags,
         'citations': citations,
+        '_citation_policy': {
+            'target_count': int(citation_policy['target_count']),
+            'required_new_domains': int(citation_policy['required_new_domains']),
+            'recent_domains': sorted(set(citation_policy['recent_domains'])),
+        },
         'lead': lead,
         'excerpt': excerpt,
         'meta_description': meta_description,

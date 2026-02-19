@@ -29,6 +29,7 @@ QUALITY_MIN_HEADINGS = 2
 QUALITY_MIN_PARAGRAPHS = 5
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
+CITATION_MAX_COUNT = 4
 DISABLE_BODY_H2 = False
 
 STUDY_SOURCE_POOL = [
@@ -491,8 +492,6 @@ def normalize_citations(raw_citations: object) -> list[dict[str, str]]:
 
         if not re.match(r"^https?://", url, flags=re.IGNORECASE):
             continue
-        if not is_study_url(url):
-            continue
         if url in seen_urls:
             continue
 
@@ -502,6 +501,32 @@ def normalize_citations(raw_citations: object) -> list[dict[str, str]]:
         citations.append({"title": label, "url": url})
 
     return citations
+
+
+def parse_citation_policy(payload: dict[str, object]) -> dict[str, object]:
+    raw = payload.get("_citation_policy", {})
+    if not isinstance(raw, dict):
+        raw = {}
+    try:
+        target_count = int(raw.get("target_count", 0))
+    except Exception:
+        target_count = 0
+    try:
+        required_new_domains = int(raw.get("required_new_domains", 0))
+    except Exception:
+        required_new_domains = 0
+    recent_raw = raw.get("recent_domains", [])
+    recent_domains: set[str] = set()
+    if isinstance(recent_raw, list):
+        for value in recent_raw:
+            domain = normalize_spaces(str(value or "")).lower().strip()
+            if domain:
+                recent_domains.add(domain)
+    return {
+        "target_count": max(0, min(CITATION_MAX_COUNT, target_count)),
+        "required_new_domains": max(0, required_new_domains),
+        "recent_domains": recent_domains,
+    }
 
 
 def is_study_url(url: str) -> bool:
@@ -635,7 +660,14 @@ def citation_title_from_url(url: str) -> str:
     return value
 
 
-def ensure_study_citations(citations: list[dict[str, str]], seed: str, min_count: int = 2) -> list[dict[str, str]]:
+def ensure_study_citations(
+    citations: list[dict[str, str]],
+    seed: str,
+    min_count: int = 0,
+    required_new_domains: int = 0,
+    recent_domains: set[str] | None = None,
+    max_count: int = CITATION_MAX_COUNT,
+) -> list[dict[str, str]]:
     cleaned: list[dict[str, str]] = []
     seen: set[str] = set()
     for item in citations:
@@ -643,19 +675,23 @@ def ensure_study_citations(citations: list[dict[str, str]], seed: str, min_count
         title = normalize_spaces(item.get("title", "") or url)
         if not url or url in seen:
             continue
-        if not is_study_url(url):
-            continue
         if is_generic_citation_title(title):
             title = citation_title_from_url(url)
         seen.add(url)
         cleaned.append({"title": title, "url": url})
 
-    target = max(min_count, 3)
+    target = max(0, min(int(min_count), max_count))
+    required_new_domains = max(0, int(required_new_domains))
+    prior_domains = {normalize_spaces(d).lower().strip() for d in (recent_domains or set()) if normalize_spaces(d)}
+    if target <= 0:
+        return cleaned[:max_count]
+
     topics = infer_topics(seed)
     technical = is_technical_topic(topics)
     max_arxiv = target if technical else max(1, target // 2)
     arxiv_count = sum(1 for item in cleaned if citation_domain(item.get("url", "")) == "arxiv.org")
     domains = {citation_domain(item.get("url", "")) for item in cleaned if citation_domain(item.get("url", ""))}
+    new_domain_count = len({d for d in domains if d and d not in prior_domains})
 
     for item in default_study_citations(seed, count=max(8, target + 3)):
         url = item["url"]
@@ -670,7 +706,9 @@ def ensure_study_citations(citations: list[dict[str, str]], seed: str, min_count
             arxiv_count += 1
         if domain:
             domains.add(domain)
-        if len(cleaned) >= max(target, 4) and len(domains) >= 2:
+            if domain not in prior_domains:
+                new_domain_count += 1
+        if len(cleaned) >= target and new_domain_count >= required_new_domains:
             break
 
     usage = recent_study_usage()
@@ -685,7 +723,7 @@ def ensure_study_citations(citations: list[dict[str, str]], seed: str, min_count
     selected: list[dict[str, str]] = []
     selected_domains: set[str] = set()
     selected_arxiv = 0
-    desired = max(target, 4)
+    desired = target
     for item in ranked:
         domain = citation_domain(item["url"])
         if not technical and domain == "arxiv.org" and selected_arxiv >= max_arxiv:
@@ -695,21 +733,22 @@ def ensure_study_citations(citations: list[dict[str, str]], seed: str, min_count
             selected_domains.add(domain)
         if domain == "arxiv.org":
             selected_arxiv += 1
-        if len(selected) >= desired and len(selected_domains) >= 2:
+        selected_new_domains = {d for d in selected_domains if d and d not in prior_domains}
+        if len(selected) >= desired and len(selected_new_domains) >= required_new_domains:
             break
 
-    if len(selected_domains) < 2:
+    if len({d for d in selected_domains if d and d not in prior_domains}) < required_new_domains:
         for item in ranked:
             if item in selected:
                 continue
             domain = citation_domain(item["url"])
-            if domain and domain not in selected_domains:
+            if domain and domain not in selected_domains and domain not in prior_domains:
                 selected.append(item)
                 selected_domains.add(domain)
-                if len(selected_domains) >= 2:
+                if len({d for d in selected_domains if d and d not in prior_domains}) >= required_new_domains:
                     break
 
-    return selected[:8]
+    return selected[:max_count]
 
 
 def inline_citation_anchor(citations: list[dict[str, str]], paragraph_index: int) -> str:
@@ -889,7 +928,15 @@ def validate_text(text: str) -> None:
         raise ValueError("Blockquote tag found in content")
 
 
-def validate_citation_support(text: str, citations: list[dict[str, str]]) -> None:
+def validate_citation_support(
+    text: str,
+    citations: list[dict[str, str]],
+    *,
+    required_count: int = 0,
+    required_new_domains: int = 0,
+    recent_domains: set[str] | None = None,
+    max_count: int = CITATION_MAX_COUNT,
+) -> None:
     lines = [normalize_spaces(line) for line in text.splitlines() if normalize_spaces(line)]
     for line in lines:
         if is_instructional_line(line):
@@ -902,15 +949,25 @@ def validate_citation_support(text: str, citations: list[dict[str, str]]) -> Non
     has_url = URL_RE.search(text) is not None or any(c.get("url") for c in citations)
     if has_claim_keywords and has_stat_signal and not has_url:
         raise ValueError("Research/statistical claim detected without source URL")
-    if len(citations) < 2:
-        raise ValueError("At least two study citations are required")
+    min_required = max(0, int(required_count))
+    if min_required > 0 and len(citations) < min_required:
+        raise ValueError(f"At least {min_required} citations are required for this post")
+    if len(citations) > max_count:
+        raise ValueError(f"Citation count {len(citations)} exceeds maximum {max_count}")
     for citation in citations:
         url = normalize_spaces(citation.get("url", ""))
         title = normalize_spaces(citation.get("title", ""))
-        if not is_study_url(url):
-            raise ValueError(f"Citation URL is not an approved study/report source: {url}")
+        if not re.match(r"^https?://", url, flags=re.IGNORECASE):
+            raise ValueError(f"Citation URL must be absolute http(s): {url}")
         if is_generic_citation_title(title):
             raise ValueError(f"Citation title must be specific, not generic: {title or 'empty'}")
+    required_new = max(0, int(required_new_domains))
+    if required_new > 0 and citations:
+        prior = {normalize_spaces(value).lower().strip() for value in (recent_domains or set()) if normalize_spaces(value)}
+        domains = {citation_domain(item.get("url", "")) for item in citations if citation_domain(item.get("url", ""))}
+        new_domains = {domain for domain in domains if domain not in prior}
+        if len(new_domains) < required_new:
+            raise ValueError("Citations must include at least one domain not used in recent posts")
 
 
 def validate_quality_structure(
@@ -1121,18 +1178,22 @@ def main() -> None:
     if len(bullets) < 2:
         defaults = [
             sanitize_content_line("Track one leading metric and one lagging metric every week."),
-            sanitize_content_line("Keep only external claims that include a study or report link."),
+            sanitize_content_line("Use external links only when they sharpen a specific claim."),
         ]
         for item in defaults:
             if item and item not in bullets:
                 bullets.append(item)
 
     closing = sanitize_content_line(payload.get("closing", "") or lead) or lead
+    citation_policy = parse_citation_policy(payload)
     citations = normalize_citations(payload.get("citations", []))
     citations = ensure_study_citations(
         citations,
         seed=f"{slug}|{title}|{','.join(tags)}",
-        min_count=max(2, len(citations) + 1),
+        min_count=int(citation_policy["target_count"]),
+        required_new_domains=int(citation_policy["required_new_domains"]),
+        recent_domains=set(citation_policy["recent_domains"]),
+        max_count=CITATION_MAX_COUNT,
     )
 
     if len(sections) < 2:
@@ -1144,7 +1205,14 @@ def main() -> None:
         + bullets
     )
     validate_text(article_text)
-    validate_citation_support(article_text, citations)
+    validate_citation_support(
+        article_text,
+        citations,
+        required_count=int(citation_policy["target_count"]),
+        required_new_domains=int(citation_policy["required_new_domains"]),
+        recent_domains=set(citation_policy["recent_domains"]),
+        max_count=CITATION_MAX_COUNT,
+    )
     validate_quality_structure(lead, sections, bullets, closing, meta_description)
 
     core = core_keywords(lead)
