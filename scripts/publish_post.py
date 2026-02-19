@@ -684,7 +684,7 @@ def ensure_study_citations(
     required_new_domains = max(0, int(required_new_domains))
     prior_domains = {normalize_spaces(d).lower().strip() for d in (recent_domains or set()) if normalize_spaces(d)}
     if target <= 0:
-        return cleaned[:max_count]
+        return []
 
     topics = infer_topics(seed)
     technical = is_technical_topic(topics)
@@ -748,7 +748,7 @@ def ensure_study_citations(
                 if len({d for d in selected_domains if d and d not in prior_domains}) >= required_new_domains:
                     break
 
-    return selected[:max_count]
+    return selected[:target]
 
 
 def inline_citation_anchor(citations: list[dict[str, str]], paragraph_index: int) -> str:
