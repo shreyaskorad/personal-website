@@ -1,15 +1,15 @@
-# Deliverable: Design without losing human judgment
+# Deliverable: Measure skill transfer with lightweight evidence loops
 
-- Task ID: openclaw-1526
-- Status: cancelled
-- Created: 2026-02-20T04:52:25Z
-- Updated: 2026-02-20T05:13:24Z
+- Task ID: openclaw-1530
+- Status: failed
+- Created: 2026-02-20T05:13:24Z
+- Updated: 2026-02-20T05:13:27Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1843.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-# Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
+# Deliverable Draft: Measure Skill Transfer With Lightweight Evidence Loops SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1843.
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+
+## Blockers / Notes
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

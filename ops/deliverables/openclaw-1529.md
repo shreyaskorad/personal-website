@@ -1,15 +1,15 @@
-# Deliverable: Measure skill transfer with lightweight evidence loops
+# Deliverable: Target practical intent in workplace learning content
 
-- Task ID: openclaw-1525
+- Task ID: openclaw-1529
 - Status: failed
-- Created: 2026-02-20T04:44:38Z
-- Updated: 2026-02-20T04:49:08Z
+- Created: 2026-02-20T05:08:36Z
+- Updated: 2026-02-20T05:12:38Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-# Deliverable Draft: Measure Skill Transfer With Lightweight Evidence Loops SEO blog operating system
+# Deliverable Draft: Target Practical Intent In Workplace Learning Content SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
