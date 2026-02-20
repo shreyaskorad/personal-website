@@ -1,12 +1,12 @@
 # Deliverable: Design learning for decision quality, not completion rates
 
-- Task ID: openclaw-1572
+- Task ID: openclaw-1612
 - Status: failed
-- Created: 2026-02-20T08:31:53Z
-- Updated: 2026-02-20T11:38:43Z
+- Created: 2026-02-20T11:55:39Z
+- Updated: 2026-02-20T11:56:03Z
 
 ## Summary
-Rewrite required before publish. Violations: missing reflective question; references do not expand source pool with new domains
+Rewrite required before publish. Violations: duplicate title against published post
 
 ## Deliverable Output
 # Design learning for decision quality, not completion rates
@@ -23,7 +23,7 @@ When this becomes part of normal team practice, people stop treating learning as
 
 Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
 
-References: [UNESCO Futures of Education](https://www.unesco.org/en/futures-education); [OECD Skills Outlook 2023](https://www.oecd.org/skills/oecd-skills-outlook-e11c1c2d-en.htm); [Our World in Data: AI](https://ourworldindata.org/artificial-intelligence)
+References: [UNESCO Futures of Education](https://www.unesco.org/en/futures-education); [OECD Skills Outlook 2023](https://www.oecd.org/skills/oecd-skills-outlook-e11c1c2d-en.htm); [Our World in Data: AI](https://ourworldindata.org/artificial-intelligence); [World Economic Forum Future of Jobs 2025](https://www.weforum.org/reports/the-future-of-jobs-report-2025)
 
 ## Blockers / Notes
 Publish quality gate failed.

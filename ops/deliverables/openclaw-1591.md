@@ -1,29 +1,61 @@
 # Deliverable: Use this exact article title: Help cross functional teams learn faster through shared project...
 
 - Task ID: openclaw-1591
-- Status: completed
+- Status: cancelled
 - Created: 2026-02-20T10:06:09Z
-- Updated: 2026-02-20T10:06:28Z
+- Updated: 2026-02-20T11:49:21Z
 
 ## Summary
-No summary provided.
+Auto-requeued by autonomous mode (attempt 1/4) via inbox item #2113.
 
 ## Deliverable Output
-# Help cross functional teams learn faster through shared project
+# Deliverable Draft: Use This Exact Article Title: Help Cross Functional Teams Learn Faster Through Shared Project SEO blog operating system
 
-For help cross functional teams learn faster through shared project, I focus less on content volume and more on the exact moment a team has to choose between speed and clarity. That is where capability either becomes visible or quietly disappears.
+## Objective and success metrics
+Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
 
-Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
+## Serialized agent roster
+1. Topic Scout - Identify high-upside topics tied to L&D, gamification, data, LXD, and AI.
+2. Keyword and SERP Analyst - Map keyword clusters, search intent, and competitor coverage gaps.
+3. Brief Architect - Convert strategy into a clear brief and outline with unique angle.
+4. Research Analyst - Gather credible source material and practical examples.
+5. Writer - Draft publishable post aligned with site voice and audience needs.
+6. Reader intent optimizer - Keep title, framing, and examples aligned to practical reader intent.
+7. Editor - Improve clarity, authority, and readability while preserving intent.
+8. Refresh Planner - Define update cadence to protect rankings and freshness.
+9. Publishing QA - Publish and verify the post is live and correctly indexed.
 
-I start with one decision checkpoint, one owner, and one evidence signal that can be reviewed in the next team meeting. This keeps the experiment small enough to sustain and concrete enough to learn from.
+## Workflow (intake to publish)
+1. Topic Scout identifies opportunities and ranks by business relevance.
+2. Keyword and SERP Analyst builds intent map and competitor gaps.
+3. Brief Architect converts strategy into outline and argument arc.
+4. Research Analyst gathers verified source notes and claims.
+5. Writer drafts publishable post in site format.
+6. SEO Optimizer improves title/meta/headings/internal links/schema.
+7. Editor finalizes voice, clarity, and readability.
+8. Refresh Planner defines update and republish triggers.
+9. Publishing QA uploads and validates end-to-end publish health.
 
-Over time, teams build a cleaner evidence trail because each article connects a real scenario, a decision rule, and a reflection point. That continuity is what compounds learning value across iterations.
+## Quality gates and acceptance criteria
+- Gate 1: topic and keyword fit for target audience intent.
+- Gate 2: evidence-backed draft with no fabricated claims.
+- Gate 3: on-page SEO checks pass before publish.
+- Gate 4: publishing QA confirms live URL and indexability.
 
-When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
+## Publishing QA checklist
+- Create/update post under `posts` and verify listing in `writing.html`.
+- Validate slug, canonical, meta title/description, and schema fields.
+- Verify HTTP 200 on final URL and correct render on desktop/mobile.
+- Confirm sitemap and RSS include the new post after publish.
+- Use `scripts/publish_post.py` when available for deterministic publishing.
 
-Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
+## Failure handling and fallback logic
+- If publish fails, do not mark task complete; create fix task with blocker evidence.
+- If SERP APIs/sources fail, retry sequentially with alternatives and direct sources.
+- Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
-References: [ILO Digital Transformation and Skills](https://www.ilo.org/global/topics/future-of-work/publications/WCMS_856388/lang--en/index.htm); [World Economic Forum Future of Jobs 2025](https://www.weforum.org/reports/the-future-of-jobs-report-2025); [UNESCO Futures of Education](https://www.unesco.org/en/futures-education)
+## Notes
+Auto-requeued by autonomous mode (attempt 1/4) via inbox item #2113.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

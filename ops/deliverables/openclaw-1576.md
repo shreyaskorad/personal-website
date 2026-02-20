@@ -1,12 +1,12 @@
 # Deliverable: Help cross functional teams learn faster through shared project retrospectives
 
 - Task ID: openclaw-1576
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-20T09:24:17Z
-- Updated: 2026-02-20T11:38:43Z
+- Updated: 2026-02-20T11:41:47Z
 
 ## Summary
-Rewrite required before publish. Violations: missing direct author voice; references do not expand source pool with new domains
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1912.
 
 ## Deliverable Output
 # Help cross functional teams learn faster through shared project retrospectives
@@ -24,9 +24,6 @@ When this becomes part of normal team practice, people stop treating learning as
 What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
 
 References: [NBER Generative AI at Work](https://www.nber.org/papers/w31161); [Our World in Data: AI](https://ourworldindata.org/artificial-intelligence); [LinkedIn Workplace Learning Report](https://learning.linkedin.com/resources/workplace-learning-report-2024)
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

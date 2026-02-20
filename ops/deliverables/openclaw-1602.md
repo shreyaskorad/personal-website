@@ -1,15 +1,15 @@
-# Deliverable: Use reflective debriefs after projects to strengthen learning transfer
+# Deliverable: Create L&D reviews that focus on behavior shifts not completion dashboards
 
-- Task ID: openclaw-1564
+- Task ID: openclaw-1602
 - Status: cancelled
-- Created: 2026-02-20T07:56:02Z
-- Updated: 2026-02-20T08:00:28Z
+- Created: 2026-02-20T11:42:57Z
+- Updated: 2026-02-20T11:50:48Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1876.
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2213.
 
 ## Deliverable Output
-# Deliverable Draft: Use Reflective Debriefs After Projects To Strengthen Learning Transfer SEO blog operating system
+# Deliverable Draft: Create L&D Reviews That Focus On Behavior Shifts Not Completion Dashboards SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,7 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1876.
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2213.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
