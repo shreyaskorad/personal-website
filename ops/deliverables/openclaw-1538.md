@@ -1,15 +1,15 @@
-# Deliverable: Help cross functional teams learn faster through shared project retrospectives
+# Deliverable: Turn training requests into measurable capability outcomes
 
-- Task ID: openclaw-1534
+- Task ID: openclaw-1538
 - Status: failed
-- Created: 2026-02-20T05:40:06Z
-- Updated: 2026-02-20T05:40:25Z
+- Created: 2026-02-20T06:03:33Z
+- Updated: 2026-02-20T06:07:35Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-# Deliverable Draft: Help Cross Functional Teams Learn Faster Through Shared Project Retrospectives SEO blog operating system
+# Deliverable Draft: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
