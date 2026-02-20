@@ -9,10 +9,10 @@
 Article ready for publish pipeline verification
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-20T08:51:24Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-20T08:54:36Z)
 
 ## Last Error
-OpenClaw SSH command timed out after 260s
+OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
 # Deliverable Draft: Design Learning For Decision Quality, Not Completion Rates SEO blog operating system

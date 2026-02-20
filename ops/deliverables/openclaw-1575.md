@@ -1,9 +1,9 @@
 # Deliverable: Autonomous writing sprint: Turn training requests into measurable capability outcomes
 
-- Task ID: openclaw-1573
+- Task ID: openclaw-1575
 - Status: failed
-- Created: 2026-02-20T08:35:04Z
-- Updated: 2026-02-20T08:35:21Z
+- Created: 2026-02-20T08:57:31Z
+- Updated: 2026-02-20T09:02:01Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
