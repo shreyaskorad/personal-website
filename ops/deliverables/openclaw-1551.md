@@ -1,12 +1,12 @@
 # Deliverable: Turn training requests into measurable capability outcomes
 
-- Task ID: openclaw-1547
-- Status: failed
-- Created: 2026-02-20T06:55:17Z
-- Updated: 2026-02-20T06:55:19Z
+- Task ID: openclaw-1551
+- Status: blocked
+- Created: 2026-02-20T07:18:35Z
+- Updated: 2026-02-20T07:20:36Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Rewrite article to reduce duplicate sentences to 0 or fewer before retrying publish
 
 ## Deliverable Output
 # Deliverable Draft: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
@@ -55,10 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Rewrite article to reduce duplicate sentences to 0 or fewer before retrying publish
 
 ## Blockers / Notes
-OpenClaw SSH execution failed.
+Quality gate duplicate sentence count 3 exceeds maximum 1
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
