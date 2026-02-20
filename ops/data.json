@@ -1,27 +1,27 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-20T12:59:26Z",
+    "updatedAt": "2026-02-20T13:15:40Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
     "totalTasks": 2,
     "queued": 1,
-    "active": 0,
+    "active": 1,
     "completed": 0,
-    "due": 1,
-    "blocked": 1,
-    "executedTotal": 1,
+    "due": 0,
+    "blocked": 0,
+    "executedTotal": 0,
     "byStatus": {
-      "queued": 1,
-      "failed": 1
+      "in_progress": 1,
+      "queued": 1
     }
   },
   "laneMetrics": {
     "execution": {
-      "visible": 0,
-      "executedTotal": 1
+      "visible": 1,
+      "executedTotal": 0
     },
     "queue": {
       "visible": 1,
@@ -32,14 +32,33 @@
       "totalClosed": 0
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
-      "failed": 1,
+      "failed": 0,
       "blocked": 0,
       "needsInput": 0
     }
   },
-  "execution": [],
+  "execution": [
+    {
+      "id": "openclaw-1662",
+      "title": "Design learning for decision quality, not completion rates",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "in_progress",
+      "sequence": 0,
+      "createdAt": "2026-02-20T13:13:17Z",
+      "updatedAt": "2026-02-20T13:15:39Z",
+      "completedAt": null,
+      "ageHours": 0.04,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-1662.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
   "queueTop": [
     {
       "id": "inbox-2230",
@@ -49,9 +68,9 @@
       "status": "queued",
       "sequence": 1,
       "createdAt": "2026-02-14T13:45:49Z",
-      "updatedAt": "2026-02-20T12:59:26Z",
+      "updatedAt": "2026-02-20T13:15:40Z",
       "completedAt": null,
-      "ageHours": 143.23,
+      "ageHours": 143.5,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -64,28 +83,7 @@
       "needsReview": false
     }
   ],
-  "userActionsDue": [
-    {
-      "id": "openclaw-1653",
-      "title": "Design learning for decision quality, not completion rates",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "failed",
-      "sequence": 0,
-      "createdAt": "2026-02-20T12:58:53Z",
-      "updatedAt": "2026-02-20T12:59:26Z",
-      "completedAt": "2026-02-20T12:59:26Z",
-      "ageHours": 0.01,
-      "deliverySummary": "Rewrite required before publish. Violations: duplicate title against published post",
-      "deliverableUrl": "/ops/deliverables/openclaw-1653.md",
-      "notes": [
-        "Publish quality gate failed."
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    }
-  ],
+  "userActionsDue": [],
   "completedRecent": [],
   "observations": [
     {
@@ -102,41 +100,86 @@
     },
     {
       "level": "info",
-      "message": "Queue has 1 task(s). OpenClaw will continue dispatching sequentially while idle."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): failed=1."
+      "message": "OpenClaw is actively executing 1 task(s) in sequence (WIP=1)."
     }
   ],
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T12:59:26Z",
+      "timestamp": "2026-02-20T13:12:17Z",
       "message": "Publish quality gate failed."
     },
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T12:57:47Z",
+      "timestamp": "2026-02-20T13:10:42Z",
       "message": "Publish quality gate failed."
     },
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T12:56:07Z",
+      "timestamp": "2026-02-20T13:09:02Z",
       "message": "Publish quality gate failed."
     },
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T12:54:32Z",
-      "message": "Publish quality gate failed."
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T12:52:46Z",
+      "timestamp": "2026-02-20T13:07:27Z",
       "message": "Publish quality gate failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-20T13:15:40Z",
+      "type": "executed",
+      "taskId": "capture-668",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=in_progress, task_id=n/a): "
+    },
+    {
+      "timestamp": "2026-02-20T13:12:17Z",
+      "type": "executed",
+      "taskId": "capture-665",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=a40c1405-fc0a-4a51-9673-113ef5b3cc7a): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-20T13:10:42Z",
+      "type": "executed",
+      "taskId": "capture-667",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=36ff63ba-30eb-45b4-9b93-716ce864ea13): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-20T13:09:01Z",
+      "type": "executed",
+      "taskId": "capture-666",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=3ccf07df-a5f9-4169-b887-c862dfae830c): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-20T13:07:27Z",
+      "type": "executed",
+      "taskId": "capture-664",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=a845480b-117e-419b-a0f2-e8c8acd70529): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-20T13:05:51Z",
+      "type": "executed",
+      "taskId": "capture-663",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=9ef02376-77ba-4b98-bbbb-b17e528a8aae): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-20T13:04:16Z",
+      "type": "executed",
+      "taskId": "capture-665",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=9063381f-9857-4ba3-a686-6d2cde3731a4): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-20T13:02:40Z",
+      "type": "executed",
+      "taskId": "capture-662",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=03846ba3-704b-4dac-bd17-56420c1018e9): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
+    {
+      "timestamp": "2026-02-20T13:01:08Z",
+      "type": "executed",
+      "taskId": "capture-661",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=5619e21b-2932-495e-8ab6-135aa82564c0): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
+    },
     {
       "timestamp": "2026-02-20T12:59:26Z",
       "type": "executed",
@@ -442,64 +485,10 @@
       "type": "executed",
       "taskId": "capture-1058",
       "message": "Use scenario based practice to improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=completed, task_id=a5005cc8-67a8-4d1f-9bb3-2c051ecc3701): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T11:43:19Z",
-      "type": "executed",
-      "taskId": "capture-1057",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: Delegated via OpenClaw SSH (status=completed, task_id=3bbf67b4-a7fe-4383-a6e5-2c6cca1858d7): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T11:42:11Z",
-      "type": "executed",
-      "taskId": "capture-1056",
-      "message": "Use reflective debriefs after projects to strengthen learning transfer: Delegated via OpenClaw SSH (status=completed, task_id=6d18fd64-cd63-42b6-ab12-fc10f252c8b9): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T10:20:56Z",
-      "type": "executed",
-      "taskId": "capture-1082",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=7d996954-f92a-4690-a2cf-ac3a0fc63f61): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T10:20:41Z",
-      "type": "executed",
-      "taskId": "capture-1082",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-20T10:19:41Z",
-      "type": "executed",
-      "taskId": "capture-1081",
-      "message": "Autonomous writing sprint: Turn training requests into measurable capability outcomes: Delegated via OpenClaw SSH (status=completed, task_id=96f18563-effa-4c3e-90d5-3ae2992d7c59): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T10:19:22Z",
-      "type": "executed",
-      "taskId": "capture-1081",
-      "message": "Autonomous writing sprint: Turn training requests into measurable capability outcomes: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-20T10:18:23Z",
-      "type": "executed",
-      "taskId": "capture-1080",
-      "message": "Autonomous writing sprint: Turn training requests into measurable capability outcomes: Delegated via OpenClaw SSH (status=completed, task_id=d87db525-04cc-417b-8d2e-c40fc4bbe212): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T10:18:02Z",
-      "type": "executed",
-      "taskId": "capture-1080",
-      "message": "Autonomous writing sprint: Turn training requests into measurable capability outcomes: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-20T10:17:01Z",
-      "type": "executed",
-      "taskId": "capture-1079",
-      "message": "Autonomous writing sprint: Turn training requests into measurable capability outcomes: Delegated via OpenClaw SSH (status=completed, task_id=9cad68da-075d-4cd8-99e2-69cbe39713aa): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-20T12:59:27Z",
+    "updatedAt": "2026-02-20T13:15:40Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -683,55 +672,128 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 8,
-      "queued": 0,
-      "blocked": 5,
+      "completed": 5,
+      "queued": 1,
+      "blocked": 4,
       "byStatus": {
-        "failed": 5,
-        "cancelled": 67,
-        "completed": 8
+        "in_progress": 1,
+        "failed": 4,
+        "cancelled": 70,
+        "completed": 5
       }
     },
     "recentTasks": [
       {
-        "id": "openclaw-1653",
+        "id": "openclaw-1662",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "in_progress",
+        "updated_at": "2026-02-20T13:15:39Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1661",
         "title": "Design learning for decision quality, not completion rates",
         "status": "failed",
-        "updated_at": "2026-02-20T12:59:26Z",
+        "updated_at": "2026-02-20T13:12:17Z",
         "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
         "blockers": "Publish quality gate failed."
+      },
+      {
+        "id": "openclaw-1660",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "failed",
+        "updated_at": "2026-02-20T13:10:42Z",
+        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
+        "blockers": "Publish quality gate failed."
+      },
+      {
+        "id": "openclaw-1659",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "failed",
+        "updated_at": "2026-02-20T13:09:02Z",
+        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
+        "blockers": "Publish quality gate failed."
+      },
+      {
+        "id": "openclaw-1658",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "failed",
+        "updated_at": "2026-02-20T13:07:27Z",
+        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
+        "blockers": "Publish quality gate failed."
+      },
+      {
+        "id": "openclaw-1657",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:13:17Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1656",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:11:41Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2268.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1655",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:10:02Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1654",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:08:27Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1653",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:06:51Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2267.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1652",
         "title": "Design learning for decision quality, not completion rates",
-        "status": "failed",
-        "updated_at": "2026-02-20T12:57:47Z",
-        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
-        "blockers": "Publish quality gate failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:05:16Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2266.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1651",
         "title": "Design learning for decision quality, not completion rates",
-        "status": "failed",
-        "updated_at": "2026-02-20T12:56:07Z",
-        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
-        "blockers": "Publish quality gate failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:03:40Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1650",
         "title": "Design learning for decision quality, not completion rates",
-        "status": "failed",
-        "updated_at": "2026-02-20T12:54:32Z",
-        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
-        "blockers": "Publish quality gate failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:02:07Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2265.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1649",
         "title": "Design learning for decision quality, not completion rates",
-        "status": "failed",
-        "updated_at": "2026-02-20T12:52:46Z",
-        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
-        "blockers": "Publish quality gate failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:00:32Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2264.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1648",
@@ -780,83 +842,115 @@
         "updated_at": "2026-02-20T12:50:39Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2259.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-1642",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T12:49:05Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2258.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1641",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T12:47:32Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2257.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1640",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T12:45:59Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2256.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1639",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T12:44:21Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2255.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1638",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T12:42:01Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2254.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1637",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T12:40:30Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1636",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T12:38:54Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2253.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1635",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T12:36:33Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1634",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T12:35:02Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 1789,
+          "created_at": "2026-02-20T13:12:17Z",
+          "capture_id": 665,
+          "openclaw_row_id": 1661,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1788,
+          "created_at": "2026-02-20T13:10:42Z",
+          "capture_id": 667,
+          "openclaw_row_id": 1660,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1787,
+          "created_at": "2026-02-20T13:09:01Z",
+          "capture_id": 666,
+          "openclaw_row_id": 1659,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1786,
+          "created_at": "2026-02-20T13:07:27Z",
+          "capture_id": 664,
+          "openclaw_row_id": 1658,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1785,
+          "created_at": "2026-02-20T13:05:51Z",
+          "capture_id": 663,
+          "openclaw_row_id": 1657,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1784,
+          "created_at": "2026-02-20T13:04:16Z",
+          "capture_id": 665,
+          "openclaw_row_id": 1656,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1783,
+          "created_at": "2026-02-20T13:02:40Z",
+          "capture_id": 662,
+          "openclaw_row_id": 1655,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1782,
+          "created_at": "2026-02-20T13:01:08Z",
+          "capture_id": 661,
+          "openclaw_row_id": 1654,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+          "action_hint": "",
+          "handoff_to": ""
+        },
         {
           "id": 1781,
           "created_at": "2026-02-20T12:59:26Z",
@@ -947,123 +1041,91 @@
           "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
           "action_hint": "",
           "handoff_to": ""
-        },
-        {
-          "id": 1774,
-          "created_at": "2026-02-20T12:48:05Z",
-          "capture_id": 659,
-          "openclaw_row_id": 1646,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1773,
-          "created_at": "2026-02-20T12:46:32Z",
-          "capture_id": 662,
-          "openclaw_row_id": 1645,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1772,
-          "created_at": "2026-02-20T12:44:59Z",
-          "capture_id": 661,
-          "openclaw_row_id": 1644,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1771,
-          "created_at": "2026-02-20T12:43:17Z",
-          "capture_id": 652,
-          "openclaw_row_id": 1643,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1770,
-          "created_at": "2026-02-20T12:41:02Z",
-          "capture_id": 663,
-          "openclaw_row_id": 1642,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1769,
-          "created_at": "2026-02-20T12:39:31Z",
-          "capture_id": 659,
-          "openclaw_row_id": 1641,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1768,
-          "created_at": "2026-02-20T12:37:56Z",
-          "capture_id": 662,
-          "openclaw_row_id": 1640,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
-        },
-        {
-          "id": 1767,
-          "created_at": "2026-02-20T12:35:34Z",
-          "capture_id": 661,
-          "openclaw_row_id": 1639,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-          "action_hint": "",
-          "handoff_to": ""
         }
       ]
     },
     "publishStats": {
       "total": 80,
-      "published": 16,
-      "failed": 64,
+      "published": 11,
+      "failed": 69,
       "ignored": 0,
       "byStatus": {
-        "failed": 64,
-        "published": 16
+        "failed": 69,
+        "published": 11
       },
       "recent": [
+        {
+          "openclaw_row_id": 1661,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:12:17Z"
+        },
+        {
+          "openclaw_row_id": 1660,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:10:42Z"
+        },
+        {
+          "openclaw_row_id": 1659,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:09:02Z"
+        },
+        {
+          "openclaw_row_id": 1658,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:07:27Z"
+        },
+        {
+          "openclaw_row_id": 1657,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:05:52Z"
+        },
+        {
+          "openclaw_row_id": 1656,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:04:16Z"
+        },
+        {
+          "openclaw_row_id": 1655,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:02:41Z"
+        },
+        {
+          "openclaw_row_id": 1654,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:01:08Z"
+        },
         {
           "openclaw_row_id": 1653,
           "status": "failed",
@@ -1171,78 +1233,6 @@
           "commit": "",
           "error": "Style rules violation: duplicate title against published post",
           "updated_at": "2026-02-20T12:41:02Z"
-        },
-        {
-          "openclaw_row_id": 1641,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:39:31Z"
-        },
-        {
-          "openclaw_row_id": 1640,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:37:56Z"
-        },
-        {
-          "openclaw_row_id": 1639,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:35:34Z"
-        },
-        {
-          "openclaw_row_id": 1638,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:34:03Z"
-        },
-        {
-          "openclaw_row_id": 1637,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:32:33Z"
-        },
-        {
-          "openclaw_row_id": 1636,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:31:02Z"
-        },
-        {
-          "openclaw_row_id": 1635,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:29:32Z"
-        },
-        {
-          "openclaw_row_id": 1634,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:27:59Z"
         }
       ]
     },
@@ -1250,19 +1240,29 @@
       "summary": {
         "total": 120,
         "completed": 9,
-        "active": 0,
+        "active": 1,
         "queued": 0,
-        "blocked": 5,
+        "blocked": 4,
         "cancelled": 106
       },
       "today": {
         "completed": 3,
-        "active": 0,
+        "active": 1,
         "queued": 0,
-        "blocked": 5,
+        "blocked": 4,
         "published": 7
       },
-      "activeTask": null,
+      "activeTask": {
+        "id": "openclaw-1662",
+        "row_id": 1662,
+        "capture_id": 668,
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "in_progress",
+        "updated_at": "2026-02-20T13:15:39Z",
+        "next_steps": "",
+        "blockers": "",
+        "description": "Use this exact article title: Design learning for decision quality, not completion rates. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 4 credible source links from diverse domains. References are required in this run: include 4 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'."
+      },
       "lastCompletedTask": {
         "id": "openclaw-1603",
         "row_id": 1603,
@@ -1353,81 +1353,155 @@
           }
         ]
       },
-      "focusNote": {
-        "agent_id": "supervisor",
-        "created_at": "2026-02-20T11:43:59Z",
-        "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
-        "action_hint": "",
-        "handoff_to": ""
-      },
+      "focusNote": {},
       "bottleneck": {
-        "state": "blocked",
-        "reason": "Publish quality gate failed.",
-        "at": "2026-02-20T12:59:26Z"
+        "state": "watch",
+        "reason": "Progress appears stuck at topic-scout; downstream stages have not started.",
+        "at": "2026-02-20T13:15:39Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-1662",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "in_progress",
+          "updated_at": "2026-02-20T13:15:39Z"
+        },
+        {
+          "id": "openclaw-1661",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "updated_at": "2026-02-20T13:12:17Z"
+        },
+        {
+          "id": "openclaw-1660",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "updated_at": "2026-02-20T13:10:42Z"
+        },
+        {
+          "id": "openclaw-1659",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "updated_at": "2026-02-20T13:09:02Z"
+        },
+        {
+          "id": "openclaw-1658",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "updated_at": "2026-02-20T13:07:27Z"
+        },
+        {
+          "id": "openclaw-1657",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T13:13:17Z"
+        },
+        {
+          "id": "openclaw-1656",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T13:11:41Z"
+        },
+        {
+          "id": "openclaw-1655",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T13:10:02Z"
+        },
+        {
+          "id": "openclaw-1654",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T13:08:27Z"
+        },
+        {
           "id": "openclaw-1653",
           "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "updated_at": "2026-02-20T12:59:26Z"
-        },
-        {
-          "id": "openclaw-1652",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "updated_at": "2026-02-20T12:57:47Z"
-        },
-        {
-          "id": "openclaw-1651",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "updated_at": "2026-02-20T12:56:07Z"
-        },
-        {
-          "id": "openclaw-1650",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "updated_at": "2026-02-20T12:54:32Z"
-        },
-        {
-          "id": "openclaw-1649",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "updated_at": "2026-02-20T12:52:46Z"
-        },
-        {
-          "id": "openclaw-1648",
-          "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
-          "updated_at": "2026-02-20T12:58:52Z"
-        },
-        {
-          "id": "openclaw-1647",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T12:57:07Z"
-        },
-        {
-          "id": "openclaw-1646",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T12:55:32Z"
-        },
-        {
-          "id": "openclaw-1645",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T12:53:47Z"
-        },
-        {
-          "id": "openclaw-1644",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T12:52:11Z"
+          "updated_at": "2026-02-20T13:06:51Z"
         }
       ],
       "recentOutputs": [
+        {
+          "id": "openclaw-1661",
+          "row_id": 1661,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:12:17Z"
+        },
+        {
+          "id": "openclaw-1660",
+          "row_id": 1660,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:10:42Z"
+        },
+        {
+          "id": "openclaw-1659",
+          "row_id": 1659,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:09:02Z"
+        },
+        {
+          "id": "openclaw-1658",
+          "row_id": 1658,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:07:27Z"
+        },
+        {
+          "id": "openclaw-1657",
+          "row_id": 1657,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:05:52Z"
+        },
+        {
+          "id": "openclaw-1656",
+          "row_id": 1656,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:04:16Z"
+        },
+        {
+          "id": "openclaw-1655",
+          "row_id": 1655,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:02:41Z"
+        },
+        {
+          "id": "openclaw-1654",
+          "row_id": 1654,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:01:08Z"
+        },
         {
           "id": "openclaw-1653",
           "row_id": 1653,
@@ -1447,90 +1521,10 @@
           "slug": "",
           "error": "Style rules violation: duplicate title against published post",
           "updated_at": "2026-02-20T12:57:47Z"
-        },
-        {
-          "id": "openclaw-1651",
-          "row_id": 1651,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:56:07Z"
-        },
-        {
-          "id": "openclaw-1650",
-          "row_id": 1650,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:54:32Z"
-        },
-        {
-          "id": "openclaw-1649",
-          "row_id": 1649,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:52:46Z"
-        },
-        {
-          "id": "openclaw-1648",
-          "row_id": 1648,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:51:12Z"
-        },
-        {
-          "id": "openclaw-1647",
-          "row_id": 1647,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:49:38Z"
-        },
-        {
-          "id": "openclaw-1646",
-          "row_id": 1646,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:48:05Z"
-        },
-        {
-          "id": "openclaw-1645",
-          "row_id": 1645,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:46:32Z"
-        },
-        {
-          "id": "openclaw-1644",
-          "row_id": 1644,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:44:59Z"
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-1603",
+        "focusTaskId": "openclaw-1662",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1546,19 +1540,19 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-20T11:43:59Z"
+        "lastStageAt": ""
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-20T12:58:38Z",
-        "lastFinishedAt": "2026-02-20T12:57:53Z",
+        "lastStartedAt": "2026-02-20T13:13:02Z",
+        "lastFinishedAt": "2026-02-20T13:12:17Z",
         "runtime": {
-          "pending_inbox": 299,
-          "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 5
+          "pending_inbox": 295,
+          "active_openclaw": 1,
+          "blocked_or_failed_openclaw": 4
         }
       }
     },
@@ -1636,7 +1630,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-20T12:59:26Z",
+    "updatedAt": "2026-02-20T13:15:40Z",
     "metrics": {
       "reviewRequested": 1,
       "proceedCount": 0,
