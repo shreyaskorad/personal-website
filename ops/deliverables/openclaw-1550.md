@@ -1,12 +1,12 @@
 # Deliverable: Turn training requests into measurable capability outcomes
 
-- Task ID: openclaw-1551
-- Status: blocked
-- Created: 2026-02-20T07:18:35Z
-- Updated: 2026-02-20T07:20:36Z
+- Task ID: openclaw-1550
+- Status: cancelled
+- Created: 2026-02-20T07:12:26Z
+- Updated: 2026-02-20T07:37:29Z
 
 ## Summary
-Rewrite article to reduce duplicate sentences to 0 or fewer before retrying publish
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1869.
 
 ## Deliverable Output
 # Deliverable Draft: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
@@ -55,10 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Rewrite article to reduce duplicate sentences to 0 or fewer before retrying publish
-
-## Blockers / Notes
-Quality gate duplicate sentence count 3 exceeds maximum 1
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1869.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

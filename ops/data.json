@@ -1,22 +1,21 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-20T07:23:13Z",
+    "updatedAt": "2026-02-20T07:40:11Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
-    "totalTasks": 7,
+    "totalTasks": 5,
     "queued": 4,
     "active": 0,
     "completed": 0,
-    "due": 3,
-    "blocked": 3,
+    "due": 1,
+    "blocked": 1,
     "executedTotal": 11,
     "byStatus": {
       "queued": 4,
-      "blocked": 1,
-      "failed": 2
+      "blocked": 1
     }
   },
   "laneMetrics": {
@@ -33,9 +32,9 @@
       "totalClosed": 0
     },
     "due": {
-      "visible": 3,
+      "visible": 1,
       "reviewRequired": 0,
-      "failed": 2,
+      "failed": 0,
       "blocked": 1,
       "needsInput": 0
     }
@@ -43,21 +42,21 @@
   "execution": [],
   "queueTop": [
     {
-      "id": "inbox-1863",
-      "title": "Help cross functional teams learn faster through shared project retrospectives",
+      "id": "inbox-1869",
+      "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
       "sequence": 1,
-      "createdAt": "2026-02-17T15:40:42Z",
-      "updatedAt": "2026-02-20T07:23:13Z",
+      "createdAt": "2026-02-17T15:20:13Z",
+      "updatedAt": "2026-02-20T07:40:11Z",
       "completedAt": null,
-      "ageHours": 63.71,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (openclaw_infra_circuit_open:18m)",
+      "ageHours": 64.33,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
-        "capture_id=989",
-        "inbox_item_id=1863"
+        "capture_id=987",
+        "inbox_item_id=1869"
       ],
       "action": "create_task",
       "scope": "professional",
@@ -72,9 +71,9 @@
       "status": "queued",
       "sequence": 2,
       "createdAt": "2026-02-17T16:22:23Z",
-      "updatedAt": "2026-02-20T07:23:13Z",
+      "updatedAt": "2026-02-20T07:40:11Z",
       "completedAt": null,
-      "ageHours": 63.01,
+      "ageHours": 63.3,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -94,9 +93,9 @@
       "status": "queued",
       "sequence": 3,
       "createdAt": "2026-02-17T16:19:28Z",
-      "updatedAt": "2026-02-20T07:23:13Z",
+      "updatedAt": "2026-02-20T07:40:11Z",
       "completedAt": null,
-      "ageHours": 63.06,
+      "ageHours": 63.35,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -116,9 +115,9 @@
       "status": "queued",
       "sequence": 4,
       "createdAt": "2026-02-17T16:15:21Z",
-      "updatedAt": "2026-02-20T07:23:13Z",
+      "updatedAt": "2026-02-20T07:40:11Z",
       "completedAt": null,
-      "ageHours": 63.13,
+      "ageHours": 63.41,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -133,60 +132,20 @@
   ],
   "userActionsDue": [
     {
-      "id": "openclaw-1551",
-      "title": "Turn training requests into measurable capability outcomes",
+      "id": "openclaw-1554",
+      "title": "Help cross functional teams learn faster through shared project retrospectives",
       "source": "openclaw",
       "priority": "medium",
       "status": "blocked",
       "sequence": 0,
-      "createdAt": "2026-02-20T07:18:35Z",
-      "updatedAt": "2026-02-20T07:20:36Z",
+      "createdAt": "2026-02-20T07:37:29Z",
+      "updatedAt": "2026-02-20T07:39:30Z",
       "completedAt": null,
-      "ageHours": 0.08,
-      "deliverySummary": "Rewrite article to reduce duplicate sentences to 0 or fewer before retrying publish",
-      "deliverableUrl": "/ops/deliverables/openclaw-1551.md",
+      "ageHours": 0.05,
+      "deliverySummary": "Create article with extremely simple sentence structures to avoid semantic duplicates",
+      "deliverableUrl": "/ops/deliverables/openclaw-1554.md",
       "notes": [
-        "Quality gate duplicate sentence count 3 exceeds maximum 1"
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-1549",
-      "title": "Help cross functional teams learn faster through shared project retrospectives",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "failed",
-      "sequence": 0,
-      "createdAt": "2026-02-20T07:07:35Z",
-      "updatedAt": "2026-02-20T07:11:37Z",
-      "completedAt": "2026-02-20T07:11:37Z",
-      "ageHours": 0.26,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-1549.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-1548",
-      "title": "Use reflective debriefs after projects to strengthen learning transfer",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "failed",
-      "sequence": 0,
-      "createdAt": "2026-02-20T06:58:23Z",
-      "updatedAt": "2026-02-20T07:02:53Z",
-      "completedAt": "2026-02-20T07:02:53Z",
-      "ageHours": 0.41,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-1548.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
+        "Quality gate duplicate sentence count 3 exceeds maximum 1 despite multiple rewrites"
       ],
       "scope": "professional",
       "hasDeliverable": true,
@@ -213,28 +172,18 @@
     },
     {
       "level": "warn",
-      "message": "'Tasks due from you' has 3 item(s): failed=2, blocked=1."
+      "message": "'Tasks due from you' has 1 item(s): blocked=1."
     }
   ],
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T07:20:36Z",
-      "message": "Quality gate duplicate sentence count 3 exceeds maximum 1"
+      "timestamp": "2026-02-20T07:39:30Z",
+      "message": "Quality gate duplicate sentence count 3 exceeds maximum 1 despite multiple rewrites"
     },
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T07:12:28Z",
-      "message": "OpenClaw SSH execution failed."
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T07:11:37Z",
-      "message": "OpenClaw SSH execution failed."
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T07:02:53Z",
+      "timestamp": "2026-02-20T07:32:19Z",
       "message": "OpenClaw SSH execution failed."
     },
     {
@@ -249,6 +198,24 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-20T07:39:30Z",
+      "type": "executed",
+      "taskId": "capture-987",
+      "message": "Help cross functional teams learn faster through shared project retrospectives: Delegated via OpenClaw SSH (status=blocked, task_id=a4d43aad-ff77-47c0-b1ef-f3548dda6cfc): Article created but quality gate fails on duplicate sentences"
+    },
+    {
+      "timestamp": "2026-02-20T07:32:19Z",
+      "type": "skipped",
+      "taskId": "capture-989",
+      "message": "Help cross functional teams learn faster through shared project retrospectives: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+    },
+    {
+      "timestamp": "2026-02-20T07:25:03Z",
+      "type": "executed",
+      "taskId": "capture-987",
+      "message": "Use scenario based practice to improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=blocked, task_id=e117553e-db48-4c32-a76b-c48fd4f05158): Article drafted but quality gate fails on duplicate sentences"
+    },
     {
       "timestamp": "2026-02-20T07:20:36Z",
       "type": "executed",
@@ -590,28 +557,10 @@
       "type": "executed",
       "taskId": "capture-1049",
       "message": "Improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=blocked, task_id=d7d232b1-a78b-483c-bc76-0d3dfc1183f0): Post already published with exact title"
-    },
-    {
-      "timestamp": "2026-02-18T15:45:52Z",
-      "type": "skipped",
-      "taskId": "capture-1049",
-      "message": "Improve judgment without adding course fatigue: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
-    },
-    {
-      "timestamp": "2026-02-18T15:45:49Z",
-      "type": "executed",
-      "taskId": "capture-1049",
-      "message": "Autonomous writing sprint: Use scenario based practice to improve judgment without adding course fatigue: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-18T15:42:39Z",
-      "type": "skipped",
-      "taskId": "capture-1048",
-      "message": "Build feedback rituals that convert learning into visible team behavior: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: LLM request timed out. (unknown)\nError: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-20T07:23:13Z",
+    "updatedAt": "2026-02-20T07:40:11Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -692,7 +641,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-20T07:03:46Z",
+      "asOf": "2026-02-20T07:36:44Z",
       "lookbackDays": 28,
       "summary": {
         "users": 35,
@@ -796,53 +745,77 @@
       "error": "",
       "cache": {
         "hit": true,
-        "fetchedAt": "2026-02-20T07:03:46Z"
+        "fetchedAt": "2026-02-20T07:36:44Z"
       }
     },
     "taskStats": {
       "total": 80,
       "completed": 6,
       "queued": 0,
-      "blocked": 4,
+      "blocked": 2,
       "byStatus": {
         "blocked": 1,
-        "failed": 3,
-        "cancelled": 70,
+        "failed": 1,
+        "cancelled": 72,
         "completed": 6
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-1554",
+        "title": "Help cross functional teams learn faster through shared project retrospectives",
+        "status": "blocked",
+        "updated_at": "2026-02-20T07:39:30Z",
+        "next_steps": "Create article with extremely simple sentence structures to avoid semantic duplicates",
+        "blockers": "Quality gate duplicate sentence count 3 exceeds maximum 1 despite multiple rewrites"
+      },
+      {
+        "id": "openclaw-1553",
+        "title": "Help cross functional teams learn faster through shared project retrospectives",
+        "status": "failed",
+        "updated_at": "2026-02-20T07:32:19Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-1552",
+        "title": "Improve judgment without adding course fatigue",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T07:37:29Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1868.",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-1551",
         "title": "Turn training requests into measurable capability outcomes",
-        "status": "blocked",
-        "updated_at": "2026-02-20T07:20:36Z",
-        "next_steps": "Rewrite article to reduce duplicate sentences to 0 or fewer before retrying publish",
-        "blockers": "Quality gate duplicate sentence count 3 exceeds maximum 1"
+        "status": "cancelled",
+        "updated_at": "2026-02-20T07:24:02Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1550",
         "title": "Turn training requests into measurable capability outcomes",
-        "status": "failed",
-        "updated_at": "2026-02-20T07:12:28Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T07:37:29Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1869.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1549",
         "title": "Help cross functional teams learn faster through shared project retrospectives",
-        "status": "failed",
-        "updated_at": "2026-02-20T07:11:37Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T07:37:29Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1548",
         "title": "Use reflective debriefs after projects to strengthen learning transfer",
-        "status": "failed",
-        "updated_at": "2026-02-20T07:02:53Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T07:24:02Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1867.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1547",
@@ -947,35 +920,50 @@
         "updated_at": "2026-02-20T06:08:26Z",
         "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-1534",
-        "title": "Help cross functional teams learn faster through shared project retrospectives",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T06:00:25Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1849.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1533",
-        "title": "Coach managers to run better learning conversations in weekly one on ones",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T05:58:08Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1532",
-        "title": "Use reflective debriefs after projects to strengthen learning transfer",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T05:52:41Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1848.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 1668,
+          "created_at": "2026-02-20T07:39:30Z",
+          "capture_id": 987,
+          "openclaw_row_id": 1554,
+          "source": "openclaw_ssh",
+          "task_title": "Help cross functional teams learn faster through shared project retrospectives",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Create article with extremely simple sentence structures to avoid semantic duplicates",
+          "action_hint": "Create article with extremely simple sentence structures to avoid semantic duplicates",
+          "handoff_to": ""
+        },
+        {
+          "id": 1667,
+          "created_at": "2026-02-20T07:25:03Z",
+          "capture_id": 987,
+          "openclaw_row_id": 1552,
+          "source": "openclaw_ssh",
+          "task_title": "Use scenario based practice to improve judgment without adding course fatigue",
+          "agent_id": "publishing-qa",
+          "agent_role": "Publishing QA",
+          "note": "Previous attempt: duplicate sentence count 3 exceeds max 1. References optional means no citations needed.",
+          "action_hint": "After rewriting, run publish pipeline again and verify live post with URL, sitemap, and RSS checks.",
+          "handoff_to": "publishing-qa"
+        },
+        {
+          "id": 1666,
+          "created_at": "2026-02-20T07:25:03Z",
+          "capture_id": 987,
+          "openclaw_row_id": 1552,
+          "source": "openclaw_ssh",
+          "task_title": "Use scenario based practice to improve judgment without adding course fatigue",
+          "agent_id": "writer",
+          "agent_role": "Writer",
+          "note": "Article exists at 289 words with 5 paragraphs. Quality gate detected 3 duplicate sentences. References optional (0 allowed). Need to rewrite for 0 duplicates.",
+          "action_hint": "Rewrite each paragraph with unique sentence structures to eliminate all duplicate sentence detection.",
+          "handoff_to": "writer"
+        },
         {
           "id": 1665,
           "created_at": "2026-02-20T07:20:36Z",
@@ -1130,45 +1118,6 @@
           "agent_role": "Topic Scout",
           "note": "Verified existing published post via file system check. Exact title match found (published Feb 18, 2026). Cannot proceed with identical title per duplication avoidance rules. (action: Request new title or revision direction from user.; handoff_to: supervisor)",
           "action_hint": "Verify existing posts before topic selection",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 1653,
-          "created_at": "2026-02-19T10:37:53Z",
-          "capture_id": 1051,
-          "openclaw_row_id": 1504,
-          "source": "openclaw_ssh",
-          "task_title": "Design manager enablement that links coaching actions to team capability growth",
-          "agent_id": "topic-scout",
-          "agent_role": "Topic Scout",
-          "note": "Verified existing published post via file system check. Exact title match found (published 2026-02-12). Cannot proceed with identical title per duplication avoidance rules. (action: Request new title or revision direction from user.; handoff_to: supervisor)",
-          "action_hint": "Verify existing posts before topic selection",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 1652,
-          "created_at": "2026-02-18T16:16:03Z",
-          "capture_id": 1050,
-          "openclaw_row_id": 1501,
-          "source": "openclaw_ssh",
-          "task_title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-          "agent_id": "topic-scout",
-          "agent_role": "Topic Scout",
-          "note": "Verified existing published post via file system check. Exact title match found (published Feb 18, 2026). Cannot proceed with identical title per duplication avoidance rules.",
-          "action_hint": "Request new title or revision direction from user.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 1651,
-          "created_at": "2026-02-18T16:12:32Z",
-          "capture_id": 1050,
-          "openclaw_row_id": 1500,
-          "source": "openclaw_ssh",
-          "task_title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-          "agent_id": "topic-scout",
-          "agent_role": "Topic Scout",
-          "note": "Verified existing published post via file system check. Exact title match found (published Feb 18, 2026). Cannot proceed with identical title per duplication avoidance rules.",
-          "action_hint": "Request new title or revision direction from user.",
           "handoff_to": "supervisor"
         }
       ]
@@ -1368,17 +1317,17 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 7,
+        "completed": 6,
         "active": 0,
         "queued": 0,
-        "blocked": 4,
-        "cancelled": 109
+        "blocked": 2,
+        "cancelled": 112
       },
       "today": {
         "completed": 0,
         "active": 0,
         "queued": 0,
-        "blocked": 4,
+        "blocked": 2,
         "published": 12
       },
       "activeTask": null,
@@ -1399,12 +1348,12 @@
         "openclawQueuedCount": 0,
         "recent": [
           {
-            "id": "inbox-1863",
-            "capture_id": 989,
-            "title": "Help cross functional teams learn faster through shared project retrospectives",
+            "id": "inbox-1869",
+            "capture_id": 987,
+            "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
             "status": "pending",
-            "detail": "Queued for OpenClaw execution (openclaw_infra_circuit_open:18m)",
-            "created_at": "2026-02-17T15:40:42Z",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-17T15:20:13Z",
             "executed_at": ""
           },
           {
@@ -1445,33 +1394,51 @@
       },
       "bottleneck": {
         "state": "blocked",
-        "reason": "Quality gate duplicate sentence count 3 exceeds maximum 1",
-        "at": "2026-02-20T07:20:36Z"
+        "reason": "Quality gate duplicate sentence count 3 exceeds maximum 1 despite multiple rewrites",
+        "at": "2026-02-20T07:39:30Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-1554",
+          "title": "Help cross functional teams learn faster through shared project retrospectives",
+          "status": "blocked",
+          "updated_at": "2026-02-20T07:39:30Z"
+        },
+        {
+          "id": "openclaw-1553",
+          "title": "Help cross functional teams learn faster through shared project retrospectives",
+          "status": "failed",
+          "updated_at": "2026-02-20T07:32:19Z"
+        },
+        {
+          "id": "openclaw-1552",
+          "title": "Improve judgment without adding course fatigue",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T07:37:29Z"
+        },
+        {
           "id": "openclaw-1551",
           "title": "Turn training requests into measurable capability outcomes",
-          "status": "blocked",
-          "updated_at": "2026-02-20T07:20:36Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T07:24:02Z"
         },
         {
           "id": "openclaw-1550",
           "title": "Turn training requests into measurable capability outcomes",
-          "status": "failed",
-          "updated_at": "2026-02-20T07:12:28Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T07:37:29Z"
         },
         {
           "id": "openclaw-1549",
           "title": "Help cross functional teams learn faster through shared project retrospectives",
-          "status": "failed",
-          "updated_at": "2026-02-20T07:11:37Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T07:37:29Z"
         },
         {
           "id": "openclaw-1548",
           "title": "Use reflective debriefs after projects to strengthen learning transfer",
-          "status": "failed",
-          "updated_at": "2026-02-20T07:02:53Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T07:24:02Z"
         },
         {
           "id": "openclaw-1547",
@@ -1488,24 +1455,6 @@
         {
           "id": "openclaw-1545",
           "title": "Improve judgment without adding course fatigue",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T06:55:16Z"
-        },
-        {
-          "id": "openclaw-1544",
-          "title": "Improve judgment without adding course fatigue",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:03:42Z"
-        },
-        {
-          "id": "openclaw-1543",
-          "title": "Create L&D reviews that focus on behavior shifts not completion dashboards",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T06:55:16Z"
-        },
-        {
-          "id": "openclaw-1542",
-          "title": "Turn training requests into measurable capability outcomes",
           "status": "cancelled",
           "updated_at": "2026-02-20T06:55:16Z"
         }
@@ -1634,15 +1583,15 @@
       },
       "pipeline": {
         "workerStarted": true,
-        "tickInProgress": false,
-        "lastStatus": "recovered",
+        "tickInProgress": true,
+        "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-20T07:18:34Z",
-        "lastFinishedAt": "2026-02-20T07:20:42Z",
+        "lastStartedAt": "2026-02-20T07:37:29Z",
+        "lastFinishedAt": "2026-02-20T07:36:44Z",
         "runtime": {
           "pending_inbox": 4,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 4
+          "blocked_or_failed_openclaw": 2
         }
       }
     },
@@ -1720,7 +1669,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-20T07:23:13Z",
+    "updatedAt": "2026-02-20T07:40:11Z",
     "metrics": {
       "reviewRequested": 4,
       "proceedCount": 0,
