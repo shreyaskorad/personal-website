@@ -1,12 +1,12 @@
 # Deliverable: Help cross functional teams learn faster through shared project retrospectives
 
 - Task ID: openclaw-1562
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-20T07:52:33Z
-- Updated: 2026-02-20T07:52:50Z
+- Updated: 2026-02-20T07:56:02Z
 
 ## Summary
-Create article with 0 duplicate sentences using extremely simple sentence structures and references
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 # Deliverable Draft: Help Cross Functional Teams Learn Faster Through Shared Project Retrospectives SEO blog operating system
@@ -55,10 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Create article with 0 duplicate sentences using extremely simple sentence structures and references
-
-## Blockers / Notes
-Quality gate duplicate sentence detection persists despite multiple rewrites
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

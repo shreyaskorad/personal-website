@@ -1,15 +1,15 @@
-# Deliverable: Design without losing human judgment
+# Deliverable: Use reflective debriefs after projects to strengthen learning transfer
 
-- Task ID: openclaw-1526
+- Task ID: openclaw-1564
 - Status: cancelled
-- Created: 2026-02-20T04:52:25Z
-- Updated: 2026-02-20T05:13:24Z
+- Created: 2026-02-20T07:56:02Z
+- Updated: 2026-02-20T08:00:28Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1843.
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1876.
 
 ## Deliverable Output
-# Deliverable Draft: Design Without Losing Human Judgment SEO blog operating system
+# Deliverable Draft: Use Reflective Debriefs After Projects To Strengthen Learning Transfer SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,7 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1843.
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1876.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

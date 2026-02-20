@@ -1,112 +1,106 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-20T07:55:14Z",
+    "updatedAt": "2026-02-20T08:12:15Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
     "totalTasks": 3,
-    "queued": 1,
+    "queued": 0,
     "active": 0,
-    "completed": 0,
-    "due": 2,
-    "blocked": 2,
-    "executedTotal": 8,
+    "completed": 2,
+    "due": 1,
+    "blocked": 1,
+    "executedTotal": 10,
     "byStatus": {
-      "queued": 1,
-      "blocked": 2
+      "completed": 2,
+      "blocked": 1
     }
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 8
+      "executedTotal": 10
     },
     "queue": {
-      "visible": 1,
-      "totalQueued": 1
+      "visible": 0,
+      "totalQueued": 0
     },
     "completed": {
-      "visible": 0,
-      "totalClosed": 0
+      "visible": 2,
+      "totalClosed": 2
     },
     "due": {
-      "visible": 2,
+      "visible": 1,
       "reviewRequired": 0,
       "failed": 0,
-      "blocked": 2,
+      "blocked": 1,
       "needsInput": 0
     }
   },
   "execution": [],
-  "queueTop": [
-    {
-      "id": "inbox-1860",
-      "title": "Use reflective debriefs after projects to strengthen learning transfer",
-      "source": "dictation-router",
-      "priority": "high",
-      "status": "queued",
-      "sequence": 1,
-      "createdAt": "2026-02-17T16:22:23Z",
-      "updatedAt": "2026-02-20T07:55:14Z",
-      "completedAt": null,
-      "ageHours": 63.55,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=996",
-        "inbox_item_id=1860"
-      ],
-      "action": "create_task",
-      "scope": "professional",
-      "hasDeliverable": false,
-      "needsReview": false
-    }
-  ],
+  "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-1563",
-      "title": "Turn training requests into measurable capability outcomes",
+      "id": "openclaw-1568",
+      "title": "Improve judgment without adding course fatigue",
       "source": "openclaw",
       "priority": "medium",
       "status": "blocked",
       "sequence": 0,
-      "createdAt": "2026-02-20T07:54:16Z",
-      "updatedAt": "2026-02-20T07:54:28Z",
+      "createdAt": "2026-02-20T08:10:05Z",
+      "updatedAt": "2026-02-20T08:10:37Z",
       "completedAt": null,
-      "ageHours": 0.02,
-      "deliverySummary": "Create final article with extremely simple sentence structures and references to pass quality gate",
-      "deliverableUrl": "/ops/deliverables/openclaw-1563.md",
+      "ageHours": 0.04,
+      "deliverySummary": "Create article with 0 duplicate sentences using extremely simple sentence structures",
+      "deliverableUrl": "/ops/deliverables/openclaw-1568.md",
       "notes": [
-        "Quality gate duplicate sentence detection persists despite multiple rewrites"
+        "Quality gate duplicate sentence detection"
       ],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
+  "completedRecent": [
+    {
+      "id": "openclaw-1566",
+      "title": "Use this exact article title: Use reflective debriefs after projects to strengthen learning t...",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-20T08:03:08Z",
+      "updatedAt": "2026-02-20T08:03:43Z",
+      "completedAt": "2026-02-20T08:03:43Z",
+      "ageHours": 0.15,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-1566.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
     },
     {
-      "id": "openclaw-1562",
-      "title": "Help cross functional teams learn faster through shared project retrospectives",
+      "id": "openclaw-1565",
+      "title": "Coach managers to run better learning conversations in weekly one on ones",
       "source": "openclaw",
       "priority": "medium",
-      "status": "blocked",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-20T07:52:33Z",
-      "updatedAt": "2026-02-20T07:52:50Z",
-      "completedAt": null,
-      "ageHours": 0.04,
-      "deliverySummary": "Create article with 0 duplicate sentences using extremely simple sentence structures and references",
-      "deliverableUrl": "/ops/deliverables/openclaw-1562.md",
-      "notes": [
-        "Quality gate duplicate sentence detection persists despite multiple rewrites"
-      ],
+      "createdAt": "2026-02-20T08:00:31Z",
+      "updatedAt": "2026-02-20T08:01:00Z",
+      "completedAt": "2026-02-20T08:01:00Z",
+      "ageHours": 0.2,
+      "deliverySummary": "Article created and ready for publish",
+      "deliverableUrl": "/ops/deliverables/openclaw-1565.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
     }
   ],
-  "completedRecent": [],
   "observations": [
     {
       "level": "info",
@@ -122,28 +116,18 @@
     },
     {
       "level": "info",
-      "message": "Queue has 1 task(s). OpenClaw will continue dispatching sequentially while idle."
+      "message": "No queued or active execution tasks right now."
     },
     {
       "level": "warn",
-      "message": "'Tasks due from you' has 2 item(s): blocked=2."
+      "message": "'Tasks due from you' has 1 item(s): blocked=1."
     }
   ],
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T07:54:28Z",
-      "message": "Quality gate duplicate sentence detection persists despite multiple rewrites"
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T07:52:50Z",
-      "message": "Quality gate duplicate sentence detection persists despite multiple rewrites"
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T07:51:17Z",
-      "message": "Quality gate duplicate sentence detection persists"
+      "timestamp": "2026-02-20T08:10:37Z",
+      "message": "Quality gate duplicate sentence detection"
     },
     {
       "source": "openclaw",
@@ -157,6 +141,48 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-20T08:10:37Z",
+      "type": "executed",
+      "taskId": "capture-1053",
+      "message": "Use scenario based practice to improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=blocked, task_id=376a683e-370c-433a-9123-af9f75e966ff): Creating article with extremely simple sentence structures"
+    },
+    {
+      "timestamp": "2026-02-20T08:06:22Z",
+      "type": "executed",
+      "taskId": "capture-1053",
+      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...: Delegated via OpenClaw SSH (status=blocked, task_id=a1166c3c-0b4c-47db-aead-b96b2e270eda): Creating article with extremely simple sentence structures to avoid duplicate detection"
+    },
+    {
+      "timestamp": "2026-02-20T08:05:52Z",
+      "type": "executed",
+      "taskId": "capture-1053",
+      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project retrospectives: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-20T08:03:43Z",
+      "type": "executed",
+      "taskId": "capture-1052",
+      "message": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning tran...: Delegated via OpenClaw SSH (status=completed, task_id=99efb3ab-ed19-486a-8066-7a08161dd0dd): ```json\n{\n  \"deliverable\": \"# Use reflective debriefs after projects to strengthen learning transfer\\n\\nProjects often end without capturing what actually worked. Teams move to the next task without stopping to reflect. This misses the chance to turn experience into knowledge. Learning remains trapped in individual heads. The team does not benefit from shared insights.\\n\\nReflective debriefs change this pattern. They force teams to slow down and think. After a project concludes, you ask what decisions made sense and what did not. You explore trade-offs and constraints. You surface assumptions. This turns messy experience into clear lessons.\\n\\nI led a product team that struggled to improve our launch process. We blamed vague factors like \\\"market timing.\\\" A retrospective session revealed we always pushed deadlines when stakeholder questions increased. This insight came only because we stopped and talked. We adjusted our process after that conversation.\\n\\nWhat would your team discover if you asked these questions at the end of every project?\\n\\nSchedule thirty minutes after each major milestone. Ask what surprised you. Ask what you would do differently next time. Document the answers. Share them with the wider team. Review them before starting the next project. This creates a learning loop that prevents repeated mistakes.\\n\\n1. ATD research on learning transfer: https://www.td.org/research\\n2. Harvard Business Review on project retrospectives: https://hbr.org/topic/project-management\\n3. MIT Sloan on organizational learning: https://sloanreview.mit.edu/\\n4. Deloitte research on team performance: https://www2.deloitte.com/insights\"\n}\n```"
+    },
+    {
+      "timestamp": "2026-02-20T08:03:08Z",
+      "type": "executed",
+      "taskId": "capture-1052",
+      "message": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning transfer: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-20T08:01:01Z",
+      "type": "executed",
+      "taskId": "capture-996",
+      "message": "Coach managers to run better learning conversations in weekly one on ones: Delegated via OpenClaw SSH (status=completed, task_id=789ee8a6-1f92-4f25-bc69-92c0195c64c1): Created final article with 0 duplicate sentences using extremely simple sentence structures and references"
+    },
+    {
+      "timestamp": "2026-02-20T07:56:17Z",
+      "type": "executed",
+      "taskId": "capture-996",
+      "message": "Use reflective debriefs after projects to strengthen learning transfer: Delegated via OpenClaw SSH (status=blocked, task_id=bad1fec4-cd58-4429-8ee0-ee75659f148b): Creating article with 0 duplicate sentences using extremely simple sentence structures and references"
+    },
     {
       "timestamp": "2026-02-20T07:54:28Z",
       "type": "executed",
@@ -474,52 +500,10 @@
       "type": "skipped",
       "taskId": "capture-1045",
       "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and pr: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-19T11:25:12Z",
-      "type": "skipped",
-      "taskId": "capture-1044",
-      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-19T11:18:45Z",
-      "type": "skipped",
-      "taskId": "capture-1051",
-      "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-19T11:12:42Z",
-      "type": "skipped",
-      "taskId": "capture-1045",
-      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-19T10:55:12Z",
-      "type": "skipped",
-      "taskId": "capture-1051",
-      "message": "Design manager enablement that links coaching actions to team capability growth: OpenClaw SSH execution failed: OpenClaw SSH command failed: return code 255"
-    },
-    {
-      "timestamp": "2026-02-19T10:37:53Z",
-      "type": "executed",
-      "taskId": "capture-1051",
-      "message": "Design manager enablement that links coaching actions to team capability growth: Delegated via OpenClaw SSH (status=completed, task_id=f5df0355-2d98-469d-920d-3636c1eab8b2): Executing design manager enablement article workflow"
-    },
-    {
-      "timestamp": "2026-02-18T16:26:48Z",
-      "type": "executed",
-      "taskId": "capture-1051",
-      "message": "Autonomous writing sprint: Design manager enablement that links coaching actions to team capability growth: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-18T16:23:38Z",
-      "type": "skipped",
-      "taskId": "capture-1050",
-      "message": "Create L&D reviews that focus on behavior shifts not completion dashboards: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-20T07:55:14Z",
+    "updatedAt": "2026-02-20T08:12:15Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -600,7 +584,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-20T07:36:44Z",
+      "asOf": "2026-02-20T08:07:53Z",
       "lookbackDays": 28,
       "summary": {
         "users": 35,
@@ -704,44 +688,84 @@
       "error": "",
       "cache": {
         "hit": true,
-        "fetchedAt": "2026-02-20T07:36:44Z"
+        "fetchedAt": "2026-02-20T08:07:53Z"
       }
     },
     "taskStats": {
       "total": 80,
       "completed": 3,
       "queued": 0,
-      "blocked": 3,
+      "blocked": 1,
       "byStatus": {
-        "blocked": 3,
-        "cancelled": 74,
+        "blocked": 1,
+        "cancelled": 76,
         "completed": 3
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-1568",
+        "title": "Improve judgment without adding course fatigue",
+        "status": "blocked",
+        "updated_at": "2026-02-20T08:10:37Z",
+        "next_steps": "Create article with 0 duplicate sentences using extremely simple sentence structures",
+        "blockers": "Quality gate duplicate sentence detection"
+      },
+      {
+        "id": "openclaw-1567",
+        "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T08:10:02Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1879.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1566",
+        "title": "Use this exact article title: Use reflective debriefs after projects to strengthen learning t...",
+        "status": "completed",
+        "updated_at": "2026-02-20T08:03:43Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1565",
+        "title": "Coach managers to run better learning conversations in weekly one on ones",
+        "status": "completed",
+        "updated_at": "2026-02-20T08:01:00Z",
+        "next_steps": "Article created and ready for publish",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1564",
+        "title": "Use reflective debriefs after projects to strengthen learning transfer",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T08:00:28Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1876.",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-1563",
         "title": "Turn training requests into measurable capability outcomes",
-        "status": "blocked",
-        "updated_at": "2026-02-20T07:54:28Z",
-        "next_steps": "Create final article with extremely simple sentence structures and references to pass quality gate",
-        "blockers": "Quality gate duplicate sentence detection persists despite multiple rewrites"
+        "status": "cancelled",
+        "updated_at": "2026-02-20T07:58:11Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1562",
         "title": "Help cross functional teams learn faster through shared project retrospectives",
-        "status": "blocked",
-        "updated_at": "2026-02-20T07:52:50Z",
-        "next_steps": "Create article with 0 duplicate sentences using extremely simple sentence structures and references",
-        "blockers": "Quality gate duplicate sentence detection persists despite multiple rewrites"
+        "status": "cancelled",
+        "updated_at": "2026-02-20T07:56:02Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1561",
         "title": "Turn training requests into measurable capability outcomes",
-        "status": "blocked",
-        "updated_at": "2026-02-20T07:51:17Z",
-        "next_steps": "Create article with 0 duplicate sentences using extremely simple sentence structures",
-        "blockers": "Quality gate duplicate sentence detection persists"
+        "status": "cancelled",
+        "updated_at": "2026-02-20T07:56:02Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1560",
@@ -838,51 +862,76 @@
         "updated_at": "2026-02-20T07:37:29Z",
         "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-1548",
-        "title": "Use reflective debriefs after projects to strengthen learning transfer",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T07:24:02Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1867.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1547",
-        "title": "Turn training requests into measurable capability outcomes",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T07:15:32Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1866.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1546",
-        "title": "Improve judgment without adding course fatigue",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T07:12:25Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1865.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1545",
-        "title": "Improve judgment without adding course fatigue",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T06:55:16Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1861.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1544",
-        "title": "Improve judgment without adding course fatigue",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T07:03:42Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1864.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 1683,
+          "created_at": "2026-02-20T08:10:37Z",
+          "capture_id": 1053,
+          "openclaw_row_id": 1568,
+          "source": "openclaw_ssh",
+          "task_title": "Use scenario based practice to improve judgment without adding course fatigue",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Create article with 0 duplicate sentences using extremely simple sentence structures",
+          "action_hint": "Create article with 0 duplicate sentences using extremely simple sentence structures",
+          "handoff_to": ""
+        },
+        {
+          "id": 1682,
+          "created_at": "2026-02-20T08:06:22Z",
+          "capture_id": 1053,
+          "openclaw_row_id": 1567,
+          "source": "openclaw_ssh",
+          "task_title": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Create article with 0 duplicate sentences using extremely simple sentence structures",
+          "action_hint": "Create article with 0 duplicate sentences using extremely simple sentence structures",
+          "handoff_to": ""
+        },
+        {
+          "id": 1681,
+          "created_at": "2026-02-20T08:03:43Z",
+          "capture_id": 1052,
+          "openclaw_row_id": 1566,
+          "source": "openclaw_ssh",
+          "task_title": "Autonomous writing sprint: Use reflective debriefs after projects to strengthen learning tran...",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "```json { \"deliverable\": \"# Use reflective debriefs after projects to strengthen learning transfer\\n\\nProjects often end without capturing what actually worked. Teams move to the next task without stopping to reflect. This misses the chance to turn experience into knowledge. Learning remains trapped in individual he...",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 1680,
+          "created_at": "2026-02-20T08:01:00Z",
+          "capture_id": 996,
+          "openclaw_row_id": 1565,
+          "source": "openclaw_ssh",
+          "task_title": "Coach managers to run better learning conversations in weekly one on ones",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Article created and ready for publish",
+          "action_hint": "Article created and ready for publish",
+          "handoff_to": ""
+        },
+        {
+          "id": 1679,
+          "created_at": "2026-02-20T07:56:17Z",
+          "capture_id": 996,
+          "openclaw_row_id": 1564,
+          "source": "openclaw_ssh",
+          "task_title": "Use reflective debriefs after projects to strengthen learning transfer",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Create final article with extremely simple sentence structures and references to pass quality gate",
+          "action_hint": "Create final article with extremely simple sentence structures and references to pass quality gate",
+          "handoff_to": ""
+        },
         {
           "id": 1678,
           "created_at": "2026-02-20T07:54:28Z",
@@ -1012,71 +1061,6 @@
           "note": "Create article with 0 duplicate sentences using extremely simple sentence structures",
           "action_hint": "Create article with 0 duplicate sentences using extremely simple sentence structures",
           "handoff_to": ""
-        },
-        {
-          "id": 1668,
-          "created_at": "2026-02-20T07:39:30Z",
-          "capture_id": 987,
-          "openclaw_row_id": 1554,
-          "source": "openclaw_ssh",
-          "task_title": "Help cross functional teams learn faster through shared project retrospectives",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Create article with extremely simple sentence structures to avoid semantic duplicates",
-          "action_hint": "Create article with extremely simple sentence structures to avoid semantic duplicates",
-          "handoff_to": ""
-        },
-        {
-          "id": 1667,
-          "created_at": "2026-02-20T07:25:03Z",
-          "capture_id": 987,
-          "openclaw_row_id": 1552,
-          "source": "openclaw_ssh",
-          "task_title": "Use scenario based practice to improve judgment without adding course fatigue",
-          "agent_id": "publishing-qa",
-          "agent_role": "Publishing QA",
-          "note": "Previous attempt: duplicate sentence count 3 exceeds max 1. References optional means no citations needed.",
-          "action_hint": "After rewriting, run publish pipeline again and verify live post with URL, sitemap, and RSS checks.",
-          "handoff_to": "publishing-qa"
-        },
-        {
-          "id": 1666,
-          "created_at": "2026-02-20T07:25:03Z",
-          "capture_id": 987,
-          "openclaw_row_id": 1552,
-          "source": "openclaw_ssh",
-          "task_title": "Use scenario based practice to improve judgment without adding course fatigue",
-          "agent_id": "writer",
-          "agent_role": "Writer",
-          "note": "Article exists at 289 words with 5 paragraphs. Quality gate detected 3 duplicate sentences. References optional (0 allowed). Need to rewrite for 0 duplicates.",
-          "action_hint": "Rewrite each paragraph with unique sentence structures to eliminate all duplicate sentence detection.",
-          "handoff_to": "writer"
-        },
-        {
-          "id": 1665,
-          "created_at": "2026-02-20T07:20:36Z",
-          "capture_id": 984,
-          "openclaw_row_id": 1551,
-          "source": "openclaw_ssh",
-          "task_title": "Turn training requests into measurable capability outcomes",
-          "agent_id": "publishing-qa",
-          "agent_role": "Publishing QA",
-          "note": "Pipeline check failed. Duplicate sentence count 3 exceeds max 1.",
-          "action_hint": "Analyze which sentences are flagged as duplicates.",
-          "handoff_to": "writer"
-        },
-        {
-          "id": 1664,
-          "created_at": "2026-02-20T07:20:36Z",
-          "capture_id": 984,
-          "openclaw_row_id": 1551,
-          "source": "openclaw_ssh",
-          "task_title": "Turn training requests into measurable capability outcomes",
-          "agent_id": "writer",
-          "agent_role": "Writer",
-          "note": "Created article with 6 paragraphs, 349 words, references included. Needs duplicate sentence fix.",
-          "action_hint": "Rewrite paragraphs to ensure 0 duplicate sentences.",
-          "handoff_to": "writer"
         }
       ]
     },
@@ -1275,77 +1259,97 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 6,
+        "completed": 8,
         "active": 0,
         "queued": 0,
-        "blocked": 3,
+        "blocked": 1,
         "cancelled": 111
       },
       "today": {
-        "completed": 0,
+        "completed": 2,
         "active": 0,
         "queued": 0,
-        "blocked": 3,
+        "blocked": 1,
         "published": 12
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-1504",
-        "row_id": 1504,
-        "capture_id": 1051,
-        "title": "Design manager enablement that links coaching actions to team capability growth",
+        "id": "openclaw-1566",
+        "row_id": 1566,
+        "capture_id": 1052,
+        "title": "Use this exact article title: Use reflective debriefs after projects to strengthen learning t...",
         "status": "completed",
-        "updated_at": "2026-02-19T10:37:53Z",
-        "next_steps": "Checking existing published posts for duplicate titles, then running topic discovery sequence",
+        "updated_at": "2026-02-20T08:03:43Z",
+        "next_steps": "",
         "blockers": "",
-        "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
+        "description": "Use this exact article title: Use reflective debriefs after projects to strengthen learning transfer. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 3 credible source links from diverse domains. References are required in this run: include 3 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'."
       },
       "pendingQueue": {
-        "count": 1,
-        "inboxCount": 1,
+        "count": 0,
+        "inboxCount": 0,
         "openclawQueuedCount": 0,
-        "recent": [
-          {
-            "id": "inbox-1860",
-            "capture_id": 996,
-            "title": "Use reflective debriefs after projects to strengthen learning transfer",
-            "status": "pending",
-            "detail": "Waiting for OpenClaw execution",
-            "created_at": "2026-02-17T16:22:23Z",
-            "executed_at": ""
-          }
-        ]
+        "recent": []
       },
       "focusNote": {
-        "agent_id": "topic-scout",
-        "created_at": "2026-02-19T10:37:53Z",
-        "note": "Verified existing published post via file system check. Exact title match found (published Feb 18, 2026). Cannot proceed with identical title per duplication avoidance rules. (action: Request new title or revision direction from user.; handoff_to: supervisor)",
-        "action_hint": "Verify existing posts before topic selection",
-        "handoff_to": "supervisor"
+        "agent_id": "supervisor",
+        "created_at": "2026-02-20T08:03:43Z",
+        "note": "```json { \"deliverable\": \"# Use reflective debriefs after projects to strengthen learning transfer\\n\\nProjects often end without capturing what actually worked. Teams move to the next task without stopping to reflect. This misses the chance to turn experience into knowledge. Learning remains trapped in individual he...",
+        "action_hint": "",
+        "handoff_to": ""
       },
       "bottleneck": {
         "state": "blocked",
-        "reason": "Quality gate duplicate sentence detection persists despite multiple rewrites",
-        "at": "2026-02-20T07:54:28Z"
+        "reason": "Quality gate duplicate sentence detection",
+        "at": "2026-02-20T08:10:37Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-1568",
+          "title": "Improve judgment without adding course fatigue",
+          "status": "blocked",
+          "updated_at": "2026-02-20T08:10:37Z"
+        },
+        {
+          "id": "openclaw-1567",
+          "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T08:10:02Z"
+        },
+        {
+          "id": "openclaw-1566",
+          "title": "Use this exact article title: Use reflective debriefs after projects to strengthen learning t...",
+          "status": "completed",
+          "updated_at": "2026-02-20T08:03:43Z"
+        },
+        {
+          "id": "openclaw-1565",
+          "title": "Coach managers to run better learning conversations in weekly one on ones",
+          "status": "completed",
+          "updated_at": "2026-02-20T08:01:00Z"
+        },
+        {
+          "id": "openclaw-1564",
+          "title": "Use reflective debriefs after projects to strengthen learning transfer",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T08:00:28Z"
+        },
+        {
           "id": "openclaw-1563",
           "title": "Turn training requests into measurable capability outcomes",
-          "status": "blocked",
-          "updated_at": "2026-02-20T07:54:28Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T07:58:11Z"
         },
         {
           "id": "openclaw-1562",
           "title": "Help cross functional teams learn faster through shared project retrospectives",
-          "status": "blocked",
-          "updated_at": "2026-02-20T07:52:50Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T07:56:02Z"
         },
         {
           "id": "openclaw-1561",
           "title": "Turn training requests into measurable capability outcomes",
-          "status": "blocked",
-          "updated_at": "2026-02-20T07:51:17Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T07:56:02Z"
         },
         {
           "id": "openclaw-1560",
@@ -1358,36 +1362,6 @@
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
           "updated_at": "2026-02-20T07:51:06Z"
-        },
-        {
-          "id": "openclaw-1558",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:51:06Z"
-        },
-        {
-          "id": "openclaw-1557",
-          "title": "Improve judgment without adding course fatigue",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:47:39Z"
-        },
-        {
-          "id": "openclaw-1556",
-          "title": "Turn training requests into measurable capability outcomes",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:47:39Z"
-        },
-        {
-          "id": "openclaw-1555",
-          "title": "Turn training requests into measurable capability outcomes",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:45:39Z"
-        },
-        {
-          "id": "openclaw-1554",
-          "title": "Help cross functional teams learn faster through shared project retrospectives",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:42:33Z"
         }
       ],
       "recentOutputs": [
@@ -1404,7 +1378,7 @@
         {
           "id": "openclaw-1487",
           "row_id": 1487,
-          "title": "Design learning prompts that improve decisions during real project pressure",
+          "title": "",
           "status": "published",
           "url": "https://shreyaskorad.github.io/personal-website/posts/design-learning-prompts-that-improve-decisions-during-real-project-pressure-openclaw-1487.html",
           "slug": "design-learning-prompts-that-improve-decisions-during-real-project-pressure-openclaw-1487",
@@ -1414,7 +1388,7 @@
         {
           "id": "openclaw-1486",
           "row_id": 1486,
-          "title": "Design L&D experiments that improve team decisions",
+          "title": "",
           "status": "published",
           "url": "https://shreyaskorad.github.io/personal-website/posts/write-one-publish-ready-article-in-your-authentic-focus-areas-ld-gamification-lxd-data-i-openclaw-1486.html",
           "slug": "write-one-publish-ready-article-in-your-authentic-focus-areas-ld-gamification-lxd-data-i-openclaw-1486",
@@ -1424,7 +1398,7 @@
         {
           "id": "openclaw-1485",
           "row_id": 1485,
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "title": "",
           "status": "failed",
           "url": "",
           "slug": "",
@@ -1434,7 +1408,7 @@
         {
           "id": "openclaw-1484",
           "row_id": 1484,
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
+          "title": "",
           "status": "failed",
           "url": "",
           "slug": "",
@@ -1493,14 +1467,13 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-1504",
+        "focusTaskId": "openclaw-1566",
         "total": 9,
-        "done": 1,
-        "remaining": 8,
-        "doneIds": [
-          "topic-scout"
-        ],
+        "done": 0,
+        "remaining": 9,
+        "doneIds": [],
         "remainingIds": [
+          "topic-scout",
           "serp-keyword",
           "brief-architect",
           "research-analyst",
@@ -1510,19 +1483,19 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-19T10:37:53Z"
+        "lastStageAt": "2026-02-20T08:03:43Z"
       },
       "pipeline": {
         "workerStarted": true,
-        "tickInProgress": true,
-        "lastStatus": "running",
+        "tickInProgress": false,
+        "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-20T07:54:15Z",
-        "lastFinishedAt": "2026-02-20T07:53:30Z",
+        "lastStartedAt": "2026-02-20T08:10:01Z",
+        "lastFinishedAt": "2026-02-20T08:11:47Z",
         "runtime": {
-          "pending_inbox": 1,
+          "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 3
+          "blocked_or_failed_openclaw": 1
         }
       }
     },
@@ -1600,9 +1573,9 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-20T07:55:14Z",
+    "updatedAt": "2026-02-20T08:12:15Z",
     "metrics": {
-      "reviewRequested": 1,
+      "reviewRequested": 0,
       "proceedCount": 0,
       "closeCount": 0
     },

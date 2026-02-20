@@ -1,15 +1,15 @@
-# Deliverable: Coach managers to run better learning conversations in weekly one on ones
+# Deliverable: Improve judgment without adding course fatigue
 
-- Task ID: openclaw-1533
-- Status: cancelled
-- Created: 2026-02-20T05:33:19Z
-- Updated: 2026-02-20T05:58:08Z
+- Task ID: openclaw-1568
+- Status: blocked
+- Created: 2026-02-20T08:10:05Z
+- Updated: 2026-02-20T08:10:37Z
 
 ## Summary
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Create article with 0 duplicate sentences using extremely simple sentence structures
 
 ## Deliverable Output
-# Deliverable Draft: Coach Managers To Run Better Learning Conversations In Weekly One On Ones SEO blog operating system
+# Deliverable Draft: Improve Judgment Without Adding Course Fatigue SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Create article with 0 duplicate sentences using extremely simple sentence structures
+
+## Blockers / Notes
+Quality gate duplicate sentence detection
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

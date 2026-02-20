@@ -1,12 +1,12 @@
 # Deliverable: Turn training requests into measurable capability outcomes
 
 - Task ID: openclaw-1563
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-20T07:54:16Z
-- Updated: 2026-02-20T07:54:28Z
+- Updated: 2026-02-20T07:58:11Z
 
 ## Summary
-Create final article with extremely simple sentence structures and references to pass quality gate
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 # Deliverable Draft: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
@@ -55,10 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Create final article with extremely simple sentence structures and references to pass quality gate
-
-## Blockers / Notes
-Quality gate duplicate sentence detection persists despite multiple rewrites
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
