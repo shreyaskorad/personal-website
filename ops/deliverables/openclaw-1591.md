@@ -9,59 +9,21 @@
 No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-20T10:10:38Z)
+# Help cross functional teams learn faster through shared project
 
-## Last Error
-OpenClaw returned no usable markdown deliverable.
+For help cross functional teams learn faster through shared project, I focus less on content volume and more on the exact moment a team has to choose between speed and clarity. That is where capability either becomes visible or quietly disappears.
 
-## Draft Deliverable (Fallback)
-# Deliverable Draft: Use This Exact Article Title: Help Cross Functional Teams Learn Faster Through Shared Project SEO blog operating system
+Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
 
-## Objective and success metrics
-Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
+I start with one decision checkpoint, one owner, and one evidence signal that can be reviewed in the next team meeting. This keeps the experiment small enough to sustain and concrete enough to learn from.
 
-## Serialized agent roster
-1. Topic Scout - Identify high-upside topics tied to L&D, gamification, data, LXD, and AI.
-2. Keyword and SERP Analyst - Map keyword clusters, search intent, and competitor coverage gaps.
-3. Brief Architect - Convert strategy into a clear brief and outline with unique angle.
-4. Research Analyst - Gather credible source material and practical examples.
-5. Writer - Draft publishable post aligned with site voice and audience needs.
-6. Reader intent optimizer - Keep title, framing, and examples aligned to practical reader intent.
-7. Editor - Improve clarity, authority, and readability while preserving intent.
-8. Refresh Planner - Define update cadence to protect rankings and freshness.
-9. Publishing QA - Publish and verify the post is live and correctly indexed.
+Over time, teams build a cleaner evidence trail because each article connects a real scenario, a decision rule, and a reflection point. That continuity is what compounds learning value across iterations.
 
-## Workflow (intake to publish)
-1. Topic Scout identifies opportunities and ranks by business relevance.
-2. Keyword and SERP Analyst builds intent map and competitor gaps.
-3. Brief Architect converts strategy into outline and argument arc.
-4. Research Analyst gathers verified source notes and claims.
-5. Writer drafts publishable post in site format.
-6. SEO Optimizer improves title/meta/headings/internal links/schema.
-7. Editor finalizes voice, clarity, and readability.
-8. Refresh Planner defines update and republish triggers.
-9. Publishing QA uploads and validates end-to-end publish health.
+When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
-## Quality gates and acceptance criteria
-- Gate 1: topic and keyword fit for target audience intent.
-- Gate 2: evidence-backed draft with no fabricated claims.
-- Gate 3: on-page SEO checks pass before publish.
-- Gate 4: publishing QA confirms live URL and indexability.
+Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
 
-## Publishing QA checklist
-- Create/update post under `posts` and verify listing in `writing.html`.
-- Validate slug, canonical, meta title/description, and schema fields.
-- Verify HTTP 200 on final URL and correct render on desktop/mobile.
-- Confirm sitemap and RSS include the new post after publish.
-- Use `scripts/publish_post.py` when available for deterministic publishing.
-
-## Failure handling and fallback logic
-- If publish fails, do not mark task complete; create fix task with blocker evidence.
-- If SERP APIs/sources fail, retry sequentially with alternatives and direct sources.
-- Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
-
-## Notes
-Use this exact article title: Help cross functional teams learn faster through shared project retrospectives. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 3 credible source links from diverse domains. References are required in this run: include 3 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'.
+References: [ILO Digital Transformation and Skills](https://www.ilo.org/global/topics/future-of-work/publications/WCMS_856388/lang--en/index.htm); [World Economic Forum Future of Jobs 2025](https://www.weforum.org/reports/the-future-of-jobs-report-2025); [UNESCO Futures of Education](https://www.unesco.org/en/futures-education)
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
