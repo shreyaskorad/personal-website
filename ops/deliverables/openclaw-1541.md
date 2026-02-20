@@ -1,9 +1,9 @@
 # Deliverable: Turn training requests into measurable capability outcomes
 
-- Task ID: openclaw-1538
+- Task ID: openclaw-1541
 - Status: failed
-- Created: 2026-02-20T06:03:33Z
-- Updated: 2026-02-20T06:07:35Z
+- Created: 2026-02-20T06:22:56Z
+- Updated: 2026-02-20T06:22:59Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.

@@ -1,22 +1,21 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-20T06:07:35Z",
+    "updatedAt": "2026-02-20T06:22:59Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
-    "totalTasks": 5,
-    "queued": 1,
+    "totalTasks": 2,
+    "queued": 0,
     "active": 0,
     "completed": 1,
-    "due": 3,
-    "blocked": 3,
+    "due": 1,
+    "blocked": 1,
     "executedTotal": 12,
     "byStatus": {
-      "queued": 1,
       "completed": 1,
-      "failed": 3
+      "failed": 1
     }
   },
   "laneMetrics": {
@@ -25,100 +24,37 @@
       "executedTotal": 12
     },
     "queue": {
-      "visible": 1,
-      "totalQueued": 1
+      "visible": 0,
+      "totalQueued": 0
     },
     "completed": {
       "visible": 1,
       "totalClosed": 1
     },
     "due": {
-      "visible": 3,
+      "visible": 1,
       "reviewRequired": 0,
-      "failed": 3,
+      "failed": 1,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
-  "queueTop": [
-    {
-      "id": "inbox-1851",
-      "title": "Turn training requests into measurable capability outcomes",
-      "source": "dictation-router",
-      "priority": "high",
-      "status": "queued",
-      "sequence": 1,
-      "createdAt": "2026-02-17T16:19:28Z",
-      "updatedAt": "2026-02-20T06:07:35Z",
-      "completedAt": null,
-      "ageHours": 61.8,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Queued for OpenClaw execution (openclaw_infra_circuit_open:18m)",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=995",
-        "inbox_item_id=1851"
-      ],
-      "action": "create_task",
-      "scope": "professional",
-      "hasDeliverable": false,
-      "needsReview": false
-    }
-  ],
+  "queueTop": [],
   "userActionsDue": [
     {
-      "id": "openclaw-1538",
+      "id": "openclaw-1541",
       "title": "Turn training requests into measurable capability outcomes",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-20T06:03:33Z",
-      "updatedAt": "2026-02-20T06:07:35Z",
-      "completedAt": "2026-02-20T06:07:35Z",
-      "ageHours": 0.07,
+      "createdAt": "2026-02-20T06:22:56Z",
+      "updatedAt": "2026-02-20T06:22:59Z",
+      "completedAt": "2026-02-20T06:22:59Z",
+      "ageHours": 0.0,
       "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-1538.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-1537",
-      "title": "Help cross functional teams learn faster through shared project retrospectives",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "failed",
-      "sequence": 0,
-      "createdAt": "2026-02-20T06:00:25Z",
-      "updatedAt": "2026-02-20T06:00:27Z",
-      "completedAt": "2026-02-20T06:00:27Z",
-      "ageHours": 0.12,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-1537.md",
-      "notes": [
-        "OpenClaw SSH execution failed."
-      ],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-1535",
-      "title": "Use reflective debriefs after projects to strengthen learning transfer",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "failed",
-      "sequence": 0,
-      "createdAt": "2026-02-20T05:48:03Z",
-      "updatedAt": "2026-02-20T05:48:05Z",
-      "completedAt": "2026-02-20T05:48:05Z",
-      "ageHours": 0.33,
-      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-      "deliverableUrl": "/ops/deliverables/openclaw-1535.md",
+      "deliverableUrl": "/ops/deliverables/openclaw-1541.md",
       "notes": [
         "OpenClaw SSH execution failed."
       ],
@@ -138,7 +74,7 @@
       "createdAt": "2026-02-19T10:36:44Z",
       "updatedAt": "2026-02-19T10:37:53Z",
       "completedAt": "2026-02-19T10:37:53Z",
-      "ageHours": 19.51,
+      "ageHours": 19.77,
       "deliverySummary": "Checking existing published posts for duplicate titles, then running topic discovery sequence",
       "deliverableUrl": "/ops/deliverables/openclaw-1504.md",
       "notes": [],
@@ -162,32 +98,32 @@
     },
     {
       "level": "info",
-      "message": "Queue has 1 task(s). OpenClaw will continue dispatching sequentially while idle."
+      "message": "No queued or active execution tasks right now."
     },
     {
       "level": "warn",
-      "message": "'Tasks due from you' has 3 item(s): failed=3."
+      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
   "errors": [
     {
       "source": "openclaw",
+      "timestamp": "2026-02-20T06:22:59Z",
+      "message": "OpenClaw SSH execution failed."
+    },
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-20T06:16:07Z",
+      "message": "OpenClaw SSH execution failed."
+    },
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-20T06:09:14Z",
+      "message": "OpenClaw SSH execution failed."
+    },
+    {
+      "source": "openclaw",
       "timestamp": "2026-02-20T06:07:35Z",
-      "message": "OpenClaw SSH execution failed."
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T06:00:27Z",
-      "message": "OpenClaw SSH execution failed."
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T05:53:29Z",
-      "message": "OpenClaw SSH execution failed."
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T05:48:05Z",
       "message": "OpenClaw SSH execution failed."
     },
     {
@@ -202,6 +138,24 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-20T06:22:59Z",
+      "type": "skipped",
+      "taskId": "capture-1002",
+      "message": "Turn training requests into measurable capability outcomes: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-20T06:16:07Z",
+      "type": "skipped",
+      "taskId": "capture-996",
+      "message": "Turn training requests into measurable capability outcomes: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
+    {
+      "timestamp": "2026-02-20T06:09:14Z",
+      "type": "skipped",
+      "taskId": "capture-995",
+      "message": "Turn training requests into measurable capability outcomes: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)\nError: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
+    },
     {
       "timestamp": "2026-02-20T06:07:35Z",
       "type": "skipped",
@@ -543,28 +497,10 @@
       "type": "executed",
       "taskId": "capture-1046",
       "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-18T15:00:56Z",
-      "type": "executed",
-      "taskId": "capture-1045",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=19d39b86-293d-464a-bee7-c455263eea08): Executing 9-agent publishing workflow for decision quality article"
-    },
-    {
-      "timestamp": "2026-02-18T15:00:24Z",
-      "type": "executed",
-      "taskId": "capture-1045",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one on ones: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-18T14:59:00Z",
-      "type": "executed",
-      "taskId": "capture-1044",
-      "message": "Autonomous writing sprint: Coach managers to run better learning conversations in weekly one...: Delegated via OpenClaw SSH (status=completed, task_id=72b9ff79-3dd6-4f79-9a02-c2285ffa016f): ## Agent 1: Topic Scout\n\n**Candidate Topic Slates:**\n\n1. **AI feedback loops that surface blind spots, not just isolated wins**\n   - Thesis: Most teams use AI to surface highlights, not gaps\u2014shift focus to blind spots through feedback-driven loops\n   - Audience intent: L&D professionals struggling with superficial learning data\n   - Ranking opportunity: Data-informed LXD niche underserved\n\n2. **Learning rituals that survive first-year attrition**\n   - Thesis: Onboarding experiences designed for new hires often vanish as team composition shifts\n   - Audience intent: Managers building retention-focused learning infrastructure\n   - Ranking opportunity: Retention strategy category with LXD angle\n\n3. **Decision quality as the ultimate learning metric**\n   - Thesis: Track decisions not just completion; measure how well teams apply learning under pressure\n   - Audience intent: Data-driven leaders wanting business-aligned metrics\n   - Ranking opportunity: Decision science intersects L&D\n\n**Selected Topic:** AI feedback loops that surface blind spots, not just isolated wins\n\n**Primary Keyword:** AI-driven learning feedback loops\n**Supporting Entities:** Blind spot detection, LXD professionals, weekly cadence, continuous improvement\n**SERP Gap Note:** Content focuses on AI tools, not feedback systems for learning conversations\n**Internal Link Targets:** use-learning-data-to-surface-team-blind-spots-not-just-completion-metrics.html, real-time-ai-coaching-for-ldx-professionals.html\n\n## Agent 2: Brief Architect\n\n**Approved Brief:**\n\n**Title:** AI feedback loops that surface blind spots, not just isolated wins\n\n**Audience:** L&D professionals building AI-powered learning systems\n\n**Thesis:** Most teams use AI to surface highlights from learning conversations, but the real value comes from identifying blind spots across patterns of feedback\u2014not celebrating isolated wins.\n\n**Structure:**\n1. Lead: Connect AI to blind spot detection, not surface-level insights\n2. Core point: Define one leading metric (blind spots surfaced) and one lagging metric (decision quality improvement)\n3. Practical takeaway: Run one feedback-driven experiment in the next weekly LXD review\n4. Closing: Echo lead with blind spot focus\n\n**CTA:** Run one weekly blind-spot analysis using AI conversations\n\n**Evidence Requirements:**\n- NBER paper on feedback-driven improvement\n- Gallup study on feedback patterns\n- Our World in Data on AI adoption\n\n## Agent 3: Research Analyst\n\n**Source-Backed Notes:**\n\n| Section | Claim | Source | Notes |\n|---------|-------|--------|-------|\n| Blind spot detection | AI surfaces recurring gaps better than human reviewers | Gallup workplace feedback study | People miss patterns; AI catches cross-team trends |\n| Decision quality | Teams that prioritize blind spots improve decisions by measurable margin | NBER working paper 31161 | Feedback accelerates learning vs. single hits |\n| Weekly cadence | Shorter feedback cycles prevent small gaps from compounding | Custom industry patterns | Aligns with existing \"weekly\" post patterns |\n| Measurement | Track both blind spots surfaced and subsequent decision outcomes | Our World in Data AI adoption | Leading indicator feeds lagging improvement |\n\n**References:**\n- [1] NBER Working Paper 31161: Generative AI at Work\n- [2] Gallup State of the Global Workplace\n- [3] Our World in Data: Artificial Intelligence\n\n## Agent 4: Writer\n\n**Draft Post:**\n\n# AI feedback loops that surface blind spots, not just isolated wins\n\nWhile tools accelerate drafting, AI feedback loops that surface blind spots, not just isolated wins improves only when teams connect each recommendation to one measurable decision before the next weekly.\n\n## Core point\nMost teams use AI to surface highlights from learning conversations, but the real value comes from identifying blind spots across patterns of feedback\u2014not celebrating isolated wins. Track both leading indicators (blind spots surfaced) and lagging indicators (decision quality improvement) in your weekly reviews.\n\n## Practical takeaway\nName one leading metric and one lagging metric for your AI feedback system. Surface blind spots weekly, not monthly, and use the pattern data to spot gaps before they compound into systemic issues.\n\nAI feedback loops that surface blind spots, not just isolated wins starts with alignment: define what counts as a blind spot, surface it weekly, and trace how spotting it improves downstream decisions. Measure one leading KPI and one lagging KPI per sprint to avoid vague progress claims.\n\nNext week, run one focused experiment for AI feedback loops, compare baseline versus delta, and keep only the change that improves both blind spot detection and decision quality."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-20T06:07:35Z",
+    "updatedAt": "2026-02-20T06:22:59Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -765,6 +701,30 @@
     },
     "recentTasks": [
       {
+        "id": "openclaw-1541",
+        "title": "Turn training requests into measurable capability outcomes",
+        "status": "failed",
+        "updated_at": "2026-02-20T06:22:59Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-1540",
+        "title": "Turn training requests into measurable capability outcomes",
+        "status": "failed",
+        "updated_at": "2026-02-20T06:16:07Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-1539",
+        "title": "Turn training requests into measurable capability outcomes",
+        "status": "failed",
+        "updated_at": "2026-02-20T06:09:14Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
         "id": "openclaw-1538",
         "title": "Turn training requests into measurable capability outcomes",
         "status": "failed",
@@ -775,26 +735,26 @@
       {
         "id": "openclaw-1537",
         "title": "Help cross functional teams learn faster through shared project retrospectives",
-        "status": "failed",
-        "updated_at": "2026-02-20T06:00:27Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T06:20:40Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1536",
         "title": "Help cross functional teams learn faster through shared project retrospectives",
-        "status": "failed",
-        "updated_at": "2026-02-20T05:53:29Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T06:13:48Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1853.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1535",
         "title": "Use reflective debriefs after projects to strengthen learning transfer",
-        "status": "failed",
-        "updated_at": "2026-02-20T05:48:05Z",
-        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
-        "blockers": "OpenClaw SSH execution failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T06:08:26Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1534",
@@ -898,30 +858,6 @@
         "status": "cancelled",
         "updated_at": "2026-02-20T04:52:25Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1839.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1521",
-        "title": "Design without losing human judgment",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T04:43:23Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1520",
-        "title": "Design without losing human judgment",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T04:41:12Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1836.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1519",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T04:39:33Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
         "blockers": ""
       }
     ],
@@ -1346,29 +1282,10 @@
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
       "pendingQueue": {
-        "count": 2,
-        "inboxCount": 2,
+        "count": 0,
+        "inboxCount": 0,
         "openclawQueuedCount": 0,
-        "recent": [
-          {
-            "id": "inbox-1851",
-            "capture_id": 995,
-            "title": "Turn training requests into measurable capability outcomes",
-            "status": "pending",
-            "detail": "Queued for OpenClaw execution (openclaw_infra_circuit_open:18m)",
-            "created_at": "2026-02-17T16:19:28Z",
-            "executed_at": ""
-          },
-          {
-            "id": "inbox-1850",
-            "capture_id": 996,
-            "title": "Turn training requests into measurable capability outcomes",
-            "status": "pending",
-            "detail": "Queued for OpenClaw execution (openclaw_infra_circuit_open:19m)",
-            "created_at": "2026-02-17T16:22:23Z",
-            "executed_at": ""
-          }
-        ]
+        "recent": []
       },
       "focusNote": {
         "agent_id": "topic-scout",
@@ -1380,9 +1297,27 @@
       "bottleneck": {
         "state": "blocked",
         "reason": "OpenClaw SSH execution failed.",
-        "at": "2026-02-20T06:07:35Z"
+        "at": "2026-02-20T06:22:59Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-1541",
+          "title": "Turn training requests into measurable capability outcomes",
+          "status": "failed",
+          "updated_at": "2026-02-20T06:22:59Z"
+        },
+        {
+          "id": "openclaw-1540",
+          "title": "Turn training requests into measurable capability outcomes",
+          "status": "failed",
+          "updated_at": "2026-02-20T06:16:07Z"
+        },
+        {
+          "id": "openclaw-1539",
+          "title": "Turn training requests into measurable capability outcomes",
+          "status": "failed",
+          "updated_at": "2026-02-20T06:09:14Z"
+        },
         {
           "id": "openclaw-1538",
           "title": "Turn training requests into measurable capability outcomes",
@@ -1392,20 +1327,20 @@
         {
           "id": "openclaw-1537",
           "title": "Help cross functional teams learn faster through shared project retrospectives",
-          "status": "failed",
-          "updated_at": "2026-02-20T06:00:27Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T06:20:40Z"
         },
         {
           "id": "openclaw-1536",
           "title": "Help cross functional teams learn faster through shared project retrospectives",
-          "status": "failed",
-          "updated_at": "2026-02-20T05:53:29Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T06:13:48Z"
         },
         {
           "id": "openclaw-1535",
           "title": "Use reflective debriefs after projects to strengthen learning transfer",
-          "status": "failed",
-          "updated_at": "2026-02-20T05:48:05Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T06:08:26Z"
         },
         {
           "id": "openclaw-1534",
@@ -1424,24 +1359,6 @@
           "title": "Use reflective debriefs after projects to strengthen learning transfer",
           "status": "cancelled",
           "updated_at": "2026-02-20T05:52:41Z"
-        },
-        {
-          "id": "openclaw-1531",
-          "title": "Turn training requests into measurable capability outcomes",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T05:45:00Z"
-        },
-        {
-          "id": "openclaw-1530",
-          "title": "Measure skill transfer with lightweight evidence loops",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T05:38:35Z"
-        },
-        {
-          "id": "openclaw-1529",
-          "title": "Target practical intent in workplace learning content",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T05:33:18Z"
         }
       ],
       "recentOutputs": [
@@ -1571,10 +1488,10 @@
         "tickInProgress": true,
         "lastStatus": "running",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-20T06:03:32Z",
-        "lastFinishedAt": "2026-02-20T06:02:47Z",
+        "lastStartedAt": "2026-02-20T06:22:56Z",
+        "lastFinishedAt": "2026-02-20T06:22:11Z",
         "runtime": {
-          "pending_inbox": 2,
+          "pending_inbox": 0,
           "active_openclaw": 0,
           "blocked_or_failed_openclaw": 4
         }
@@ -1654,9 +1571,9 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-20T06:07:35Z",
+    "updatedAt": "2026-02-20T06:22:59Z",
     "metrics": {
-      "reviewRequested": 1,
+      "reviewRequested": 0,
       "proceedCount": 0,
       "closeCount": 0
     },
