@@ -1,12 +1,12 @@
 # Deliverable: Target practical intent in workplace learning content
 
 - Task ID: openclaw-1529
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-20T05:08:36Z
-- Updated: 2026-02-20T05:12:38Z
+- Updated: 2026-02-20T05:33:18Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1846.
 
 ## Deliverable Output
 # Deliverable Draft: Target Practical Intent In Workplace Learning Content SEO blog operating system
@@ -55,10 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
-
-## Blockers / Notes
-OpenClaw SSH execution failed.
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1846.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
