@@ -1,15 +1,15 @@
-# Deliverable: Turn training requests into measurable capability outcomes
+# Deliverable: Use reflective debriefs after projects to strengthen learning transfer
 
-- Task ID: openclaw-1527
+- Task ID: openclaw-1532
 - Status: failed
-- Created: 2026-02-20T04:53:14Z
-- Updated: 2026-02-20T04:57:44Z
+- Created: 2026-02-20T05:27:53Z
+- Updated: 2026-02-20T05:32:23Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-# Deliverable Draft: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
+# Deliverable Draft: Use Reflective Debriefs After Projects To Strengthen Learning Transfer SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
