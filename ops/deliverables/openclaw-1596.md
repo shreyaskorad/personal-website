@@ -1,21 +1,21 @@
-# Deliverable: Use this exact article title: Help cross functional teams learn faster through shared project...
+# Deliverable: Autonomous writing sprint: Turn training requests into measurable capability outcomes
 
-- Task ID: openclaw-1571
+- Task ID: openclaw-1596
 - Status: completed
-- Created: 2026-02-20T08:25:34Z
-- Updated: 2026-02-20T08:26:23Z
+- Created: 2026-02-20T10:15:25Z
+- Updated: 2026-02-20T10:15:38Z
 
 ## Summary
-Article ready for publish pipeline verification
+No summary provided.
 
 ## Deliverable Output
-_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-20T08:30:59Z)
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-20T10:15:52Z)
 
 ## Last Error
 OpenClaw returned no usable markdown deliverable.
 
 ## Draft Deliverable (Fallback)
-# Deliverable Draft: Use This Exact Article Title: Help Cross Functional Teams Learn Faster Through Shared Project SEO blog operating system
+# Deliverable Draft: Autonomous Writing Sprint: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -61,7 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Article ready for publish pipeline verification
+Use this exact article title: Turn training requests into measurable capability outcomes. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 3 credible source links from diverse domains. References are required in this run: include 3 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
