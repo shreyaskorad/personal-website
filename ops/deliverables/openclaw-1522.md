@@ -1,12 +1,12 @@
 # Deliverable: Build a practical LXD workflow for small teams shipping weekly
 
 - Task ID: openclaw-1522
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-20T04:39:33Z
-- Updated: 2026-02-20T04:40:24Z
+- Updated: 2026-02-20T04:52:25Z
 
 ## Summary
-Provide a specific, unique article title. Examples: 'Design learning reviews that focus on behavior shifts not completion dashboards' 'Gamification for decision quality not points' 'Create feedback rituals that change team behavior' 'AI learning tools that preserve judgment' Once specific title is provided, execute full publishing pipeline.
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1839.
 
 ## Deliverable Output
 ```json
@@ -26,9 +26,6 @@ Provide a specific, unique article title. Examples: 'Design learning reviews tha
   "estimated_remaining_minutes": 0
 }
 ```
-
-## Blockers / Notes
-Existing post with exact title match found: build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html (published Feb 19, 2026 at 23:48). This is a different topic from previous blocked posts but still conflicts with published content. Per duplication avoidance rules, cannot proceed with identical title.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

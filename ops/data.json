@@ -1,63 +1,85 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-20T04:40:24Z",
+    "updatedAt": "2026-02-20T04:57:46Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
     "totalTasks": 6,
-    "queued": 1,
+    "queued": 2,
     "active": 0,
-    "completed": 3,
-    "due": 2,
-    "blocked": 2,
-    "executedTotal": 7,
+    "completed": 1,
+    "due": 3,
+    "blocked": 3,
+    "executedTotal": 10,
     "byStatus": {
-      "queued": 1,
-      "completed": 3,
-      "blocked": 2
+      "queued": 2,
+      "completed": 1,
+      "failed": 3
     }
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 7
+      "executedTotal": 10
     },
     "queue": {
-      "visible": 1,
-      "totalQueued": 1
+      "visible": 2,
+      "totalQueued": 2
     },
     "completed": {
-      "visible": 3,
-      "totalClosed": 3
+      "visible": 1,
+      "totalClosed": 1
     },
     "due": {
-      "visible": 2,
+      "visible": 3,
       "reviewRequired": 0,
-      "failed": 0,
-      "blocked": 2,
+      "failed": 3,
+      "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [
     {
-      "id": "inbox-1823",
-      "title": "Design manager enablement that links coaching actions to team capability growth",
+      "id": "inbox-1839",
+      "title": "Target practical intent in workplace learning content",
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
       "sequence": 1,
-      "createdAt": "2026-02-18T16:26:48Z",
-      "updatedAt": "2026-02-20T04:40:24Z",
+      "createdAt": "2026-02-18T07:21:12Z",
+      "updatedAt": "2026-02-20T04:57:46Z",
       "completedAt": null,
-      "ageHours": 36.23,
+      "ageHours": 45.61,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
-        "capture_id=1051",
-        "inbox_item_id=1823"
+        "capture_id=1020",
+        "inbox_item_id=1839"
+      ],
+      "action": "create_task",
+      "scope": "professional",
+      "hasDeliverable": false,
+      "needsReview": false
+    },
+    {
+      "id": "inbox-1838",
+      "title": "Measure skill transfer with lightweight evidence loops",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 2,
+      "createdAt": "2026-02-18T06:35:19Z",
+      "updatedAt": "2026-02-20T04:57:46Z",
+      "completedAt": null,
+      "ageHours": 46.38,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=1018",
+        "inbox_item_id=1838"
       ],
       "action": "create_task",
       "scope": "professional",
@@ -67,40 +89,60 @@
   ],
   "userActionsDue": [
     {
-      "id": "openclaw-1522",
-      "title": "Build a practical LXD workflow for small teams shipping weekly",
+      "id": "openclaw-1527",
+      "title": "Turn training requests into measurable capability outcomes",
       "source": "openclaw",
       "priority": "medium",
-      "status": "blocked",
+      "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-20T04:39:33Z",
-      "updatedAt": "2026-02-20T04:40:24Z",
-      "completedAt": null,
-      "ageHours": 0.01,
-      "deliverySummary": "Provide a specific, unique article title. Examples: 'Design learning reviews that focus on behavior shifts not completion dashboards' 'Gamification for decision quality not points' 'Create feedback rituals that change team behavior' 'AI learning tools that preserve judgment' Once specific title is provided, execute full publishing pipeline.",
-      "deliverableUrl": "/ops/deliverables/openclaw-1522.md",
+      "createdAt": "2026-02-20T04:53:14Z",
+      "updatedAt": "2026-02-20T04:57:44Z",
+      "completedAt": "2026-02-20T04:57:44Z",
+      "ageHours": 0.08,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-1527.md",
       "notes": [
-        "Existing post with exact title match found: build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html (published Feb 19, 2026 at 23:48). This is a different topic from previous blocked posts but still conflicts with published content. Per duplication avoidance rules, cannot proceed with identical title."
+        "OpenClaw SSH execution failed."
       ],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
     },
     {
-      "id": "openclaw-1521",
+      "id": "openclaw-1526",
       "title": "Design without losing human judgment",
       "source": "openclaw",
       "priority": "medium",
-      "status": "blocked",
+      "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-20T04:38:09Z",
-      "updatedAt": "2026-02-20T04:38:44Z",
-      "completedAt": null,
-      "ageHours": 0.04,
-      "deliverySummary": "Provide a specific, unique article title. Examples: 'Build judgment training without course fatigue' 'Gamification for decision quality not completion rates' 'Design feedback loops that change team behavior' 'AI learning tools that preserve judgment not replace it' Once specific title is provided, execute full publishing pipeline with topic discovery, research, writing, and verification.",
-      "deliverableUrl": "/ops/deliverables/openclaw-1521.md",
+      "createdAt": "2026-02-20T04:52:25Z",
+      "updatedAt": "2026-02-20T04:53:10Z",
+      "completedAt": "2026-02-20T04:53:10Z",
+      "ageHours": 0.09,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-1526.md",
       "notes": [
-        "Fifth consecutive submission of same task with identical title 'Design without losing human judgment'. Each submission provides truncated description that lists focus areas but no specific article topic. Published post exists at design-without-losing-human-judgment.html with identical title and meta description. Task cannot proceed until unique title is specified."
+        "OpenClaw SSH execution failed."
+      ],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
+    {
+      "id": "openclaw-1525",
+      "title": "Measure skill transfer with lightweight evidence loops",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "failed",
+      "sequence": 0,
+      "createdAt": "2026-02-20T04:44:38Z",
+      "updatedAt": "2026-02-20T04:49:08Z",
+      "completedAt": "2026-02-20T04:49:08Z",
+      "ageHours": 0.22,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-1525.md",
+      "notes": [
+        "OpenClaw SSH execution failed."
       ],
       "scope": "professional",
       "hasDeliverable": true,
@@ -118,45 +160,9 @@
       "createdAt": "2026-02-19T10:36:44Z",
       "updatedAt": "2026-02-19T10:37:53Z",
       "completedAt": "2026-02-19T10:37:53Z",
-      "ageHours": 18.06,
+      "ageHours": 18.35,
       "deliverySummary": "Checking existing published posts for duplicate titles, then running topic discovery sequence",
       "deliverableUrl": "/ops/deliverables/openclaw-1504.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-1487",
-      "title": "Design learning prompts that improve decisions during real project pressure",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-18T15:05:22Z",
-      "updatedAt": "2026-02-18T15:05:35Z",
-      "completedAt": "2026-02-18T15:05:35Z",
-      "ageHours": 37.58,
-      "deliverySummary": "Complete agents 6-9: reader intent optimizer, editor, refresh planner, publishing QA",
-      "deliverableUrl": "/ops/deliverables/openclaw-1487.md",
-      "notes": [],
-      "scope": "professional",
-      "hasDeliverable": true,
-      "needsReview": false
-    },
-    {
-      "id": "openclaw-1486",
-      "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-      "source": "openclaw",
-      "priority": "medium",
-      "status": "completed",
-      "sequence": 0,
-      "createdAt": "2026-02-18T15:02:25Z",
-      "updatedAt": "2026-02-18T15:03:16Z",
-      "completedAt": "2026-02-18T15:03:16Z",
-      "ageHours": 37.63,
-      "deliverySummary": "Complete agent 6 (reader intent optimization), agent 7 (editor), agent 8 (refresh planner), then agent 9 (publishing QA)",
-      "deliverableUrl": "/ops/deliverables/openclaw-1486.md",
       "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
@@ -178,28 +184,28 @@
     },
     {
       "level": "info",
-      "message": "Queue has 1 task(s). OpenClaw will continue dispatching sequentially while idle."
+      "message": "Queue has 2 task(s). OpenClaw will continue dispatching sequentially while idle."
     },
     {
       "level": "warn",
-      "message": "'Tasks due from you' has 2 item(s): blocked=2."
+      "message": "'Tasks due from you' has 3 item(s): failed=3."
     }
   ],
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T04:40:24Z",
-      "message": "Existing post with exact title match found: build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html (published Feb 19, 2026 at 23:48). This is a different topic from previous blocked posts but still conflicts with published content. Per duplication avoidance rules, cannot proceed with identical title."
+      "timestamp": "2026-02-20T04:57:44Z",
+      "message": "OpenClaw SSH execution failed."
     },
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T04:38:44Z",
-      "message": "Fifth consecutive submission of same task with identical title 'Design without losing human judgment'. Each submission provides truncated description that lists focus areas but no specific article topic. Published post exists at design-without-losing-human-judgment.html with identical title and meta description. Task cannot proceed until unique title is specified."
+      "timestamp": "2026-02-20T04:53:10Z",
+      "message": "OpenClaw SSH execution failed."
     },
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T04:37:24Z",
-      "message": "Task title 'Design without losing human judgment' has been blocked four times (Feb 19 and Feb 20, 2026) because it matches an existing published post with identical title and meta description. Each re-issue provides the same truncated description without a specific unique article topic. Cannot proceed with identical topic."
+      "timestamp": "2026-02-20T04:49:08Z",
+      "message": "OpenClaw SSH execution failed."
     },
     {
       "source": "openclaw",
@@ -213,16 +219,41 @@
     },
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T04:37:24Z",
-      "message": "Publish quality gate failed."
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T04:40:24Z",
+      "timestamp": "2026-02-20T04:52:11Z",
       "message": "Publish quality gate failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-20T04:57:44Z",
+      "type": "skipped",
+      "taskId": "capture-1012",
+      "message": "Turn training requests into measurable capability outcomes: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+    },
+    {
+      "timestamp": "2026-02-20T04:53:10Z",
+      "type": "skipped",
+      "taskId": "capture-1010",
+      "message": "Use AI in learning design without losing human judgment: OpenClaw SSH execution failed: OpenClaw SSH command failed: return code 255"
+    },
+    {
+      "timestamp": "2026-02-20T04:49:08Z",
+      "type": "skipped",
+      "taskId": "capture-1051",
+      "message": "Measure skill transfer with lightweight evidence loops: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
+    },
+    {
+      "timestamp": "2026-02-20T04:44:13Z",
+      "type": "executed",
+      "taskId": "capture-1042",
+      "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=blocked, task_id=61cbc69e-d683-400b-bdce-daec17067898): Eighth identical duplicate submission"
+    },
+    {
+      "timestamp": "2026-02-20T04:42:37Z",
+      "type": "executed",
+      "taskId": "capture-1018",
+      "message": "Design onboarding that builds role judgment instead of checklist compliance: Delegated via OpenClaw SSH (status=blocked, task_id=e759991e-13c8-4149-95c7-0c05f9f09d59): Duplicate title: design-onboarding-that-builds-role-judgment-instead-of-checklist-compliance.html"
+    },
     {
       "timestamp": "2026-02-20T04:40:24Z",
       "type": "executed",
@@ -552,40 +583,10 @@
       "type": "executed",
       "taskId": "capture-1040",
       "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=a51fce57-f537-437c-ba18-4b285ccada14): Republished LXD workflow post with strict style rules and embedded citations"
-    },
-    {
-      "timestamp": "2026-02-18T14:32:23Z",
-      "type": "executed",
-      "taskId": "capture-1040",
-      "message": "Autonomous writing sprint: Build a practical LXD workflow for small teams shipping weekly: Autonomous blog task seeded and queued for OpenClaw."
-    },
-    {
-      "timestamp": "2026-02-18T14:31:01Z",
-      "type": "executed",
-      "taskId": "capture-1039",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: Delegated via OpenClaw SSH (status=completed, task_id=bb6fafb6-fb09-40aa-9491-6753c322f6ea): Republished LXD workflow post with strict style rules and embedded citations"
-    },
-    {
-      "timestamp": "2026-02-18T14:26:43Z",
-      "type": "skipped",
-      "taskId": "capture-1039",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-18T14:19:03Z",
-      "type": "skipped",
-      "taskId": "capture-1039",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command failed: Gateway agent failed; falling back to embedded: Error: Error: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: LLM request timed out. (unknown)\nError: All models failed (9): zai/glm-4.7-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.7-flashx: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.6: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-flash: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5-air: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | zai/glm-4.5: Provider zai is in cooldown (all profiles unavailable) (rate_limit) | openrouter/z-ai/glm-4.7-flash: Provider openrouter is in cooldown (all profiles unavailable) (rate_limit)"
-    },
-    {
-      "timestamp": "2026-02-18T14:11:30Z",
-      "type": "skipped",
-      "taskId": "capture-1039",
-      "message": "Build a practical LXD workflow for small teams shipping weekly: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-20T04:40:24Z",
+    "updatedAt": "2026-02-20T04:57:46Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -666,7 +667,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-20T04:24:52Z",
+      "asOf": "2026-02-20T04:57:51Z",
       "lookbackDays": 28,
       "summary": {
         "users": 35,
@@ -769,8 +770,8 @@
       ],
       "error": "",
       "cache": {
-        "hit": true,
-        "fetchedAt": "2026-02-20T04:24:52Z"
+        "hit": false,
+        "fetchedAt": "2026-02-20T04:57:51Z"
       }
     },
     "taskStats": {
@@ -779,35 +780,75 @@
       "queued": 0,
       "blocked": 3,
       "byStatus": {
-        "blocked": 3,
+        "failed": 3,
         "cancelled": 71,
         "completed": 6
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-1527",
+        "title": "Turn training requests into measurable capability outcomes",
+        "status": "failed",
+        "updated_at": "2026-02-20T04:57:44Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-1526",
+        "title": "Design without losing human judgment",
+        "status": "failed",
+        "updated_at": "2026-02-20T04:53:10Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-1525",
+        "title": "Measure skill transfer with lightweight evidence loops",
+        "status": "failed",
+        "updated_at": "2026-02-20T04:49:08Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-1524",
+        "title": "Design without losing human judgment",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T04:52:25Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1523",
+        "title": "Design onboarding that builds role judgment instead of checklist compliance",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T04:52:25Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1838.",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-1522",
         "title": "Build a practical LXD workflow for small teams shipping weekly",
-        "status": "blocked",
-        "updated_at": "2026-02-20T04:40:24Z",
-        "next_steps": "Provide a specific, unique article title. Examples: 'Design learning reviews that focus on behavior shifts not completion dashboards' 'Gamification for decision quality not points' 'Create feedback rituals that change team behavior' 'AI learning tools that preserve judgment' Once specific title is provided, execute full publishing pipeline.",
-        "blockers": "Existing post with exact title match found: build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html (published Feb 19, 2026 at 23:48). This is a different topic from previous blocked posts but still conflicts with published content. Per duplication avoidance rules, cannot proceed with identical title."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T04:52:25Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1839.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1521",
         "title": "Design without losing human judgment",
-        "status": "blocked",
-        "updated_at": "2026-02-20T04:38:44Z",
-        "next_steps": "Provide a specific, unique article title. Examples: 'Build judgment training without course fatigue' 'Gamification for decision quality not completion rates' 'Design feedback loops that change team behavior' 'AI learning tools that preserve judgment not replace it' Once specific title is provided, execute full publishing pipeline with topic discovery, research, writing, and verification.",
-        "blockers": "Fifth consecutive submission of same task with identical title 'Design without losing human judgment'. Each submission provides truncated description that lists focus areas but no specific article topic. Published post exists at design-without-losing-human-judgment.html with identical title and meta description. Task cannot proceed until unique title is specified."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T04:43:23Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1520",
         "title": "Design without losing human judgment",
-        "status": "blocked",
-        "updated_at": "2026-02-20T04:37:24Z",
-        "next_steps": "Provide a specific, unique title. Examples: 'Build decision quality training without course fatigue' 'Gamification for decision quality not completion rates' 'Design learning feedback loops that change behavior' 'AI tools that preserve judgment not replace it' Once a unique title is provided, execute full publishing pipeline.",
-        "blockers": "Task title 'Design without losing human judgment' has been blocked four times (Feb 19 and Feb 20, 2026) because it matches an existing published post with identical title and meta description. Each re-issue provides the same truncated description without a specific unique article topic. Cannot proceed with identical topic."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T04:41:12Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1836.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1519",
@@ -904,51 +945,37 @@
         "updated_at": "2026-02-19T17:58:44Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1825.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-1507",
-        "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "cancelled",
-        "updated_at": "2026-02-19T11:26:10Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1823.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1506",
-        "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-        "status": "cancelled",
-        "updated_at": "2026-02-19T11:20:42Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1821.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1505",
-        "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "cancelled",
-        "updated_at": "2026-02-19T11:08:08Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1819.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1504",
-        "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "completed",
-        "updated_at": "2026-02-19T10:37:53Z",
-        "next_steps": "Checking existing published posts for duplicate titles, then running topic discovery sequence",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1503",
-        "title": "Design manager enablement that links coaching actions to team capability growth",
-        "status": "cancelled",
-        "updated_at": "2026-02-19T10:51:53Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1818.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 1663,
+          "created_at": "2026-02-20T04:44:13Z",
+          "capture_id": 1042,
+          "openclaw_row_id": 1524,
+          "source": "openclaw_ssh",
+          "task_title": "Design without losing human judgment",
+          "agent_id": "topic-scout",
+          "agent_role": "Topic Scout",
+          "note": "Eighth identical submission blocked. This task has been submitted eight times now with the same truncated description and same duplicate title. Four of those submissions were the same title (design-without-losing-human-judgment). The task description only lists focus areas, not an article topic. The user appears to...",
+          "action_hint": "Provide the most definitive block yet. Explain that this is now the eighth identical submission and that the system will continue to block duplicates indefinitely. Do not attempt to auto-generate titles or topics from the truncated description.",
+          "handoff_to": "supervisor"
+        },
+        {
+          "id": 1662,
+          "created_at": "2026-02-20T04:42:37Z",
+          "capture_id": 1018,
+          "openclaw_row_id": 1523,
+          "source": "openclaw_ssh",
+          "task_title": "Design onboarding that builds role judgment instead of checklist compliance",
+          "agent_id": "topic-scout",
+          "agent_role": "Topic Scout",
+          "note": "Seventh duplicate title blocked. This is the second time this specific title has been submitted (original block was Feb 18, 2026 at 18:35). Pattern across 2 days and 7 submissions: every single title provided by user conflicts with existing published content. This indicates either (1) user is unaware of existing pos...",
+          "action_hint": "Provide final definitive block. Explain that submitting duplicate titles will not result in successful publishing. The system has identified duplicates for every title submitted across two days. This task requires a specific unique article topic from the user.",
+          "handoff_to": "supervisor"
+        },
         {
           "id": 1661,
           "created_at": "2026-02-20T04:40:24Z",
@@ -1117,43 +1144,17 @@
           "note": "Verified existing published post via file system check. Exact title match found (published Feb 18, 2026). Cannot proceed with identical title per duplication avoidance rules.",
           "action_hint": "Request new title or revision direction from user.",
           "handoff_to": "supervisor"
-        },
-        {
-          "id": 1648,
-          "created_at": "2026-02-18T15:59:35Z",
-          "capture_id": 1049,
-          "openclaw_row_id": 1497,
-          "source": "openclaw_ssh",
-          "task_title": "Improve judgment without adding course fatigue",
-          "agent_id": "topic-scout",
-          "agent_role": "Topic Scout",
-          "note": "Verified existing published post via file system check and site access. Exact title match found (published 2026-02-12). Cannot proceed with identical title per duplication avoidance rules.",
-          "action_hint": "Request new title or revision direction from user.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 1647,
-          "created_at": "2026-02-18T15:56:15Z",
-          "capture_id": 1049,
-          "openclaw_row_id": 1496,
-          "source": "openclaw_ssh",
-          "task_title": "Improve judgment without adding course fatigue",
-          "agent_id": "topic-scout",
-          "agent_role": "Topic Scout",
-          "note": "Verified existing published post via file system check and site access. Exact title match found (published 2026-02-12). Cannot proceed with identical title per duplication avoidance rules.",
-          "action_hint": "Request new title or revision direction from user.",
-          "handoff_to": "supervisor"
         }
       ]
     },
     "publishStats": {
       "total": 80,
-      "published": 14,
-      "failed": 66,
+      "published": 19,
+      "failed": 61,
       "ignored": 0,
       "byStatus": {
-        "published": 14,
-        "failed": 66
+        "published": 19,
+        "failed": 61
       },
       "recent": [
         {
@@ -1341,18 +1342,18 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 10,
+        "completed": 9,
         "active": 0,
         "queued": 0,
         "blocked": 3,
-        "cancelled": 107
+        "cancelled": 108
       },
       "today": {
         "completed": 0,
         "active": 0,
         "queued": 0,
         "blocked": 3,
-        "published": 4
+        "published": 9
       },
       "activeTask": null,
       "lastCompletedTask": {
@@ -1367,17 +1368,26 @@
         "description": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical: decision quality, evidence linked to business metrics, and real implementation examples. Follow strict style rules: 150-200 words, no bullets, no em dash, no blockquotes. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow."
       },
       "pendingQueue": {
-        "count": 1,
-        "inboxCount": 1,
+        "count": 2,
+        "inboxCount": 2,
         "openclawQueuedCount": 0,
         "recent": [
           {
-            "id": "inbox-1823",
-            "capture_id": 1051,
-            "title": "Design manager enablement that links coaching actions to team capability growth",
+            "id": "inbox-1839",
+            "capture_id": 1020,
+            "title": "Target practical intent in workplace learning content",
             "status": "pending",
             "detail": "Waiting for OpenClaw execution",
-            "created_at": "2026-02-18T16:26:48Z",
+            "created_at": "2026-02-18T07:21:12Z",
+            "executed_at": ""
+          },
+          {
+            "id": "inbox-1838",
+            "capture_id": 1018,
+            "title": "Measure skill transfer with lightweight evidence loops",
+            "status": "pending",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-18T06:35:19Z",
             "executed_at": ""
           }
         ]
@@ -1391,27 +1401,57 @@
       },
       "bottleneck": {
         "state": "blocked",
-        "reason": "Existing post with exact title match found: build-a-practical-lxd-workflow-for-small-teams-shipping-weekly.html (published Feb 19, 2026 at 23:48). This is a different topic from previous blocked posts but still conflicts with published content. Per duplication avoidance rules, cannot proceed with identical title.",
-        "at": "2026-02-20T04:40:24Z"
+        "reason": "OpenClaw SSH execution failed.",
+        "at": "2026-02-20T04:57:44Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-1527",
+          "title": "Turn training requests into measurable capability outcomes",
+          "status": "failed",
+          "updated_at": "2026-02-20T04:57:44Z"
+        },
+        {
+          "id": "openclaw-1526",
+          "title": "Design without losing human judgment",
+          "status": "failed",
+          "updated_at": "2026-02-20T04:53:10Z"
+        },
+        {
+          "id": "openclaw-1525",
+          "title": "Measure skill transfer with lightweight evidence loops",
+          "status": "failed",
+          "updated_at": "2026-02-20T04:49:08Z"
+        },
+        {
+          "id": "openclaw-1524",
+          "title": "Design without losing human judgment",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T04:52:25Z"
+        },
+        {
+          "id": "openclaw-1523",
+          "title": "Design onboarding that builds role judgment instead of checklist compliance",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T04:52:25Z"
+        },
+        {
           "id": "openclaw-1522",
           "title": "Build a practical LXD workflow for small teams shipping weekly",
-          "status": "blocked",
-          "updated_at": "2026-02-20T04:40:24Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T04:52:25Z"
         },
         {
           "id": "openclaw-1521",
           "title": "Design without losing human judgment",
-          "status": "blocked",
-          "updated_at": "2026-02-20T04:38:44Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T04:43:23Z"
         },
         {
           "id": "openclaw-1520",
           "title": "Design without losing human judgment",
-          "status": "blocked",
-          "updated_at": "2026-02-20T04:37:24Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T04:41:12Z"
         },
         {
           "id": "openclaw-1519",
@@ -1424,36 +1464,6 @@
           "title": "Design without losing human judgment",
           "status": "cancelled",
           "updated_at": "2026-02-20T04:38:09Z"
-        },
-        {
-          "id": "openclaw-1517",
-          "title": "Design without losing human judgment",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T04:36:41Z"
-        },
-        {
-          "id": "openclaw-1516",
-          "title": "Design without losing human judgment",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T04:32:30Z"
-        },
-        {
-          "id": "openclaw-1515",
-          "title": "Design onboarding that builds role judgment instead of checklist compliance",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T04:32:30Z"
-        },
-        {
-          "id": "openclaw-1514",
-          "title": "Design onboarding that builds role judgment instead of checklist compliance",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T04:24:48Z"
-        },
-        {
-          "id": "openclaw-1513",
-          "title": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T04:24:48Z"
         }
       ],
       "recentOutputs": [
@@ -1580,15 +1590,15 @@
       },
       "pipeline": {
         "workerStarted": true,
-        "tickInProgress": true,
-        "lastStatus": "running",
+        "tickInProgress": false,
+        "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-20T04:39:33Z",
-        "lastFinishedAt": "2026-02-20T04:38:48Z",
+        "lastStartedAt": "2026-02-20T04:53:14Z",
+        "lastFinishedAt": "2026-02-20T04:57:45Z",
         "runtime": {
-          "pending_inbox": 1,
+          "pending_inbox": 2,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 5
+          "blocked_or_failed_openclaw": 4
         }
       }
     },
@@ -1620,8 +1630,28 @@
         "sitemap": true,
         "rss": true
       },
-      "post_count": 90,
+      "post_count": 95,
       "recent_posts": [
+        {
+          "name": "use-gamification-for-behavior-change-not-points-or-badges.html",
+          "updated_at": "2026-02-20T04:57:44Z"
+        },
+        {
+          "name": "connect-learning-evidence-to-business-metrics-leaders-trust.html",
+          "updated_at": "2026-02-20T04:51:24Z"
+        },
+        {
+          "name": "how-build-practice-reshapes-workflow-performance-at-work.html",
+          "updated_at": "2026-02-20T04:50:49Z"
+        },
+        {
+          "name": "a-field-note-on-without-choices-that-improve-work-outcomes.html",
+          "updated_at": "2026-02-20T04:50:01Z"
+        },
+        {
+          "name": "where-work-teams-lose-momentum-and-how-write-habits-recover-it.html",
+          "updated_at": "2026-02-20T04:49:12Z"
+        },
         {
           "name": "make-learning-evidence-useful-for-business-reviews-without-heavy-reporting-overhead.html",
           "updated_at": "2026-02-20T04:38:46Z"
@@ -1641,34 +1671,14 @@
         {
           "name": "weekly-ai-assisted-learning-retrospectives-that-improve-manager-decision-quality-with-con.html",
           "updated_at": "2026-02-20T04:26:15Z"
-        },
-        {
-          "name": "design-without-losing-human-judgment.html",
-          "updated_at": "2026-02-19T18:44:14Z"
-        },
-        {
-          "name": "design-onboarding-that-builds-role-judgment-instead-of-checklist-compliance.html",
-          "updated_at": "2026-02-19T18:44:11Z"
-        },
-        {
-          "name": "using-ai-learning-scorecards-to-improve-quarterly-ld-decisions-with-one-concrete-case-and.html",
-          "updated_at": "2026-02-19T18:44:11Z"
-        },
-        {
-          "name": "where-work-strategy-breaks-and-how-teams-fix-write-execution.html",
-          "updated_at": "2026-02-19T18:32:20Z"
-        },
-        {
-          "name": "build-feedback-rituals-that-convert-learning-into-visible-team-behavior.html",
-          "updated_at": "2026-02-19T18:31:35Z"
         }
       ]
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-20T04:40:24Z",
+    "updatedAt": "2026-02-20T04:57:46Z",
     "metrics": {
-      "reviewRequested": 1,
+      "reviewRequested": 2,
       "proceedCount": 0,
       "closeCount": 0
     },
