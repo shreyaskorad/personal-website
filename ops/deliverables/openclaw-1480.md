@@ -1,12 +1,12 @@
 # Deliverable: Design without losing human judgment
 
 - Task ID: openclaw-1480
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-18T14:42:59Z
-- Updated: 2026-02-19T18:17:34Z
+- Updated: 2026-02-19T18:26:48Z
 
 ## Summary
-Rewrite required before publish. Violations: references do not expand source pool with new domains
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1829.
 
 ## Deliverable Output
 # Design without losing human judgment
@@ -23,9 +23,6 @@ This practice stays credible when manager coaching improves decision quality, st
 
 ## References
 See [OECD AI Policy Observatory](https://oecd.ai/); [McKinsey - The state of AI](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai); [Harvard Business Review](https://hbr.org/); [World Economic Forum](https://www.weforum.org/); [UNESCO on AI and education](https://www.unesco.org/en/digital-education/artificial-intelligence); [World Bank Education](https://www.worldbank.org/en/topic/education); [CIPD Learning and development](https://www.cipd.org/uk/topics/learning-development/); [ATD Research](https://www.td.org/insights); [Learning Guild resources](https://www.learningguild.com/); [MIT Sloan Management Review](https://sloanreview.mit.edu/).
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
