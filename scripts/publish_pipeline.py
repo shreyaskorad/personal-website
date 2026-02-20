@@ -31,12 +31,12 @@ QUALITY_MAX_PASSES = 4
 QUALITY_DELTA_PER_ITERATION = 0
 QUALITY_MIN_WORDS = 170
 QUALITY_MAX_WORDS = 300
-QUALITY_MIN_HEADINGS = 2
+QUALITY_MIN_HEADINGS = 0
 QUALITY_MIN_PARAGRAPHS = 5
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
 CITATION_MAX_COUNT = 4
-DISABLE_BODY_H2 = False
+DISABLE_BODY_H2 = True
 
 STUDY_SOURCE_POOL = [
     {
@@ -123,6 +123,10 @@ STYLE_DRIFT_PATTERNS = [
     re.compile(r'\bclarify one constraint\b', flags=re.IGNORECASE),
     re.compile(r'\bkeep one claim and one proof point\b', flags=re.IGNORECASE),
     re.compile(r'\bproduced visible improvement\b', flags=re.IGNORECASE),
+    re.compile(r'\bwhen i work on\b', flags=re.IGNORECASE),
+    re.compile(r'\bpractical guidance for teams\b', flags=re.IGNORECASE),
+    re.compile(r'\buse one baseline metric,\s*one weekly experiment\b', flags=re.IGNORECASE),
+    re.compile(r'\bkeep .{0,90} practical by pairing one study link\b', flags=re.IGNORECASE),
 ]
 
 UNSPLASH_THEME_IDS = {
@@ -395,6 +399,8 @@ def sanitize_content_line(text: str) -> str:
         return ''
     if is_likely_sentence_fragment(value):
         return ''
+    if any(pattern.search(value) for pattern in STYLE_DRIFT_PATTERNS):
+        return ''
     if value[-1] not in '.!?':
         value += '.'
     return value
@@ -436,10 +442,10 @@ def ensure_sections(raw_sections: Any, lead: str, excerpt: str, closing: str, ti
         return ensure_section_headings(sections, title)
 
     body_a = sanitize_content_line(excerpt) or sanitize_content_line(lead) or sanitize_content_line(
-        f'{title} is changing how we work and decide.'
+        f'{title} is useful only when it improves a recurring decision in real work.'
     )
     body_b = sanitize_content_line(closing) or sanitize_content_line(
-        'The shift is practical: tools are faster, but judgment and direction still matter most.'
+        'The practical move is to test one small change, review outcomes weekly, and keep only what improves execution.'
     )
     warn('Payload sections were incomplete; generated fallback sections')
     fallback = [
@@ -448,7 +454,7 @@ def ensure_sections(raw_sections: Any, lead: str, excerpt: str, closing: str, ti
             'paragraphs': [
                 body_a,
                 sanitize_content_line(
-                    'Teams that link learning activity to real project outcomes improve judgment quality and reduce avoidable rework.'
+                    'Teams get better outcomes when they connect learning moments to actual handoffs, reviews, and coaching conversations.'
                 ),
             ],
         },
@@ -457,7 +463,7 @@ def ensure_sections(raw_sections: Any, lead: str, excerpt: str, closing: str, ti
             'paragraphs': [
                 body_b,
                 sanitize_content_line(
-                    'Set a weekly cadence to review one baseline metric, one change introduced, and one observed delta before publishing the next iteration.'
+                    'Choose one decision checkpoint this week, assign ownership, and compare behavior before and after the change.'
                 ),
             ],
         },
@@ -1307,9 +1313,9 @@ def reinforce_clarity(payload: dict[str, Any]) -> None:
 def reinforce_specificity(payload: dict[str, Any]) -> None:
     topic = sanitize_text(payload.get('title', 'this topic')).lower()
     options = [
-        f'Name one leading and one lagging metric for {topic}, then define the weekly review point for both.',
-        f'For {topic}, state the baseline value first and then add the target value so progress can be assessed quickly.',
-        f'Keep specificity high in {topic} by tying each recommendation to one measurable indicator and one delivery horizon.',
+        f'For {topic}, define one observable behavior shift and the exact review moment where the team will evaluate it.',
+        f'Anchor {topic} to one recurring decision point so readers can test the guidance without redesigning their whole workflow.',
+        f'In {topic}, pair each recommendation with one concrete context where it should be applied first.',
     ]
     pick = int(hashlib.sha256(f'{topic}|specificity'.encode('utf-8')).hexdigest()[:8], 16) % len(options)
     append_to_last_section(payload, options[pick])
@@ -1318,9 +1324,9 @@ def reinforce_specificity(payload: dict[str, Any]) -> None:
 def reinforce_evidence(payload: dict[str, Any]) -> None:
     topic = sanitize_text(payload.get('title', 'this topic')).lower()
     options = [
-        f'For {topic}, ground each external claim in one cited finding and one clear interpretation for practitioners.',
-        f'In {topic}, evidence stays useful when claims tie to observable before-after signals in the same workflow context.',
-        f'For {topic}, translate research into one concrete operational implication so teams can verify outcomes quickly.',
+        f'For {topic}, link claims to one cited source and one practical implication the reader can verify in team routines.',
+        f'In {topic}, evidence is strongest when the article names what changed before and after a specific intervention.',
+        f'For {topic}, use source links to sharpen a claim, not to pad the paragraph.',
     ]
     pick = int(hashlib.sha256(f'{topic}|evidence'.encode('utf-8')).hexdigest()[:8], 16) % len(options)
     append_to_last_section(payload, options[pick])
@@ -1347,24 +1353,20 @@ def reinforce_originality(payload: dict[str, Any]) -> None:
     topic = sanitize_text(payload.get('title', 'this topic')).lower()
     append_to_last_section(
         payload,
-        f'Keep {topic} grounded in one distinctive observation from real work so the post does not read like reusable boilerplate.',
+        f'Add one field observation from real work so {topic} sounds owned, specific, and not reusable boilerplate.',
     )
 
 
 def reinforce_actionability(payload: dict[str, Any]) -> None:
-    bullets = payload.get('bullets', [])
-    if not isinstance(bullets, list):
-        bullets = []
     topic = sanitize_text(payload.get('title', 'this topic')).lower()
-    additions = [
-        f'Define one leading metric and one lagging metric for {topic}.',
-        'Run a weekly review with four notes: baseline, delta, blocker, next step.',
-        'Carry one lesson from the latest result into the next brief before publishing again.',
+    options = [
+        f'Pick one team ritual this week where {topic} can be tested immediately and reviewed in the next cycle.',
+        'Name one owner, one checkpoint, and one expected behavior change before introducing any new learning artifact.',
+        'Close with one next action the reader can run in less than a week.',
     ]
-    for item in additions:
-        if item not in bullets:
-            bullets.append(item)
-    payload['bullets'] = bullets[:4]
+    pick = int(hashlib.sha256(f'{topic}|actionability'.encode('utf-8')).hexdigest()[:8], 16) % len(options)
+    append_to_last_section(payload, options[pick])
+    payload['bullets'] = []
 
 
 def apply_quality_rewrite(payload: dict[str, Any], dimensions: list[str]) -> None:
@@ -1674,19 +1676,19 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
 
     if not lead:
         lead = sanitize_content_line(
-            f'{title} improves when each recommendation maps to one measurable decision in the next weekly review.'
+            f'{title} improves when teams attach learning changes to one real decision they revisit every week.'
         )
     if not excerpt:
         excerpt = sanitize_content_line(
-            f'{title} gets stronger when teams pair each recommendation with one measured weekly decision.'
+            f'{title} is most useful when it clarifies ownership, trade-offs, and follow-through in day-to-day execution.'
         )
     if not meta_description:
         meta_description = sanitize_content_line(
-            f'This short evidence-first format keeps {title.lower()} clear, measurable, and useful in real execution contexts.'
+            f'A concise field note on {title.lower()} for teams that want practical behavior change, not generic advice.'
         )
     if not closing:
         closing = sanitize_content_line(
-            f'Use the next weekly review to validate one change in {title.lower()} and carry one proven lesson forward.'
+            f'Pick one decision ritual this week, test it once, and carry forward only what clearly improves outcomes.'
         )
 
     sections = ensure_sections(raw.get('sections', []), lead, excerpt, closing, title)
@@ -1695,14 +1697,8 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     bullets: list[str] = []
     if isinstance(bullets_raw, list):
         bullets = [sanitize_content_line(b) for b in bullets_raw if sanitize_content_line(b)]
-    if len(bullets) < 2:
-        defaults = [
-            sanitize_content_line('Track one leading metric and one lagging metric every week.'),
-            sanitize_content_line('Use external links only when they sharpen a specific claim.'),
-        ]
-        for item in defaults:
-            if item and item not in bullets:
-                bullets.append(item)
+    # Bullets are intentionally disabled for public blog output.
+    bullets = []
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
     citations = normalize_citations(raw.get('citations', []) or raw.get('sources', []))

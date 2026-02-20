@@ -5,12 +5,11 @@ These rules are mandatory for all blog posts on this site.
 **Voice and style**
 - Always apply the Humanizer guidance described below.
 - Write in a conversational, direct tone as if speaking to the reader.
-- Keep posts between 150 and 200 words.
+- Keep posts between 180 and 300 words.
 - Never use em dashes.
 - Do not use bullet lists.
-
+- Do not use H2/H3 headers in the final post body.
 - Keep the core concept as the opening and the ending. Stay anchored to it throughout.
-- Use short section headers (h2) only when needed. Keep them concise.
 - No blockquotes or callout boxes with a side line.
 
 **Humanizer guidance (must follow)**

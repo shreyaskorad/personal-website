@@ -25,7 +25,7 @@ MIN_IMAGE_BYTES = 80_000
 DATE_INPUT_FORMATS = ("%B %d, %Y", "%Y-%m-%d", "%d %b %Y")
 QUALITY_MIN_WORDS = 170
 QUALITY_MAX_WORDS = 300
-QUALITY_MIN_HEADINGS = 2
+QUALITY_MIN_HEADINGS = 0
 QUALITY_MIN_PARAGRAPHS = 5
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
@@ -116,6 +116,10 @@ STYLE_DRIFT_PATTERNS = [
     re.compile(r"\bclarify one constraint\b", flags=re.IGNORECASE),
     re.compile(r"\bkeep one claim and one proof point\b", flags=re.IGNORECASE),
     re.compile(r"\bproduced visible improvement\b", flags=re.IGNORECASE),
+    re.compile(r"\bwhen i work on\b", flags=re.IGNORECASE),
+    re.compile(r"\bpractical guidance for teams\b", flags=re.IGNORECASE),
+    re.compile(r"\buse one baseline metric,\s*one weekly experiment\b", flags=re.IGNORECASE),
+    re.compile(r"\bkeep .{0,90} practical by pairing one study link\b", flags=re.IGNORECASE),
 ]
 UNSPLASH_THEME_IDS = {
     "base": [
@@ -317,6 +321,8 @@ def sanitize_content_line(text: str) -> str:
     if is_instructional_line(value):
         return ""
     if is_likely_sentence_fragment(value):
+        return ""
+    if any(pattern.search(value) for pattern in STYLE_DRIFT_PATTERNS):
         return ""
     if value[-1] not in ".!?":
         value += "."
