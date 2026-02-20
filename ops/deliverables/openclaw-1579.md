@@ -1,14 +1,20 @@
 # Deliverable: Autonomous writing sprint: Turn training requests into measurable capability outcomes
 
-- Task ID: openclaw-1575
-- Status: failed
-- Created: 2026-02-20T08:57:31Z
-- Updated: 2026-02-20T09:02:01Z
+- Task ID: openclaw-1579
+- Status: completed
+- Created: 2026-02-20T09:39:04Z
+- Updated: 2026-02-20T09:43:23Z
 
 ## Summary
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+No summary provided.
 
 ## Deliverable Output
+_Last OpenClaw deliverable attempt failed; automatic retry is queued._ (last attempt: 2026-02-20T09:43:28Z)
+
+## Last Error
+OpenClaw returned no usable markdown deliverable.
+
+## Draft Deliverable (Fallback)
 # Deliverable Draft: Autonomous Writing Sprint: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
 
 ## Objective and success metrics
@@ -55,10 +61,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
-
-## Blockers / Notes
-OpenClaw SSH execution failed.
+Use this exact article title: Turn training requests into measurable capability outcomes. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 3 credible source links from diverse domains. References are required in this run: include 3 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
