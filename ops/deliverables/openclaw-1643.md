@@ -1,9 +1,9 @@
 # Deliverable: Design learning for decision quality, not completion rates
 
-- Task ID: openclaw-1634
+- Task ID: openclaw-1643
 - Status: failed
-- Created: 2026-02-20T12:27:27Z
-- Updated: 2026-02-20T12:27:59Z
+- Created: 2026-02-20T12:42:01Z
+- Updated: 2026-02-20T12:43:18Z
 
 ## Summary
 Rewrite required before publish. Violations: duplicate title against published post
