@@ -1,12 +1,12 @@
 # Deliverable: Use this exact article title: Coach managers to run better learning conversations in weekly o...
 
-- Task ID: openclaw-1582
+- Task ID: openclaw-1600
 - Status: cancelled
-- Created: 2026-02-20T09:46:29Z
-- Updated: 2026-02-20T11:52:13Z
+- Created: 2026-02-20T10:20:41Z
+- Updated: 2026-02-20T11:45:29Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 1/4) via inbox item #2226.
+Auto-requeued by autonomous mode (attempt 1/4) via inbox item #1915.
 
 ## Deliverable Output
 # Coach managers to run better learning conversations in weekly o
@@ -22,6 +22,8 @@ I have found that this approach keeps writing and execution coherent, because ea
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
 Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
+
+References: [NBER Generative AI at Work](https://www.nber.org/papers/w31161); [Our World in Data: AI](https://ourworldindata.org/artificial-intelligence); [UNESCO Futures of Education](https://www.unesco.org/en/futures-education); [Gallup State of the Global Workplace](https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx)
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

@@ -9,53 +9,21 @@
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-# Deliverable Draft: Learning Transfer Field Note For Workplace Teams 20260220 SEO blog operating system
+# Learning transfer field note for workplace teams 20260220
 
-## Objective and success metrics
-Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
+I care about learning transfer field note for workplace teams 20260220 only when it changes the judgment teams use in daily work, because learning that never touches decisions does not survive pressure. If a manager cannot point to a clearer call during real work, the effort is still theory.
 
-## Serialized agent roster
-1. Topic Scout - Identify high-upside topics tied to L&D, gamification, data, LXD, and AI.
-2. Keyword and SERP Analyst - Map keyword clusters, search intent, and competitor coverage gaps.
-3. Brief Architect - Convert strategy into a clear brief and outline with unique angle.
-4. Research Analyst - Gather credible source material and practical examples.
-5. Writer - Draft publishable post aligned with site voice and audience needs.
-6. Reader intent optimizer - Keep title, framing, and examples aligned to practical reader intent.
-7. Editor - Improve clarity, authority, and readability while preserving intent.
-8. Refresh Planner - Define update cadence to protect rankings and freshness.
-9. Publishing QA - Publish and verify the post is live and correctly indexed.
+Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
 
-## Workflow (intake to publish)
-1. Topic Scout identifies opportunities and ranks by business relevance.
-2. Keyword and SERP Analyst builds intent map and competitor gaps.
-3. Brief Architect converts strategy into outline and argument arc.
-4. Research Analyst gathers verified source notes and claims.
-5. Writer drafts publishable post in site format.
-6. SEO Optimizer improves title/meta/headings/internal links/schema.
-7. Editor finalizes voice, clarity, and readability.
-8. Refresh Planner defines update and republish triggers.
-9. Publishing QA uploads and validates end-to-end publish health.
+You can run a short pilot around a focused behavior change, then document what shifted in the team conversation and what did not. That record is more useful than adding another generic course asset.
 
-## Quality gates and acceptance criteria
-- Gate 1: topic and keyword fit for target audience intent.
-- Gate 2: evidence-backed draft with no fabricated claims.
-- Gate 3: on-page SEO checks pass before publish.
-- Gate 4: publishing QA confirms live URL and indexability.
+This also improves quality control in automation: shorter posts stay readable, but the argument still deepens when each paragraph adds a different layer of evidence or judgment. The result feels like a practitioner note, not a template.
 
-## Publishing QA checklist
-- Create/update post under `posts` and verify listing in `writing.html`.
-- Validate slug, canonical, meta title/description, and schema fields.
-- Verify HTTP 200 on final URL and correct render on desktop/mobile.
-- Confirm sitemap and RSS include the new post after publish.
-- Use `scripts/publish_post.py` when available for deterministic publishing.
+The writing quality also improves when each paragraph contributes a distinct layer, such as context, tension, choice, and reflection. That structure reduces repetition and keeps the voice clear without sounding mechanical.
 
-## Failure handling and fallback logic
-- If publish fails, do not mark task complete; create fix task with blocker evidence.
-- If SERP APIs/sources fail, retry sequentially with alternatives and direct sources.
-- Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
+If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
 
-## Notes
-Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
+References: [Our World in Data: AI](https://ourworldindata.org/artificial-intelligence); [World Bank Education Overview](https://www.worldbank.org/en/topic/education); [World Economic Forum Future of Jobs 2025](https://www.weforum.org/reports/the-future-of-jobs-report-2025); [OECD Skills Outlook 2023](https://www.oecd.org/skills/oecd-skills-outlook-e11c1c2d-en.htm)
 
 ## Blockers / Notes
 OpenClaw SSH execution failed.
