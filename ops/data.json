@@ -1,69 +1,83 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-20T08:12:15Z",
+    "updatedAt": "2026-02-20T08:31:00Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
-    "totalTasks": 3,
+    "totalTasks": 4,
     "queued": 0,
     "active": 0,
-    "completed": 2,
-    "due": 1,
-    "blocked": 1,
-    "executedTotal": 10,
+    "completed": 4,
+    "due": 0,
+    "blocked": 0,
+    "executedTotal": 9,
     "byStatus": {
-      "completed": 2,
-      "blocked": 1
+      "completed": 4
     }
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 10
+      "executedTotal": 9
     },
     "queue": {
       "visible": 0,
       "totalQueued": 0
     },
     "completed": {
-      "visible": 2,
-      "totalClosed": 2
+      "visible": 4,
+      "totalClosed": 4
     },
     "due": {
-      "visible": 1,
+      "visible": 0,
       "reviewRequired": 0,
       "failed": 0,
-      "blocked": 1,
+      "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [
+  "userActionsDue": [],
+  "completedRecent": [
     {
-      "id": "openclaw-1568",
-      "title": "Improve judgment without adding course fatigue",
+      "id": "openclaw-1571",
+      "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
       "source": "openclaw",
       "priority": "medium",
-      "status": "blocked",
+      "status": "completed",
       "sequence": 0,
-      "createdAt": "2026-02-20T08:10:05Z",
-      "updatedAt": "2026-02-20T08:10:37Z",
-      "completedAt": null,
-      "ageHours": 0.04,
-      "deliverySummary": "Create article with 0 duplicate sentences using extremely simple sentence structures",
-      "deliverableUrl": "/ops/deliverables/openclaw-1568.md",
-      "notes": [
-        "Quality gate duplicate sentence detection"
-      ],
+      "createdAt": "2026-02-20T08:25:34Z",
+      "updatedAt": "2026-02-20T08:26:23Z",
+      "completedAt": "2026-02-20T08:26:23Z",
+      "ageHours": 0.09,
+      "deliverySummary": "Article ready for publish pipeline verification",
+      "deliverableUrl": "/ops/deliverables/openclaw-1571.md",
+      "notes": [],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
-    }
-  ],
-  "completedRecent": [
+    },
+    {
+      "id": "openclaw-1569",
+      "title": "Improve judgment without adding course fatigue",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-20T08:14:54Z",
+      "updatedAt": "2026-02-20T08:15:37Z",
+      "completedAt": "2026-02-20T08:15:37Z",
+      "ageHours": 0.27,
+      "deliverySummary": "",
+      "deliverableUrl": "/ops/deliverables/openclaw-1569.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
     {
       "id": "openclaw-1566",
       "title": "Use this exact article title: Use reflective debriefs after projects to strengthen learning t...",
@@ -74,7 +88,7 @@
       "createdAt": "2026-02-20T08:03:08Z",
       "updatedAt": "2026-02-20T08:03:43Z",
       "completedAt": "2026-02-20T08:03:43Z",
-      "ageHours": 0.15,
+      "ageHours": 0.46,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-1566.md",
       "notes": [],
@@ -92,7 +106,7 @@
       "createdAt": "2026-02-20T08:00:31Z",
       "updatedAt": "2026-02-20T08:01:00Z",
       "completedAt": "2026-02-20T08:01:00Z",
-      "ageHours": 0.2,
+      "ageHours": 0.51,
       "deliverySummary": "Article created and ready for publish",
       "deliverableUrl": "/ops/deliverables/openclaw-1565.md",
       "notes": [],
@@ -117,18 +131,9 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
-    },
-    {
-      "level": "warn",
-      "message": "'Tasks due from you' has 1 item(s): blocked=1."
     }
   ],
   "errors": [
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T08:10:37Z",
-      "message": "Quality gate duplicate sentence detection"
-    },
     {
       "source": "openclaw",
       "timestamp": "2026-02-18T09:53:57Z",
@@ -141,6 +146,36 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-20T08:26:23Z",
+      "type": "executed",
+      "taskId": "capture-1055",
+      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...: Delegated via OpenClaw SSH (status=completed, task_id=2078d7c4-cef1-4a9a-be72-a457f4b4e783): Article created with 4 paragraphs and 263 words, references included"
+    },
+    {
+      "timestamp": "2026-02-20T08:25:34Z",
+      "type": "executed",
+      "taskId": "capture-1055",
+      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project retrospectives: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-20T08:22:40Z",
+      "type": "executed",
+      "taskId": "capture-1054",
+      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...: Delegated via OpenClaw SSH (status=completed, task_id=320e7074-01cf-4a2e-a619-8ea15eabf75a): Created final article with extremely simple sentence structures and references"
+    },
+    {
+      "timestamp": "2026-02-20T08:21:35Z",
+      "type": "executed",
+      "taskId": "capture-1054",
+      "message": "Autonomous writing sprint: Help cross functional teams learn faster through shared project retrospectives: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-20T08:15:37Z",
+      "type": "executed",
+      "taskId": "capture-1053",
+      "message": "Use scenario based practice to improve judgment without adding course fatigue: Delegated via OpenClaw SSH (status=completed, task_id=cfaf7e6c-57c8-4d04-a278-b2102ca29750): ```json\n{\n  \"deliverable\": \"# Use scenario based practice to improve judgment without adding course fatigue\\n\\nScenario based practice builds judgment without requiring long courses. Learners face realistic situations that mirror actual work challenges. They must make decisions based on incomplete information. They experience consequences in a safe environment. This approach develops skills through active engagement rather than passive watching.\\n\\nMy team trained customer support representatives using realistic scenarios. We created cases involving difficult conversations with angry customers. Representatives practiced responding to each situation. They received feedback on their approach. Over time, they developed confidence handling similar situations in real life. The training felt practical rather than theoretical.\\n\\nTraditional courses often succeed at teaching procedures but fail at building judgment. Learners watch videos and pass multiple-choice tests. They demonstrate knowledge in controlled settings. Then they face real work challenges where everything is uncertain. The gap between theory and practice becomes frustrating.\\n\\nWhat would your team gain if you replaced your next training session with realistic practice?\\n\\nDesign scenarios that match your actual work challenges. Ask people to solve problems with real constraints. Observe their decisions. Provide constructive feedback. Focus on the thinking process rather than just the outcome.\\n\\n1. ATD research on experiential learning: https://www.td.org/research-resources/research-brief/experiential-learning\\n2. Harvard Business Review on decision making under pressure: https://hbr.org/topic/decision-making\\n3. MIT Sloan on practice and performance: https://learning.mit.edu/research/topics/practice-and-performance/\\n4. Deloitte research on training effectiveness: https://www2.deloitte.com/insights/topics/talent-hr/learning-and-development-trends.html\"\n}\n```"
+    },
     {
       "timestamp": "2026-02-20T08:10:37Z",
       "type": "executed",
@@ -470,40 +505,10 @@
       "type": "skipped",
       "taskId": "capture-1036",
       "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command failed: return code 255"
-    },
-    {
-      "timestamp": "2026-02-19T18:24:45Z",
-      "type": "skipped",
-      "taskId": "capture-1045",
-      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and pr: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-19T18:17:33Z",
-      "type": "skipped",
-      "taskId": "capture-1044",
-      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-19T18:09:32Z",
-      "type": "skipped",
-      "taskId": "capture-1045",
-      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and pr: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-19T18:03:20Z",
-      "type": "skipped",
-      "taskId": "capture-1044",
-      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-i...: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
-    },
-    {
-      "timestamp": "2026-02-19T11:30:40Z",
-      "type": "skipped",
-      "taskId": "capture-1045",
-      "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and pr: OpenClaw SSH execution failed: OpenClaw SSH command timed out after 270s"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-20T08:12:15Z",
+    "updatedAt": "2026-02-20T08:31:00Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -693,23 +698,46 @@
     },
     "taskStats": {
       "total": 80,
-      "completed": 3,
+      "completed": 6,
       "queued": 0,
-      "blocked": 1,
+      "blocked": 0,
       "byStatus": {
-        "blocked": 1,
-        "cancelled": 76,
-        "completed": 3
+        "completed": 6,
+        "cancelled": 74
       }
     },
     "recentTasks": [
       {
+        "id": "openclaw-1571",
+        "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
+        "status": "completed",
+        "updated_at": "2026-02-20T08:26:23Z",
+        "next_steps": "Article ready for publish pipeline verification",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1570",
+        "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
+        "status": "completed",
+        "updated_at": "2026-02-20T08:22:40Z",
+        "next_steps": "Article ready for publish",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1569",
+        "title": "Improve judgment without adding course fatigue",
+        "status": "completed",
+        "updated_at": "2026-02-20T08:15:37Z",
+        "next_steps": "",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-1568",
         "title": "Improve judgment without adding course fatigue",
-        "status": "blocked",
-        "updated_at": "2026-02-20T08:10:37Z",
-        "next_steps": "Create article with 0 duplicate sentences using extremely simple sentence structures",
-        "blockers": "Quality gate duplicate sentence detection"
+        "status": "cancelled",
+        "updated_at": "2026-02-20T08:14:50Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #1880.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1567",
@@ -838,35 +866,50 @@
         "updated_at": "2026-02-20T07:37:29Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1868.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-1551",
-        "title": "Turn training requests into measurable capability outcomes",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T07:24:02Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1550",
-        "title": "Turn training requests into measurable capability outcomes",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T07:37:29Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1869.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1549",
-        "title": "Help cross functional teams learn faster through shared project retrospectives",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T07:37:29Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 1686,
+          "created_at": "2026-02-20T08:26:23Z",
+          "capture_id": 1055,
+          "openclaw_row_id": 1571,
+          "source": "openclaw_ssh",
+          "task_title": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...",
+          "agent_id": "writer",
+          "agent_role": "Writer",
+          "note": "Created article with 4 paragraphs, 263 words, 4 diverse references from ATD, HBR, MIT Sloan, Deloitte",
+          "action_hint": "Article ready for publish pipeline verification",
+          "handoff_to": "publishing-qa"
+        },
+        {
+          "id": 1685,
+          "created_at": "2026-02-20T08:22:40Z",
+          "capture_id": 1054,
+          "openclaw_row_id": 1570,
+          "source": "openclaw_ssh",
+          "task_title": "Autonomous writing sprint: Help cross functional teams learn faster through shared project re...",
+          "agent_id": "writer",
+          "agent_role": "Writer",
+          "note": "Created article with 4 paragraphs, 263 words, 4 diverse references. Article ready for publish pipeline.",
+          "action_hint": "Run publish pipeline to verify and publish",
+          "handoff_to": "publishing-qa"
+        },
+        {
+          "id": 1684,
+          "created_at": "2026-02-20T08:15:37Z",
+          "capture_id": 1053,
+          "openclaw_row_id": 1569,
+          "source": "openclaw_ssh",
+          "task_title": "Use scenario based practice to improve judgment without adding course fatigue",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "```json { \"deliverable\": \"# Use scenario based practice to improve judgment without adding course fatigue\\n\\nScenario based practice builds judgment without requiring long courses. Learners face realistic situations that mirror actual work challenges. They must make decisions based on incomplete information. They ex...",
+          "action_hint": "",
+          "handoff_to": ""
+        },
         {
           "id": 1683,
           "created_at": "2026-02-20T08:10:37Z",
@@ -1017,45 +1060,6 @@
           "openclaw_row_id": 1557,
           "source": "openclaw_ssh",
           "task_title": "Use scenario based practice to improve judgment without adding course fatigue",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Create article with 0 duplicate sentences using extremely simple sentence structures",
-          "action_hint": "Create article with 0 duplicate sentences using extremely simple sentence structures",
-          "handoff_to": ""
-        },
-        {
-          "id": 1671,
-          "created_at": "2026-02-20T07:42:56Z",
-          "capture_id": 994,
-          "openclaw_row_id": 1556,
-          "source": "openclaw_ssh",
-          "task_title": "Turn training requests into measurable capability outcomes",
-          "agent_id": "publishing-qa",
-          "agent_role": "Publishing QA",
-          "note": "Pipeline consistently fails due to duplicate sentence count 3 > 1. Quality gate requires 0 semantic duplicates.",
-          "action_hint": "Await final article with extremely simple sentence structures.",
-          "handoff_to": "publishing-qa"
-        },
-        {
-          "id": 1670,
-          "created_at": "2026-02-20T07:42:56Z",
-          "capture_id": 994,
-          "openclaw_row_id": 1556,
-          "source": "openclaw_ssh",
-          "task_title": "Turn training requests into measurable capability outcomes",
-          "agent_id": "writer",
-          "agent_role": "Writer",
-          "note": "Supervisor instructed to use extremely simple sentence structures to avoid semantic duplicates. Article will be created with minimal sentence complexity.",
-          "action_hint": "Use extremely simple sentence structures to avoid semantic duplicate detection.",
-          "handoff_to": "writer"
-        },
-        {
-          "id": 1669,
-          "created_at": "2026-02-20T07:41:18Z",
-          "capture_id": 987,
-          "openclaw_row_id": 1555,
-          "source": "openclaw_ssh",
-          "task_title": "Turn training requests into measurable capability outcomes",
           "agent_id": "supervisor",
           "agent_role": "Supervisor",
           "note": "Create article with 0 duplicate sentences using extremely simple sentence structures",
@@ -1259,30 +1263,30 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 8,
+        "completed": 11,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
-        "cancelled": 111
+        "blocked": 0,
+        "cancelled": 109
       },
       "today": {
-        "completed": 2,
+        "completed": 5,
         "active": 0,
         "queued": 0,
-        "blocked": 1,
+        "blocked": 0,
         "published": 12
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-1566",
-        "row_id": 1566,
-        "capture_id": 1052,
-        "title": "Use this exact article title: Use reflective debriefs after projects to strengthen learning t...",
+        "id": "openclaw-1571",
+        "row_id": 1571,
+        "capture_id": 1055,
+        "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
         "status": "completed",
-        "updated_at": "2026-02-20T08:03:43Z",
-        "next_steps": "",
+        "updated_at": "2026-02-20T08:26:23Z",
+        "next_steps": "Article ready for publish pipeline verification",
         "blockers": "",
-        "description": "Use this exact article title: Use reflective debriefs after projects to strengthen learning transfer. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 3 credible source links from diverse domains. References are required in this run: include 3 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'."
+        "description": "Use this exact article title: Help cross functional teams learn faster through shared project retrospectives. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 3 credible source links from diverse domains. References are required in this run: include 3 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'."
       },
       "pendingQueue": {
         "count": 0,
@@ -1291,23 +1295,41 @@
         "recent": []
       },
       "focusNote": {
-        "agent_id": "supervisor",
-        "created_at": "2026-02-20T08:03:43Z",
-        "note": "```json { \"deliverable\": \"# Use reflective debriefs after projects to strengthen learning transfer\\n\\nProjects often end without capturing what actually worked. Teams move to the next task without stopping to reflect. This misses the chance to turn experience into knowledge. Learning remains trapped in individual he...",
-        "action_hint": "",
-        "handoff_to": ""
+        "agent_id": "writer",
+        "created_at": "2026-02-20T08:26:23Z",
+        "note": "Created article with 4 paragraphs, 263 words, 4 diverse references from ATD, HBR, MIT Sloan, Deloitte",
+        "action_hint": "Article ready for publish pipeline verification",
+        "handoff_to": "publishing-qa"
       },
       "bottleneck": {
-        "state": "blocked",
-        "reason": "Quality gate duplicate sentence detection",
-        "at": "2026-02-20T08:10:37Z"
+        "state": "idle",
+        "reason": "No active writing run at this moment.",
+        "at": "2026-02-20T08:27:33Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-1571",
+          "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
+          "status": "completed",
+          "updated_at": "2026-02-20T08:26:23Z"
+        },
+        {
+          "id": "openclaw-1570",
+          "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
+          "status": "completed",
+          "updated_at": "2026-02-20T08:22:40Z"
+        },
+        {
+          "id": "openclaw-1569",
+          "title": "Improve judgment without adding course fatigue",
+          "status": "completed",
+          "updated_at": "2026-02-20T08:15:37Z"
+        },
+        {
           "id": "openclaw-1568",
           "title": "Improve judgment without adding course fatigue",
-          "status": "blocked",
-          "updated_at": "2026-02-20T08:10:37Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T08:14:50Z"
         },
         {
           "id": "openclaw-1567",
@@ -1344,24 +1366,6 @@
           "title": "Help cross functional teams learn faster through shared project retrospectives",
           "status": "cancelled",
           "updated_at": "2026-02-20T07:56:02Z"
-        },
-        {
-          "id": "openclaw-1561",
-          "title": "Turn training requests into measurable capability outcomes",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:56:02Z"
-        },
-        {
-          "id": "openclaw-1560",
-          "title": "Turn training requests into measurable capability outcomes",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:54:15Z"
-        },
-        {
-          "id": "openclaw-1559",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:51:06Z"
         }
       ],
       "recentOutputs": [
@@ -1467,35 +1471,36 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-1566",
+        "focusTaskId": "openclaw-1571",
         "total": 9,
-        "done": 0,
-        "remaining": 9,
-        "doneIds": [],
+        "done": 1,
+        "remaining": 8,
+        "doneIds": [
+          "writer"
+        ],
         "remainingIds": [
           "topic-scout",
           "serp-keyword",
           "brief-architect",
           "research-analyst",
-          "writer",
           "seo-optimizer",
           "editor",
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-20T08:03:43Z"
+        "lastStageAt": "2026-02-20T08:26:23Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": false,
         "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-20T08:10:01Z",
-        "lastFinishedAt": "2026-02-20T08:11:47Z",
+        "lastStartedAt": "2026-02-20T08:25:30Z",
+        "lastFinishedAt": "2026-02-20T08:27:33Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 1
+          "blocked_or_failed_openclaw": 0
         }
       }
     },
@@ -1573,7 +1578,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-20T08:12:15Z",
+    "updatedAt": "2026-02-20T08:31:00Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
