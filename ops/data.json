@@ -1,47 +1,87 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-20T08:31:00Z",
+    "updatedAt": "2026-02-20T08:51:24Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
   "summary": {
-    "totalTasks": 4,
+    "totalTasks": 6,
     "queued": 0,
     "active": 0,
-    "completed": 4,
-    "due": 0,
-    "blocked": 0,
-    "executedTotal": 9,
+    "completed": 5,
+    "due": 1,
+    "blocked": 1,
+    "executedTotal": 10,
     "byStatus": {
-      "completed": 4
+      "completed": 5,
+      "failed": 1
     }
   },
   "laneMetrics": {
     "execution": {
       "visible": 0,
-      "executedTotal": 9
+      "executedTotal": 10
     },
     "queue": {
       "visible": 0,
       "totalQueued": 0
     },
     "completed": {
-      "visible": 4,
-      "totalClosed": 4
+      "visible": 5,
+      "totalClosed": 5
     },
     "due": {
-      "visible": 0,
+      "visible": 1,
       "reviewRequired": 0,
-      "failed": 0,
+      "failed": 1,
       "blocked": 0,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [],
-  "userActionsDue": [],
+  "userActionsDue": [
+    {
+      "id": "openclaw-1573",
+      "title": "Autonomous writing sprint: Turn training requests into measurable capability outcomes",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "failed",
+      "sequence": 0,
+      "createdAt": "2026-02-20T08:35:04Z",
+      "updatedAt": "2026-02-20T08:35:21Z",
+      "completedAt": "2026-02-20T08:35:21Z",
+      "ageHours": 0.27,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-1573.md",
+      "notes": [
+        "OpenClaw SSH execution failed."
+      ],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    }
+  ],
   "completedRecent": [
+    {
+      "id": "openclaw-1572",
+      "title": "Design learning for decision quality, not completion rates",
+      "source": "openclaw",
+      "priority": "medium",
+      "status": "completed",
+      "sequence": 0,
+      "createdAt": "2026-02-20T08:31:53Z",
+      "updatedAt": "2026-02-20T08:32:26Z",
+      "completedAt": "2026-02-20T08:32:26Z",
+      "ageHours": 0.33,
+      "deliverySummary": "Article ready for publish pipeline verification",
+      "deliverableUrl": "/ops/deliverables/openclaw-1572.md",
+      "notes": [],
+      "scope": "professional",
+      "hasDeliverable": true,
+      "needsReview": false
+    },
     {
       "id": "openclaw-1571",
       "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
@@ -52,7 +92,7 @@
       "createdAt": "2026-02-20T08:25:34Z",
       "updatedAt": "2026-02-20T08:26:23Z",
       "completedAt": "2026-02-20T08:26:23Z",
-      "ageHours": 0.09,
+      "ageHours": 0.43,
       "deliverySummary": "Article ready for publish pipeline verification",
       "deliverableUrl": "/ops/deliverables/openclaw-1571.md",
       "notes": [],
@@ -70,7 +110,7 @@
       "createdAt": "2026-02-20T08:14:54Z",
       "updatedAt": "2026-02-20T08:15:37Z",
       "completedAt": "2026-02-20T08:15:37Z",
-      "ageHours": 0.27,
+      "ageHours": 0.61,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-1569.md",
       "notes": [],
@@ -88,7 +128,7 @@
       "createdAt": "2026-02-20T08:03:08Z",
       "updatedAt": "2026-02-20T08:03:43Z",
       "completedAt": "2026-02-20T08:03:43Z",
-      "ageHours": 0.46,
+      "ageHours": 0.8,
       "deliverySummary": "",
       "deliverableUrl": "/ops/deliverables/openclaw-1566.md",
       "notes": [],
@@ -106,7 +146,7 @@
       "createdAt": "2026-02-20T08:00:31Z",
       "updatedAt": "2026-02-20T08:01:00Z",
       "completedAt": "2026-02-20T08:01:00Z",
-      "ageHours": 0.51,
+      "ageHours": 0.85,
       "deliverySummary": "Article created and ready for publish",
       "deliverableUrl": "/ops/deliverables/openclaw-1565.md",
       "notes": [],
@@ -122,7 +162,7 @@
     },
     {
       "level": "info",
-      "message": "Blog autopilot is active: non-autonomous tasks are prioritized first; one new blog run is auto-seeded whenever idle with ~5 min break (unlimited/day)."
+      "message": "Blog autopilot is active: non-autonomous tasks are prioritized first; one new blog run is auto-seeded whenever idle with ~5 min break (12/day)."
     },
     {
       "level": "info",
@@ -131,9 +171,18 @@
     {
       "level": "info",
       "message": "No queued or active execution tasks right now."
+    },
+    {
+      "level": "warn",
+      "message": "'Tasks due from you' has 1 item(s): failed=1."
     }
   ],
   "errors": [
+    {
+      "source": "openclaw",
+      "timestamp": "2026-02-20T08:35:21Z",
+      "message": "OpenClaw SSH execution failed."
+    },
     {
       "source": "openclaw",
       "timestamp": "2026-02-18T09:53:57Z",
@@ -146,6 +195,30 @@
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-20T08:35:21Z",
+      "type": "skipped",
+      "taskId": "capture-1057",
+      "message": "Autonomous writing sprint: Turn training requests into measurable capability outcomes: OpenClaw SSH execution failed: OpenClaw SSH command failed: return code 255"
+    },
+    {
+      "timestamp": "2026-02-20T08:35:04Z",
+      "type": "executed",
+      "taskId": "capture-1057",
+      "message": "Autonomous writing sprint: Turn training requests into measurable capability outcomes: Autonomous blog task seeded and queued for OpenClaw."
+    },
+    {
+      "timestamp": "2026-02-20T08:32:26Z",
+      "type": "executed",
+      "taskId": "capture-1056",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=08112f98-2961-4976-af4a-5797f8041ca4): Created article with 4 paragraphs, 258 words, 3 diverse references"
+    },
+    {
+      "timestamp": "2026-02-20T08:31:53Z",
+      "type": "executed",
+      "taskId": "capture-1056",
+      "message": "Autonomous writing sprint: Design learning for decision quality, not completion rates: Autonomous blog task seeded and queued for OpenClaw."
+    },
     {
       "timestamp": "2026-02-20T08:26:23Z",
       "type": "executed",
@@ -481,34 +554,10 @@
       "type": "executed",
       "taskId": "capture-1044",
       "message": "Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and pr: Delegated via OpenClaw SSH (status=blocked, task_id=a09b0060-eb9c-47b9-90d3-9e5309cbc535): Duplicate title issue persists"
-    },
-    {
-      "timestamp": "2026-02-20T04:34:40Z",
-      "type": "executed",
-      "taskId": "capture-1042",
-      "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=blocked, task_id=0a7bbf64-46da-44b5-9f0f-4a3452966413): Duplicate title detected"
-    },
-    {
-      "timestamp": "2026-02-20T04:33:18Z",
-      "type": "executed",
-      "taskId": "capture-1042",
-      "message": "Design without losing human judgment: Delegated via OpenClaw SSH (status=blocked, task_id=0cb267b9-7445-4299-9e28-44b2d38d2c58): Duplicate title detected"
-    },
-    {
-      "timestamp": "2026-02-20T04:26:13Z",
-      "type": "executed",
-      "taskId": "capture-1036",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: Delegated via OpenClaw SSH (status=blocked, task_id=fb6e9e86-2c03-4d98-a57d-021dd2243376): Title conflict detected"
-    },
-    {
-      "timestamp": "2026-02-19T18:31:17Z",
-      "type": "skipped",
-      "taskId": "capture-1036",
-      "message": "Design onboarding that builds role judgment instead of checklist compliance: OpenClaw SSH execution failed: OpenClaw SSH command failed: return code 255"
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-20T08:31:00Z",
+    "updatedAt": "2026-02-20T08:51:24Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -589,14 +638,14 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-20T08:07:53Z",
+      "asOf": "2026-02-20T08:40:15Z",
       "lookbackDays": 28,
       "summary": {
         "users": 35,
         "sessions": 137,
-        "engagedSessions": 80,
-        "engagementRatePct": 58.4,
-        "avgSessionDurationSec": 685.3,
+        "engagedSessions": 87,
+        "engagementRatePct": 63.5,
+        "avgSessionDurationSec": 674.6,
         "pageViewsPerSession": 5.72,
         "vsPrevious": {
           "usersPct": null,
@@ -608,19 +657,13 @@
           "channel": "Direct",
           "sessions": 126,
           "users": 24,
-          "sessionShare": 88.7
+          "sessionShare": 92.0
         },
         {
           "channel": "Organic Search",
           "sessions": 11,
           "users": 11,
-          "sessionShare": 7.7
-        },
-        {
-          "channel": "Unassigned",
-          "sessions": 5,
-          "users": 2,
-          "sessionShare": 3.5
+          "sessionShare": 8.0
         }
       ],
       "topPosts": [
@@ -628,8 +671,8 @@
           "path": "/writing.html",
           "pageviews": 346,
           "sessions": 92,
-          "engagementRatePct": 80.4,
-          "avgSessionDurationSec": 425.0
+          "engagementRatePct": 88.0,
+          "avgSessionDurationSec": 424.6
         },
         {
           "path": "/posts/publishing-without-wordpress.html",
@@ -682,7 +725,7 @@
         }
       ],
       "insights": [
-        "Organic Search share is only 7.7%, which suggests discoverability is still weak.",
+        "Organic Search share is only 8.0%, which suggests discoverability is still weak.",
         "Traffic is concentrated: the top post contributes 83.2% of views within top content."
       ],
       "nextActions": [
@@ -693,20 +736,37 @@
       "error": "",
       "cache": {
         "hit": true,
-        "fetchedAt": "2026-02-20T08:07:53Z"
+        "fetchedAt": "2026-02-20T08:40:15Z"
       }
     },
     "taskStats": {
       "total": 80,
-      "completed": 6,
+      "completed": 7,
       "queued": 0,
-      "blocked": 0,
+      "blocked": 1,
       "byStatus": {
-        "completed": 6,
-        "cancelled": 74
+        "failed": 1,
+        "completed": 7,
+        "cancelled": 72
       }
     },
     "recentTasks": [
+      {
+        "id": "openclaw-1573",
+        "title": "Autonomous writing sprint: Turn training requests into measurable capability outcomes",
+        "status": "failed",
+        "updated_at": "2026-02-20T08:35:21Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-1572",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "completed",
+        "updated_at": "2026-02-20T08:32:26Z",
+        "next_steps": "Article ready for publish pipeline verification",
+        "blockers": ""
+      },
       {
         "id": "openclaw-1571",
         "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
@@ -850,27 +910,24 @@
         "updated_at": "2026-02-20T07:42:33Z",
         "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-1553",
-        "title": "Help cross functional teams learn faster through shared project retrospectives",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T07:52:33Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1874.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1552",
-        "title": "Improve judgment without adding course fatigue",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T07:37:29Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1868.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
+        {
+          "id": 1687,
+          "created_at": "2026-02-20T08:32:26Z",
+          "capture_id": 1056,
+          "openclaw_row_id": 1572,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "writer",
+          "agent_role": "Writer",
+          "note": "Created article with 4 paragraphs, 258 words, 3 diverse references from ATD, HBR, MIT Sloan",
+          "action_hint": "Article ready for publish pipeline verification",
+          "handoff_to": "publishing-qa"
+        },
         {
           "id": 1686,
           "created_at": "2026-02-20T08:26:23Z",
@@ -1047,19 +1104,6 @@
           "openclaw_row_id": 1558,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "supervisor",
-          "agent_role": "Supervisor",
-          "note": "Create article with 0 duplicate sentences using extremely simple sentence structures",
-          "action_hint": "Create article with 0 duplicate sentences using extremely simple sentence structures",
-          "handoff_to": ""
-        },
-        {
-          "id": 1672,
-          "created_at": "2026-02-20T07:44:22Z",
-          "capture_id": 995,
-          "openclaw_row_id": 1557,
-          "source": "openclaw_ssh",
-          "task_title": "Use scenario based practice to improve judgment without adding course fatigue",
           "agent_id": "supervisor",
           "agent_role": "Supervisor",
           "note": "Create article with 0 duplicate sentences using extremely simple sentence structures",
@@ -1263,30 +1307,30 @@
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 11,
+        "completed": 12,
         "active": 0,
         "queued": 0,
-        "blocked": 0,
-        "cancelled": 109
+        "blocked": 1,
+        "cancelled": 107
       },
       "today": {
-        "completed": 5,
+        "completed": 6,
         "active": 0,
         "queued": 0,
-        "blocked": 0,
+        "blocked": 1,
         "published": 12
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-1571",
-        "row_id": 1571,
-        "capture_id": 1055,
-        "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
+        "id": "openclaw-1572",
+        "row_id": 1572,
+        "capture_id": 1056,
+        "title": "Design learning for decision quality, not completion rates",
         "status": "completed",
-        "updated_at": "2026-02-20T08:26:23Z",
+        "updated_at": "2026-02-20T08:32:26Z",
         "next_steps": "Article ready for publish pipeline verification",
         "blockers": "",
-        "description": "Use this exact article title: Help cross functional teams learn faster through shared project retrospectives. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 3 credible source links from diverse domains. References are required in this run: include 3 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'."
+        "description": "Use this exact article title: Design learning for decision quality, not completion rates. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 3 credible source links from diverse domains. References are required in this run: include 3 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'."
       },
       "pendingQueue": {
         "count": 0,
@@ -1296,17 +1340,29 @@
       },
       "focusNote": {
         "agent_id": "writer",
-        "created_at": "2026-02-20T08:26:23Z",
-        "note": "Created article with 4 paragraphs, 263 words, 4 diverse references from ATD, HBR, MIT Sloan, Deloitte",
+        "created_at": "2026-02-20T08:32:26Z",
+        "note": "Created article with 4 paragraphs, 258 words, 3 diverse references from ATD, HBR, MIT Sloan",
         "action_hint": "Article ready for publish pipeline verification",
         "handoff_to": "publishing-qa"
       },
       "bottleneck": {
-        "state": "idle",
-        "reason": "No active writing run at this moment.",
-        "at": "2026-02-20T08:27:33Z"
+        "state": "blocked",
+        "reason": "OpenClaw SSH execution failed.",
+        "at": "2026-02-20T08:35:21Z"
       },
       "recentIdeas": [
+        {
+          "id": "openclaw-1573",
+          "title": "Autonomous writing sprint: Turn training requests into measurable capability outcomes",
+          "status": "failed",
+          "updated_at": "2026-02-20T08:35:21Z"
+        },
+        {
+          "id": "openclaw-1572",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "completed",
+          "updated_at": "2026-02-20T08:32:26Z"
+        },
         {
           "id": "openclaw-1571",
           "title": "Use this exact article title: Help cross functional teams learn faster through shared project...",
@@ -1354,18 +1410,6 @@
           "title": "Use reflective debriefs after projects to strengthen learning transfer",
           "status": "cancelled",
           "updated_at": "2026-02-20T08:00:28Z"
-        },
-        {
-          "id": "openclaw-1563",
-          "title": "Turn training requests into measurable capability outcomes",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:58:11Z"
-        },
-        {
-          "id": "openclaw-1562",
-          "title": "Help cross functional teams learn faster through shared project retrospectives",
-          "status": "cancelled",
-          "updated_at": "2026-02-20T07:56:02Z"
         }
       ],
       "recentOutputs": [
@@ -1471,7 +1515,7 @@
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-1571",
+        "focusTaskId": "openclaw-1572",
         "total": 9,
         "done": 1,
         "remaining": 8,
@@ -1488,19 +1532,19 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": "2026-02-20T08:26:23Z"
+        "lastStageAt": "2026-02-20T08:32:26Z"
       },
       "pipeline": {
         "workerStarted": true,
         "tickInProgress": false,
         "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-20T08:25:30Z",
-        "lastFinishedAt": "2026-02-20T08:27:33Z",
+        "lastStartedAt": "2026-02-20T08:46:28Z",
+        "lastFinishedAt": "2026-02-20T08:48:13Z",
         "runtime": {
           "pending_inbox": 0,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 0
+          "blocked_or_failed_openclaw": 1
         }
       }
     },
@@ -1578,7 +1622,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-20T08:31:00Z",
+    "updatedAt": "2026-02-20T08:51:24Z",
     "metrics": {
       "reviewRequested": 0,
       "proceedCount": 0,
