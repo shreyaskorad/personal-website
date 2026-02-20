@@ -882,8 +882,13 @@ def dedupe_writing_entries(html: str) -> str:
     if start == -1:
         return html
     list_start = start + len(marker)
-    end_marker = "id=\"no-results\""
+    end_marker = "<p class=\"no-results\" id=\"no-results\""
     list_end = html.find(end_marker, list_start)
+    if list_end == -1:
+        id_pos = html.find("id=\"no-results\"", list_start)
+        if id_pos != -1:
+            line_start = html.rfind("<", list_start, id_pos)
+            list_end = line_start if line_start != -1 else id_pos
     if list_end == -1:
         list_end = html.find("</div>", list_start)
     if list_end == -1:
