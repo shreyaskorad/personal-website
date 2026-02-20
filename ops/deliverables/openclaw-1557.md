@@ -1,15 +1,15 @@
-# Deliverable: Turn training requests into measurable capability outcomes
+# Deliverable: Improve judgment without adding course fatigue
 
-- Task ID: openclaw-1550
+- Task ID: openclaw-1557
 - Status: cancelled
-- Created: 2026-02-20T07:12:26Z
-- Updated: 2026-02-20T07:37:29Z
+- Created: 2026-02-20T07:44:11Z
+- Updated: 2026-02-20T07:47:39Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1869.
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1871.
 
 ## Deliverable Output
-# Deliverable Draft: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
+# Deliverable Draft: Improve Judgment Without Adding Course Fatigue SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,7 +55,7 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1869.
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #1871.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

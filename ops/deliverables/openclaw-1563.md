@@ -1,15 +1,15 @@
-# Deliverable: Improve judgment without adding course fatigue
+# Deliverable: Turn training requests into measurable capability outcomes
 
-- Task ID: openclaw-1552
-- Status: cancelled
-- Created: 2026-02-20T07:24:02Z
-- Updated: 2026-02-20T07:37:29Z
+- Task ID: openclaw-1563
+- Status: blocked
+- Created: 2026-02-20T07:54:16Z
+- Updated: 2026-02-20T07:54:28Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1868.
+Create final article with extremely simple sentence structures and references to pass quality gate
 
 ## Deliverable Output
-# Deliverable Draft: Improve Judgment Without Adding Course Fatigue SEO blog operating system
+# Deliverable Draft: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
@@ -55,7 +55,10 @@ Build a predictable SEO content system for Shreyas Korad - Writing (https://shre
 - Keep execution serialized to avoid free-tier concurrency/rate-limit failures.
 
 ## Notes
-Auto-requeued by autonomous mode (attempt 4/4) via inbox item #1868.
+Create final article with extremely simple sentence structures and references to pass quality gate
+
+## Blockers / Notes
+Quality gate duplicate sentence detection persists despite multiple rewrites
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
