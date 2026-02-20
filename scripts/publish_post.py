@@ -30,7 +30,7 @@ QUALITY_MIN_PARAGRAPHS = 5
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
 CITATION_MAX_COUNT = 4
-DISABLE_BODY_H2 = False
+DISABLE_BODY_H2 = True
 
 STUDY_SOURCE_POOL = [
     {
@@ -803,9 +803,8 @@ def build_article_html(
             anchor = inline_citation_anchor(citations, paragraph_index)
             lines.append(f"            <p>{escape(paragraph)}{anchor}</p>")
             paragraph_index += 1
-    if bullets:
-        for item in bullets:
-            lines.append(f"            <p>{escape(item)}</p>")
+    # Body bullets are intentionally not rendered in public posts to keep
+    # narrative flow and avoid repetitive template-like sections.
     if closing:
         anchor = inline_citation_anchor(citations, paragraph_index)
         lines.append(f"            <p>{escape(closing)}{anchor}</p>")
@@ -1196,14 +1195,6 @@ def main() -> None:
     raw_bullets = payload.get("bullets", [])
     if isinstance(raw_bullets, list):
         bullets = [sanitize_content_line(b) for b in raw_bullets if sanitize_content_line(b)]
-    if len(bullets) < 2:
-        defaults = [
-            sanitize_content_line("Track one leading metric and one lagging metric every week."),
-            sanitize_content_line("Use external links only when they sharpen a specific claim."),
-        ]
-        for item in defaults:
-            if item and item not in bullets:
-                bullets.append(item)
 
     closing = sanitize_content_line(payload.get("closing", "") or lead) or lead
     citation_policy = parse_citation_policy(payload)
