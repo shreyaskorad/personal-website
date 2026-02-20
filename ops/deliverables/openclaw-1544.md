@@ -1,15 +1,15 @@
-# Deliverable: Turn training requests into measurable capability outcomes
+# Deliverable: Improve judgment without adding course fatigue
 
-- Task ID: openclaw-1541
+- Task ID: openclaw-1544
 - Status: failed
-- Created: 2026-02-20T06:22:56Z
-- Updated: 2026-02-20T06:22:59Z
+- Created: 2026-02-20T06:38:26Z
+- Updated: 2026-02-20T06:42:56Z
 
 ## Summary
 Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
-# Deliverable Draft: Turn Training Requests Into Measurable Capability Outcomes SEO blog operating system
+# Deliverable Draft: Improve Judgment Without Adding Course Fatigue SEO blog operating system
 
 ## Objective and success metrics
 Build a predictable SEO content system for Shreyas Korad - Writing (https://shreyaskorad.github.io/personal-website) focused on L&D, gamification, data, LXD, AI. Primary metrics: ranking growth, qualified traffic, and publish cadence reliability.
