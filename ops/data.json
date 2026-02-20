@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-20T13:31:07Z",
+    "updatedAt": "2026-02-20T16:49:37Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -42,21 +42,21 @@
   "execution": [],
   "queueTop": [
     {
-      "id": "inbox-2230",
+      "id": "inbox-2285",
       "title": "Design learning for decision quality, not completion rates",
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
       "sequence": 1,
-      "createdAt": "2026-02-14T13:45:49Z",
-      "updatedAt": "2026-02-20T13:31:07Z",
+      "createdAt": "2026-02-13T16:16:43Z",
+      "updatedAt": "2026-02-20T16:49:37Z",
       "completedAt": null,
-      "ageHours": 143.76,
+      "ageHours": 168.55,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
-        "capture_id=747",
-        "inbox_item_id=2230"
+        "capture_id=672",
+        "inbox_item_id=2285"
       ],
       "action": "create_task",
       "scope": "professional",
@@ -66,20 +66,20 @@
   ],
   "userActionsDue": [
     {
-      "id": "openclaw-1671",
+      "id": "openclaw-1681",
       "title": "Design learning for decision quality, not completion rates",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-20T13:30:37Z",
-      "updatedAt": "2026-02-20T13:31:07Z",
-      "completedAt": "2026-02-20T13:31:07Z",
-      "ageHours": 0.01,
-      "deliverySummary": "Rewrite required before publish. Violations: duplicate title against published post",
-      "deliverableUrl": "/ops/deliverables/openclaw-1671.md",
+      "createdAt": "2026-02-20T16:35:55Z",
+      "updatedAt": "2026-02-20T16:45:29Z",
+      "completedAt": "2026-02-20T16:45:29Z",
+      "ageHours": 0.23,
+      "deliverySummary": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+      "deliverableUrl": "/ops/deliverables/openclaw-1681.md",
       "notes": [
-        "Publish quality gate failed."
+        "OpenClaw SSH execution failed."
       ],
       "scope": "professional",
       "hasDeliverable": true,
@@ -112,21 +112,71 @@
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-20T13:31:07Z",
-      "message": "Publish quality gate failed."
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T13:29:38Z",
-      "message": "Publish quality gate failed."
-    },
-    {
-      "source": "openclaw",
-      "timestamp": "2026-02-20T13:27:59Z",
-      "message": "Publish quality gate failed."
+      "timestamp": "2026-02-20T16:45:29Z",
+      "message": "OpenClaw SSH execution failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-20T16:45:29Z",
+      "type": "skipped",
+      "taskId": "capture-668",
+      "message": "Design learning for decision quality, not completion rates: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
+    },
+    {
+      "timestamp": "2026-02-20T14:18:52Z",
+      "type": "skipped",
+      "taskId": "capture-671",
+      "message": "Design learning for decision quality, not completion rates: OpenClaw SSH execution failed: OpenClaw SSH command failed: Read from remote host 192.168.1.29: Connection reset by peer\nclient_loop: send disconnect: Broken pipe"
+    },
+    {
+      "timestamp": "2026-02-20T13:44:54Z",
+      "type": "executed",
+      "taskId": "capture-670",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=c102e203-9eac-4249-8bf5-acaea47f966c): Executing agent workflow for decision quality"
+    },
+    {
+      "timestamp": "2026-02-20T13:43:25Z",
+      "type": "executed",
+      "taskId": "capture-672",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=ba7d6a3f-6feb-4ea0-814f-0df8e0b3febe): Article published on decision quality"
+    },
+    {
+      "timestamp": "2026-02-20T13:41:47Z",
+      "type": "executed",
+      "taskId": "capture-671",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=c7265b71-5e68-4a91-859b-16f4c7c45307): Article published on decision quality"
+    },
+    {
+      "timestamp": "2026-02-20T13:40:09Z",
+      "type": "executed",
+      "taskId": "capture-670",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=011969fc-8f60-4a82-b8c8-1a1fb13b12b0): Article published on decision quality"
+    },
+    {
+      "timestamp": "2026-02-20T13:38:37Z",
+      "type": "executed",
+      "taskId": "capture-667",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=2812db04-e3f9-4336-afef-c8cdb9506ce5): Executing agent workflow for decision quality article"
+    },
+    {
+      "timestamp": "2026-02-20T13:36:33Z",
+      "type": "executed",
+      "taskId": "capture-671",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=5526a253-dba1-46fe-a264-32ae4f93b837): Article drafted and published on decision quality"
+    },
+    {
+      "timestamp": "2026-02-20T13:35:03Z",
+      "type": "executed",
+      "taskId": "capture-670",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=46793c33-b5db-42b2-972b-763d6517c888): Drafting article on decision quality"
+    },
+    {
+      "timestamp": "2026-02-20T13:33:18Z",
+      "type": "executed",
+      "taskId": "capture-667",
+      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=f7ec5b92-c104-437c-b1e4-c705df979c19): Article drafted and published"
+    },
     {
       "timestamp": "2026-02-20T13:31:07Z",
       "type": "executed",
@@ -426,70 +476,10 @@
       "type": "executed",
       "taskId": "capture-645",
       "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=a2a10635-9338-4077-85fd-1654d59da9bb): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T12:08:02Z",
-      "type": "executed",
-      "taskId": "capture-650",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=222449f5-459d-4fa9-bd56-8791eca1bfb1): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T12:06:36Z",
-      "type": "executed",
-      "taskId": "capture-643",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=11c2f43d-3ec8-45a9-a35d-e8c8b8a4ddf6): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T12:05:11Z",
-      "type": "executed",
-      "taskId": "capture-648",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=bea93cdc-933f-4f56-84a7-7e0e305e1a07): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T12:03:45Z",
-      "type": "executed",
-      "taskId": "capture-649",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=ff1ab9ef-d743-4046-9fb6-30ffa15b72a6): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T12:02:50Z",
-      "type": "executed",
-      "taskId": "capture-647",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=61c42f87-e58c-43a4-880a-ad1a04d45e79): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T12:01:24Z",
-      "type": "executed",
-      "taskId": "capture-645",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=8c0b7d6b-a239-4c3e-8642-ef5dc9f31cf7): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T11:59:58Z",
-      "type": "executed",
-      "taskId": "capture-650",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=c1a96f61-50e2-4353-80b4-1c08b242ff39): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T11:59:02Z",
-      "type": "executed",
-      "taskId": "capture-643",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=bb25b586-171f-4003-bb58-b68911bc150c): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T11:57:36Z",
-      "type": "executed",
-      "taskId": "capture-648",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=f9a488e7-4384-4690-b613-1dd5b9999f85): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
-    },
-    {
-      "timestamp": "2026-02-20T11:56:03Z",
-      "type": "executed",
-      "taskId": "capture-649",
-      "message": "Design learning for decision quality, not completion rates: Delegated via OpenClaw SSH (status=completed, task_id=33368a08-6df4-4242-8130-5d7cf7ca79f1): Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model."
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-20T13:31:07Z",
+    "updatedAt": "2026-02-20T16:49:37Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -570,7 +560,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-20T13:28:03Z",
+      "asOf": "2026-02-20T16:49:40Z",
       "lookbackDays": 28,
       "summary": {
         "users": 35,
@@ -667,45 +657,125 @@
       ],
       "error": "",
       "cache": {
-        "hit": true,
-        "fetchedAt": "2026-02-20T13:28:03Z"
+        "hit": false,
+        "fetchedAt": "2026-02-20T16:49:40Z"
       }
     },
     "taskStats": {
       "total": 80,
-      "completed": 4,
+      "completed": 1,
       "queued": 0,
-      "blocked": 3,
+      "blocked": 1,
       "byStatus": {
-        "failed": 3,
-        "cancelled": 73,
-        "completed": 4
+        "failed": 1,
+        "cancelled": 78,
+        "completed": 1
       }
     },
     "recentTasks": [
       {
-        "id": "openclaw-1671",
+        "id": "openclaw-1681",
         "title": "Design learning for decision quality, not completion rates",
         "status": "failed",
-        "updated_at": "2026-02-20T13:31:07Z",
-        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
-        "blockers": "Publish quality gate failed."
+        "updated_at": "2026-02-20T16:45:29Z",
+        "next_steps": "Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.",
+        "blockers": "OpenClaw SSH execution failed."
+      },
+      {
+        "id": "openclaw-1680",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T16:35:54Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2284.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1679",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T16:35:54Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1678",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T16:35:54Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2285.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1677",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:45:53Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2283.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1676",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:44:24Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2282.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1675",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:42:47Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1674",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:39:36Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2280.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1673",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:39:36Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2281.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1672",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:37:32Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2279.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1671",
+        "title": "Design learning for decision quality, not completion rates",
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:34:17Z",
+        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1670",
         "title": "Design learning for decision quality, not completion rates",
-        "status": "failed",
-        "updated_at": "2026-02-20T13:29:38Z",
-        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
-        "blockers": "Publish quality gate failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:34:17Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2278.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1669",
         "title": "Design learning for decision quality, not completion rates",
-        "status": "failed",
-        "updated_at": "2026-02-20T13:27:59Z",
-        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
-        "blockers": "Publish quality gate failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-20T13:32:09Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2277.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1668",
@@ -758,89 +828,9 @@
       {
         "id": "openclaw-1662",
         "title": "Design learning for decision quality, not completion rates",
-        "status": "completed",
-        "updated_at": "2026-02-20T13:16:42Z",
-        "next_steps": "",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1661",
-        "title": "Design learning for decision quality, not completion rates",
         "status": "cancelled",
-        "updated_at": "2026-02-20T13:19:59Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2272.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1660",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T13:18:21Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2271.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1659",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T13:16:42Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2269.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1658",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T13:16:42Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2270.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1657",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T13:13:17Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1656",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T13:11:41Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2268.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1655",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T13:10:02Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1654",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T13:08:27Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1653",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T13:06:51Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2267.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1652",
-        "title": "Design learning for decision quality, not completion rates",
-        "status": "cancelled",
-        "updated_at": "2026-02-20T13:05:16Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2266.",
+        "updated_at": "2026-02-20T16:35:54Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2286.",
         "blockers": ""
       }
     ],
@@ -848,127 +838,127 @@
       "count": 25,
       "recent": [
         {
-          "id": 1862,
-          "created_at": "2026-02-20T13:31:07Z",
-          "capture_id": 666,
-          "openclaw_row_id": 1671,
+          "id": 1934,
+          "created_at": "2026-02-20T13:44:54Z",
+          "capture_id": 670,
+          "openclaw_row_id": 1679,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "publishing-qa",
           "agent_role": "Publishing QA",
-          "note": "Publish and verify post is live, correctly indexed, return QA evidence and measurement handoff",
+          "note": "Publishing and verifying post is live, correctly indexed, returning QA evidence and measurement handoff",
           "action_hint": "Execute publish verification",
           "handoff_to": "supervisor"
         },
         {
-          "id": 1861,
-          "created_at": "2026-02-20T13:31:07Z",
-          "capture_id": 666,
-          "openclaw_row_id": 1671,
+          "id": 1933,
+          "created_at": "2026-02-20T13:44:54Z",
+          "capture_id": 670,
+          "openclaw_row_id": 1679,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "refresh-planner",
           "agent_role": "Refresh Planner",
-          "note": "Define update cadence to protect rankings and freshness",
+          "note": "Defining update cadence to protect rankings and freshness",
           "action_hint": "Document refresh plan and pass to publishing qa",
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 1860,
-          "created_at": "2026-02-20T13:31:07Z",
-          "capture_id": 666,
-          "openclaw_row_id": 1671,
+          "id": 1932,
+          "created_at": "2026-02-20T13:44:54Z",
+          "capture_id": 670,
+          "openclaw_row_id": 1679,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "editor",
           "agent_role": "Editor",
-          "note": "Improve clarity, authority, readability while preserving intent",
+          "note": "Improving clarity, authority, readability while preserving intent",
           "action_hint": "Polish and pass to refresh planner",
           "handoff_to": "refresh-planner"
         },
         {
-          "id": 1859,
-          "created_at": "2026-02-20T13:31:07Z",
-          "capture_id": 666,
-          "openclaw_row_id": 1671,
+          "id": 1931,
+          "created_at": "2026-02-20T13:44:54Z",
+          "capture_id": 670,
+          "openclaw_row_id": 1679,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "supervisor",
           "agent_role": "Supervisor",
-          "note": "Keep title, framing, examples aligned to practical reader intent",
+          "note": "Keeping title, framing, examples aligned to practical reader intent",
           "action_hint": "Refine and pass to editor",
           "handoff_to": "editor"
         },
         {
-          "id": 1858,
-          "created_at": "2026-02-20T13:31:07Z",
-          "capture_id": 666,
-          "openclaw_row_id": 1671,
+          "id": 1930,
+          "created_at": "2026-02-20T13:44:54Z",
+          "capture_id": 670,
+          "openclaw_row_id": 1679,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "writer",
           "agent_role": "Writer",
-          "note": "Draft 180-300 word article with personal voice, practical scenario, reflective question",
+          "note": "Drafting 180-300 word article with personal voice, practical scenario, reflective question",
           "action_hint": "Pass to editor",
           "handoff_to": "editor"
         },
         {
-          "id": 1857,
-          "created_at": "2026-02-20T13:31:07Z",
-          "capture_id": 666,
-          "openclaw_row_id": 1671,
+          "id": 1929,
+          "created_at": "2026-02-20T13:44:54Z",
+          "capture_id": 670,
+          "openclaw_row_id": 1679,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "research-analyst",
           "agent_role": "Research Analyst",
-          "note": "Gather 4 diverse references from Gallup, Stanford, Forrester, PwC",
+          "note": "Gathering 4 diverse references from Gallup, Stanford, Forrester, PwC",
           "action_hint": "Pass to writer",
           "handoff_to": "writer"
         },
         {
-          "id": 1856,
-          "created_at": "2026-02-20T13:31:07Z",
-          "capture_id": 666,
-          "openclaw_row_id": 1671,
+          "id": 1928,
+          "created_at": "2026-02-20T13:44:54Z",
+          "capture_id": 670,
+          "openclaw_row_id": 1679,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "brief-architect",
           "agent_role": "Brief Architect",
-          "note": "Convert strategy into clear brief with section plan, CTA, evidence requirements",
+          "note": "Converting strategy into clear brief with section plan, CTA, and evidence requirements",
           "action_hint": "Pass to research analyst",
           "handoff_to": "research-analyst"
         },
         {
-          "id": 1855,
-          "created_at": "2026-02-20T13:31:07Z",
-          "capture_id": 666,
-          "openclaw_row_id": 1671,
+          "id": 1927,
+          "created_at": "2026-02-20T13:44:54Z",
+          "capture_id": 670,
+          "openclaw_row_id": 1679,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "serp-keyword",
           "agent_role": "Keyword and SERP Analyst",
-          "note": "Map keyword clusters, search intent, competitor gaps, output primary keyword and supporting entities",
+          "note": "Mapping keyword clusters, search intent, competitor gaps, outputting primary keyword and supporting entities",
           "action_hint": "Pass to brief architect",
           "handoff_to": "brief-architect"
         },
         {
-          "id": 1854,
-          "created_at": "2026-02-20T13:31:07Z",
-          "capture_id": 666,
-          "openclaw_row_id": 1671,
+          "id": 1926,
+          "created_at": "2026-02-20T13:44:54Z",
+          "capture_id": 670,
+          "openclaw_row_id": 1679,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "topic-scout",
           "agent_role": "Topic Scout",
-          "note": "Identify 3 candidate topics, select one by practical relevance, reject off-focus topics",
+          "note": "Identifying 3 candidate topics and selecting one by practical relevance",
           "action_hint": "Proceed to keyword analyst",
           "handoff_to": "serp-keyword"
         },
         {
-          "id": 1853,
-          "created_at": "2026-02-20T13:29:38Z",
-          "capture_id": 670,
-          "openclaw_row_id": 1670,
+          "id": 1925,
+          "created_at": "2026-02-20T13:43:25Z",
+          "capture_id": 672,
+          "openclaw_row_id": 1678,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "publishing-qa",
@@ -978,10 +968,10 @@
           "handoff_to": "supervisor"
         },
         {
-          "id": 1852,
-          "created_at": "2026-02-20T13:29:38Z",
-          "capture_id": 670,
-          "openclaw_row_id": 1670,
+          "id": 1924,
+          "created_at": "2026-02-20T13:43:25Z",
+          "capture_id": 672,
+          "openclaw_row_id": 1678,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "refresh-planner",
@@ -991,23 +981,36 @@
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 1851,
-          "created_at": "2026-02-20T13:29:38Z",
-          "capture_id": 670,
-          "openclaw_row_id": 1670,
+          "id": 1923,
+          "created_at": "2026-02-20T13:43:25Z",
+          "capture_id": 672,
+          "openclaw_row_id": 1678,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "editor",
           "agent_role": "Editor",
-          "note": "Review: 205 words, no em dash/bullets/blockquotes. Sentence case heading used. Practical scenario clear. Reflective question present. References diverse.",
-          "action_hint": "Polish and pass to publishing qa",
-          "handoff_to": "publishing-qa"
+          "note": "Review: 190 words, no em dash/bullets/blockquotes. Sentence case heading used. Practical scenario clear. Reflective question present. References diverse.",
+          "action_hint": "Polish and pass to refresh planner",
+          "handoff_to": "refresh-planner"
         },
         {
-          "id": 1850,
-          "created_at": "2026-02-20T13:29:38Z",
-          "capture_id": 670,
-          "openclaw_row_id": 1670,
+          "id": 1922,
+          "created_at": "2026-02-20T13:43:25Z",
+          "capture_id": 672,
+          "openclaw_row_id": 1678,
+          "source": "openclaw_ssh",
+          "task_title": "Design learning for decision quality, not completion rates",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Reviewing title, framing, examples. Title clear. Framing practical. Scenario concrete. No stock phrasing detected.",
+          "action_hint": "Approve and pass to editor",
+          "handoff_to": "editor"
+        },
+        {
+          "id": 1921,
+          "created_at": "2026-02-20T13:43:25Z",
+          "capture_id": 672,
+          "openclaw_row_id": 1678,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "writer",
@@ -1017,10 +1020,10 @@
           "handoff_to": "editor"
         },
         {
-          "id": 1849,
-          "created_at": "2026-02-20T13:29:38Z",
-          "capture_id": 670,
-          "openclaw_row_id": 1670,
+          "id": 1920,
+          "created_at": "2026-02-20T13:43:25Z",
+          "capture_id": 672,
+          "openclaw_row_id": 1678,
           "source": "openclaw_ssh",
           "task_title": "Design learning for decision quality, not completion rates",
           "agent_id": "research-analyst",
@@ -1028,32 +1031,91 @@
           "note": "Gather 4 diverse references from Gallup, Stanford, Forrester, PwC. Avoid recent domains (ATD, HBR, MIT Sloan, Deloitte). Focus on decision quality and learning impact.",
           "action_hint": "Prepare claims table and references",
           "handoff_to": "writer"
-        },
-        {
-          "id": 1848,
-          "created_at": "2026-02-20T13:29:38Z",
-          "capture_id": 670,
-          "openclaw_row_id": 1670,
-          "source": "openclaw_ssh",
-          "task_title": "Design learning for decision quality, not completion rates",
-          "agent_id": "brief-architect",
-          "agent_role": "Brief Architect",
-          "note": "Structure: 4 paragraphs max 250 words. No headings in body. Anchor: learning design for decisions not completion. CTA: apply after next program. Evidence: workplace scenario required.",
-          "action_hint": "Pass to research analyst",
-          "handoff_to": "research-analyst"
         }
       ]
     },
     "publishStats": {
       "total": 80,
-      "published": 7,
-      "failed": 73,
+      "published": 5,
+      "failed": 75,
       "ignored": 0,
       "byStatus": {
-        "failed": 73,
-        "published": 7
+        "failed": 75,
+        "published": 5
       },
       "recent": [
+        {
+          "openclaw_row_id": 1679,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:44:54Z"
+        },
+        {
+          "openclaw_row_id": 1678,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:43:25Z"
+        },
+        {
+          "openclaw_row_id": 1677,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:41:47Z"
+        },
+        {
+          "openclaw_row_id": 1676,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:40:09Z"
+        },
+        {
+          "openclaw_row_id": 1675,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:38:37Z"
+        },
+        {
+          "openclaw_row_id": 1674,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:36:33Z"
+        },
+        {
+          "openclaw_row_id": 1673,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:35:03Z"
+        },
+        {
+          "openclaw_row_id": 1672,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:33:18Z"
+        },
         {
           "openclaw_row_id": 1671,
           "status": "failed",
@@ -1136,6 +1198,15 @@
           "updated_at": "2026-02-20T13:17:22Z"
         },
         {
+          "openclaw_row_id": 1662,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T14:18:52Z"
+        },
+        {
           "openclaw_row_id": 1661,
           "status": "failed",
           "url": "",
@@ -1152,123 +1223,60 @@
           "commit": "",
           "error": "Style rules violation: duplicate title against published post",
           "updated_at": "2026-02-20T13:10:42Z"
-        },
-        {
-          "openclaw_row_id": 1659,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:09:02Z"
-        },
-        {
-          "openclaw_row_id": 1658,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:07:27Z"
-        },
-        {
-          "openclaw_row_id": 1657,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:05:52Z"
-        },
-        {
-          "openclaw_row_id": 1656,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:04:16Z"
-        },
-        {
-          "openclaw_row_id": 1655,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:02:41Z"
-        },
-        {
-          "openclaw_row_id": 1654,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:01:08Z"
-        },
-        {
-          "openclaw_row_id": 1653,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:59:26Z"
-        },
-        {
-          "openclaw_row_id": 1652,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:57:47Z"
-        },
-        {
-          "openclaw_row_id": 1651,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T12:56:07Z"
         }
       ]
     },
     "progress": {
       "summary": {
         "total": 120,
-        "completed": 10,
+        "completed": 9,
         "active": 0,
         "queued": 0,
-        "blocked": 3,
-        "cancelled": 107
+        "blocked": 1,
+        "cancelled": 110
       },
       "today": {
-        "completed": 4,
+        "completed": 3,
         "active": 0,
         "queued": 0,
-        "blocked": 3,
-        "published": 7
+        "blocked": 1,
+        "published": 5
       },
       "activeTask": null,
       "lastCompletedTask": {
-        "id": "openclaw-1662",
-        "row_id": 1662,
-        "capture_id": 668,
-        "title": "Design learning for decision quality, not completion rates",
+        "id": "openclaw-1603",
+        "row_id": 1603,
+        "capture_id": 1058,
+        "title": "Improve judgment without adding course fatigue",
         "status": "completed",
-        "updated_at": "2026-02-20T13:16:42Z",
+        "updated_at": "2026-02-20T11:43:59Z",
         "next_steps": "",
         "blockers": "",
-        "description": "Use this exact article title: Design learning for decision quality, not completion rates. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 4 credible source links from diverse domains. References are required in this run: include 4 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'."
+        "description": "Use this exact article title: Use scenario based practice to improve judgment without adding course fatigue. Write one publish-ready article in your authentic focus areas: L&D, gamification, LXD, data-informed learning, and practical AI use in learning. Exclude SEO/process meta content. Avoid duplicated themes and avoid previously published near-duplicate titles. Keep it practical with real workplace decisions, concrete constraints, and clear execution context. Follow strict style rules: 180-300 words, no bullets, no em dash, no blockquotes, no H2/H3 in the final body. Add a final References section with 3 credible source links from diverse domains. References are required in this run: include 3 credible links (3-4 total) and include at least one domain not used in recent posts. Do not use precise numeric claims unless cited with a verifiable source link. Avoid repeating the same core point across paragraphs; maintain natural narrative flow. Never use stock phrasing such as: 'When I work on ...', 'Practical guidance for teams:', 'Use one baseline metric, one weekly experiment ...', or 'Keep ... practical by pairing one study link ...'."
       },
       "pendingQueue": {
         "count": 20,
         "inboxCount": 20,
         "openclawQueuedCount": 0,
         "recent": [
+          {
+            "id": "inbox-2285",
+            "capture_id": 672,
+            "title": "Design learning for decision quality, not completion rates",
+            "status": "pending",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-13T16:16:43Z",
+            "executed_at": ""
+          },
+          {
+            "id": "inbox-2284",
+            "capture_id": 671,
+            "title": "Design learning for decision quality, not completion rates",
+            "status": "pending",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-13T16:14:41Z",
+            "executed_at": ""
+          },
           {
             "id": "inbox-2230",
             "capture_id": 747,
@@ -1322,96 +1330,164 @@
             "detail": "Waiting for OpenClaw execution",
             "created_at": "2026-02-20T09:47:31Z",
             "executed_at": ""
-          },
-          {
-            "id": "inbox-2224",
-            "capture_id": 1076,
-            "title": "Design learning for decision quality, not completion rates",
-            "status": "pending",
-            "detail": "Waiting for OpenClaw execution",
-            "created_at": "2026-02-20T10:13:23Z",
-            "executed_at": ""
-          },
-          {
-            "id": "inbox-2223",
-            "capture_id": 1077,
-            "title": "Design learning for decision quality, not completion rates",
-            "status": "pending",
-            "detail": "Waiting for OpenClaw execution",
-            "created_at": "2026-02-20T10:14:26Z",
-            "executed_at": ""
           }
         ]
       },
-      "focusNote": {},
+      "focusNote": {
+        "agent_id": "supervisor",
+        "created_at": "2026-02-20T11:43:59Z",
+        "note": "Context overflow: prompt too large for the model. Try /reset (or /new) to start a fresh session, or use a larger-context model.",
+        "action_hint": "",
+        "handoff_to": ""
+      },
       "bottleneck": {
         "state": "blocked",
-        "reason": "Publish quality gate failed.",
-        "at": "2026-02-20T13:31:07Z"
+        "reason": "OpenClaw SSH execution failed.",
+        "at": "2026-02-20T16:45:29Z"
       },
       "recentIdeas": [
         {
-          "id": "openclaw-1671",
+          "id": "openclaw-1681",
           "title": "Design learning for decision quality, not completion rates",
           "status": "failed",
-          "updated_at": "2026-02-20T13:31:07Z"
+          "updated_at": "2026-02-20T16:45:29Z"
         },
         {
-          "id": "openclaw-1670",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "updated_at": "2026-02-20T13:29:38Z"
-        },
-        {
-          "id": "openclaw-1669",
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "updated_at": "2026-02-20T13:27:59Z"
-        },
-        {
-          "id": "openclaw-1668",
+          "id": "openclaw-1680",
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
-          "updated_at": "2026-02-20T13:30:37Z"
+          "updated_at": "2026-02-20T16:35:54Z"
         },
         {
-          "id": "openclaw-1667",
+          "id": "openclaw-1679",
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
-          "updated_at": "2026-02-20T13:29:03Z"
+          "updated_at": "2026-02-20T16:35:54Z"
         },
         {
-          "id": "openclaw-1666",
+          "id": "openclaw-1678",
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
-          "updated_at": "2026-02-20T13:27:16Z"
+          "updated_at": "2026-02-20T16:35:54Z"
         },
         {
-          "id": "openclaw-1665",
+          "id": "openclaw-1677",
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
-          "updated_at": "2026-02-20T13:23:44Z"
+          "updated_at": "2026-02-20T13:45:53Z"
         },
         {
-          "id": "openclaw-1664",
+          "id": "openclaw-1676",
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
-          "updated_at": "2026-02-20T13:23:44Z"
+          "updated_at": "2026-02-20T13:44:24Z"
         },
         {
-          "id": "openclaw-1663",
+          "id": "openclaw-1675",
           "title": "Design learning for decision quality, not completion rates",
           "status": "cancelled",
-          "updated_at": "2026-02-20T13:21:40Z"
+          "updated_at": "2026-02-20T13:42:47Z"
         },
         {
-          "id": "openclaw-1662",
+          "id": "openclaw-1674",
           "title": "Design learning for decision quality, not completion rates",
-          "status": "completed",
-          "updated_at": "2026-02-20T13:16:42Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-20T13:39:36Z"
+        },
+        {
+          "id": "openclaw-1673",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T13:39:36Z"
+        },
+        {
+          "id": "openclaw-1672",
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "cancelled",
+          "updated_at": "2026-02-20T13:37:32Z"
         }
       ],
       "recentOutputs": [
+        {
+          "id": "openclaw-1679",
+          "row_id": 1679,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:44:54Z"
+        },
+        {
+          "id": "openclaw-1678",
+          "row_id": 1678,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:43:25Z"
+        },
+        {
+          "id": "openclaw-1677",
+          "row_id": 1677,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:41:47Z"
+        },
+        {
+          "id": "openclaw-1676",
+          "row_id": 1676,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:40:09Z"
+        },
+        {
+          "id": "openclaw-1675",
+          "row_id": 1675,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:38:37Z"
+        },
+        {
+          "id": "openclaw-1674",
+          "row_id": 1674,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:36:33Z"
+        },
+        {
+          "id": "openclaw-1673",
+          "row_id": 1673,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:35:03Z"
+        },
+        {
+          "id": "openclaw-1672",
+          "row_id": 1672,
+          "title": "Design learning for decision quality, not completion rates",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-20T13:33:18Z"
+        },
         {
           "id": "openclaw-1671",
           "row_id": 1671,
@@ -1431,90 +1507,10 @@
           "slug": "",
           "error": "Style rules violation: duplicate title against published post",
           "updated_at": "2026-02-20T13:29:38Z"
-        },
-        {
-          "id": "openclaw-1669",
-          "row_id": 1669,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:27:59Z"
-        },
-        {
-          "id": "openclaw-1668",
-          "row_id": 1668,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:26:17Z"
-        },
-        {
-          "id": "openclaw-1667",
-          "row_id": 1667,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:24:39Z"
-        },
-        {
-          "id": "openclaw-1666",
-          "row_id": 1666,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:22:44Z"
-        },
-        {
-          "id": "openclaw-1665",
-          "row_id": 1665,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:20:40Z"
-        },
-        {
-          "id": "openclaw-1664",
-          "row_id": 1664,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:18:59Z"
-        },
-        {
-          "id": "openclaw-1663",
-          "row_id": 1663,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:17:22Z"
-        },
-        {
-          "id": "openclaw-1661",
-          "row_id": 1661,
-          "title": "Design learning for decision quality, not completion rates",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-20T13:12:17Z"
         }
       ],
       "stages": {
-        "focusTaskId": "openclaw-1662",
+        "focusTaskId": "openclaw-1603",
         "total": 9,
         "done": 0,
         "remaining": 9,
@@ -1530,19 +1526,19 @@
           "refresh-planner",
           "publishing-qa"
         ],
-        "lastStageAt": ""
+        "lastStageAt": "2026-02-20T11:43:59Z"
       },
       "pipeline": {
         "workerStarted": true,
-        "tickInProgress": true,
-        "lastStatus": "running",
+        "tickInProgress": false,
+        "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-20T13:30:23Z",
-        "lastFinishedAt": "2026-02-20T13:29:38Z",
+        "lastStartedAt": "2026-02-20T16:35:29Z",
+        "lastFinishedAt": "2026-02-20T16:45:57Z",
         "runtime": {
           "pending_inbox": 294,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 3
+          "blocked_or_failed_openclaw": 1
         }
       }
     },
@@ -1620,7 +1616,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-20T13:31:07Z",
+    "updatedAt": "2026-02-20T16:49:37Z",
     "metrics": {
       "reviewRequested": 1,
       "proceedCount": 0,
