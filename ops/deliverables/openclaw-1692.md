@@ -1,12 +1,12 @@
 # Deliverable: Design learning for decision quality, not completion rates
 
-- Task ID: openclaw-1689
+- Task ID: openclaw-1692
 - Status: failed
-- Created: 2026-02-20T17:05:04Z
-- Updated: 2026-02-20T17:05:11Z
+- Created: 2026-02-24T11:23:10Z
+- Updated: 2026-02-24T11:23:10Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Check OPENCLAW_SSH_HOST and OpenClaw runtime on Mac mini.
 
 ## Deliverable Output
 # Design learning for decision quality, not completion rates
@@ -26,7 +26,7 @@ Where in your next manager check-in could you replace activity updates with a sh
 References: [UNESCO Futures of Education](https://www.unesco.org/en/futures-education); [OECD Skills Outlook 2023](https://www.oecd.org/skills/oecd-skills-outlook-e11c1c2d-en.htm); [Our World in Data: AI](https://ourworldindata.org/artificial-intelligence); [World Economic Forum Future of Jobs 2025](https://www.weforum.org/reports/the-future-of-jobs-report-2025)
 
 ## Blockers / Notes
-Publish quality gate failed.
+OpenClaw SSH execution failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
