@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (717)
 
 - Task ID: openclaw-1778
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-24T16:15:47Z
-- Updated: 2026-02-24T16:16:18Z
+- Updated: 2026-02-24T16:21:47Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2432.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (717)
@@ -22,9 +22,6 @@ This also improves quality control in automation: shorter posts stay readable, b
 I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
 If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
