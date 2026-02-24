@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (704)
 
 - Task ID: openclaw-1798
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-24T17:23:50Z
-- Updated: 2026-02-24T17:24:32Z
+- Updated: 2026-02-24T17:53:32Z
 
 ## Summary
-Manually copy the article content below into your repository posts directory and update writing.html to publish.
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2463.
 
 ## Deliverable Output
 ```json
@@ -70,9 +70,6 @@ Manually copy the article content below into your repository posts directory and
   }
 }
 ```
-
-## Blockers / Notes
-Repository path not accessible after repeated search attempts. Cannot provide required publish QA evidence: Final URL, slug/canonical check, sitemap/RSS verification, or status code confirmation.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
