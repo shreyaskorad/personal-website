@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (713)
 
 - Task ID: openclaw-1783
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-24T16:31:59Z
-- Updated: 2026-02-24T16:32:24Z
+- Updated: 2026-02-24T16:35:34Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2439.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (713)
@@ -22,9 +22,6 @@ Over time, teams build a cleaner evidence trail because each article connects a 
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
 If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
