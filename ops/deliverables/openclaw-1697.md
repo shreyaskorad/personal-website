@@ -1,12 +1,12 @@
 # Deliverable: Design learning for decision quality, not completion rates
 
 - Task ID: openclaw-1697
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-24T12:20:48Z
-- Updated: 2026-02-24T12:22:21Z
+- Updated: 2026-02-24T12:27:13Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 # Design learning for decision quality, not completion rates
@@ -22,9 +22,6 @@ This also improves quality control in automation: shorter posts stay readable, b
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
 Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
