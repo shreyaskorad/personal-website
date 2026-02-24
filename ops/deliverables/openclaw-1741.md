@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2402)
 
 - Task ID: openclaw-1741
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-24T14:32:44Z
-- Updated: 2026-02-24T14:33:07Z
+- Updated: 2026-02-24T14:38:09Z
 
 ## Summary
-Provide correct repository path location to enable publishing
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2363.
 
 ## Deliverable Output
 ```json
@@ -26,9 +26,6 @@ Provide correct repository path location to enable publishing
   ]
 }
 ```
-
-## Blockers / Notes
-Publish target repository not found after extensive search. Cannot provide required Final URL, sitemap check, or status code verification.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
