@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (755)
 
 - Task ID: openclaw-1734
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-24T14:15:35Z
-- Updated: 2026-02-24T14:16:13Z
+- Updated: 2026-02-24T14:20:34Z
 
 ## Summary
-Create article markdown in workspace, provide content for manual publishing
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2351.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (755)
@@ -22,9 +22,6 @@ I have found that this approach keeps writing and execution coherent, because ea
 I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
 Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
-
-## Blockers / Notes
-Personal website repository not found at any path searched
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

@@ -1,17 +1,17 @@
-# Deliverable: Design learning for decision quality, not completion rates
+# Deliverable: Decision quality in workplace learning workflows (752)
 
-- Task ID: openclaw-1697
+- Task ID: openclaw-1738
 - Status: cancelled
-- Created: 2026-02-24T12:20:48Z
-- Updated: 2026-02-24T12:27:13Z
+- Created: 2026-02-24T14:25:28Z
+- Updated: 2026-02-24T14:30:10Z
 
 ## Summary
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2358.
 
 ## Deliverable Output
-# Design learning for decision quality, not completion rates
+# Decision quality in workplace learning workflows (752)
 
-I care about design learning for decision quality, not completion rates only when it changes the judgment teams use in daily work, because learning that never touches decisions does not survive pressure. If a manager cannot point to a clearer call during real work, the effort is still theory.
+I evaluate decision quality in workplace learning workflows (752) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
 A practical scenario is a cross-functional handoff where everyone agrees on goals but no one names the decision criteria early enough. The team then revisits the same issue in the next standup.
 
@@ -19,7 +19,7 @@ You can run a short pilot around a focused behavior change, then document what s
 
 This also improves quality control in automation: shorter posts stay readable, but the argument still deepens when each paragraph adds a different layer of evidence or judgment. The result feels like a practitioner note, not a template.
 
-When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
+I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
 Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
 

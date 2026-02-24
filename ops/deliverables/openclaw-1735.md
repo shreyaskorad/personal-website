@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2392)
 
 - Task ID: openclaw-1735
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-24T14:18:15Z
-- Updated: 2026-02-24T14:18:28Z
+- Updated: 2026-02-24T14:22:59Z
 
 ## Summary
-Write article markdown to workspace, output final content with measurement handoff
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2353.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (2392)
@@ -22,9 +22,6 @@ This also improves quality control in automation: shorter posts stay readable, b
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
 If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
-
-## Blockers / Notes
-Repository inaccessible, creating content as fallback
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
