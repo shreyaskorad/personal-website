@@ -1,19 +1,19 @@
-# Deliverable: Practical AI support for learning decisions in real workflows (issue 1739)
+# Deliverable: Improve decision quality in learning workflows (playbook 1746)
 
-- Task ID: openclaw-1701
+- Task ID: openclaw-1703
 - Status: cancelled
-- Created: 2026-02-24T12:34:59Z
-- Updated: 2026-02-24T12:42:23Z
+- Created: 2026-02-24T12:42:23Z
+- Updated: 2026-02-24T12:49:45Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2301.
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
-# Practical AI support for learning decisions in real workflows (issue 1739)
+# How teams improve decision quality in learning workflows (playbook 1746)
 
-With practical ai support for learning decisions in real workflows (issue 1739), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
+With how teams improve decision quality in learning workflows (playbook 1746), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
 
-In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
+Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
 
 I start with one decision checkpoint, one owner, and one evidence signal that can be reviewed in the next team meeting. This keeps the experiment small enough to sustain and concrete enough to learn from.
 
