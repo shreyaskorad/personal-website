@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (1772)
 
 - Task ID: openclaw-1727
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-24T13:59:15Z
-- Updated: 2026-02-24T13:59:44Z
+- Updated: 2026-02-24T14:03:55Z
 
 ## Summary
-Write article following constraints, save to workspace, locate correct publish path
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2340.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (1772)
@@ -22,9 +22,6 @@ I have found that this approach keeps writing and execution coherent, because ea
 I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
 What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
-
-## Blockers / Notes
-Repository path inaccessible, proceeding with content creation in workspace
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
