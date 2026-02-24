@@ -10,9 +10,10 @@ import subprocess
 import sys
 import time
 from datetime import datetime
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import quote_plus, urlparse
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,7 +25,56 @@ HISTORY_FILE = Path('/Users/shreyas-clawd/.openclaw/state/publish-image-history.
 SANITIZED_PAYLOAD = STATE_DIR / 'publish-payload.sanitized.json'
 QUALITY_HISTORY_FILE = STATE_DIR / 'publish-quality-history.json'
 QUALITY_REPORT_FILE = STATE_DIR / 'publish-quality-report.json'
+RESEARCH_REPORT_FILE = STATE_DIR / 'publish-research-report.json'
 
+RESEARCH_TIMEOUT_SECONDS = 8
+RESEARCH_MAX_QUERIES = 3
+RESEARCH_MAX_ITEMS = 10
+RESEARCH_IDEA_LIMIT = 3
+FOCUS_AREA_QUERY_HINTS = {
+    'gamification': 'gamification workplace learning behavior change',
+    'learning-design': 'learning and development workflow manager coaching capability',
+    'data-analytics': 'learning analytics performance measurement workplace teams',
+    'behavior-science': 'behavior science habit formation decision quality teams',
+    'ai-learning': 'generative ai learning design workplace capability building',
+}
+RESEARCH_TOKEN_STOPWORDS = {
+    'with', 'from', 'that', 'this', 'their', 'there', 'where', 'when', 'what', 'which',
+    'about', 'into', 'through', 'between', 'around', 'using', 'used', 'use', 'based',
+    'study', 'paper', 'result', 'results', 'approach', 'method', 'methods', 'analysis',
+    'system', 'models', 'model', 'learning', 'development', 'teams', 'workplace',
+}
+FOCUS_AREA_FILTER_TERMS = {
+    'gamification': {'gamification', 'game', 'motivation', 'engagement'},
+    'learning-design': {'learning', 'training', 'coaching', 'enablement', 'instruction', 'capability'},
+    'data-analytics': {'data', 'analytics', 'metric', 'measurement', 'performance', 'dashboard'},
+    'behavior-science': {'behavior', 'behaviour', 'habit', 'nudge', 'decision', 'bias'},
+    'ai-learning': {'ai', 'automation', 'model', 'llm', 'copilot'},
+}
+BUSINESS_CONTEXT_TERMS = {
+    'learning', 'training', 'workplace', 'workforce', 'manager', 'team', 'organization',
+    'employee', 'capability', 'coaching', 'enablement', 'leadership', 'performance',
+    'analytics', 'gamification', 'behavior', 'behaviour', 'habit', 'decision',
+}
+
+IMPROVEMENT_ENGINE_FILE = STATE_DIR / 'publish-improvement-engine.json'
+OPTIONAL_CITATION_MAX = 2
+OPTIONAL_CITATION_MIN_CONFIDENCE = 0.78
+
+VOICE_BANNED_PATTERNS = [
+    re.compile(r'\bin today\'s fast-paced world\b', flags=re.IGNORECASE),
+    re.compile(r'\bgame changer\b', flags=re.IGNORECASE),
+    re.compile(r'\bleverage ai\b', flags=re.IGNORECASE),
+    re.compile(r'\bnext level\b', flags=re.IGNORECASE),
+    re.compile(r'\bunlock potential\b', flags=re.IGNORECASE),
+    re.compile(r'\bmove the needle\b', flags=re.IGNORECASE),
+]
+VOICE_FILLER_PREFIX_RE = re.compile(r'^(this (?:article|post|piece)|in summary|to conclude)[:,\-]\s*', flags=re.IGNORECASE)
+TRUSTED_CITATION_DOMAINS = {
+    'nber.org', 'oecd.org', 'weforum.org', 'gallup.com', 'ourworldindata.org',
+    'arxiv.org', 'doi.org', 'nature.com', 'science.org', 'cell.com', 'jamanetwork.com',
+    'learning.linkedin.com',
+}
 RECENT_IMAGE_WINDOW = 12
 QUALITY_MIN_TOTAL = 22
 QUALITY_MAX_PASSES = 4
@@ -118,6 +168,23 @@ TOPIC_KEYWORDS = {
 }
 
 TITLE_TRAILING_STOPWORDS = {'and', 'with', 'for', 'to', 'about', 'on', 'of'}
+CATEGORY_PREFIX_PATTERNS = (
+    r'gamified\s+learning',
+    r'gamification',
+    r'l\s*&\s*d',
+    r'learning\s+and\s+development',
+    r'learning\s+design',
+    r'lxd',
+    r'ai',
+    r'modern\s+l\s*&\s*d',
+    r'modern\s+ld',
+    r'data\s+and\s+analytics',
+    r'behaviou?r\s+science',
+)
+LEADING_CATEGORY_LABEL_RE = re.compile(
+    r'^\s*(?:' + '|'.join(CATEGORY_PREFIX_PATTERNS) + r')\b(?:\s*[:\-|]\s*|\s+)+',
+    flags=re.IGNORECASE,
+)
 STYLE_DRIFT_PATTERNS = [
     re.compile(r'\bbuild on this core idea\b', flags=re.IGNORECASE),
     re.compile(r'\bclarify one constraint\b', flags=re.IGNORECASE),
@@ -340,6 +407,14 @@ def sanitize_text(text: str) -> str:
     return ' '.join(text.strip().split())
 
 
+def strip_category_prefix(text: str) -> str:
+    value = sanitize_text(text)
+    if not value:
+        return value
+    stripped = LEADING_CATEGORY_LABEL_RE.sub('', value).strip()
+    return stripped or value
+
+
 def normalize_display_title(raw: str, *, max_words: int = 14, max_chars: int = 96) -> str:
     title = sanitize_text(raw)
     if not title:
@@ -352,6 +427,7 @@ def normalize_display_title(raw: str, *, max_words: int = 14, max_chars: int = 9
         flags=re.IGNORECASE,
     )
     title = re.sub(r'\s*[|:]\s*(draft|rewrite|publish|task).*$','', title, flags=re.IGNORECASE)
+    title = strip_category_prefix(title)
     title = title.strip(' -:;,.')
 
     words = [w for w in title.split() if w]
@@ -531,29 +607,11 @@ def normalize_citations(raw_citations: Any) -> list[dict[str, str]]:
 
 
 def parse_citation_policy(payload: dict[str, Any]) -> dict[str, Any]:
-    raw = payload.get('_citation_policy', {})
-    if not isinstance(raw, dict):
-        raw = {}
-    try:
-        target_count = int(raw.get('target_count', 0))
-    except Exception:
-        target_count = 0
-    try:
-        required_new_domains = int(raw.get('required_new_domains', 0))
-    except Exception:
-        required_new_domains = 0
-
-    recent_raw = raw.get('recent_domains', [])
-    recent_domains: set[str] = set()
-    if isinstance(recent_raw, list):
-        for value in recent_raw:
-            domain = sanitize_text(value).lower().strip()
-            if domain:
-                recent_domains.add(domain)
+    # Citations are disabled by product choice.
     return {
-        'target_count': max(0, min(CITATION_MAX_COUNT, target_count)),
-        'required_new_domains': max(0, required_new_domains),
-        'recent_domains': recent_domains,
+        'target_count': 0,
+        'required_new_domains': 0,
+        'recent_domains': set(),
     }
 
 
@@ -599,6 +657,352 @@ def is_technical_topic(topics: set[str]) -> bool:
     if topics & business_topics:
         return False
     return 'technical' in topics or ('ai' in topics and 'governance' not in topics)
+
+
+
+def detect_focus_areas(title: str, lead: str, tags: list[str]) -> list[str]:
+    text = sanitize_text(f"{title} {lead} {' '.join(tags)}").lower()
+    focus: list[str] = []
+    rules = [
+        ('gamification', r'\b(gamif|game|playful|serious game)'),
+        ('learning-design', r'\b(l&d|\bld\b|lxd|learning|instruction|enablement|coaching)'),
+        ('data-analytics', r'\b(data|analytics|metric|kpi|measurement|dashboard)'),
+        ('behavior-science', r'\b(behavio(?:u)?r|habit|nudge|decision quality|bias)'),
+        ('ai-learning', r'\b(ai|genai|llm|model|automation|copilot)'),
+    ]
+    for key, pattern in rules:
+        if re.search(pattern, text):
+            focus.append(key)
+    if not focus:
+        focus = ['learning-design', 'data-analytics']
+    return ordered_unique(focus)
+
+
+def build_research_queries(title: str, lead: str, tags: list[str]) -> list[str]:
+    focus = detect_focus_areas(title, lead, tags)
+    queries: list[str] = []
+    for key in focus:
+        hint = FOCUS_AREA_QUERY_HINTS.get(key, '').strip()
+        if hint:
+            queries.append(hint)
+    token_seed = sanitize_text(f"{title} {' '.join(tags)}")
+    tokens = re.findall(r'\b[a-zA-Z]{4,}\b', token_seed)
+    if tokens:
+        queries.append(' '.join(tokens[:8]))
+    if sanitize_text(lead):
+        lead_tokens = re.findall(r'\b[a-zA-Z]{4,}\b', sanitize_text(lead))
+        if lead_tokens:
+            queries.append(' '.join(lead_tokens[:8]))
+    return ordered_unique([q for q in queries if sanitize_text(q)])[:RESEARCH_MAX_QUERIES]
+
+
+def fetch_json(url: str, timeout: int = RESEARCH_TIMEOUT_SECONDS) -> dict[str, Any]:
+    req = Request(url, headers={'User-Agent': 'openclaw-publish-pipeline/1.0'})
+    with urlopen(req, timeout=timeout) as resp:
+        raw = resp.read().decode('utf-8', errors='ignore')
+    data = json.loads(raw)
+    return data if isinstance(data, dict) else {}
+
+
+def fetch_text(url: str, timeout: int = RESEARCH_TIMEOUT_SECONDS) -> str:
+    req = Request(url, headers={'User-Agent': 'openclaw-publish-pipeline/1.0'})
+    with urlopen(req, timeout=timeout) as resp:
+        return resp.read().decode('utf-8', errors='ignore')
+
+
+def rebuild_openalex_abstract(inverted: Any) -> str:
+    if not isinstance(inverted, dict):
+        return ''
+    max_pos = -1
+    for positions in inverted.values():
+        if isinstance(positions, list):
+            for pos in positions:
+                if isinstance(pos, int) and pos > max_pos:
+                    max_pos = pos
+    if max_pos < 0:
+        return ''
+    words = [''] * (max_pos + 1)
+    for token, positions in inverted.items():
+        if not isinstance(token, str) or not isinstance(positions, list):
+            continue
+        for pos in positions:
+            if isinstance(pos, int) and 0 <= pos < len(words) and not words[pos]:
+                words[pos] = token
+    return sanitize_text(' '.join([w for w in words if w]))
+
+
+def first_sentence(text: str, max_words: int = 22) -> str:
+    value = sanitize_text(text)
+    if not value:
+        return ''
+    sentence = re.split(r'(?<=[.!?])\s+', value)[0].strip()
+    sentence = re.sub(r'^(introduction|abstract|background)\s*[:\-]\s*', '', sentence, flags=re.IGNORECASE)
+    sentence = re.sub(r'^[A-Z]{3,}\s+', '', sentence)
+    words = sentence.split()
+    if len(words) > max_words:
+        words = words[:max_words]
+    while words and words[-1].lower() in {'of', 'and', 'to', 'for', 'with', 'in', 'on', 'at', 'by'}:
+        words.pop()
+    sentence = ' '.join(words).rstrip(',;:')
+    if sentence and sentence[-1] not in '.!?':
+        sentence += '.'
+    return sentence
+
+
+def lower_first(text: str) -> str:
+    value = sanitize_text(text)
+    if not value:
+        return ''
+    if len(value) == 1:
+        return value.lower()
+    return value[0].lower() + value[1:]
+
+
+def fetch_openalex_items(query: str, per_page: int = 6) -> list[dict[str, Any]]:
+    page_size = max(1, min(25, per_page))
+    urls = [
+        'https://api.openalex.org/works?filter=title.search:'
+        + quote_plus(query)
+        + f'&sort=publication_date:desc&per-page={page_size}',
+        'https://api.openalex.org/works?search='
+        + quote_plus(query)
+        + f'&sort=publication_date:desc&per-page={page_size}',
+    ]
+
+    items: list[dict[str, Any]] = []
+    for url in urls:
+        payload = fetch_json(url)
+        for entry in payload.get('results', []) if isinstance(payload.get('results', []), list) else []:
+            if not isinstance(entry, dict):
+                continue
+            title = sanitize_text(entry.get('display_name', ''))
+            if not title:
+                continue
+            summary = rebuild_openalex_abstract(entry.get('abstract_inverted_index', {}))
+            if not summary:
+                summary = sanitize_text(entry.get('primary_location', {}).get('source', {}).get('display_name', ''))
+            year = entry.get('publication_year') if isinstance(entry.get('publication_year'), int) else 0
+            cited = entry.get('cited_by_count') if isinstance(entry.get('cited_by_count'), int) else 0
+            url_value = sanitize_text(entry.get('id', '')) or sanitize_text(entry.get('doi', ''))
+            if url_value and url_value.startswith('https://openalex.org/'):
+                doi_value = sanitize_text(entry.get('doi', ''))
+                if doi_value:
+                    url_value = doi_value
+            items.append(
+                {
+                    'title': title,
+                    'summary': summary,
+                    'year': year,
+                    'signal': cited,
+                    'url': url_value,
+                    'source': 'OpenAlex',
+                    'query': query,
+                }
+            )
+        if items:
+            break
+    return items
+
+
+def fetch_arxiv_items(query: str, max_results: int = 4) -> list[dict[str, Any]]:
+    url = (
+        'http://export.arxiv.org/api/query?search_query=all:'
+        + quote_plus(query)
+        + f'&start=0&max_results={max(1, min(20, max_results))}&sortBy=submittedDate&sortOrder=descending'
+    )
+    raw = fetch_text(url)
+    root = ET.fromstring(raw)
+    ns = {'atom': 'http://www.w3.org/2005/Atom'}
+    items: list[dict[str, Any]] = []
+    for entry in root.findall('atom:entry', ns):
+        title = sanitize_text(entry.findtext('atom:title', default='', namespaces=ns))
+        if not title:
+            continue
+        summary = sanitize_text(entry.findtext('atom:summary', default='', namespaces=ns))
+        published = sanitize_text(entry.findtext('atom:published', default='', namespaces=ns))
+        year = 0
+        if re.match(r'^\d{4}-\d{2}-\d{2}', published):
+            year = int(published[:4])
+        link = ''
+        for candidate in entry.findall('atom:link', ns):
+            href = sanitize_text(candidate.attrib.get('href', ''))
+            rel = sanitize_text(candidate.attrib.get('rel', ''))
+            if href and (not rel or rel == 'alternate'):
+                link = href
+                break
+        items.append(
+            {
+                'title': title,
+                'summary': summary,
+                'year': year,
+                'signal': 0,
+                'url': link,
+                'source': 'arXiv',
+                'query': query,
+            }
+        )
+    return items
+
+
+def gather_live_research(title: str, lead: str, tags: list[str]) -> dict[str, Any]:
+    queries = build_research_queries(title, lead, tags)
+    focus = detect_focus_areas(title, lead, tags)
+    all_items: list[dict[str, Any]] = []
+    failures: list[str] = []
+    for query in queries:
+        try:
+            all_items.extend(fetch_openalex_items(query))
+        except Exception as exc:
+            failures.append(f'openalex:{query}:{sanitize_text(exc)}')
+        if 'ai-learning' in focus:
+            try:
+                all_items.extend(fetch_arxiv_items(query))
+            except Exception as exc:
+                failures.append(f'arxiv:{query}:{sanitize_text(exc)}')
+
+    deduped: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for item in all_items:
+        title_key = re.sub(r'\W+', ' ', sanitize_text(item.get('title', '')).lower()).strip()
+        if not title_key or title_key in seen:
+            continue
+        seen.add(title_key)
+        deduped.append(item)
+
+    seed_text = sanitize_text(' '.join([title, lead, ' '.join(tags), ' '.join(queries)])).lower()
+    seed_tokens = {
+        tok for tok in re.findall(r'\b[a-z]{4,}\b', seed_text)
+        if tok not in RESEARCH_TOKEN_STOPWORDS
+    }
+    strict_seed = {
+        tok for tok in re.findall(r'\b[a-z]{4,}\b', sanitize_text(f"{title} {' '.join(tags)}").lower())
+        if tok not in RESEARCH_TOKEN_STOPWORDS
+    }
+    focus_terms: set[str] = set()
+    for key in focus:
+        focus_terms |= FOCUS_AREA_FILTER_TERMS.get(key, set())
+
+    def relevance_score(item: dict[str, Any]) -> int:
+        hay = sanitize_text(f"{item.get('title', '')} {item.get('summary', '')}").lower()
+        hay_tokens = {
+            tok for tok in re.findall(r'\b[a-z]{3,}\b', hay)
+            if tok not in RESEARCH_TOKEN_STOPWORDS
+        }
+        if re.search(r'\b(emergency|hospital|patient|clinical|surgery|biomedical|molecule|genome|protein)\b', hay):
+            return -10
+
+        has_business_context = bool(hay_tokens & BUSINESS_CONTEXT_TERMS)
+        if not has_business_context:
+            return -6
+
+        overlap = len(hay_tokens & seed_tokens)
+        strict_overlap = len(hay_tokens & strict_seed)
+        focus_overlap = len(hay_tokens & focus_terms)
+        practice_bonus = 1 if re.search(r'\b(workforce|workplace|manager|team|training|coaching|behavior|analytics|capability)\b', hay) else 0
+        drift_penalty = 1 if re.search(r'\b(3d|vision|image|video|robot)\b', hay) else 0
+        focus_guard = -2 if focus_terms and focus_overlap == 0 else 0
+        strict_guard = -4 if strict_seed and strict_overlap == 0 else 0
+        return (overlap * 3) + (strict_overlap * 3) + (focus_overlap * 2) + practice_bonus + focus_guard + strict_guard - drift_penalty
+
+    scored = [(relevance_score(item), item) for item in deduped]
+    strong = [pair for pair in scored if pair[0] >= 4]
+    selected_scored = strong if strong else [pair for pair in scored if pair[0] >= 1]
+
+    ranked = [
+        item for _, item in sorted(
+            selected_scored,
+            key=lambda pair: (
+                pair[0],
+                int(pair[1].get('year') or 0),
+                int(pair[1].get('signal') or 0),
+                sanitize_text(pair[1].get('title', '')),
+            ),
+            reverse=True,
+        )[:RESEARCH_MAX_ITEMS]
+    ]
+
+    ideas: list[str] = []
+    for item in ranked:
+        title_text = sanitize_text(item.get('title', ''))
+        if not title_text:
+            continue
+        phrase_words = [w for w in re.findall(r"[A-Za-z][A-Za-z0-9&'-]*", title_text) if w]
+        phrase = ' '.join(phrase_words[:8]).strip(' -:;,.')
+        if not phrase:
+            continue
+        candidate = (
+            f"One useful direction is {lower_first(phrase)} applied to one weekly team decision with one observable behavior metric."
+        )
+        idea = sanitize_content_line(candidate)
+        if idea:
+            ideas.append(idea)
+        if len(ideas) >= RESEARCH_IDEA_LIMIT:
+            break
+
+    return {
+        'generated_at': datetime.utcnow().isoformat() + 'Z',
+        'queries': queries,
+        'focus': focus,
+        'sources': ranked,
+        'ideas': ideas,
+        'failures': failures,
+    }
+
+
+def apply_live_research(payload: dict[str, Any]) -> dict[str, Any]:
+    title = sanitize_text(payload.get('title', ''))
+    lead = sanitize_text(payload.get('lead', ''))
+    tags = payload.get('tags', []) if isinstance(payload.get('tags', []), list) else []
+
+    research = gather_live_research(title, lead, [sanitize_text(t) for t in tags if sanitize_text(t)])
+    payload['_research_brief'] = {
+        'generated_at': research.get('generated_at', ''),
+        'queries': research.get('queries', []),
+        'sources': [
+            {
+                'title': item.get('title', ''),
+                'year': item.get('year', 0),
+                'url': item.get('url', ''),
+                'source': item.get('source', ''),
+            }
+            for item in research.get('sources', [])
+        ],
+        'failures': research.get('failures', []),
+    }
+
+    sections = payload.get('sections', [])
+    if not isinstance(sections, list) or not sections:
+        return payload
+
+    ideas = research.get('ideas', []) if isinstance(research.get('ideas', []), list) else []
+    if not ideas:
+        return payload
+
+    existing = {sanitize_text(p).lower() for p in collect_paragraphs(payload)}
+    inserted = 0
+    section_idx = 0
+    for idea in ideas:
+        line = sanitize_content_line(idea)
+        if not line or line.lower() in existing:
+            continue
+        target = sections[section_idx % len(sections)]
+        paragraphs = target.setdefault('paragraphs', [])
+        if not isinstance(paragraphs, list):
+            paragraphs = []
+            target['paragraphs'] = paragraphs
+        if len(paragraphs) >= 6:
+            section_idx += 1
+            continue
+        paragraphs.append(line)
+        existing.add(line.lower())
+        inserted += 1
+        section_idx += 1
+        if inserted >= RESEARCH_IDEA_LIMIT:
+            break
+
+    if inserted > 0:
+        warn(f'Applied {inserted} live research ideas to payload sections')
+    return payload
 
 
 def recent_study_usage(max_posts: int = 60) -> dict[str, int]:
@@ -981,6 +1385,260 @@ def collect_sentences(payload: dict[str, Any]) -> list[str]:
     return sentences
 
 
+
+def normalize_voice_sentence(text: str) -> str:
+    value = sanitize_text(text)
+    if not value:
+        return ''
+    value = VOICE_FILLER_PREFIX_RE.sub('', value).strip()
+    replacements = {
+        "in today's fast-paced world": "today",
+        'game changer': 'practical shift',
+        'leverage ai': 'use AI intentionally',
+        'next level': 'higher signal',
+        'unlock potential': 'improve execution quality',
+        'move the needle': 'change measurable outcomes',
+    }
+    lowered = value.lower()
+    for source, target in replacements.items():
+        if source in lowered:
+            value = re.sub(re.escape(source), target, value, flags=re.IGNORECASE)
+            lowered = value.lower()
+    cleaned = sanitize_content_line(value)
+    return cleaned or sanitize_text(value)
+
+
+def apply_shreyas_tone(payload: dict[str, Any]) -> dict[str, Any]:
+    for key in ('lead', 'excerpt', 'meta_description', 'closing'):
+        payload[key] = normalize_voice_sentence(payload.get(key, ''))
+
+    sections = payload.get('sections', [])
+    if isinstance(sections, list):
+        for section in sections:
+            raw = section.get('paragraphs', [])
+            if not isinstance(raw, list):
+                section['paragraphs'] = []
+                continue
+            normalized: list[str] = []
+            seen: set[str] = set()
+            for paragraph in raw:
+                line = normalize_voice_sentence(paragraph)
+                key = sanitize_text(line).lower()
+                if not line or key in seen:
+                    continue
+                seen.add(key)
+                normalized.append(line)
+            section['paragraphs'] = normalized[:6]
+
+    text_l = collect_text_for_count(payload).lower()
+    if not re.search(r'\b(you|your)\b', text_l):
+        options = [
+            'If you run this with your team this week, track one visible behavior shift before the next review.',
+            'Try this once with your team this week and compare what changes before the next decision cycle.',
+            'Use one live decision this week so you can see whether the behavior shift is real or just theoretical.',
+        ]
+        idx = int(hashlib.sha256(sanitize_text(payload.get('title', '')).encode('utf-8')).hexdigest()[:8], 16) % len(options)
+        addition = normalize_voice_sentence(options[idx])
+        if addition:
+            closing = sanitize_text(payload.get('closing', ''))
+            if addition.lower() not in closing.lower():
+                payload['closing'] = sanitize_text(f'{closing} {addition}') if closing else addition
+
+    payload['bullets'] = []
+    return payload
+
+
+def compute_voice_signals(payload: dict[str, Any]) -> dict[str, Any]:
+    text = collect_text_for_count(payload)
+    text_l = text.lower()
+    banned_hits = sum(1 for pattern in VOICE_BANNED_PATTERNS if pattern.search(text_l))
+    second_person_count = len(re.findall(r'\b(you|your)\b', text_l))
+    first_person_count = len(re.findall(r'\b(i|we|my|our)\b', text_l))
+    sentence_list = collect_sentences(payload)
+    avg_sentence_words = 0.0
+    if sentence_list:
+        avg_sentence_words = sum(word_count(s) for s in sentence_list) / len(sentence_list)
+    return {
+        'banned_phrase_hits': banned_hits,
+        'second_person_count': second_person_count,
+        'first_person_count': first_person_count,
+        'voice_avg_sentence_words': round(avg_sentence_words, 2),
+    }
+
+
+def historical_blog_iteration_count() -> int:
+    posts_dir = ROOT / 'posts'
+    if not posts_dir.exists():
+        return 0
+    count = 0
+    for path in posts_dir.glob('*.html'):
+        if path.name.startswith('_'):
+            continue
+        count += 1
+    return count
+
+
+def load_improvement_engine() -> dict[str, Any]:
+    engine: dict[str, Any] = {}
+    if IMPROVEMENT_ENGINE_FILE.exists():
+        try:
+            raw = json.loads(IMPROVEMENT_ENGINE_FILE.read_text())
+            if isinstance(raw, dict):
+                engine = raw
+        except Exception:
+            engine = {}
+
+    baseline_runs = historical_blog_iteration_count()
+    current_runs = int(engine.get('runs') or 0)
+    if baseline_runs > current_runs:
+        engine['runs'] = baseline_runs
+        engine.setdefault('bootstrapped_from_posts', baseline_runs)
+    return engine
+
+
+def save_improvement_engine(engine: dict[str, Any]) -> None:
+    IMPROVEMENT_ENGINE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    IMPROVEMENT_ENGINE_FILE.write_text(json.dumps(engine, indent=2))
+
+
+def apply_improvement_engine(payload: dict[str, Any], engine: dict[str, Any]) -> list[str]:
+    counts = engine.get('dimension_miss_counts', {}) if isinstance(engine.get('dimension_miss_counts', {}), dict) else {}
+    ranked = sorted(
+        [dim for dim in QUALITY_DIMENSIONS if int(counts.get(dim) or 0) > 0],
+        key=lambda dim: int(counts.get(dim) or 0),
+        reverse=True,
+    )
+    picked = ranked[:2]
+    if picked:
+        apply_quality_rewrite(payload, picked)
+    if int(engine.get('voice_miss_count') or 0) > 0:
+        payload = apply_shreyas_tone(payload)
+    return picked
+
+
+def update_improvement_engine(
+    engine: dict[str, Any],
+    payload: dict[str, Any],
+    final_report: dict[str, Any],
+    status: str,
+) -> dict[str, Any]:
+    updated = engine if isinstance(engine, dict) else {}
+    updated['runs'] = int(updated.get('runs') or 0) + 1
+    updated['pass_streak'] = (int(updated.get('pass_streak') or 0) + 1) if status == 'pass' else 0
+
+    counts = updated.get('dimension_miss_counts', {}) if isinstance(updated.get('dimension_miss_counts', {}), dict) else {}
+    for dim in QUALITY_DIMENSIONS:
+        score = int(final_report.get('scores', {}).get(dim, {}).get('score') or 0)
+        if score <= 3:
+            counts[dim] = int(counts.get(dim) or 0) + 1
+        else:
+            counts[dim] = max(0, int(counts.get(dim) or 0) - 1)
+    updated['dimension_miss_counts'] = counts
+
+    signals = final_report.get('signals', {}) if isinstance(final_report.get('signals', {}), dict) else {}
+    voice_miss = int(updated.get('voice_miss_count') or 0)
+    if int(signals.get('banned_phrase_hits') or 0) > 0 or int(signals.get('second_person_count') or 0) == 0:
+        voice_miss += 1
+    else:
+        voice_miss = max(0, voice_miss - 1)
+    updated['voice_miss_count'] = voice_miss
+
+    citation_meta = payload.get('_citation_meta', {}) if isinstance(payload.get('_citation_meta', {}), dict) else {}
+    confidence = float(citation_meta.get('confidence') or 0.0)
+    trust = float(updated.get('citation_trust') or 0.0)
+    updated['citation_trust'] = round((trust * 0.8) + (confidence * 0.2), 4)
+
+    updated['updatedAt'] = datetime.utcnow().isoformat() + 'Z'
+    return updated
+
+
+def should_require_optional_citations(payload: dict[str, Any]) -> bool:
+    text = collect_text_for_count(payload).lower()
+    has_keyword = re.search(r'\b(study|research|report|survey|evidence)\b', text) is not None
+    has_according = 'according to' in text
+    has_numeric_claim = re.search(r'\b\d+(?:\.\d+)?%?\b', text) is not None
+    return (has_keyword or has_according) and has_numeric_claim
+
+
+def source_quality_score(source: dict[str, Any], seed_tokens: set[str]) -> float:
+    title = sanitize_text(source.get('title', '')).lower()
+    url = sanitize_text(source.get('url', ''))
+    domain = citation_domain(url)
+    year = int(source.get('year') or 0)
+    current_year = datetime.utcnow().year
+
+    score = 0.0
+    if domain in TRUSTED_CITATION_DOMAINS:
+        score += 0.45
+    elif is_study_url(url):
+        score += 0.3
+
+    if year >= current_year - 1:
+        score += 0.25
+    elif year >= current_year - 3:
+        score += 0.18
+    elif year > 0:
+        score += 0.1
+
+    title_tokens = {tok for tok in re.findall(r'\b[a-z]{4,}\b', title) if tok not in RESEARCH_TOKEN_STOPWORDS}
+    overlap = len(title_tokens & seed_tokens)
+    if overlap >= 2:
+        score += 0.25
+    elif overlap == 1:
+        score += 0.12
+
+    if url.startswith('http'):
+        score += 0.05
+    return min(1.0, max(0.0, score))
+
+
+def select_optional_citations(payload: dict[str, Any]) -> dict[str, Any]:
+    sources = payload.get('_research_brief', {}).get('sources', []) if isinstance(payload.get('_research_brief', {}), dict) else []
+    seed = sanitize_text(f"{payload.get('title', '')} {' '.join(payload.get('tags', []))}").lower()
+    seed_tokens = {tok for tok in re.findall(r'\b[a-z]{4,}\b', seed) if tok not in RESEARCH_TOKEN_STOPWORDS}
+
+    scored: list[tuple[float, dict[str, Any]]] = []
+    for source in sources if isinstance(sources, list) else []:
+        if not isinstance(source, dict):
+            continue
+        url = sanitize_text(source.get('url', ''))
+        title = sanitize_text(source.get('title', ''))
+        if not url.startswith('http') or not title:
+            continue
+        score = source_quality_score(source, seed_tokens)
+        if score <= 0.6:
+            continue
+        scored.append((score, source))
+
+    scored.sort(key=lambda item: item[0], reverse=True)
+    top = scored[:OPTIONAL_CITATION_MAX]
+    confidence = round(sum(item[0] for item in top) / max(1, len(top)), 4)
+    requires = should_require_optional_citations(payload)
+
+    citations: list[dict[str, str]] = []
+    if requires and confidence >= OPTIONAL_CITATION_MIN_CONFIDENCE:
+        used_domains: set[str] = set()
+        for score, source in top:
+            url = sanitize_text(source.get('url', ''))
+            title = sanitize_text(source.get('title', ''))
+            domain = citation_domain(url)
+            if domain and domain in used_domains:
+                continue
+            citations.append({'title': title, 'url': url})
+            if domain:
+                used_domains.add(domain)
+            if len(citations) >= OPTIONAL_CITATION_MAX:
+                break
+
+    return {
+        'required': requires,
+        'confidence': confidence,
+        'candidate_count': len(scored),
+        'selected_count': len(citations),
+        'citations': citations,
+    }
+
+
 def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
     text = collect_text_for_count(payload)
     text_l = text.lower()
@@ -1008,6 +1666,10 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
 
     tokens = re.findall(r'\b[a-z][a-z0-9-]{2,}\b', text_l)
     unique_ratio = (len(set(tokens)) / len(tokens)) if tokens else 0.0
+
+    voice = compute_voice_signals(payload)
+    citation_meta = payload.get('_citation_meta', {}) if isinstance(payload.get('_citation_meta', {}), dict) else {}
+    citation_confidence = float(citation_meta.get('confidence') or 0.0)
 
     citations = payload.get('citations', [])
     citation_count = len(citations) if isinstance(citations, list) else 0
@@ -1067,6 +1729,8 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         clarity -= 1
     if style_drift_count > 0:
         clarity -= 1
+    if int(voice.get('banned_phrase_hits') or 0) > 0:
+        clarity -= 1
     clarity = clamp_score(clarity)
 
     specificity = 2
@@ -1084,21 +1748,17 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         specificity -= 1
     specificity = clamp_score(specificity)
 
-    evidence = 1
-    if citation_count >= 1:
-        evidence += 2
-    if citation_count >= 2:
-        evidence += 1
-    if len(citation_domains) >= 2:
+    evidence = 2
+    if number_hits >= 1:
         evidence += 1
     if metric_terms_found >= 2:
         evidence += 1
     if has_evidence_language:
         evidence += 1
-    if topic_relevant_citation_count == 0 and citation_count > 0:
+    if has_cadence:
+        evidence += 1
+    if cliche_hits >= 2:
         evidence -= 1
-    if not technical_topic and citation_count > 0 and arxiv_citation_count > max(1, citation_count // 2):
-        evidence -= 2
     evidence = clamp_score(evidence)
 
     originality = 2
@@ -1118,6 +1778,8 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         originality -= 1
     if style_drift_count > 0:
         originality -= 1
+    if int(voice.get('banned_phrase_hits') or 0) > 0:
+        originality -= 1
     originality = clamp_score(originality)
 
     actionability = 2
@@ -1134,6 +1796,8 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         actionability += 1
     if paragraph_count >= QUALITY_MIN_PARAGRAPHS:
         actionability += 1
+    if int(voice.get('second_person_count') or 0) == 0:
+        actionability -= 1
     actionability = clamp_score(actionability)
 
     score_map = {
@@ -1182,6 +1846,11 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             'instructional_lines': instruction_line_count,
             'fragment_lines': fragment_line_count,
             'style_drift_lines': style_drift_count,
+            'banned_phrase_hits': int(voice.get('banned_phrase_hits') or 0),
+            'second_person_count': int(voice.get('second_person_count') or 0),
+            'first_person_count': int(voice.get('first_person_count') or 0),
+            'voice_avg_sentence_words': float(voice.get('voice_avg_sentence_words') or 0.0),
+            'citation_confidence': round(citation_confidence, 4),
         },
     }
 
@@ -1201,11 +1870,17 @@ def build_quality_critique(report: dict[str, Any], target_total: int) -> list[st
         elif dim == 'specificity':
             critique.append('Add concrete metrics, constraints, or audience-specific details.')
         elif dim == 'evidence':
-            critique.append('Include source links or before-after measurement language for claims.')
+            critique.append('Support claims with concrete before-after observations and measurable outcomes.')
         elif dim == 'originality':
             critique.append('Replace generic phrasing with a sharper contrast or unique angle.')
         elif dim == 'actionability':
             critique.append('Add explicit next steps, cadence, and execution checkpoints.')
+
+    signals = report.get('signals', {}) if isinstance(report.get('signals', {}), dict) else {}
+    if int(signals.get('banned_phrase_hits') or 0) > 0:
+        critique.append('Replace generic AI-sounding phrases with direct, plain language in your natural voice.')
+    if int(signals.get('second_person_count') or 0) == 0:
+        critique.append('Add direct reader address (you/your) so the post sounds conversational and grounded.')
 
     for hard_failure in report.get('hard_failures', []):
         critique.append(f'Hard requirement: {hard_failure}')
@@ -1244,22 +1919,6 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
             f'duplicate paragraph count {duplicate_paragraphs} exceeds allowed maximum {QUALITY_MAX_DUP_PARAGRAPHS}'
         )
 
-    citation_count = int(signals.get('citation_count') or 0)
-    required_citation_count = int(signals.get('required_citation_count') or 0)
-    if required_citation_count > 0 and citation_count < required_citation_count:
-        failures.append(f'citation count {citation_count} is below required {required_citation_count}')
-    if citation_count > CITATION_MAX_COUNT:
-        failures.append(f'citation count {citation_count} exceeds maximum {CITATION_MAX_COUNT}')
-
-    generic_citation_titles = int(signals.get('generic_citation_titles') or 0)
-    if generic_citation_titles > 0:
-        failures.append('citation titles must be specific (generic "Source 1/2" labels are not allowed)')
-
-    required_new_domain_count = int(signals.get('required_new_domain_count') or 0)
-    new_domain_count = int(signals.get('new_domain_count') or 0)
-    if required_new_domain_count > 0 and citation_count > 0 and new_domain_count < required_new_domain_count:
-        failures.append('citations do not expand source domains versus recent posts')
-
     instruction_lines = int(signals.get('instructional_lines') or 0)
     if instruction_lines > 0:
         failures.append('instruction/prompt text leaked into article body')
@@ -1271,6 +1930,15 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
     style_drift_lines = int(signals.get('style_drift_lines') or 0)
     if style_drift_lines > 0:
         failures.append('style drift detected from boilerplate/meta writing patterns')
+
+    banned_phrase_hits = int(signals.get('banned_phrase_hits') or 0)
+    if banned_phrase_hits > 0:
+        failures.append('voice drift detected from generic or robotic phrasing')
+
+    second_person_count = int(signals.get('second_person_count') or 0)
+    if second_person_count == 0:
+        failures.append('missing conversational direct-address tone (no you/your)')
+
     return failures
 
 
@@ -1324,9 +1992,9 @@ def reinforce_specificity(payload: dict[str, Any]) -> None:
 def reinforce_evidence(payload: dict[str, Any]) -> None:
     topic = sanitize_text(payload.get('title', 'this topic')).lower()
     options = [
-        f'For {topic}, link claims to one cited source and one practical implication the reader can verify in team routines.',
-        f'In {topic}, evidence is strongest when the article names what changed before and after a specific intervention.',
-        f'For {topic}, use source links to sharpen a claim, not to pad the paragraph.',
+        f'For {topic}, anchor one key claim to an observable before-after change in real team behavior.',
+        f'In {topic}, evidence is strongest when the article names one measurable outcome and its review cadence.',
+        f'For {topic}, pair each recommendation with one practical signal that readers can verify in their own workflow.',
     ]
     pick = int(hashlib.sha256(f'{topic}|evidence'.encode('utf-8')).hexdigest()[:8], 16) % len(options)
     append_to_last_section(payload, options[pick])
@@ -1369,6 +2037,18 @@ def reinforce_actionability(payload: dict[str, Any]) -> None:
     payload['bullets'] = []
 
 
+def reinforce_voice(payload: dict[str, Any]) -> None:
+    payload = apply_shreyas_tone(payload)
+    topic = sanitize_text(payload.get('title', 'this topic')).lower()
+    options = [
+        f'If you apply {topic} this week, choose one real decision and inspect the behavior change by the next review.',
+        f'Use one live workflow this week so you can see whether {topic} actually improves decisions for your team.',
+        'Keep the language direct: one concrete decision, one action, one observable outcome by next week.',
+    ]
+    pick = int(hashlib.sha256(f'{topic}|voice'.encode('utf-8')).hexdigest()[:8], 16) % len(options)
+    append_to_last_section(payload, options[pick])
+
+
 def apply_quality_rewrite(payload: dict[str, Any], dimensions: list[str]) -> None:
     for dim in ordered_unique([d for d in dimensions if d in QUALITY_DIMENSIONS]):
         if dim == 'clarity':
@@ -1381,6 +2061,7 @@ def apply_quality_rewrite(payload: dict[str, Any], dimensions: list[str]) -> Non
             reinforce_originality(payload)
         elif dim == 'actionability':
             reinforce_actionability(payload)
+    reinforce_voice(payload)
 
 
 def load_quality_history() -> dict[str, Any]:
@@ -1420,12 +2101,22 @@ def run_quality_gate(
     passes: list[dict[str, Any]] = []
     attempts = max(1, max_passes)
 
+    engine = load_improvement_engine()
+    engine_dims = apply_improvement_engine(payload, engine)
+    payload = apply_shreyas_tone(payload)
+    tighten_to_target(payload, QUALITY_MIN_WORDS, QUALITY_MAX_WORDS)
+
     for index in range(1, attempts + 1):
+        payload = apply_shreyas_tone(payload)
         report = quality_report(payload)
         report['pass'] = index
         report['target_total'] = target_total
         report['hard_failures'] = hard_quality_failures(report)
         report['critique'] = build_quality_critique(report, target_total)
+        report['shreyas_quality'] = {
+            'voice_ok': int(report.get('signals', {}).get('banned_phrase_hits', 0) == 0),
+            'direct_address_ok': int(report.get('signals', {}).get('second_person_count', 0) > 0),
+        }
         passes.append(report)
 
         if report['total'] >= target_total and not report['hard_failures']:
@@ -1447,9 +2138,12 @@ def run_quality_gate(
             or int(signals.get('duplicate_paragraphs') or 0) > QUALITY_MAX_DUP_PARAGRAPHS
         ):
             rewrite_dims = ordered_unique(['originality', 'clarity', *rewrite_dims])
+        if int(signals.get('banned_phrase_hits') or 0) > 0 or int(signals.get('second_person_count') or 0) == 0:
+            rewrite_dims = ordered_unique(['originality', 'clarity', 'actionability', *rewrite_dims])
 
         apply_quality_rewrite(payload, rewrite_dims[:3])
         tighten_to_target(payload, QUALITY_MIN_WORDS, QUALITY_MAX_WORDS)
+        payload = apply_shreyas_tone(payload)
 
     final = passes[-1]
     gate = {
@@ -1459,10 +2153,14 @@ def run_quality_gate(
         'target_total': target_total,
         'final_total': final['total'],
         'passes': passes,
+        'improvement_engine_applied': engine_dims,
     }
 
     QUALITY_REPORT_FILE.parent.mkdir(parents=True, exist_ok=True)
     QUALITY_REPORT_FILE.write_text(json.dumps(gate, indent=2))
+
+    engine = update_improvement_engine(engine, payload, final, gate['status'])
+    save_improvement_engine(engine)
 
     if gate['status'] != 'pass':
         reasons = list(final.get('hard_failures', [])[:3])
@@ -1486,6 +2184,15 @@ def run_quality_gate(
     history['updatedAt'] = datetime.utcnow().isoformat() + 'Z'
     save_quality_history(history)
     return gate
+
+
+def run_shreyas_quality_check(
+    payload: dict[str, Any],
+    min_total: int = QUALITY_MIN_TOTAL,
+    max_passes: int = QUALITY_MAX_PASSES,
+    delta: int = QUALITY_DELTA_PER_ITERATION,
+) -> dict[str, Any]:
+    return run_quality_gate(payload, min_total=min_total, max_passes=max_passes, delta=delta)
 
 
 def ordered_unique(values: list[str]) -> list[str]:
@@ -1701,15 +2408,7 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     bullets = []
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
-    citations = normalize_citations(raw.get('citations', []) or raw.get('sources', []))
-    citations = ensure_study_citations(
-        citations,
-        seed=f'{slug}|{title}|{",".join(tags)}',
-        min_count=int(citation_policy['target_count']),
-        required_new_domains=int(citation_policy['required_new_domains']),
-        recent_domains=set(citation_policy['recent_domains']),
-        max_count=CITATION_MAX_COUNT,
-    )
+    citations: list[dict[str, str]] = []
 
     lead_core = core_keywords(lead)
     closing_core = core_keywords(closing)
@@ -1736,7 +2435,22 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
         'closing': closing,
     }
 
+    payload = apply_live_research(payload)
+    payload = apply_shreyas_tone(payload)
+
+    citation_decision = select_optional_citations(payload)
+    payload['citations'] = citation_decision.get('citations', []) if isinstance(citation_decision.get('citations', []), list) else []
+    payload['_citation_meta'] = {
+        'required': bool(citation_decision.get('required', False)),
+        'confidence': float(citation_decision.get('confidence', 0.0) or 0.0),
+        'candidate_count': int(citation_decision.get('candidate_count', 0) or 0),
+        'selected_count': int(citation_decision.get('selected_count', 0) or 0),
+    }
+    if payload['citations']:
+        warn(f"Attached {len(payload['citations'])} optional citation(s) with confidence {payload['_citation_meta']['confidence']:.2f}")
+
     tighten_to_target(payload, QUALITY_MIN_WORDS, QUALITY_MAX_WORDS)
+    payload = apply_shreyas_tone(payload)
     payload['image'] = choose_image(title, lead, tags, slug)
     return payload
 
@@ -1863,7 +2577,7 @@ def main() -> None:
         raw = json.loads(input_path.read_text())
         payload = sanitize_payload(raw)
         try:
-            quality_gate = run_quality_gate(
+            quality_gate = run_shreyas_quality_check(
                 payload,
                 min_total=max(1, min(25, int(args.quality_min_total))),
                 max_passes=max(1, min(8, int(args.quality_passes))),
@@ -1879,6 +2593,7 @@ def main() -> None:
             'passes': len(quality_gate.get('passes', [])),
         }
         SANITIZED_PAYLOAD.write_text(json.dumps(payload, indent=2))
+        RESEARCH_REPORT_FILE.write_text(json.dumps(payload.get('_research_brief', {}), indent=2))
 
         cmd = ['python3', str(PUBLISH_SCRIPT), '--input', str(SANITIZED_PAYLOAD), '--no-git']
         if args.force:
@@ -1912,6 +2627,9 @@ def main() -> None:
         push_status = commit_and_push(commit_msg)
         sha = get_head_sha()
 
+        final_pass = quality_gate.get('passes', [])[-1] if quality_gate.get('passes', []) else {}
+        final_signals = final_pass.get('signals', {}) if isinstance(final_pass.get('signals', {}), dict) else {}
+        citation_meta = payload.get('_citation_meta', {}) if isinstance(payload.get('_citation_meta', {}), dict) else {}
         result = {
             'status': 'ok',
             'title': title,
@@ -1922,9 +2640,15 @@ def main() -> None:
             'branch': publish_branch,
             'sanitized_payload': str(SANITIZED_PAYLOAD),
             'quality_report': str(QUALITY_REPORT_FILE),
+            'research_report': str(RESEARCH_REPORT_FILE),
             'quality_total': quality_gate['final_total'],
             'quality_target': quality_gate['target_total'],
             'quality_previous': quality_gate['previous_total'],
+            'improvement_engine_applied': quality_gate.get('improvement_engine_applied', []),
+            'voice_banned_phrase_hits': int(final_signals.get('banned_phrase_hits') or 0),
+            'voice_second_person_count': int(final_signals.get('second_person_count') or 0),
+            'citation_selected': int(citation_meta.get('selected_count') or 0),
+            'citation_confidence': float(citation_meta.get('confidence') or 0.0),
         }
         print(json.dumps(result, indent=2))
     finally:

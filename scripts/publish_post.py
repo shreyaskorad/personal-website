@@ -111,6 +111,23 @@ TOPIC_KEYWORDS = {
     "governance": ("risk", "governance", "policy", "regulation", "compliance"),
 }
 TITLE_TRAILING_STOPWORDS = {"and", "with", "for", "to", "about", "on", "of"}
+CATEGORY_PREFIX_PATTERNS = (
+    r"gamified\s+learning",
+    r"gamification",
+    r"l\s*&\s*d",
+    r"learning\s+and\s+development",
+    r"learning\s+design",
+    r"lxd",
+    r"ai",
+    r"modern\s+l\s*&\s*d",
+    r"modern\s+ld",
+    r"data\s+and\s+analytics",
+    r"behaviou?r\s+science",
+)
+LEADING_CATEGORY_LABEL_RE = re.compile(
+    r"^\s*(?:" + "|".join(CATEGORY_PREFIX_PATTERNS) + r")\b(?:\s*[:\-|]\s*|\s+)+",
+    flags=re.IGNORECASE,
+)
 STYLE_DRIFT_PATTERNS = [
     re.compile(r"\bbuild on this core idea\b", flags=re.IGNORECASE),
     re.compile(r"\bclarify one constraint\b", flags=re.IGNORECASE),
@@ -267,6 +284,14 @@ def normalize_spaces(text: str) -> str:
     return " ".join(str(text or "").split())
 
 
+def strip_category_prefix(text: str) -> str:
+    value = normalize_spaces(text)
+    if not value:
+        return value
+    stripped = LEADING_CATEGORY_LABEL_RE.sub("", value).strip()
+    return stripped or value
+
+
 def normalize_display_title(raw: str, max_words: int = 14, max_chars: int = 96) -> str:
     title = normalize_spaces(raw)
     if not title:
@@ -277,6 +302,7 @@ def normalize_display_title(raw: str, max_words: int = 14, max_chars: int = 96) 
         title,
         flags=re.IGNORECASE,
     )
+    title = strip_category_prefix(title)
     title = title.strip(" -:;,.")
     words = [w for w in title.split() if w]
     while words and words[-1].lower() in TITLE_TRAILING_STOPWORDS:
@@ -510,28 +536,11 @@ def normalize_citations(raw_citations: object) -> list[dict[str, str]]:
 
 
 def parse_citation_policy(payload: dict[str, object]) -> dict[str, object]:
-    raw = payload.get("_citation_policy", {})
-    if not isinstance(raw, dict):
-        raw = {}
-    try:
-        target_count = int(raw.get("target_count", 0))
-    except Exception:
-        target_count = 0
-    try:
-        required_new_domains = int(raw.get("required_new_domains", 0))
-    except Exception:
-        required_new_domains = 0
-    recent_raw = raw.get("recent_domains", [])
-    recent_domains: set[str] = set()
-    if isinstance(recent_raw, list):
-        for value in recent_raw:
-            domain = normalize_spaces(str(value or "")).lower().strip()
-            if domain:
-                recent_domains.add(domain)
+    # Citations are disabled by product choice.
     return {
-        "target_count": max(0, min(CITATION_MAX_COUNT, target_count)),
-        "required_new_domains": max(0, required_new_domains),
-        "recent_domains": recent_domains,
+        "target_count": 0,
+        "required_new_domains": 0,
+        "recent_domains": set(),
     }
 
 
@@ -779,18 +788,7 @@ def ensure_study_citations(
 
 
 def inline_citation_anchor(citations: list[dict[str, str]], paragraph_index: int) -> str:
-    if not citations:
-        return ""
-    idx = paragraph_index % len(citations)
-    citation = citations[idx]
-    url = citation.get("url", "").strip()
-    title = citation.get("title", "").strip() or f"Source {idx + 1}"
-    if not url:
-        return ""
-    return (
-        f' <sup><a href="{escape(url, quote=True)}" target="_blank" rel="noopener" '
-        f'title="{escape(title, quote=True)}">[{idx + 1}]</a></sup>'
-    )
+    return ""
 
 
 def build_article_html(
@@ -814,12 +812,15 @@ def build_article_html(
     if closing:
         anchor = inline_citation_anchor(citations, paragraph_index)
         lines.append(f"            <p>{escape(closing)}{anchor}</p>")
+
     if citations:
         lines.append("            <p><strong>References</strong></p>")
         lines.append("            <ol>")
-        for idx, citation in enumerate(citations, start=1):
-            title = citation.get("title", "").strip() or citation.get("url", "").strip()
-            url = citation.get("url", "").strip()
+        for citation in citations[:CITATION_MAX_COUNT]:
+            title = normalize_spaces(citation.get("title", "")) or normalize_spaces(citation.get("url", ""))
+            url = normalize_spaces(citation.get("url", ""))
+            if not title or not url:
+                continue
             lines.append(
                 "                <li>"
                 f"{escape(title)}. "
@@ -828,6 +829,7 @@ def build_article_html(
                 "</li>"
             )
         lines.append("            </ol>")
+
     lines.append("        </article>")
     return "\n".join(lines)
 
@@ -975,30 +977,15 @@ def validate_citation_support(
         if is_likely_sentence_fragment(line):
             raise ValueError(f"Sentence fragment detected in body content: {line[:120]}")
 
-    has_claim_keywords = CLAIM_KEYWORDS_RE.search(text) is not None
-    has_stat_signal = STAT_SIGNAL_RE.search(text) is not None
-    has_url = URL_RE.search(text) is not None or any(c.get("url") for c in citations)
-    if has_claim_keywords and has_stat_signal and not has_url:
-        raise ValueError("Research/statistical claim detected without source URL")
-    min_required = max(0, int(required_count))
-    if min_required > 0 and len(citations) < min_required:
-        raise ValueError(f"At least {min_required} citations are required for this post")
     if len(citations) > max_count:
         raise ValueError(f"Citation count {len(citations)} exceeds maximum {max_count}")
     for citation in citations:
         url = normalize_spaces(citation.get("url", ""))
         title = normalize_spaces(citation.get("title", ""))
-        if not re.match(r"^https?://", url, flags=re.IGNORECASE):
-            raise ValueError(f"Citation URL must be absolute http(s): {url}")
-        if is_generic_citation_title(title):
-            raise ValueError(f"Citation title must be specific, not generic: {title or 'empty'}")
-    required_new = max(0, int(required_new_domains))
-    if required_new > 0 and citations:
-        prior = {normalize_spaces(value).lower().strip() for value in (recent_domains or set()) if normalize_spaces(value)}
-        domains = {citation_domain(item.get("url", "")) for item in citations if citation_domain(item.get("url", ""))}
-        new_domains = {domain for domain in domains if domain not in prior}
-        if len(new_domains) < required_new:
-            raise ValueError("Citations must include at least one domain not used in recent posts")
+        if not url or not re.match(r"^https?://", url, flags=re.IGNORECASE):
+            raise ValueError(f"Citation URL must be absolute http(s): {url or 'empty'}")
+        if not title:
+            raise ValueError("Citation title must not be empty when citations are included")
 
 
 def validate_quality_structure(
@@ -1208,16 +1195,7 @@ def main() -> None:
         bullets = [sanitize_content_line(b) for b in raw_bullets if sanitize_content_line(b)]
 
     closing = sanitize_content_line(payload.get("closing", "") or lead) or lead
-    citation_policy = parse_citation_policy(payload)
-    citations = normalize_citations(payload.get("citations", []))
-    citations = ensure_study_citations(
-        citations,
-        seed=f"{slug}|{title}|{','.join(tags)}",
-        min_count=int(citation_policy["target_count"]),
-        required_new_domains=int(citation_policy["required_new_domains"]),
-        recent_domains=set(citation_policy["recent_domains"]),
-        max_count=CITATION_MAX_COUNT,
-    )
+    citations = normalize_citations(payload.get("citations", []))[:CITATION_MAX_COUNT]
 
     if len(sections) < 2:
         raise ValueError("At least two sections are required")
@@ -1228,14 +1206,7 @@ def main() -> None:
         + bullets
     )
     validate_text(article_text)
-    validate_citation_support(
-        article_text,
-        citations,
-        required_count=int(citation_policy["target_count"]),
-        required_new_domains=int(citation_policy["required_new_domains"]),
-        recent_domains=set(citation_policy["recent_domains"]),
-        max_count=CITATION_MAX_COUNT,
-    )
+    validate_citation_support(article_text, citations)
     validate_quality_structure(lead, sections, bullets, closing, meta_description)
 
     core = core_keywords(lead)
