@@ -1,12 +1,12 @@
-# Deliverable: Decision quality in workplace learning workflows (2435)
+# Deliverable: Decision quality in workplace learning workflows (731)
 
-- Task ID: openclaw-1759
-- Status: cancelled
-- Created: 2026-02-24T15:20:38Z
-- Updated: 2026-02-24T15:26:17Z
+- Task ID: openclaw-1765
+- Status: blocked
+- Created: 2026-02-24T15:37:54Z
+- Updated: 2026-02-24T15:38:34Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2396.
+Provide valid repository path or manually publish article from workspace
 
 ## Deliverable Output
 ```json
@@ -31,19 +31,19 @@ Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2396.
     },
     {
       "agent_id":"Writer",
-      "note":"Created 192-word article. No em dashes, bullets, blockquotes, H2/H3. Practical workplace decision examples integrated throughout. Natural paragraph flow maintained. Avoided all stock phrases.",
+      "note":"Created 191-word article. No em dashes, bullets, blockquotes, H2/H3. Practical workplace decision examples integrated throughout. Natural paragraph flow maintained. Avoided all stock phrases.",
       "action_hint":"Article saved to workspace",
       "handoff_to":"Editor"
     },
     {
       "agent_id":"Editor",
-      "note":"Verified word count (192 words). Removed all stock phrases. Confirmed no em dashes, bullets, or blockquotes present. Sentence-case structure used throughout. Practical L&D focus preserved.",
+      "note":"Verified word count (191 words). Removed all stock phrases. Confirmed no em dashes, bullets, or blockquotes present. Sentence-case structure used throughout. Practical L&D focus preserved.",
       "action_hint":"Content ready for deployment",
       "handoff_to":"Publishing QA"
     },
     {
       "agent_id":"Publishing QA",
-      "note":"Repository inaccessible after extensive verification. Cannot provide required evidence: Final URL, slug check, sitemap/RSS, status code, or render confirmation. Article saved as decision-quality-workplace-learning-2435.md",
+      "note":"Repository inaccessible after extensive verification across multiple attempts. Cannot provide required evidence: Final URL, slug check, sitemap/RSS, status code, or render confirmation. Article saved as decision-quality-workplace-learning-731.md",
       "action_hint":"Repository path required for full task completion",
       "handoff_to":"Supervisor"
     },
@@ -69,6 +69,9 @@ Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2396.
   }
 }
 ```
+
+## Blockers / Notes
+Repository path not accessible after multiple verification attempts. Cannot provide required publish QA evidence: Final URL, slug/canonical check, sitemap/RSS verification, or status code confirmation.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
