@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (769)
 
 - Task ID: openclaw-1715
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-24T13:23:52Z
-- Updated: 2026-02-24T13:25:25Z
+- Updated: 2026-02-24T13:30:52Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2319.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (769)
@@ -22,9 +22,6 @@ Over time, teams build a cleaner evidence trail because each article connects a 
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
 What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
