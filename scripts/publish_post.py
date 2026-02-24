@@ -1265,6 +1265,21 @@ def main() -> None:
     tags_text = ", ".join(tags) if tags else "Writing"
     image_cache_key = iso_date(date_str).replace("-", "") or datetime.now().strftime("%Y%m%d")
     image_src = f"{image_filename}?v={image_cache_key}"
+    canonical_url = f"https://shreyaskorad.in/posts/{slug}.html"
+    og_image_url = f"https://shreyaskorad.in/assets/images/blog/{image_src}"
+    json_ld = json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": title,
+            "description": meta_description,
+            "datePublished": iso_date(date_str),
+            "dateModified": iso_date(date_str),
+            "author": {"@type": "Person", "name": "Shreyas Korad"},
+            "mainEntityOfPage": canonical_url,
+            "image": og_image_url,
+        }
+    )
 
     template = TEMPLATE_PATH.read_text()
     article_html = build_article_html(sections, bullets, closing, citations)
@@ -1280,10 +1295,13 @@ def main() -> None:
         "IMAGE_FILE": image_src,
         "IMAGE_ALT": image_alt,
         "IMAGE_CREDIT": image_credit,
+        "POST_URL": canonical_url,
+        "OG_IMAGE_URL": og_image_url,
     }
 
     for key, value in replacements.items():
         html = html.replace(f"<!-- {key} -->", escape(value))
+    html = html.replace("<!-- JSON_LD -->", json_ld)
 
     post_path = POSTS_DIR / f"{slug}.html"
     if post_path.exists() and not args.force:
