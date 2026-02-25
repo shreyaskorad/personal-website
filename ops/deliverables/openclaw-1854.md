@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (1899)
 
 - Task ID: openclaw-1854
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-25T06:55:42Z
-- Updated: 2026-02-25T06:56:59Z
+- Updated: 2026-02-25T07:03:17Z
 
 ## Summary
-Manually copy article content below into your repository posts directory and update writing index to complete publication.
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2540.
 
 ## Deliverable Output
 ```json
@@ -76,9 +76,6 @@ Manually copy article content below into your repository posts directory and upd
   }
 }
 ```
-
-## Blockers / Notes
-Repository inaccessible prevents automated publishing. Article saved to workspace for manual deployment.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
