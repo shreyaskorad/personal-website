@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (539)
 
 - Task ID: openclaw-1968
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-25T14:55:42Z
-- Updated: 2026-02-25T14:57:15Z
+- Updated: 2026-02-25T15:00:30Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2716.
 
 ## Deliverable Output
 ```json
@@ -21,9 +21,6 @@ Rewrite required before publish. Violations: duplicate title against published p
     {
       "agent_id":"Topic Scout",
       "note":"Selected focus: decision quality metrics as practical alternative to completion rates in workplace learning. Thesis: shift from completion tracking to outcome-based measurement. Audience intent: L&D practitioners seeking
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
