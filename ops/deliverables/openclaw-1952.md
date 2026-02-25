@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (548)
 
 - Task ID: openclaw-1952
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-25T13:35:16Z
-- Updated: 2026-02-25T13:35:52Z
+- Updated: 2026-02-25T13:39:02Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2691.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (548)
@@ -22,9 +22,6 @@ I have found that this approach keeps writing and execution coherent, because ea
 The writing quality also improves when each paragraph contributes a distinct layer, such as context, tension, choice, and reflection. That structure reduces repetition and keeps the voice clear without sounding mechanical.
 
 If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
