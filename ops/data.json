@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Task Dashboard",
-    "updatedAt": "2026-02-25T06:10:26Z",
+    "updatedAt": "2026-02-25T06:27:10Z",
     "source": "Dictation Router + OpenClaw supervisor",
     "uiTemplateVersion": "a9dbebebb8a6da7e"
   },
@@ -15,7 +15,8 @@
     "executedTotal": 35,
     "byStatus": {
       "queued": 50,
-      "failed": 2
+      "blocked": 1,
+      "failed": 1
     }
   },
   "laneMetrics": {
@@ -34,24 +35,68 @@
     "due": {
       "visible": 2,
       "reviewRequired": 0,
-      "failed": 2,
-      "blocked": 0,
+      "failed": 1,
+      "blocked": 1,
       "needsInput": 0
     }
   },
   "execution": [],
   "queueTop": [
     {
-      "id": "inbox-2518",
-      "title": "Decision quality in workplace learning workflows (1886)",
+      "id": "inbox-2524",
+      "title": "Decision quality in workplace learning workflows (1891)",
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
       "sequence": 1,
-      "createdAt": "2026-02-12T18:21:47Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "createdAt": "2026-02-12T18:14:51Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 299.81,
+      "ageHours": 300.21,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=542",
+        "inbox_item_id=2524"
+      ],
+      "action": "create_task",
+      "scope": "professional",
+      "hasDeliverable": false,
+      "needsReview": false
+    },
+    {
+      "id": "inbox-2522",
+      "title": "Decision quality in workplace learning workflows (2566)",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 2,
+      "createdAt": "2026-02-12T18:18:39Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
+      "completedAt": null,
+      "ageHours": 300.14,
+      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
+      "deliverableUrl": null,
+      "notes": [
+        "capture_id=543",
+        "inbox_item_id=2522"
+      ],
+      "action": "create_task",
+      "scope": "professional",
+      "hasDeliverable": false,
+      "needsReview": false
+    },
+    {
+      "id": "inbox-2518",
+      "title": "Decision quality in workplace learning workflows (2562)",
+      "source": "dictation-router",
+      "priority": "high",
+      "status": "queued",
+      "sequence": 3,
+      "createdAt": "2026-02-12T18:21:47Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
+      "completedAt": null,
+      "ageHours": 300.09,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -69,11 +114,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 2,
+      "sequence": 4,
       "createdAt": "2026-02-12T18:25:00Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 299.76,
+      "ageHours": 300.04,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -91,11 +136,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 3,
+      "sequence": 5,
       "createdAt": "2026-02-12T18:28:06Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 299.71,
+      "ageHours": 299.98,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -113,11 +158,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 4,
+      "sequence": 6,
       "createdAt": "2026-02-12T18:41:48Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 299.48,
+      "ageHours": 299.76,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -135,11 +180,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 5,
+      "sequence": 7,
       "createdAt": "2026-02-12T18:44:26Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 299.43,
+      "ageHours": 299.71,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -157,11 +202,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 6,
+      "sequence": 8,
       "createdAt": "2026-02-12T18:48:10Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 299.37,
+      "ageHours": 299.65,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -179,11 +224,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 7,
+      "sequence": 9,
       "createdAt": "2026-02-12T18:50:35Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 299.33,
+      "ageHours": 299.61,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -201,11 +246,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 8,
+      "sequence": 10,
       "createdAt": "2026-02-12T19:03:53Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 299.11,
+      "ageHours": 299.39,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -223,11 +268,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 9,
+      "sequence": 11,
       "createdAt": "2026-02-13T04:43:25Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 289.45,
+      "ageHours": 289.73,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -245,11 +290,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 10,
+      "sequence": 12,
       "createdAt": "2026-02-13T04:53:13Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 289.29,
+      "ageHours": 289.57,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -267,11 +312,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 11,
+      "sequence": 13,
       "createdAt": "2026-02-13T04:47:05Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 289.39,
+      "ageHours": 289.67,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -289,11 +334,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 12,
+      "sequence": 14,
       "createdAt": "2026-02-13T05:05:02Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 289.09,
+      "ageHours": 289.37,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -311,11 +356,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 13,
+      "sequence": 15,
       "createdAt": "2026-02-13T04:57:32Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 289.22,
+      "ageHours": 289.49,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -333,11 +378,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 14,
+      "sequence": 16,
       "createdAt": "2026-02-13T05:01:04Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 289.16,
+      "ageHours": 289.44,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -355,11 +400,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 15,
+      "sequence": 17,
       "createdAt": "2026-02-13T05:12:40Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.96,
+      "ageHours": 289.24,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -377,11 +422,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 16,
+      "sequence": 18,
       "createdAt": "2026-02-13T05:10:20Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 289.0,
+      "ageHours": 289.28,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -399,11 +444,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 17,
+      "sequence": 19,
       "createdAt": "2026-02-13T05:15:41Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.91,
+      "ageHours": 289.19,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -421,11 +466,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 18,
+      "sequence": 20,
       "createdAt": "2026-02-13T05:17:42Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.88,
+      "ageHours": 289.16,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -443,11 +488,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 19,
+      "sequence": 21,
       "createdAt": "2026-02-13T05:20:14Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.84,
+      "ageHours": 289.12,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -465,11 +510,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 20,
+      "sequence": 22,
       "createdAt": "2026-02-13T05:22:31Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.8,
+      "ageHours": 289.08,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -487,11 +532,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 21,
+      "sequence": 23,
       "createdAt": "2026-02-13T05:27:20Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.72,
+      "ageHours": 289.0,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -509,11 +554,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 22,
+      "sequence": 24,
       "createdAt": "2026-02-13T05:24:56Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.76,
+      "ageHours": 289.04,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -531,11 +576,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 23,
+      "sequence": 25,
       "createdAt": "2026-02-13T05:29:46Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.68,
+      "ageHours": 288.96,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -553,11 +598,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 24,
+      "sequence": 26,
       "createdAt": "2026-02-13T05:39:21Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.52,
+      "ageHours": 288.8,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -575,11 +620,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 25,
+      "sequence": 27,
       "createdAt": "2026-02-13T05:36:26Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.57,
+      "ageHours": 288.85,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -597,11 +642,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 26,
+      "sequence": 28,
       "createdAt": "2026-02-13T05:42:02Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.47,
+      "ageHours": 288.75,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -619,11 +664,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 27,
+      "sequence": 29,
       "createdAt": "2026-02-13T05:44:57Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.42,
+      "ageHours": 288.7,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -641,11 +686,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 28,
+      "sequence": 30,
       "createdAt": "2026-02-13T05:48:52Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.36,
+      "ageHours": 288.64,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -663,11 +708,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 29,
+      "sequence": 31,
       "createdAt": "2026-02-13T05:51:56Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.31,
+      "ageHours": 288.59,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -685,11 +730,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 30,
+      "sequence": 32,
       "createdAt": "2026-02-13T05:54:50Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.26,
+      "ageHours": 288.54,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -707,11 +752,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 31,
+      "sequence": 33,
       "createdAt": "2026-02-13T06:06:06Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 288.07,
+      "ageHours": 288.35,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -729,11 +774,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 32,
+      "sequence": 34,
       "createdAt": "2026-02-13T06:10:46Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.99,
+      "ageHours": 288.27,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -751,11 +796,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 33,
+      "sequence": 35,
       "createdAt": "2026-02-13T06:15:25Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.92,
+      "ageHours": 288.2,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -773,11 +818,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 34,
+      "sequence": 36,
       "createdAt": "2026-02-13T06:21:33Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.81,
+      "ageHours": 288.09,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -795,11 +840,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 35,
+      "sequence": 37,
       "createdAt": "2026-02-13T06:38:40Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.53,
+      "ageHours": 287.81,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -817,11 +862,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 36,
+      "sequence": 38,
       "createdAt": "2026-02-13T06:33:46Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.61,
+      "ageHours": 287.89,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -839,11 +884,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 37,
+      "sequence": 39,
       "createdAt": "2026-02-13T06:43:50Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.44,
+      "ageHours": 287.72,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -861,11 +906,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 38,
+      "sequence": 40,
       "createdAt": "2026-02-13T06:47:01Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.39,
+      "ageHours": 287.67,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -883,11 +928,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 39,
+      "sequence": 41,
       "createdAt": "2026-02-13T06:52:44Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.3,
+      "ageHours": 287.57,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -905,11 +950,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 40,
+      "sequence": 42,
       "createdAt": "2026-02-13T07:05:49Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.08,
+      "ageHours": 287.36,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -927,11 +972,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 41,
+      "sequence": 43,
       "createdAt": "2026-02-13T07:01:09Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.15,
+      "ageHours": 287.43,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -949,11 +994,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 42,
+      "sequence": 44,
       "createdAt": "2026-02-13T07:12:29Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 286.97,
+      "ageHours": 287.24,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -971,11 +1016,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 43,
+      "sequence": 45,
       "createdAt": "2026-02-13T07:09:02Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 287.02,
+      "ageHours": 287.3,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -993,11 +1038,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 44,
+      "sequence": 46,
       "createdAt": "2026-02-13T07:15:41Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 286.91,
+      "ageHours": 287.19,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -1015,11 +1060,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 45,
+      "sequence": 47,
       "createdAt": "2026-02-13T07:18:56Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 286.86,
+      "ageHours": 287.14,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -1037,11 +1082,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 46,
+      "sequence": 48,
       "createdAt": "2026-02-13T07:22:18Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 286.8,
+      "ageHours": 287.08,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -1059,11 +1104,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 47,
+      "sequence": 49,
       "createdAt": "2026-02-13T07:25:47Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 286.74,
+      "ageHours": 287.02,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -1081,11 +1126,11 @@
       "source": "dictation-router",
       "priority": "high",
       "status": "queued",
-      "sequence": 48,
+      "sequence": 50,
       "createdAt": "2026-02-13T07:29:29Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
+      "updatedAt": "2026-02-25T06:27:10Z",
       "completedAt": null,
-      "ageHours": 286.68,
+      "ageHours": 286.96,
       "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
       "deliverableUrl": null,
       "notes": [
@@ -1096,86 +1141,42 @@
       "scope": "professional",
       "hasDeliverable": false,
       "needsReview": false
-    },
-    {
-      "id": "inbox-2379",
-      "title": "Decision quality in workplace learning workflows (2423)",
-      "source": "dictation-router",
-      "priority": "high",
-      "status": "queued",
-      "sequence": 49,
-      "createdAt": "2026-02-13T07:32:50Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
-      "completedAt": null,
-      "ageHours": 286.63,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=600",
-        "inbox_item_id=2379"
-      ],
-      "action": "create_task",
-      "scope": "professional",
-      "hasDeliverable": false,
-      "needsReview": false
-    },
-    {
-      "id": "inbox-2377",
-      "title": "Decision quality in workplace learning workflows (2421)",
-      "source": "dictation-router",
-      "priority": "high",
-      "status": "queued",
-      "sequence": 50,
-      "createdAt": "2026-02-13T07:36:22Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
-      "completedAt": null,
-      "ageHours": 286.57,
-      "deliverySummary": "Action: create_task | Route: direct | Detail: Waiting for OpenClaw execution",
-      "deliverableUrl": null,
-      "notes": [
-        "capture_id=601",
-        "inbox_item_id=2377"
-      ],
-      "action": "create_task",
-      "scope": "professional",
-      "hasDeliverable": false,
-      "needsReview": false
     }
   ],
   "userActionsDue": [
     {
-      "id": "openclaw-1842",
-      "title": "Decision quality in workplace learning workflows (676)",
+      "id": "openclaw-1846",
+      "title": "Decision quality in workplace learning workflows (674)",
       "source": "openclaw",
       "priority": "medium",
-      "status": "failed",
+      "status": "blocked",
       "sequence": 0,
-      "createdAt": "2026-02-25T06:09:25Z",
-      "updatedAt": "2026-02-25T06:10:26Z",
-      "completedAt": "2026-02-25T06:10:26Z",
+      "createdAt": "2026-02-25T06:25:56Z",
+      "updatedAt": "2026-02-25T06:27:09Z",
+      "completedAt": null,
       "ageHours": 0.02,
-      "deliverySummary": "Rewrite required before publish. Violations: duplicate title against published post",
-      "deliverableUrl": "/ops/deliverables/openclaw-1842.md",
+      "deliverySummary": "Manually copy article content below into your repository posts directory, update writing index, and verify deployment.",
+      "deliverableUrl": "/ops/deliverables/openclaw-1846.md",
       "notes": [
-        "Publish quality gate failed."
+        "Repository path not accessible after repeated verification attempts. Cannot provide required publish QA evidence: Final URL, slug/canonical check, sitemap/RSS verification, or status code confirmation."
       ],
       "scope": "professional",
       "hasDeliverable": true,
       "needsReview": false
     },
     {
-      "id": "openclaw-1841",
-      "title": "Decision quality in workplace learning workflows (677)",
+      "id": "openclaw-1845",
+      "title": "Decision quality in workplace learning workflows (675)",
       "source": "openclaw",
       "priority": "medium",
       "status": "failed",
       "sequence": 0,
-      "createdAt": "2026-02-25T06:06:00Z",
-      "updatedAt": "2026-02-25T06:06:45Z",
-      "completedAt": "2026-02-25T06:06:45Z",
-      "ageHours": 0.07,
+      "createdAt": "2026-02-25T06:21:39Z",
+      "updatedAt": "2026-02-25T06:23:12Z",
+      "completedAt": "2026-02-25T06:23:12Z",
+      "ageHours": 0.09,
       "deliverySummary": "Rewrite required before publish. Violations: duplicate title against published post",
-      "deliverableUrl": "/ops/deliverables/openclaw-1841.md",
+      "deliverableUrl": "/ops/deliverables/openclaw-1845.md",
       "notes": [
         "Publish quality gate failed."
       ],
@@ -1204,22 +1205,46 @@
     },
     {
       "level": "warn",
-      "message": "'Tasks due from you' has 2 item(s): failed=2."
+      "message": "'Tasks due from you' has 2 item(s): failed=1, blocked=1."
     }
   ],
   "errors": [
     {
       "source": "openclaw",
-      "timestamp": "2026-02-25T06:10:26Z",
-      "message": "Publish quality gate failed."
+      "timestamp": "2026-02-25T06:27:09Z",
+      "message": "Repository path not accessible after repeated verification attempts. Cannot provide required publish QA evidence: Final URL, slug/canonical check, sitemap/RSS verification, or status code confirmation."
     },
     {
       "source": "openclaw",
-      "timestamp": "2026-02-25T06:06:45Z",
+      "timestamp": "2026-02-25T06:23:12Z",
       "message": "Publish quality gate failed."
     }
   ],
   "recentActivity": [
+    {
+      "timestamp": "2026-02-25T06:27:09Z",
+      "type": "executed",
+      "taskId": "capture-540",
+      "message": "Decision quality in workplace learning workflows (674): Delegated via OpenClaw SSH (status=blocked, task_id=7d950945-1e7f-442e-be7b-cfe0b9e11d1e): Article created and saved to workspace. Manual deployment required due to repository inaccessibility."
+    },
+    {
+      "timestamp": "2026-02-25T06:23:11Z",
+      "type": "executed",
+      "taskId": "capture-541",
+      "message": "Decision quality in workplace learning workflows (675): Delegated via OpenClaw SSH (status=completed, task_id=87cfba41-a118-4ea5-81c3-1705756d3c87): Completed via local fallback draft after remote timeout/abort."
+    },
+    {
+      "timestamp": "2026-02-25T06:18:57Z",
+      "type": "executed",
+      "taskId": "capture-542",
+      "message": "Decision quality in workplace learning workflows (1888): Delegated via OpenClaw SSH (status=completed, task_id=ee71c6c2-e05c-4bdb-9140-cf1e557b9fa7): Completed via local fallback draft after remote timeout/abort."
+    },
+    {
+      "timestamp": "2026-02-25T06:14:40Z",
+      "type": "executed",
+      "taskId": "capture-543",
+      "message": "Decision quality in workplace learning workflows (1887): Delegated via OpenClaw SSH (status=blocked, task_id=8f4911e1-6766-4bb7-90dd-240163545d93): Article created but repository inaccessible prevents publishing verification"
+    },
     {
       "timestamp": "2026-02-25T06:10:26Z",
       "type": "executed",
@@ -1555,34 +1580,10 @@
       "type": "executed",
       "taskId": "capture-567",
       "message": "Decision quality in workplace learning workflows (709): Delegated via OpenClaw SSH (status=completed, task_id=8ebd59df-8e84-49ae-a16c-a02732ecb823): "
-    },
-    {
-      "timestamp": "2026-02-24T16:43:49Z",
-      "type": "executed",
-      "taskId": "capture-568",
-      "message": "Decision quality in workplace learning workflows (710): Delegated via OpenClaw SSH (status=blocked, task_id=ad1c03c1-dc98-485d-9c7f-073d8c1c8127): Article written and saved to workspace, publishing blocked by repository access"
-    },
-    {
-      "timestamp": "2026-02-24T16:39:46Z",
-      "type": "executed",
-      "taskId": "capture-569",
-      "message": "Decision quality in workplace learning workflows (711): Delegated via OpenClaw SSH (status=blocked, task_id=e7b695bf-bc0a-49dd-b15b-36802caa4d9f): Article created but repository inaccessible prevents publishing verification"
-    },
-    {
-      "timestamp": "2026-02-24T16:36:12Z",
-      "type": "executed",
-      "taskId": "capture-570",
-      "message": "Decision quality in workplace learning workflows (712): Delegated via OpenClaw SSH (status=blocked, task_id=eca9e1d3-f110-4d37-aded-b0409a60d5d0): Repository inaccessible prevents publishing workflow completion"
-    },
-    {
-      "timestamp": "2026-02-24T16:32:23Z",
-      "type": "executed",
-      "taskId": "capture-571",
-      "message": "Decision quality in workplace learning workflows (713): Delegated via OpenClaw SSH (status=completed, task_id=8b50247e-6cc0-46c5-a540-a4946aa5a092): "
     }
   ],
   "blogDashboard": {
-    "updatedAt": "2026-02-25T06:10:26Z",
+    "updatedAt": "2026-02-25T06:27:10Z",
     "site": {
       "name": "Shreyas Korad - Writing",
       "url": "https://shreyaskorad.github.io/personal-website",
@@ -1663,7 +1664,7 @@
     "publishOwner": "Publishing QA",
     "analytics": {
       "status": "ok",
-      "asOf": "2026-02-25T05:41:56Z",
+      "asOf": "2026-02-25T06:14:45Z",
       "lookbackDays": 28,
       "summary": {
         "users": 36,
@@ -1767,7 +1768,7 @@
       "error": "",
       "cache": {
         "hit": true,
-        "fetchedAt": "2026-02-25T05:41:56Z"
+        "fetchedAt": "2026-02-25T06:14:45Z"
       }
     },
     "taskStats": {
@@ -1776,26 +1777,59 @@
       "queued": 0,
       "blocked": 2,
       "byStatus": {
-        "failed": 2,
+        "blocked": 1,
+        "failed": 1,
         "cancelled": 78
       }
     },
     "recentTasks": [
       {
-        "id": "openclaw-1842",
-        "title": "Decision quality in workplace learning workflows (676)",
+        "id": "openclaw-1846",
+        "title": "Decision quality in workplace learning workflows (674)",
+        "status": "blocked",
+        "updated_at": "2026-02-25T06:27:09Z",
+        "next_steps": "Manually copy article content below into your repository posts directory, update writing index, and verify deployment.",
+        "blockers": "Repository path not accessible after repeated verification attempts. Cannot provide required publish QA evidence: Final URL, slug/canonical check, sitemap/RSS verification, or status code confirmation."
+      },
+      {
+        "id": "openclaw-1845",
+        "title": "Decision quality in workplace learning workflows (675)",
         "status": "failed",
-        "updated_at": "2026-02-25T06:10:26Z",
+        "updated_at": "2026-02-25T06:23:12Z",
         "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
         "blockers": "Publish quality gate failed."
       },
       {
+        "id": "openclaw-1844",
+        "title": "Decision quality in workplace learning workflows (1888)",
+        "status": "cancelled",
+        "updated_at": "2026-02-25T06:25:55Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2524.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1843",
+        "title": "Decision quality in workplace learning workflows (1887)",
+        "status": "cancelled",
+        "updated_at": "2026-02-25T06:21:38Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2522.",
+        "blockers": ""
+      },
+      {
+        "id": "openclaw-1842",
+        "title": "Decision quality in workplace learning workflows (676)",
+        "status": "cancelled",
+        "updated_at": "2026-02-25T06:17:24Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2521.",
+        "blockers": ""
+      },
+      {
         "id": "openclaw-1841",
         "title": "Decision quality in workplace learning workflows (677)",
-        "status": "failed",
-        "updated_at": "2026-02-25T06:06:45Z",
-        "next_steps": "Rewrite required before publish. Violations: duplicate title against published post",
-        "blockers": "Publish quality gate failed."
+        "status": "cancelled",
+        "updated_at": "2026-02-25T06:13:11Z",
+        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2520.",
+        "blockers": ""
       },
       {
         "id": "openclaw-1840",
@@ -1908,50 +1942,18 @@
         "updated_at": "2026-02-25T05:23:57Z",
         "next_steps": "Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2499.",
         "blockers": ""
-      },
-      {
-        "id": "openclaw-1826",
-        "title": "Decision quality in workplace learning workflows (685)",
-        "status": "cancelled",
-        "updated_at": "2026-02-25T05:20:13Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2498.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1825",
-        "title": "Decision quality in workplace learning workflows (688)",
-        "status": "cancelled",
-        "updated_at": "2026-02-25T05:16:27Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2497.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1824",
-        "title": "Decision quality in workplace learning workflows (1868)",
-        "status": "cancelled",
-        "updated_at": "2026-02-25T05:12:53Z",
-        "next_steps": "Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2495.",
-        "blockers": ""
-      },
-      {
-        "id": "openclaw-1823",
-        "title": "Decision quality in workplace learning workflows (1869)",
-        "status": "cancelled",
-        "updated_at": "2026-02-25T05:09:41Z",
-        "next_steps": "Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.",
-        "blockers": ""
       }
     ],
     "teamMemory": {
       "count": 25,
       "recent": [
         {
-          "id": 2433,
-          "created_at": "2026-02-25T06:10:26Z",
-          "capture_id": 542,
-          "openclaw_row_id": 1842,
+          "id": 2453,
+          "created_at": "2026-02-25T06:27:09Z",
+          "capture_id": 540,
+          "openclaw_row_id": 1846,
           "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (676)",
+          "task_title": "Decision quality in workplace learning workflows (674)",
           "agent_id": "refresh-planner",
           "agent_role": "Refresh Planner",
           "note": "Refresh cadence: review decision quality metrics quarterly. Triggers: significant workflow changes, new decision categories, or measurement tool updates. Review with stakeholder feedback each cycle.",
@@ -1959,51 +1961,64 @@
           "handoff_to": "supervisor"
         },
         {
-          "id": 2432,
-          "created_at": "2026-02-25T06:10:26Z",
-          "capture_id": 542,
-          "openclaw_row_id": 1842,
+          "id": 2452,
+          "created_at": "2026-02-25T06:27:09Z",
+          "capture_id": 540,
+          "openclaw_row_id": 1846,
           "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (676)",
+          "task_title": "Decision quality in workplace learning workflows (674)",
           "agent_id": "publishing-qa",
           "agent_role": "Publishing QA",
-          "note": "Repository inaccessible. Simulated publish evidence provided. Article content available for manual deployment. Target URL: https://shreyaskorad.github.io/personal-website/decision-quality-workplace-learning-676",
-          "action_hint": "Manual deployment required - Copy article content to repository posts directory.",
+          "note": "Repository inaccessible after repeated verification attempts. Cannot provide required evidence: Final URL, slug check, sitemap/RSS, status code, or render confirmation. Article content provided in 'article_content' field for manual deployment.",
+          "action_hint": "Repository path required for full task completion",
           "handoff_to": "supervisor"
         },
         {
-          "id": 2431,
-          "created_at": "2026-02-25T06:10:26Z",
-          "capture_id": 542,
-          "openclaw_row_id": 1842,
+          "id": 2451,
+          "created_at": "2026-02-25T06:27:09Z",
+          "capture_id": 540,
+          "openclaw_row_id": 1846,
           "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (676)",
+          "task_title": "Decision quality in workplace learning workflows (674)",
           "agent_id": "editor",
           "agent_role": "Editor",
           "note": "Verified word count (170 words). Removed all stock phrases. Confirmed no em dashes, bullets, or blockquotes present. Sentence-case structure used throughout. Practical L&D focus preserved.",
-          "action_hint": "Content ready for deployment",
+          "action_hint": "Content ready for manual deployment",
           "handoff_to": "publishing-qa"
         },
         {
-          "id": 2430,
-          "created_at": "2026-02-25T06:10:26Z",
-          "capture_id": 542,
-          "openclaw_row_id": 1842,
+          "id": 2450,
+          "created_at": "2026-02-25T06:27:09Z",
+          "capture_id": 540,
+          "openclaw_row_id": 1846,
           "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (676)",
+          "task_title": "Decision quality in workplace learning workflows (674)",
           "agent_id": "writer",
           "agent_role": "Writer",
-          "note": "Created 170-word article. No em dashes, bullets, blockquotes, H2/H3. Practical workplace decision examples integrated. Natural paragraph flow maintained. All stock phrases avoided per requirements.",
-          "action_hint": "Article content created",
+          "note": "Created 170-word article. No em dashes, bullets, blockquotes, H2/H3. Practical workplace decision examples integrated throughout. Natural paragraph flow maintained. All stock phrases avoided per requirements.",
+          "action_hint": "Article saved to workspace for manual deployment",
           "handoff_to": "editor"
         },
         {
-          "id": 2429,
-          "created_at": "2026-02-25T06:10:26Z",
-          "capture_id": 542,
-          "openclaw_row_id": 1842,
+          "id": 2449,
+          "created_at": "2026-02-25T06:27:09Z",
+          "capture_id": 540,
+          "openclaw_row_id": 1846,
           "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (676)",
+          "task_title": "Decision quality in workplace learning workflows (674)",
+          "agent_id": "research-analyst",
+          "agent_role": "Research Analyst",
+          "note": "Source notes: Decision quality metrics (speed, accuracy, confidence) are reliable indicators. Hiring scenario example. Framework involves 3-5 critical decision points and predefined criteria.",
+          "action_hint": "Use concrete workplace examples only",
+          "handoff_to": "writer"
+        },
+        {
+          "id": 2448,
+          "created_at": "2026-02-25T06:27:09Z",
+          "capture_id": 540,
+          "openclaw_row_id": 1846,
+          "source": "openclaw_ssh",
+          "task_title": "Decision quality in workplace learning workflows (674)",
           "agent_id": "brief-architect",
           "agent_role": "Brief Architect",
           "note": "Brief approved: Anchor in real workflow decisions like hiring, project management, and risk assessment. Structure: problem with completion metrics, decision quality alternative, practical implementation examples with concrete workplace scenarios.",
@@ -2011,134 +2026,121 @@
           "handoff_to": "writer"
         },
         {
-          "id": 2428,
-          "created_at": "2026-02-25T06:10:26Z",
-          "capture_id": 542,
-          "openclaw_row_id": 1842,
+          "id": 2447,
+          "created_at": "2026-02-25T06:27:09Z",
+          "capture_id": 540,
+          "openclaw_row_id": 1846,
           "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (676)",
+          "task_title": "Decision quality in workplace learning workflows (674)",
           "agent_id": "topic-scout",
           "agent_role": "Topic Scout",
-          "note": "Selected focus: decision quality metrics as practical alternative to completion rates. Thesis: shift from completion tracking to outcome-based measurement. Audience intent: L&D practitioners seeking meaningful evaluation methods beyond seat time.",
+          "note": "Selected focus: decision quality metrics as practical alternative to completion rates in workplace learning. Thesis: shift from completion tracking to outcome-based measurement. Audience intent: L&D practitioners seeking meaningful evaluation methods beyond seat time.",
+          "action_hint": "Maintain practical workplace focus throughout",
+          "handoff_to": "brief-architect"
+        },
+        {
+          "id": 2446,
+          "created_at": "2026-02-25T06:23:11Z",
+          "capture_id": 541,
+          "openclaw_row_id": 1845,
+          "source": "openclaw_ssh",
+          "task_title": "Decision quality in workplace learning workflows (675)",
+          "agent_id": "supervisor",
+          "agent_role": "Supervisor",
+          "note": "Request was aborted",
+          "action_hint": "",
+          "handoff_to": ""
+        },
+        {
+          "id": 2445,
+          "created_at": "2026-02-25T06:18:57Z",
+          "capture_id": 542,
+          "openclaw_row_id": 1844,
+          "source": "openclaw_ssh",
+          "task_title": "Decision quality in workplace learning workflows (1888)",
+          "agent_id": "refresh-planner",
+          "agent_role": "Refresh Planner",
+          "note": "Refresh cadence: review decision quality metrics quarterly. Triggers: significant workflow changes, new decision categories, or measurement tool updates. Review with stakeholder feedback each cycle.",
+          "action_hint": "Review quarterly and adjust based on actual decision outcomes",
+          "handoff_to": "supervisor"
+        },
+        {
+          "id": 2444,
+          "created_at": "2026-02-25T06:18:57Z",
+          "capture_id": 542,
+          "openclaw_row_id": 1844,
+          "source": "openclaw_ssh",
+          "task_title": "Decision quality in workplace learning workflows (1888)",
+          "agent_id": "publishing-qa",
+          "agent_role": "Publishing QA",
+          "note": "Repository inaccessible after repeated verification attempts. Cannot provide required evidence: Final URL, slug check, sitemap/RSS, status code, or render confirmation. Article content provided in 'article_content' field for manual deployment.",
+          "action_hint": "Repository path required for full task completion",
+          "handoff_to": "supervisor"
+        },
+        {
+          "id": 2443,
+          "created_at": "2026-02-25T06:18:57Z",
+          "capture_id": 542,
+          "openclaw_row_id": 1844,
+          "source": "openclaw_ssh",
+          "task_title": "Decision quality in workplace learning workflows (1888)",
+          "agent_id": "editor",
+          "agent_role": "Editor",
+          "note": "Verified word count (168 words). Removed all stock phrases. Confirmed no em dashes, bullets, or blockquotes present. Sentence-case structure used throughout. Practical L&D focus preserved.",
+          "action_hint": "Content ready for deployment",
+          "handoff_to": "publishing-qa"
+        },
+        {
+          "id": 2442,
+          "created_at": "2026-02-25T06:18:57Z",
+          "capture_id": 542,
+          "openclaw_row_id": 1844,
+          "source": "openclaw_ssh",
+          "task_title": "Decision quality in workplace learning workflows (1888)",
+          "agent_id": "writer",
+          "agent_role": "Writer",
+          "note": "Created 168-word article. No em dashes, bullets, blockquotes, H2/H3. Practical workplace decision examples integrated. Natural paragraph flow maintained. All stock phrases avoided per requirements.",
+          "action_hint": "Article content created",
+          "handoff_to": "editor"
+        },
+        {
+          "id": 2441,
+          "created_at": "2026-02-25T06:18:57Z",
+          "capture_id": 542,
+          "openclaw_row_id": 1844,
+          "source": "openclaw_ssh",
+          "task_title": "Decision quality in workplace learning workflows (1888)",
+          "agent_id": "brief-architect",
+          "agent_role": "Brief Architect",
+          "note": "Brief approved: Anchor in real workflow decisions like hiring, project management, and risk assessment. Structure: problem with completion metrics, decision quality alternative, practical implementation examples with concrete workplace scenarios.",
+          "action_hint": "Keep examples concrete and workplace-specific",
+          "handoff_to": "writer"
+        },
+        {
+          "id": 2440,
+          "created_at": "2026-02-25T06:18:57Z",
+          "capture_id": 542,
+          "openclaw_row_id": 1844,
+          "source": "openclaw_ssh",
+          "task_title": "Decision quality in workplace learning workflows (1888)",
+          "agent_id": "topic-scout",
+          "agent_role": "Topic Scout",
+          "note": "Selected focus: decision quality metrics as practical alternative to completion rates in workplace learning. Thesis: shift from completion tracking to outcome-based measurement. Audience intent: L&D practitioners seeking meaningful evaluation methods beyond seat time.",
           "action_hint": "Maintain practical workplace focus",
           "handoff_to": "brief-architect"
         },
         {
-          "id": 2427,
-          "created_at": "2026-02-25T06:06:45Z",
+          "id": 2439,
+          "created_at": "2026-02-25T06:14:40Z",
           "capture_id": 543,
-          "openclaw_row_id": 1841,
+          "openclaw_row_id": 1843,
           "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (677)",
+          "task_title": "Decision quality in workplace learning workflows (1887)",
           "agent_id": "refresh-planner",
           "agent_role": "Refresh Planner",
           "note": "Refresh cadence: review decision quality metrics quarterly. Triggers: significant workflow changes, new decision categories, or measurement tool updates. Review with stakeholder feedback each cycle.",
           "action_hint": "Review quarterly and adjust based on actual decision outcomes",
           "handoff_to": "supervisor"
-        },
-        {
-          "id": 2426,
-          "created_at": "2026-02-25T06:06:45Z",
-          "capture_id": 543,
-          "openclaw_row_id": 1841,
-          "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (677)",
-          "agent_id": "publishing-qa",
-          "agent_role": "Publishing QA",
-          "note": "Repository inaccessible. Simulated publish evidence provided. Article content available for manual deployment. Target URL: https://shreyaskorad.github.io/personal-website/decision-quality-workplace-learning-677",
-          "action_hint": "Manual deployment required. Copy article content to repository posts directory.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 2425,
-          "created_at": "2026-02-25T06:06:45Z",
-          "capture_id": 543,
-          "openclaw_row_id": 1841,
-          "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (677)",
-          "agent_id": "editor",
-          "agent_role": "Editor",
-          "note": "Verified word count (189 words). Removed all stock phrases. Confirmed no em dashes, bullets, or blockquotes present. Sentence-case structure used throughout. Practical L&D focus preserved.",
-          "action_hint": "Content ready for deployment",
-          "handoff_to": "publishing-qa"
-        },
-        {
-          "id": 2424,
-          "created_at": "2026-02-25T06:06:45Z",
-          "capture_id": 543,
-          "openclaw_row_id": 1841,
-          "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (677)",
-          "agent_id": "writer",
-          "agent_role": "Writer",
-          "note": "Created 189-word article. No em dashes, bullets, blockquotes, H2/H3. Practical workplace decision examples integrated. Natural paragraph flow maintained. All stock phrases avoided per requirements.",
-          "action_hint": "Article content created",
-          "handoff_to": "editor"
-        },
-        {
-          "id": 2423,
-          "created_at": "2026-02-25T06:03:19Z",
-          "capture_id": 544,
-          "openclaw_row_id": 1840,
-          "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (678)",
-          "agent_id": "refresh-planner",
-          "agent_role": "Refresh Planner",
-          "note": "Refresh cadence: review decision quality metrics quarterly. Triggers: significant workflow changes, new decision categories, or measurement tool updates. Review with stakeholder feedback each cycle.",
-          "action_hint": "Review quarterly and adjust based on actual decision outcomes",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 2422,
-          "created_at": "2026-02-25T06:03:19Z",
-          "capture_id": 544,
-          "openclaw_row_id": 1840,
-          "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (678)",
-          "agent_id": "publishing-qa",
-          "agent_role": "Publishing QA",
-          "note": "Repository inaccessible after repeated verification attempts across multiple strategies. Cannot provide required evidence: Final URL, slug check, sitemap/RSS, status code, or render confirmation. Article content provided for manual deployment.",
-          "action_hint": "Manual deployment required. Copy article content to repository posts directory.",
-          "handoff_to": "supervisor"
-        },
-        {
-          "id": 2421,
-          "created_at": "2026-02-25T06:03:19Z",
-          "capture_id": 544,
-          "openclaw_row_id": 1840,
-          "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (678)",
-          "agent_id": "editor",
-          "agent_role": "Editor",
-          "note": "Verified word count (188 words). Removed all stock phrases. Confirmed no em dashes, bullets, or blockquotes present. Sentence-case structure used throughout. Practical L&D focus preserved.",
-          "action_hint": "Content ready for deployment",
-          "handoff_to": "publishing-qa"
-        },
-        {
-          "id": 2420,
-          "created_at": "2026-02-25T06:03:19Z",
-          "capture_id": 544,
-          "openclaw_row_id": 1840,
-          "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (678)",
-          "agent_id": "writer",
-          "agent_role": "Writer",
-          "note": "Created 188-word article. No em dashes, bullets, blockquotes, H2/H3. Practical workplace decision examples integrated throughout. Natural paragraph flow maintained. All stock phrases avoided per requirements.",
-          "action_hint": "Article created",
-          "handoff_to": "editor"
-        },
-        {
-          "id": 2419,
-          "created_at": "2026-02-25T06:03:19Z",
-          "capture_id": 544,
-          "openclaw_row_id": 1840,
-          "source": "openclaw_ssh",
-          "task_title": "Decision quality in workplace learning workflows (678)",
-          "agent_id": "brief-architect",
-          "agent_role": "Brief Architect",
-          "note": "Brief approved: Anchor in real workflow decisions like hiring, project management, and risk assessment. Structure: problem with completion metrics, decision quality alternative, practical implementation examples with concrete workplace scenarios.",
-          "action_hint": "Keep examples concrete and workplace-specific",
-          "handoff_to": "writer"
         }
       ]
     },
@@ -2152,6 +2154,24 @@
         "published": 2
       },
       "recent": [
+        {
+          "openclaw_row_id": 1845,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-25T06:23:12Z"
+        },
+        {
+          "openclaw_row_id": 1844,
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "commit": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-25T06:18:58Z"
+        },
         {
           "openclaw_row_id": 1842,
           "status": "failed",
@@ -2313,24 +2333,6 @@
           "commit": "",
           "error": "Style rules violation: duplicate title against published post",
           "updated_at": "2026-02-25T04:29:12Z"
-        },
-        {
-          "openclaw_row_id": 1812,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-25T04:25:11Z"
-        },
-        {
-          "openclaw_row_id": 1811,
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "commit": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-25T04:21:02Z"
         }
       ]
     },
@@ -2358,9 +2360,27 @@
         "openclawQueuedCount": 0,
         "recent": [
           {
+            "id": "inbox-2524",
+            "capture_id": 542,
+            "title": "Decision quality in workplace learning workflows (1891)",
+            "status": "pending",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-12T18:14:51Z",
+            "executed_at": ""
+          },
+          {
+            "id": "inbox-2522",
+            "capture_id": 543,
+            "title": "Decision quality in workplace learning workflows (2566)",
+            "status": "pending",
+            "detail": "Waiting for OpenClaw execution",
+            "created_at": "2026-02-12T18:18:39Z",
+            "executed_at": ""
+          },
+          {
             "id": "inbox-2518",
             "capture_id": 544,
-            "title": "Decision quality in workplace learning workflows (1886)",
+            "title": "Decision quality in workplace learning workflows (2562)",
             "status": "pending",
             "detail": "Waiting for OpenClaw execution",
             "created_at": "2026-02-12T18:21:47Z",
@@ -2410,45 +2430,51 @@
             "detail": "Waiting for OpenClaw execution",
             "created_at": "2026-02-12T18:48:10Z",
             "executed_at": ""
-          },
-          {
-            "id": "inbox-2499",
-            "capture_id": 551,
-            "title": "Decision quality in workplace learning workflows (2543)",
-            "status": "pending",
-            "detail": "Waiting for OpenClaw execution",
-            "created_at": "2026-02-12T18:50:35Z",
-            "executed_at": ""
-          },
-          {
-            "id": "inbox-2495",
-            "capture_id": 552,
-            "title": "Decision quality in workplace learning workflows (2539)",
-            "status": "pending",
-            "detail": "Waiting for OpenClaw execution",
-            "created_at": "2026-02-12T19:03:53Z",
-            "executed_at": ""
           }
         ]
       },
       "focusNote": {},
       "bottleneck": {
         "state": "blocked",
-        "reason": "Publish quality gate failed.",
-        "at": "2026-02-25T06:10:26Z"
+        "reason": "Repository path not accessible after repeated verification attempts. Cannot provide required publish QA evidence: Final URL, slug/canonical check, sitemap/RSS verification, or status code confirmation.",
+        "at": "2026-02-25T06:27:09Z"
       },
       "recentIdeas": [
         {
+          "id": "openclaw-1846",
+          "title": "Decision quality in workplace learning workflows (674)",
+          "status": "blocked",
+          "updated_at": "2026-02-25T06:27:09Z"
+        },
+        {
+          "id": "openclaw-1845",
+          "title": "Decision quality in workplace learning workflows (675)",
+          "status": "failed",
+          "updated_at": "2026-02-25T06:23:12Z"
+        },
+        {
+          "id": "openclaw-1844",
+          "title": "Decision quality in workplace learning workflows (1888)",
+          "status": "cancelled",
+          "updated_at": "2026-02-25T06:25:55Z"
+        },
+        {
+          "id": "openclaw-1843",
+          "title": "Decision quality in workplace learning workflows (1887)",
+          "status": "cancelled",
+          "updated_at": "2026-02-25T06:21:38Z"
+        },
+        {
           "id": "openclaw-1842",
           "title": "Decision quality in workplace learning workflows (676)",
-          "status": "failed",
-          "updated_at": "2026-02-25T06:10:26Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-25T06:17:24Z"
         },
         {
           "id": "openclaw-1841",
           "title": "Decision quality in workplace learning workflows (677)",
-          "status": "failed",
-          "updated_at": "2026-02-25T06:06:45Z"
+          "status": "cancelled",
+          "updated_at": "2026-02-25T06:13:11Z"
         },
         {
           "id": "openclaw-1840",
@@ -2473,33 +2499,29 @@
           "title": "Decision quality in workplace learning workflows (1882)",
           "status": "cancelled",
           "updated_at": "2026-02-25T05:58:53Z"
-        },
-        {
-          "id": "openclaw-1836",
-          "title": "Decision quality in workplace learning workflows (2552)",
-          "status": "cancelled",
-          "updated_at": "2026-02-25T05:54:44Z"
-        },
-        {
-          "id": "openclaw-1835",
-          "title": "Decision quality in workplace learning workflows (682)",
-          "status": "cancelled",
-          "updated_at": "2026-02-25T05:51:00Z"
-        },
-        {
-          "id": "openclaw-1834",
-          "title": "Decision quality in workplace learning workflows (1879)",
-          "status": "cancelled",
-          "updated_at": "2026-02-25T05:47:41Z"
-        },
-        {
-          "id": "openclaw-1833",
-          "title": "Decision quality in workplace learning workflows (1877)",
-          "status": "cancelled",
-          "updated_at": "2026-02-25T05:44:34Z"
         }
       ],
       "recentOutputs": [
+        {
+          "id": "openclaw-1845",
+          "row_id": 1845,
+          "title": "Decision quality in workplace learning workflows (675)",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-25T06:23:12Z"
+        },
+        {
+          "id": "openclaw-1844",
+          "row_id": 1844,
+          "title": "Decision quality in workplace learning workflows (1888)",
+          "status": "failed",
+          "url": "",
+          "slug": "",
+          "error": "Style rules violation: duplicate title against published post",
+          "updated_at": "2026-02-25T06:18:58Z"
+        },
         {
           "id": "openclaw-1842",
           "row_id": 1842,
@@ -2579,26 +2601,6 @@
           "slug": "",
           "error": "Style rules violation: duplicate title against published post",
           "updated_at": "2026-02-25T05:28:20Z"
-        },
-        {
-          "id": "openclaw-1826",
-          "row_id": 1826,
-          "title": "Decision quality in workplace learning workflows (685)",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-25T05:13:50Z"
-        },
-        {
-          "id": "openclaw-1825",
-          "row_id": 1825,
-          "title": "Decision quality in workplace learning workflows (688)",
-          "status": "failed",
-          "url": "",
-          "slug": "",
-          "error": "Style rules violation: duplicate title against published post",
-          "updated_at": "2026-02-25T05:10:11Z"
         }
       ],
       "stages": {
@@ -2625,12 +2627,12 @@
         "tickInProgress": false,
         "lastStatus": "recovered",
         "lastReason": "background_tick",
-        "lastStartedAt": "2026-02-25T06:07:30Z",
-        "lastFinishedAt": "2026-02-25T06:09:12Z",
+        "lastStartedAt": "2026-02-25T06:23:57Z",
+        "lastFinishedAt": "2026-02-25T06:25:46Z",
         "runtime": {
-          "pending_inbox": 367,
+          "pending_inbox": 369,
           "active_openclaw": 0,
-          "blocked_or_failed_openclaw": 2
+          "blocked_or_failed_openclaw": 4
         }
       }
     },
@@ -2708,7 +2710,7 @@
     }
   },
   "personalization": {
-    "updatedAt": "2026-02-25T06:10:26Z",
+    "updatedAt": "2026-02-25T06:27:10Z",
     "metrics": {
       "reviewRequested": 50,
       "proceedCount": 0,
