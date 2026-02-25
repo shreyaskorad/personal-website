@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (532)
 
 - Task ID: openclaw-1977
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-25T18:00:42Z
-- Updated: 2026-02-25T18:01:27Z
+- Updated: 2026-02-25T18:04:43Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2732.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (532)
@@ -22,9 +22,6 @@ Over time, teams build a cleaner evidence trail because each article connects a 
 The writing quality also improves when each paragraph contributes a distinct layer, such as context, tension, choice, and reflection. That structure reduces repetition and keeps the voice clear without sounding mechanical.
 
 If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
