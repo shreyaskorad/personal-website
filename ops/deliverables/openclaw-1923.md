@@ -1,19 +1,19 @@
-# Deliverable: Decision quality in workplace learning workflows (640)
+# Deliverable: Decision quality in workplace learning workflows (570)
 
-- Task ID: openclaw-1883
-- Status: cancelled
-- Created: 2026-02-25T08:52:23Z
-- Updated: 2026-02-25T09:01:13Z
+- Task ID: openclaw-1923
+- Status: failed
+- Created: 2026-02-25T11:43:42Z
+- Updated: 2026-02-25T11:44:12Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2589.
+Rewrite required before publish. Violations: duplicate title against published post
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (640)
+# Decision quality in workplace learning workflows (570)
 
-I evaluate decision quality in workplace learning workflows (640) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
+With decision quality in workplace learning workflows (570), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
 
-A practical scenario is a cross-functional handoff where everyone agrees on goals but no one names the decision criteria early enough. The team then revisits the same issue in the next standup.
+Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
 
 You can run a short pilot around a focused behavior change, then document what shifted in the team conversation and what did not. That record is more useful than adding another generic course asset.
 
@@ -22,6 +22,9 @@ This also improves quality control in automation: shorter posts stay readable, b
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
 Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
+
+## Blockers / Notes
+Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
