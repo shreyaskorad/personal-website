@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2026)
 
 - Task ID: openclaw-1981
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-25T18:16:32Z
-- Updated: 2026-02-25T18:17:03Z
+- Updated: 2026-02-25T18:23:47Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2738.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (2026)
@@ -22,9 +22,6 @@ This also improves quality control in automation: shorter posts stay readable, b
 The writing quality also improves when each paragraph contributes a distinct layer, such as context, tension, choice, and reflection. That structure reduces repetition and keeps the voice clear without sounding mechanical.
 
 What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
