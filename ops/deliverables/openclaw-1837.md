@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (1882)
 
 - Task ID: openclaw-1837
-- Status: blocked
+- Status: cancelled
 - Created: 2026-02-25T05:51:01Z
-- Updated: 2026-02-25T05:52:01Z
+- Updated: 2026-02-25T05:58:53Z
 
 ## Summary
-Provide valid repository path to enable automated publishing and verification workflow
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2513.
 
 ## Deliverable Output
 ```json
@@ -70,9 +70,6 @@ Provide valid repository path to enable automated publishing and verification wo
   }
 }
 ```
-
-## Blockers / Notes
-Repository path not accessible after repeated verification attempts. Cannot provide required publish QA evidence: Final URL, slug/canonical check, sitemap/RSS verification, or status code confirmation.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
