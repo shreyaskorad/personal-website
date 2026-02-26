@@ -1,17 +1,17 @@
-# Deliverable: Decision quality in workplace learning workflows (1998)
+# Deliverable: Decision quality in workplace learning workflows (2040)
 
-- Task ID: openclaw-1953
-- Status: cancelled
-- Created: 2026-02-25T13:39:02Z
-- Updated: 2026-02-25T13:42:44Z
+- Task ID: openclaw-1994
+- Status: failed
+- Created: 2026-02-26T04:32:25Z
+- Updated: 2026-02-26T04:33:57Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2692.
+Rewrite required before publish. Violations: duplicate title against published post
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (1998)
+# Decision quality in workplace learning workflows (2040)
 
-I evaluate decision quality in workplace learning workflows (1998) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
+I evaluate decision quality in workplace learning workflows (2040) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
 In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
 
@@ -21,7 +21,10 @@ I have found that this approach keeps writing and execution coherent, because ea
 
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
-What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
+Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
+
+## Blockers / Notes
+Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
