@@ -1,17 +1,17 @@
-# Deliverable: Decision quality in workplace learning workflows (2040)
+# Deliverable: Decision quality in workplace learning workflows (2079)
 
-- Task ID: openclaw-1994
+- Task ID: openclaw-2033
 - Status: cancelled
-- Created: 2026-02-26T04:32:25Z
-- Updated: 2026-02-26T04:37:16Z
+- Created: 2026-02-26T07:23:56Z
+- Updated: 2026-02-26T07:28:44Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2758.
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2783.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2040)
+# Decision quality in workplace learning workflows (2079)
 
-I evaluate decision quality in workplace learning workflows (2040) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
+For decision quality in workplace learning workflows (2079), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
 
 In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
 
@@ -21,7 +21,7 @@ I have found that this approach keeps writing and execution coherent, because ea
 
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
-Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
+If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
