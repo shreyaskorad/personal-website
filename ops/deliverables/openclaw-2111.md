@@ -1,12 +1,12 @@
-# Deliverable: Decision quality in workplace learning workflows (2871)
+# Deliverable: Decision quality in workplace learning workflows (2683)
 
-- Task ID: openclaw-2110
+- Task ID: openclaw-2111
 - Status: cancelled
-- Created: 2026-02-26T12:59:45Z
-- Updated: 2026-02-26T13:04:09Z
+- Created: 2026-02-26T13:04:09Z
+- Updated: 2026-02-26T13:08:57Z
 
 ## Summary
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2829.
 
 ## Deliverable Output
 ```json
