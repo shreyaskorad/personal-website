@@ -1,17 +1,17 @@
-# Deliverable: Decision quality in workplace learning workflows (527)
+# Deliverable: Decision quality in workplace learning workflows (2071)
 
-- Task ID: openclaw-1985
+- Task ID: openclaw-2024
 - Status: cancelled
-- Created: 2026-02-25T20:19:12Z
-- Updated: 2026-02-26T03:57:46Z
+- Created: 2026-02-26T06:41:47Z
+- Updated: 2026-02-26T06:46:37Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2743.
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (527)
+# Decision quality in workplace learning workflows (2071)
 
-For decision quality in workplace learning workflows (527), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
+I evaluate decision quality in workplace learning workflows (2071) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
 A practical scenario is a cross-functional handoff where everyone agrees on goals but no one names the decision criteria early enough. The team then revisits the same issue in the next standup.
 
