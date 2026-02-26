@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2613)
 
 - Task ID: openclaw-2165
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-26T16:51:43Z
-- Updated: 2026-02-26T16:52:49Z
+- Updated: 2026-02-26T16:59:12Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2862.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (2613)
@@ -22,9 +22,6 @@ Over time, teams build a cleaner evidence trail because each article connects a 
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
 Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
