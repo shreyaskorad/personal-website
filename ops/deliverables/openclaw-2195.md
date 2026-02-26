@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2574)
 
 - Task ID: openclaw-2195
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-26T18:42:15Z
-- Updated: 2026-02-26T18:42:48Z
+- Updated: 2026-02-26T18:48:59Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2878.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (2574)
@@ -22,9 +22,6 @@ I have found that this approach keeps writing and execution coherent, because ea
 I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
 What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
