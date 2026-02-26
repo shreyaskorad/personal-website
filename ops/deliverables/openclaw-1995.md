@@ -1,17 +1,17 @@
-# Deliverable: Decision quality in workplace learning workflows (2040)
+# Deliverable: Decision quality in workplace learning workflows (2042)
 
-- Task ID: openclaw-1994
+- Task ID: openclaw-1995
 - Status: cancelled
-- Created: 2026-02-26T04:32:25Z
-- Updated: 2026-02-26T04:37:16Z
+- Created: 2026-02-26T04:37:17Z
+- Updated: 2026-02-26T04:41:33Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2758.
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2040)
+# Decision quality in workplace learning workflows (2042)
 
-I evaluate decision quality in workplace learning workflows (2040) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
+For decision quality in workplace learning workflows (2042), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
 
 In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
 
@@ -19,7 +19,7 @@ I start with one decision checkpoint, one owner, and one evidence signal that ca
 
 I have found that this approach keeps writing and execution coherent, because each iteration adds a fresh angle while staying anchored to the same operating problem. That balance helps the voice stay independent instead of echoing one source.
 
-When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
+I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
 Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
 
