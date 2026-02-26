@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2582)
 
 - Task ID: openclaw-2190
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-26T18:25:01Z
-- Updated: 2026-02-26T18:25:36Z
+- Updated: 2026-02-26T18:31:50Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2876.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (2582)
@@ -22,9 +22,6 @@ I have found that this approach keeps writing and execution coherent, because ea
 I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
 Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
