@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2760)
 
 - Task ID: openclaw-2038
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-26T07:48:17Z
-- Updated: 2026-02-26T07:49:50Z
+- Updated: 2026-02-26T07:53:02Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2786.
 
 ## Deliverable Output
 ```json
@@ -34,9 +34,6 @@ Rewrite required before publish. Violations: duplicate title against published p
       "agent_id":"Research Analyst",
       "note":"Source notes: Decision quality metrics (speed, accuracy, confidence) are reliable indicators. Hiring scenario example. Framework involves 3-5 critical decision points and predefined criteria.",
       "action_hint":"Use
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
