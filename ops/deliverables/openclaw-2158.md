@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2620)
 
 - Task ID: openclaw-2158
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-26T16:21:57Z
-- Updated: 2026-02-26T16:23:30Z
+- Updated: 2026-02-26T16:30:55Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2857.
 
 ## Deliverable Output
 ```json
@@ -77,9 +77,6 @@ Rewrite required before publish. Violations: duplicate title against published p
   "measurement_handoff":{
     "decision_quality_signal":"Shift from completion tracking to decision quality measurement enables outcome-based learning evaluation aligned with actual workplace performance",
     "intended_audience_outcome
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).

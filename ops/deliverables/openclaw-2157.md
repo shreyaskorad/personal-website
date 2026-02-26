@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2203)
 
 - Task ID: openclaw-2157
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-26T16:17:30Z
-- Updated: 2026-02-26T16:19:03Z
+- Updated: 2026-02-26T16:26:26Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 ```json
@@ -82,9 +82,6 @@ Rewrite required before publish. Violations: duplicate title against published p
   }
 }
 ```
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
