@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2264)
 
 - Task ID: openclaw-2219
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-26T20:09:01Z
-- Updated: 2026-02-26T20:09:36Z
+- Updated: 2026-02-26T20:16:00Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2892.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (2264)
@@ -22,9 +22,6 @@ This also improves quality control in automation: shorter posts stay readable, b
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
 What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
