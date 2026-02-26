@@ -1,17 +1,17 @@
-# Deliverable: Decision quality in workplace learning workflows (542)
+# Deliverable: Decision quality in workplace learning workflows (2791)
 
-- Task ID: openclaw-1964
+- Task ID: openclaw-2005
 - Status: cancelled
-- Created: 2026-02-25T14:24:34Z
-- Updated: 2026-02-25T14:29:16Z
+- Created: 2026-02-26T05:20:18Z
+- Updated: 2026-02-26T05:24:20Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2709.
+Auto-requeued by autonomous mode (attempt 3/4) via inbox item #2765.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (542)
+# Decision quality in workplace learning workflows (2791)
 
-For decision quality in workplace learning workflows (542), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
+I evaluate decision quality in workplace learning workflows (2791) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
 Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
 
@@ -19,7 +19,7 @@ Keep the loop operational: one intervention, one observed decision, and one adju
 
 I have found that this approach keeps writing and execution coherent, because each iteration adds a fresh angle while staying anchored to the same operating problem. That balance helps the voice stay independent instead of echoing one source.
 
-The writing quality also improves when each paragraph contributes a distinct layer, such as context, tension, choice, and reflection. That structure reduces repetition and keeps the voice clear without sounding mechanical.
+I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
 What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
 
