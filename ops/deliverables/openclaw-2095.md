@@ -1,19 +1,19 @@
-# Deliverable: Decision quality in workplace learning workflows (2103)
+# Deliverable: Decision quality in workplace learning workflows (2141)
 
-- Task ID: openclaw-2056
+- Task ID: openclaw-2095
 - Status: cancelled
-- Created: 2026-02-26T09:10:00Z
-- Updated: 2026-02-26T09:14:37Z
+- Created: 2026-02-26T11:57:44Z
+- Updated: 2026-02-26T12:02:10Z
 
 ## Summary
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2820.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2103)
+# Decision quality in workplace learning workflows (2141)
 
-I evaluate decision quality in workplace learning workflows (2103) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
+I evaluate decision quality in workplace learning workflows (2141) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
-A practical scenario is a cross-functional handoff where everyone agrees on goals but no one names the decision criteria early enough. The team then revisits the same issue in the next standup.
+Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
 
 I start with one decision checkpoint, one owner, and one evidence signal that can be reviewed in the next team meeting. This keeps the experiment small enough to sustain and concrete enough to learn from.
 
