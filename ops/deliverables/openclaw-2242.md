@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2493)
 
 - Task ID: openclaw-2242
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-27T05:16:42Z
-- Updated: 2026-02-27T05:16:53Z
+- Updated: 2026-02-27T05:39:50Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2905.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (2493)
@@ -22,9 +22,6 @@ I have found that this approach keeps writing and execution coherent, because ea
 The writing quality also improves when each paragraph contributes a distinct layer, such as context, tension, choice, and reflection. That structure reduces repetition and keeps the voice clear without sounding mechanical.
 
 Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
