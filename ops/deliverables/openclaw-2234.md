@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2508)
 
 - Task ID: openclaw-2234
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-27T04:28:02Z
-- Updated: 2026-02-27T04:28:14Z
+- Updated: 2026-02-27T04:50:39Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (2508)
@@ -22,9 +22,6 @@ This also improves quality control in automation: shorter posts stay readable, b
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
 If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
