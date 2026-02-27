@@ -1,9 +1,9 @@
 # Deliverable: Decision quality in workplace learning workflows (2470)
 
 - Task ID: openclaw-2267
-- Status: in_progress
+- Status: completed
 - Created: 2026-02-27T07:27:23Z
-- Updated: 2026-02-27T07:28:57Z
+- Updated: 2026-02-27T07:31:39Z
 
 ## Summary
 No summary provided.
