@@ -1,17 +1,17 @@
-# Deliverable: Decision quality in workplace learning workflows (2464)
+# Deliverable: Decision quality in workplace learning workflows (2365)
 
-- Task ID: openclaw-2270
+- Task ID: openclaw-2313
 - Status: completed
-- Created: 2026-02-27T07:40:04Z
-- Updated: 2026-02-27T07:43:24Z
+- Created: 2026-02-27T10:11:24Z
+- Updated: 2026-02-27T10:14:46Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2464)
+# Decision quality in workplace learning workflows (2365)
 
-I evaluate decision quality in workplace learning workflows (2464) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
+With decision quality in workplace learning workflows (2365), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
 
 A practical scenario is a cross-functional handoff where everyone agrees on goals but no one names the decision criteria early enough. The team then revisits the same issue in the next standup.
 
@@ -21,7 +21,7 @@ Over time, teams build a cleaner evidence trail because each article connects a 
 
 The writing quality also improves when each paragraph contributes a distinct layer, such as context, tension, choice, and reflection. That structure reduces repetition and keeps the voice clear without sounding mechanical.
 
-Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
+What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
