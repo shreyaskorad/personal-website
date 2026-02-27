@@ -1,17 +1,17 @@
-# Deliverable: Decision quality in workplace learning workflows (2438)
+# Deliverable: Decision quality in workplace learning workflows (2349)
 
-- Task ID: openclaw-2281
+- Task ID: openclaw-2320
 - Status: completed
-- Created: 2026-02-27T08:16:40Z
-- Updated: 2026-02-27T08:20:01Z
+- Created: 2026-02-27T10:34:19Z
+- Updated: 2026-02-27T10:37:34Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2438)
+# Decision quality in workplace learning workflows (2349)
 
-For decision quality in workplace learning workflows (2438), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
+For decision quality in workplace learning workflows (2349), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
 
 In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
 

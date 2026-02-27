@@ -1,17 +1,17 @@
-# Deliverable: Decision quality in workplace learning workflows (2437)
+# Deliverable: Decision quality in workplace learning workflows (2231)
 
-- Task ID: openclaw-2283
+- Task ID: openclaw-2323
 - Status: completed
-- Created: 2026-02-27T08:23:18Z
-- Updated: 2026-02-27T08:26:33Z
+- Created: 2026-02-27T10:44:10Z
+- Updated: 2026-02-27T10:47:32Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2437)
+# Decision quality in workplace learning workflows (2231)
 
-For decision quality in workplace learning workflows (2437), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
+For decision quality in workplace learning workflows (2231), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
 
 In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
 
@@ -19,7 +19,7 @@ I start with one decision checkpoint, one owner, and one evidence signal that ca
 
 Over time, teams build a cleaner evidence trail because each article connects a real scenario, a decision rule, and a reflection point. That continuity is what compounds learning value across iterations.
 
-When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
+I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
 If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
 
