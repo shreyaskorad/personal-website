@@ -1,27 +1,27 @@
-# Deliverable: Decision quality in workplace learning workflows (2186)
+# Deliverable: Decision quality in workplace learning workflows (2124)
 
-- Task ID: openclaw-2368
+- Task ID: openclaw-2408
 - Status: completed
-- Created: 2026-02-27T13:15:02Z
-- Updated: 2026-02-27T13:18:09Z
+- Created: 2026-02-27T15:20:44Z
+- Updated: 2026-02-27T15:23:37Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2186)
+# Decision quality in workplace learning workflows (2124)
 
-With decision quality in workplace learning workflows (2186), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
+I evaluate decision quality in workplace learning workflows (2124) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
 Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
 
-You can run a short pilot around a focused behavior change, then document what shifted in the team conversation and what did not. That record is more useful than adding another generic course asset.
+I start with one decision checkpoint, one owner, and one evidence signal that can be reviewed in the next team meeting. This keeps the experiment small enough to sustain and concrete enough to learn from.
 
 This also improves quality control in automation: shorter posts stay readable, but the argument still deepens when each paragraph adds a different layer of evidence or judgment. The result feels like a practitioner note, not a template.
 
 I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
-If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
+Where in your next manager check-in could you replace activity updates with a sharper conversation about decision quality?
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
