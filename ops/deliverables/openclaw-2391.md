@@ -1,23 +1,23 @@
-# Deliverable: Decision quality in workplace learning workflows (2199)
+# Deliverable: Decision quality in workplace learning workflows (2141)
 
-- Task ID: openclaw-2355
+- Task ID: openclaw-2391
 - Status: completed
-- Created: 2026-02-27T12:30:08Z
-- Updated: 2026-02-27T12:33:48Z
+- Created: 2026-02-27T14:29:15Z
+- Updated: 2026-02-27T14:32:15Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2199)
+# Decision quality in workplace learning workflows (2141)
 
-With decision quality in workplace learning workflows (2199), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
+I evaluate decision quality in workplace learning workflows (2141) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
 Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
 
 I start with one decision checkpoint, one owner, and one evidence signal that can be reviewed in the next team meeting. This keeps the experiment small enough to sustain and concrete enough to learn from.
 
-I have found that this approach keeps writing and execution coherent, because each iteration adds a fresh angle while staying anchored to the same operating problem. That balance helps the voice stay independent instead of echoing one source.
+This also improves quality control in automation: shorter posts stay readable, but the argument still deepens when each paragraph adds a different layer of evidence or judgment. The result feels like a practitioner note, not a template.
 
 I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
