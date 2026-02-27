@@ -1,19 +1,19 @@
-# Deliverable: Decision quality in workplace learning workflows (2198)
+# Deliverable: Decision quality in workplace learning workflows (2133)
 
-- Task ID: openclaw-2356
+- Task ID: openclaw-2399
 - Status: completed
-- Created: 2026-02-27T12:33:48Z
-- Updated: 2026-02-27T12:37:22Z
+- Created: 2026-02-27T14:53:16Z
+- Updated: 2026-02-27T14:55:54Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2198)
+# Decision quality in workplace learning workflows (2133)
 
-I evaluate decision quality in workplace learning workflows (2198) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
+I evaluate decision quality in workplace learning workflows (2133) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
-In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
+A practical scenario is a cross-functional handoff where everyone agrees on goals but no one names the decision criteria early enough. The team then revisits the same issue in the next standup.
 
 You can run a short pilot around a focused behavior change, then document what shifted in the team conversation and what did not. That record is more useful than adding another generic course asset.
 
