@@ -1,19 +1,19 @@
-# Deliverable: Decision quality in workplace learning workflows (2180)
+# Deliverable: Decision quality in workplace learning workflows (2118)
 
-- Task ID: openclaw-2374
+- Task ID: openclaw-2414
 - Status: completed
-- Created: 2026-02-27T13:34:54Z
-- Updated: 2026-02-27T13:37:41Z
+- Created: 2026-02-27T15:37:16Z
+- Updated: 2026-02-27T15:40:38Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2180)
+# Decision quality in workplace learning workflows (2118)
 
-With decision quality in workplace learning workflows (2180), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
+With decision quality in workplace learning workflows (2118), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
 
-A practical scenario is a cross-functional handoff where everyone agrees on goals but no one names the decision criteria early enough. The team then revisits the same issue in the next standup.
+In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
 
 You can run a short pilot around a focused behavior change, then document what shifted in the team conversation and what did not. That record is more useful than adding another generic course asset.
 
