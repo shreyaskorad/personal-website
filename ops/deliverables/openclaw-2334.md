@@ -1,19 +1,19 @@
-# Deliverable: Decision quality in workplace learning workflows (2417)
+# Deliverable: Decision quality in workplace learning workflows (2220)
 
-- Task ID: openclaw-2291
-- Status: completed
-- Created: 2026-02-27T08:54:13Z
-- Updated: 2026-02-27T08:58:17Z
+- Task ID: openclaw-2334
+- Status: in_progress
+- Created: 2026-02-27T11:20:09Z
+- Updated: 2026-02-27T11:21:08Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2417)
+# Decision quality in workplace learning workflows (2220)
 
-For decision quality in workplace learning workflows (2417), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
+I evaluate decision quality in workplace learning workflows (2220) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
-Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
+In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
 
 I start with one decision checkpoint, one owner, and one evidence signal that can be reviewed in the next team meeting. This keeps the experiment small enough to sustain and concrete enough to learn from.
 
