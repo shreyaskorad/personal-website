@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2114)
 
 - Task ID: openclaw-2418
-- Status: in_progress
+- Status: completed
 - Created: 2026-02-27T15:49:12Z
-- Updated: 2026-02-27T15:50:46Z
+- Updated: 2026-02-27T15:52:35Z
 
 ## Summary
-No summary provided.
+Recovered completed SSH run after ghost active state.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (2114)
