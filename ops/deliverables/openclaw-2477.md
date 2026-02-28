@@ -1,21 +1,21 @@
-# Deliverable: Decision quality in workplace learning workflows (2093)
+# Deliverable: Decision quality in workplace learning workflows (2971)
 
-- Task ID: openclaw-2439
+- Task ID: openclaw-2477
 - Status: completed
-- Created: 2026-02-27T16:45:31Z
-- Updated: 2026-02-27T16:48:02Z
+- Created: 2026-02-28T16:50:55Z
+- Updated: 2026-02-28T16:53:27Z
 
 ## Summary
-Recovered completed SSH run after ghost active state.
+No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2093)
+# Decision quality in workplace learning workflows (2971)
 
-With decision quality in workplace learning workflows (2093), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
+For decision quality in workplace learning workflows (2971), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
 
 A practical scenario is a cross-functional handoff where everyone agrees on goals but no one names the decision criteria early enough. The team then revisits the same issue in the next standup.
 
-You can run a short pilot around a focused behavior change, then document what shifted in the team conversation and what did not. That record is more useful than adding another generic course asset.
+I start with one decision checkpoint, one owner, and one evidence signal that can be reviewed in the next team meeting. This keeps the experiment small enough to sustain and concrete enough to learn from.
 
 Over time, teams build a cleaner evidence trail because each article connects a real scenario, a decision rule, and a reflection point. That continuity is what compounds learning value across iterations.
 
