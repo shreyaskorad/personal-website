@@ -1,17 +1,17 @@
-# Deliverable: Decision quality in workplace learning workflows (2062)
+# Deliverable: Decision quality in workplace learning workflows (2041)
 
-- Task ID: openclaw-2468
-- Status: cancelled
-- Created: 2026-02-27T18:23:10Z
-- Updated: 2026-02-28T05:36:10Z
+- Task ID: openclaw-2501
+- Status: completed
+- Created: 2026-02-28T17:57:37Z
+- Updated: 2026-02-28T17:59:17Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2920.
+No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2062)
+# Decision quality in workplace learning workflows (2041)
 
-For decision quality in workplace learning workflows (2062), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
+With decision quality in workplace learning workflows (2041), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
 
 In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
 
@@ -19,7 +19,7 @@ You can run a short pilot around a focused behavior change, then document what s
 
 This also improves quality control in automation: shorter posts stay readable, but the argument still deepens when each paragraph adds a different layer of evidence or judgment. The result feels like a practitioner note, not a template.
 
-The writing quality also improves when each paragraph contributes a distinct layer, such as context, tension, choice, and reflection. That structure reduces repetition and keeps the voice clear without sounding mechanical.
+I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
 If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
 
