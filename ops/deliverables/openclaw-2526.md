@@ -1,21 +1,21 @@
-# Deliverable: Decision quality in workplace learning workflows (2055)
+# Deliverable: Decision quality in workplace learning workflows (2016)
 
-- Task ID: openclaw-2487
+- Task ID: openclaw-2526
 - Status: completed
-- Created: 2026-02-28T17:20:39Z
-- Updated: 2026-02-28T17:25:00Z
+- Created: 2026-02-28T18:35:00Z
+- Updated: 2026-02-28T18:36:26Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2055)
+# Decision quality in workplace learning workflows (2016)
 
-For decision quality in workplace learning workflows (2055), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
+I evaluate decision quality in workplace learning workflows (2016) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
 In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
 
-Keep the loop operational: one intervention, one observed decision, and one adjustment before the next cycle. Small iterations build confidence faster than broad redesigns.
+I start with one decision checkpoint, one owner, and one evidence signal that can be reviewed in the next team meeting. This keeps the experiment small enough to sustain and concrete enough to learn from.
 
 This also improves quality control in automation: shorter posts stay readable, but the argument still deepens when each paragraph adds a different layer of evidence or judgment. The result feels like a practitioner note, not a template.
 
