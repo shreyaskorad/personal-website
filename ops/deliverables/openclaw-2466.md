@@ -1,12 +1,12 @@
 # Deliverable: Decision quality in workplace learning workflows (2064)
 
 - Task ID: openclaw-2466
-- Status: failed
+- Status: cancelled
 - Created: 2026-02-27T18:15:17Z
-- Updated: 2026-02-28T07:29:26Z
+- Updated: 2026-02-28T09:00:44Z
 
 ## Summary
-Rewrite required before publish. Violations: duplicate title against published post
+Auto-requeued by autonomous mode (attempt 2/4) via inbox item #2924.
 
 ## Deliverable Output
 # Decision quality in workplace learning workflows (2064)
@@ -22,9 +22,6 @@ I have found that this approach keeps writing and execution coherent, because ea
 The writing quality also improves when each paragraph contributes a distinct layer, such as context, tension, choice, and reflection. That structure reduces repetition and keeps the voice clear without sounding mechanical.
 
 What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
-
-## Blockers / Notes
-Publish quality gate failed.
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
