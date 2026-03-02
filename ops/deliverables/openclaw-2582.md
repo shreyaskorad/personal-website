@@ -1,23 +1,23 @@
-# Deliverable: Decision quality in workplace learning workflows (2583)
+# Deliverable: Decision quality in workplace learning workflows (2161)
 
-- Task ID: openclaw-2538
-- Status: cancelled
-- Created: 2026-03-01T05:43:13Z
-- Updated: 2026-03-01T10:04:21Z
+- Task ID: openclaw-2582
+- Status: completed
+- Created: 2026-03-02T04:31:46Z
+- Updated: 2026-03-02T04:32:55Z
 
 ## Summary
-Auto-requeued by autonomous mode (attempt 4/4) via inbox item #2933.
+No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2583)
+# Decision quality in workplace learning workflows (2161)
 
-For decision quality in workplace learning workflows (2583), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
+With decision quality in workplace learning workflows (2161), I focus less on content volume and more on the recurring decision moments where managers choose between speed and clarity. That is where capability becomes visible to the business.
 
 A practical scenario is a cross-functional handoff where everyone agrees on goals but no one names the decision criteria early enough. The team then revisits the same issue in the next standup.
 
 I start with one decision checkpoint, one owner, and one evidence signal that can be reviewed in the next team meeting. This keeps the experiment small enough to sustain and concrete enough to learn from.
 
-I have found that this approach keeps writing and execution coherent, because each iteration adds a fresh angle while staying anchored to the same operating problem. That balance helps the voice stay independent instead of echoing one source.
+This also improves quality control in automation: shorter posts stay readable, but the argument still deepens when each paragraph adds a different layer of evidence or judgment. The result feels like a practitioner note, not a template.
 
 When this becomes part of normal team practice, people stop treating learning as separate from delivery and start using it to improve judgment where it matters most. That shift is usually the difference between activity and capability.
 
