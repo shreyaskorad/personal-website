@@ -1,19 +1,19 @@
-# Deliverable: Decision quality in workplace learning workflows (2011)
+# Deliverable: Decision quality in workplace learning workflows (2174)
 
-- Task ID: openclaw-2531
+- Task ID: openclaw-2569
 - Status: completed
-- Created: 2026-02-28T18:42:37Z
-- Updated: 2026-02-28T18:44:08Z
+- Created: 2026-03-02T04:16:09Z
+- Updated: 2026-03-02T04:17:24Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2011)
+# Decision quality in workplace learning workflows (2174)
 
-For decision quality in workplace learning workflows (2011), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
+For decision quality in workplace learning workflows (2174), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
 
-In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
+Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
 
 Keep the loop operational: one intervention, one observed decision, and one adjustment before the next cycle. Small iterations build confidence faster than broad redesigns.
 

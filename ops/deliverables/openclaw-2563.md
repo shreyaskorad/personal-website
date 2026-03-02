@@ -1,17 +1,17 @@
-# Deliverable: Decision quality in workplace learning workflows (2012)
+# Deliverable: Decision quality in workplace learning workflows (2074)
 
-- Task ID: openclaw-2530
+- Task ID: openclaw-2563
 - Status: completed
-- Created: 2026-02-28T18:40:38Z
-- Updated: 2026-02-28T18:42:37Z
+- Created: 2026-03-02T04:08:37Z
+- Updated: 2026-03-02T04:09:52Z
 
 ## Summary
 No summary provided.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2012)
+# Decision quality in workplace learning workflows (2074)
 
-For decision quality in workplace learning workflows (2012), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
+For decision quality in workplace learning workflows (2074), my first check is whether teams make faster calls with less escalation during real project work. If judgment does not improve in the meeting where trade-offs happen, the effort is not working yet.
 
 In a weekly manager review, I often see teams discuss activity counts while skipping the decision that created avoidable rework. That gap is where learning programs lose trust from the business.
 
@@ -21,7 +21,7 @@ This also improves quality control in automation: shorter posts stay readable, b
 
 The writing quality also improves when each paragraph contributes a distinct layer, such as context, tension, choice, and reflection. That structure reduces repetition and keeps the voice clear without sounding mechanical.
 
-If you reviewed your current learning rhythm tomorrow, which decision point would you redesign first so better judgment shows up in workplace outcomes?
+What recurring team decision is the best place to test this approach first, before you scale it across the rest of the learning program?
 
 ## Next Step
 Choose: `proceed` (give direction) or `close` (finalize).
