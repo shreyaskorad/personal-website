@@ -1,23 +1,23 @@
-# Deliverable: Decision quality in workplace learning workflows (2591)
+# Deliverable: Decision quality in workplace learning workflows (2592)
 
-- Task ID: openclaw-2545
-- Status: cancelled
-- Created: 2026-03-01T17:55:39Z
-- Updated: 2026-03-02T01:00:51Z
+- Task ID: openclaw-2547
+- Status: completed
+- Created: 2026-03-02T01:00:51Z
+- Updated: 2026-03-02T03:47:21Z
 
 ## Summary
-Auto-cancelled by autonomous mode after retry limit reached; capture is preserved for manual review if needed.
+Recovered completed SSH run after ghost active state.
 
 ## Deliverable Output
-# Decision quality in workplace learning workflows (2591)
+# Decision quality in workplace learning workflows (2592)
 
-I evaluate decision quality in workplace learning workflows (2591) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
+I evaluate decision quality in workplace learning workflows (2592) by watching one real workflow and asking whether the team handles trade-offs with less confusion this week than last week. Completion metrics can still look strong while workplace behavior stays flat.
 
 Most friction is not missing information, it is unclear ownership during a recurring decision moment. Without a shared decision rule, even good training content turns into inconsistent execution.
 
 You can run a short pilot around a focused behavior change, then document what shifted in the team conversation and what did not. That record is more useful than adding another generic course asset.
 
-Over time, teams build a cleaner evidence trail because each article connects a real scenario, a decision rule, and a reflection point. That continuity is what compounds learning value across iterations.
+This also improves quality control in automation: shorter posts stay readable, but the argument still deepens when each paragraph adds a different layer of evidence or judgment. The result feels like a practitioner note, not a template.
 
 I keep this model grounded by asking teams to capture brief evidence from real meetings, then reflect on whether the decision logic improved. That habit builds credibility because the learning story stays tied to workplace behavior.
 
