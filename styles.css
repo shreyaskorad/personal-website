@@ -2239,3 +2239,42 @@ section {
         padding: 0.32rem 0.58rem;
     }
 }
+
+/* Blog Video Brief */
+.post-video-brief {
+  margin: 2.4rem 0 2rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+.post-video-kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #334155;
+}
+
+.post-video-brief h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.post-video-brief p {
+  margin: 0 0 0.85rem;
+  color: #1f2937;
+}
+
+.post-video-brief video {
+  width: min(420px, 100%);
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  background: #0f172a;
+  display: block;
+  margin: 0 auto;
+}
+
