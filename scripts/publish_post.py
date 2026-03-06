@@ -302,6 +302,9 @@ def normalize_display_title(raw: str, max_words: int = 14, max_chars: int = 96) 
         title,
         flags=re.IGNORECASE,
     )
+    title = re.sub(r"\s*[\(\[]?\b(?:cycle|edition|version)\s*\d{1,6}\b[\)\]]?\s*$", "", title, flags=re.IGNORECASE)
+    title = re.sub(r"\s*\(\s*\d{3,}\s*\)\s*$", "", title)
+    title = re.sub(r"\b(?:cycle|edition|version)\s+\d{1,6}\b", "", title, flags=re.IGNORECASE)
     title = strip_category_prefix(title)
     title = title.strip(" -:;,.")
     words = [w for w in title.split() if w]

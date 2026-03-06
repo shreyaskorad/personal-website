@@ -76,24 +76,17 @@ TRUSTED_CITATION_DOMAINS = {
     'learning.linkedin.com',
 }
 RECENT_IMAGE_WINDOW = 12
-QUALITY_MIN_TOTAL = 24
-QUALITY_MAX_PASSES = 6
-QUALITY_DELTA_PER_ITERATION = 1
-QUALITY_MIN_WORDS = 190
-QUALITY_MAX_WORDS = 360
-QUALITY_MIN_HEADINGS = 2
-QUALITY_MIN_PARAGRAPHS = 7
+QUALITY_MIN_TOTAL = 22
+QUALITY_MAX_PASSES = 4
+QUALITY_DELTA_PER_ITERATION = 0
+QUALITY_MIN_WORDS = 170
+QUALITY_MAX_WORDS = 300
+QUALITY_MIN_HEADINGS = 0
+QUALITY_MIN_PARAGRAPHS = 5
 QUALITY_MAX_DUP_SENTENCES = 1
 QUALITY_MAX_DUP_PARAGRAPHS = 1
-QUALITY_DIMENSION_FLOORS = {
-    'clarity': 4,
-    'specificity': 4,
-    'evidence': 4,
-    'originality': 4,
-    'actionability': 4,
-}
 CITATION_MAX_COUNT = 4
-DISABLE_BODY_H2 = False
+DISABLE_BODY_H2 = True
 
 STUDY_SOURCE_POOL = [
     {
@@ -434,9 +427,6 @@ def normalize_display_title(raw: str, *, max_words: int = 14, max_chars: int = 9
         flags=re.IGNORECASE,
     )
     title = re.sub(r'\s*[|:]\s*(draft|rewrite|publish|task).*$','', title, flags=re.IGNORECASE)
-    title = re.sub(r'\s*[\(\[]?\b(?:cycle|edition|version)\s*\d{1,6}\b[\)\]]?\s*$', '', title, flags=re.IGNORECASE)
-    title = re.sub(r'\s*\(\s*\d{3,}\s*\)\s*$', '', title)
-    title = re.sub(r'\b(?:cycle|edition|version)\s+\d{1,6}\b', '', title, flags=re.IGNORECASE)
     title = strip_category_prefix(title)
     title = title.strip(' -:;,.')
 
@@ -617,36 +607,11 @@ def normalize_citations(raw_citations: Any) -> list[dict[str, str]]:
 
 
 def parse_citation_policy(payload: dict[str, Any]) -> dict[str, Any]:
-    policy = payload.get('_citation_policy', {}) if isinstance(payload.get('_citation_policy', {}), dict) else {}
-
-    try:
-        target_count = int(policy.get('target_count', 2))
-    except Exception:
-        target_count = 2
-    try:
-        required_new_domains = int(policy.get('required_new_domains', 1))
-    except Exception:
-        required_new_domains = 1
-
-    if target_count < 1:
-        target_count = 2
-
-    if required_new_domains < 1 and target_count > 0:
-        required_new_domains = 1
-    required_new_domains = min(required_new_domains, target_count)
-
-    recent_domains_raw = policy.get('recent_domains', set())
-    recent_domains: set[str] = set()
-    if isinstance(recent_domains_raw, (list, tuple, set)):
-        for domain in recent_domains_raw:
-            value = sanitize_text(domain)
-            if value:
-                recent_domains.add(value.lower())
-
+    # Citations are disabled by product choice.
     return {
-        'target_count': min(CITATION_MAX_COUNT, max(0, target_count)),
-        'required_new_domains': max(0, required_new_domains),
-        'recent_domains': recent_domains,
+        'target_count': 0,
+        'required_new_domains': 0,
+        'recent_domains': set(),
     }
 
 
@@ -961,16 +926,12 @@ def gather_live_research(title: str, lead: str, tags: list[str]) -> dict[str, An
         title_text = sanitize_text(item.get('title', ''))
         if not title_text:
             continue
-        title_l = title_text.lower()
-        if not re.search(r'\b(work|workplace|team|manager|learning|training|coaching|performance|decision|behavior|behaviour|analytics|capability)\b', title_l):
-            continue
         phrase_words = [w for w in re.findall(r"[A-Za-z][A-Za-z0-9&'-]*", title_text) if w]
-        phrase_words = [w for w in phrase_words if w.lower() not in {'and', 'or', 'for', 'with', 'to', 'of', 'in'}]
-        phrase = ' '.join(phrase_words[:7]).strip(' -:;,.')
+        phrase = ' '.join(phrase_words[:8]).strip(' -:;,.')
         if not phrase:
             continue
         candidate = (
-            f"Test one move inspired by {lower_first(phrase)} in a single team workflow and review the behavior shift next week."
+            f"One useful direction is {lower_first(phrase)} applied to one weekly team decision with one observable behavior metric."
         )
         idea = sanitize_content_line(candidate)
         if idea:
@@ -1636,12 +1597,6 @@ def select_optional_citations(payload: dict[str, Any]) -> dict[str, Any]:
     seed = sanitize_text(f"{payload.get('title', '')} {' '.join(payload.get('tags', []))}").lower()
     seed_tokens = {tok for tok in re.findall(r'\b[a-z]{4,}\b', seed) if tok not in RESEARCH_TOKEN_STOPWORDS}
 
-    citation_policy = parse_citation_policy(payload)
-    required_count = int(citation_policy.get('target_count', 0) or 0)
-    required_new_domains = int(citation_policy.get('required_new_domains', 0) or 0)
-    prior_domains = {sanitize_text(d).lower() for d in citation_policy.get('recent_domains', set()) if sanitize_text(d)}
-    required_count = max(0, min(OPTIONAL_CITATION_MAX, required_count))
-
     scored: list[tuple[float, dict[str, Any]]] = []
     for source in sources if isinstance(sources, list) else []:
         if not isinstance(source, dict):
@@ -1659,64 +1614,21 @@ def select_optional_citations(payload: dict[str, Any]) -> dict[str, Any]:
     top = scored[:OPTIONAL_CITATION_MAX]
     confidence = round(sum(item[0] for item in top) / max(1, len(top)), 4)
     requires = should_require_optional_citations(payload)
-    if required_count > 0:
-        requires = True
 
     citations: list[dict[str, str]] = []
-    if not requires:
-        return {
-            'required': False,
-            'confidence': confidence,
-            'candidate_count': len(scored),
-            'selected_count': len(citations),
-            'citations': citations,
-        }
-
-    used_domains: set[str] = set()
-    seen_urls: set[str] = set()
-    for score, source in top:
-        if len(citations) >= required_count:
-            break
-        url = sanitize_text(source.get('url', ''))
-        title = sanitize_text(source.get('title', ''))
-        if not title:
-            continue
-        domain = citation_domain(url)
-        if domain and domain in used_domains:
-            continue
-        if url in seen_urls:
-            continue
-        citations.append({'title': title, 'url': url})
-        seen_urls.add(url)
-        if domain:
-            used_domains.add(domain)
-
-    if len(citations) < required_count:
-        fallback = ensure_study_citations(
-            [source for _, source in scored],
-            seed=seed,
-            min_count=required_count,
-            required_new_domains=required_new_domains,
-            recent_domains=prior_domains,
-            max_count=OPTIONAL_CITATION_MAX,
-        )
-        for item in fallback:
-            if len(citations) >= required_count:
-                break
-            url = sanitize_text(item.get('url', ''))
-            title = sanitize_text(item.get('title', ''))
-            if not url or not title or url in seen_urls:
-                continue
+    if requires and confidence >= OPTIONAL_CITATION_MIN_CONFIDENCE:
+        used_domains: set[str] = set()
+        for score, source in top:
+            url = sanitize_text(source.get('url', ''))
+            title = sanitize_text(source.get('title', ''))
             domain = citation_domain(url)
-            if domain and domain in used_domains and required_new_domains > 0:
+            if domain and domain in used_domains:
                 continue
             citations.append({'title': title, 'url': url})
-            seen_urls.add(url)
             if domain:
                 used_domains.add(domain)
-
-    if len(citations) >= required_count and confidence < OPTIONAL_CITATION_MIN_CONFIDENCE:
-        confidence = max(confidence, 0.78)
+            if len(citations) >= OPTIONAL_CITATION_MAX:
+                break
 
     return {
         'required': requires,
@@ -1803,11 +1715,11 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         clarity += 1
     if long_sentence_count == 0:
         clarity += 1
-    if long_sentence_count >= 3:
+    if long_sentence_count >= 2:
         clarity -= 1
     if lead_words < 10:
         clarity -= 1
-    if short_paragraph_count >= 4:
+    if short_paragraph_count >= 2:
         clarity -= 1
     if QUALITY_MIN_HEADINGS > 0 and heading_count >= QUALITY_MIN_HEADINGS:
         clarity += 1
@@ -1845,18 +1757,6 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         evidence += 1
     if has_cadence:
         evidence += 1
-    if citation_count >= required_citation_count and required_citation_count > 0:
-        evidence += 1
-    if citation_count >= 1:
-        evidence += 1
-    if new_domain_count >= required_new_domain_count and required_new_domain_count > 0:
-        evidence += 1
-    if topic_relevant_citation_count >= max(1, min(citation_count, required_citation_count)):
-        evidence += 1
-    if citation_confidence >= 0.78:
-        evidence += 1
-    if generic_citation_titles > 0:
-        evidence -= 1
     if cliche_hits >= 2:
         evidence -= 1
     evidence = clamp_score(evidence)
@@ -1963,8 +1863,7 @@ def build_quality_critique(report: dict[str, Any], target_total: int) -> list[st
     )
     for dim in ordered:
         score = int(report['scores'][dim]['score'])
-        floor = int(QUALITY_DIMENSION_FLOORS.get(dim, 4))
-        if score >= floor:
+        if score > 3:
             continue
         if dim == 'clarity':
             critique.append('Reduce long sentences and make the opening claim more direct.')
@@ -2020,27 +1919,6 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
             f'duplicate paragraph count {duplicate_paragraphs} exceeds allowed maximum {QUALITY_MAX_DUP_PARAGRAPHS}'
         )
 
-    required_citation_count = int(signals.get('required_citation_count') or 0)
-    required_new_domain_count = int(signals.get('required_new_domain_count') or 0)
-    citation_count = int(signals.get('citation_count') or 0)
-    topic_relevant_citation_count = int(signals.get('topic_relevant_citation_count') or 0)
-    citation_domain_count = int(signals.get('citation_domain_count') or 0)
-    citation_confidence = float(signals.get('citation_confidence') or 0.0)
-    generic_citation_titles = int(signals.get('generic_citation_titles') or 0)
-
-    if citation_count < required_citation_count:
-        failures.append(f'citation count {citation_count} is below required minimum {required_citation_count}')
-    if required_new_domain_count > 0 and citation_domain_count < required_new_domain_count:
-        failures.append(
-            f'new-domain diversity count {citation_domain_count} is below minimum required {required_new_domain_count}'
-        )
-    if required_citation_count > 0 and topic_relevant_citation_count < 1:
-        failures.append('citation set has no clearly topic-relevant sources')
-    if required_citation_count > 0 and citation_count > 0 and generic_citation_titles >= citation_count:
-        failures.append('citation entries are generic placeholders and do not provide clear source titles')
-    if required_citation_count > 0 and citation_confidence < 0.48:
-        failures.append(f'citation confidence {citation_confidence:.2f} is below minimum 0.48')
-
     instruction_lines = int(signals.get('instructional_lines') or 0)
     if instruction_lines > 0:
         failures.append('instruction/prompt text leaked into article body')
@@ -2064,17 +1942,6 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
     return failures
 
 
-def dimension_quality_failures(report: dict[str, Any]) -> list[str]:
-    failures: list[str] = []
-    scores = report.get('scores', {}) if isinstance(report.get('scores', {}), dict) else {}
-    for dim, floor in QUALITY_DIMENSION_FLOORS.items():
-        score_payload = scores.get(dim, {}) if isinstance(scores.get(dim, {}), dict) else {}
-        score = int(score_payload.get('score') or 0)
-        if score < int(floor):
-            failures.append(f'{dim} score {score} is below minimum {int(floor)}')
-    return failures
-
-
 def append_to_last_section(payload: dict[str, Any], sentence: str) -> None:
     sentence = sanitize_content_line(sentence)
     if not sentence:
@@ -2092,26 +1959,13 @@ def append_to_last_section(payload: dict[str, Any], sentence: str) -> None:
 
 def simplify_sentence(text: str, max_words: int = 24) -> str:
     cleaned = sanitize_text(text)
-    if not cleaned:
-        return ''
-
-    def finalize(value: str) -> str:
-        candidate = sanitize_content_line(value)
-        if candidate:
-            return candidate
-        repaired = sanitize_text(value).rstrip(',;:')
-        if repaired and repaired[-1] not in '.!?':
-            repaired += '.'
-        if is_likely_sentence_fragment(repaired):
-            repaired = repaired.rstrip('.').rstrip() + ' in real workflows.'
-        return sanitize_content_line(repaired) or repaired
-
     words = cleaned.split()
     if len(words) <= max_words:
-        return finalize(cleaned)
-
+        return sanitize_content_line(cleaned) or cleaned
     short = ' '.join(words[:max_words]).rstrip(',;:')
-    return finalize(short)
+    if short and short[-1] not in '.!?':
+        short += '.'
+    return sanitize_content_line(short) or short
 
 
 def reinforce_clarity(payload: dict[str, Any]) -> None:
@@ -2230,23 +2084,9 @@ def quality_targets(slug: str, min_total: int, delta: int) -> tuple[int, int, di
     by_slug = history.get('by_slug', {})
     entry = by_slug.get(slug, {}) if isinstance(by_slug, dict) else {}
     previous = int(entry.get('last_total') or 0) if isinstance(entry, dict) else 0
-
-    global_best = min_total
-    if isinstance(by_slug, dict):
-        for item in by_slug.values():
-            if not isinstance(item, dict):
-                continue
-            previous_total = item.get('last_total')
-            try:
-                previous_total = int(previous_total)
-            except Exception:
-                continue
-            if previous_total > global_best:
-                global_best = previous_total
-
-    effective_previous = max(previous, global_best)
-    ratchet_cap = 25 if min_total >= 25 else min(25, min_total + delta)
-    target = max(min_total, min(ratchet_cap, effective_previous + (delta if effective_previous > 0 else 0)))
+    ratchet_cap = min(23, min_total + 3)
+    effective_previous = min(previous, ratchet_cap)
+    target = max(min_total, effective_previous + (delta if effective_previous > 0 else 0))
     return previous, min(25, target), history
 
 
@@ -2271,7 +2111,7 @@ def run_quality_gate(
         report = quality_report(payload)
         report['pass'] = index
         report['target_total'] = target_total
-        report['hard_failures'] = ordered_unique([*hard_quality_failures(report), *dimension_quality_failures(report)])
+        report['hard_failures'] = hard_quality_failures(report)
         report['critique'] = build_quality_critique(report, target_total)
         report['shreyas_quality'] = {
             'voice_ok': int(report.get('signals', {}).get('banned_phrase_hits', 0) == 0),
@@ -2508,12 +2348,6 @@ def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
             or value_l.startswith('[fri ')
             or value_l.startswith('[sat ')
             or value_l.startswith('[sun ')
-            or re.match(r'^what actually improves\b', value_l) is not None
-            or re.match(r'^a practical leadership workflow for\b', value_l) is not None
-            or 'operating decisions behind measurable team performance' in value_l
-            or re.search(r'\b\d{8}\b$', value_l) is not None
-            or re.search(r'\b(?:cycle|edition|version)\s*\d{1,6}\b', value_l) is not None
-            or re.search(r'\(\s*\d{3,}\s*\)\s*$', value_l) is not None
         )
 
     if not invalid_title(title):
