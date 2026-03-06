@@ -970,7 +970,7 @@ def gather_live_research(title: str, lead: str, tags: list[str]) -> dict[str, An
         if not phrase:
             continue
         candidate = (
-            f"Test one move inspired by {lower_first(phrase)} in a single team workflow and review the behavior shift next week."
+            "Borrow one method from recent evidence, run it in one team next week, and keep it only if behavior changes in your workflow."
         )
         idea = sanitize_content_line(candidate)
         if idea:
