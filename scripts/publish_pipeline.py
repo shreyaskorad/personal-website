@@ -117,6 +117,26 @@ STUDY_SOURCE_POOL = [
         'topics': ['learning', 'ld', 'skills', 'management'],
     },
     {
+        'title': 'From Game Design Elements to Gamefulness: Defining Gamification (Deterding et al., 2011)',
+        'url': 'https://creativegames.org.uk/modules/Gamification/Deterding_Dixon%20etal_Gamification-2011.pdf',
+        'topics': ['learning', 'engagement', 'behavior', 'workforce'],
+    },
+    {
+        'title': 'The Gamification of Learning: A Meta-analysis (Sailer & Homner, 2020)',
+        'url': 'https://link.springer.com/article/10.1007/s10648-019-09498-w',
+        'topics': ['learning', 'engagement', 'behavior', 'skills'],
+    },
+    {
+        'title': 'The Behaviour Change Wheel: A New Method for Characterising and Designing Behaviour Change Interventions (Michie, van Stralen, & West, 2011)',
+        'url': 'https://implementationscience.biomedcentral.com/articles/10.1186/1748-5908-6-42',
+        'topics': ['learning', 'behavior', 'decision', 'workforce'],
+    },
+    {
+        'title': 'The transfer of training: what really matters (Grossman & Salas, 2011)',
+        'url': 'https://ftq.qc.ca/wp-content/uploads/sites/5/2019/04/Grossman_et_al-2011-International_Journal_of_Training_and_Development.pdf',
+        'topics': ['learning', 'skills', 'workforce', 'behavior'],
+    },
+    {
         'title': 'Gallup: State of the Global Workplace',
         'url': 'https://www.gallup.com/workplace/349484/state-of-the-global-workplace.aspx',
         'topics': ['workforce', 'engagement', 'management', 'leadership'],
@@ -2618,7 +2638,7 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     bullets = []
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
-    citations: list[dict[str, str]] = merge_citations(raw.get('citations', []), raw.get('_citations', []))
+    citations: list[dict[str, str]] = []
 
     lead_core = core_keywords(lead)
     closing_core = core_keywords(closing)
