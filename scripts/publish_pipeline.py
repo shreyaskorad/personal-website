@@ -80,7 +80,7 @@ QUALITY_MIN_TOTAL = 24
 QUALITY_MAX_PASSES = 6
 QUALITY_DELTA_PER_ITERATION = 1
 QUALITY_MIN_WORDS = 190
-QUALITY_MAX_WORDS = 360
+QUALITY_MAX_WORDS = 520
 QUALITY_MIN_HEADINGS = 2
 QUALITY_MIN_PARAGRAPHS = 7
 QUALITY_MAX_DUP_SENTENCES = 1
@@ -1000,6 +1000,8 @@ def apply_live_research(payload: dict[str, Any]) -> dict[str, Any]:
         'sources': [
             {
                 'title': item.get('title', ''),
+                'summary': item.get('summary', ''),
+                'query': item.get('query', ''),
                 'year': item.get('year', 0),
                 'url': item.get('url', ''),
                 'source': item.get('source', ''),
@@ -1601,6 +1603,8 @@ def should_require_optional_citations(payload: dict[str, Any]) -> bool:
 
 def source_quality_score(source: dict[str, Any], seed_tokens: set[str]) -> float:
     title = sanitize_text(source.get('title', '')).lower()
+    summary = sanitize_text(source.get('summary', '')).lower()
+    query = sanitize_text(source.get('query', '')).lower()
     url = sanitize_text(source.get('url', ''))
     domain = citation_domain(url)
     year = int(source.get('year') or 0)
@@ -1620,11 +1624,28 @@ def source_quality_score(source: dict[str, Any], seed_tokens: set[str]) -> float
         score += 0.1
 
     title_tokens = {tok for tok in re.findall(r'\b[a-z]{4,}\b', title) if tok not in RESEARCH_TOKEN_STOPWORDS}
-    overlap = len(title_tokens & seed_tokens)
-    if overlap >= 2:
-        score += 0.25
-    elif overlap == 1:
-        score += 0.12
+    hay_tokens = {
+        tok for tok in re.findall(r'\b[a-z]{4,}\b', f'{title} {summary} {query}')
+        if tok not in RESEARCH_TOKEN_STOPWORDS
+    }
+    title_overlap = len(title_tokens & seed_tokens)
+    hay_overlap = len(hay_tokens & seed_tokens)
+    if title_overlap >= 2:
+        score += 0.26
+    elif title_overlap == 1 and hay_overlap >= 3:
+        score += 0.16
+    elif title_overlap == 1:
+        score += 0.08
+
+    if hay_overlap >= 3:
+        score += 0.16
+    elif hay_overlap == 2:
+        score += 0.08
+
+    if domain in TRUSTED_CITATION_DOMAINS and hay_overlap == 0:
+        score -= 0.2
+    if domain not in TRUSTED_CITATION_DOMAINS and hay_overlap < 2:
+        score -= 0.12
 
     if url.startswith('http'):
         score += 0.05
@@ -1648,10 +1669,19 @@ def select_optional_citations(payload: dict[str, Any]) -> dict[str, Any]:
             continue
         url = sanitize_text(source.get('url', ''))
         title = sanitize_text(source.get('title', ''))
+        summary = sanitize_text(source.get('summary', ''))
+        query = sanitize_text(source.get('query', ''))
         if not url.startswith('http') or not title:
             continue
+        hay_tokens = {
+            tok for tok in re.findall(r'\b[a-z]{4,}\b', f'{title} {summary} {query}'.lower())
+            if tok not in RESEARCH_TOKEN_STOPWORDS
+        }
+        topic_overlap = len(hay_tokens & seed_tokens)
+        if topic_overlap < 2:
+            continue
         score = source_quality_score(source, seed_tokens)
-        if score <= 0.6:
+        if score <= 0.68:
             continue
         scored.append((score, source))
 
