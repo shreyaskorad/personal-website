@@ -2618,7 +2618,7 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     bullets = []
 
     tags = normalize_tags(raw.get('tags', []), title, lead)
-    citations: list[dict[str, str]] = []
+    citations: list[dict[str, str]] = merge_citations(raw.get('citations', []), raw.get('_citations', []))
 
     lead_core = core_keywords(lead)
     closing_core = core_keywords(closing)
