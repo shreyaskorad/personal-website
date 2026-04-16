@@ -24,7 +24,7 @@ FALLBACK_IMAGE = ASSETS_DIR / "publishing-without-wordpress.jpg"
 MIN_IMAGE_BYTES = 80_000
 DATE_INPUT_FORMATS = ("%B %d, %Y", "%Y-%m-%d", "%d %b %Y")
 QUALITY_MIN_WORDS = 170
-QUALITY_MAX_WORDS = 300
+QUALITY_MAX_WORDS = 520
 QUALITY_MIN_HEADINGS = 0
 QUALITY_MIN_PARAGRAPHS = 5
 QUALITY_MAX_DUP_SENTENCES = 1
@@ -125,7 +125,7 @@ CATEGORY_PREFIX_PATTERNS = (
     r"behaviou?r\s+science",
 )
 LEADING_CATEGORY_LABEL_RE = re.compile(
-    r"^\s*(?:" + "|".join(CATEGORY_PREFIX_PATTERNS) + r")\b(?:\s*[:\-|]\s*|\s+)+",
+    r"^\s*(?:" + "|".join(CATEGORY_PREFIX_PATTERNS) + r")\b\s*[:\-|]\s*",
     flags=re.IGNORECASE,
 )
 STYLE_DRIFT_PATTERNS = [

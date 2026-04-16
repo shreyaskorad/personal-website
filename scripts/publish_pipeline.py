@@ -189,7 +189,7 @@ CATEGORY_PREFIX_PATTERNS = (
     r'behaviou?r\s+science',
 )
 LEADING_CATEGORY_LABEL_RE = re.compile(
-    r'^\s*(?:' + '|'.join(CATEGORY_PREFIX_PATTERNS) + r')\b(?:\s*[:\-|]\s*|\s+)+',
+    r'^\s*(?:' + '|'.join(CATEGORY_PREFIX_PATTERNS) + r')\b\s*[:\-|]\s*',
     flags=re.IGNORECASE,
 )
 STYLE_DRIFT_PATTERNS = [
@@ -614,6 +614,20 @@ def normalize_citations(raw_citations: Any) -> list[dict[str, str]]:
         citations.append({'title': label, 'url': url})
 
     return citations[:CITATION_MAX_COUNT]
+
+
+def merge_citations(primary: Any, secondary: Any) -> list[dict[str, str]]:
+    merged: list[dict[str, str]] = []
+    seen_urls: set[str] = set()
+    for item in normalize_citations(primary) + normalize_citations(secondary):
+        url = sanitize_text(item.get('url', ''))
+        if not url or url in seen_urls:
+            continue
+        seen_urls.add(url)
+        merged.append(item)
+        if len(merged) >= CITATION_MAX_COUNT:
+            break
+    return merged
 
 
 def parse_citation_policy(payload: dict[str, Any]) -> dict[str, Any]:
@@ -2634,16 +2648,20 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     payload = apply_live_research(payload)
     payload = apply_shreyas_tone(payload)
 
+    existing_citations = normalize_citations(payload.get('citations', []))
     citation_decision = select_optional_citations(payload)
-    payload['citations'] = citation_decision.get('citations', []) if isinstance(citation_decision.get('citations', []), list) else []
+    payload['citations'] = merge_citations(existing_citations, citation_decision.get('citations', []))
     payload['_citation_meta'] = {
         'required': bool(citation_decision.get('required', False)),
         'confidence': float(citation_decision.get('confidence', 0.0) or 0.0),
         'candidate_count': int(citation_decision.get('candidate_count', 0) or 0),
-        'selected_count': int(citation_decision.get('selected_count', 0) or 0),
+        'selected_count': max(0, len(payload['citations']) - len(existing_citations)),
     }
-    if payload['citations']:
-        warn(f"Attached {len(payload['citations'])} optional citation(s) with confidence {payload['_citation_meta']['confidence']:.2f}")
+    if payload['_citation_meta']['selected_count'] > 0:
+        warn(
+            f"Attached {payload['_citation_meta']['selected_count']} optional citation(s) "
+            f"with confidence {payload['_citation_meta']['confidence']:.2f}"
+        )
 
     tighten_to_target(payload, QUALITY_MIN_WORDS, QUALITY_MAX_WORDS)
     payload = apply_shreyas_tone(payload)
