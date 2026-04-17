@@ -1843,6 +1843,16 @@ def select_optional_citations(payload: dict[str, Any]) -> dict[str, Any]:
             if domain:
                 used_domains.add(domain)
 
+    if required_count > 0:
+        citations = ensure_study_citations(
+            citations,
+            seed=seed,
+            min_count=required_count,
+            required_new_domains=required_new_domains,
+            recent_domains=prior_domains,
+            max_count=OPTIONAL_CITATION_MAX,
+        )
+
     if len(citations) >= required_count and confidence < OPTIONAL_CITATION_MIN_CONFIDENCE:
         confidence = max(confidence, 0.78)
 
@@ -2735,8 +2745,10 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
 
     existing_citations = normalize_citations(payload.get('citations', []))
     citation_decision = select_optional_citations(payload)
-    payload['citations'] = merge_citations(existing_citations, citation_decision.get('citations', []))
-    selected_count = max(0, len(payload['citations']) - len(existing_citations))
+    decision_citations = normalize_citations(citation_decision.get('citations', []))
+    decision_urls = {sanitize_text(c.get('url', '')).lower() for c in decision_citations if sanitize_text(c.get('url', ''))}
+    payload['citations'] = merge_citations(decision_citations, existing_citations)
+    selected_count = sum(1 for c in payload['citations'] if sanitize_text(c.get('url', '')).lower() in decision_urls)
     citation_confidence = float(citation_decision.get('confidence', 0.0) or 0.0)
 
     required_total = int(payload.get('_citation_policy', {}).get('target_count') or 0)
