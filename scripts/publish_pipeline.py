@@ -457,6 +457,21 @@ def strip_prohibited_public_title(title: str) -> str:
     value = re.sub(r"\(\s*Episode\s+\d{2,4}\s*\)", "", value, flags=re.IGNORECASE)
     value = re.sub(r"\s+", " ", value).strip(" -:;,.\t")
 
+    # Heuristic: drop interview-style guest suffixes like "...: First Last on ...".
+    if "\:" in value:
+        prefix, suffix = value.split("\:", 1)
+        suffix = suffix.strip()
+        if re.match(r"[A-Z][a-z]+\s+[A-Z][a-z]+\b", suffix) and re.search(
+            r"\b(on|with|talks|shares|explains|discusses|breaks)\b",
+            suffix,
+            flags=re.IGNORECASE,
+        ):
+            value = prefix.strip(" -:;,.\t")
+
+    # Heuristic: remove inline "with/by/from First Last" fragments.
+    value = re.sub(r"\b(with|by|from)\s+[A-Z][a-z]+\s+[A-Z][a-z]+\b", "", value)
+    value = re.sub(r"\s+", " ", value).strip(" -:;,.\t")
+
     # Heuristic: if the title suffix after a colon looks like a person's possessive name, drop the suffix.
     if GUEST_POSSESSIVE_SUFFIX_RE.search(value) and ':' in value:
         value = value.split(':', 1)[0].strip(" -:;,.\t")
