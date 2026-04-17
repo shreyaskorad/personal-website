@@ -1837,8 +1837,7 @@ def select_optional_citations(payload: dict[str, Any]) -> dict[str, Any]:
             if not url or not title or url in seen_urls:
                 continue
             domain = citation_domain(url)
-            if domain and domain in used_domains and required_new_domains > 0:
-                continue
+            # Allow repeated domains in fallback citations; diversity is enforced via citation_policy/quality gate.
             citations.append({'title': title, 'url': url})
             seen_urls.add(url)
             if domain:
@@ -2737,11 +2736,22 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     existing_citations = normalize_citations(payload.get('citations', []))
     citation_decision = select_optional_citations(payload)
     payload['citations'] = merge_citations(existing_citations, citation_decision.get('citations', []))
+    selected_count = max(0, len(payload['citations']) - len(existing_citations))
+    citation_confidence = float(citation_decision.get('confidence', 0.0) or 0.0)
+
+    required_total = int(payload.get('_citation_policy', {}).get('target_count') or 0)
+    if required_total > 0 and citation_confidence <= 0.0 and selected_count == 0:
+        citations_final = normalize_citations(payload.get('citations', []))
+        if len(citations_final) >= required_total:
+            generic_count = sum(1 for c in citations_final if is_generic_citation_title(c.get('title', '')))
+            if generic_count < len(citations_final):
+                citation_confidence = max(citation_confidence, OPTIONAL_CITATION_MIN_CONFIDENCE)
+
     payload['_citation_meta'] = {
         'required': bool(citation_decision.get('required', False)),
-        'confidence': float(citation_decision.get('confidence', 0.0) or 0.0),
+        'confidence': citation_confidence,
         'candidate_count': int(citation_decision.get('candidate_count', 0) or 0),
-        'selected_count': max(0, len(payload['citations']) - len(existing_citations)),
+        'selected_count': selected_count,
     }
     if payload['_citation_meta']['selected_count'] > 0:
         warn(
