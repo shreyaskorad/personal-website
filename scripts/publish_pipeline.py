@@ -441,10 +441,28 @@ def strip_category_prefix(text: str) -> str:
     stripped = LEADING_CATEGORY_LABEL_RE.sub('', value).strip()
     return stripped or value
 
-PROHIBITED_PUBLIC_TITLE_RE = re.compile(
-    r"(Professor\s+Game|professorgame\.com|Rob\s+Alvarez|\bpodcast\b|\bEpisode\s+\d{2,4}\b)",
-    re.IGNORECASE,
-)
+PROHIBITED_PUBLIC_TITLE_PATTERNS_FILE = STATE_DIR / 'prohibited_public_title_patterns.txt'
+
+
+def compile_prohibited_public_title_re() -> re.Pattern[str]:
+    try:
+        raw = PROHIBITED_PUBLIC_TITLE_PATTERNS_FILE.read_text(encoding='utf-8')
+    except FileNotFoundError:
+        return re.compile(r'$^')
+
+    patterns: list[str] = []
+    for line in raw.splitlines():
+        value = line.strip()
+        if not value or value.startswith('#'):
+            continue
+        patterns.append(f"(?:{value})")
+
+    if not patterns:
+        return re.compile(r'$^')
+    return re.compile('|'.join(patterns), re.IGNORECASE)
+
+
+PROHIBITED_PUBLIC_TITLE_RE = compile_prohibited_public_title_re()
 GUEST_POSSESSIVE_SUFFIX_RE = re.compile(r":\s*[A-Z][a-z]+\s+[A-Z][a-z]+[’']s\b")
 
 
@@ -454,11 +472,16 @@ def strip_prohibited_public_title(title: str) -> str:
         return value
 
     value = PROHIBITED_PUBLIC_TITLE_RE.sub("", value)
-    value = re.sub(r"\(\s*Episode\s+\d{2,4}\s*\)", "", value, flags=re.IGNORECASE)
-    value = re.sub(r"\s+", " ", value).strip(" -:;,.\t")
+    value = re.sub(
+        r"\(\s*([^)]+?)\s*\)",
+        lambda m: "" if PROHIBITED_PUBLIC_TITLE_RE.search(m.group(1) or "") else m.group(0),
+        value,
+    )
+    value = re.sub(r"\(\s*\)", "", value)
+        value = re.sub(r"\s+", " ", value).strip(" -:;,.\t")
 
     # Heuristic: drop interview-style guest suffixes like "...: First Last on ...".
-    if "\:" in value:
+    if ":" in value:
         prefix, suffix = value.split("\:", 1)
         suffix = suffix.strip()
         if re.match(r"[A-Z][a-z]+\s+[A-Z][a-z]+\b", suffix) and re.search(
