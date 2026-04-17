@@ -441,6 +441,28 @@ def strip_category_prefix(text: str) -> str:
     stripped = LEADING_CATEGORY_LABEL_RE.sub('', value).strip()
     return stripped or value
 
+PROHIBITED_PUBLIC_TITLE_RE = re.compile(
+    r"(Professor\s+Game|professorgame\.com|Rob\s+Alvarez|\bpodcast\b|\bEpisode\s+\d{2,4}\b)",
+    re.IGNORECASE,
+)
+GUEST_POSSESSIVE_SUFFIX_RE = re.compile(r":\s*[A-Z][a-z]+\s+[A-Z][a-z]+[’']s\b")
+
+
+def strip_prohibited_public_title(title: str) -> str:
+    value = sanitize_text(title)
+    if not value:
+        return value
+
+    value = PROHIBITED_PUBLIC_TITLE_RE.sub("", value)
+    value = re.sub(r"\(\s*Episode\s+\d{2,4}\s*\)", "", value, flags=re.IGNORECASE)
+    value = re.sub(r"\s+", " ", value).strip(" -:;,.\t")
+
+    # Heuristic: if the title suffix after a colon looks like a person's possessive name, drop the suffix.
+    if GUEST_POSSESSIVE_SUFFIX_RE.search(value) and ':' in value:
+        value = value.split(':', 1)[0].strip(" -:;,.\t")
+
+    return value
+
 
 def normalize_display_title(raw: str, *, max_words: int = 14, max_chars: int = 96) -> str:
     title = sanitize_text(raw)
@@ -502,7 +524,7 @@ def sanitize_content_line(text: str) -> str:
     if not value:
         return ''
     value = re.sub(r'\(\s*\[\d+\]\s*\)|\[\d+\]|\[\^\d+\]', '', value)
-    value = re.sub(r'\s+', ' ', value).strip()
+    value = re.sub(r"\s+", " ", value).strip(" -:;,.\t")
     value = re.sub(r'\(\s*\)', '', value).strip()
     if not value:
         return ''
@@ -2541,6 +2563,7 @@ def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
     title = re.sub(r'\bpublish:?\s*$', '', title, flags=re.IGNORECASE).strip()
     title = re.sub(r'\bpublis\s*$', '', title, flags=re.IGNORECASE).strip()
     title = normalize_display_title(sanitize_text(title))
+    title = strip_prohibited_public_title(title)
 
     def invalid_title(candidate: str) -> bool:
         value = sanitize_text(candidate)
@@ -2608,7 +2631,7 @@ def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
 
 def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     title = normalize_publish_title(raw.get('title', ''), raw.get('description', ''))
-    slug = sanitize_text(raw.get('slug', '')) or slugify(title)
+    slug = slugify(title)
     citation_policy = parse_citation_policy(raw)
 
     lead = sanitize_content_line(raw.get('lead', '') or raw.get('excerpt', '') or title)
