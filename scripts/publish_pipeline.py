@@ -478,11 +478,11 @@ def strip_prohibited_public_title(title: str) -> str:
         value,
     )
     value = re.sub(r"\(\s*\)", "", value)
-        value = re.sub(r"\s+", " ", value).strip(" -:;,.\t")
+    value = re.sub(r"\s+", " ", value).strip(" -:;,.\t")
 
     # Heuristic: drop interview-style guest suffixes like "...: First Last on ...".
     if ":" in value:
-        prefix, suffix = value.split("\:", 1)
+        prefix, suffix = value.split(":", 1)
         suffix = suffix.strip()
         if re.match(r"[A-Z][a-z]+\s+[A-Z][a-z]+\b", suffix) and re.search(
             r"\b(on|with|talks|shares|explains|discusses|breaks)\b",
