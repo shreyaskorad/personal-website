@@ -501,6 +501,11 @@ def sanitize_content_line(text: str) -> str:
     value = sanitize_text(text)
     if not value:
         return ''
+    value = re.sub(r'\(\s*\[\d+\]\s*\)|\[\d+\]|\[\^\d+\]', '', value)
+    value = re.sub(r'\s+', ' ', value).strip()
+    value = re.sub(r'\(\s*\)', '', value).strip()
+    if not value:
+        return ''
     if is_instructional_line(value):
         return ''
     if is_likely_sentence_fragment(value):
