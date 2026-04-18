@@ -99,6 +99,8 @@ DEEP_RESEARCH_STAGE = 'source_research_draft'
 DEEP_RESEARCH_MIN_CITATIONS = 4
 DEEP_RESEARCH_MIN_LIVE_SOURCES = 2
 DEEP_RESEARCH_MIN_DISTINCT_DOMAINS = 3
+CLEAN_SLATE_POLICY_VERSION = 'openclaw-clean-slate-v1'
+CLEAN_SLATE_POLICY_MODE = 'clean_slate'
 
 STUDY_SOURCE_POOL = [
     {
@@ -823,6 +825,8 @@ def validate_deep_research_provenance(raw: dict[str, Any]) -> None:
         return
 
     stage = sanitize_text(raw.get('_stage', '')).lower()
+    policy_version = sanitize_text(raw.get('_policy_version', ''))
+    policy_mode = sanitize_text(raw.get('_policy_mode', '')).lower()
     gate = effective_research_gate(raw)
     citations = collect_citations_with_origin(raw.get('citations', []), raw.get('_citations', []))
 
@@ -832,6 +836,10 @@ def validate_deep_research_provenance(raw: dict[str, Any]) -> None:
     failures: list[str] = []
     if stage != DEEP_RESEARCH_STAGE:
         failures.append(f"stage must be '{DEEP_RESEARCH_STAGE}' (found '{stage or 'missing'}')")
+    if policy_version != CLEAN_SLATE_POLICY_VERSION:
+        failures.append(f"policy version must be '{CLEAN_SLATE_POLICY_VERSION}' (found '{policy_version or 'missing'}')")
+    if policy_mode != CLEAN_SLATE_POLICY_MODE:
+        failures.append(f"policy mode must be '{CLEAN_SLATE_POLICY_MODE}' (found '{policy_mode or 'missing'}')")
     if not gate.get('required'):
         failures.append("_research_gate.required must be true")
     if len(citations) < int(gate['min_citations']):
@@ -2860,6 +2868,8 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
             'recent_domains': sorted(set(citation_policy['recent_domains'])),
         },
         '_stage': DEEP_RESEARCH_STAGE if source_research_stage else sanitize_text(raw.get('_stage', '')),
+        '_policy_version': CLEAN_SLATE_POLICY_VERSION if source_research_stage else sanitize_text(raw.get('_policy_version', '')),
+        '_policy_mode': CLEAN_SLATE_POLICY_MODE if source_research_stage else sanitize_text(raw.get('_policy_mode', '')).lower(),
         '_research_gate': source_research_gate if source_research_stage else {},
         'lead': lead,
         'excerpt': excerpt,
