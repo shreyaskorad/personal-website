@@ -5,6 +5,7 @@ import argparse
 import fcntl
 import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
@@ -94,6 +95,10 @@ QUALITY_DIMENSION_FLOORS = {
 }
 CITATION_MAX_COUNT = 4
 DISABLE_BODY_H2 = False
+DEEP_RESEARCH_STAGE = 'source_research_draft'
+DEEP_RESEARCH_MIN_CITATIONS = 4
+DEEP_RESEARCH_MIN_LIVE_SOURCES = 2
+DEEP_RESEARCH_MIN_DISTINCT_DOMAINS = 3
 
 STUDY_SOURCE_POOL = [
     {
@@ -748,6 +753,89 @@ def parse_citation_policy(payload: dict[str, Any]) -> dict[str, Any]:
         'recent_domains': recent_domains,
     }
 
+
+
+
+def env_flag(name: str, default: bool = True) -> bool:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    value = str(raw).strip().lower()
+    return value not in {'0', 'false', 'no', 'off', 'disabled'}
+
+
+def parse_int(value: Any, default: int) -> int:
+    try:
+        return int(value)
+    except Exception:
+        return default
+
+
+def collect_citations_with_origin(*raw_sets: Any) -> list[dict[str, str]]:
+    citations: list[dict[str, str]] = []
+    seen_urls: set[str] = set()
+    for raw in raw_sets:
+        if not isinstance(raw, list):
+            continue
+        for item in raw:
+            if isinstance(item, str):
+                url = sanitize_text(item)
+                title = citation_title_from_url(url)
+                origin = ''
+            elif isinstance(item, dict):
+                url = sanitize_text(item.get('url', ''))
+                title = sanitize_text(item.get('title', '') or item.get('label', '') or citation_title_from_url(url))
+                origin = sanitize_text(item.get('_origin', '')).lower()
+            else:
+                continue
+
+            if not re.match(r'^https?://', url, flags=re.IGNORECASE):
+                continue
+            if url in seen_urls:
+                continue
+
+            seen_urls.add(url)
+            if is_generic_citation_title(title):
+                title = citation_title_from_url(url)
+            citations.append({'title': title, 'url': url, 'origin': origin})
+    return citations
+
+
+def effective_research_gate(raw: dict[str, Any]) -> dict[str, Any]:
+    gate = raw.get('_research_gate', {}) if isinstance(raw.get('_research_gate', {}), dict) else {}
+    return {
+        'required': bool(gate.get('required', False)),
+        'min_citations': max(DEEP_RESEARCH_MIN_CITATIONS, parse_int(gate.get('min_citations', DEEP_RESEARCH_MIN_CITATIONS), DEEP_RESEARCH_MIN_CITATIONS)),
+        'min_live_sources': max(DEEP_RESEARCH_MIN_LIVE_SOURCES, parse_int(gate.get('min_live_sources', DEEP_RESEARCH_MIN_LIVE_SOURCES), DEEP_RESEARCH_MIN_LIVE_SOURCES)),
+        'min_distinct_domains': max(DEEP_RESEARCH_MIN_DISTINCT_DOMAINS, parse_int(gate.get('min_distinct_domains', DEEP_RESEARCH_MIN_DISTINCT_DOMAINS), DEEP_RESEARCH_MIN_DISTINCT_DOMAINS)),
+    }
+
+
+def validate_deep_research_provenance(raw: dict[str, Any]) -> None:
+    if not env_flag('OPENCLAW_REQUIRE_DEEP_RESEARCH', True):
+        return
+
+    stage = sanitize_text(raw.get('_stage', '')).lower()
+    gate = effective_research_gate(raw)
+    citations = collect_citations_with_origin(raw.get('citations', []), raw.get('_citations', []))
+
+    domains = {citation_domain(item.get('url', '')) for item in citations if citation_domain(item.get('url', ''))}
+    live_sources = sum(1 for item in citations if sanitize_text(item.get('origin', '')).lower() == 'live')
+
+    failures: list[str] = []
+    if stage != DEEP_RESEARCH_STAGE:
+        failures.append(f"stage must be '{DEEP_RESEARCH_STAGE}' (found '{stage or 'missing'}')")
+    if not gate.get('required'):
+        failures.append("_research_gate.required must be true")
+    if len(citations) < int(gate['min_citations']):
+        failures.append(f"citations {len(citations)} < required {int(gate['min_citations'])}")
+    if live_sources < int(gate['min_live_sources']):
+        failures.append(f"live sources {live_sources} < required {int(gate['min_live_sources'])}")
+    if len(domains) < int(gate['min_distinct_domains']):
+        failures.append(f"distinct domains {len(domains)} < required {int(gate['min_distinct_domains'])}")
+
+    if failures:
+        die('Deep research gate failed: ' + '; '.join(failures))
 
 def is_study_url(url: str) -> bool:
     value = sanitize_text(url).lower()
@@ -2680,6 +2768,8 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     title = normalize_publish_title(raw.get('title', ''), raw.get('description', ''))
     slug = slugify(title)
     citation_policy = parse_citation_policy(raw)
+    source_research_stage = sanitize_text(raw.get('_stage', '')).lower() == DEEP_RESEARCH_STAGE
+    source_research_gate = raw.get('_research_gate', {}) if isinstance(raw.get('_research_gate', {}), dict) else {}
 
     lead = sanitize_content_line(raw.get('lead', '') or raw.get('excerpt', '') or title)
     excerpt = sanitize_content_line(raw.get('excerpt', '') or lead)
@@ -2732,6 +2822,8 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
             'required_new_domains': int(citation_policy['required_new_domains']),
             'recent_domains': sorted(set(citation_policy['recent_domains'])),
         },
+        '_stage': DEEP_RESEARCH_STAGE if source_research_stage else sanitize_text(raw.get('_stage', '')),
+        '_research_gate': source_research_gate if source_research_stage else {},
         'lead': lead,
         'excerpt': excerpt,
         'meta_description': meta_description,
@@ -2740,36 +2832,63 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
         'closing': closing,
     }
 
-    payload = apply_live_research(payload)
+    if source_research_stage:
+        payload['_research_brief'] = {
+            'mode': 'source_research_payload',
+            'generated_at': datetime.utcnow().isoformat() + 'Z',
+            'queries': [],
+            'sources': [
+                {
+                    'title': item.get('title', ''),
+                    'url': item.get('url', ''),
+                    'domain': citation_domain(item.get('url', '')),
+                    'origin': item.get('origin', ''),
+                }
+                for item in collect_citations_with_origin(raw.get('citations', []), raw.get('_citations', []))
+            ],
+            'failures': [],
+        }
+    else:
+        payload = apply_live_research(payload)
     payload = apply_shreyas_tone(payload)
 
     existing_citations = normalize_citations(payload.get('citations', []))
-    citation_decision = select_optional_citations(payload)
-    decision_citations = normalize_citations(citation_decision.get('citations', []))
-    decision_urls = {sanitize_text(c.get('url', '')).lower() for c in decision_citations if sanitize_text(c.get('url', ''))}
-    payload['citations'] = merge_citations(decision_citations, existing_citations)
-    selected_count = sum(1 for c in payload['citations'] if sanitize_text(c.get('url', '')).lower() in decision_urls)
-    citation_confidence = float(citation_decision.get('confidence', 0.0) or 0.0)
+    if source_research_stage:
+        payload['citations'] = existing_citations
+        payload['_citation_meta'] = {
+            'required': True,
+            'confidence': 1.0 if existing_citations else 0.0,
+            'candidate_count': len(existing_citations),
+            'selected_count': 0,
+            'mode': 'source_research_payload',
+        }
+    else:
+        citation_decision = select_optional_citations(payload)
+        decision_citations = normalize_citations(citation_decision.get('citations', []))
+        decision_urls = {sanitize_text(c.get('url', '')).lower() for c in decision_citations if sanitize_text(c.get('url', ''))}
+        payload['citations'] = merge_citations(decision_citations, existing_citations)
+        selected_count = sum(1 for c in payload['citations'] if sanitize_text(c.get('url', '')).lower() in decision_urls)
+        citation_confidence = float(citation_decision.get('confidence', 0.0) or 0.0)
 
-    required_total = int(payload.get('_citation_policy', {}).get('target_count') or 0)
-    if required_total > 0 and citation_confidence <= 0.0 and selected_count == 0:
-        citations_final = normalize_citations(payload.get('citations', []))
-        if len(citations_final) >= required_total:
-            generic_count = sum(1 for c in citations_final if is_generic_citation_title(c.get('title', '')))
-            if generic_count < len(citations_final):
-                citation_confidence = max(citation_confidence, OPTIONAL_CITATION_MIN_CONFIDENCE)
+        required_total = int(payload.get('_citation_policy', {}).get('target_count') or 0)
+        if required_total > 0 and citation_confidence <= 0.0 and selected_count == 0:
+            citations_final = normalize_citations(payload.get('citations', []))
+            if len(citations_final) >= required_total:
+                generic_count = sum(1 for c in citations_final if is_generic_citation_title(c.get('title', '')))
+                if generic_count < len(citations_final):
+                    citation_confidence = max(citation_confidence, OPTIONAL_CITATION_MIN_CONFIDENCE)
 
-    payload['_citation_meta'] = {
-        'required': bool(citation_decision.get('required', False)),
-        'confidence': citation_confidence,
-        'candidate_count': int(citation_decision.get('candidate_count', 0) or 0),
-        'selected_count': selected_count,
-    }
-    if payload['_citation_meta']['selected_count'] > 0:
-        warn(
-            f"Attached {payload['_citation_meta']['selected_count']} optional citation(s) "
-            f"with confidence {payload['_citation_meta']['confidence']:.2f}"
-        )
+        payload['_citation_meta'] = {
+            'required': bool(citation_decision.get('required', False)),
+            'confidence': citation_confidence,
+            'candidate_count': int(citation_decision.get('candidate_count', 0) or 0),
+            'selected_count': selected_count,
+        }
+        if payload['_citation_meta']['selected_count'] > 0:
+            warn(
+                f"Attached {payload['_citation_meta']['selected_count']} optional citation(s) "
+                f"with confidence {payload['_citation_meta']['confidence']:.2f}"
+            )
 
     tighten_to_target(payload, QUALITY_MIN_WORDS, QUALITY_MAX_WORDS)
     payload = apply_shreyas_tone(payload)
@@ -2897,6 +3016,7 @@ def main() -> None:
         publish_branch, stashed_ref = prepare_publish_branch()
 
         raw = json.loads(input_path.read_text())
+        validate_deep_research_provenance(raw)
         payload = sanitize_payload(raw)
         try:
             quality_gate = run_shreyas_quality_check(
