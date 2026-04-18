@@ -333,6 +333,13 @@ QUALITY_CLICHE_PATTERNS = [
     r'\bmove the needle\b',
     r'\bunlock potential\b',
 ]
+QUALITY_COHERENCE_RED_FLAG_PATTERNS = [
+    re.compile(r'\bsource pattern from\b', flags=re.IGNORECASE),
+    re.compile(r'\bmatters here because\s+(?!it\b)', flags=re.IGNORECASE),
+    re.compile(r'\bis becoming widely used in the educational field\b', flags=re.IGNORECASE),
+]
+QUALITY_TITLE_ALL_CAPS_ALLOWLIST = {'AI', 'L&D', 'LXD'}
+QUALITY_MAX_TITLE_ECHO_LINES = 0
 SECTION_HEADING_DEFAULTS = [
     'Key context',
     'Execution move',
@@ -1975,6 +1982,21 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
     instruction_line_count = sum(1 for line in content_lines if is_instructional_line(line))
     fragment_line_count = sum(1 for line in content_lines if is_likely_sentence_fragment(line))
     style_drift_count = sum(1 for line in content_lines if any(pattern.search(line) for pattern in STYLE_DRIFT_PATTERNS))
+    coherence_red_flag_hits = sum(
+        1 for line in content_lines
+        if any(pattern.search(line) for pattern in QUALITY_COHERENCE_RED_FLAG_PATTERNS)
+    )
+    title_text = sanitize_text(payload.get('title', ''))
+    title_lower = title_text.lower()
+    title_echo_lines = sum(
+        1 for line in content_lines
+        if title_lower and title_lower in sanitize_text(line).lower()
+    )
+    title_all_caps_words = sum(
+        1
+        for token in re.findall(r'\b[A-Z]{4,}\b', title_text)
+        if token not in QUALITY_TITLE_ALL_CAPS_ALLOWLIST
+    )
     lead_words = word_count(payload.get('lead', ''))
     number_hits = len(re.findall(r'\b(?:\d+(?:\.\d+)?%?|20\d{2})\b', text))
 
@@ -2172,6 +2194,9 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             'instructional_lines': instruction_line_count,
             'fragment_lines': fragment_line_count,
             'style_drift_lines': style_drift_count,
+            'coherence_red_flag_hits': coherence_red_flag_hits,
+            'title_echo_lines': title_echo_lines,
+            'title_all_caps_words': title_all_caps_words,
             'banned_phrase_hits': int(voice.get('banned_phrase_hits') or 0),
             'second_person_count': int(voice.get('second_person_count') or 0),
             'first_person_count': int(voice.get('first_person_count') or 0),
@@ -2278,6 +2303,18 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
     style_drift_lines = int(signals.get('style_drift_lines') or 0)
     if style_drift_lines > 0:
         failures.append('style drift detected from boilerplate/meta writing patterns')
+
+    coherence_red_flag_hits = int(signals.get('coherence_red_flag_hits') or 0)
+    if coherence_red_flag_hits > 0:
+        failures.append('low-coherence templated phrasing detected in body copy')
+
+    title_echo_lines = int(signals.get('title_echo_lines') or 0)
+    if title_echo_lines > QUALITY_MAX_TITLE_ECHO_LINES:
+        failures.append('article body repeats the full title verbatim')
+
+    title_all_caps_words = int(signals.get('title_all_caps_words') or 0)
+    if title_all_caps_words > 0:
+        failures.append('title contains all-caps clickbait wording')
 
     banned_phrase_hits = int(signals.get('banned_phrase_hits') or 0)
     if banned_phrase_hits > 0:
