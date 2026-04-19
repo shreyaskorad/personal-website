@@ -337,8 +337,37 @@ QUALITY_CLICHE_PATTERNS = [
 ]
 QUALITY_COHERENCE_RED_FLAG_PATTERNS = [
     re.compile(r'\bsource pattern from\b', flags=re.IGNORECASE),
-    re.compile(r'\bmatters here because\s+(?!it\b)', flags=re.IGNORECASE),
+    re.compile(r'\bmatters here because\b', flags=re.IGNORECASE),
     re.compile(r'\bis becoming widely used in the educational field\b', flags=re.IGNORECASE),
+    re.compile(r'\bteams care about the topic, but the surrounding systems still produce activity\b', flags=re.IGNORECASE),
+    re.compile(r'\bteams are treating gamification design as tooling rollout\b', flags=re.IGNORECASE),
+    re.compile(r'\bthe better test is simple: does the design change the next decision in real work\b', flags=re.IGNORECASE),
+    re.compile(r'\bthe test is practical: does the next action improve execution quality in a measurable way\b', flags=re.IGNORECASE),
+    re.compile(r'\bowner:\s*learning systems lead\b', flags=re.IGNORECASE),
+    re.compile(r'\bfirst step:\s*run a 14-day pilot in one workflow\b', flags=re.IGNORECASE),
+    re.compile(r'\breview date:\s*20\d{2}-\d{2}-\d{2}\b', flags=re.IGNORECASE),
+    re.compile(r'\bthe useful test is whether the next decision gets sharper\b', flags=re.IGNORECASE),
+    re.compile(r'\bif you run this with your team this week\b', flags=re.IGNORECASE),
+    re.compile(r'\btry this once with your team this week\b', flags=re.IGNORECASE),
+    re.compile(r'\buse one live decision this week so you can see\b', flags=re.IGNORECASE),
+    re.compile(r'\ba better pattern is to redesign one live workflow for 14 days\b', flags=re.IGNORECASE),
+    re.compile(r'\bfor a practical start, pick one high-frequency teaching decision\b', flags=re.IGNORECASE),
+    re.compile(r'\bif teams can name what decision improved and why\b', flags=re.IGNORECASE),
+    re.compile(r'^\s*abstract\b', flags=re.IGNORECASE),
+    re.compile(r'\bfigure\s+\d+\b', flags=re.IGNORECASE),
+    re.compile(r'\bthen the third step out of four\b', flags=re.IGNORECASE),
+]
+
+QUALITY_TEMPLATE_BOILERPLATE_PATTERNS = [
+    re.compile(r'\bthe better test is simple: does the design change the next decision in real work\b', flags=re.IGNORECASE),
+    re.compile(r'\bthe test is practical: does the next action improve execution quality in a measurable way\b', flags=re.IGNORECASE),
+    re.compile(r'\bowner:\s*learning systems lead\b', flags=re.IGNORECASE),
+    re.compile(r'\bfirst step:\s*run a 14-day pilot in one workflow\b', flags=re.IGNORECASE),
+    re.compile(r'\breview date:\s*20\d{2}-\d{2}-\d{2}\b', flags=re.IGNORECASE),
+    re.compile(r'\bthe useful test is whether the next decision gets sharper\b', flags=re.IGNORECASE),
+    re.compile(r'\bif you run this with your team this week\b', flags=re.IGNORECASE),
+    re.compile(r'\btry this once with your team this week\b', flags=re.IGNORECASE),
+    re.compile(r'\buse one live decision this week so you can see\b', flags=re.IGNORECASE),
 ]
 QUALITY_TITLE_ALL_CAPS_ALLOWLIST = {'AI', 'L&D', 'LXD'}
 QUALITY_MAX_TITLE_ECHO_LINES = 0
@@ -1618,6 +1647,83 @@ def split_sentences(text: str) -> list[str]:
     return [part.strip() for part in re.split(r'(?<=[.!?])\s+', cleaned) if part.strip()]
 
 
+def sentence_key(text: str) -> str:
+    value = sanitize_text(text).lower()
+    if not value:
+        return ''
+    return re.sub(r'[^a-z0-9]+', ' ', value).strip()
+
+
+def replace_full_title_mentions(text: str, title: str) -> str:
+    value = sanitize_text(text)
+    title_text = sanitize_text(title)
+    if not value or not title_text:
+        return value
+    pattern = re.compile(re.escape(title_text), flags=re.IGNORECASE)
+    replaced = pattern.sub('this argument', value)
+    replaced = re.sub(r'\s{2,}', ' ', replaced)
+    return replaced.strip()
+
+
+def normalize_content_uniqueness(payload: dict[str, Any]) -> None:
+    """Deterministically remove title echoes and repeated sentences before scoring."""
+    title = sanitize_text(payload.get('title', ''))
+    seen_sentences: set[str] = set()
+    seen_lines: set[str] = set()
+
+    def normalize_line(text: Any) -> str:
+        line = sanitize_content_line(text)
+        if not line:
+            return ''
+        if any(pattern.search(line) for pattern in QUALITY_TEMPLATE_BOILERPLATE_PATTERNS):
+            return ''
+        line = replace_full_title_mentions(line, title)
+        line = sanitize_content_line(line)
+        if not line:
+            return ''
+
+        unique_sentences: list[str] = []
+        for sentence in split_sentences(line):
+            key = sentence_key(sentence)
+            if not key or key in seen_sentences:
+                continue
+            seen_sentences.add(key)
+            unique_sentences.append(sentence)
+        if not unique_sentences:
+            return ''
+
+        merged = sanitize_content_line(' '.join(unique_sentences))
+        if not merged:
+            return ''
+
+        line_key = sentence_key(merged)
+        if not line_key or line_key in seen_lines:
+            return ''
+        seen_lines.add(line_key)
+        return merged
+
+    for key in ('lead', 'excerpt', 'meta_description', 'closing'):
+        payload[key] = normalize_line(payload.get(key, ''))
+
+    sections = payload.get('sections', [])
+    if isinstance(sections, list):
+        for section in sections:
+            raw_paragraphs = section.get('paragraphs', [])
+            if not isinstance(raw_paragraphs, list):
+                section['paragraphs'] = []
+                continue
+            cleaned: list[str] = []
+            for paragraph in raw_paragraphs:
+                normalized = normalize_line(paragraph)
+                if normalized:
+                    cleaned.append(normalized)
+            section['paragraphs'] = cleaned[:6]
+
+    bullets = payload.get('bullets', [])
+    if isinstance(bullets, list):
+        payload['bullets'] = [line for line in (normalize_line(item) for item in bullets) if line][:4]
+
+
 def collect_sentences(payload: dict[str, Any]) -> list[str]:
     sentences: list[str] = []
     for item in [payload.get('lead', ''), payload.get('excerpt', ''), payload.get('closing', '')]:
@@ -1672,22 +1778,13 @@ def apply_shreyas_tone(payload: dict[str, Any]) -> dict[str, Any]:
                 seen.add(key)
                 normalized.append(line)
             section['paragraphs'] = normalized[:6]
-
-    text_l = collect_text_for_count(payload).lower()
-    if not re.search(r'\b(you|your)\b', text_l):
-        options = [
-            'If you run this with your team this week, track one visible behavior shift before the next review.',
-            'Try this once with your team this week and compare what changes before the next decision cycle.',
-            'Use one live decision this week so you can see whether the behavior shift is real or just theoretical.',
-        ]
-        idx = int(hashlib.sha256(sanitize_text(payload.get('title', '')).encode('utf-8')).hexdigest()[:8], 16) % len(options)
-        addition = normalize_voice_sentence(options[idx])
-        if addition:
-            closing = sanitize_text(payload.get('closing', ''))
-            if addition.lower() not in closing.lower():
-                payload['closing'] = sanitize_text(f'{closing} {addition}') if closing else addition
+    if not sanitize_text(payload.get('closing', '')):
+        payload['closing'] = normalize_voice_sentence(
+            'Pick one decision point, test one change, and review what actually improved in the next cycle.'
+        )
 
     payload['bullets'] = []
+    normalize_content_uniqueness(payload)
     return payload
 
 
@@ -2152,8 +2249,6 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         actionability += 1
     if paragraph_count >= QUALITY_MIN_PARAGRAPHS:
         actionability += 1
-    if int(voice.get('second_person_count') or 0) == 0:
-        actionability -= 1
     actionability = clamp_score(actionability)
 
     score_map = {
@@ -2239,8 +2334,6 @@ def build_quality_critique(report: dict[str, Any], target_total: int) -> list[st
     signals = report.get('signals', {}) if isinstance(report.get('signals', {}), dict) else {}
     if int(signals.get('banned_phrase_hits') or 0) > 0:
         critique.append('Replace generic AI-sounding phrases with direct, plain language in your natural voice.')
-    if int(signals.get('second_person_count') or 0) == 0:
-        critique.append('Add direct reader address (you/your) so the post sounds conversational and grounded.')
 
     for hard_failure in report.get('hard_failures', []):
         critique.append(f'Hard requirement: {hard_failure}')
@@ -2328,9 +2421,6 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
     if banned_phrase_hits > 0:
         failures.append('voice drift detected from generic or robotic phrasing')
 
-    second_person_count = int(signals.get('second_person_count') or 0)
-    if second_person_count == 0:
-        failures.append('missing conversational direct-address tone (no you/your)')
 
     return failures
 
@@ -2535,10 +2625,12 @@ def run_quality_gate(
     engine = load_improvement_engine()
     engine_dims = apply_improvement_engine(payload, engine)
     payload = apply_shreyas_tone(payload)
+    normalize_content_uniqueness(payload)
     tighten_to_target(payload, QUALITY_MIN_WORDS, QUALITY_MAX_WORDS)
 
     for index in range(1, attempts + 1):
         payload = apply_shreyas_tone(payload)
+        normalize_content_uniqueness(payload)
         report = quality_report(payload)
         report['pass'] = index
         report['target_total'] = target_total
@@ -2569,12 +2661,13 @@ def run_quality_gate(
             or int(signals.get('duplicate_paragraphs') or 0) > QUALITY_MAX_DUP_PARAGRAPHS
         ):
             rewrite_dims = ordered_unique(['originality', 'clarity', *rewrite_dims])
-        if int(signals.get('banned_phrase_hits') or 0) > 0 or int(signals.get('second_person_count') or 0) == 0:
+        if int(signals.get('banned_phrase_hits') or 0) > 0:
             rewrite_dims = ordered_unique(['originality', 'clarity', 'actionability', *rewrite_dims])
 
         apply_quality_rewrite(payload, rewrite_dims[:3])
         tighten_to_target(payload, QUALITY_MIN_WORDS, QUALITY_MAX_WORDS)
         payload = apply_shreyas_tone(payload)
+        normalize_content_uniqueness(payload)
 
     final = passes[-1]
     gate = {
@@ -2816,10 +2909,23 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
     source_research_stage = sanitize_text(raw.get('_stage', '')).lower() == DEEP_RESEARCH_STAGE
     source_research_gate = raw.get('_research_gate', {}) if isinstance(raw.get('_research_gate', {}), dict) else {}
 
-    lead = sanitize_content_line(raw.get('lead', '') or raw.get('excerpt', '') or title)
+    lead = sanitize_content_line(raw.get('lead', '') or raw.get('excerpt', ''))
     excerpt = sanitize_content_line(raw.get('excerpt', '') or lead)
     meta_description = sanitize_content_line(raw.get('meta_description', '') or excerpt)
     closing = sanitize_content_line(raw.get('closing', '') or lead)
+
+    def strip_template(text_value: str) -> str:
+        value = sanitize_content_line(text_value)
+        if not value:
+            return ''
+        if any(pattern.search(value) for pattern in QUALITY_TEMPLATE_BOILERPLATE_PATTERNS):
+            return ''
+        return value
+
+    lead = strip_template(lead)
+    excerpt = strip_template(excerpt)
+    meta_description = strip_template(meta_description)
+    closing = strip_template(closing)
 
     if not lead:
         lead = sanitize_content_line(
@@ -2878,6 +2984,21 @@ def sanitize_payload(raw: dict[str, Any]) -> dict[str, Any]:
         'bullets': bullets[:4],
         'closing': closing,
     }
+
+    normalize_content_uniqueness(payload)
+
+    if not sanitize_content_line(payload.get('lead', '')):
+        payload['lead'] = sanitize_content_line(
+            f'{title} becomes useful when one real decision in live work changes this week.'
+        )
+    if not sanitize_content_line(payload.get('excerpt', '')):
+        payload['excerpt'] = sanitize_content_line(
+            'Practical takeaway: identify one decision point, test one change, and review outcomes in the next cycle.'
+        )
+    if not sanitize_content_line(payload.get('closing', '')):
+        payload['closing'] = sanitize_content_line(
+            'Pick one workflow, assign one owner, and review the behavior shift in the next cycle.'
+        )
 
     if source_research_stage:
         payload['_research_brief'] = {
