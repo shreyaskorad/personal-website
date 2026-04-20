@@ -926,6 +926,27 @@ def dedupe_writing_entries(html: str) -> str:
     return html[:list_start] + rebuilt + html[list_end:]
 
 
+def sync_no_results_state(html: str) -> str:
+    marker = '<div class="article-list" id="article-list">'
+    start = html.find(marker)
+    if start == -1:
+        return html
+    marker_pos = html.find('<p class="no-results" id="no-results"', start)
+    if marker_pos == -1:
+        return html
+    close = html.find('>', marker_pos)
+    if close == -1:
+        return html
+    has_cards = '<a ' in html[start:marker_pos]
+    tag = html[marker_pos:close+1]
+    if has_cards:
+        if ' hidden' not in tag:
+            tag = tag[:-1] + ' hidden>'
+    else:
+        tag = tag.replace(' hidden', '')
+    return html[:marker_pos] + tag + html[close+1:]
+
+
 def upsert_writing_entry(html: str, slug: str, entry: str) -> str:
     href = f"href=\"posts/{slug}.html\""
     markers = [href]
@@ -954,7 +975,8 @@ def upsert_writing_entry(html: str, slug: str, entry: str) -> str:
 
     if not replaced:
         updated = insert_writing_entry(updated, entry)
-    return dedupe_writing_entries(updated)
+    updated = dedupe_writing_entries(updated)
+    return sync_no_results_state(updated)
 
 
 def validate_text(text: str) -> None:
