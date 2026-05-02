@@ -80,8 +80,8 @@ RECENT_IMAGE_WINDOW = 12
 QUALITY_MIN_TOTAL = 24
 QUALITY_MAX_PASSES = 6
 QUALITY_DELTA_PER_ITERATION = 1
-QUALITY_MIN_WORDS = 190
-QUALITY_MAX_WORDS = 520
+QUALITY_MIN_WORDS = 750
+QUALITY_MAX_WORDS = 1600
 QUALITY_MIN_HEADINGS = 2
 QUALITY_MIN_PARAGRAPHS = 7
 QUALITY_MAX_DUP_SENTENCES = 1
@@ -356,6 +356,19 @@ QUALITY_COHERENCE_RED_FLAG_PATTERNS = [
     re.compile(r'^\s*abstract\b', flags=re.IGNORECASE),
     re.compile(r'\bfigure\s+\d+\b', flags=re.IGNORECASE),
     re.compile(r'\bthen the third step out of four\b', flags=re.IGNORECASE),
+]
+
+
+QUALITY_GENERIC_SLOP_PATTERNS = [
+    re.compile(r'\bthe source matters because\b', flags=re.IGNORECASE),
+    re.compile(r'\bthe source points to\b', flags=re.IGNORECASE),
+    re.compile(r'\bthe intervention only matters when it strengthens\b', flags=re.IGNORECASE),
+    re.compile(r'\binside live work inside live work\b', flags=re.IGNORECASE),
+    re.compile(r'\bbetter decisions in live work\b', flags=re.IGNORECASE),
+    re.compile(r'\bwhat wider evidence says\b', flags=re.IGNORECASE),
+    re.compile(r'\bwhat to run next in live work\b', flags=re.IGNORECASE),
+    re.compile(r'\bthe visible layer is not the real story\b', flags=re.IGNORECASE),
+    re.compile(r'\bwhere people choose what to do next, which is where\b', flags=re.IGNORECASE),
 ]
 
 QUALITY_TEMPLATE_BOILERPLATE_PATTERNS = [
@@ -2098,6 +2111,10 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
         1 for line in content_lines
         if any(pattern.search(line) for pattern in QUALITY_COHERENCE_RED_FLAG_PATTERNS)
     )
+    generic_slop_hits = sum(
+        1 for line in content_lines
+        if any(pattern.search(line) for pattern in QUALITY_GENERIC_SLOP_PATTERNS)
+    )
     title_text = sanitize_text(payload.get('title', ''))
     title_lower = title_text.lower()
     title_echo_lines = sum(
@@ -2305,6 +2322,7 @@ def quality_report(payload: dict[str, Any]) -> dict[str, Any]:
             'fragment_lines': fragment_line_count,
             'style_drift_lines': style_drift_count,
             'coherence_red_flag_hits': coherence_red_flag_hits,
+            'generic_slop_hits': generic_slop_hits,
             'title_echo_lines': title_echo_lines,
             'title_all_caps_words': title_all_caps_words,
             'banned_phrase_hits': int(voice.get('banned_phrase_hits') or 0),
@@ -2415,6 +2433,10 @@ def hard_quality_failures(report: dict[str, Any]) -> list[str]:
     coherence_red_flag_hits = int(signals.get('coherence_red_flag_hits') or 0)
     if coherence_red_flag_hits > 0:
         failures.append('low-coherence templated phrasing detected in body copy')
+
+    generic_slop_hits = int(signals.get('generic_slop_hits') or 0)
+    if generic_slop_hits > 0:
+        failures.append('generic source/decision-workflow scaffolding detected in body copy')
 
     title_echo_lines = int(signals.get('title_echo_lines') or 0)
     if title_echo_lines > QUALITY_MAX_TITLE_ECHO_LINES:
