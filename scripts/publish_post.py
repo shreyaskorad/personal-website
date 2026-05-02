@@ -242,6 +242,13 @@ INSTRUCTION_LINE_PATTERNS = [
     re.compile(r"^\s*publish flow\b", flags=re.IGNORECASE),
     re.compile(r"\bquality score\b", flags=re.IGNORECASE),
     re.compile(r"\bmatched post:\b", flags=re.IGNORECASE),
+    re.compile(r"\bthe article should start from the transcript signal\b", flags=re.IGNORECASE),
+    re.compile(r"\bwhat evidence from adjacent fields supports or weakens this claim\b", flags=re.IGNORECASE),
+    re.compile(r"\bthe transcript\b", flags=re.IGNORECASE),
+    re.compile(r"\bsource material\b", flags=re.IGNORECASE),
+    re.compile(r"\bfor this argument\b", flags=re.IGNORECASE),
+    re.compile(r"\bthis argument\b", flags=re.IGNORECASE),
+    re.compile(r"\bthis topic\b", flags=re.IGNORECASE),
 ]
 FRAGMENT_ENDING_RE = re.compile(
     r"\b(?:by|for|with|to|from|of|in|on|at|as|and|or|but|so|than|then|if|when|while|because|that|which)\.?\s*$",
@@ -926,27 +933,6 @@ def dedupe_writing_entries(html: str) -> str:
     return html[:list_start] + rebuilt + html[list_end:]
 
 
-def sync_no_results_state(html: str) -> str:
-    marker = '<div class="article-list" id="article-list">'
-    start = html.find(marker)
-    if start == -1:
-        return html
-    marker_pos = html.find('<p class="no-results" id="no-results"', start)
-    if marker_pos == -1:
-        return html
-    close = html.find('>', marker_pos)
-    if close == -1:
-        return html
-    has_cards = '<a ' in html[start:marker_pos]
-    tag = html[marker_pos:close+1]
-    if has_cards:
-        if ' hidden' not in tag:
-            tag = tag[:-1] + ' hidden>'
-    else:
-        tag = tag.replace(' hidden', '')
-    return html[:marker_pos] + tag + html[close+1:]
-
-
 def upsert_writing_entry(html: str, slug: str, entry: str) -> str:
     href = f"href=\"posts/{slug}.html\""
     markers = [href]
@@ -975,8 +961,7 @@ def upsert_writing_entry(html: str, slug: str, entry: str) -> str:
 
     if not replaced:
         updated = insert_writing_entry(updated, entry)
-    updated = dedupe_writing_entries(updated)
-    return sync_no_results_state(updated)
+    return dedupe_writing_entries(updated)
 
 
 def validate_text(text: str) -> None:

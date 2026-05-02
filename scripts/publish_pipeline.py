@@ -392,6 +392,13 @@ INSTRUCTION_LINE_PATTERNS = [
     re.compile(r'^\s*publish flow\b', flags=re.IGNORECASE),
     re.compile(r'\bquality score\b', flags=re.IGNORECASE),
     re.compile(r'\bmatched post:\b', flags=re.IGNORECASE),
+    re.compile(r'\bthe article should start from the transcript signal\b', flags=re.IGNORECASE),
+    re.compile(r'\bwhat evidence from adjacent fields supports or weakens this claim\b', flags=re.IGNORECASE),
+    re.compile(r'\bthe transcript\b', flags=re.IGNORECASE),
+    re.compile(r'\bsource material\b', flags=re.IGNORECASE),
+    re.compile(r'\bfor this argument\b', flags=re.IGNORECASE),
+    re.compile(r'\bthis argument\b', flags=re.IGNORECASE),
+    re.compile(r'\bthis topic\b', flags=re.IGNORECASE),
 ]
 FRAGMENT_ENDING_RE = re.compile(
     r'\b(?:by|for|with|to|from|of|in|on|at|as|and|or|but|so|than|then|if|when|while|because|that|which)\.?\s*$',
@@ -1660,7 +1667,7 @@ def replace_full_title_mentions(text: str, title: str) -> str:
     if not value or not title_text:
         return value
     pattern = re.compile(re.escape(title_text), flags=re.IGNORECASE)
-    replaced = pattern.sub('this argument', value)
+    replaced = pattern.sub('the design', value)
     replaced = re.sub(r'\s{2,}', ' ', replaced)
     return replaced.strip()
 
@@ -2874,7 +2881,11 @@ def normalize_publish_title(raw_title: Any, raw_description: Any) -> str:
             or value_l.startswith('[sat ')
             or value_l.startswith('[sun ')
             or re.match(r'^what actually improves\b', value_l) is not None
+            or re.match(r'^using ai to\b', value_l) is not None
+            or re.match(r'^the capability decisions\b', value_l) is not None
             or re.match(r'^a practical leadership workflow for\b', value_l) is not None
+            or re.match(r'^ep\s*\d+\b', value_l) is not None
+            or re.search(r'\bepisode\s*\d+\b', value_l) is not None
             or 'operating decisions behind measurable team performance' in value_l
             or re.search(r'\b\d{8}\b$', value_l) is not None
             or re.search(r'\b(?:cycle|edition|version)\s*\d{1,6}\b', value_l) is not None
