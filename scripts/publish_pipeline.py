@@ -97,7 +97,7 @@ CITATION_MAX_COUNT = 4
 DISABLE_BODY_H2 = False
 DEEP_RESEARCH_STAGE = 'source_research_draft'
 DEEP_RESEARCH_MIN_CITATIONS = 1
-DEEP_RESEARCH_MIN_LIVE_SOURCES = 1
+DEEP_RESEARCH_MIN_LIVE_SOURCES = 0
 DEEP_RESEARCH_MIN_DISTINCT_DOMAINS = 1
 CLEAN_SLATE_POLICY_VERSION = 'openclaw-clean-slate-v1'
 CLEAN_SLATE_POLICY_MODE = 'clean_slate'
@@ -843,7 +843,7 @@ def collect_citations_with_origin(*raw_sets: Any) -> list[dict[str, str]]:
             elif isinstance(item, dict):
                 url = sanitize_text(item.get('url', ''))
                 title = sanitize_text(item.get('title', '') or item.get('label', '') or citation_title_from_url(url))
-                origin = sanitize_text(item.get('_origin', '')).lower()
+                origin = sanitize_text(item.get('_origin', '') or item.get('origin', '')).lower()
             else:
                 continue
 
