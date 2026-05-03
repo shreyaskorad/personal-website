@@ -3138,7 +3138,7 @@ def prepare_publish_branch() -> tuple[str, str | None]:
     return branch, stash_ref
 
 
-def commit_and_push(message: str) -> str:
+def commit_and_push(message: str, push_target: str = 'main') -> str:
     if not has_staged_changes():
         return 'no_changes'
 
@@ -3146,7 +3146,7 @@ def commit_and_push(message: str) -> str:
 
     last_error = ''
     for attempt in range(1, 4):
-        push = subprocess.run(['git', 'push', 'origin', 'HEAD:main'], cwd=ROOT, text=True, capture_output=True)
+        push = subprocess.run(['git', 'push', 'origin', f'HEAD:{push_target}'], cwd=ROOT, text=True, capture_output=True)
         if push.returncode == 0:
             return 'pushed'
 
@@ -3180,6 +3180,7 @@ def main() -> None:
     parser.add_argument('--input', required=True, help='Path to raw JSON payload')
     parser.add_argument('--force', action='store_true', help='Force overwrite')
     parser.add_argument('--max-retries', type=int, default=1, help='Max publish retries (default: 1)')
+    parser.add_argument('--push-target', default='main', help='Remote ref target for publish commit (default: main)')
     parser.add_argument(
         '--quality-min-total',
         type=int,
@@ -3268,7 +3269,7 @@ def main() -> None:
         if len(commit_msg) > 100:
             commit_msg = commit_msg[:97] + '...'
 
-        push_status = commit_and_push(commit_msg)
+        push_status = commit_and_push(commit_msg, args.push_target)
         sha = get_head_sha()
 
         final_pass = quality_gate.get('passes', [])[-1] if quality_gate.get('passes', []) else {}
@@ -3282,6 +3283,7 @@ def main() -> None:
             'commit': sha,
             'push': push_status,
             'branch': publish_branch,
+            'push_target': args.push_target,
             'sanitized_payload': str(SANITIZED_PAYLOAD),
             'quality_report': str(QUALITY_REPORT_FILE),
             'research_report': str(RESEARCH_REPORT_FILE),
