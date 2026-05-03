@@ -781,21 +781,10 @@ def merge_citations(primary: Any, secondary: Any) -> list[dict[str, str]]:
 def parse_citation_policy(payload: dict[str, Any]) -> dict[str, Any]:
     policy = payload.get('_citation_policy', {}) if isinstance(payload.get('_citation_policy', {}), dict) else {}
 
-    try:
-        target_count = int(policy.get('target_count', 2))
-    except Exception:
-        target_count = 2
-    try:
-        required_new_domains = int(policy.get('required_new_domains', 1))
-    except Exception:
-        required_new_domains = 1
-
-    if target_count < 1:
-        target_count = 2
-
-    if required_new_domains < 1 and target_count > 0:
-        required_new_domains = 1
-    required_new_domains = min(required_new_domains, target_count)
+    # Ignore stale draft policies that demanded citation stuffing. The current
+    # quality rule is one source that is actually integrated in the article body.
+    target_count = DEEP_RESEARCH_MIN_CITATIONS
+    required_new_domains = 0
 
     recent_domains_raw = policy.get('recent_domains', set())
     recent_domains: set[str] = set()
