@@ -860,15 +860,16 @@ def collect_citations_with_origin(*raw_sets: Any) -> list[dict[str, str]]:
 
 
 def effective_research_gate(raw: dict[str, Any]) -> dict[str, Any]:
-    gate = raw.get(_research_gate, {}) if isinstance(raw.get(_research_gate, {}), dict) else {}
+    gate = raw.get('_research_gate', {}) if isinstance(raw.get('_research_gate', {}), dict) else {}
     # Ignore stale per-payload minima from earlier draft stages; final policy prefers
     # fewer citations that are explicitly integrated over decorative citation stuffing.
     return {
-        required: bool(gate.get(required, False)),
-        min_citations: DEEP_RESEARCH_MIN_CITATIONS,
-        min_live_sources: DEEP_RESEARCH_MIN_LIVE_SOURCES,
-        min_distinct_domains: DEEP_RESEARCH_MIN_DISTINCT_DOMAINS,
+        'required': bool(gate.get('required', False)),
+        'min_citations': DEEP_RESEARCH_MIN_CITATIONS,
+        'min_live_sources': DEEP_RESEARCH_MIN_LIVE_SOURCES,
+        'min_distinct_domains': DEEP_RESEARCH_MIN_DISTINCT_DOMAINS,
     }
+
 def validate_deep_research_provenance(raw: dict[str, Any]) -> None:
     if not env_flag('OPENCLAW_REQUIRE_DEEP_RESEARCH', True):
         return
